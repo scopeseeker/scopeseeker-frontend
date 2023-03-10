@@ -1,5 +1,5 @@
-import { extendTheme } from "@chakra-ui/react";
 import { Inter, Roboto } from "next/font/google";
+import { extendTheme, type ThemeConfig } from '@chakra-ui/react'
 
 const inter = Inter({
     subsets: ['latin'],
@@ -8,12 +8,15 @@ const inter = Inter({
     weight: ["400", "500", "600", "700", "800"],
 })
 
-export const theme = extendTheme({
+const config: ThemeConfig = {
+    initialColorMode: 'light',
+    useSystemColorMode: false,
+}
 
+const theme = extendTheme({
     styles: {
         global: {
             body: {
-                color: 'black',
             },
             a: {
                 color: 'black',
@@ -28,10 +31,13 @@ export const theme = extendTheme({
         heading: `${inter.style.fontFamily}`,
         body: `${inter.style.fontFamily}`,
     },
-
     colors: {
         brand: {
-            "primary": "#406AFE"
+            primary: "#406AFE",  //it's not working, I don't know 
         },
     },
+    config,
 })
+
+
+export default theme;
