@@ -2,11 +2,12 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
-import { Heading, Text } from '@chakra-ui/react'
+import { Button, Heading, Text, useColorMode } from '@chakra-ui/react'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  const {colorMode, toggleColorMode} = useColorMode()
   return (
     <>
       <Head>
@@ -17,7 +18,10 @@ export default function Home() {
       </Head>
       <main>
         <Text>Hello I am Home</Text>
-        <Heading>Hello</Heading>
+        <Heading color={'brand.100'}>Hello</Heading>
+        <Button onClick={toggleColorMode}>
+        Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
+        </Button>
       </main>
     </>
   )
