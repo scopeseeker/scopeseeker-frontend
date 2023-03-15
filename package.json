@@ -7,7 +7,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prettier": "prettier --write .",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@types/node": "18.15.3",
@@ -22,5 +24,9 @@
   },
   "description": "Scope Seeker is a cutting-edge web application designed to help job seekers find their dream job with ease. Whether you are a student looking for your first job or a work professional seeking new opportunities, Scope Seeker has got you covered. With Scope Seeker, you can access a vast database of job openings from big and authentic companies. You can search for job openings based on your target skills, location, and other preferences. Our algorithm ensures that you get a personalized job search experience, making it easier for you to find the right job.",
   "repository": "https://github.com/scopeseeker/scopeseeker-frontend.git",
-  "author": "lokeshdhakar97 <lokeshdhakar6633@gmail.com>"
+  "author": "lokeshdhakar97 <lokeshdhakar6633@gmail.com>",
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "prettier": "^2.8.4"
+  }
 }
