@@ -26,6 +26,8 @@
   "repository": "https://github.com/scopeseeker/scopeseeker-frontend.git",
   "author": "lokeshdhakar97 <lokeshdhakar6633@gmail.com>",
   "devDependencies": {
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4",
     "husky": "^8.0.3",
     "prettier": "^2.8.4"
   }
