@@ -4,13 +4,12 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "dev": "next dev",
+    "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "prettier": "prettier --write .",
-    "prepare": "husky install",
-    "dev": "cross-env NODE_OPTIONS='--inspect' next dev"
+    "prepare": "husky install"
   },
   "dependencies": {
     "@types/node": "18.15.3",
