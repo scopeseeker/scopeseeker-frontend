@@ -1,11 +1,13 @@
 import Head from 'next/head';
 import { Inter } from 'next/font/google';
-import {Text} from '@chakra-ui/react'
+import {Button, Text, useColorMode} from '@chakra-ui/react'
 import Link from 'next/link';
+import theme from '/theme';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
+  const {colorMode, toggleColorMode} = useColorMode()
   return (
     <>
       <Head>
@@ -14,8 +16,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-        <Text>Home</Text>
+        <Text color={'primary.300'} fontSize={30}>Home</Text>
         <Link href={'/about'}>About</Link>
+        <Button onClick={toggleColorMode}>
+        Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
+        </Button>
     </>
   );
 }
