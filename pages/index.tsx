@@ -1,10 +1,7 @@
 import Head from 'next/head';
-import { Inter } from 'next/font/google';
 import {Button, Text, useColorMode} from '@chakra-ui/react'
 import Link from 'next/link';
-import theme from '/theme';
 
-const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
   const {colorMode, toggleColorMode} = useColorMode()
