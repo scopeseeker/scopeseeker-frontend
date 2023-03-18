@@ -7,7 +7,6 @@ const Navbar = () => {
       <HStack
         justifyContent="space-between"
         w={'6xl'}
-        bg={'blue.200'}
         py={2}
         px={16}
         borderBottomEndRadius={'2xl'}
