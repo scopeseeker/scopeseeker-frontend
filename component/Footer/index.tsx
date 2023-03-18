@@ -14,11 +14,12 @@ import {
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import React from 'react';
+import Icon from '../Icon/Icon';
 
 const Footer = () => {
   return (
     <Box w={'full'} bg={'#030626'} p={3} mt={'500px'}>
-      <Flex px={20} position={'relative'} alignItems={'end'}>
+      <Flex px={10} position={'relative'} alignItems={'end'}>
         <Text color={'white'} fontSize={'2xl'} pb={10}>
           Right{' '}
           <Text as={'span'} fontWeight={'bold'} color={'brand.100'}>
@@ -26,12 +27,12 @@ const Footer = () => {
           </Text>{' '}
           awaiting for you
         </Text>
-        <Box mt={'-20'}>
+        <Box>
           <Image
-            src={require('../../public/Images3D/footer-right.png')}
+            src={require('../../public/Images3D/a.png')}
             alt={'footer'}
             // width={'fit'}
-            height={250}
+            height={200}
           />
         </Box>
       </Flex>
@@ -43,7 +44,7 @@ const Footer = () => {
               <Image
                 src={require('../../public/scopeseeker-logo.png')}
                 alt={'footer'}
-                height={50}
+                height={40}
               />
               <Text color={'white'} fontSize={'xl'} fontWeight={'semibold'}>
                 Scope Seeker
@@ -125,9 +126,7 @@ const Footer = () => {
               color="white"
               borderRadius={12}
             >
-              <Box as="span" fontSize="xs">
-                IG
-              </Box>
+           <Icon name='instagram' width='24px' height='24px'/>
             </Center>
             <Center
               cursor={'pointer'}
