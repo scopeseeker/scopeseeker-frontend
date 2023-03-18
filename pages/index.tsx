@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import {Text, useColorMode } from '@chakra-ui/react';
+import { Text, useColorMode } from '@chakra-ui/react';
 
 export default function Home() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -10,8 +10,14 @@ export default function Home() {
     <>
       <Head>
         <title>Scope Seeker | Home</title>
+        <meta
+          name="description"
+          content="Scope Seeker is a cutting-edge web application designed to help job seekers find their dream job with ease."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
-    <Text>I am Home Page</Text>
+      <Text>I am Home Page</Text>
     </>
   );
 }
