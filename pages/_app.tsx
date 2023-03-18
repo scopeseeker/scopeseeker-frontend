@@ -1,13 +1,13 @@
+import Navbar from '@/component/Navbar/Navbar';
 import theme from '@/styles/theme';
 import { ChakraProvider } from '@chakra-ui/react';
 import type { AppProps } from 'next/app';
 
 export default function App({ Component, pageProps }: AppProps) {
-  return(
+  return (
     <ChakraProvider theme={theme}>
-    <Component {...pageProps} />
+      <Navbar />
+      <Component {...pageProps} />
     </ChakraProvider>
-
-  ) 
-  
+  );
 }
