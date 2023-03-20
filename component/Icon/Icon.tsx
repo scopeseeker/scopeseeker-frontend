@@ -4,7 +4,10 @@ import React from "react";
 
 export type IconNameType =
 	| "job"
-	| "instagram";
+	| "instagram"
+	| "darkMode"
+	|  "company"
+	|  "pages";
 
 export type IconProps = {
 	name: IconNameType;
