@@ -4,7 +4,11 @@ import React from "react";
 
 export type IconNameType =
 	| "job"
-	| "instagram";
+	| "instagram"
+	|  "linkedin"
+	|  "gmail"
+	|  "facebook"
+	|  "arrow";
 
 export type IconProps = {
 	name: IconNameType;
@@ -24,6 +28,7 @@ const Icon = ({ name, style, ...rest }: IconProps) => {
 		<svg xmlns="http://www.w3.org/2000/svg" style={style} viewBox={viewBox} {...rest} className="custom-icon">
 			<path d={path} fill="currentColor" transform={transform} />
 		</svg>
+		
 	);
 };
 
