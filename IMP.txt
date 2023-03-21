@@ -1,0 +1,1 @@
+main layout left right padding 48px
