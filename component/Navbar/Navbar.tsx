@@ -22,6 +22,7 @@ const Navbar = () => {
         position={'fixed'}
         w={'full'}
         px={12}
+        bg={'white'}
         py={2}
         h={12}
         boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
