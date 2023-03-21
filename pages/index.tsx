@@ -1,9 +1,8 @@
 import Head from 'next/head';
-import {Text, useColorMode } from '@chakra-ui/react';
-import Footer from '@/component/Footer';
+import { Text, useColorMode } from '@chakra-ui/react';
 
 export default function Home() {
-  const { colorMode, toggleColorMode } = useColorMode();
+  // const { colorMode, toggleColorMode } = useColorMode();
   // <Button onClick={toggleColorMode}>
   //       Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
   //     </Button>
@@ -18,8 +17,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-    <Text>I am Home Page</Text>
-    <Footer/>
+      <Text>I am Home Page</Text>
     </>
   );
 }
