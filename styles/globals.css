@@ -118,3 +118,7 @@ a {
   background-color: rgb(240, 240, 240);
 
 }
+
+body{
+  overflow-x: hidden;
+}
