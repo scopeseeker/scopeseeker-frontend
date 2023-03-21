@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import {Text } from '@chakra-ui/react';
-import Company from '@/component/sections/Company';
 
 export default function Home() {
   return (
@@ -15,7 +14,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Text>I am Home Page</Text>
-      <Company/>
     </>
   );
 }
