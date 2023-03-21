@@ -7,13 +7,13 @@ import {
   GridItem,
   Heading,
   HStack,
+  IconButton,
   ListItem,
   Text,
   UnorderedList,
   VStack,
 } from '@chakra-ui/react';
 import Image from 'next/image';
-import React from 'react';
 import Icon from '../Icon/Icon';
 
 const Footer = () => {
@@ -32,7 +32,8 @@ const Footer = () => {
             src={require('../../public/Images3D/a.png')}
             alt={'footer'}
             // width={'fit'}
-            height={200}
+            height={300}
+            style={{ marginLeft: '160%' }}
           />
         </Box>
       </Flex>
@@ -63,13 +64,18 @@ const Footer = () => {
         {/* Navigation Section */}
         <GridItem w="100%" color={'whiteAlpha.800'}>
           <Heading fontSize={'sm'} fontWeight={'medium'} color={'white'} mb={2}>
-            Navigation
+            Links
           </Heading>
-          <UnorderedList fontSize={'xs'} ml={0} listStyleType={'none'}>
-            <ListItem>Jobs</ListItem>
-            <ListItem>Company</ListItem>
-            <ListItem>Company</ListItem>
-            <ListItem>Company</ListItem>
+          <UnorderedList
+            fontSize={'xs'}
+            ml={0}
+            listStyleType={'none'}
+            spacing={1}
+          >
+            <ListItem>Find Jobs</ListItem>
+            <ListItem>Find Companies</ListItem>
+            <ListItem>Guide How to</ListItem>
+            <ListItem>FAQ'S</ListItem>
           </UnorderedList>
         </GridItem>
         {/* Company Section */}
@@ -77,19 +83,29 @@ const Footer = () => {
           <Heading fontSize={'sm'} fontWeight={'medium'} color={'white'} mb={2}>
             Company
           </Heading>
-          <UnorderedList fontSize={'xs'} ml={0} listStyleType={'none'}>
+          <UnorderedList
+            fontSize={'xs'}
+            ml={0}
+            listStyleType={'none'}
+            spacing={1}
+          >
             <ListItem>About Us</ListItem>
             <ListItem>Contact Us</ListItem>
-            <ListItem>Company</ListItem>
-            <ListItem>Company</ListItem>
+            <ListItem>Privacy Policy</ListItem>
+            <ListItem>Terms & Condition</ListItem>
           </UnorderedList>
         </GridItem>
         {/* Company Section */}
         <GridItem w="100%" color={'whiteAlpha.800'}>
           <Heading fontSize={'sm'} fontWeight={'medium'} color={'white'} mb={2}>
-            Support
+            Stay Connected
           </Heading>
-          <UnorderedList fontSize={'xs'} ml={0} listStyleType={'none'}>
+          <UnorderedList
+            fontSize={'xs'}
+            ml={0}
+            listStyleType={'none'}
+            spacing={1}
+          >
             <ListItem>Help Center</ListItem>
             <ListItem>FAQ's</ListItem>
             <ListItem>Privacy Policy</ListItem>
@@ -102,7 +118,12 @@ const Footer = () => {
           <Heading fontSize={'sm'} fontWeight={'medium'} color={'white'} mb={2}>
             Meet Us
           </Heading>
-          <UnorderedList fontSize={'xs'} ml={0} listStyleType={'none'}>
+          <UnorderedList
+            fontSize={'xs'}
+            ml={0}
+            listStyleType={'none'}
+            spacing={1}
+          >
             <ListItem>Bhanpur, Ayodhya Bypass</ListItem>
             <ListItem>Bhopal, Madhya Pradesh</ListItem>
             <ListItem>India - 462010</ListItem>
@@ -126,7 +147,7 @@ const Footer = () => {
               color="white"
               borderRadius={12}
             >
-           <Icon name='instagram' width='24px' height='24px'/>
+              <Icon name="instagram" width="24px" height="24px" />
             </Center>
             <Center
               cursor={'pointer'}
@@ -136,9 +157,7 @@ const Footer = () => {
               color="white"
               borderRadius={12}
             >
-              <Box as="span" fontSize="xs">
-                LN
-              </Box>
+              <Icon name="linkedin" width="24px" height="24px" />
             </Center>
             <Center
               cursor={'pointer'}
@@ -148,9 +167,7 @@ const Footer = () => {
               color="white"
               borderRadius={12}
             >
-              <Box as="span" fontSize="xs">
-                GM
-              </Box>
+              <Icon name="gmail" width="24px" height="24px" />
             </Center>
             <Center
               cursor={'pointer'}
@@ -160,9 +177,7 @@ const Footer = () => {
               color="white"
               borderRadius={12}
             >
-              <Box as="span" fontSize="xs">
-                LN
-              </Box>
+              <Icon name="facebook" width="24px" height="24px" />
             </Center>
           </HStack>
         </GridItem>
