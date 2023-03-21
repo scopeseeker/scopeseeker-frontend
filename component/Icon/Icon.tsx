@@ -5,6 +5,9 @@ import React from "react";
 export type IconNameType =
 	| "job"
 	| "instagram"
+	| "darkMode"
+	|  "company"
+	|  "pages"
 	|  "linkedin"
 	|  "gmail"
 	|  "facebook"
