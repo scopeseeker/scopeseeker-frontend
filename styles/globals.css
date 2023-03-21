@@ -105,3 +105,16 @@ a {
     color-scheme: dark;
   }
 } */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(37, 119, 241);
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgb(240, 240, 240);
+
+}

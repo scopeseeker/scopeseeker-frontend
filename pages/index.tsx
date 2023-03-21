@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import {Text, useColorMode } from '@chakra-ui/react';
-import Footer from '@/component/Footer';
+import { Text, useColorMode } from '@chakra-ui/react';
+import MyButton from '@/component/MyButton/MyButton';
 
 export default function Home() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -18,8 +18,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-    <Text>I am Home Page</Text>
-    <Footer/>
+      <Text>I am Home Page</Text>
+      {/* <Text>My Button Component</Text>
+    <MyButton a={'brand.100'}/> */}
     </>
   );
 }

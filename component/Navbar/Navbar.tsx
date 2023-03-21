@@ -1,87 +1,132 @@
-import { Button, HStack, Text, VStack } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  Center,
+  Flex,
+  HStack,
+  Stack,
+  Text,
+  VStack,
+} from '@chakra-ui/react';
 import Image from 'next/image';
+import Link from 'next/link';
 import Icon from '../Icon/Icon';
 
 const Navbar = () => {
   return (
-    <VStack justifyContent={'center'} h={14}>
+    <Box h={12}>
       <HStack
         justifyContent="space-between"
-        w={'6xl'}
+        top={0}
+        left={0}
+        position={'fixed'}
+        w={'full'}
+        px={12}
         py={2}
-        px={16}
-        borderBottomEndRadius={'2xl'}
-        borderTopLeftRadius={'2xl'}
+        h={12}
+        boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
+        bgColor={'white'}
+        border={'1px solid rgba(255, 255, 255, 0.69)'}
       >
-        <HStack>
-          <Image
-            src={require('../../public/scopeseeker-logo.png')}
-            alt={'navbar'}
-            height={28}
-          />
-          <Text as={'span'} fontWeight={'hairline'} fontSize={'sm'}>
-            Scope Seeker
-          </Text>
+        {/* Left Part of Navbar */}
+        <HStack gap={12}>
+          <HStack cursor={'pointer'}>
+            <Image
+              src={require('../../public/scopeseeker-logo.png')}
+              alt={'ss-log'}
+              height={32}
+            />
+            <Flex direction={'column'}>
+              <Text
+                as={'span'}
+                lineHeight={'1'}
+                fontSize={'sm'}
+                fontWeight={'medium'}
+              >
+                Scope Seeker
+              </Text>
+              <Text as={'span'} fontSize={'8px'}>
+                Seek the scope of your potential
+              </Text>
+            </Flex>
+          </HStack>
+
+          <HStack gap={6}>
+            <Link href={'#'}>
+              <Button
+                iconSpacing={'1'}
+                rightIcon={<Icon name={'arrow-down'} width={'14px'} />}
+                variant="link"
+                _hover={{ textDecoration: 'none', color: 'brand.100' }}
+                fontSize={'xs'}
+                fontWeight={'normal'}
+              >
+                Job
+              </Button>
+            </Link>
+
+            <Link href={'#'}>
+              <Button
+                iconSpacing={'1'}
+                rightIcon={<Icon name={'arrow-down'} width={'14px'} />}
+                variant="link"
+                _hover={{ textDecoration: 'none', color: 'brand.100' }}
+                fontSize={'xs'}
+                fontWeight={'normal'}
+              >
+                Company
+              </Button>
+            </Link>
+
+            <Link href={'#'}>
+              <Button
+                iconSpacing={'1'}
+                rightIcon={<Icon name={'arrow-down'} width={'14px'} />}
+                variant="link"
+                _hover={{ textDecoration: 'none', color: 'brand.100' }}
+                fontSize={'xs'}
+                fontWeight={'normal'}
+              >
+                Pages
+              </Button>
+            </Link>
+          </HStack>
         </HStack>
 
-        <HStack spacing={4}>
-          <Button
-            variant={'link'}
-            color={'blackAlpha.800'}
-            fontSize={'xs'}
-            fontWeight={'medium'} 
-            leftIcon={<Icon name="job" width="14px" height="14px" />}
-          >
-            Job
-          </Button>
-          <Button
-            variant={'link'}
-            color={'blackAlpha.800'}
-            fontSize={'xs'}
-            fontWeight={'medium'} 
-            leftIcon={<Icon name="company" width="14px" height="14px"/>}
-          >
-            Company
-          </Button>
-          <Button
-            variant={'link'}
-            color={'blackAlpha.800'}
-            fontSize={'xs'}
-            fontWeight={'medium'} 
-            leftIcon={<Icon name="pages" width="14px" height="14px" />}
-          >
-            Page
-          </Button>
-        </HStack>
-
-        <HStack fontSize={'xs'}>
-          <Button
-            colorScheme={'none'}
-            size={'sm'}
-            fontSize={'xs'}
-            fontWeight={'thin'}
-            color={'blackAlpha.900'}
-          >
-            Login
-          </Button>
-          <Button
-            bg={'brand.100'}
-            size={'sm'}
-            fontSize={'xs'}
-            fontWeight={'thin'}
-            color={'white'}
-          >
-            Sign Up
-          </Button>
-          <Icon
-            name="darkMode"
-            width="18px"
-            height="18px"
-            style={{ cursor: 'pointer', marginLeft: '15px' }}
-          />
+        {/* Right Part of Navbar */}
+        <HStack gap={3}>
+          <Link href={'/login'}>
+            <Button
+              size={'sm'}
+              fontWeight={'normal'}
+              fontSize={'xs'}
+              _hover={{ color: 'brand.200', textDecoration: 'none' }}
+              borderRadius={20}
+              variant={'link'}
+            >
+              Login
+            </Button>
+          </Link>
+          <Link href={'/signup'}>
+            <Button
+              size={'sm'}
+              color={'white'}
+              bg={'brand.100'}
+              fontWeight={'normal'}
+              fontSize={'xs'}
+              _hover={{ backgroundColor: 'brand.200' }}
+              _active={{ backgroundColor: 'brand.300' }}
+              borderRadius={20}
+            >
+              Sign up
+            </Button>
+          </Link>
+          <Center bg={'orange.100'} borderRadius={'full'} p={2} cursor={'pointer'}>
+            <Icon name={'darkMode'} width={'16'} color={'orange'} />
+          </Center>
         </HStack>
       </HStack>
-    </VStack>
+    </Box>
   );
 };
 
