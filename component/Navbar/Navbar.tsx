@@ -4,15 +4,15 @@ import {
   Center,
   Flex,
   HStack,
-  Stack,
   Text,
-  VStack,
+  useColorMode,
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Icon from '../Icon/Icon';
+import Icon from '../icon/Icon';
 
 const Navbar = () => {
+  const { colorMode, toggleColorMode } = useColorMode();
   return (
     <Box h={12}>
       <HStack
@@ -25,8 +25,7 @@ const Navbar = () => {
         py={2}
         h={12}
         boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
-        bgColor={'white'}
-        border={'1px solid rgba(255, 255, 255, 0.69)'}
+        borderBottom={'1px solid rgba(255, 255, 255, 0.69)'}
       >
         {/* Left Part of Navbar */}
         <HStack gap={12}>
@@ -121,7 +120,13 @@ const Navbar = () => {
               Sign up
             </Button>
           </Link>
-          <Center bg={'orange.100'} borderRadius={'full'} p={2} cursor={'pointer'}>
+          <Center
+            onClick={toggleColorMode}
+            bg={'orange.100'}
+            borderRadius={'full'}
+            p={2}
+            cursor={'pointer'}
+          >
             <Icon name={'darkMode'} width={'16'} color={'orange'} />
           </Center>
         </HStack>

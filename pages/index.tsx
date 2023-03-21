@@ -1,11 +1,8 @@
 import Head from 'next/head';
-import { Text, useColorMode } from '@chakra-ui/react';
+import {Text } from '@chakra-ui/react';
+import Company from '@/component/sections/Company';
 
 export default function Home() {
-  // const { colorMode, toggleColorMode } = useColorMode();
-  // <Button onClick={toggleColorMode}>
-  //       Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
-  //     </Button>
   return (
     <>
       <Head>
@@ -18,6 +15,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Text>I am Home Page</Text>
+      <Company/>
     </>
   );
 }
