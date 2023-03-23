@@ -132,6 +132,7 @@ const Navbar = () => {
           </Center>
         </HStack>
       </HStack>
+      {/* Dummy */}
     </Box>
   );
 };

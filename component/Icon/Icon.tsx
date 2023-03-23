@@ -15,6 +15,8 @@ export type IconNameType =
 	|  "facebook"
 	|  "arrow";
 
+	// Dummy
+
 export type IconProps = {
 	name: IconNameType;
 	color?: string;
