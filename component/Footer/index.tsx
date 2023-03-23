@@ -38,6 +38,8 @@ const Footer = () => {
         </VStack>
       </Box>
     </VStack>
+// Dummy
+
   );
 };
 
