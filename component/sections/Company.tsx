@@ -11,18 +11,18 @@ import React from 'react';
 
 const Company = () => {
   return (
-    <VStack w={'full'} my={20} gap={5}>
-      <Heading fontSize={'xl'} fontWeight={'semibold'}>
-        Discover Opportunities with Reputable Companies
-      </Heading>
       <HStack
-        width={'95%'}
+      my={12}
+        width={'90%'}
         justifyContent={'space-between'}
         borderRadius={10}
+        bg={'rgba(255, 255, 255, 0)'}
+        boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
+        border={'1px solid rgba(255, 255, 255, 0.3);'}
         h={40}
         // bg={'whiteAlpha.50'}
         mx={'auto'}
-        px={10}
+        px={16}
       >
         <Center w={12} h={12}>
           <Image src={require('../../public/google.png')} alt={'amazon'} />
@@ -47,7 +47,6 @@ const Company = () => {
           <Image src={require('../../public/tcs.png')} alt={'tcs'} />
         </Center>
       </HStack>
-    </VStack>
   );
 };
 
