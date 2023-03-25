@@ -1,6 +1,8 @@
-import { Inter, Roboto } from "next/font/google";
+import { Inter, Montserrat, Roboto } from "next/font/google";
 import { extendTheme, type ThemeConfig } from '@chakra-ui/react'
 
+
+const montserrat = Montserrat({ subsets: ['latin'] })
 const inter = Inter({
     subsets: ['latin'],
     style: ['normal'],
@@ -28,16 +30,17 @@ const theme = extendTheme({
         },
     },
     fonts: {
-        heading: `${inter.style.fontFamily}`,
+        heading: `${montserrat.style.fontFamily}`,
         body: `${inter.style.fontFamily}`,
     },
     colors: {
         brand: {
-         100: "#406afe",
-         200: "#0133e4",
-         300: "#0128b2",
-        },
-      },
+            100: "#406afe",
+            200: "#0133e4",
+            300: "#0128b2",
+            400: "#E6E6FA"
+        }
+    },
     config,
 })
 

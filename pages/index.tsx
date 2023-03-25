@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { Button, HStack } from '@chakra-ui/react';
+import Testimonials from '@/component/sections/Testimonials';
 import FAQ from '@/component/sections/FAQ';
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <HStack w={'full'} h={'100vh'}></HStack>
+      <Testimonials />
       <FAQ />
     </>
   );
