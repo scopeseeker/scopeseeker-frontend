@@ -112,6 +112,7 @@ a {
 
 ::-webkit-scrollbar-thumb {
   background-color: rgb(37, 119, 241);
+  border: 2px solid white;
 }
 
 ::-webkit-scrollbar-track {
