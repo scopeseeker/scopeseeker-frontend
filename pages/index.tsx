@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { HStack } from '@chakra-ui/react';
 import Testimonials from '@/component/sections/Testimonials';
 import FAQ from '@/component/sections/FAQ';
+import Works from '@/component/sections/Works';
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <HStack w={'full'} h={'100vh'}></HStack>
       <Testimonials />
       <FAQ />
+      <Works />
     </>
   );
 }

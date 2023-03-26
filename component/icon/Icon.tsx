@@ -19,6 +19,9 @@ export type IconNameType =
 	| "twitter"
 	| "quotes-left"
 	| "quotes-right"
+    | "user"
+	| "case"
+	| "form"
 	;
 
 	// Dummy
