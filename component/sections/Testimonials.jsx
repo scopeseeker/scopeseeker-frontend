@@ -9,6 +9,7 @@ import {
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import React from 'react';
+import Icon from '../icon/Icon';
 
 const Testimonials = () => {
   return (
@@ -48,43 +49,45 @@ const Testimonials = () => {
               alignItems={'center'}
             >
               <Center
-                h={14}
-                w={14}
-                mt={-6}
+                border={'3px solid white'}
+                h={20}
+                w={20}
+                mt={-10}
                 borderRadius={'full'}
                 overflow={'hidden'}
               >
                 <Image src={require('../../public/p1.jpg')} alt={'ss-log'} />
               </Center>
-
-              <Text color={'brand.300'} pt={1} fontSize={'sm'}>
-                Gabriol Nelon
-              </Text>
-              <Text
-                as={'span'}
-                pb={4}
-                opacity={0.4}
-                fontWeight={600}
-                fontSize={'2xs'}
-              >
-                Consultant
-              </Text>
-              <Text
-                as={'span'}
-                color={'brand.300'}
-                pb={4}
-                fontWeight={700}
-                fontSize={'2xs'}
-                letterSpacing={2}
-              >
-                Great quality!
-              </Text>
-              <Text as={'span'} px={6}fontSize={'2xs'} letterSpacing={2} opacity={0.6}  fontWeight={'600'}>
-                I’ve got your back. These sixty review request text templates
-                are designed to get you up and running fast. Of course, you may
-                want to come up doing so mch imaportant thhisngs.
-              </Text>
+              <Flex direction={'column'} align={'center'}>
+                <Text as={'span'} fontWeight={'medium'} fontSize={'md'}>
+                  Lokesh Dhakar
+                </Text>
+                <Text
+                  as={'span'}
+                  fontWeight={600}
+                  fontSize={'2xs'}
+                  color={'secondary.100'}
+                >
+                  Full Stack Developer
+                </Text>
+                <Text
+                  as={'span'}
+                  px={6}
+                  fontSize={'sm'}
+                  textAlign={'center'}
+                   
+                  mt={2}
+                >
+                  <Center w={8} h={8} opacity={'0.7'}>
+                    <Icon name={'quotes-left'} width={'full'} />
+                  </Center>
+                  I’ve got your back. These sixty review request text templates
+                  are designed to get you up and running fast. Of course, you
+                  may want to come up doing so mch imaportant thhisngs.
+                </Text>
+              </Flex>
             </VStack>
+
             <VStack
               w={{ base: '100%', lg: 'calc(100%/3.5)' }}
               h={'2xs'}
@@ -93,47 +96,49 @@ const Testimonials = () => {
               flexShrink={0}
               borderRadius={8}
               justifyContent={'flex-start'}
+              color={'white'}
               alignItems={'center'}
             >
               <Center
-                h={14}
-                w={14}
-                mt={-6}
+                border={'3px solid white'}
+                h={20}
+                w={20}
+                mt={-10}
                 borderRadius={'full'}
                 overflow={'hidden'}
               >
                 <Image src={require('../../public/p1.jpg')} alt={'ss-log'} />
               </Center>
-
-              <Text color={'brand.400'} pt={1} fontSize={'sm'}>
-                Gabriol Nelon
-              </Text>
-              <Text
-                as={'span'}
-                pb={4}
-                opacity={0.4}
-                fontWeight={600}
-                fontSize={'2xs'}
-                color={'brand.400'}
-              >
-                Consultant
-              </Text>
-              <Text
-                as={'span'}
-                color={'brand.500'}
-                pb={4}
-                fontWeight={700}
-                fontSize={'2xs'}
-                letterSpacing={2}
-              >
-                Great quality!
-              </Text>
-              <Text as={'span'} color={'brand.400'} px={6}  fontSize={'2xs'} letterSpacing={2} opacity={0.6}  fontWeight={'600'}>
-                I’ve got your back. These sixty review request text templates
-                are designed to get you up and running fast. Of course, you may
-                want to come up doing so mch imaportant thhisngs.
-              </Text>
+              <Flex direction={'column'} align={'center'}>
+                <Text as={'span'} fontWeight={'medium'} fontSize={'md'}>
+                  Lokesh Dhakar
+                </Text>
+                <Text
+                  as={'span'}
+                  fontWeight={600}
+                  fontSize={'2xs'}
+                  color={'secondary.200'}
+                >
+                  Full Stack Developer
+                </Text>
+                <Text
+                  as={'span'}
+                  px={6}
+                  fontSize={'sm'}
+                  textAlign={'center'}
+                  
+                  mt={2}
+                >
+                  <Center w={8} h={8} opacity={'0.7'}>
+                    <Icon name={'quotes-left'} width={'full'} />
+                  </Center>
+                  I’ve got your back. These sixty review request text templates
+                  are designed to get you up and running fast. Of course, you
+                  may want to come up doing so mch imaportant thhisngs.
+                </Text>
+              </Flex>
             </VStack>
+
             <VStack
               w={{ base: '100%', lg: 'calc(100%/3.5)' }}
               h={'2xs'}
@@ -145,46 +150,47 @@ const Testimonials = () => {
               alignItems={'center'}
             >
               <Center
-                h={14}
-                w={14}
-                mt={-6}
+                border={'3px solid white'}
+                h={20}
+                w={20}
+                mt={-10}
                 borderRadius={'full'}
                 overflow={'hidden'}
               >
                 <Image src={require('../../public/p1.jpg')} alt={'ss-log'} />
               </Center>
-
-              <Text color={'brand.300'} pt={1} fontSize={'sm'}>
-                Gabriol Nelon
-              </Text>
-              <Text
-                as={'span'}
-                pb={4}
-                opacity={0.4}
-                fontWeight={600}
-                fontSize={'2xs'}
-              >
-                Consultant
-              </Text>
-              <Text
-                as={'span'}
-                color={'brand.300'}
-                pb={4}
-                fontWeight={700}
-                fontSize={'2xs'}
-                letterSpacing={2}
-              >
-                Great quality!
-              </Text>
-              <Text as={'span'} px={6} fontSize={'2xs'} letterSpacing={2} opacity={0.6}  fontWeight={'600'}>
-                I’ve got your back. These sixty review request text templates
-                are designed to get you up and running fast. Of course, you may
-                want to come up doing so mch imaportant thhisngs.
-              </Text>
+              <Flex direction={'column'} align={'center'}>
+                <Text as={'span'} fontWeight={'medium'} fontSize={'md'}>
+                  Lokesh Dhakar
+                </Text>
+                <Text
+                  as={'span'}
+                  fontWeight={600}
+                  fontSize={'2xs'}
+                  color={'secondary.100'}
+                >
+                  Full Stack Developer
+                </Text>
+                <Text
+                  as={'span'}
+                  px={6}
+                  fontSize={'sm'}
+                  textAlign={'center'}
+                   
+                  mt={2}
+                >
+                  <Center w={8} h={8} opacity={'0.7'}>
+                    <Icon name={'quotes-left'} width={'full'} />
+                  </Center>
+                  I’ve got your back. These sixty review request text templates
+                  are designed to get you up and running fast. Of course, you
+                  may want to come up doing so mch imaportant thhisngs.
+                </Text>
+              </Flex>
             </VStack>
           </Flex>
 
-          <Flex
+          {/* <Flex
             w={'full'}
             justifyContent={'center'}
             flexDirection={{ base: 'column', md: 'row' }}
@@ -234,7 +240,7 @@ const Testimonials = () => {
               >
                 Great quality!
               </Text>
-              <Text as={'span'} px={6}  fontSize={'2xs'} letterSpacing={2} opacity={0.6}  fontWeight={'600'}>
+              <Text as={'span'} px={6}  fontSize={'2xs'} letterSpacing={2}    fontWeight={'600'}>
                 I’ve got your back. These sixty review request text templates
                 are designed to get you up and running fast. Of course, you may
                 want to come up doing so mch imaportant thhisngs.
@@ -282,7 +288,7 @@ const Testimonials = () => {
               >
                 Great quality!
               </Text>
-              <Text as={'span'} px={6} fontSize={'2xs'} letterSpacing={2} opacity={0.6}  fontWeight={'600'}>
+              <Text as={'span'} px={6} fontSize={'2xs'} letterSpacing={2}    fontWeight={'600'}>
                 I’ve got your back. These sixty review request text templates
                 are designed to get you up and running fast. Of course, you may
                 want to come up doing so mch imaportant thhisngs.
@@ -330,13 +336,13 @@ const Testimonials = () => {
               >
                 Great quality!
               </Text>
-              <Text as={'span'} px={6} fontSize={'2xs'} letterSpacing={2} opacity={0.6}  fontWeight={'600'}>
+              <Text as={'span'} px={6} fontSize={'2xs'} letterSpacing={2}    fontWeight={'600'}>
                 I’ve got your back. These sixty review request text templates
                 are designed to get you up and running fast. Of course, you may
                 want to come up doing so mch imaportant thhisngs.
               </Text>
             </VStack>
-          </Flex>
+          </Flex> */}
         </Flex>
       </VStack>
     </Box>

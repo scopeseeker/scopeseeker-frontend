@@ -38,7 +38,11 @@ const theme = extendTheme({
             100: "#406afe",
             200: "#0133e4",
             300: "#0128b2",
-            400: "#E6E6FA"
+            400: "#E6E6FA",
+        },
+        secondary: {
+            100: "grey",
+            200: "lightgrey"
         }
     },
     config,
