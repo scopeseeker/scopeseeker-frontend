@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { Button, HStack } from '@chakra-ui/react';
+import { HStack } from '@chakra-ui/react';
 import Testimonials from '@/component/sections/Testimonials';
 import FAQ from '@/component/sections/FAQ';
 

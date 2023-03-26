@@ -7,6 +7,7 @@ import {
   Text,
   VStack,
 } from '@chakra-ui/react';
+import Image from 'next/image';
 import React from 'react';
 
 const Testimonials = () => {
@@ -33,6 +34,7 @@ const Testimonials = () => {
             flexDirection={{ base: 'column', lg: 'row' }}
             gap={14}
             flexShrink={0}
+            py={10}
             px={{ sm: 5, lg: 0 }}
           >
             <VStack
@@ -42,7 +44,47 @@ const Testimonials = () => {
               boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
               flexShrink={0}
               borderRadius={8}
-            ></VStack>
+              justifyContent={'flex-start'}
+              alignItems={'center'}
+            >
+              <Center
+                h={14}
+                w={14}
+                mt={-6}
+                borderRadius={'full'}
+                overflow={'hidden'}
+              >
+                <Image src={require('../../public/p1.jpg')} alt={'ss-log'} />
+              </Center>
+
+              <Text color={'brand.300'} pt={1} fontSize={'sm'}>
+                Gabriol Nelon
+              </Text>
+              <Text
+                as={'span'}
+                pb={4}
+                opacity={0.4}
+                fontWeight={600}
+                fontSize={'2xs'}
+              >
+                Consultant
+              </Text>
+              <Text
+                as={'span'}
+                color={'brand.300'}
+                pb={4}
+                fontWeight={700}
+                fontSize={'2xs'}
+                letterSpacing={2}
+              >
+                Great quality!
+              </Text>
+              <Text as={'span'} px={6}fontSize={'2xs'} letterSpacing={2} opacity={0.6}  fontWeight={'600'}>
+                I’ve got your back. These sixty review request text templates
+                are designed to get you up and running fast. Of course, you may
+                want to come up doing so mch imaportant thhisngs.
+              </Text>
+            </VStack>
             <VStack
               w={{ base: '100%', lg: 'calc(100%/3.5)' }}
               h={'2xs'}
@@ -50,7 +92,48 @@ const Testimonials = () => {
               boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
               flexShrink={0}
               borderRadius={8}
-            ></VStack>
+              justifyContent={'flex-start'}
+              alignItems={'center'}
+            >
+              <Center
+                h={14}
+                w={14}
+                mt={-6}
+                borderRadius={'full'}
+                overflow={'hidden'}
+              >
+                <Image src={require('../../public/p1.jpg')} alt={'ss-log'} />
+              </Center>
+
+              <Text color={'brand.400'} pt={1} fontSize={'sm'}>
+                Gabriol Nelon
+              </Text>
+              <Text
+                as={'span'}
+                pb={4}
+                opacity={0.4}
+                fontWeight={600}
+                fontSize={'2xs'}
+                color={'brand.400'}
+              >
+                Consultant
+              </Text>
+              <Text
+                as={'span'}
+                color={'brand.500'}
+                pb={4}
+                fontWeight={700}
+                fontSize={'2xs'}
+                letterSpacing={2}
+              >
+                Great quality!
+              </Text>
+              <Text as={'span'} color={'brand.400'} px={6}  fontSize={'2xs'} letterSpacing={2} opacity={0.6}  fontWeight={'600'}>
+                I’ve got your back. These sixty review request text templates
+                are designed to get you up and running fast. Of course, you may
+                want to come up doing so mch imaportant thhisngs.
+              </Text>
+            </VStack>
             <VStack
               w={{ base: '100%', lg: 'calc(100%/3.5)' }}
               h={'2xs'}
@@ -58,7 +141,47 @@ const Testimonials = () => {
               boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
               flexShrink={0}
               borderRadius={8}
-            ></VStack>
+              justifyContent={'flex-start'}
+              alignItems={'center'}
+            >
+              <Center
+                h={14}
+                w={14}
+                mt={-6}
+                borderRadius={'full'}
+                overflow={'hidden'}
+              >
+                <Image src={require('../../public/p1.jpg')} alt={'ss-log'} />
+              </Center>
+
+              <Text color={'brand.300'} pt={1} fontSize={'sm'}>
+                Gabriol Nelon
+              </Text>
+              <Text
+                as={'span'}
+                pb={4}
+                opacity={0.4}
+                fontWeight={600}
+                fontSize={'2xs'}
+              >
+                Consultant
+              </Text>
+              <Text
+                as={'span'}
+                color={'brand.300'}
+                pb={4}
+                fontWeight={700}
+                fontSize={'2xs'}
+                letterSpacing={2}
+              >
+                Great quality!
+              </Text>
+              <Text as={'span'} px={6} fontSize={'2xs'} letterSpacing={2} opacity={0.6}  fontWeight={'600'}>
+                I’ve got your back. These sixty review request text templates
+                are designed to get you up and running fast. Of course, you may
+                want to come up doing so mch imaportant thhisngs.
+              </Text>
+            </VStack>
           </Flex>
 
           <Flex
@@ -67,16 +190,56 @@ const Testimonials = () => {
             flexDirection={{ base: 'column', md: 'row' }}
             gap={14}
             flexShrink={0}
-            px={5}
+            py={10}
           >
             <VStack
               w={{ base: '100%', md: 'calc(100%/3.5)' }}
               h={'2xs'}
-              bg={'white'}
+              bg={'brand.500'}
               boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
               flexShrink={0}
               borderRadius={8}
-            ></VStack>
+              justifyContent={'flex-start'}
+              alignItems={'center'}
+            >
+              <Center
+                h={14}
+                w={14}
+                mt={-6}
+                borderRadius={'full'}
+                overflow={'hidden'}
+              >
+                <Image src={require('../../public/p1.jpg')} alt={'ss-log'} />
+              </Center>
+
+              <Text color={'brand.300'} pt={1} fontSize={'sm'}>
+                Gabriol Nelon
+              </Text>
+              <Text
+                as={'span'}
+                pb={4}
+                opacity={0.4}
+                fontWeight={600}
+                fontSize={'2xs'}
+              >
+                Consultant
+              </Text>
+              <Text
+                as={'span'}
+                color={'brand.300'}
+                pb={4}
+                fontWeight={700}
+                fontSize={'2xs'}
+                letterSpacing={2}
+              >
+                Great quality!
+              </Text>
+              <Text as={'span'} px={6}  fontSize={'2xs'} letterSpacing={2} opacity={0.6}  fontWeight={'600'}>
+                I’ve got your back. These sixty review request text templates
+                are designed to get you up and running fast. Of course, you may
+                want to come up doing so mch imaportant thhisngs.
+              </Text>
+            </VStack>
             <VStack
               w={{ base: '100%', md: 'calc(100%/3.5)' }}
               h={'2xs'}
@@ -84,7 +247,47 @@ const Testimonials = () => {
               boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
               flexShrink={0}
               borderRadius={8}
-            ></VStack>
+              justifyContent={'flex-start'}
+              alignItems={'center'}
+            >
+              <Center
+                h={14}
+                w={14}
+                mt={-6}
+                borderRadius={'full'}
+                overflow={'hidden'}
+              >
+                <Image src={require('../../public/p1.jpg')} alt={'ss-log'} />
+              </Center>
+
+              <Text color={'brand.300'} pt={1} fontSize={'sm'}>
+                Gabriol Nelon
+              </Text>
+              <Text
+                as={'span'}
+                pb={4}
+                opacity={0.4}
+                fontWeight={600}
+                fontSize={'2xs'}
+              >
+                Consultant
+              </Text>
+              <Text
+                as={'span'}
+                color={'brand.300'}
+                pb={4}
+                fontWeight={700}
+                fontSize={'2xs'}
+                letterSpacing={2}
+              >
+                Great quality!
+              </Text>
+              <Text as={'span'} px={6} fontSize={'2xs'} letterSpacing={2} opacity={0.6}  fontWeight={'600'}>
+                I’ve got your back. These sixty review request text templates
+                are designed to get you up and running fast. Of course, you may
+                want to come up doing so mch imaportant thhisngs.
+              </Text>
+            </VStack>
             <VStack
               w={{ base: '100%', md: 'calc(100%/3.5)' }}
               h={'2xs'}
@@ -92,7 +295,47 @@ const Testimonials = () => {
               boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
               flexShrink={0}
               borderRadius={8}
-            ></VStack>
+              justifyContent={'flex-start'}
+              alignItems={'center'}
+            >
+              <Center
+                h={14}
+                w={14}
+                mt={-6}
+                borderRadius={'full'}
+                overflow={'hidden'}
+              >
+                <Image src={require('../../public/p1.jpg')} alt={'ss-log'} />
+              </Center>
+
+              <Text color={'brand.300'} pt={1} fontSize={'sm'}>
+                Gabriol Nelon
+              </Text>
+              <Text
+                as={'span'}
+                pb={4}
+                opacity={0.4}
+                fontWeight={600}
+                fontSize={'2xs'}
+              >
+                Consultant
+              </Text>
+              <Text
+                as={'span'}
+                color={'brand.300'}
+                pb={4}
+                fontWeight={700}
+                fontSize={'2xs'}
+                letterSpacing={2}
+              >
+                Great quality!
+              </Text>
+              <Text as={'span'} px={6} fontSize={'2xs'} letterSpacing={2} opacity={0.6}  fontWeight={'600'}>
+                I’ve got your back. These sixty review request text templates
+                are designed to get you up and running fast. Of course, you may
+                want to come up doing so mch imaportant thhisngs.
+              </Text>
+            </VStack>
           </Flex>
         </Flex>
       </VStack>
