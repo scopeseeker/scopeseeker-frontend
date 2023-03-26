@@ -16,7 +16,7 @@ import Icon from '../icon/Icon';
 const Footer = () => {
   return (
     <VStack
-      bg={'brand.300'}
+      bg={'brand.100'}
       w={'full'}
       px={{ base: 5, xl: 12 }}
       pt={12}
