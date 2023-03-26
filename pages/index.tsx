@@ -3,6 +3,7 @@ import { HStack } from '@chakra-ui/react';
 import Testimonials from '@/component/sections/Testimonials';
 import FAQ from '@/component/sections/FAQ';
 import Works from '@/component/sections/Works';
+import Categories from '@/component/sections/Categories';
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <HStack w={'full'} h={'100vh'}></HStack>
+      <Categories/>
       <Testimonials />
       <FAQ />
       <Works />
