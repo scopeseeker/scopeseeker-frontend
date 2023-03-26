@@ -9,16 +9,17 @@ import {
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import React from 'react';
+import MyHeading from '../heading/MyHeading';
 import Icon from '../icon/Icon';
 
 const Testimonials = () => {
   return (
     <Box>
       <VStack bg={'brand.400'} py={28} gap={16} px={5}>
-        <VStack>
-          <Heading textAlign={'center'}>Join Our Thriving Community</Heading>
-          <Text>See How Our Job Website Has Changed Lives </Text>
-        </VStack>
+        <MyHeading
+          title={'Join Our Thriving Community'}
+          subTitle={'See How Our Job Website Has Changed Lives'}
+        />
         <Flex
           py={4}
           overflow={'auto'}
@@ -75,7 +76,6 @@ const Testimonials = () => {
                   px={6}
                   fontSize={'sm'}
                   textAlign={'center'}
-                   
                   mt={2}
                 >
                   <Center w={8} h={8} opacity={'0.7'}>
@@ -126,7 +126,6 @@ const Testimonials = () => {
                   px={6}
                   fontSize={'sm'}
                   textAlign={'center'}
-                  
                   mt={2}
                 >
                   <Center w={8} h={8} opacity={'0.7'}>
@@ -176,7 +175,6 @@ const Testimonials = () => {
                   px={6}
                   fontSize={'sm'}
                   textAlign={'center'}
-                   
                   mt={2}
                 >
                   <Center w={8} h={8} opacity={'0.7'}>
