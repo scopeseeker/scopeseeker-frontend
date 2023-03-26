@@ -31,7 +31,7 @@ const Works = () => {
       >
         <VStack
           w={{ base: '100%', lg: 'calc(100%/3.5)' }}
-          h={'3xs'}
+          h={'min'}
           bg={'secondary.300'}
           boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
           flexShrink={0}
@@ -40,12 +40,20 @@ const Works = () => {
           alignItems={'flex-start'}
         >
           <Flex direction={'column'}>
-            <Center p={2} w={14} h={14} bg={'brand.100'} ml={6} mt={6} borderRadius={8}>
-              <Icon name={'user'} width={'100%'} />
+            <Center
+              p={2}
+              w={12}
+              h={12}
+              bg={'#01DAFE'}
+              ml={6}
+              mt={6}
+              borderRadius={8}
+            >
+              <Icon name={'user'} width={'100%'} color={'white'} />
             </Center>
 
-            <Flex direction={'column'} m={6} gap={4}>
-              <Text as={'span'} fontWeight={'semibold'} fontSize={'md'} >
+            <Flex direction={'column'} m={6} gap={2}>
+              <Text as={'span'} fontWeight={'semibold'} fontSize={'md'}>
                 Register An Account
               </Text>
 
@@ -57,7 +65,7 @@ const Works = () => {
         </VStack>
         <VStack
           w={{ base: '100%', lg: 'calc(100%/3.5)' }}
-          h={'3xs'}
+          h={'min'}
           bg={'white'}
           boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
           flexShrink={0}
@@ -66,12 +74,20 @@ const Works = () => {
           alignItems={'flex-start'}
         >
           <Flex direction={'column'}>
-            <Center p={2} w={14} h={14} bg={'brand.100'} ml={6} mt={6} borderRadius={8}>
-              <Icon name={'case'} width={'100%'} />
+            <Center
+              p={2}
+              w={12}
+              h={12}
+              bg={'#ff4e0f'}
+              ml={6}
+              mt={6}
+              borderRadius={8}
+            >
+              <Icon name={'case'} width={'100%'} color={'white'} />
             </Center>
 
-            <Flex direction={'column'} m={6} gap={4}>
-              <Text as={'span'} fontWeight={'semibold'} fontSize={'md'} >
+            <Flex direction={'column'} m={6} gap={2}>
+              <Text as={'span'} fontWeight={'semibold'} fontSize={'md'}>
                 Search your job
               </Text>
 
@@ -83,7 +99,7 @@ const Works = () => {
         </VStack>
         <VStack
           w={{ base: '100%', lg: 'calc(100%/3.5)' }}
-          h={'3xs'}
+          h={'min'}
           bg={'secondary.300'}
           boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
           flexShrink={0}
@@ -92,12 +108,20 @@ const Works = () => {
           alignItems={'flex-start'}
         >
           <Flex direction={'column'}>
-            <Center p={2} w={14} h={14} bg={'brand.100'} ml={6} mt={6} borderRadius={8}>
-              <Icon name={'form'} width={'100%'} />
+            <Center
+              p={2}
+              w={12}
+              h={12}
+              bg={'#795CF1'}
+              ml={6}
+              mt={6}
+              borderRadius={8}
+            >
+              <Icon name={'form'} width={'100%'} color={'white'} />
             </Center>
 
-            <Flex direction={'column'} m={6} gap={4}>
-              <Text as={'span'} fontWeight={'semibold'} fontSize={'md'} >
+            <Flex direction={'column'} m={6} gap={2}>
+              <Text as={'span'} fontWeight={'semibold'} fontSize={'md'}>
                 Apply for job
               </Text>
 
@@ -107,7 +131,6 @@ const Works = () => {
             </Flex>
           </Flex>
         </VStack>
-        
       </Flex>
     </Box>
   );
