@@ -8,6 +8,7 @@ interface MyButtonProps {
   color: string;
   bg: string;
   size: string;
+  variant: string;
 }
 
 const MyButton: React.FC<MyButtonProps> = ({
@@ -16,6 +17,7 @@ const MyButton: React.FC<MyButtonProps> = ({
   fontSize = 'xs',
   color = 'white',
   bg = 'brand.100',
+  variant = 'solid',
   size = 'sm',
 }: MyButtonProps) => {
   return (
@@ -23,6 +25,7 @@ const MyButton: React.FC<MyButtonProps> = ({
       size={size}
       color={color}
       bg={bg}
+      variant = {variant}
       fontWeight={'medium'}
       fontSize={fontSize}
       _hover={{ backgroundColor: 'brand.200' }}

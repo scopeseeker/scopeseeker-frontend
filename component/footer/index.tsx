@@ -1,45 +1,197 @@
 import {
-  Box,
+  Button,
   Center,
-  Divider,
   Flex,
-  Grid,
-  GridItem,
   Heading,
   HStack,
-  ListItem,
+  IconButton,
   Text,
-  UnorderedList,
   VStack,
 } from '@chakra-ui/react';
 import Image from 'next/image';
+import Link from 'next/link';
 import Icon from '../icon/Icon';
 
 const Footer = () => {
   return (
-    <VStack w={'full'} bg={'green'}>
-      <HStack w={'full'} h={'xs'}>
-        {/* Fotter Content Will Show Here */}
-      </HStack>
-      <Box maxW={'100vw'} mt={'10'} bg={'green'} position={'relative'} p={'10'}>
-        <VStack
-        justifyContent={'center'}
-          w={'180vw'}
-          bg={'brand.100'}
-          h={'120px'}
-          position={'absolute'}
-          left={'50%'}
-          transform={'translate(-50%, -50%)'}
-          borderTopRadius={'150%'}
+    <VStack
+      bg={'brand.300'}
+      w={'full'}
+      px={{ base: 5, xl: 12 }}
+      pt={12}
+      gap={10}
+      justifyContent={'space-between'}
+      color={'white'}
+    >
+      <Flex
+        w={'full'}
+        gap={{ base: 5, md: '2', xl: 10 }}
+        flexDirection={{ base: 'column', md: 'row' }}
+      >
+        {/* Section1: Company */}
+        <Flex
+          flexDir={'column'}
+          gap={3}
+          w={{ base: '100%', md: 'calc(100%/4)' }}
         >
-            <Text as={'span'} fontSize={'xs'} color={'white'}>Copyright © 2023 Scope Seeker Pvt. Ltd. - All rights reserved.</Text>
-            <Text as={'span'} fontSize={'xs'} color={'white'}>Image Credit: Designed By Freepik</Text>
-          
-        </VStack>
-      </Box>
-    </VStack>
-// Dummy
+          <HStack cursor={'pointer'}>
+            <Center w={12} h={12}>
+              <Image
+                src={require('../../public/scopeseeker-logo.png')}
+                alt={'ss-log'}
+              />
+            </Center>
 
+            <Flex direction={'column'} gap={1}>
+              <Text
+                as={'span'}
+                lineHeight={'1'}
+                fontSize={'lg'}
+                fontWeight={'medium'}
+              >
+                Scope Seeker
+              </Text>
+              <Text as={'span'} fontSize={'xs'}>
+                Seek the scope of your potential
+              </Text>
+            </Flex>
+          </HStack>
+
+          <Text as={'span'} fontSize={'sm'}>
+            Scope Seeker is a cutting-edge web application designed to help job
+            seekers find their dream job with ease.
+          </Text>
+          <Flex direction={'column'} mt={5} gap={2}>
+            <FooterHeading title={'Stay Connected'} />
+            <Text>Email: scopeseekerhelp@gmail.com</Text>
+            <Text>Phone: +91-9617143257</Text>
+          </Flex>
+        </Flex>
+        <Flex
+          w={{ base: '100%', md: 'calc(100%/2)' }}
+          flexDirection={{ base: 'column', sm: 'row' }}
+          alignItems={{ base: 'flex-start' }}
+          gap={5}
+        >
+          {/* Links Section */}
+          <Flex flexDir={'column'} gap={3} w={'50%'} p={{ base: 0, md: 4 }}>
+            <FooterHeading title={'Links'} />
+            <FooterLink link={'#'} title={'Find Jobs'} />
+            <FooterLink link={'#'} title={'Find Companies'} />
+            <FooterLink link={'#'} title={'Find Categories'} />
+            <FooterLink link={'#'} title={'Helpful Resource'} />
+            <FooterLink link={'#'} title={'FAQs'} />
+          </Flex>
+
+          {/* Company Section */}
+          <Flex flexDir={'column'} gap={3} w={'50%'} p={{ base: 0, md: 4 }}>
+            <FooterHeading title={'Company'} />
+            <FooterLink link={'#'} title={'About Us'} />
+            <FooterLink link={'#'} title={'Contact Us'} />
+            <FooterLink link={'#'} title={'Terms & Conditions'} />
+            <FooterLink link={'#'} title={'Privacy Policy'} />
+            <FooterLink link={'#'} title={'Report an Issue'} />
+          </Flex>
+        </Flex>
+
+        {/* Meet Us section */}
+        <Flex
+          flexDir={'column'}
+          gap={3}
+          w={{ base: '100%', md: 'calc(100%/4)' }}
+          p={{ base: 0, md: 4 }}
+        >
+          <FooterHeading title={'Meet Us'} />
+          <Text as={'span'}>
+            Bhanpur, Ayodhya Bypass, Bhopal Madhya Pradesh, India
+          </Text>
+          <Text as={'span'}>
+            We
+            <Text as={'span'} fontSize={'3xl'}>
+              ❤️
+            </Text>
+            new friends
+          </Text>
+          <HStack py={2}>
+            <IconButton
+              p={2}
+              aria-label="social-meida"
+              color={'brand.100'}
+              icon={<Icon name={'instagram'} />}
+            />
+            <IconButton
+              p={2}
+              aria-label="social-meida"
+              color={'brand.100'}
+              icon={<Icon name={'linkedin'} />}
+            />
+            <IconButton
+              p={2}
+              aria-label="social-meida"
+              color={'brand.100'}
+              icon={<Icon name={'twitter'} />}
+            />
+
+            <IconButton
+              p={2}
+              aria-label="social-meida"
+              color={'brand.100'}
+              icon={<Icon name={'whatsapp'} />}
+            />
+          </HStack>
+        </Flex>
+      </Flex>
+
+      {/* Bottom Copyright Sections */}
+      <Flex
+        py={5}
+        borderTop={'1px solid lightgrey'}
+        w={'full'}
+        justifyContent={'space-between'}
+        alignItems={'center'}
+        color={'white'}
+        flexDirection={{ base: 'column', md: 'row' }}
+      >
+        <Text as={'span'} fontSize={'xs'}>
+          &copy; 2023 Scope Seeker. All Right Reserved
+        </Text>
+        <Text as={'span'} fontSize={'xs'}>
+          Images Credit: Design by Freepik
+        </Text>
+      </Flex>
+    </VStack>
+  );
+};
+
+interface IFooterHeading {
+  title: string;
+}
+
+const FooterHeading: React.FC<IFooterHeading> = ({ title }: IFooterHeading) => {
+  return (
+    <Heading as={'span'} fontSize={'xl'}>
+      {title}
+    </Heading>
+  );
+};
+
+interface IFooterLink {
+  title: string;
+  link: string;
+}
+
+const FooterLink: React.FC<IFooterLink> = ({ title, link }: IFooterLink) => {
+  return (
+    <Link href={link}>
+      <Button
+        color={'white'}
+        _hover={{ textDecoration: 'none', color: 'secondary.200' }}
+        fontWeight={'normal'}
+        variant={'link'}
+      >
+        {title}
+      </Button>
+    </Link>
   );
 };
 
