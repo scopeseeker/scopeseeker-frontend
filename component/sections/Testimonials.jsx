@@ -30,12 +30,13 @@ const Testimonials = () => {
           <Flex
             w={'full'}
             justifyContent={'center'}
-            flexDirection={{ base: 'column', md: 'row' }}
+            flexDirection={{ base: 'column', lg: 'row' }}
             gap={14}
             flexShrink={0}
+            px={{ sm: 5, lg: 0 }}
           >
             <VStack
-              w={{ base: '100%', md: 'calc(100%/3.5)' }}
+              w={{ base: '100%', lg: 'calc(100%/3.5)' }}
               h={'2xs'}
               bg={'white'}
               boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
@@ -43,7 +44,7 @@ const Testimonials = () => {
               borderRadius={8}
             ></VStack>
             <VStack
-              w={{ base: '100%', md: 'calc(100%/3.5)' }}
+              w={{ base: '100%', lg: 'calc(100%/3.5)' }}
               h={'2xs'}
               bg={'brand.100'}
               boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
@@ -51,7 +52,7 @@ const Testimonials = () => {
               borderRadius={8}
             ></VStack>
             <VStack
-              w={{ base: '100%', md: 'calc(100%/3.5)' }}
+              w={{ base: '100%', lg: 'calc(100%/3.5)' }}
               h={'2xs'}
               bg={'white'}
               boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
