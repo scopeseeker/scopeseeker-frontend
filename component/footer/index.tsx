@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   Center,
   Flex,
@@ -72,26 +73,30 @@ const Footer = () => {
           flexDirection={{ base: 'column', sm: 'row' }}
           alignItems={{ base: 'flex-start' }}
           gap={5}
+          justifyContent={'center'}
         >
           {/* Links Section */}
-          <Flex flexDir={'column'} gap={3} w={'50%'} p={{ base: 0, md: 4 }}>
-            <FooterHeading title={'Links'} />
-            <FooterLink link={'#'} title={'Find Jobs'} />
-            <FooterLink link={'#'} title={'Find Companies'} />
-            <FooterLink link={'#'} title={'Find Categories'} />
-            <FooterLink link={'#'} title={'Helpful Resource'} />
-            <FooterLink link={'#'} title={'FAQs'} />
-          </Flex>
-
+          <Center w={'50%'}>
+            <Flex flexDir={'column'} gap={3} p={{ base: 0, md: 4 }}>
+              <FooterHeading title={'Links'} />
+              <FooterLink link={'#'} title={'Find Jobs'} />
+              <FooterLink link={'#'} title={'Find Companies'} />
+              <FooterLink link={'#'} title={'Find Categories'} />
+              <FooterLink link={'#'} title={'Helpful Resource'} />
+              <FooterLink link={'#'} title={'FAQs'} />
+            </Flex>
+          </Center>
           {/* Company Section */}
-          <Flex flexDir={'column'} gap={3} w={'50%'} p={{ base: 0, md: 4 }}>
-            <FooterHeading title={'Company'} />
-            <FooterLink link={'#'} title={'About Us'} />
-            <FooterLink link={'#'} title={'Contact Us'} />
-            <FooterLink link={'#'} title={'Terms & Conditions'} />
-            <FooterLink link={'#'} title={'Privacy Policy'} />
-            <FooterLink link={'#'} title={'Report an Issue'} />
-          </Flex>
+          <Center w={'50%'}>
+            <Flex flexDir={'column'} gap={3} p={{ base: 0, md: 4 }}>
+              <FooterHeading title={'Company'} />
+              <FooterLink link={'#'} title={'About Us'} />
+              <FooterLink link={'#'} title={'Contact Us'} />
+              <FooterLink link={'#'} title={'Terms & Conditions'} />
+              <FooterLink link={'#'} title={'Privacy Policy'} />
+              <FooterLink link={'#'} title={'Report an Issue'} />
+            </Flex>
+          </Center>
         </Flex>
 
         {/* Meet Us section */}
