@@ -10,16 +10,15 @@ import {
   Text,
   VStack,
 } from '@chakra-ui/react';
+import MyHeading from '../heading/MyHeading';
 
 const FAQ = () => {
   return (
     <VStack w={'full'} my={32} gap={10} px={5}>
-      <VStack>
-        <Heading textAlign={'center'}>Frequently Asked Questions</Heading>
-        <Text as={'span'}>Have any question ?</Text>
-        <Text>Input field Here</Text>
-      </VStack>
-
+      <MyHeading
+        title={'Frequently Asked Questions'}
+        subTitle={'Have any question ?'}
+      />
       <Accordion allowMultiple>
         <VStack gap={2}>
           <AccordionItem
@@ -31,12 +30,7 @@ const FAQ = () => {
             // borderColor={'brand.100'}
           >
             <AccordionButton _hover={{ backgroundColor: 'none' }}>
-              <Box
-                as="span"
-                fontSize={'md'}
-                flex="1"
-                textAlign="left"
-              >
+              <Box as="span" fontSize={'md'} flex="1" textAlign="left">
                 How long is this site live?
               </Box>
               <AccordionIcon />
@@ -58,12 +52,7 @@ const FAQ = () => {
             // borderColor={'brand.100'}
           >
             <AccordionButton _hover={{ backgroundColor: 'none' }}>
-              <Box
-                as="span"
-                fontSize={'md'}
-                flex="1"
-                textAlign="left"
-              >
+              <Box as="span" fontSize={'md'} flex="1" textAlign="left">
                 How long is this site live?
               </Box>
               <AccordionIcon />
@@ -85,12 +74,7 @@ const FAQ = () => {
             // borderColor={'brand.100'}
           >
             <AccordionButton _hover={{ backgroundColor: 'none' }}>
-              <Box
-                as="span"
-                fontSize={'md'}
-                flex="1"
-                textAlign="left"
-              >
+              <Box as="span" fontSize={'md'} flex="1" textAlign="left">
                 How long is this site live?
               </Box>
               <AccordionIcon />
@@ -112,12 +96,7 @@ const FAQ = () => {
             // borderColor={'brand.100'}
           >
             <AccordionButton _hover={{ backgroundColor: 'none' }}>
-              <Box
-                as="span"
-                fontSize={'md'}
-                flex="1"
-                textAlign="left"
-              >
+              <Box as="span" fontSize={'md'} flex="1" textAlign="left">
                 How long is this site live?
               </Box>
               <AccordionIcon />
@@ -139,12 +118,7 @@ const FAQ = () => {
             // borderColor={'brand.100'}
           >
             <AccordionButton _hover={{ backgroundColor: 'none' }}>
-              <Box
-                as="span"
-                fontSize={'md'}
-                flex="1"
-                textAlign="left"
-              >
+              <Box as="span" fontSize={'md'} flex="1" textAlign="left">
                 How long is this site live?
               </Box>
               <AccordionIcon />
