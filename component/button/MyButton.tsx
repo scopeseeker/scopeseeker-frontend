@@ -3,34 +3,37 @@ import React from 'react';
 
 interface MyButtonProps {
   title: string;
-  borderRadius: number;
-  fontSize: string;
-  color: string;
-  bg: string;
-  size: string;
-  variant: string;
+  borderRadius?: number;
+  fontSize?: string;
+  color?: string;
+  bg?: string;
+  size?: string;
+  variant?: string;
+  colorScheme?: string;
+  decoration?: string;
 }
 
 const MyButton: React.FC<MyButtonProps> = ({
   title,
-  borderRadius = 20,
-  fontSize = 'xs',
-  color = 'white',
-  bg = 'brand.100',
+  borderRadius,
+  fontSize,
   variant = 'solid',
   size = 'sm',
+  colorScheme = 'messenger',
+  decoration = 'none',
+  color,
+  bg,
 }: MyButtonProps) => {
   return (
     <Button
       size={size}
       color={color}
-      bg={bg}
-      variant = {variant}
-      fontWeight={'medium'}
+      variant={variant}
       fontSize={fontSize}
-      _hover={{ backgroundColor: 'brand.200' }}
-      _active={{ backgroundColor: 'brand.300' }}
+      colorScheme={colorScheme}
       borderRadius={borderRadius}
+      _hover={{ textDecoration: decoration }}
+      bg={bg}
     >
       {title}
     </Button>

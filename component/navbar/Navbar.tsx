@@ -9,6 +9,7 @@ import {
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import Link from 'next/link';
+import MyButton from '../button/MyButton';
 import Icon from '../icon/Icon';
 
 const Navbar = () => {
@@ -95,32 +96,20 @@ const Navbar = () => {
 
         {/* Right Part of Navbar */}
         <HStack gap={3}>
-          <Link href={'/login'}>
-            <Button
-              size={'sm'}
-              fontWeight={'normal'}
-              fontSize={'xs'}
-              _hover={{ color: 'brand.200', textDecoration: 'none' }}
-              borderRadius={20}
-              variant={'link'}
-            >
-              Login
-            </Button>
-          </Link>
-          <Link href={'/signup'}>
-            <Button
-              size={'sm'}
-              color={'white'}
-              bg={'brand.100'}
-              fontWeight={'normal'}
-              fontSize={'xs'}
-              _hover={{ backgroundColor: 'brand.200' }}
-              _active={{ backgroundColor: 'brand.300' }}
-              borderRadius={20}
-            >
-              Sign up
-            </Button>
-          </Link>
+          <HStack gap={1}>
+            <Link href={'/login'}>
+              <MyButton
+                title="Login"
+                variant="outline"
+                fontSize="xs"
+                borderRadius={20}
+              />
+            </Link>
+            <Link href={'/signup'}>
+              <MyButton title="Sign Up" fontSize="xs" borderRadius={20} />
+            </Link>
+          </HStack>
+
           <Center
             onClick={toggleColorMode}
             bg={'orange.100'}
