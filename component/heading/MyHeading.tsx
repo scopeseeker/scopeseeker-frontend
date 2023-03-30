@@ -1,7 +1,12 @@
 import { Heading, Text, VStack } from '@chakra-ui/react';
 import React from 'react';
 
-const MyHeading = (props) => {
+interface MyHeadingProps {
+  title: string;
+  subTitle?: string;
+}
+
+const MyHeading: React.FC<MyHeadingProps> = (props) => {
   const { title, subTitle } = props;
   return (
     <VStack>
