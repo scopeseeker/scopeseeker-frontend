@@ -4,7 +4,7 @@ import Icon from '../icon/Icon';
 
 const Categories = () => {
   return (
-    <VStack w={'full'} my={20} py={10} gap={10} bg={'brand.400'}>
+    <VStack w={'full'} py={10} gap={10} bg={'brand.400'}>
       <MyHeading
         title={'Popular Job Categories'}
         subTitle={'2020 jobs live - 293 added today'}

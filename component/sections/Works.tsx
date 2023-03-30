@@ -13,7 +13,7 @@ import MyHeading from '../heading/MyHeading';
 
 const Works = () => {
   return (
-    <Box pb={24}>
+    <Box bg={'red'}>
       <VStack>
         <MyHeading
           title={'Easy way to get your job'}
@@ -26,7 +26,7 @@ const Works = () => {
         flexDirection={{ base: 'column', lg: 'row' }}
         gap={14}
         flexShrink={0}
-        py={10}
+        
         px={{ sm: 5, lg: 0 }}
       >
         <VStack

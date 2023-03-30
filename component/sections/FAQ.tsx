@@ -14,7 +14,7 @@ import MyHeading from '../heading/MyHeading';
 
 const FAQ = () => {
   return (
-    <VStack w={'full'} my={32} gap={10} px={5}>
+    <VStack w={'full'} gap={10} px={5}>
       <MyHeading
         title={'Frequently Asked Questions'}
         subTitle={'Have any question ?'}
