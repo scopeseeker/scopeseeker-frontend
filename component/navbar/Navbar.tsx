@@ -15,7 +15,7 @@ import Icon from '../icon/Icon';
 const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
-    <Box h={12}>
+    <Box minH={14}>
       <HStack
         justifyContent="space-between"
         top={0}
@@ -25,8 +25,8 @@ const Navbar = () => {
         px={12}
         bg={'white'}
         py={2}
-        h={12}
-        boxShadow={'0 0px 1px rgba(0, 0, 0, 0.1)'}
+        h={14}
+        boxShadow={'0 4px 10px rgba(0, 0, 0, 0.1)'}
         borderBottom={'1px solid rgba(255, 255, 255, 0.69)'}
       >
         {/* Left Part of Navbar */}

@@ -13,10 +13,10 @@ import MyHeading from '../heading/MyHeading';
 
 const Works = () => {
   return (
-    <Box>
+    <Box pb={24}>
       <VStack>
         <MyHeading
-          title={'Easy way to get your next job'}
+          title={'Easy way to get your job'}
           subTitle={'Just do simple things and get placed'}
         />
       </VStack>
@@ -30,10 +30,9 @@ const Works = () => {
         px={{ sm: 5, lg: 0 }}
       >
         <VStack
-          w={{ base: '100%', lg: 'calc(100%/3.5)' }}
-          h={'min'}
-          bg={'secondary.300'}
-          boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
+          w={{ base: '100%', lg: 'calc(100%/4)' }}
+          h={'4xs'}
+          boxShadow={'0 4px 20px rgba(0, 0, 0, 0.1)'}
           flexShrink={0}
           borderRadius={8}
           justifyContent={'flex-start'}
@@ -41,7 +40,7 @@ const Works = () => {
         >
           <Flex direction={'column'}>
             <Center
-              p={2}
+              p={3}
               w={12}
               h={12}
               bg={'#01DAFE'}
@@ -64,10 +63,9 @@ const Works = () => {
           </Flex>
         </VStack>
         <VStack
-          w={{ base: '100%', lg: 'calc(100%/3.5)' }}
+          w={{ base: '100%', lg: 'calc(100%/4)' }}
           h={'min'}
-          bg={'white'}
-          boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
+          boxShadow={'0 4px 20px rgba(0, 0, 0, 0.1)'}
           flexShrink={0}
           borderRadius={8}
           justifyContent={'flex-start'}
@@ -75,7 +73,7 @@ const Works = () => {
         >
           <Flex direction={'column'}>
             <Center
-              p={2}
+              p={3}
               w={12}
               h={12}
               bg={'#ff4e0f'}
@@ -98,10 +96,9 @@ const Works = () => {
           </Flex>
         </VStack>
         <VStack
-          w={{ base: '100%', lg: 'calc(100%/3.5)' }}
+          w={{ base: '100%', lg: 'calc(100%/4)' }}
           h={'min'}
-          bg={'secondary.300'}
-          boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
+          boxShadow={'0 4px 20px rgba(0, 0, 0, 0.1)'}
           flexShrink={0}
           borderRadius={8}
           justifyContent={'flex-start'}
@@ -109,7 +106,7 @@ const Works = () => {
         >
           <Flex direction={'column'}>
             <Center
-              p={2}
+              p={3}
               w={12}
               h={12}
               bg={'#795CF1'}
