@@ -15,22 +15,30 @@ const NewsUpdate = () => {
   return (
     <Center w={'full'}>
       <Flex
-        w={'65vw'}
+        w={{ base: '90vw', md: '90vw', lg: '70vw', xl: '65vw' }}
         bg={'white'}
-        h={28}
+        minH={28}
+        flexDirection={{ base: 'column', sm: 'row' }}
         borderRadius={16}
         overflow={'hidden'}
         boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
+        p={{ base: 8, sm: 10 }}
+        gap={5}
       >
-        <Center w={'50%'} p={10}>
-          <Heading as={'span'} fontWeight={'semibold'} fontSize={'xl'}>
-            Never Want To Miss Any
-            <Text color={'brand.100'} fontWeight={'bold'}>
+        <Center w={{ base: '100%', sm: '50%' }}>
+          <Heading
+            as={'span'}
+            textAlign={'center'}
+            fontWeight={'semibold'}
+            fontSize={{ base: 'xl', sm: 'sm', md: 'md', lg: 'md', xl: 'xl' }}
+          >
+            Never Want To Miss Any{' '}
+            <Text as={'span'} color={'brand.100'} fontWeight={'bold'}>
               Job News
             </Text>
           </Heading>
         </Center>
-        <Center w={'50%'}>
+        <Center w={{ base: '100%', sm: '50%' }}>
           <HStack
             w={72}
             h={10}
@@ -61,18 +69,6 @@ const NewsUpdate = () => {
       </Flex>
     </Center>
     // <>
-    // <Box w={'mid'} h={'mid'} bg={'red.500'}>
-    //     <HStack h={'xs'} w={'xs'}>
-    //         <Text>"Stay informed with our</Text>
-    //         <Text> job news alerts"</Text>
-
-    //         <Box>5
-    //             <Input type={'email'}/>
-    //         </Box>
-    //     </HStack>
-
-    // </Box>
-    //     </>
   );
 };
 
