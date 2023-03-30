@@ -5,7 +5,6 @@ import FAQ from '@/component/sections/FAQ';
 import Company from '@/component/sections/Company';
 import Works from '@/component/sections/Works';
 import Categories from '@/component/sections/Categories';
-import NewsUpdate from '@/component/sections/NewsUpdate';
 
 export default function Home() {
   return (
