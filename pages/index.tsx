@@ -5,6 +5,7 @@ import FAQ from '@/component/sections/FAQ';
 import Company from '@/component/sections/Company';
 import Works from '@/component/sections/Works';
 import Categories from '@/component/sections/Categories';
+import HeroSection from '@/component/sections/HeroSection';
 
 export default function Home() {
   return (
@@ -20,7 +21,7 @@ export default function Home() {
       </Head>
       <Flex flexDirection={'column'} gap={24}>
 
-      <HStack w={'full'} h={'100vh'} bg={'green'}></HStack>
+     <HeroSection/>
       <Company />
       <Works />
       <Categories />
