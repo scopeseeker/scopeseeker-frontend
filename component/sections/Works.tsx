@@ -38,8 +38,9 @@ const Works = () => {
               ml={6}
               mt={6}
               borderRadius={8}
+              color={'brand.white'} 
             >
-              <Icon name={'user'} width={'100%'} color={'white'} />
+              <Icon name={'user'} width={'100%'} />
             </Center>
 
             <Flex direction={'column'} m={6} gap={2}>
@@ -71,8 +72,9 @@ const Works = () => {
               ml={6}
               mt={6}
               borderRadius={8}
+              color={'brand.white'} 
             >
-              <Icon name={'case'} width={'100%'} color={'white'} />
+              <Icon name={'case'} width={'100%'} />
             </Center>
 
             <Flex direction={'column'} m={6} gap={2}>
@@ -104,8 +106,9 @@ const Works = () => {
               ml={6}
               mt={6}
               borderRadius={8}
+              color={'brand.white'}
             >
-              <Icon name={'form'} width={'100%'} color={'white'} />
+              <Icon name={'form'} width={'100%'}  />
             </Center>
 
             <Flex direction={'column'} m={6} gap={2}>

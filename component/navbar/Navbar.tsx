@@ -17,13 +17,14 @@ const Navbar = () => {
   return (
     <Box minH={14}>
       <HStack
+        zIndex={'overlay'}
         justifyContent="space-between"
         top={0}
         left={0}
         position={'fixed'}
         w={'full'}
         px={12}
-        bg={'white'}
+        bg={'brand.white'}
         py={2}
         h={14}
         boxShadow={'0 4px 10px rgba(0, 0, 0, 0.1)'}
@@ -58,7 +59,7 @@ const Navbar = () => {
                 iconSpacing={'1'}
                 rightIcon={<Icon name={'arrow-down'} width={'14px'} />}
                 variant="link"
-                _hover={{ textDecoration: 'none', color: 'brand.100' }}
+                _hover={{ textDecoration: 'none', color: 'brand.primary' }}
                 fontSize={'xs'}
                 fontWeight={'normal'}
               >
@@ -71,7 +72,7 @@ const Navbar = () => {
                 iconSpacing={'1'}
                 rightIcon={<Icon name={'arrow-down'} width={'14px'} />}
                 variant="link"
-                _hover={{ textDecoration: 'none', color: 'brand.100' }}
+                _hover={{ textDecoration: 'none', color: 'brand.primary' }}
                 fontSize={'xs'}
                 fontWeight={'normal'}
               >
@@ -84,7 +85,7 @@ const Navbar = () => {
                 iconSpacing={'1'}
                 rightIcon={<Icon name={'arrow-down'} width={'14px'} />}
                 variant="link"
-                _hover={{ textDecoration: 'none', color: 'brand.100' }}
+                _hover={{ textDecoration: 'none', color: 'brand.primary' }}
                 fontSize={'xs'}
                 fontWeight={'normal'}
               >

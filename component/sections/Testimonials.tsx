@@ -1,21 +1,12 @@
-import {
-  Box,
-  Center,
-  Flex,
-  Heading,
-  HStack,
-  Text,
-  VStack,
-} from '@chakra-ui/react';
+import { Box, Center, Flex, Text, VStack } from '@chakra-ui/react';
 import Image from 'next/image';
-import React from 'react';
 import MyHeading from '../heading/MyHeading';
 import Icon from '../icon/Icon';
 
 const Testimonials = () => {
   return (
     <Box>
-      <VStack bg={'brand.400'} py={28} gap={16} px={5}>
+      <VStack bg={'brand.aliceblue'} py={28} gap={16} px={5}>
         <MyHeading
           title={'Join Our Thriving Community'}
           subTitle={'See How Our Job Website Has Changed Lives'}
@@ -42,7 +33,7 @@ const Testimonials = () => {
             <VStack
               w={{ base: '100%', lg: 'calc(100%/3.5)' }}
               h={'2xs'}
-              bg={'white'}
+              bg={'brand.white'}
               boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
               flexShrink={0}
               borderRadius={8}
@@ -50,7 +41,7 @@ const Testimonials = () => {
               alignItems={'center'}
             >
               <Center
-                border={'3px solid white'}
+                border={'3px solid brand.white'}
                 h={20}
                 w={20}
                 mt={-10}
@@ -91,16 +82,16 @@ const Testimonials = () => {
             <VStack
               w={{ base: '100%', lg: 'calc(100%/3.5)' }}
               h={'2xs'}
-              bg={'brand.100'}
+              bg={'brand.primary'}
               boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
               flexShrink={0}
               borderRadius={8}
               justifyContent={'flex-start'}
-              color={'white'}
+              color={'brand.white'}
               alignItems={'center'}
             >
               <Center
-                border={'3px solid white'}
+                border={'3px solid brand.white'}
                 h={20}
                 w={20}
                 mt={-10}
@@ -141,7 +132,7 @@ const Testimonials = () => {
             <VStack
               w={{ base: '100%', lg: 'calc(100%/3.5)' }}
               h={'2xs'}
-              bg={'white'}
+              bg={'brand.white'}
               boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
               flexShrink={0}
               borderRadius={8}
@@ -149,7 +140,7 @@ const Testimonials = () => {
               alignItems={'center'}
             >
               <Center
-                border={'3px solid white'}
+                border={'3px solid brand.white'}
                 h={20}
                 w={20}
                 mt={-10}

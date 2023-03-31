@@ -1,5 +1,4 @@
 import {
-  Box,
   Button,
   Center,
   Flex,
@@ -16,13 +15,13 @@ import Icon from '../icon/Icon';
 const Footer = () => {
   return (
     <VStack
-      bg={'brand.100'}
+      bg={'brand.primary'}
       w={'full'}
       px={{ base: 5, xl: 12 }}
       pt={12}
       gap={10}
       justifyContent={'space-between'}
-      color={'white'}
+      color={'brand.white'}
     >
       <Flex
         w={'full'}
@@ -121,26 +120,26 @@ const Footer = () => {
             <IconButton
               p={2}
               aria-label="social-meida"
-              color={'brand.100'}
+              color={'brand.primary'}
               icon={<Icon name={'instagram'} />}
             />
             <IconButton
               p={2}
               aria-label="social-meida"
-              color={'brand.100'}
+              color={'brand.primary'}
               icon={<Icon name={'linkedin'} />}
             />
             <IconButton
               p={2}
               aria-label="social-meida"
-              color={'brand.100'}
+              color={'brand.primary'}
               icon={<Icon name={'twitter'} />}
             />
 
             <IconButton
               p={2}
               aria-label="social-meida"
-              color={'brand.100'}
+              color={'brand.primary'}
               icon={<Icon name={'whatsapp'} />}
             />
           </HStack>
@@ -154,7 +153,7 @@ const Footer = () => {
         w={'full'}
         justifyContent={'space-between'}
         alignItems={'center'}
-        color={'white'}
+        color={'brand.white'}
         flexDirection={{ base: 'column', md: 'row' }}
       >
         <Text as={'span'} fontSize={'xs'}>
@@ -189,7 +188,7 @@ const FooterLink: React.FC<IFooterLink> = ({ title, link }: IFooterLink) => {
   return (
     <Link href={link}>
       <Button
-        color={'white'}
+        color={'brand.white'}
         _hover={{ textDecoration: 'none', color: 'secondary.200' }}
         fontWeight={'normal'}
         variant={'link'}

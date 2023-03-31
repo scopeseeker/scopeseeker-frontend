@@ -10,8 +10,8 @@ const MyHeading: React.FC<MyHeadingProps> = (props) => {
   const { title, subTitle } = props;
   return (
     <VStack>
-      <Heading textAlign={'center'}>{title}</Heading>
-      <Text>{subTitle}</Text>
+      <Heading textAlign={'center'} color={'brand.semiblack'}>{title}</Heading>
+      <Text color={'brand.darkgrey'}>{subTitle}</Text>
     </VStack>
   );
 };
