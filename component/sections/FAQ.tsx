@@ -5,9 +5,6 @@ import {
   AccordionItem,
   AccordionPanel,
   Box,
-  Heading,
-  HStack,
-  Text,
   VStack,
 } from '@chakra-ui/react';
 import MyHeading from '../heading/MyHeading';
@@ -27,7 +24,7 @@ const FAQ = () => {
             bg={'gray.50'}
             borderRadius={'md'}
             border={'1px solid'}
-            // borderColor={'brand.100'}
+            // borderColor={'brand.primary'}
           >
             <AccordionButton _hover={{ backgroundColor: 'none' }}>
               <Box as="span" fontSize={'md'} flex="1" textAlign="left">
@@ -49,7 +46,7 @@ const FAQ = () => {
             bg={'gray.50'}
             borderRadius={'md'}
             border={'1px solid'}
-            // borderColor={'brand.100'}
+            // borderColor={'brand.primary'}
           >
             <AccordionButton _hover={{ backgroundColor: 'none' }}>
               <Box as="span" fontSize={'md'} flex="1" textAlign="left">
@@ -71,7 +68,7 @@ const FAQ = () => {
             bg={'gray.50'}
             borderRadius={'md'}
             border={'1px solid'}
-            // borderColor={'brand.100'}
+            // borderColor={'brand.primary'}
           >
             <AccordionButton _hover={{ backgroundColor: 'none' }}>
               <Box as="span" fontSize={'md'} flex="1" textAlign="left">
@@ -93,7 +90,7 @@ const FAQ = () => {
             bg={'gray.50'}
             borderRadius={'md'}
             border={'1px solid'}
-            // borderColor={'brand.100'}
+            // borderColor={'brand.primary'}
           >
             <AccordionButton _hover={{ backgroundColor: 'none' }}>
               <Box as="span" fontSize={'md'} flex="1" textAlign="left">
@@ -115,7 +112,7 @@ const FAQ = () => {
             bg={'gray.50'}
             borderRadius={'md'}
             border={'1px solid'}
-            // borderColor={'brand.100'}
+            // borderColor={'brand.primary'}
           >
             <AccordionButton _hover={{ backgroundColor: 'none' }}>
               <Box as="span" fontSize={'md'} flex="1" textAlign="left">

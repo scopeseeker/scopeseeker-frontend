@@ -3,22 +3,24 @@ import {
   Center,
   Divider,
   Flex,
+  Heading,
   HStack,
   Text,
   VStack,
 } from '@chakra-ui/react';
 import Image from 'next/image';
-import React from 'react';
 
 const HeroSection = () => {
   return (
     <Box minH={'100vh'} p={12} pb={0}>
+      <Heading>Hello How Are You</Heading>
+      <Text>Hello I am para</Text>
       <Flex minH={'md'}>
-        <VStack w={'50%'}  alignItems={'flex-start'}>
-              <Text>STAY TUNE</Text>
+        <VStack w={'50%'} alignItems={'flex-start'}>
+          <Text>STAY TUNE</Text>
         </VStack>
 
-        <Center w={'50%'} >
+        <Center w={'50%'}>
           <Image
             src={require('../../public/hero-section.png')}
             alt="hero-section"
@@ -28,9 +30,9 @@ const HeroSection = () => {
       <HStack
         h={20}
         borderRadius={10}
-        bg={'brand.100'}
+        bg={'brand.primary'}
         justifyContent={'center'}
-        color={'white'}
+        color={'brand.white'}
       >
         <VStack w={36} h={'full'} justifyContent={'center'}>
           <Divider />
