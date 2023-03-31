@@ -1,19 +1,10 @@
-import React from 'react';
-import Icon from '../icon/Icon';
-import {
-  Box,
-  Center,
-  Flex,
-  Heading,
-  HStack,
-  Text,
-  VStack,
-} from '@chakra-ui/react';
+import { Box, Center, Flex, Text, VStack } from '@chakra-ui/react';
 import MyHeading from '../heading/MyHeading';
+import Icon from '../icon/Icon';
 
 const Works = () => {
   return (
-    <Box bg={'red'}>
+    <Box>
       <VStack>
         <MyHeading
           title={'Easy way to get your job'}
@@ -26,8 +17,8 @@ const Works = () => {
         flexDirection={{ base: 'column', lg: 'row' }}
         gap={14}
         flexShrink={0}
-        
         px={{ sm: 5, lg: 0 }}
+        mt={10}
       >
         <VStack
           w={{ base: '100%', lg: 'calc(100%/4)' }}
