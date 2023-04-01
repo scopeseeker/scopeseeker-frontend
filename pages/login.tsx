@@ -1,5 +1,5 @@
-import MyInput from '@/component/inputs/MyInput';
 import MyButton from '@/component/button/MyButton';
+import MyInput from '@/component/inputs/MyInput';
 import {
   Box,
   Center,
