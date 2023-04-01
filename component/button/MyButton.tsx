@@ -12,6 +12,8 @@ interface MyButtonProps {
   colorScheme?: string;
   decoration?: string;
   px?: number;
+  w?: string;
+  mt?: number;
 }
 
 const MyButton: React.FC<MyButtonProps> = ({
@@ -25,6 +27,8 @@ const MyButton: React.FC<MyButtonProps> = ({
   color,
   bg,
   px,
+  w,
+  mt,
 }: MyButtonProps) => {
   return (
     <Button
@@ -37,6 +41,8 @@ const MyButton: React.FC<MyButtonProps> = ({
       _hover={{ textDecoration: decoration }}
       bg={bg}
       px={px}
+      w={w}
+      mt={mt}
     >
       {title}
     </Button>
