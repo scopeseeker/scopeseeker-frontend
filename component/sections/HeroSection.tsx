@@ -3,21 +3,28 @@ import {
   Center,
   Divider,
   Flex,
+  FormControl,
   Heading,
   HStack,
   Text,
   VStack,
 } from '@chakra-ui/react';
 import Image from 'next/image';
+import MyInput from '../Inputs/MyInput';
 
 const HeroSection = () => {
   return (
     <Box minH={'100vh'} p={12} pb={0}>
-      <Heading>Hello How Are You</Heading>
-      <Text>Hello I am para</Text>
+
+      <Box w={'xs'} mt={10}>
+
+      <FormControl isInvalid={false}>
+        <MyInput labelTitle='Email Address' placeholder='example@gmail.com' type={'email'} />
+      </FormControl>
+      </Box>
+
       <Flex minH={'md'}>
         <VStack w={'50%'} alignItems={'flex-start'}>
-          <Text>STAY TUNE</Text>
         </VStack>
 
         <Center w={'50%'}>
