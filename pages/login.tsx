@@ -1,4 +1,4 @@
-import MyInput from '@/component/Inputs/MyInput';
+import MyInput from '@/component/inputs/MyInput';
 import MyButton from '@/component/button/MyButton';
 import {
   Box,
