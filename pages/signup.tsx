@@ -3,6 +3,7 @@ import MyInput from '@/component/inputs/MyInput';
 import {
   Box,
   Center,
+  Checkbox,
   Flex,
   FormControl,
   HStack,
@@ -13,8 +14,14 @@ import {
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import { MouseEventHandler, useState } from 'react';
 
-export default function Login() {
+export default function Signup() {
+  const [nextStep, setnextStep] = useState(false);
+
+  const handleClick: MouseEventHandler<HTMLDivElement> = (event) => {
+    setnextStep(true);
+  };
   return (
     <>
       <Head>
@@ -25,7 +32,7 @@ export default function Login() {
           <Center w={'full'} h={'full'} flexDirection={'column'}>
             <VStack maxW={'60%'}>
               <Heading w={'full'} fontWeight={'bold'}>
-                SignIn to
+                SignUp to
               </Heading>
               <Heading as={'span'} w={'full'} color={'brand.primary'}>
                 Scope Seeker
@@ -59,44 +66,82 @@ export default function Login() {
           </Center>
         </VStack>
 
-        <VStack w={'40%'} h={'full'}>
-          <HStack w={'full'} h={'full'}>
+        <Center justifyContent={'flex-start'} w={'40%'} h={'full'}>
+          <VStack alignItems={'flex-start'}>
             <VStack gap={7} w={'2xs'}>
               <VStack w={'full'}>
-                <VStack w={'full'} gap={1}>
+                <VStack w={'full'}>
                   <FormControl>
-                    <MyInput
-                      labelTitle="Email Address"
-                      type="email"
-                      placeholder="example@gmail.com"
-                    />
-                    <MyInput
-                      labelTitle="Password"
-                      type="password"
-                      placeholder="⋆⋆⋆⋆⋆⋆⋆⋆"
-                      mt={4}
-                    />
+                    {!nextStep && (
+                      <>
+                        <MyInput
+                          labelTitle="Full Name"
+                          type="name"
+                          placeholder="Abhishek Kumar"
+                        />
+                        <MyInput
+                          labelTitle="Email Address"
+                          type="email"
+                          placeholder="example@gmail.com"
+                          mt={4}
+                        />
+                      </>
+                    )}
+                    {nextStep && (
+                      <>
+                        <MyInput
+                          labelTitle="Create Your Password"
+                          type="name"
+                          placeholder="⋆⋆⋆⋆⋆⋆⋆⋆"
+                        />
+                        <MyInput
+                          labelTitle="Re-enter your password"
+                          type="email"
+                          placeholder="⋆⋆⋆⋆⋆⋆⋆⋆"
+                          mt={4}
+                        />
+                      </>
+                    )}
                   </FormControl>
                 </VStack>
+              </VStack>
+            </VStack>
 
-                <Text
-                  w={'full'}
-                  fontSize={10}
-                  textAlign={'end'}
-                  pr={3}
-                  cursor={'pointer'}
-                >
-                  Forgot Password?
+            {nextStep && (
+              <VStack pt={3}>
+                <HStack w={'full'}>
+                  <Checkbox size={'sm'} defaultChecked />
+                  <Text as={'span'} fontSize={'2xs'} lineHeight={1}>
+                    Send me important updates on Email{' '}
+                    <Text as={'span'} fontSize={'2xs'}>
+                      (once in a week)
+                    </Text>{' '}
+                    & Whatsapp
+                  </Text>
+                </HStack>
+              </VStack>
+            )}
+
+            <VStack gap={7} w={'2xs'}>
+              <VStack onClick={handleClick} w={'full'}>
+                {nextStep &&
+                <Text as={'span'} fontSize={'2xs'}>
+                  By signing up, you agree to our{' '}
+                  <Link
+                    href={'/terms-and-consitions'}
+                    style={{ color: '#1A75E8' }}
+                    >
+                    Terms and Conditions.
+                  </Link>
                 </Text>
-                <VStack w={'full'}>
-                  <MyButton
-                    size={'md'}
-                    w={'full'}
-                    fontSize="sm"
-                    title="Sign In"
-                    mt={5}
-                  />
-                </VStack>
+                }
+                <MyButton
+                  size={'md'}
+                  w={'full'}
+                  fontSize="sm"
+                  title={nextStep ? 'Singup' : 'Next Step'}
+                  mt={5}
+                />
               </VStack>
 
               <Center gap={2}>
@@ -152,8 +197,8 @@ export default function Login() {
                 </Center>
               </HStack>
             </VStack>
-          </HStack>
-        </VStack>
+          </VStack>
+        </Center>
       </Flex>
     </>
   );
