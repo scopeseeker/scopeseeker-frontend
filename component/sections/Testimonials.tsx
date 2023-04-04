@@ -1,7 +1,7 @@
 import { Box, Center, Flex, Text, VStack } from '@chakra-ui/react';
-import Image from 'next/image';
 import MyHeading from '../heading/MyHeading';
 import Icon from '../icon/Icon';
+import MyImage from '../image/MyImage';
 
 const Testimonials = () => {
   return (
@@ -41,14 +41,14 @@ const Testimonials = () => {
               alignItems={'center'}
             >
               <Center
-                border={'3px solid brand.white'}
+                border={'3px solid white'}
                 h={20}
                 w={20}
                 mt={-10}
                 borderRadius={'full'}
                 overflow={'hidden'}
               >
-                <Image src={require('../../public/p1.jpg')} alt={'ss-log'} />
+                <MyImage src={'/assets/images/p12.jpg'} alt={'secope seeker logo'} width={80} height={80} />
               </Center>
               <Flex direction={'column'} align={'center'}>
                 <Text as={'span'} fontWeight={'medium'} fontSize={'md'}>
@@ -91,14 +91,15 @@ const Testimonials = () => {
               alignItems={'center'}
             >
               <Center
-                border={'3px solid brand.white'}
+                border={'3px solid white'}
                 h={20}
                 w={20}
                 mt={-10}
                 borderRadius={'full'}
                 overflow={'hidden'}
               >
-                <Image src={require('../../public/p1.jpg')} alt={'ss-log'} />
+                <MyImage src={'/assets/images/p12.jpg'} alt={'secope seeker logo'} width={80} height={80} />
+
               </Center>
               <Flex direction={'column'} align={'center'}>
                 <Text as={'span'} fontWeight={'medium'} fontSize={'md'}>
@@ -140,14 +141,15 @@ const Testimonials = () => {
               alignItems={'center'}
             >
               <Center
-                border={'3px solid brand.white'}
+                border={'3px solid white'}
                 h={20}
                 w={20}
                 mt={-10}
                 borderRadius={'full'}
                 overflow={'hidden'}
               >
-                <Image src={require('../../public/p1.jpg')} alt={'ss-log'} />
+                <MyImage src={'/assets/images/p12.jpg'} alt={'secope seeker logo'} width={80} height={80} />
+
               </Center>
               <Flex direction={'column'} align={'center'}>
                 <Text as={'span'} fontWeight={'medium'} fontSize={'md'}>

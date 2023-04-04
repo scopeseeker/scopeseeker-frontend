@@ -5,12 +5,12 @@ import {
   Flex,
   HStack,
   Text,
-  useColorMode,
+  useColorMode
 } from '@chakra-ui/react';
-import Image from 'next/image';
 import Link from 'next/link';
 import MyButton from '../button/MyButton';
 import Icon from '../icon/Icon';
+import MyImage from '../image/MyImage';
 
 const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -33,11 +33,7 @@ const Navbar = () => {
         {/* Left Part of Navbar */}
         <HStack gap={12}>
           <HStack cursor={'pointer'}>
-            <Image
-              src={require('../../public/scopeseeker-logo.png')}
-              alt={'ss-log'}
-              height={32}
-            />
+            <MyImage src={'/assets/images/scopeseeker-logo.png'} alt={'secope seeker logo'} width={30} height={30} />
             <Flex direction={'column'}>
               <Text
                 as={'span'}
@@ -122,7 +118,6 @@ const Navbar = () => {
           </Center>
         </HStack>
       </HStack>
-      {/* Dummy */}
     </Box>
   );
 };

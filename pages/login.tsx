@@ -1,17 +1,14 @@
 import MyButton from '@/component/button/MyButton';
+import MyImage from '@/component/image/MyImage';
 import MyInput from '@/component/inputs/MyInput';
 import {
   Box,
   Center,
   Flex,
-  FormControl,
-  HStack,
-  Heading,
-  Text,
-  VStack,
+  FormControl, Heading, HStack, Text,
+  VStack
 } from '@chakra-ui/react';
 import Head from 'next/head';
-import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Login() {
@@ -52,7 +49,7 @@ export default function Login() {
                   </Text>
                 </Flex>
                 <Box w={'30%'}>
-                  <Image src={require('../public/login.png')} alt={'ss-log'} />
+                  <MyImage src={'/assets/svgs/hero-section.svg'} alt={'login'} width={600} height={400} />
                 </Box>
               </Flex>
             </VStack>
@@ -116,11 +113,8 @@ export default function Login() {
                   borderColor="gray.300"
                   cursor={'pointer'}
                 >
-                  <Image
-                    src={require('../public/google.png')}
-                    alt={'google'}
-                    style={{ width: '40%' }}
-                  />
+                  <MyImage src={'/assets/images/company-logo/google.png'} alt={'google logo'} width={24} height={24} />
+
                 </Center>
                 <Center
                   w={16}
@@ -130,11 +124,8 @@ export default function Login() {
                   borderColor="gray.300"
                   cursor={'pointer'}
                 >
-                  <Image
-                    src={require('../public/github.png')}
-                    alt={'google'}
-                    style={{ width: '40%' }}
-                  />
+                  <MyImage src={'/assets/images/company-logo/github.png'} alt={'github logo'} width={24} height={24} />
+
                 </Center>
                 <Center
                   w={16}
@@ -144,11 +135,8 @@ export default function Login() {
                   borderColor="gray.300"
                   cursor={'pointer'}
                 >
-                  <Image
-                    src={require('../public/linkedin.png')}
-                    alt={'google'}
-                    style={{ width: '40%' }}
-                  />
+                  <MyImage src={'/assets/images/company-logo/linkedin.png'} alt={'linkedin logo'} width={24} height={24} />
+
                 </Center>
               </HStack>
             </VStack>

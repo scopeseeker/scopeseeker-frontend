@@ -1,18 +1,15 @@
 import MyButton from '@/component/button/MyButton';
+import MyImage from '@/component/image/MyImage';
 import MyInput from '@/component/inputs/MyInput';
 import {
   Box,
   Center,
   Checkbox,
   Flex,
-  FormControl,
-  HStack,
-  Heading,
-  Text,
-  VStack,
+  FormControl, Heading, HStack, Text,
+  VStack
 } from '@chakra-ui/react';
 import Head from 'next/head';
-import Image from 'next/image';
 import Link from 'next/link';
 import { MouseEventHandler, useState } from 'react';
 
@@ -59,7 +56,7 @@ export default function Signup() {
                   </Text>
                 </Flex>
                 <Box w={'30%'}>
-                  <Image src={require('../public/login.png')} alt={'ss-log'} />
+                  <MyImage src={'/assets/svgs/hero-section.svg'} alt={'google logo'} width={500} height={500} />
                 </Box>
               </Flex>
             </VStack>
@@ -125,15 +122,15 @@ export default function Signup() {
             <VStack gap={7} w={'2xs'}>
               <VStack onClick={handleClick} w={'full'}>
                 {nextStep &&
-                <Text as={'span'} fontSize={'2xs'}>
-                  By signing up, you agree to our{' '}
-                  <Link
-                    href={'/terms-and-consitions'}
-                    style={{ color: '#1A75E8' }}
+                  <Text as={'span'} fontSize={'2xs'}>
+                    By signing up, you agree to our{' '}
+                    <Link
+                      href={'/terms-and-consitions'}
+                      style={{ color: '#1A75E8' }}
                     >
-                    Terms and Conditions.
-                  </Link>
-                </Text>
+                      Terms and Conditions.
+                    </Link>
+                  </Text>
                 }
                 <MyButton
                   size={'md'}
@@ -161,11 +158,8 @@ export default function Signup() {
                   borderColor="gray.300"
                   cursor={'pointer'}
                 >
-                  <Image
-                    src={require('../public/google.png')}
-                    alt={'google'}
-                    style={{ width: '40%' }}
-                  />
+                  <MyImage src={'/assets/images/company-logo/google.png'} alt={'google logo'} width={20} height={20} />
+
                 </Center>
                 <Center
                   w={16}
@@ -175,11 +169,8 @@ export default function Signup() {
                   borderColor="gray.300"
                   cursor={'pointer'}
                 >
-                  <Image
-                    src={require('../public/github.png')}
-                    alt={'google'}
-                    style={{ width: '40%' }}
-                  />
+                  <MyImage src={'/assets/images/company-logo/github.png'} alt={'github logo'} width={20} height={20} />
+
                 </Center>
                 <Center
                   w={16}
@@ -189,11 +180,8 @@ export default function Signup() {
                   borderColor="gray.300"
                   cursor={'pointer'}
                 >
-                  <Image
-                    src={require('../public/linkedin.png')}
-                    alt={'google'}
-                    style={{ width: '40%' }}
-                  />
+                  <MyImage src={'/assets/images//company-logo/linkedin.png'} alt={'linkedin logo'} width={20} height={20} />
+
                 </Center>
               </HStack>
             </VStack>
