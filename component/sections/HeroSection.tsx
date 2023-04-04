@@ -2,25 +2,21 @@ import {
   Box,
   Center,
   Divider,
-  Flex,
-  FormControl,
-  HStack,
+  Flex, HStack,
   Text,
-  VStack,
+  VStack
 } from '@chakra-ui/react';
-import Image from 'next/image';
+import MyImage from '../image/MyImage';
 
 const HeroSection = () => {
   return (
-    <Box minH={'100vh'} p={12} pb={0}>
-      <Flex minH={'md'}>
-        <VStack w={'50%'} alignItems={'flex-start'}></VStack>
-
-        <Center w={'50%'}>
-          <Image
-            src={require('../../public/hero-section.png')}
-            alt="hero-section"
-          />
+    <Box minH={'100vh'} px={12}>
+      <Flex w={'full'} minH={'90vh'}>
+        <VStack minH={'90vh'} w={'50%'}>
+          <Text>Helo</Text>
+        </VStack>
+        <Center minH={'90vh'} w={'50%'}>
+          <MyImage src='/assets/svgs/hero-section-2.svg' alt={'hero-setion-image'} width={450} height={500} />
         </Center>
       </Flex>
       <HStack

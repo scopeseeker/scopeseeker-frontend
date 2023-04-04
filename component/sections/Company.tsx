@@ -1,40 +1,18 @@
-import { Center, Flex, Text } from '@chakra-ui/react';
-import Image from 'next/image';
-import React from 'react';
+import { Center } from '@chakra-ui/react';
+import MyImage from '../image/MyImage';
 
 const Company = () => {
   return (
     <Center gap={20} w={'full'} px={24} py={4}>
-      <Center w={36} h={30}>
-        <Image src={require('../../public/amazon.png')} alt={'company-logo'} />
-      </Center>
-      <Center w={36} h={30}>
-        <Image
-          src={require('../../public/bookmyshow.png')}
-          alt={'company-logo'}
-        />
-      </Center>
-      <Center w={36} h={30}>
-        <Image src={require('../../public/amazon.png')} alt={'company-logo'} />
-      </Center>
-      <Center w={36} h={30}>
-        <Image
-          src={require('../../public/bookmyshow.png')}
-          alt={'company-logo'}
-        />
-      </Center>
-      <Center w={36} h={30}>
-        <Image src={require('../../public/amazon.png')} alt={'company-logo'} />
-      </Center>
-      <Center w={36} h={30}>
-        <Image
-          src={require('../../public/bookmyshow.png')}
-          alt={'company-logo'}
-        />
-      </Center>
-      <Center w={36} h={30}>
-        <Image src={require('../../public/amazon.png')} alt={'company-logo'} />
-      </Center>
+      <MyImage src={'/assets/images/company-logo/amazon.png'} alt={'company logo'} width={70} height={40} />
+      <MyImage src={'/assets/images/company-logo/bookmyshow.png'} alt={'company logo'} width={70} height={40} />
+
+      <MyImage src={'/assets/images/company-logo/amazon.png'} alt={'company logo'} width={70} height={40} />
+      <MyImage src={'/assets/images/company-logo/bookmyshow.png'} alt={'company logo'} width={70} height={40} />
+
+      <MyImage src={'/assets/images/company-logo/amazon.png'} alt={'company logo'} width={70} height={40} />
+      <MyImage src={'/assets/images/company-logo/bookmyshow.png'} alt={'company logo'} width={70} height={40} />
+
     </Center>
   );
 };

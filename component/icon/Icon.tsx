@@ -1,31 +1,27 @@
 // import { IconLibrary } from "constants/IconLibrary";
 import { IconLibrary } from "@/constant/IconLibrary";
-import { Center } from "@chakra-ui/react";
 import React from "react";
 
 export type IconNameType =
 	| "job"
 	| "instagram"
 	| "darkMode"
-	|  "company"
-	|  "pages"
+	| "company"
+	| "pages"
 	| "arrow-down"
 	| "search"
-	|  "linkedin"
-	|  "gmail"
-	|  "facebook"
-	|  "arrow"
+	| "linkedin"
+	| "gmail"
+	| "facebook"
+	| "arrow"
 	| 'whatsapp'
 	| "twitter"
 	| "quotes-left"
 	| "quotes-right"
-    | "user"
+	| "user"
 	| "case"
 	| "form"
 	;
-
-	// Dummy
-
 export type IconProps = {
 	name: IconNameType;
 	color?: string;
@@ -42,7 +38,7 @@ const Icon = ({ name, style, ...rest }: IconProps) => {
 	return (
 		<svg xmlns="http://www.w3.org/2000/svg" style={style} viewBox="0 0 24 24" {...rest} className="custom-icon">
 			<path d={path} fill="currentColor" transform={transform} />
-		</svg>		
+		</svg>
 	);
 };
 

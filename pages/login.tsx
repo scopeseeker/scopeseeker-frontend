@@ -1,14 +1,12 @@
 import MyButton from '@/component/button/MyButton';
+import MyImage from '@/component/image/MyImage';
 import MyInput from '@/component/inputs/MyInput';
 import {
   Box,
   Center,
   Flex,
-  FormControl,
-  HStack,
-  Heading,
-  Text,
-  VStack,
+  FormControl, Heading, HStack, Text,
+  VStack
 } from '@chakra-ui/react';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -51,7 +49,7 @@ export default function Home() {
                   </Text>
                 </Text>
                 <Box w={'30%'}>
-                  <Image src={require('../public/login.png')} alt={'ss-log'} />
+                  <MyImage src={'/assets/svgs/hero-section.svg'} alt={'login'} width={20} height={20} />
                 </Box>
               </Flex>
             </VStack>

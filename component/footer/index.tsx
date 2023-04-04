@@ -6,11 +6,11 @@ import {
   HStack,
   IconButton,
   Text,
-  VStack,
+  VStack
 } from '@chakra-ui/react';
-import Image from 'next/image';
 import Link from 'next/link';
 import Icon from '../icon/Icon';
+import MyImage from '../image/MyImage';
 
 const Footer = () => {
   return (
@@ -36,10 +36,7 @@ const Footer = () => {
         >
           <HStack cursor={'pointer'}>
             <Center w={12} h={12}>
-              <Image
-                src={require('../../public/scopeseeker-logo.png')}
-                alt={'ss-log'}
-              />
+              <MyImage src={'/assets/images/scopeseeker-logo.png'} alt={'secope seeker logo'} width={60} height={60} />
             </Center>
 
             <Flex direction={'column'} gap={1}>
