@@ -14,6 +14,7 @@ interface MyButtonProps {
   px?: number;
   w?: string;
   mt?: number;
+  [key: string]: any; 
 }
 
 const MyButton: React.FC<MyButtonProps> = ({
@@ -29,7 +30,9 @@ const MyButton: React.FC<MyButtonProps> = ({
   px,
   w,
   mt,
+  ...rest
 }: MyButtonProps) => {
+
   return (
     <Button
       size={size}
@@ -43,6 +46,7 @@ const MyButton: React.FC<MyButtonProps> = ({
       px={px}
       w={w}
       mt={mt}
+      {...rest}
     >
       {title}
     </Button>
