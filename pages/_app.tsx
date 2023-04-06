@@ -12,7 +12,7 @@ export default function App({ Component, pageProps }: AppProps) {
   const showNavbar =
     router.asPath !== '/login' &&
     router.asPath !== '/signup' &&
-    router.asPath !== '/steps';
+    router.asPath !== '/info-steps';
 
   return (
     <ChakraProvider theme={theme}>

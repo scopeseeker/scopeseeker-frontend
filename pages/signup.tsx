@@ -6,8 +6,11 @@ import {
   Center,
   Checkbox,
   Flex,
-  FormControl, Heading, HStack, Text,
-  VStack
+  FormControl,
+  Heading,
+  HStack,
+  Text,
+  VStack,
 } from '@chakra-ui/react';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -16,7 +19,7 @@ import { MouseEventHandler, useState } from 'react';
 export default function Signup() {
   const [nextStep, setnextStep] = useState(false);
 
-  const handleClick: MouseEventHandler<HTMLDivElement> = (event) => {
+  const handleClick: MouseEventHandler<HTMLDivElement> = () => {
     setnextStep(true);
   };
   return (
@@ -56,7 +59,12 @@ export default function Signup() {
                   </Text>
                 </Flex>
                 <Box w={'30%'}>
-                  <MyImage src={'/assets/svgs/hero-section.svg'} alt={'google logo'} width={500} height={500} />
+                  <MyImage
+                    src={'/assets/svgs/hero-section.svg'}
+                    alt={'google logo'}
+                    width={500}
+                    height={500}
+                  />
                 </Box>
               </Flex>
             </VStack>
@@ -121,7 +129,7 @@ export default function Signup() {
 
             <VStack gap={7} w={'2xs'}>
               <VStack onClick={handleClick} w={'full'}>
-                {nextStep &&
+                {nextStep && (
                   <Text as={'span'} fontSize={'2xs'}>
                     By signing up, you agree to our{' '}
                     <Link
@@ -131,7 +139,7 @@ export default function Signup() {
                       Terms and Conditions.
                     </Link>
                   </Text>
-                }
+                )}
                 <MyButton
                   size={'md'}
                   w={'full'}
@@ -158,8 +166,12 @@ export default function Signup() {
                   borderColor="gray.300"
                   cursor={'pointer'}
                 >
-                  <MyImage src={'/assets/images/company-logo/google.png'} alt={'google logo'} width={20} height={20} />
-
+                  <MyImage
+                    src={'/assets/images/company-logo/google.png'}
+                    alt={'google logo'}
+                    width={20}
+                    height={20}
+                  />
                 </Center>
                 <Center
                   w={16}
@@ -169,8 +181,12 @@ export default function Signup() {
                   borderColor="gray.300"
                   cursor={'pointer'}
                 >
-                  <MyImage src={'/assets/images/company-logo/github.png'} alt={'github logo'} width={20} height={20} />
-
+                  <MyImage
+                    src={'/assets/images/company-logo/github.png'}
+                    alt={'github logo'}
+                    width={20}
+                    height={20}
+                  />
                 </Center>
                 <Center
                   w={16}
@@ -180,8 +196,12 @@ export default function Signup() {
                   borderColor="gray.300"
                   cursor={'pointer'}
                 >
-                  <MyImage src={'/assets/images//company-logo/linkedin.png'} alt={'linkedin logo'} width={20} height={20} />
-
+                  <MyImage
+                    src={'/assets/images//company-logo/linkedin.png'}
+                    alt={'linkedin logo'}
+                    width={20}
+                    height={20}
+                  />
                 </Center>
               </HStack>
             </VStack>
