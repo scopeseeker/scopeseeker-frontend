@@ -20,6 +20,10 @@ export type IconNameType =
 	| "user"
 	| "case"
 	| "form"
+	| "phone"
+	| "fresher"
+	| "global"
+	| "college"
 	;
 export type IconProps = {
 	name: IconNameType;

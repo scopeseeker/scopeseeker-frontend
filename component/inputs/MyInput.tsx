@@ -3,7 +3,7 @@ import { useRef } from 'react';
 
 interface IMyInputProps {
   inputFontSize?: string;
-  labelFontSise?: string;
+  labelFontSize?: string;
   labelTitle?: string;
   placeholder?: string;
   size?: string;
@@ -11,12 +11,13 @@ interface IMyInputProps {
   mt?: number;
   leftElem?: React.ReactNode;
   rightElem?: React.ReactNode;
+  w?: number | string;
 }
 
 const MyInput: React.FC<IMyInputProps> = (props) => {
   const {
     inputFontSize = 'sm',
-    labelFontSise = 'xs',
+    labelFontSize = 'xs',
     labelTitle,
     placeholder,
     type,
@@ -24,6 +25,7 @@ const MyInput: React.FC<IMyInputProps> = (props) => {
     mt,
     leftElem,
     rightElem,
+    w,
   } = props;
   const boxRef = useRef<HTMLDivElement>(null);
 
@@ -40,8 +42,8 @@ const MyInput: React.FC<IMyInputProps> = (props) => {
   };
   return (
     <>
-      <VStack alignItems={'flex-start'}>
-        <Text as={'span'} mt={mt} fontSize={labelFontSise}>
+      <VStack alignItems={'flex-start'} w={w}> 
+        <Text as={'span'} mt={mt} fontSize={labelFontSize}>
           {labelTitle}
         </Text>
         <HStack
@@ -51,13 +53,14 @@ const MyInput: React.FC<IMyInputProps> = (props) => {
           border={'1.7px solid transparent'}
           borderRadius={6}
           spacing={0}
+          w={'100%'}
         >
           {leftElem && (
-            <Center w={'20%'} h={'full'}>
+            <Center w={'10%'} h={'full'}>
               {leftElem}
             </Center>
           )}
-          <Center>
+          <Center w={'80%'}>
             <Input
               _focus={{ border: 'none' }}
               onFocus={handleInputFocus}
@@ -68,13 +71,14 @@ const MyInput: React.FC<IMyInputProps> = (props) => {
               bg={'transparent'}
               placeholder={placeholder}
               _hover={{ bg: 'transparent' }}
+              _placeholder={{fontSize: inputFontSize}}
               type={type}
               size={size}
-              px={2}
+              pl={1}
             />
           </Center>
           {rightElem && (
-            <Center maxW={'40%'} h={'full'}>
+            <Center w={'20%'} h={'full'}>
               {rightElem}
             </Center>
           )}
