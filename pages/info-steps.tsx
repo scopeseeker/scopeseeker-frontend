@@ -9,6 +9,7 @@ import {
   FormControl,
   HStack,
   Text,
+  Textarea,
   VStack,
 } from '@chakra-ui/react';
 import { useState } from 'react';
@@ -24,7 +25,7 @@ const InfoSteps = () => {
 
   const handleDomainSelection = (domain: string) => {
     setSelectDomain(domain);
-  }
+  };
 
   return (
     <HStack w={'full'} h={'100vh'} spacing={0}>
@@ -188,12 +189,11 @@ const InfoSteps = () => {
                 type="text"
                 w={'sm'}
                 leftElem={<Icon name="global" width="16" height="16" />}
+                placeholder="India"
               />
 
               <VStack w={'full'} alignItems={'start'}>
-                <Text fontSize={'sm'} w={'full'}>
-                  Gender
-                </Text>
+                <Text fontSize={'sm'}>Gender</Text>
                 <HStack gap={2}>
                   <MyButton
                     title={'Male'}
@@ -202,11 +202,16 @@ const InfoSteps = () => {
                     borderRadius={50}
                     fontWeight="base"
                     onClick={() => handleGenderSelection('male')}
-                    bg={selectedGender === 'male' ? 'brand.primary' : 'transparent'}
-                    color={selectedGender === 'male' ? 'brand.white' : 'brand.black'}
+                    bg={
+                      selectedGender === 'male'
+                        ? 'brand.primary'
+                        : 'transparent'
+                    }
+                    color={
+                      selectedGender === 'male' ? 'brand.white' : 'brand.black'
+                    }
                     _hover={{
-                      bg:
-                        selectedGender === 'male' ? 'brand.primary' : 'none',
+                      bg: selectedGender === 'male' ? 'brand.primary' : 'none',
                     }}
                     border={selectedGender === 'male' ? 'none' : '1px'}
                   />
@@ -218,8 +223,16 @@ const InfoSteps = () => {
                     borderRadius={50}
                     fontWeight="base"
                     onClick={() => handleGenderSelection('female')}
-                    bg={selectedGender === 'female' ? 'brand.primary' : 'transparent'}
-                    color={selectedGender === 'female' ? 'brand.white' : 'brand.black'}
+                    bg={
+                      selectedGender === 'female'
+                        ? 'brand.primary'
+                        : 'transparent'
+                    }
+                    color={
+                      selectedGender === 'female'
+                        ? 'brand.white'
+                        : 'brand.black'
+                    }
                     _hover={{
                       bg:
                         selectedGender === 'female' ? 'brand.primary' : 'none',
@@ -234,8 +247,16 @@ const InfoSteps = () => {
                     borderRadius={50}
                     fontWeight="base"
                     onClick={() => handleGenderSelection('others')}
-                    bg={selectedGender === 'others' ? 'brand.primary' : 'transparent'}
-                    color={selectedGender === 'others' ? 'brand.white' : 'brand.black'}
+                    bg={
+                      selectedGender === 'others'
+                        ? 'brand.primary'
+                        : 'transparent'
+                    }
+                    color={
+                      selectedGender === 'others'
+                        ? 'brand.white'
+                        : 'brand.black'
+                    }
                     _hover={{
                       bg:
                         selectedGender === 'others' ? 'brand.primary' : 'none',
@@ -246,9 +267,7 @@ const InfoSteps = () => {
               </VStack>
 
               <VStack w={'full'} alignItems={'start'}>
-                <Text fontSize={'sm'} w={'full'}>
-                  Domain
-                </Text>
+                <Text fontSize={'sm'}>Domain</Text>
                 <HStack gap={2}>
                   <MyButton
                     title={'Tech'}
@@ -257,11 +276,14 @@ const InfoSteps = () => {
                     borderRadius={50}
                     fontWeight="base"
                     onClick={() => handleDomainSelection('tech')}
-                    bg={selectDomain === 'tech' ? 'brand.primary' : 'transparent'}
-                    color={selectDomain === 'tech' ? 'brand.white' : 'brand.black'}
+                    bg={
+                      selectDomain === 'tech' ? 'brand.primary' : 'transparent'
+                    }
+                    color={
+                      selectDomain === 'tech' ? 'brand.white' : 'brand.black'
+                    }
                     _hover={{
-                      bg:
-                        selectDomain === 'tech' ? 'brand.primary' : 'none',
+                      bg: selectDomain === 'tech' ? 'brand.primary' : 'none',
                     }}
                     border={selectDomain === 'tech' ? 'none' : '1px'}
                   />
@@ -273,8 +295,16 @@ const InfoSteps = () => {
                     borderRadius={50}
                     fontWeight="base"
                     onClick={() => handleDomainSelection('non-tech')}
-                    bg={selectDomain === 'non-tech' ? 'brand.primary' : 'transparent'}
-                    color={selectDomain === 'non-tech' ? 'brand.white' : 'brand.black'}
+                    bg={
+                      selectDomain === 'non-tech'
+                        ? 'brand.primary'
+                        : 'transparent'
+                    }
+                    color={
+                      selectDomain === 'non-tech'
+                        ? 'brand.white'
+                        : 'brand.black'
+                    }
                     _hover={{
                       bg:
                         selectDomain === 'non-tech' ? 'brand.primary' : 'none',
@@ -283,6 +313,71 @@ const InfoSteps = () => {
                   />
                 </HStack>
               </VStack>
+
+              <VStack w={'full'} alignItems={'flex-start'}>
+                <Text fontSize={'sm'}>Work Experience</Text>
+                <HStack>
+                  <Icon name="add" height="16" width="16" />
+                  <Text fontSize={'xs'} color="brand.primary">
+                    Add Work Experience
+                  </Text>
+                </HStack>
+              </VStack>
+
+              <VStack w={'full'} alignItems={'flex-start'}>
+                <Text fontSize={'sm'}>Summary</Text>
+                <Textarea placeholder="Add custom message..." size={'sm'} />
+              </VStack>
+
+              <MyInput
+                labelTitle="Skills"
+                type="text"
+                w={'sm'}
+                leftElem={<Icon name="pages" width="16" height="16" />}
+                placeholder="search skills"
+              />
+
+              <VStack alignItems={'flex-start'} w={'full'}>
+                <Text fontSize={'sm'}>Social Links</Text>
+                <VStack gap={2}>
+                  <MyInput
+                    labelTitle="Instagram"
+                    type="text"
+                    w={'sm'}
+                    leftElem={<Icon name="instagram" width="16" height="16" />}
+                  />
+
+                  <MyInput
+                    labelTitle="linkedin"
+                    type="text"
+                    w={'sm'}
+                    leftElem={<Icon name="linkedin" width="16" height="16" />}
+                  />
+
+                  <MyInput
+                    labelTitle="GitHub"
+                    type="text"
+                    w={'sm'}
+                    leftElem={<Icon name="github" width="16" height="16" />}
+                  />
+                </VStack>
+              </VStack>
+
+              <VStack w={'full'} alignItems={'flex-start'}>
+                <Text fontSize={'sm'}>Resume</Text>
+                <HStack alignItems={'center'} border={'1px'} borderColor={'brand.lightgrey'} borderRadius={50} pr={2}>
+                  <MyButton
+                    title="Upload Resume"
+                    fontWeight="thin"
+                    borderRadius={50}
+                    fontSize="xs"
+                  />
+                  <Text fontSize={'2xs'}>DOC, DOCx, PDF, RTF | Max: 2 MB</Text>
+                </HStack>
+                <Text fontSize={'2xs'}>Recruiters give first preference to candidates who have a resume</Text>
+              </VStack>
+
+              <MyButton title='Submit' size='md' borderRadius={10} fontSize='sm' fontWeight='normal'/>
             </VStack>
           </FormControl>
         </VStack>
