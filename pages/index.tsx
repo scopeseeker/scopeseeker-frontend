@@ -1,5 +1,6 @@
 import Categories from '@/component/sections/Categories';
 import Company from '@/component/sections/Company';
+import CompnayCatergories from '@/component/sections/CompnayCatergories';
 import FAQ from '@/component/sections/FAQ';
 import HeroSection from '@/component/sections/HeroSection';
 import Testimonials from '@/component/sections/Testimonials';
@@ -24,6 +25,7 @@ export default function Home() {
         <Company />
         <Works />
         <Categories />
+        <CompnayCatergories/>
         <Testimonials />
         <FAQ />
       </Flex>
