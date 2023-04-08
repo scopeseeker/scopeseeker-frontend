@@ -24,6 +24,8 @@ export type IconNameType =
 	| "fresher"
 	| "global"
 	| "college"
+	| "add"
+	| "github"
 	;
 export type IconProps = {
 	name: IconNameType;
