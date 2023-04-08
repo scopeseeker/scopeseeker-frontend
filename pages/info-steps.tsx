@@ -15,6 +15,16 @@ import { useState } from 'react';
 
 const InfoSteps = () => {
   const [isVerify, setIsVerify] = useState(false);
+  const [selectedGender, setSelectedGender] = useState('');
+  const [selectDomain, setSelectDomain] = useState('');
+
+  const handleGenderSelection = (gender: string) => {
+    setSelectedGender(gender);
+  };
+
+  const handleDomainSelection = (domain: string) => {
+    setSelectDomain(domain);
+  }
 
   return (
     <HStack w={'full'} h={'100vh'} spacing={0}>
@@ -64,7 +74,12 @@ const InfoSteps = () => {
       <Center w={'70%'} h={'100vh'} overflow={'hidden'}>
         <VStack gap={4} h={'full'} pt={10}>
           <MyHeading title="Just Want to Know more" subTitle="about yourself" />
-          <FormControl h={'full'} w={'fit-content'} overflowY={'scroll'} px={10}>
+          <FormControl
+            h={'full'}
+            w={'fit-content'}
+            overflowY={'scroll'}
+            px={10}
+          >
             <VStack w={'full'} gap={2} pb={10}>
               <MyInput
                 labelTitle="Full Name"
@@ -165,7 +180,7 @@ const InfoSteps = () => {
                 type="text"
                 w={'sm'}
                 leftElem={<Icon name="college" width="16" height="16" />}
-                placeholder='eg: Sagar Institute of Research Technology and Science (SIRTS), Bhopal'
+                placeholder="eg: Sagar Institute of Research Technology and Science (SIRTS), Bhopal"
               />
 
               <MyInput
@@ -182,35 +197,50 @@ const InfoSteps = () => {
                 <HStack gap={2}>
                   <MyButton
                     title={'Male'}
-                    border="1px"
                     borderColor="brand.black"
                     fontSize="xs"
                     borderRadius={50}
-                    bg='transparent'
-                    color='brand.black'
-                    fontWeight='base'
+                    fontWeight="base"
+                    onClick={() => handleGenderSelection('male')}
+                    bg={selectedGender === 'male' ? 'brand.primary' : 'transparent'}
+                    color={selectedGender === 'male' ? 'brand.white' : 'brand.black'}
+                    _hover={{
+                      bg:
+                        selectedGender === 'male' ? 'brand.primary' : 'none',
+                    }}
+                    border={selectedGender === 'male' ? 'none' : '1px'}
                   />
 
                   <MyButton
                     title={'Female'}
-                    border="1px"
                     borderColor="brand.black"
                     fontSize="xs"
                     borderRadius={50}
-                    bg='transparent'
-                    color='brand.black'
-                    fontWeight='base'
+                    fontWeight="base"
+                    onClick={() => handleGenderSelection('female')}
+                    bg={selectedGender === 'female' ? 'brand.primary' : 'transparent'}
+                    color={selectedGender === 'female' ? 'brand.white' : 'brand.black'}
+                    _hover={{
+                      bg:
+                        selectedGender === 'female' ? 'brand.primary' : 'none',
+                    }}
+                    border={selectedGender === 'female' ? 'none' : '1px'}
                   />
 
                   <MyButton
                     title={'Others'}
-                    border="1px"
                     borderColor="brand.black"
                     fontSize="xs"
                     borderRadius={50}
-                    bg='transparent'
-                    color='brand.black'
-                    fontWeight='base'
+                    fontWeight="base"
+                    onClick={() => handleGenderSelection('others')}
+                    bg={selectedGender === 'others' ? 'brand.primary' : 'transparent'}
+                    color={selectedGender === 'others' ? 'brand.white' : 'brand.black'}
+                    _hover={{
+                      bg:
+                        selectedGender === 'others' ? 'brand.primary' : 'none',
+                    }}
+                    border={selectedGender === 'others' ? 'none' : '1px'}
                   />
                 </HStack>
               </VStack>
@@ -222,25 +252,34 @@ const InfoSteps = () => {
                 <HStack gap={2}>
                   <MyButton
                     title={'Tech'}
-                    border="1px"
                     borderColor="brand.black"
                     fontSize="xs"
                     borderRadius={50}
-                    bg='transparent'
-                    color='brand.black'
-                    fontWeight='base'
+                    fontWeight="base"
+                    onClick={() => handleDomainSelection('tech')}
+                    bg={selectDomain === 'tech' ? 'brand.primary' : 'transparent'}
+                    color={selectDomain === 'tech' ? 'brand.white' : 'brand.black'}
+                    _hover={{
+                      bg:
+                        selectDomain === 'tech' ? 'brand.primary' : 'none',
+                    }}
+                    border={selectDomain === 'tech' ? 'none' : '1px'}
                   />
 
                   <MyButton
                     title={'Non-Tech'}
-                    border="1px"
                     borderColor="brand.black"
                     fontSize="xs"
                     borderRadius={50}
-                    bg='transparent'
-                    color='brand.black'
-                    fontWeight='base'
-
+                    fontWeight="base"
+                    onClick={() => handleDomainSelection('non-tech')}
+                    bg={selectDomain === 'non-tech' ? 'brand.primary' : 'transparent'}
+                    color={selectDomain === 'non-tech' ? 'brand.white' : 'brand.black'}
+                    _hover={{
+                      bg:
+                        selectDomain === 'non-tech' ? 'brand.primary' : 'none',
+                    }}
+                    border={selectDomain === 'non-tech' ? 'none' : '1px'}
                   />
                 </HStack>
               </VStack>
