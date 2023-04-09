@@ -1,3 +1,4 @@
+import Ads from '@/component/sections/Motive';
 import Categories from '@/component/sections/Categories';
 import Company from '@/component/sections/Company';
 import CompnayCatergories from '@/component/sections/CompnayCatergories';
@@ -7,6 +8,7 @@ import Testimonials from '@/component/sections/Testimonials';
 import Works from '@/component/sections/Works';
 import { Flex } from '@chakra-ui/react';
 import Head from 'next/head';
+import Motive from '@/component/sections/Motive';
 
 export default function Home() {
   return (
@@ -26,6 +28,7 @@ export default function Home() {
         <Works />
         <Categories />
         <CompnayCatergories/>
+        <Motive/>
         <Testimonials />
         <FAQ />
       </Flex>
