@@ -20,34 +20,33 @@ const Filter = () => {
       <Heading as={'span'} fontSize={'md'} color={'brand.primary'} px={3}>
         Filter Jobs
       </Heading>
-
-      <Accordion allowToggle w={'full'}>
+      <Accordion allowToggle w="full">
         <FilterBox
-          filterHeading={'Company Type'}
+          filterHeading="Company Type"
           filterItems={[
-            'Information Technology',
-            'Backend Development',
-            'Full Stack Developer',
-            'Software Engineering',
+            { label: 'Information Technology', value: 'IT' },
+            { label: 'Backend Development', value: 'Backend' },
+            { label: 'Full Stack Developer', value: 'FullStack' },
+            { label: 'Software Engineering', value: 'SoftwareEng' },
           ]}
         />
-        <Divider/>
+        <Divider />
         <FilterBox
-          filterHeading={'Job Type'}
+          filterHeading="Job Type"
           filterItems={[
-            'Full Time',
-            'Part Time',
-            'Internship'
+            { label: 'Full Time', value: 'FullTime' },
+            { label: 'Part Time', value: 'PartTime' },
+            { label: 'Internship', value: 'Internship' },
           ]}
         />
-        <Divider/>
+        <Divider />
         <FilterBox
-          filterHeading={'Roles'}
+          filterHeading="Roles"
           filterItems={[
-            'Information Technology',
-            'FinTech',
-            'Indian MNC',
-            'Unicron',
+            { label: 'Information Technology', value: 'IT' },
+            { label: 'FinTech', value: 'FinTech' },
+            { label: 'Indian MNC', value: 'IndianMNC' },
+            { label: 'Unicorn', value: 'Unicorn' },
           ]}
         />
       </Accordion>
@@ -59,7 +58,7 @@ export default Filter;
 
 interface IFilterBox {
   filterHeading: string;
-  filterItems: string[];
+  filterItems: { label: string; value: string }[];
 }
 const FilterBox: React.FC<IFilterBox> = ({
   filterHeading,
@@ -88,12 +87,9 @@ const FilterBox: React.FC<IFilterBox> = ({
         <CheckboxGroup colorScheme="messenger">
           <Stack
             direction={['column', 'column']}
-            h={'150px'}
+            maxH={'150px'}
             overflowY={'scroll'}
             css={{
-              '&::-webkit-scrollbar': {
-                width: '8px',
-              },
               '&::-webkit-scrollbar-track': {
                 backgroundColor: 'transparent',
               },
@@ -103,10 +99,10 @@ const FilterBox: React.FC<IFilterBox> = ({
             }}
             pl={'3px'}
           >
-            {filterItems.map((item) => (
-              <Checkbox value={item} size={'sm'}>
+            {filterItems.map((item, key) => (
+              <Checkbox key={key} value={item.value} size={'sm'}>
                 <Text as={'span'} fontSize={'xs'}>
-                  {item}
+                  {item.label}
                 </Text>
               </Checkbox>
             ))}
