@@ -4,8 +4,8 @@ import MyImage from '../image/MyImage';
 
 const Motive = () => {
   return (
-    <Center w={{ base: '90vw', md: '90vw', lg: '100vw', xl: '65vw' }} px={16}>
-      <Flex h={'60vh'} w={'full'} px={14} gap={36}>
+    <Center w={{ base: '90vw', md: '90vw', lg: '100vw', xl: '100%' }} px={16}>
+      <Flex minH={'60vh'} w={'full'} px={14} gap={36}>
         <MyImage
           src={'/assets/svgs/hero-section-2.svg'}
           alt="svg-image"
@@ -16,7 +16,7 @@ const Motive = () => {
         <Stack w={'50%'} gap={5} py={14}>
           <Text
             as={'span'}
-            fontSize={{ base: '24px', md: '40px', lg: '45px' }}
+            fontSize={{ base: '24px', md: '40px', lg: '3xl' }}
             color={'brand.primary'}
           >
             Millions of Jobs.
