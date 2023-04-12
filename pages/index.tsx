@@ -1,4 +1,3 @@
-import Ads from '@/component/sections/Motive';
 import Categories from '@/component/sections/Categories';
 import Company from '@/component/sections/Company';
 import CompnayCatergories from '@/component/sections/CompnayCatergories';

@@ -27,6 +27,7 @@ export type IconNameType =
 	| "add"
 	| "github"
 	| "check"
+	| "searchicon"
 	;
 export type IconProps = {
 	name: IconNameType;
