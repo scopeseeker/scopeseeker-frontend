@@ -42,7 +42,7 @@ const MyButton: React.FC<MyButtonProps> = ({
       color={color}
       variant={variant}
       fontSize={fontSize}
-      colorScheme={colorScheme}
+      colorScheme={ variant === 'outline' ? 'gray' : colorScheme}
       borderRadius={borderRadius}
       _hover={{ textDecoration: decoration }}
       bg={bg}
