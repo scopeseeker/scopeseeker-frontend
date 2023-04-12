@@ -1,7 +1,7 @@
+import MyJobCard from '@/component/cards/MyJobCard';
 import Icon from '@/component/icon/Icon';
 import MyImage from '@/component/image/MyImage';
 import MyInput from '@/component/inputs/MyInput';
-import JobCard from '@/component/sections/JobCard';
 import {
   Box,
   Center,
@@ -263,7 +263,7 @@ const Jobs = () => {
               }
             />
           </Center>
-          <Center w={'50%'} h={'20vw'} >
+          <Center w={'50%'} h={'20vw'}>
             <MyImage
               src={'/assets/svgs/hero-section.svg'}
               alt={'logo'}
@@ -272,7 +272,8 @@ const Jobs = () => {
             ></MyImage>
           </Center>
         </HStack>
-        <Box bg={'blue.200'}
+        <Box
+          bg={'blue.200'}
           h={'15vw'}
           w={'full'}
           p={4}
@@ -310,7 +311,6 @@ const Jobs = () => {
               py={3}
               gap={3}
               borderRadius={'lg'}
-              
             >
               <IconButton
                 aria-label="categories"
@@ -415,6 +415,7 @@ const Jobs = () => {
           </HStack>
         </Box>
       </Box>
+      <MyJobCard />
     </Box>
   );
 };

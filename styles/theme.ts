@@ -36,7 +36,7 @@ const theme = extendTheme({
             lightgrey: '#F5F6F8',
             primary: '#1A75E8',
             aliceblue: "#F0F8FF",
-            a1: '#E6E6FA'
+            cardColor: '#f7f4ff'
         }
     },
     config,
