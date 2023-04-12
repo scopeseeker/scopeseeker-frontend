@@ -4,7 +4,6 @@ import Icon from '@/component/icon/Icon';
 import MyImage from '@/component/image/MyImage';
 import MyInput from '@/component/inputs/MyInput';
 import {
-  Box,
   Center,
   FormControl,
   HStack,

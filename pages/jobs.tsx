@@ -251,7 +251,7 @@ const Jobs = () => {
           <Center h={'20vw'} w={'50%'} flexDirection={'column'}>
             <Heading>Jobs hiring</Heading>
             <Text as={'span'} fontSize={'md'}>
-              "Opportunities don't happen. You create them."
+              Opportunities dont happen.You create them
             </Text>
 
             <MyInput
