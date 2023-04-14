@@ -1,35 +1,28 @@
+import MyHeading from '@/component/heading/MyHeading';
 import MyImage from '@/component/image/MyImage';
 import {
   Box,
   HStack,
-  Heading,
   ListItem,
   OrderedList,
   Text,
   UnorderedList,
   VStack,
 } from '@chakra-ui/react';
-import React from 'react';
 
 const privacyPolicy = () => {
   return (
-    <VStack
-      w={'full'}
-      minH={'100vh'}
-      // bg={'brand.aliceblue'}
-      pt={8}
-      px={20}
-      gap={10}
-    >
+    <VStack w={'full'} minH={'100vh'} pt={8} px={20} gap={10}>
       <HStack w={'full'} justifyContent={'space-between'}>
-        <VStack alignItems={'flex-start'} w={'fit-content'} gap={2}>
-          <Heading fontSize={'4xl'} color={'brand.primary'}>
-            Privacy Policy
-          </Heading>
-          <Text as={'span'} fontSize={'sm'} w={'xl'} color={'gray'}>
-            Every human or organisation has three levels of openness: Public,
-            Personal and Private. We do believe in your rights to privacy.
-          </Text>
+        <VStack alignItems={'flex-start'} maxW={'50%'} gap={2}>
+          <MyHeading
+            title="Privacy Policy"
+            subTitle=" Every human or organisation has three levels of openness: Public,
+            Personal and Private. We do believe in your rights to privacy."
+            align={'flex-start'}
+            headColor="brand.primary"
+            paraColor="brand.semiblack"
+          />
         </VStack>
         <MyImage
           src={'/assets/images/privacy-policy.webp'}
@@ -42,21 +35,21 @@ const privacyPolicy = () => {
       <VStack w={'full'} alignItems={'flex-start'}>
         <Text
           color={'brand.semiblack'}
-          fontSize={'lg'}
           fontWeight={'medium'}
-          as={'span'}
+          as={'h3'}
+          fontSize={'xl'}
         >
           Privacy Policy
         </Text>
         <VStack gap={3} alignItems={'flex-start'}>
-          <Text fontSize={'sm'} as={'span'}>
+          <Text as={'p'}>
             Welcome to Scope Seeker, where we prioritize your privacy. This
             Privacy Policy applies to our website, contents, and all of the
             services we offer. If you have any questions regarding our
             practices, please reach out to us at help@scopeseekeer.com.
           </Text>
 
-          <Text fontSize={'sm'} as={'span'}>
+          <Text as={'p'}>
             Here at FLIVE Consulting Private Limited, the parent company of
             Scope Seeker (also referred to as &quot;we&quot;, &quot;our&quot;,
             or &quot;us&quot;), we are committed to using your data
@@ -64,7 +57,7 @@ const privacyPolicy = () => {
             (&quot;the Platform&quot;).
           </Text>
 
-          <Text fontSize={'sm'} as={'span'}>
+          <Text as={'p'}>
             Our Platform is designed to provide personalized job opportunities
             based on your skills and interests. We use gamified engagement,
             hiring, and opportunity listing and hosting technology to connect
@@ -72,7 +65,7 @@ const privacyPolicy = () => {
           </Text>
 
           <Box>
-            <UnorderedList ml={8} spacing={3} fontSize={'sm'}>
+            <UnorderedList ml={8} spacing={3}>
               <ListItem>
                 Providing clients with a limited, non-exclusive,
                 non-transferable, non-sublicensable license to use the Platform
@@ -115,22 +108,22 @@ const privacyPolicy = () => {
       <VStack w={'full'} alignItems={'flex-start'}>
         <Text
           color={'brand.semiblack'}
-          fontSize={'lg'}
           fontWeight={'medium'}
-          as={'span'}
+          as={'h3'}
+          fontSize={'xl'}
         >
           Scope
         </Text>
 
         <VStack gap={3} alignItems={'flex-start'}>
-          <Text fontSize={'sm'} as={'span'}>
+          <Text as={'p'}>
             At Scope Seeker, our commitment to your privacy extends to all
             aspects of our business. This Privacy Policy applies to all of our
             contents, products, services, and websites, ensuring that your
             personal information is protected across our entire platform.
           </Text>
 
-          <Text fontSize={'sm'} as={'span'}>
+          <Text as={'p'}>
             Our goal at Scope Seeker is to provide you with personalized job
             opportunities based on your skills and interests, while maintaining
             the highest standards of privacy and security. If you have any
@@ -143,15 +136,15 @@ const privacyPolicy = () => {
       <VStack w={'full'} alignItems={'flex-start'}>
         <Text
           color={'brand.semiblack'}
-          fontSize={'lg'}
           fontWeight={'medium'}
-          as={'span'}
+          as={'h3'}
+          fontSize={'xl'}
         >
           Definations
         </Text>
 
         <VStack gap={3} alignItems={'flex-start'}>
-          <Text fontSize={'sm'} as={'span'}>
+          <Text as={'p'}>
             At Scope Seeker, we believe that clear definitions are crucial to
             ensuring that our users fully understand our Privacy Policy. The
             following definitions apply to this Privacy Policy, and any
@@ -160,7 +153,7 @@ const privacyPolicy = () => {
             defined elsewhere in this Privacy Notice.
           </Text>
 
-          <Text fontSize={'sm'} as={'span'}>
+          <Text as={'p'}>
             &quot;Opportunities&quot; refer to public and private events
             organized by our clients to secure Participants/Candidates. Public
             opportunities are open to the general public, while private
@@ -168,7 +161,7 @@ const privacyPolicy = () => {
             Participants.
           </Text>
 
-          <Text fontSize={'sm'} as={'span'}>
+          <Text as={'p'}>
             &quot;Opportunity Content&quot; refers to any content related to an
             opportunity, including material, performance, presentation, reports,
             graphics, sounds, information, and data such as messages or files
@@ -177,13 +170,13 @@ const privacyPolicy = () => {
             Participant/Candidate.
           </Text>
 
-          <Text fontSize={'sm'} as={'span'}>
+          <Text as={'p'}>
             &quot;Clients&quot; refer to companies, institutes, businesses,
             organizations, and individuals who are registered on the Scope
             Seeker platform and use it to organize and host their opportunities.
           </Text>
 
-          <Text fontSize={'sm'} as={'span'}>
+          <Text as={'p'}>
             &quot;Participants/Candidates&quot; refer to individuals, including
             authorized representatives of companies, institutes, businesses, or
             organizations who are registered on the Scope Seeker platform and
@@ -195,22 +188,22 @@ const privacyPolicy = () => {
       <VStack w={'full'} alignItems={'flex-start'}>
         <Text
           color={'brand.semiblack'}
-          fontSize={'lg'}
           fontWeight={'medium'}
-          as={'span'}
+          as={'h3'}
+          fontSize={'xl'}
         >
           Information collection and use
         </Text>
 
         <VStack gap={3} alignItems={'flex-start'}>
-          <Text fontSize={'sm'} as={'span'}>
+          <Text as={'p'}>
             At Scope Seeker, we offer personalized job recommendations based on
             your skills and interests. To provide our full range of services, we
             may collect the following types of information:
           </Text>
 
           <Box>
-            <OrderedList ml={8} spacing={3} fontSize={'sm'}>
+            <OrderedList ml={8} spacing={3}>
               <ListItem>
                 Personal information such as your full name, profile picture,
                 email address, residential address (including post code, city,
@@ -245,14 +238,14 @@ const privacyPolicy = () => {
             </OrderedList>
           </Box>
 
-          <Text fontSize={'sm'} as={'span'}>
+          <Text as={'p'}>
             Please note that providing some specific personally identifiable
             information may be compulsory/mandatory for the use of some specific
             services, and additional details may be required on top of the ones
             mentioned above.
           </Text>
 
-          <Text fontSize={'sm'} as={'span'}>
+          <Text as={'p'}>
             We may also receive information about you from third parties, such
             as social media providers (e.g. Github, LinkedIn, or Google) when
             you log in to Scope Seeker using your login details from such
@@ -261,14 +254,14 @@ const privacyPolicy = () => {
             well.
           </Text>
 
-          <Text fontSize={'sm'} as={'span'}>
+          <Text as={'p'}>
             Scope Seeker may present links in a format that enables us to keep
             track of whether these links have been followed. We use this
             information to improve the quality of our search technology,
             customized content, and advertising.
           </Text>
 
-          <Text fontSize={'sm'} as={'span'}>
+          <Text as={'p'}>
             This Privacy Policy applies to Scope Seeker&apos;s contents and
             services only. We do not exercise control over the sites displayed
             as search results or links from within our various services. These
@@ -276,7 +269,7 @@ const privacyPolicy = () => {
             computer, collect data, or solicit personal information from you.
           </Text>
 
-          <Text fontSize={'sm'} as={'span'}>
+          <Text as={'p'}>
             Please note that when you use Scope Seeker site services, you may
             make some of your personal information public. If you post personal
             information online that is accessible to the public, you may receive
@@ -285,11 +278,11 @@ const privacyPolicy = () => {
             information.
           </Text>
 
-          <Text fontSize={'sm'} as={'span'}>
+          <Text as={'p'}>
             We use your email address and/or phone number to send you:
           </Text>
           <Box>
-            <OrderedList ml={8} spacing={3} fontSize={'sm'}>
+            <OrderedList ml={8} spacing={3}>
               <ListItem>
                 Password reminder and registration confirmation.
               </ListItem>
@@ -304,18 +297,16 @@ const privacyPolicy = () => {
             </OrderedList>
           </Box>
 
-          <Text fontSize={'sm'} as={'span'}>
+          <Text as={'p'}>
             Please note that you shall have the option to unsubscribe from
             newsletters, promotional emails, new event information, invites, and
             reminders on our website.
           </Text>
 
-          <Text fontSize={'sm'} as={'span'}>
-            We use your personal information to:
-          </Text>
+          <Text as={'p'}>We use your personal information to:</Text>
 
           <Box>
-            <OrderedList ml={8} spacing={3} fontSize={'sm'}>
+            <OrderedList ml={8} spacing={3}>
               <ListItem>
                 Help us provide personalized features and tailor our site to
                 your interests.
@@ -336,15 +327,15 @@ const privacyPolicy = () => {
       <VStack w={'full'} alignItems={'flex-start'}>
         <Text
           color={'brand.semiblack'}
-          fontSize={'lg'}
           fontWeight={'medium'}
-          as={'span'}
+          as={'h3'}
+          fontSize={'xl'}
         >
           Information Sharing and Disclosure
         </Text>
 
         <VStack gap={3} alignItems={'flex-start'}>
-          <Text fontSize={'sm'} as={'span'}>
+          <Text as={'p'}>
             Scope Seeker site will not sell or rent your personally identifiable
             information to anyone. Scope Seeker will send personally
             identifiable information about you to other companies or people
@@ -352,7 +343,7 @@ const privacyPolicy = () => {
           </Text>
 
           <Box>
-            <UnorderedList ml={8} spacing={3} fontSize={'sm'}>
+            <UnorderedList ml={8} spacing={3}>
               <ListItem>
                 At Scope Seeker, we are committed to protecting your personally
                 identifiable information and ensuring your privacy. We will
@@ -406,15 +397,15 @@ const privacyPolicy = () => {
       <VStack w={'full'} alignItems={'flex-start'}>
         <Text
           color={'brand.semiblack'}
-          fontSize={'lg'}
           fontWeight={'medium'}
-          as={'span'}
+          as={'h3'}
+          fontSize={'xl'}
         >
           Cookies
         </Text>
 
         <VStack gap={3} alignItems={'flex-start'}>
-          <Text fontSize={'sm'} as={'span'}>
+          <Text as={'p'}>
             At Scope Seeker, we understand the importance of providing a
             customized and personalized experience to our users. In order to
             achieve this, we use cookies on our platform. Cookies are small
@@ -422,7 +413,7 @@ const privacyPolicy = () => {
             customized services and information targeted to your interests.
           </Text>
 
-          <Text fontSize={'sm'} as={'span'}>
+          <Text as={'p'}>
             Our platform uses session cookies to ensure that you have a seamless
             experience while using our site. These cookies contain a unique
             number, known as your session ID, which allows our server to
@@ -432,7 +423,7 @@ const privacyPolicy = () => {
             information that you have requested.
           </Text>
 
-          <Text fontSize={'sm'} as={'span'}>
+          <Text as={'p'}>
             We understand that you may prefer not to accept cookies, and you can
             choose to accept or decline cookies by modifying your browser
             settings. However, please note that this may prevent you from taking
@@ -440,7 +431,7 @@ const privacyPolicy = () => {
             cookies for usage, behavioral, analytics, and preferences data.
           </Text>
 
-          <Text fontSize={'sm'} as={'span'}>
+          <Text as={'p'}>
             At Scope Seeker, we take your privacy very seriously. All
             information collected and accessed through the use of cookies will
             be maintained in accordance with our privacy policy. Please note
@@ -455,15 +446,15 @@ const privacyPolicy = () => {
       <VStack w={'full'} alignItems={'flex-start'}>
         <Text
           color={'brand.semiblack'}
-          fontSize={'lg'}
           fontWeight={'medium'}
-          as={'span'}
+          as={'h3'}
+          fontSize={'xl'}
         >
           Information shared by Participant/Candidate directly with the client
         </Text>
 
         <VStack gap={3} alignItems={'flex-start'}>
-          <Text fontSize={'sm'} as={'span'}>
+          <Text as={'p'}>
             At Scope Seeker, we take your privacy very seriously. We want to
             ensure that you are aware of how your information is shared during
             an Event/Opportunity/Job organised by our clients. Please note that
@@ -475,7 +466,7 @@ const privacyPolicy = () => {
             the client.
           </Text>
 
-          <Text fontSize={'sm'} as={'span'}>
+          <Text as={'p'}>
             We may transfer your personal data to India during the course of our
             Services. However, depending on the location of the organizer, your
             data may also be transferred to other countries. Rest assured that
@@ -488,7 +479,7 @@ const privacyPolicy = () => {
             preferences data.
           </Text>
 
-          <Text fontSize={'sm'} as={'span'}>
+          <Text as={'p'}>
             We respect your privacy and will not sell or rent your personally
             identifiable information to anyone. However, we may need to share
             your information with certain service partners in order to respond
@@ -503,15 +494,15 @@ const privacyPolicy = () => {
       <VStack w={'full'} alignItems={'flex-start'}>
         <Text
           color={'brand.semiblack'}
-          fontSize={'lg'}
           fontWeight={'medium'}
-          as={'span'}
+          as={'h3'}
+          fontSize={'xl'}
         >
           Links
         </Text>
 
         <VStack gap={3} alignItems={'flex-start'}>
-          <Text fontSize={'sm'} as={'span'}>
+          <Text as={'p'}>
             At Scope Seeker, we may provide links to external websites on our
             platform to provide you with additional information or resources
             related to your job search. These links may be presented in a format
@@ -520,7 +511,7 @@ const privacyPolicy = () => {
             provide you with more customized content and advertising.
           </Text>
 
-          <Text fontSize={'sm'} as={'span'}>
+          <Text as={'p'}>
             Please note that these external websites have their own privacy
             policies, which may differ from ours. We are not responsible for the
             privacy practices of these external websites and encourage you to
@@ -533,15 +524,15 @@ const privacyPolicy = () => {
       <VStack w={'full'} alignItems={'flex-start'}>
         <Text
           color={'brand.semiblack'}
-          fontSize={'lg'}
           fontWeight={'medium'}
-          as={'span'}
+          as={'h3'}
+          fontSize={'xl'}
         >
           Security
         </Text>
 
         <VStack gap={3} alignItems={'flex-start'}>
-          <Text fontSize={'sm'} as={'span'}>
+          <Text as={'p'}>
             Your Scope Seeker account information is password-protected for your
             privacy and security.
           </Text>
@@ -551,22 +542,22 @@ const privacyPolicy = () => {
       <VStack w={'full'} alignItems={'flex-start'}>
         <Text
           color={'brand.semiblack'}
-          fontSize={'lg'}
           fontWeight={'medium'}
-          as={'span'}
+          as={'h3'}
+          fontSize={'xl'}
         >
           Changes to this Privacy Policy
         </Text>
 
         <VStack gap={3} alignItems={'flex-start'}>
-          <Text fontSize={'sm'} as={'span'}>
+          <Text as={'p'}>
             At Scope Seeker, we take your privacy seriously and are committed to
             being transparent about any changes to our Privacy Policy. We may
             update this policy from time to time, but we will not diminish your
             rights under this policy without your explicit consent.
           </Text>
 
-          <Text fontSize={'sm'} as={'span'}>
+          <Text as={'p'}>
             We will notify you of any significant changes by posting a prominent
             announcement on our website, so we encourage you to check back
             periodically to stay informed of any updates.
@@ -577,15 +568,15 @@ const privacyPolicy = () => {
       <VStack w={'full'} alignItems={'flex-start'}>
         <Text
           color={'brand.semiblack'}
-          fontSize={'lg'}
           fontWeight={'medium'}
-          as={'span'}
+          as={'h3'}
+          fontSize={'xl'}
         >
           Data integrity
         </Text>
 
         <VStack gap={3} alignItems={'flex-start'}>
-          <Text fontSize={'sm'} as={'span'}>
+          <Text as={'p'}>
             We take reasonable steps to ensure that the personal information we
             process is accurate, complete, and up-to-date. However, we also rely
             on our users to update or correct their personal information
@@ -595,7 +586,7 @@ const privacyPolicy = () => {
             it.
           </Text>
 
-          <Text fontSize={'sm'} as={'span'}>
+          <Text as={'p'}>
             We also have in place appropriate technical and organizational
             measures to safeguard your personal information against unauthorized
             access, accidental loss, destruction, or damage. We continuously
@@ -608,15 +599,15 @@ const privacyPolicy = () => {
       <VStack w={'full'} alignItems={'flex-start'}>
         <Text
           color={'brand.semiblack'}
-          fontSize={'lg'}
           fontWeight={'medium'}
-          as={'span'}
+          as={'h3'}
+          fontSize={'xl'}
         >
           My Rights
         </Text>
 
         <VStack gap={3} alignItems={'flex-start'}>
-          <Text fontSize={'sm'} as={'span'}>
+          <Text as={'p'}>
             As a user of our Scope Seeker platform, you have certain rights
             regarding your personal data. You have the right to request a copy
             of your personal data, and to request corrections, deletions, or
@@ -625,7 +616,7 @@ const privacyPolicy = () => {
             to us in a structured, machine-readable format.
           </Text>
 
-          <Text fontSize={'sm'} as={'span'}>
+          <Text as={'p'}>
             Under certain circumstances, you may object to the processing of
             your personal data, such as when the data is being used for direct
             marketing purposes. However, please note that these rights may be
@@ -636,7 +627,7 @@ const privacyPolicy = () => {
             you accordingly.
           </Text>
 
-          <Text fontSize={'sm'} as={'span'}>
+          <Text as={'p'}>
             When you register on our platform, you will need to provide us with
             certain mandatory information, as indicated in the form. In
             addition, when purchasing a ticket or subscription plan, you will
@@ -651,15 +642,15 @@ const privacyPolicy = () => {
       <VStack w={'full'} alignItems={'flex-start'}>
         <Text
           color={'brand.semiblack'}
-          fontSize={'lg'}
           fontWeight={'medium'}
-          as={'span'}
+          as={'h3'}
+          fontSize={'xl'}
         >
           Data Retention
         </Text>
 
         <VStack gap={3} alignItems={'flex-start'}>
-          <Text fontSize={'sm'} as={'span'}>
+          <Text as={'p'}>
             At Scope Seeker, we strive to ensure that we only retain your
             personal data for as long as necessary to provide you with our
             services or as required by law. Generally, we retain your personal
@@ -669,7 +660,7 @@ const privacyPolicy = () => {
             your data for a period of 5 (five) years.
           </Text>
 
-          <Text fontSize={'sm'} as={'span'}>
+          <Text as={'p'}>
             In cases where we process your personal data for marketing purposes
             or with your consent, we will continue to process your data until
             you ask us to stop and for a short period thereafter to implement
@@ -678,13 +669,13 @@ const privacyPolicy = () => {
             respect your wishes in the future.
           </Text>
 
-          <Text fontSize={'sm'} as={'span'}>
+          <Text as={'p'}>
             For personal data that we process in connection with performing a
             contract or for a competition, we will retain the data for six (6)
             years from your last interaction with us.
           </Text>
 
-          <Text fontSize={'sm'} as={'span'}>
+          <Text as={'p'}>
             Rest assured that we will review our data retention practices
             regularly to ensure that we only retain personal data that is
             necessary for the purpose for which it was collected.
@@ -695,15 +686,15 @@ const privacyPolicy = () => {
       <VStack w={'full'} alignItems={'flex-start'}>
         <Text
           color={'brand.semiblack'}
-          fontSize={'lg'}
           fontWeight={'medium'}
-          as={'span'}
+          as={'h3'}
+          fontSize={'xl'}
         >
           Account Deletion
         </Text>
 
         <VStack gap={3} alignItems={'flex-start'}>
-          <Text fontSize={'sm'} as={'span'}>
+          <Text as={'p'}>
             If you wish to delete your account you can email us at
             support@scopeseekeer.com from your registered email
           </Text>

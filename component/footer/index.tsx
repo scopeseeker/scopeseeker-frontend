@@ -1,14 +1,14 @@
 import {
-  Button,
   Center,
   Flex,
   Heading,
   HStack,
   IconButton,
   Text,
-  VStack
+  VStack,
 } from '@chakra-ui/react';
 import Link from 'next/link';
+import MyButton from '../button/MyButton';
 import Icon from '../icon/Icon';
 import MyImage from '../image/MyImage';
 
@@ -36,7 +36,12 @@ const Footer = () => {
         >
           <HStack cursor={'pointer'}>
             <Center w={12} h={12}>
-              <MyImage src={'/assets/images/scopeseeker-logo.png'} alt={'secope seeker logo'} width={60} height={60} />
+              <MyImage
+                src={'/assets/images/scopeseeker-logo.png'}
+                alt={'secope seeker logo'}
+                width={60}
+                height={60}
+              />
             </Center>
 
             <Flex direction={'column'} gap={1}>
@@ -184,14 +189,13 @@ interface IFooterLink {
 const FooterLink: React.FC<IFooterLink> = ({ title, link }: IFooterLink) => {
   return (
     <Link href={link}>
-      <Button
+      <MyButton
         color={'brand.white'}
-        _hover={{ textDecoration: 'none', color: 'secondary.200' }}
+        _hover={{color: 'brand.darkgrey' }}
         fontWeight={'normal'}
         variant={'link'}
-      >
-        {title}
-      </Button>
+        title={title}
+      />
     </Link>
   );
 };

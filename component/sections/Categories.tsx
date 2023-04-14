@@ -1,4 +1,5 @@
-import { Button, HStack, IconButton, Text, VStack } from '@chakra-ui/react';
+import { HStack, IconButton, Text, VStack } from '@chakra-ui/react';
+import MyButton from '../button/MyButton';
 import MyHeading from '../heading/MyHeading';
 import Icon from '../icon/Icon';
 
@@ -216,14 +217,11 @@ const Categories = () => {
         </HStack>
       </VStack>
 
-      <Button
+      <MyButton
         fontSize={'xs'}
         bg={'brand.primary'}
-        color={'brand.white'}
-        _hover={{ backgroundColor: 'brand.200' }}
-      >
-        Browse All Categories
-      </Button>
+        title="Browse All Categories"
+      />
     </VStack>
   );
 };
