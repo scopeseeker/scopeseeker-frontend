@@ -33,7 +33,12 @@ const Navbar = () => {
         {/* Left Part of Navbar */}
         <HStack gap={12}>
           <HStack cursor={'pointer'}>
-            <MyImage src={'/assets/images/scopeseeker-logo.png'} alt={'secope seeker logo'} width={30} height={30} />
+            <MyImage
+              src={'/assets/images/scopeseeker-logo.png'}
+              alt={'secope seeker logo'}
+              width={30}
+              height={30}
+            />
             <Flex direction={'column'}>
               <Text
                 as={'span'}
@@ -49,44 +54,35 @@ const Navbar = () => {
             </Flex>
           </HStack>
 
-          <HStack gap={6}>
-            <Link href={'#'}>
-              <Button
-                iconSpacing={'1'}
-                rightIcon={<Icon name={'arrow-down'} width={'14px'} />}
-                variant="link"
-                _hover={{ textDecoration: 'none', color: 'brand.primary' }}
-                fontSize={'xs'}
-                fontWeight={'normal'}
-              >
-                Job
-              </Button>
+          <HStack>
+          <Link href={'/jobs'}>
+              <MyButton
+                title="Job"
+                variant="Link"
+                fontSize="xs"
+                fontWeight='medium'
+                rightIcon={<Icon name={'arrow-down'} width={'16px'} />}
+              />
             </Link>
 
             <Link href={'#'}>
-              <Button
-                iconSpacing={'1'}
-                rightIcon={<Icon name={'arrow-down'} width={'14px'} />}
-                variant="link"
-                _hover={{ textDecoration: 'none', color: 'brand.primary' }}
-                fontSize={'xs'}
-                fontWeight={'normal'}
-              >
-                Company
-              </Button>
+              <MyButton
+                title="Company"
+                variant="Link"
+                fontWeight='medium'
+                fontSize="xs"
+                rightIcon={<Icon name={'arrow-down'} width={'16px'} />}
+              />
             </Link>
 
             <Link href={'#'}>
-              <Button
-                iconSpacing={'1'}
-                rightIcon={<Icon name={'arrow-down'} width={'14px'} />}
-                variant="link"
-                _hover={{ textDecoration: 'none', color: 'brand.primary' }}
-                fontSize={'xs'}
-                fontWeight={'normal'}
-              >
-                Pages
-              </Button>
+              <MyButton
+                title="Pages"
+                variant="Link"
+                fontWeight='medium'
+                fontSize="xs"
+                rightIcon={<Icon name={'arrow-down'} width={'16px'} />}
+              />
             </Link>
           </HStack>
         </HStack>

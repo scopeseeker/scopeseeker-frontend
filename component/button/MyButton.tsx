@@ -35,7 +35,6 @@ const MyButton: React.FC<MyButtonProps> = ({
   fontWeight,
   ...rest
 }: MyButtonProps) => {
-
   return (
     <Button
       size={size}
@@ -44,7 +43,7 @@ const MyButton: React.FC<MyButtonProps> = ({
       fontSize={fontSize}
       colorScheme={ variant === 'outline' ? 'gray' : colorScheme}
       borderRadius={borderRadius}
-      _hover={{ textDecoration: decoration }}
+      _hover={{ textDecoration: decoration,  opacity: variant === 'Link' && 0.6}}
       bg={bg}
       px={px}
       w={w}

@@ -4,14 +4,19 @@ import React from 'react';
 interface MyHeadingProps {
   title: string;
   subTitle?: string;
+  align?: string;
+  headColor?: string;
+  paraColor?: string;
 }
 
 const MyHeading: React.FC<MyHeadingProps> = (props) => {
-  const { title, subTitle } = props;
+  const { title, subTitle, align = 'center', headColor = 'brand.semiblack', paraColor = 'brand.darkgrey' } = props;
   return (
-    <VStack>
-      <Heading textAlign={'center'} color={'brand.semiblack'}>{title}</Heading>
-      <Text color={'brand.darkgrey'}>{subTitle}</Text>
+    <VStack alignItems={align}>
+      <Heading color={headColor}>
+        {title}
+      </Heading>
+      <Text color={paraColor}>{subTitle}</Text>
     </VStack>
   );
 };
