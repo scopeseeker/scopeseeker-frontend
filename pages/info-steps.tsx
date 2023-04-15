@@ -14,7 +14,8 @@ import {
 import { useState } from 'react';
 
 const InfoSteps = () => {
-  const [isVerify, setIsVerify] = useState(false);
+  // const [isVerify, setIsVerify] = useState(false);
+  const isVerify = true;
   const [selectedGender, setSelectedGender] = useState('');
   const [selectDomain, setSelectDomain] = useState('');
 
@@ -43,7 +44,7 @@ const InfoSteps = () => {
               width={250}
               height={500}
             />
-            <Text color={'white'} fontWeight={'medium'}>
+            <Text color={'white'} fontWeight={'medium'} >
               Your Story, Your Way
             </Text>
           </VStack>
@@ -80,7 +81,7 @@ const InfoSteps = () => {
             overflowY={'scroll'}
             px={10}
           >
-            <VStack w={'full'} gap={2} pb={10}>
+            <VStack w={'full'} gap={2} pb={10} >
               <MyInput
                 labelTitle="Full Name"
                 type="text"
@@ -99,6 +100,7 @@ const InfoSteps = () => {
                     bg="green.500"
                     isDisabled={isVerify ? true : false}
                     fontSize="xs"
+                    
                   />
                 }
                 w={'sm'}
