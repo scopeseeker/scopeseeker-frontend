@@ -92,7 +92,7 @@ const Footer = () => {
             <Flex flexDir={'column'} gap={3} p={{ base: 0, md: 4 }}>
               <FooterHeading title={'Company'} />
               <FooterLink link={'#'} title={'About Us'} />
-              <FooterLink link={'#'} title={'Contact Us'} />
+              <FooterLink link={'/contact-us'} title={'Contact Us'} />
               <FooterLink link={'#'} title={'Terms & Conditions'} />
               <FooterLink link={'#'} title={'Privacy Policy'} />
               <FooterLink link={'#'} title={'Report an Issue'} />

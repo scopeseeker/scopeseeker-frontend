@@ -37,7 +37,7 @@ const ContactUs = () => {
           >
             <FormControl>
               <VStack alignItems={'flex-start'} gap={2}>
-                <Heading fontSize={'xl'}>
+                <Heading fontSize={'2xl'}>
                   You can share your query here!
                 </Heading>
                 <MyInput
@@ -69,9 +69,9 @@ const ContactUs = () => {
                   <Textarea
                     w={'100%'}
                     bg={'brand.aliceblue'}
-                    fontSize={'xs'}
+                    fontSize={'sm'}
                     resize={'none'}
-                    placeholder="comments"
+                    placeholder="Write your message here..."
                   />
                 </VStack>
                 <MyButton title="Submit" size="md" px={12} />
@@ -82,61 +82,74 @@ const ContactUs = () => {
 
         <Center w={'50%'} h={'full'}>
           <Center flexDirection={'column'} w={'full'} gap={4}>
-            <Heading fontSize={'xl'} mb={4}>
+            <Heading fontSize={'2xl'} mb={4}>
               Get more details about us
             </Heading>
-            <HStack w={'55%'} h={16} borderRadius={6}  bg={'brand.primary'}>
+            <HStack w={'55%'} h={16} borderRadius={6} border={'1px solid '} borderColor={'blue.600'} bg={'blue.200'}>
               <HStack gap={3} w={'full'} p={6}>
-                <Icon name="location" width="30" height="30" color="white" />
-                <VStack alignItems={'flex-start'} spacing={0} justifyContent={'center'}>
-                  <Heading fontSize={'2xs'}
-                  color={'gray.300'}>Location</Heading>
-                  <Text fontSize={'xs'} color={'white'}>Bhopal sonagiri sector C183</Text>
+                <Icon name="location" width="30" height="30" color="brand.semiblack" />
+                <VStack
+                  alignItems={'flex-start'}
+                  spacing={0}
+                  justifyContent={'center'}
+                >
+                  <Text fontSize={'2xs'} color={'brand.semiblack'}>
+                    Location
+                  </Text>
+                  <Text fontSize={'xs'} color={'brand.black'}>
+                    Bhopal sonagiri sector C183
+                  </Text>
                 </VStack>
               </HStack>
             </HStack>
-            <HStack
-              w={'55%'}
-              h={16}
-              borderRadius={6}
-              bg={'brand.primary'}
-            >
-              <HStack gap={4} w={'full'} p={6} >
-                <Icon name="whatsapp" width="30" height="30" color="white" />
-                <VStack alignItems={'flex-start'} spacing={0} justifyContent={'center'}>
-                  <Heading fontSize={'2xs'}
-                  color={'gray.300'}>WhatsApp</Heading>
-                  <Text fontSize={'xs'} color={'white'}>09039122683</Text>
+            <HStack w={'55%'} h={16} borderRadius={6}border={'1px solid'} borderColor={'green.800'} bg={'green.200'}>
+              <HStack gap={4} w={'full'} p={6}>
+                <Icon name="whatsapp" width="30" height="30" color="brand.semiblack" />
+                <VStack
+                  alignItems={'flex-start'}
+                  spacing={0}
+                  justifyContent={'center'}
+                >
+                  <Text fontSize={'2xs'} color={'brand.semiblack'}>
+                    WhatsApp
+                  </Text>
+                  <Text fontSize={'xs'} color={'brand.black'}>
+                    09039122683
+                  </Text>
                 </VStack>
               </HStack>
             </HStack>
-            <HStack
-              w={'55%'}
-              h={16}
-              borderRadius={6}
-              bg={'brand.primary'}
-            >
-               <HStack gap={4} w={'full'} p={6} >
-                <Icon name="gmail" width="30" height="30" color="white" />
-                <VStack alignItems={'flex-start'} spacing={0} justifyContent={'center'}>
-                  <Heading fontSize={'2xs'}
-                  color={'gray.300'}>Email</Heading>
-                  <Text fontSize={'xs'} color={'white'}>scopeseekerhelp@gmail.com</Text>
+            <HStack w={'55%'} h={16} borderRadius={6} border={'1px solid'} borderColor={'red.600'} bg={'red.200'}>
+              <HStack gap={4} w={'full'} p={6}>
+                <Icon name="gmail" width="30" height="30" color="brand.semiblack" />
+                <VStack
+                  alignItems={'flex-start'}
+                  spacing={0}
+                  justifyContent={'center'}
+                >
+                  <Text fontSize={'2xs'} color={'brand.semiblack'}>
+                    Email
+                  </Text>
+                  <Text fontSize={'xs'} color={'brand.black'}>
+                    scopeseekerhelp@gmail.com
+                  </Text>
                 </VStack>
               </HStack>
             </HStack>
-            <HStack
-              w={'55%'}
-              h={16}
-              borderRadius={6}
-              bg={'brand.primary'}
-            >
-               <HStack gap={4} w={'full'} p={6} >
-                <Icon name="phone" width="30" height="30" color="white" />
-                <VStack alignItems={'flex-start'} spacing={0} justifyContent={'center'}>
-                  <Heading fontSize={'2xs'}
-                  color={'gray.300'}>Phone</Heading>
-                  <Text fontSize={'xs'} color={'white'}>09039122683</Text>
+            <HStack w={'55%'} h={16} borderRadius={6} border={'1px solid'} borderColor={'yellow.600'} bg={'yellow.200'}>
+              <HStack gap={4} w={'full'} p={6}>
+                <Icon name="phone" width="30" height="30" color="brand.semiblack" />
+                <VStack
+                  alignItems={'flex-start'}
+                  spacing={0}
+                  justifyContent={'center'}
+                >
+                  <Text fontSize={'2xs'} color={'brand.semiblack'}>
+                    Phone
+                  </Text>
+                  <Text fontSize={'xs'} color={'brand.black'}>
+                    09039122683
+                  </Text>
                 </VStack>
               </HStack>
             </HStack>
