@@ -25,7 +25,7 @@ export default function Signup() {
   return (
     <>
       <Head>
-        <title>Login | Scope Seeker</title>
+        <title>SignUp | Scope Seeker</title>
       </Head>
       <Flex w={'full'} h={'100vh'}>
         <VStack w={'60%'} h={'full'}>
