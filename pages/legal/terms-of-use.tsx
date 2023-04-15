@@ -1,9 +1,6 @@
-import MyHeading from '@/component/heading/MyHeading';
-import MyImage from '@/component/image/MyImage';
 import PageHeroSection from '@/component/page-hero-section/PageHeroSection';
 import {
   Box,
-  HStack,
   ListItem,
   OrderedList,
   Text,
@@ -12,7 +9,7 @@ import {
 } from '@chakra-ui/react';
 import Head from 'next/head';
 
-const TermsOfUse = () => {
+export default function TermsOfUse() {
   return (
     <>
       <Head>
@@ -695,6 +692,4 @@ const TermsOfUse = () => {
       </VStack>
     </>
   );
-};
-
-export default TermsOfUse;
+}

@@ -1,9 +1,6 @@
-import MyHeading from '@/component/heading/MyHeading';
-import MyImage from '@/component/image/MyImage';
 import PageHeroSection from '@/component/page-hero-section/PageHeroSection';
 import {
   Box,
-  HStack,
   ListItem,
   OrderedList,
   Text,
@@ -12,22 +9,22 @@ import {
 } from '@chakra-ui/react';
 import Head from 'next/head';
 
-const PrivacyPolicy = () => {
+export default function PrivacyPolicy() {
   return (
     <>
       <Head>
         <title>Privacy Policy | Scope Seeker</title>
       </Head>
       <VStack w={'full'} minH={'100vh'} pt={8} px={20} gap={10}>
-      <PageHeroSection
-        title="Privacy Policy"
-        subtitle="Every human or organisation has three levels of openness: Public,
+        <PageHeroSection
+          title="Privacy Policy"
+          subtitle="Every human or organisation has three levels of openness: Public,
         Personal and Private. We do believe in your rights to privacy."
-        headColor="brand.primary"
-        paraColor="brand.semiblack"
-        src="/assets/images/privacy-policy.webp"
-        alt='privacy-policy'
-      />
+          headColor="brand.primary"
+          paraColor="brand.semiblack"
+          src="/assets/images/privacy-policy.webp"
+          alt="privacy-policy"
+        />
 
         <VStack w={'full'} alignItems={'flex-start'}>
           <Text
@@ -705,6 +702,4 @@ const PrivacyPolicy = () => {
       </VStack>
     </>
   );
-};
-
-export default PrivacyPolicy;
+}
