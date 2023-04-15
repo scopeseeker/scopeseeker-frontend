@@ -126,6 +126,3 @@ const AText = (props: IText) => {
   );
 };
 
-interface ISolveBox {
-  textNumber: number;
-}
