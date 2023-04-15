@@ -30,6 +30,7 @@ export type IconNameType =
 	| "searchicon"
 	| "save"
 	| "share"
+	| "location"
 	;
 export type IconProps = {
 	name: IconNameType;

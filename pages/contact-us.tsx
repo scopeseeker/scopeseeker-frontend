@@ -1,4 +1,5 @@
 import MyButton from '@/component/button/MyButton';
+import Icon from '@/component/icon/Icon';
 import MyInput from '@/component/inputs/MyInput';
 import PageHeroSection from '@/component/page-hero-section/PageHeroSection';
 import {
@@ -70,7 +71,7 @@ const ContactUs = () => {
                     bg={'brand.aliceblue'}
                     fontSize={'xs'}
                     resize={'none'}
-                    placeholder="Here is a sample placeholder"
+                    placeholder="comments"
                   />
                 </VStack>
                 <MyButton title="Submit" size="md" px={12} />
@@ -84,30 +85,61 @@ const ContactUs = () => {
             <Heading fontSize={'xl'} mb={4}>
               Get more details about us
             </Heading>
+            <HStack w={'55%'} h={16} borderRadius={6}  bg={'brand.primary'}>
+              <HStack gap={3} w={'full'} p={6}>
+                <Icon name="location" width="30" height="30" color="white" />
+                <VStack alignItems={'flex-start'} spacing={0} justifyContent={'center'}>
+                  <Heading fontSize={'2xs'}
+                  color={'gray.300'}>Location</Heading>
+                  <Text fontSize={'xs'} color={'white'}>Bhopal sonagiri sector C183</Text>
+                </VStack>
+              </HStack>
+            </HStack>
             <HStack
               w={'55%'}
               h={16}
               borderRadius={6}
               bg={'brand.primary'}
-            ></HStack>
+            >
+              <HStack gap={4} w={'full'} p={6} >
+                <Icon name="whatsapp" width="30" height="30" color="white" />
+                <VStack alignItems={'flex-start'} spacing={0} justifyContent={'center'}>
+                  <Heading fontSize={'2xs'}
+                  color={'gray.300'}>WhatsApp</Heading>
+                  <Text fontSize={'xs'} color={'white'}>09039122683</Text>
+                </VStack>
+              </HStack>
+            </HStack>
             <HStack
               w={'55%'}
               h={16}
               borderRadius={6}
               bg={'brand.primary'}
-            ></HStack>
+            >
+               <HStack gap={4} w={'full'} p={6} >
+                <Icon name="gmail" width="30" height="30" color="white" />
+                <VStack alignItems={'flex-start'} spacing={0} justifyContent={'center'}>
+                  <Heading fontSize={'2xs'}
+                  color={'gray.300'}>Email</Heading>
+                  <Text fontSize={'xs'} color={'white'}>scopeseekerhelp@gmail.com</Text>
+                </VStack>
+              </HStack>
+            </HStack>
             <HStack
               w={'55%'}
               h={16}
               borderRadius={6}
               bg={'brand.primary'}
-            ></HStack>
-            <HStack
-              w={'55%'}
-              h={16}
-              borderRadius={6}
-              bg={'brand.primary'}
-            ></HStack>
+            >
+               <HStack gap={4} w={'full'} p={6} >
+                <Icon name="phone" width="30" height="30" color="white" />
+                <VStack alignItems={'flex-start'} spacing={0} justifyContent={'center'}>
+                  <Heading fontSize={'2xs'}
+                  color={'gray.300'}>Phone</Heading>
+                  <Text fontSize={'xs'} color={'white'}>09039122683</Text>
+                </VStack>
+              </HStack>
+            </HStack>
           </Center>
         </Center>
       </HStack>
