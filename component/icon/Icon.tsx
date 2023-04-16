@@ -1,5 +1,6 @@
-import { IconLibrary } from '@/constant/IconLibrary';
-import React from 'react';
+import { IconLibrary } from "@/constant/IconLibrary";
+import { Box } from "@chakra-ui/react";
+import React from "react";
 
 export type IconNameType =
   | 'job'
@@ -40,21 +41,17 @@ export type IconProps = {
   style?: React.CSSProperties;
 };
 
-const Icon = ({ name, style, ...rest }: IconProps) => {
-  const transform = IconLibrary[name]?.transform;
-  const path = IconLibrary[name]?.path;
+const Icon = ({ name, style, color, ...rest }: IconProps) => {
+	const transform = IconLibrary[name]?.transform;
+	const path = IconLibrary[name]?.path;
 
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      style={style}
-      viewBox="0 0 24 24"
-      {...rest}
-      className="custom-icon"
-    >
-      <path d={path} fill="currentColor" transform={transform} />
-    </svg>
-  );
+	return (
+		<Box color={color}>
+		<svg xmlns="http://www.w3.org/2000/svg" style={style} viewBox="0 0 24 24" {...rest} className="custom-icon">
+			<path d={path} fill="currentColor" transform={transform} />
+		</svg>
+		</Box>
+	);
 };
 
 export default Icon;

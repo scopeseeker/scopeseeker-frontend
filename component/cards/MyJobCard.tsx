@@ -4,47 +4,7 @@ import React from 'react';
 import MyButton from '../button/MyButton';
 import Icon from '../icon/Icon';
 import MyImage from '../image/MyImage';
-
-const MyJobCard = () => {
-  return (
-    <VStack>
-      <JobCardBox
-        companyIconLogo={'/assets/images/company-logo/bookmyshow.png'}
-        role={'Frontend Developer'}
-        companyName={'Tata Consultancy Service'}
-        location={'Bhopal, Madhaya Pradesh'}
-        jobType={[
-          { label: 'Full Time', value: 'full' },
-          { label: 'Part Time', value: 'part' },
-          { label: 'Internship', value: 'intern' },
-        ]}
-        companyDesc="UX designers measure and optimize applications to improve ease of use
-        (usability), and create the best user experience by exploring many
-       diffrent approaches to solve end's-user problems"
-        isNamedLogo={true}
-
-      />
-      <JobCardBox
-        companyIconLogo={'/assets/images/company-logo/google.png'}
-        role={'Frontend Developer'}
-        companyName={'Tata Consultancy Service'}
-        location={'Bhopal, Madhaya Pradesh'}
-        jobType={[
-          { label: 'Full Time', value: 'full' },
-          { label: 'Part Time', value: 'part' },
-          { label: 'Internship', value: 'intern' },
-        ]}
-        companyDesc="UX designers measure and optimize applications to improve ease of use
-        (usability), and create the best user experience by exploring many
-       diffrent approaches to solve end's-user problems"
-      />
-    </VStack>
-  );
-};
-
-export default MyJobCard;
-
-interface IJobCardBox {
+interface IMyJobCard {
   companyIconLogo: string;
   role: string;
   companyName: string;
@@ -56,7 +16,7 @@ interface IJobCardBox {
   isNamedLogo?: boolean;
 }
 
-const JobCardBox: React.FC<IJobCardBox> = ({
+const MyJobCard: React.FC<IMyJobCard> = ({
   companyIconLogo,
   role,
   companyName,
@@ -66,16 +26,16 @@ const JobCardBox: React.FC<IJobCardBox> = ({
   applyLink = '#',
   fullDetailedLink = '#',
   isNamedLogo = false,
-}: IJobCardBox) => {
+}: IMyJobCard) => {
   return (
     <VStack
-      m={2}
       w={'2xs'}
       borderRadius={10}
       marginInline={'auto'}
       alignItems={'flex-start'}
       py={3}
       px={3}
+      h={'fit-content'}
       bg={'brand.cardColor'}
     >
       <HStack justifyContent={'space-between'} w={'full'}>
@@ -164,3 +124,5 @@ const JobCardBox: React.FC<IJobCardBox> = ({
     </VStack>
   );
 };
+
+export default MyJobCard;
