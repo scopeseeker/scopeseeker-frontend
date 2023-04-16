@@ -8,26 +8,34 @@ import {
   Checkbox,
   CheckboxGroup,
   Divider,
+  HStack,
   Heading,
   Stack,
   Text,
   VStack,
 } from '@chakra-ui/react';
+import Icon from '@/component/icon/Icon';
 
 const Filter = () => {
   return (
     <VStack w={'20vw'} p={5} gap={2} alignItems={'flex-start'} minH={'100vh'}>
+      <HStack w={'20vw'} px={3}>
+      <Icon name="search" width="20" height="20" color="brand.semiblack" />
       <Heading as={'span'} fontSize={'md'} color={'brand.primary'} px={3}>
         Filter Jobs
       </Heading>
+      </HStack>
       <Accordion allowToggle w="full">
         <FilterBox
           filterHeading="Company Type"
           filterItems={[
             { label: 'Information Technology', value: 'IT' },
-            { label: 'Backend Development', value: 'Backend' },
-            { label: 'Full Stack Developer', value: 'FullStack' },
-            { label: 'Software Engineering', value: 'SoftwareEng' },
+            { label: 'Foreign MNCs', value: 'Foreign MNCs' },
+            { label: 'StartUp', value: 'StartUp' },
+            { label: 'Corporate', value: 'Corporate' },
+            { label: 'FinTech', value: 'FinTech' },
+            { label: 'Indian MNC', value: 'IndianMNC' },
+            { label: 'Unicorn', value: 'Unicorn' },
           ]}
         />
         <Divider />
@@ -40,15 +48,86 @@ const Filter = () => {
           ]}
         />
         <Divider />
+        <Divider />
+        <FilterBox
+          filterHeading="Experience"
+          filterItems={[
+            { label: 'Fresher', value: 'Fresher' },
+            { label: 'Intermediate', value: 'Intermediate' },
+            { label: 'Expert', value: 'Expert' },
+          ]}
+        />
+        <Divider />
         <FilterBox
           filterHeading="Roles"
           filterItems={[
             { label: 'Information Technology', value: 'IT' },
-            { label: 'FinTech', value: 'FinTech' },
-            { label: 'Indian MNC', value: 'IndianMNC' },
-            { label: 'Unicorn', value: 'Unicorn' },
+            { label: 'Front-End Developer', value: 'frontend developer' },
+            { label: 'Backend-Developer', value: 'Backend developer' },
+            { label: 'Software engineers', value: 'SDE' },
+            { label: 'Java Developer', value: 'Java developer' },
+            { label: 'Data Scientist', value: 'Data Scienctist' },
+            { label: 'Web Developer', value: 'Web Developer' },
+            { label: 'Mobile App Developer', value: 'Mobile App Developer' },
+            { label: 'Database Administrator', value: 'Database Administrator' },
+            
           ]}
         />
+         <Divider />
+        <FilterBox
+          filterHeading="Location"
+          filterItems={[
+            { label: 'Bangalore', value: 'Bangalore' },
+            { label: 'Pune', value: 'Pune' },
+            { label: 'Ahmedabad', value: 'Ahmedabad' },
+            { label: 'Noida', value: 'Noida' },
+            { label: 'Kolkata', value: 'Kolkata' },
+            { label: 'Hydrabad', value: 'Hydrabad' },
+            { label: 'Mumbai', value: 'Mumbai' },
+            { label: 'Chennai', value: 'Chennai' },
+            { label: 'Gurgaon', value: 'Gurgaon' },
+          ]}
+        />
+        <Divider />
+        <FilterBox
+          filterHeading="Date Posted"
+          filterItems={[
+            { label: 'Any Time', value: 'Any Time' },
+            { label: 'Past Week', value: 'Past Week' },
+            { label: 'Past 24 hours', value: 'Past 24 hours' },
+            { label: 'Past Month', value: 'Past Month' },
+          ]}
+        />
+        <Divider />
+        <Divider />
+        <FilterBox
+          filterHeading="Technology"
+          filterItems={[
+            { label: 'JavaScript', value: 'JavaScript' },
+            { label: 'Java', value: 'Java' },
+            { label: 'React', value: 'React' },
+            { label: 'Nextjs', value: 'Nextjs' },
+            { label: 'Nodejs', value: 'Nodejs' },
+            { label: 'React Native', value: 'React Native' },
+            { label: 'UI/UX', value: 'UI/UX' },
+            { label: 'AWS', value: 'AWS' },
+            { label: 'Expressjs', value: 'Expressjs' },
+            { label: 'Python', value: 'Python' },
+            { label: 'C++', value: 'C++' },
+          ]}
+        />
+        <Divider />
+        <Divider />
+        <FilterBox
+          filterHeading="Job Categories"
+          filterItems={[
+            { label: 'Web Developer', value: 'Web Developer' },
+            { label: 'UI/UX Designer', value: 'UI/UX Designer' },
+            { label: 'Full-Stack Web Developer', value: 'Full-Stack Web Developer' },
+            { label: 'Back-End Developer', value: 'Back-end Developer' },
+          ]}
+        />
+        <Divider />
       </Accordion>
     </VStack>
   );
@@ -76,7 +155,7 @@ const FilterBox: React.FC<IFilterBox> = ({
           as="span"
           flex="1"
           textAlign="left"
-          fontSize={'sm'}
+          fontSize={'xs'}
           fontWeight={'medium'}
         >
           {filterHeading}
