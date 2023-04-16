@@ -22,6 +22,7 @@ const Footer = () => {
       gap={10}
       justifyContent={'space-between'}
       color={'brand.white'}
+      mt={20}
     >
       <Flex
         w={'full'}
