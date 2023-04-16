@@ -1,3 +1,4 @@
+import Icon from '@/component/icon/Icon';
 import {
   Accordion,
   AccordionButton,
@@ -5,6 +6,7 @@ import {
   AccordionItem,
   AccordionPanel,
   Box,
+  Center,
   Checkbox,
   CheckboxGroup,
   Divider,
@@ -14,18 +16,25 @@ import {
   Text,
   VStack,
 } from '@chakra-ui/react';
-import Icon from '@/component/icon/Icon';
 
 const Filter = () => {
   return (
-    <VStack w={'20vw'} p={5} gap={2} alignItems={'flex-start'} minH={'100vh'}>
-      <HStack w={'20vw'} px={3}>
-      <Icon name="search" width="20" height="20" color="brand.semiblack" />
-      <Heading as={'span'} fontSize={'md'} color={'brand.primary'} px={3}>
-        Filter Jobs
-      </Heading>
+    <VStack w={'20vw'} p={5} gap={2} alignItems={'flex-start'} >
+      <HStack w={'20vw'} spacing={0}>
+        <Center>
+          <Icon name="search" width="20" height="20" color="brand.primary" />
+        </Center>
+        <Heading
+          as={'span'}
+          fontWeight={'semibold'}
+          fontSize={'md'}
+          color={'brand.primary'}
+          px={2}
+        >
+          Filter Jobs
+        </Heading>
       </HStack>
-      <Accordion allowToggle w="full">
+      <Accordion allowMultiple w="full">
         <FilterBox
           filterHeading="Company Type"
           filterItems={[
@@ -69,11 +78,13 @@ const Filter = () => {
             { label: 'Data Scientist', value: 'Data Scienctist' },
             { label: 'Web Developer', value: 'Web Developer' },
             { label: 'Mobile App Developer', value: 'Mobile App Developer' },
-            { label: 'Database Administrator', value: 'Database Administrator' },
-            
+            {
+              label: 'Database Administrator',
+              value: 'Database Administrator',
+            },
           ]}
         />
-         <Divider />
+        <Divider />
         <FilterBox
           filterHeading="Location"
           filterItems={[
@@ -123,7 +134,10 @@ const Filter = () => {
           filterItems={[
             { label: 'Web Developer', value: 'Web Developer' },
             { label: 'UI/UX Designer', value: 'UI/UX Designer' },
-            { label: 'Full-Stack Web Developer', value: 'Full-Stack Web Developer' },
+            {
+              label: 'Full-Stack Web Developer',
+              value: 'Full-Stack Web Developer',
+            },
             { label: 'Back-End Developer', value: 'Back-end Developer' },
           ]}
         />
