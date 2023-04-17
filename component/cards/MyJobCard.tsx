@@ -1,4 +1,12 @@
-import { Box, Center, HStack, Heading, Text, VStack } from '@chakra-ui/react';
+import {
+  Badge,
+  Box,
+  Center,
+  HStack,
+  Heading,
+  Text,
+  VStack,
+} from '@chakra-ui/react';
 import Link from 'next/link';
 import React from 'react';
 import MyButton from '../button/MyButton';
@@ -9,7 +17,7 @@ interface IMyJobCard {
   role: string;
   companyName: string;
   location: string;
-  jobType: { label: string; value: string }[];
+  jobType: { label: string; value: string; color: string }[];
   companyDesc: string;
   applyLink?: string;
   fullDetailedLink?: string;
@@ -29,19 +37,29 @@ const MyJobCard: React.FC<IMyJobCard> = ({
 }: IMyJobCard) => {
   return (
     <VStack
-      w={'2xs'}
+      w={'sm'}
       borderRadius={10}
       marginInline={'auto'}
       alignItems={'flex-start'}
-      py={3}
-      px={3}
+      cursor={'pointer'}
+      py={1}
+      pb={3}
+      px={4}
       h={'fit-content'}
-      bg={'brand.cardColor'}
+      bg={'brand.white'}
+      // boxShadow={'0px 0px 20px rgb(0,0,0,0.2)'}
+      border={'1px solid'}
+      borderColor={'brand.darkgrey'}
+      _hover={{
+        borderColor: 'brand.primary',
+        borderWidth: '2px',
+        transform: 'traslateY(10px)',
+      }}
     >
       <HStack justifyContent={'space-between'} w={'full'}>
         <Center
           w={isNamedLogo ? 'fit-content' : '45px'}
-          h={'45px'}
+          h={'40px'}
           borderRadius={'full'}
         >
           <MyImage
@@ -55,23 +73,12 @@ const MyJobCard: React.FC<IMyJobCard> = ({
           <Center
             w={'35px'}
             h={'35px'}
-            border={'1px'}
-            borderColor={'gray.400'}
-            borderRadius={'lg'}
+            // border={'1px'}
+            // borderColor={'gray.400'}
+            // borderRadius={'lg'}
             cursor={'pointer'}
           >
             <Icon name="save" height="16" width="16" />
-          </Center>
-
-          <Center
-            w={'35px'}
-            h={'35px'}
-            border={'1px'}
-            borderColor={'gray.400'}
-            borderRadius={'lg'}
-            cursor={'pointer'}
-          >
-            <Icon name="share" height="16" width="16" />
           </Center>
         </HStack>
       </HStack>
@@ -82,30 +89,26 @@ const MyJobCard: React.FC<IMyJobCard> = ({
           <Text fontSize={'2xs'}>{companyName}</Text>
         </Box>
         <HStack>
-          {jobType.map((item) => (
-            <Center
+          {jobType.map((item, key) => (
+            <Badge
+              as={'span'}
+              fontSize={'8px'}
+              fontWeight={'medium'}
+              colorScheme={item.color}
+              key={key}
               px={2}
               py={1}
-              bg={'purple.100'}
-              borderRadius={'full'}
-              cursor={'pointer'}
-              // colorScheme="blue"
+              borderRadius={3}
+              variant={'outline'}
             >
-              <Text
-                as={'span'}
-                fontSize={'2xs'}
-                fontWeight={'medium'}
-                color={'purple.900'}
-              >
-                {item.label}
-              </Text>
-            </Center>
+              {item.label}
+            </Badge>
           ))}
         </HStack>
-        <Text fontSize={'2xs'}>{location}</Text>
-        <Text fontSize={'2xs'} color={'gray.500'}>
+
+        {/* <Text fontSize={'2xs'} color={'gray.500'}>
           {companyDesc}
-        </Text>
+        </Text> */}
 
         <HStack>
           <Link href={applyLink}>
