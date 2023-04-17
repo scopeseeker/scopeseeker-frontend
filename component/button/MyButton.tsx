@@ -16,7 +16,6 @@ interface MyButtonProps {
   mt?: number;
   fontWeight?: string;
   [key: string]: any;
-
 }
 
 const MyButton: React.FC<MyButtonProps> = ({
@@ -41,9 +40,12 @@ const MyButton: React.FC<MyButtonProps> = ({
       color={color}
       variant={variant}
       fontSize={fontSize}
-      colorScheme={ variant === 'outline' ? 'gray' : colorScheme}
+      colorScheme={variant === 'outline' ? 'gray' : colorScheme}
       borderRadius={borderRadius}
-      _hover={{ textDecoration: decoration,  opacity: variant === 'Link' && 0.6}}
+      _hover={{
+        textDecoration: decoration,
+        opacity: variant === 'Link' && 0.6,
+      }}
       bg={bg}
       px={px}
       w={w}

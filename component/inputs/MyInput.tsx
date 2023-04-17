@@ -12,6 +12,8 @@ interface IMyInputProps {
   leftElem?: React.ReactNode;
   rightElem?: React.ReactNode;
   w?: number | string;
+  hpr?: string | number;
+  [key: string]: any;
 }
 
 const MyInput: React.FC<IMyInputProps> = (props) => {
@@ -26,6 +28,8 @@ const MyInput: React.FC<IMyInputProps> = (props) => {
     leftElem,
     rightElem,
     w,
+    hpr,
+    ...rest
   } = props;
   const boxRef = useRef<HTMLDivElement>(null);
 
@@ -42,10 +46,12 @@ const MyInput: React.FC<IMyInputProps> = (props) => {
   };
   return (
     <>
-      <VStack alignItems={'flex-start'} w={w}> 
-        <Text as={'span'} mt={mt} fontSize={labelFontSize}>
-          {labelTitle}
-        </Text>
+      <VStack alignItems={'flex-start'} w={w}>
+        {labelTitle && (
+          <Text as={'span'} mt={mt} fontSize={labelFontSize}>
+            {labelTitle}
+          </Text>
+        )}
         <HStack
           bg={'brand.aliceblue'}
           px={1}
@@ -54,6 +60,7 @@ const MyInput: React.FC<IMyInputProps> = (props) => {
           borderRadius={6}
           spacing={0}
           w={'100%'}
+          pr={hpr}
         >
           {leftElem && (
             <Center w={'10%'} h={'full'}>
@@ -71,10 +78,11 @@ const MyInput: React.FC<IMyInputProps> = (props) => {
               bg={'transparent'}
               placeholder={placeholder}
               _hover={{ bg: 'transparent' }}
-              _placeholder={{fontSize: inputFontSize}}
+              _placeholder={{ fontSize: inputFontSize }}
               type={type}
               size={size}
-              pl={1}
+              pl={2}
+              {...rest}
             />
           </Center>
           {rightElem && (

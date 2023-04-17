@@ -1,4 +1,3 @@
-import Icon from '@/component/icon/Icon';
 import {
   Accordion,
   AccordionButton,
@@ -6,7 +5,6 @@ import {
   AccordionItem,
   AccordionPanel,
   Box,
-  Center,
   Checkbox,
   CheckboxGroup,
   Divider,
@@ -19,11 +17,8 @@ import {
 
 const Filter = () => {
   return (
-    <VStack w={'20vw'} p={5} gap={2} alignItems={'flex-start'} >
+    <VStack w={'100%'} gap={2} alignItems={'flex-start'}>
       <HStack w={'20vw'} spacing={0}>
-        <Center>
-          <Icon name="search" width="20" height="20" color="brand.primary" />
-        </Center>
         <Heading
           as={'span'}
           fontWeight={'semibold'}
