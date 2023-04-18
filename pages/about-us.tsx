@@ -7,6 +7,7 @@ import {
   Center,
   HStack,
   Heading,
+  IconButton,
   ListItem,
   OrderedList,
   Text,
@@ -181,8 +182,8 @@ export default function AboutUs() {
                 </Center>
                 <Text as={'p'} w={'70%'}>
                   Meet Lokesh, a B.Tech student with a strong skill set who
-                  often misses out on job opportunities because he doesn&apos;t have
-                  the time to search multiple job boards or visit verified
+                  often misses out on job opportunities because he doesn&apos;t
+                  have the time to search multiple job boards or visit verified
                   career pages. He feels overwhelmed by the sheer number of job
                   listings online and struggles to find job opportunities that
                   are a good fit for him.
@@ -325,7 +326,7 @@ export default function AboutUs() {
               </VStack>
             </VStack>
 
-            <HStack w={'full'} pt={20}>
+            <HStack w={'full'} p={20}>
               <VStack w={'full'} gap={1}>
                 <Center
                   h={200}
@@ -347,9 +348,27 @@ export default function AboutUs() {
                 </VStack>
 
                 <HStack cursor={'pointer'}>
-                  <Icon name="whatsapp" height="16" width="16" />
-                  <Icon name="linkedin" height="16" width="16" />
-                  <Icon name="instagram" height="16" width="16" />
+                  <IconButton
+                    aria-label="social-meida"
+                    p={2}
+                    color={'green.600'}
+                    icon={<Icon name={'whatsapp'} />}
+                    size={'sm'}
+                  />
+                  <IconButton
+                    aria-label="social-meida"
+                    p={2}
+                    color={'blue.700'}
+                    icon={<Icon name={'linkedin'} />}
+                    size={'sm'}
+                  />
+                  <IconButton
+                    aria-label="social-meida"
+                    p={2}
+                    color={'pink.500'}
+                    icon={<Icon name={'instagram'} />}
+                    size={'sm'}
+                  />
                 </HStack>
               </VStack>
 
@@ -374,9 +393,27 @@ export default function AboutUs() {
                 </VStack>
 
                 <HStack cursor={'pointer'}>
-                  <Icon name="whatsapp" height="16" width="16" />
-                  <Icon name="linkedin" height="16" width="16" />
-                  <Icon name="instagram" height="16" width="16" />
+                  <IconButton
+                    aria-label="social-meida"
+                    p={2}
+                    color={'green.600'}
+                    icon={<Icon name={'whatsapp'} />}
+                    size={'sm'}
+                  />
+                  <IconButton
+                    aria-label="social-meida"
+                    p={2}
+                    color={'blue.700'}
+                    icon={<Icon name={'linkedin'} />}
+                    size={'sm'}
+                  />
+                  <IconButton
+                    aria-label="social-meida"
+                    p={2}
+                    color={'pink.500'}
+                    icon={<Icon name={'instagram'} />}
+                    size={'sm'}
+                  />
                 </HStack>
               </VStack>
 
@@ -401,9 +438,27 @@ export default function AboutUs() {
                 </VStack>
 
                 <HStack cursor={'pointer'}>
-                  <Icon name="whatsapp" height="16" width="16" />
-                  <Icon name="linkedin" height="16" width="16" />
-                  <Icon name="instagram" height="16" width="16" />
+                <IconButton
+                    aria-label="social-meida"
+                    p={2}
+                    color={'green.600'}
+                    icon={<Icon name={'whatsapp'} />}
+                    size={'sm'}
+                  />
+                  <IconButton
+                    aria-label="social-meida"
+                    p={2}
+                    color={'blue.700'}
+                    icon={<Icon name={'linkedin'} />}
+                    size={'sm'}
+                  />
+                  <IconButton
+                    aria-label="social-meida"
+                    p={2}
+                    color={'pink.500'}
+                    icon={<Icon name={'instagram'} />}
+                    size={'sm'}
+                  />
                 </HStack>
               </VStack>
             </HStack>
