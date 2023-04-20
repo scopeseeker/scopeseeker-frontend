@@ -26,7 +26,7 @@ const MainHeading: React.FC<MainHeadingProps> = (props) => {
       >
         {title}
       </Heading>
-      <Text color={paraColor} fontSize={{ base: '12px', md: '14px' }}>
+      <Text as={'span'} color={paraColor} fontSize={{ base: '12px', md: '14px' }}>
         {subTitle}
       </Text>
     </VStack>

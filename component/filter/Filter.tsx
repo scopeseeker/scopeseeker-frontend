@@ -14,6 +14,7 @@ import {
   Text,
   VStack,
 } from '@chakra-ui/react';
+import MyText from '../text/MyText';
 
 const Filter = () => {
   return (
@@ -29,7 +30,7 @@ const Filter = () => {
           Filter Jobs
         </Heading>
       </HStack>
-      <Accordion allowMultiple w="full">
+      <Accordion w="full">
         <FilterBox
           filterHeading="Company Type"
           filterItems={[
@@ -160,14 +161,8 @@ const FilterBox: React.FC<IFilterBox> = ({
         borderRadius={4}
         _hover={{ bg: 'brand.aliceblue' }}
       >
-        <Box
-          as="span"
-          flex="1"
-          textAlign="left"
-          fontSize={'xs'}
-          fontWeight={'medium'}
-        >
-          {filterHeading}
+        <Box flex="1" textAlign="left">
+          <MyText as="span" title={filterHeading} />
         </Box>
         <AccordionIcon />
       </AccordionButton>
@@ -189,7 +184,7 @@ const FilterBox: React.FC<IFilterBox> = ({
           >
             {filterItems.map((item, key) => (
               <Checkbox key={key} value={item.value} size={'sm'}>
-                <Text as={'span'} fontSize={'xs'}>
+                <Text as={'span'} fontSize={'11.5px'}>
                   {item.label}
                 </Text>
               </Checkbox>

@@ -1,7 +1,6 @@
 import {
   Center,
   Flex,
-  Heading,
   HStack,
   IconButton,
   Text,
@@ -11,6 +10,7 @@ import Link from 'next/link';
 import MyButton from '../button/MyButton';
 import Icon from '../icon/Icon';
 import MyImage from '../image/MyImage';
+import MyText from '../text/MyText';
 
 const Footer = () => {
   return (
@@ -60,10 +60,13 @@ const Footer = () => {
             </Flex>
           </HStack>
 
-          <Text as={'span'} fontSize={'sm'}>
-            Scope Seeker is a cutting-edge web application designed to help job
-            seekers find their dream job with ease.
-          </Text>
+          <MyText
+            as={'st'}
+            color={'brand.white'}
+            title={
+              'Scope Seeker is a cutting-edge web application designed to help job seekers find their dream job with ease'
+            }
+          />
           <Flex direction={'column'} mt={5} gap={2}>
             <FooterHeading title={'Stay Connected'} />
             <Text>Email: scopeseekerhelp@gmail.com</Text>
@@ -81,22 +84,22 @@ const Footer = () => {
           <Center w={'50%'}>
             <Flex flexDir={'column'} gap={3} p={{ base: 0, md: 4 }}>
               <FooterHeading title={'Links'} />
-              <FooterLink link={'#'} title={'Find Jobs'} />
-              <FooterLink link={'#'} title={'Find Companies'} />
+              <FooterLink link={'/jobs'} title={'Find Jobs'} />
+              <FooterLink link={'/companies'} title={'Find Companies'} />
               <FooterLink link={'#'} title={'Find Categories'} />
-              <FooterLink link={'#'} title={'Helpful Resource'} />
-              <FooterLink link={'#'} title={'FAQs'} />
+              <FooterLink link={'/helpful-resources'} title={'Helpful Resource'} />
+              <FooterLink link={'/'} title={'FAQs'} />
             </Flex>
           </Center>
           {/* Company Section */}
           <Center w={'50%'}>
             <Flex flexDir={'column'} gap={3} p={{ base: 0, md: 4 }}>
               <FooterHeading title={'Company'} />
-              <FooterLink link={'#'} title={'About Us'} />
+              <FooterLink link={'/about-us'} title={'About Us'} />
               <FooterLink link={'/contact-us'} title={'Contact Us'} />
-              <FooterLink link={'#'} title={'Terms & Conditions'} />
-              <FooterLink link={'#'} title={'Privacy Policy'} />
-              <FooterLink link={'#'} title={'Report an Issue'} />
+              <FooterLink link={'/legal/terms-of-use'} title={'Terms & Conditions'} />
+              <FooterLink link={'/legal/privacy-policy'} title={'Privacy Policy'} />
+              <FooterLink link={'/contact-us'} title={'Report an Issue'} />
             </Flex>
           </Center>
         </Flex>
@@ -176,9 +179,7 @@ interface IFooterHeading {
 
 const FooterHeading: React.FC<IFooterHeading> = ({ title }: IFooterHeading) => {
   return (
-    <Heading as={'span'} fontSize={'xl'}>
-      {title}
-    </Heading>
+        <MyText as='heading' title={title} color='brand.white'/>
   );
 };
 
@@ -189,15 +190,16 @@ interface IFooterLink {
 
 const FooterLink: React.FC<IFooterLink> = ({ title, link }: IFooterLink) => {
   return (
-    <Link href={link}>
-      <MyButton
-        color={'brand.white'}
-        _hover={{ color: 'brand.darkgray' }}
-        fontWeight={'normal'}
-        variant={'link'}
-        title={title}
-      />
-    </Link>
+    // <Link href={link}>
+    //   <MyButton
+    //     color={'brand.white'}
+    //     _hover={{ color: 'brand.darkgray' }}
+    //     fontWeight={'normal'}
+    //     variant={'link'}
+    //     title={title}
+    //   />
+    // </Link>
+    <MyText title={title} href={link} as='link' color='brand.white'/>
   );
 };
 

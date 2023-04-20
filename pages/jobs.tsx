@@ -68,7 +68,7 @@ const Jobs = () => {
             </HStack>
           </HStack>
           <Box pt={6} w={'full'}>
-            <Grid templateColumns="repeat(2, 1fr)" gap={4}>
+            <Grid templateColumns="repeat(1, 1fr)" gap={4}>
               <MyJobCard
                 companyIconLogo={'/assets/images/company-logo/bookmyshow.png'}
                 role={'Frontend Developer'}
@@ -137,7 +137,7 @@ const Jobs = () => {
        diffrent approaches to solve end's-user problems"
                 isNamedLogo={true}
               />
-                      <MyJobCard
+              <MyJobCard
                 companyIconLogo={'/assets/images/company-logo/bookmyshow.png'}
                 role={'Frontend Developer'}
                 companyName={'Tata Consultancy Service'}
@@ -171,7 +171,7 @@ const Jobs = () => {
        diffrent approaches to solve end's-user problems"
                 isNamedLogo={true}
               />
-                      <MyJobCard
+              <MyJobCard
                 companyIconLogo={'/assets/images/company-logo/bookmyshow.png'}
                 role={'Frontend Developer'}
                 companyName={'Tata Consultancy Service'}
@@ -205,7 +205,7 @@ const Jobs = () => {
        diffrent approaches to solve end's-user problems"
                 isNamedLogo={true}
               />
-              
+
               <MyJobCard
                 companyIconLogo={'/assets/images/company-logo/bookmyshow.png'}
                 role={'Frontend Developer'}

@@ -11,6 +11,7 @@ import Link from 'next/link';
 import MyButton from '../button/MyButton';
 import Icon from '../icon/Icon';
 import MyImage from '../image/MyImage';
+import MyText from '../text/MyText';
 
 const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -54,36 +55,11 @@ const Navbar = () => {
             </Flex>
           </HStack>
 
-          <HStack>
-          <Link href={'/jobs'}>
-              <MyButton
-                title="Job"
-                variant="Link"
-                fontSize="xs"
-                fontWeight='medium'
-                rightIcon={<Icon name={'arrow-down'} width={'16px'} />}
-              />
-            </Link>
-
-            <Link href={'#'}>
-              <MyButton
-                title="Company"
-                variant="Link"
-                fontWeight='medium'
-                fontSize="xs"
-                rightIcon={<Icon name={'arrow-down'} width={'16px'} />}
-              />
-            </Link>
-
-            <Link href={'#'}>
-              <MyButton
-                title="Pages"
-                variant="Link"
-                fontWeight='medium'
-                fontSize="xs"
-                rightIcon={<Icon name={'arrow-down'} width={'16px'} />}
-              />
-            </Link>
+          <HStack gap={6}>
+            <MyText as='link' title='Jobs' href='/jobs' hoverColor={'brand.primary'}/>
+            <MyText as='link' title='Company' href='/jobs' hoverColor={'brand.primary'}/>
+            <MyText as='link' title='About Us' href='/jobs' hoverColor={'brand.primary'}/>           
+            <MyText as='link' title='Contact Us' href='/jobs' hoverColor={'brand.primary'}/>           
           </HStack>
         </HStack>
 

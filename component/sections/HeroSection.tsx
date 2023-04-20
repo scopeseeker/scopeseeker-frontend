@@ -13,7 +13,8 @@ const HeroSection = () => {
     <Box minH={'100vh'} px={12}>
       <Flex w={'full'} minH={'90vh'}>
         <VStack minH={'90vh'} w={'50%'}>
-          <Text>Helo</Text>
+          <Text fontFamily="heading" fontWeight={600}>Helo</Text>
+          <Text fontFamily="body" fontWeight={600}>Helo</Text>
         </VStack>
         <Center minH={'90vh'} w={'50%'}>
           <MyImage src='/assets/svgs/hero-section-2.svg' alt={'hero-setion-image'} width={450} height={500} />
