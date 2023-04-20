@@ -1,19 +1,16 @@
 import { Badge, Center, Flex, Heading, Text, VStack } from '@chakra-ui/react';
 import Link from 'next/link';
 import MyButton from '../button/MyButton';
-import MyHeading from '../heading/MyHeading';
 import MyImage from '../image/MyImage';
+import MainHeading from '../main-heading/MainHeading';
 
 const CompnayCatergories = () => {
   return (
-    <Center
-      flexDirection={'column'}
-      gap={8}
-      w={'full'}
-      minH={'35vw'}
-      px={10}
-    >
-      <MyHeading title={'Featured Companies'} subTitle={'companies hiring now'} />
+    <Center flexDirection={'column'} gap={8} w={'full'} minH={'35vw'} px={10}>
+      <MainHeading
+        title={'Featured Companies'}
+        subTitle={'companies hiring now'}
+      />
       <Flex
         overflow={'auto'}
         w={'full'}
@@ -24,13 +21,14 @@ const CompnayCatergories = () => {
         }}
       >
         <Flex
-         w={'full'}
-         justifyContent={'center'}
-         flexDirection={{ base: 'column', lg: 'row' }}
-         gap={14}
-         flexShrink={0}
-         py={10}
-         px={{ sm: 5, lg: 0 }}>
+          w={'full'}
+          justifyContent={'center'}
+          flexDirection={{ base: 'column', lg: 'row' }}
+          gap={14}
+          flexShrink={0}
+          py={10}
+          px={{ sm: 5, lg: 0 }}
+        >
           <FeaturedCompanyCard
             logoSrc="/assets/images/company-logo/google.png"
             companytitle="Google"
@@ -53,13 +51,14 @@ const CompnayCatergories = () => {
           />
         </Flex>
         <Flex
-         w={'full'}
-         justifyContent={'center'}
-         flexDirection={{ base: 'column', lg: 'row' }}
-         gap={14}
-         flexShrink={0}
-         py={10}
-         px={{ sm: 5, lg: 0 }}>
+          w={'full'}
+          justifyContent={'center'}
+          flexDirection={{ base: 'column', lg: 'row' }}
+          gap={14}
+          flexShrink={0}
+          py={10}
+          px={{ sm: 5, lg: 0 }}
+        >
           <FeaturedCompanyCard
             logoSrc="/assets/images/company-logo/google.png"
             companytitle="Google"
@@ -81,13 +80,6 @@ const CompnayCatergories = () => {
             position={20}
           />
         </Flex>
-        
-        
-
-
-        
-        
-        
       </Flex>
     </Center>
   );
@@ -111,7 +103,7 @@ const FeaturedCompanyCard: React.FC<IFeaturedCompanyCardProps> = (props) => {
       boxShadow={' 0 4px 30px rgba(0, 0, 0, 0.1)'}
       borderRadius={10}
       border={'2px solid'}
-      borderColor={'brand.lightgrey'}
+      borderColor={'brand.lightgray'}
       justifyContent={'center'}
       gap={'2px'}
       py={4}
@@ -142,7 +134,7 @@ const FeaturedCompanyCard: React.FC<IFeaturedCompanyCardProps> = (props) => {
 
       <Center
         w={'80%'}
-        bg={'brand.lightgrey'}
+        bg={'brand.lightgray'}
         borderRadius={10}
         justifyContent={'center'}
         p={2}

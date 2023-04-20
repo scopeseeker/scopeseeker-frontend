@@ -1,6 +1,6 @@
-import MyHeading from '@/component/heading/MyHeading';
 import Icon, { IconNameType } from '@/component/icon/Icon';
 import MyImage from '@/component/image/MyImage';
+import MainHeading from '@/component/main-heading/MainHeading';
 import PageHeroSection from '@/component/page-hero-section/PageHeroSection';
 import {
   Box,
@@ -150,10 +150,9 @@ export default function AboutUs() {
 
           <VStack w={'full'} px={20} minH={'50vw'} gap={10} bg={'pink'}>
             <VStack>
-              <MyHeading
+              <MainHeading
                 title="See ScopeSeeker in Action with This Example"
                 subTitle="Here's a quick example to demonstrate how ScopeSeeker can help simplify the job search process."
-                titleFontSize="2xl"
               />
             </VStack>
 
@@ -290,9 +289,8 @@ export default function AboutUs() {
           <VStack w={'full'}>
             <VStack w={'full'} gap={5} alignItems={'flex-start'}>
               <VStack w={'2xl'}>
-                <MyHeading
+                <MainHeading
                   title="The People Who Make It Happen"
-                  titleFontSize="2xl"
                   align="flex-start"
                   subTitle="Meet the talented and dedicated individuals who make our business thrive. Our amazing team is the driving force behind our success, and we're proud to introduce them to you."
                 />
@@ -438,7 +436,7 @@ export default function AboutUs() {
                 </VStack>
 
                 <HStack cursor={'pointer'}>
-                <IconButton
+                  <IconButton
                     aria-label="social-meida"
                     p={2}
                     color={'green.600'}

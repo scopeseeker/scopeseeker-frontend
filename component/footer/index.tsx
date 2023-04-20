@@ -152,7 +152,7 @@ const Footer = () => {
       {/* Bottom Copyright Sections */}
       <Flex
         py={5}
-        borderTop={'1px solid lightgrey'}
+        borderTop={'1px solid lightgray'}
         w={'full'}
         justifyContent={'space-between'}
         alignItems={'center'}
@@ -192,7 +192,7 @@ const FooterLink: React.FC<IFooterLink> = ({ title, link }: IFooterLink) => {
     <Link href={link}>
       <MyButton
         color={'brand.white'}
-        _hover={{color: 'brand.darkgrey' }}
+        _hover={{ color: 'brand.darkgray' }}
         fontWeight={'normal'}
         variant={'link'}
         title={title}

@@ -1,13 +1,13 @@
 import { Box, Center, Flex, Text, VStack } from '@chakra-ui/react';
-import MyHeading from '../heading/MyHeading';
 import Icon from '../icon/Icon';
 import MyImage from '../image/MyImage';
+import MainHeading from '../main-heading/MainHeading';
 
 const Testimonials = () => {
   return (
     <Box>
       <VStack bg={'brand.aliceblue'} py={28} gap={16} px={5}>
-        <MyHeading
+        <MainHeading
           title={'Join Our Thriving Community'}
           subTitle={'See How Our Job Website Has Changed Lives'}
         />
@@ -48,7 +48,12 @@ const Testimonials = () => {
                 borderRadius={'full'}
                 overflow={'hidden'}
               >
-                <MyImage src={'/assets/images/p12.jpg'} alt={'secope seeker logo'} width={80} height={80} />
+                <MyImage
+                  src={'/assets/images/p12.jpg'}
+                  alt={'secope seeker logo'}
+                  width={80}
+                  height={80}
+                />
               </Center>
               <Flex direction={'column'} align={'center'}>
                 <Text as={'span'} fontWeight={'medium'} fontSize={'md'}>
@@ -98,8 +103,12 @@ const Testimonials = () => {
                 borderRadius={'full'}
                 overflow={'hidden'}
               >
-                <MyImage src={'/assets/images/p12.jpg'} alt={'secope seeker logo'} width={80} height={80} />
-
+                <MyImage
+                  src={'/assets/images/p12.jpg'}
+                  alt={'secope seeker logo'}
+                  width={80}
+                  height={80}
+                />
               </Center>
               <Flex direction={'column'} align={'center'}>
                 <Text as={'span'} fontWeight={'medium'} fontSize={'md'}>
@@ -148,8 +157,12 @@ const Testimonials = () => {
                 borderRadius={'full'}
                 overflow={'hidden'}
               >
-                <MyImage src={'/assets/images/p12.jpg'} alt={'secope seeker logo'} width={80} height={80} />
-
+                <MyImage
+                  src={'/assets/images/p12.jpg'}
+                  alt={'secope seeker logo'}
+                  width={80}
+                  height={80}
+                />
               </Center>
               <Flex direction={'column'} align={'center'}>
                 <Text as={'span'} fontWeight={'medium'} fontSize={'md'}>

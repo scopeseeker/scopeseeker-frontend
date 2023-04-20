@@ -1,12 +1,12 @@
 import { HStack, IconButton, Text, VStack } from '@chakra-ui/react';
 import MyButton from '../button/MyButton';
-import MyHeading from '../heading/MyHeading';
 import Icon from '../icon/Icon';
+import MainHeading from '../main-heading/MainHeading';
 
 const Categories = () => {
   return (
     <VStack w={'full'} py={10} gap={10} bg={'brand.aliceblue'}>
-      <MyHeading
+      <MainHeading
         title={'Popular Job Categories'}
         subTitle={'2020 jobs live - 293 added today'}
       />

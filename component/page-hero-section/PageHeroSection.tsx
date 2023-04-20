@@ -1,7 +1,7 @@
 import { HStack, VStack } from '@chakra-ui/react';
 import React from 'react';
-import MyHeading from '../heading/MyHeading';
 import MyImage from '../image/MyImage';
+import MainHeading from '../main-heading/MainHeading';
 
 interface IPageHeroSection {
   title: string;
@@ -21,7 +21,7 @@ const PageHeroSection: React.FC<IPageHeroSection> = (props) => {
     subtitle,
     align = 'flex-start',
     headColor = 'brand.white',
-    paraColor = 'brand.lightgrey',
+    paraColor = 'brand.lightgray',
     alt,
     h = 400,
     w = 400,
@@ -37,7 +37,7 @@ const PageHeroSection: React.FC<IPageHeroSection> = (props) => {
       py={6}
     >
       <VStack alignItems={align} maxW={'50%'} gap={2}>
-        <MyHeading
+        <MainHeading
           title={title}
           subTitle={subtitle}
           align={align}

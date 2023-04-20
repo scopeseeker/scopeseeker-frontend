@@ -49,7 +49,7 @@ const MyJobCard: React.FC<IMyJobCard> = ({
       bg={'brand.white'}
       // boxShadow={'0px 0px 20px rgb(0,0,0,0.2)'}
       border={'1px solid'}
-      borderColor={'brand.darkgrey'}
+      borderColor={'brand.darkgray'}
       _hover={{
         borderColor: 'brand.primary',
         borderWidth: '2px',

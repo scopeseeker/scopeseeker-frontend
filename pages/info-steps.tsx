@@ -1,8 +1,8 @@
 import MyButton from '@/component/button/MyButton';
-import MyHeading from '@/component/heading/MyHeading';
 import Icon from '@/component/icon/Icon';
 import MyImage from '@/component/image/MyImage';
 import MyInput from '@/component/inputs/MyInput';
+import MainHeading from '@/component/main-heading/MainHeading';
 import {
   Center,
   FormControl,
@@ -44,7 +44,7 @@ const InfoSteps = () => {
               width={250}
               height={500}
             />
-            <Text color={'white'} fontWeight={'medium'} >
+            <Text color={'white'} fontWeight={'medium'}>
               Your Story, Your Way
             </Text>
           </VStack>
@@ -74,14 +74,17 @@ const InfoSteps = () => {
       {/* Right Part */}
       <Center w={'70%'} h={'100vh'} overflow={'hidden'}>
         <VStack gap={4} h={'full'} pt={10}>
-          <MyHeading title="Just Want to Know more" subTitle="about yourself" />
+          <MainHeading
+            title="Just Want to Know more"
+            subTitle="about yourself"
+          />
           <FormControl
             h={'full'}
             w={'fit-content'}
             overflowY={'scroll'}
             px={10}
           >
-            <VStack w={'full'} gap={2} pb={10} >
+            <VStack w={'full'} gap={2} pb={10}>
               <MyInput
                 labelTitle="Full Name"
                 type="text"
@@ -100,7 +103,6 @@ const InfoSteps = () => {
                     bg="green.500"
                     isDisabled={isVerify ? true : false}
                     fontSize="xs"
-                    
                   />
                 }
                 w={'sm'}
@@ -366,7 +368,13 @@ const InfoSteps = () => {
 
               <VStack w={'full'} alignItems={'flex-start'}>
                 <Text fontSize={'sm'}>Resume</Text>
-                <HStack alignItems={'center'} border={'1px'} borderColor={'brand.lightgrey'} borderRadius={50} pr={2}>
+                <HStack
+                  alignItems={'center'}
+                  border={'1px'}
+                  borderColor={'brand.lightgray'}
+                  borderRadius={50}
+                  pr={2}
+                >
                   <MyButton
                     title="Upload Resume"
                     fontWeight="thin"
@@ -375,10 +383,19 @@ const InfoSteps = () => {
                   />
                   <Text fontSize={'2xs'}>DOC, DOCx, PDF, RTF | Max: 2 MB</Text>
                 </HStack>
-                <Text fontSize={'2xs'}>Recruiters give first preference to candidates who have a resume</Text>
+                <Text fontSize={'2xs'}>
+                  Recruiters give first preference to candidates who have a
+                  resume
+                </Text>
               </VStack>
 
-              <MyButton title='Submit' size='md' borderRadius={10} fontSize='sm' fontWeight='normal'/>
+              <MyButton
+                title="Submit"
+                size="md"
+                borderRadius={10}
+                fontSize="sm"
+                fontWeight="normal"
+              />
             </VStack>
           </FormControl>
         </VStack>

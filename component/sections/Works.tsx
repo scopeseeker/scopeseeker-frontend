@@ -1,12 +1,12 @@
 import { Box, Center, Flex, Text, VStack } from '@chakra-ui/react';
-import MyHeading from '../heading/MyHeading';
 import Icon from '../icon/Icon';
+import MainHeading from '../main-heading/MainHeading';
 
 const Works = () => {
   return (
     <Box>
       <VStack>
-        <MyHeading
+        <MainHeading
           title={'Easy way to get your job'}
           subTitle={'Just do simple things and get placed'}
         />
@@ -38,7 +38,7 @@ const Works = () => {
               ml={6}
               mt={6}
               borderRadius={8}
-              color={'brand.white'} 
+              color={'brand.white'}
             >
               <Icon name={'user'} width={'100%'} />
             </Center>
@@ -72,7 +72,7 @@ const Works = () => {
               ml={6}
               mt={6}
               borderRadius={8}
-              color={'brand.white'} 
+              color={'brand.white'}
             >
               <Icon name={'case'} width={'100%'} />
             </Center>
@@ -108,7 +108,7 @@ const Works = () => {
               borderRadius={8}
               color={'brand.white'}
             >
-              <Icon name={'form'} width={'100%'}  />
+              <Icon name={'form'} width={'100%'} />
             </Center>
 
             <Flex direction={'column'} m={6} gap={2}>
