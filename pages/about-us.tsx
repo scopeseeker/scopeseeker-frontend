@@ -2,11 +2,11 @@ import Icon, { IconNameType } from '@/component/icon/Icon';
 import MyImage from '@/component/image/MyImage';
 import MainHeading from '@/component/main-heading/MainHeading';
 import PageHeroSection from '@/component/page-hero-section/PageHeroSection';
+import MyText from '@/component/text/MyText';
 import {
   Box,
   Center,
   HStack,
-  Heading,
   IconButton,
   ListItem,
   OrderedList,
@@ -21,19 +21,18 @@ export default function AboutUs() {
       <Head>
         <title>About Us | Scope Seeker</title>
       </Head>
-      <VStack w={'full'} minH={'100vh'} px={20} gap={10}>
-        <PageHeroSection
-          title="About Us"
-          subtitle="Break all boundaries and be unstoppable with the largest community engagement platform built on gamification"
-          headColor="brand.primary"
-          paraColor="brand.semiblack"
-          src="/assets/images/about-us.webp"
-          alt="terms-of-use"
-        />
-
+      <PageHeroSection
+        title="About Us"
+        subtitle="Break all boundaries and be unstoppable with the largest community engagement platform built on gamification"
+        src="/assets/images/about-us.webp"
+        alt="terms-of-use"
+        w={200}
+        h={200}
+      />
+      <VStack w={'full'} minH={'100vh'} pt={8} px={20} gap={10}>
         <VStack w={'full'} gap={12}>
           <VStack w={'full'} alignItems={'flex-start'}>
-            <Heading fontSize={'2xl'}>What is Scope Seeker?</Heading>
+            <MyText as="heading" title="What is Scope Seeker?" />
             <AText
               title={
                 'Scope Seeker is a job seeker website that focuses on simplifying the tech job search process. It offers a centralized platform for job seekers to access curated job listings from selected tech companies. The website presents a curated list of job openings from top tech companies in an easy-to-use format, saving job seekers time in their job search.'
@@ -44,38 +43,11 @@ export default function AboutUs() {
             />
           </VStack>
 
-          {/* <VStack w={'full'} alignItems={'flex-start'}>
-            <Heading fontSize={'2xl'}>Why Scope Seeker?</Heading>
-            <Box>
-              <UnorderedList ml={10} spacing={1}>
-                <ListItem>
-                  <AText title="Scope Seeker aims to solve the problem of finding and applying for tech jobs, which can be time-consuming and overwhelming." />
-                </ListItem>
-
-                <ListItem>
-                  <AText title="It provides a centralized platform for job seekers to access curated job listings from multiple tech companies." />
-                </ListItem>
-
-                <ListItem>
-                  <AText title="It potentially saves time and reduces the chance of missing out on job opportunities." />
-                </ListItem>
-
-                <ListItem>
-                  <AText title="It may provide job seekers with higher-quality job opportunities." />
-                </ListItem>
-              </UnorderedList>
-            </Box>
-          </VStack> */}
-
-          <Center
-            w="full"
-            flexDirection={'column'}
-            pt={8}
-            flexWrap={'wrap'}
-            bg={'red'}
-          >
-            <Heading fontSize={'2xl'}>What we are solving?</Heading>
-            <Text>See why Scope Seeker should be your first choice</Text>
+          <Center w="full" flexDirection={'column'} pt={8} flexWrap={'wrap'}>
+            <MainHeading
+              title="What we are solving?"
+              subTitle="See why Scope Seeker should be your first choice"
+            />
 
             <HStack w={'full'} mt={12} gap={5}>
               <WhyBox
@@ -121,8 +93,8 @@ export default function AboutUs() {
             </HStack>
           </Center>
 
-          <VStack w={'full'} alignItems={'flex-start'} bg={'green'}>
-            <Heading fontSize={'2xl'}>How we work?</Heading>
+          <VStack w={'full'} alignItems={'flex-start'}>
+            <MyText as="heading" title="How we work?" />
             <Box>
               <OrderedList ml={10} spacing={1}>
                 <ListItem>
@@ -148,7 +120,7 @@ export default function AboutUs() {
             </Box>
           </VStack>
 
-          <VStack w={'full'} px={20} minH={'50vw'} gap={10} bg={'pink'}>
+          <VStack w={'full'} px={20} minH={'50vw'} gap={10}>
             <VStack>
               <MainHeading
                 title="See ScopeSeeker in Action with This Example"
@@ -179,14 +151,17 @@ export default function AboutUs() {
                     height={200}
                   />
                 </Center>
-                <Text as={'p'} w={'70%'}>
-                  Meet Lokesh, a B.Tech student with a strong skill set who
-                  often misses out on job opportunities because he doesn&apos;t
+                <Box w={'70%'}>
+                  <MyText
+                    as="p"
+                    title=" Meet Lokesh, a B.Tech student with a strong skill set who
+                  often misses out on job opportunities because he doesn't
                   have the time to search multiple job boards or visit verified
                   career pages. He feels overwhelmed by the sheer number of job
                   listings online and struggles to find job opportunities that
-                  are a good fit for him.
-                </Text>
+                  are a good fit for him."
+                  />
+                </Box>
               </HStack>
               <HStack
                 w={'full'}
@@ -211,15 +186,18 @@ export default function AboutUs() {
                     height={200}
                   />
                 </Center>
-                <Text as={'p'} w={'70%'}>
-                  This is where Scope Seeker comes in. With Scope Seeker, Lokesh
+                <Box w={'70%'}>
+                  <MyText
+                    as="p"
+                    title="This is where Scope Seeker comes in. With Scope Seeker, Lokesh
                   can easily search for job opportunities that match his skills
                   and preferences in one place, saving him time and effort. Our
                   platform continuously monitors the career pages of selected
                   tech companies to ensure that we present the latest and most
                   accurate job opportunities to our users, so Lokesh never has
-                  to worry about missing out on a relevant job opportunity.
-                </Text>
+                  to worry about missing out on a relevant job opportunity."
+                  />
+                </Box>
               </HStack>
               <HStack
                 w={'full'}
@@ -243,15 +221,18 @@ export default function AboutUs() {
                     height={200}
                   />
                 </Center>
-                <Text as={'p'} w={'70%'}>
-                  In addition, Scope Seeker verifies each job listing to ensure
-                  that it is high-quality and relevant to its users, giving
-                  Lokesh the confidence to apply to jobs that are the best fit
-                  for him. Overall, by using Scope Seeker, Lokesh can increase
-                  his chances of finding his dream job in the tech industry
-                  while trusting that the job listings on our platform are
-                  high-quality and relevant to his skills.
-                </Text>
+                <Box w={'70%'}>
+                  <MyText
+                    as="p"
+                    title="In addition, Scope Seeker verifies each job listing to ensure
+                    that it is high-quality and relevant to its users, giving
+                    Lokesh the confidence to apply to jobs that are the best fit
+                    for him. Overall, by using Scope Seeker, Lokesh can increase
+                    his chances of finding his dream job in the tech industry
+                    while trusting that the job listings on our platform are
+                    high-quality and relevant to his skills."
+                  />
+                </Box>
               </HStack>
               <HStack
                 w={'full'}
@@ -276,12 +257,15 @@ export default function AboutUs() {
                     height={200}
                   />
                 </Center>
-                <Text as={'p'} w={'70%'}>
-                  Overall, by using Scope Seeker, Lokesh can increase his
-                  chances of finding his dream job in the tech industry while
-                  trusting that the job listings on our platform are
-                  high-quality and relevant to his skills.
-                </Text>
+                <Box w={'70%'}>
+                  <MyText
+                    as="p"
+                    title="Overall, by using Scope Seeker, Lokesh can increase his
+                    chances of finding his dream job in the tech industry while
+                    trusting that the job listings on our platform are
+                    high-quality and relevant to his skills."
+                  />
+                </Box>
               </HStack>
             </VStack>
           </VStack>
@@ -297,30 +281,31 @@ export default function AboutUs() {
               </VStack>
 
               <VStack alignItems={'flex-start'} w={'full'}>
-                <Text>
-                  Meet the Scope Seeker team, the people behind the innovative
-                  tech job seeker platform.
-                </Text>
-
-                <Text>
-                  Lokesh Dhakar, our founder, is a seasoned full-stack developer
-                  with a passion for helping job seekers find their dream job
-                  and creating a more inclusive job market.
-                </Text>
-
-                <Text>
-                  Abhijeet Raj and Abhishek Kumar, our co-founders, are both
-                  front-end web developers. Their dedication and hard work have
-                  been instrumental in making Scope Seeker a success.
-                </Text>
-
-                <Text>
-                  Together, our team is committed to building a platform that
-                  empowers job seekers and makes the hiring process more
-                  efficient and transparent. We are always striving to improve
-                  our services and provide the best possible experience for our
-                  users.
-                </Text>
+                <MyText
+                  as={'p'}
+                  title={`Meet the Scope Seeker team, the people behind the innovative
+                    tech job seeker platform.`}
+                />
+                <MyText
+                  as={'p'}
+                  title={`Lokesh Dhakar, our founder, is a seasoned full-stack developer
+                    with a passion for helping job seekers find their dream job
+                    and creating a more inclusive job market.`}
+                />
+                <MyText
+                  as={'p'}
+                  title={`Abhijeet Raj and Abhishek Kumar, our co-founders, are both
+                    front-end web developers. Their dedication and hard work have
+                    been instrumental in making Scope Seeker a success.`}
+                />
+                <MyText
+                  as={'p'}
+                  title={`Together, our team is committed to building a platform that
+                    empowers job seekers and makes the hiring process more
+                    efficient and transparent. We are always striving to improve
+                    our services and provide the best possible experience for our
+                    users.`}
+                />
               </VStack>
             </VStack>
 
@@ -337,12 +322,8 @@ export default function AboutUs() {
                 </Center>
 
                 <VStack spacing={0}>
-                  <Heading as={'span'} fontSize={'lg'}>
-                    Lokesh Dhakar
-                  </Heading>
-                  <Text as={'h6'} fontSize={'xs'}>
-                    Founder
-                  </Text>
+                  <MyText as="heading" title={'Lokesh Dhakar'} />
+                  <MyText as={'span'} title={`Founder`} />
                 </VStack>
 
                 <HStack cursor={'pointer'}>
@@ -350,21 +331,21 @@ export default function AboutUs() {
                     aria-label="social-meida"
                     p={2}
                     color={'green.600'}
-                    icon={<Icon name={'whatsapp'} />}
+                    icon={<Icon name={'whatsapp'} height="20" width="20" />}
                     size={'sm'}
                   />
                   <IconButton
                     aria-label="social-meida"
                     p={2}
                     color={'blue.700'}
-                    icon={<Icon name={'linkedin'} />}
+                    icon={<Icon name={'linkedin'} height="20" width="20" />}
                     size={'sm'}
                   />
                   <IconButton
                     aria-label="social-meida"
                     p={2}
                     color={'pink.500'}
-                    icon={<Icon name={'instagram'} />}
+                    icon={<Icon name={'instagram'} height="20" width="20" />}
                     size={'sm'}
                   />
                 </HStack>
@@ -382,12 +363,8 @@ export default function AboutUs() {
                 </Center>
 
                 <VStack spacing={0}>
-                  <Heading as={'span'} fontSize={'lg'}>
-                    Abhijeet Raj
-                  </Heading>
-                  <Text as={'h6'} fontSize={'xs'}>
-                    Co-Founder
-                  </Text>
+                  <MyText as="heading" title={'Abhijeet Raj'} />
+                  <MyText as={'span'} title={`Co-Founder`} />
                 </VStack>
 
                 <HStack cursor={'pointer'}>
@@ -395,21 +372,21 @@ export default function AboutUs() {
                     aria-label="social-meida"
                     p={2}
                     color={'green.600'}
-                    icon={<Icon name={'whatsapp'} />}
+                    icon={<Icon name={'whatsapp'} height="20" width="20" />}
                     size={'sm'}
                   />
                   <IconButton
                     aria-label="social-meida"
                     p={2}
                     color={'blue.700'}
-                    icon={<Icon name={'linkedin'} />}
+                    icon={<Icon name={'linkedin'} height="20" width="20" />}
                     size={'sm'}
                   />
                   <IconButton
                     aria-label="social-meida"
                     p={2}
                     color={'pink.500'}
-                    icon={<Icon name={'instagram'} />}
+                    icon={<Icon name={'instagram'} height="20" width="20" />}
                     size={'sm'}
                   />
                 </HStack>
@@ -427,12 +404,8 @@ export default function AboutUs() {
                 </Center>
 
                 <VStack spacing={0}>
-                  <Heading as={'span'} fontSize={'lg'}>
-                    Abhishek Kumar
-                  </Heading>
-                  <Text as={'h6'} fontSize={'xs'}>
-                    Co-Founder
-                  </Text>
+                  <MyText as="heading" title={'Abhishek Kumar'} />
+                  <MyText as={'span'} title={`Co-Founder`} />
                 </VStack>
 
                 <HStack cursor={'pointer'}>
@@ -440,21 +413,21 @@ export default function AboutUs() {
                     aria-label="social-meida"
                     p={2}
                     color={'green.600'}
-                    icon={<Icon name={'whatsapp'} />}
+                    icon={<Icon name={'whatsapp'} height="20" width="20" />}
                     size={'sm'}
                   />
                   <IconButton
                     aria-label="social-meida"
                     p={2}
                     color={'blue.700'}
-                    icon={<Icon name={'linkedin'} />}
+                    icon={<Icon name={'linkedin'} height="20" width="20" />}
                     size={'sm'}
                   />
                   <IconButton
                     aria-label="social-meida"
                     p={2}
                     color={'pink.500'}
-                    icon={<Icon name={'instagram'} />}
+                    icon={<Icon name={'instagram'} height="20" width="20" />}
                     size={'sm'}
                   />
                 </HStack>
@@ -473,11 +446,7 @@ interface IText {
 
 const AText = (props: IText) => {
   const { title } = props;
-  return (
-    <Text as={'p'} color={'brand.semiblack'}>
-      {title}
-    </Text>
-  );
+  return <MyText as={'p'} title={title} />;
 };
 
 interface IWhyBox {
@@ -514,7 +483,7 @@ const WhyBox: React.FC<IWhyBox> = ({
         >
           {cardNumber}
         </Text>
-        <Text fontSize={'sm'}>{cardText}</Text>
+        <MyText as="span" title={cardText} />
       </VStack>
 
       <VStack
