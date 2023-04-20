@@ -1,17 +1,10 @@
-import {
-  Badge,
-  Box,
-  Center,
-  HStack,
-  Heading,
-  Text,
-  VStack,
-} from '@chakra-ui/react';
+import { Badge, Box, Center, HStack, VStack } from '@chakra-ui/react';
 import Link from 'next/link';
 import React from 'react';
 import MyButton from '../button/MyButton';
 import Icon from '../icon/Icon';
 import MyImage from '../image/MyImage';
+import MyText from '../text/MyText';
 interface IMyJobCard {
   companyIconLogo: string;
   role: string;
@@ -85,8 +78,12 @@ const MyJobCard: React.FC<IMyJobCard> = ({
 
       <VStack alignItems={'flex-start'} gap={1}>
         <Box>
-          <Heading fontSize={'sm'}>{role}</Heading>
-          <Text fontSize={'2xs'}>{companyName}</Text>
+          <MyText title={role} as="title" />
+          <MyText
+            title={companyName}
+            as="span"
+            fontSize={{ base: '10px', md: '10px' }}
+          />
         </Box>
         <HStack>
           {jobType.map((item, key) => (

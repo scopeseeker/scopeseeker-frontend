@@ -15,17 +15,14 @@ export default function PrivacyPolicy() {
       <Head>
         <title>Privacy Policy | Scope Seeker</title>
       </Head>
-      <VStack w={'full'} minH={'100vh'} pt={8} px={20} gap={10}>
-        <PageHeroSection
-          title="Privacy Policy"
-          subtitle="Every human or organisation has three levels of openness: Public,
+      <PageHeroSection
+        title="Privacy Policy"
+        subtitle="Every human or organisation has three levels of openness: Public,
         Personal and Private. We do believe in your rights to privacy."
-          headColor="brand.primary"
-          paraColor="brand.semiblack"
-          src="/assets/images/privacy-policy.webp"
-          alt="privacy-policy"
-        />
-
+        src="/assets/images/privacy-policy.webp"
+        alt="privacy-policy"
+      />
+      <VStack w={'full'} minH={'100vh'} pt={8} px={20} gap={10}>
         <VStack w={'full'} alignItems={'flex-start'}>
           <Text
             color={'brand.semiblack'}
