@@ -19,7 +19,7 @@ export default function TermsOfUse() {
         <PageHeroSection
           title="Terms & Conditions"
           subtitle="So you think you are at the right place? If yes, every collaboration has its own terms of use. Here's our terms and conditions."
-          headColor="brand.primary"
+          // headColor="brand.primary"
           paraColor="brand.semiblack"
           src="/assets/images/terms-of-use.webp"
           alt="terms-of-use"

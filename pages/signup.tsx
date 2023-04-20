@@ -150,11 +150,11 @@ export default function Signup() {
               </VStack>
 
               <Center gap={2}>
-                <Box w={16} h={'.8px'} bg={'lightgrey'}></Box>
-                <Text fontSize={12} color={'grey'}>
+                <Box w={16} h={'.8px'} bg={'lightgray'}></Box>
+                <Text fontSize={12} color={'gray'}>
                   or continue with
                 </Text>
-                <Box w={16} h={'.8px'} bg={'lightgrey'}></Box>
+                <Box w={16} h={'.8px'} bg={'lightgray'}></Box>
               </Center>
 
               <HStack gap={2}>

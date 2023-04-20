@@ -7,12 +7,12 @@ import {
   Box,
   VStack,
 } from '@chakra-ui/react';
-import MyHeading from '../heading/MyHeading';
+import MainHeading from '../main-heading/MainHeading';
 
 const FAQ = () => {
   return (
     <VStack w={'full'} gap={10} px={5}>
-      <MyHeading
+      <MainHeading
         title={'Frequently Asked Questions'}
         subTitle={'Have any question ?'}
       />

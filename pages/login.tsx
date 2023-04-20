@@ -5,8 +5,11 @@ import {
   Box,
   Center,
   Flex,
-  FormControl, Heading, HStack, Text,
-  VStack
+  FormControl,
+  Heading,
+  HStack,
+  Text,
+  VStack,
 } from '@chakra-ui/react';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -49,7 +52,12 @@ export default function Login() {
                   </Text>
                 </Flex>
                 <Box w={'30%'}>
-                  <MyImage src={'/assets/svgs/hero-section.svg'} alt={'login'} width={600} height={400} />
+                  <MyImage
+                    src={'/assets/svgs/hero-section.svg'}
+                    alt={'login'}
+                    width={600}
+                    height={400}
+                  />
                 </Box>
               </Flex>
             </VStack>
@@ -97,11 +105,11 @@ export default function Login() {
               </VStack>
 
               <Center gap={2}>
-                <Box w={16} h={'.8px'} bg={'lightgrey'}></Box>
-                <Text fontSize={12} color={'grey'}>
+                <Box w={16} h={'.8px'} bg={'lightgray'}></Box>
+                <Text fontSize={12} color={'gray'}>
                   or continue with
                 </Text>
-                <Box w={16} h={'.8px'} bg={'lightgrey'}></Box>
+                <Box w={16} h={'.8px'} bg={'lightgray'}></Box>
               </Center>
 
               <HStack gap={2}>
@@ -113,8 +121,12 @@ export default function Login() {
                   borderColor="gray.300"
                   cursor={'pointer'}
                 >
-                  <MyImage src={'/assets/images/company-logo/google.png'} alt={'google logo'} width={24} height={24} />
-
+                  <MyImage
+                    src={'/assets/images/company-logo/google.png'}
+                    alt={'google logo'}
+                    width={24}
+                    height={24}
+                  />
                 </Center>
                 <Center
                   w={16}
@@ -124,8 +136,12 @@ export default function Login() {
                   borderColor="gray.300"
                   cursor={'pointer'}
                 >
-                  <MyImage src={'/assets/images/company-logo/github.png'} alt={'github logo'} width={24} height={24} />
-
+                  <MyImage
+                    src={'/assets/images/company-logo/github.png'}
+                    alt={'github logo'}
+                    width={24}
+                    height={24}
+                  />
                 </Center>
                 <Center
                   w={16}
@@ -135,8 +151,12 @@ export default function Login() {
                   borderColor="gray.300"
                   cursor={'pointer'}
                 >
-                  <MyImage src={'/assets/images/company-logo/linkedin.png'} alt={'linkedin logo'} width={24} height={24} />
-
+                  <MyImage
+                    src={'/assets/images/company-logo/linkedin.png'}
+                    alt={'linkedin logo'}
+                    width={24}
+                    height={24}
+                  />
                 </Center>
               </HStack>
             </VStack>
