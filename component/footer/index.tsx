@@ -6,8 +6,6 @@ import {
   Text,
   VStack,
 } from '@chakra-ui/react';
-import Link from 'next/link';
-import MyButton from '../button/MyButton';
 import Icon from '../icon/Icon';
 import MyImage from '../image/MyImage';
 import MyText from '../text/MyText';
@@ -87,7 +85,10 @@ const Footer = () => {
               <FooterLink link={'/jobs'} title={'Find Jobs'} />
               <FooterLink link={'/companies'} title={'Find Companies'} />
               <FooterLink link={'#'} title={'Find Categories'} />
-              <FooterLink link={'/helpful-resources'} title={'Helpful Resource'} />
+              <FooterLink
+                link={'/helpful-resources'}
+                title={'Helpful Resource'}
+              />
               <FooterLink link={'/'} title={'FAQs'} />
             </Flex>
           </Center>
@@ -97,8 +98,14 @@ const Footer = () => {
               <FooterHeading title={'Company'} />
               <FooterLink link={'/about-us'} title={'About Us'} />
               <FooterLink link={'/contact-us'} title={'Contact Us'} />
-              <FooterLink link={'/legal/terms-of-use'} title={'Terms & Conditions'} />
-              <FooterLink link={'/legal/privacy-policy'} title={'Privacy Policy'} />
+              <FooterLink
+                link={'/legal/terms-of-use'}
+                title={'Terms & Conditions'}
+              />
+              <FooterLink
+                link={'/legal/privacy-policy'}
+                title={'Privacy Policy'}
+              />
               <FooterLink link={'/contact-us'} title={'Report an Issue'} />
             </Flex>
           </Center>
@@ -127,26 +134,26 @@ const Footer = () => {
               p={2}
               aria-label="social-meida"
               color={'brand.primary'}
-              icon={<Icon name={'instagram'} />}
+              icon={<Icon name={'instagram'} height="20" width="20" />}
             />
             <IconButton
               p={2}
               aria-label="social-meida"
               color={'brand.primary'}
-              icon={<Icon name={'linkedin'} />}
+              icon={<Icon name={'linkedin'} height="20" width="20" />}
             />
             <IconButton
               p={2}
               aria-label="social-meida"
               color={'brand.primary'}
-              icon={<Icon name={'twitter'} />}
+              icon={<Icon name={'twitter'} height="20" width="20" />}
             />
 
             <IconButton
               p={2}
               aria-label="social-meida"
               color={'brand.primary'}
-              icon={<Icon name={'whatsapp'} />}
+              icon={<Icon name={'whatsapp'} height="20" width="20" />}
             />
           </HStack>
         </Flex>
@@ -178,9 +185,7 @@ interface IFooterHeading {
 }
 
 const FooterHeading: React.FC<IFooterHeading> = ({ title }: IFooterHeading) => {
-  return (
-        <MyText as='heading' title={title} color='brand.white'/>
-  );
+  return <MyText as="heading" title={title} color="brand.white" />;
 };
 
 interface IFooterLink {
@@ -199,7 +204,7 @@ const FooterLink: React.FC<IFooterLink> = ({ title, link }: IFooterLink) => {
     //     title={title}
     //   />
     // </Link>
-    <MyText title={title} href={link} as='link' color='brand.white'/>
+    <MyText title={title} href={link} as="link" color="brand.white" />
   );
 };
 

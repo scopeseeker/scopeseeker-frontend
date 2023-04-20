@@ -16,18 +16,15 @@ export default function TermsOfUse() {
       <Head>
         <title>Terms & Conditions | Scope Seeker</title>
       </Head>
-      <VStack w={'full'} minH={'100vh'} px={20} gap={10}>
-        <PageHeroSection
-          title="Terms & Conditions"
-          subtitle="So you think you are at the right place? If yes, every collaboration has its own terms of use. Here's our terms and conditions."
-          // headColor="brand.primary"
-          paraColor="brand.semiblack"
-          src="/assets/images/terms-of-use.webp"
-          alt="terms-of-use"
-        />
-
+      <PageHeroSection
+        title="Terms & Conditions"
+        subtitle="So you think you are at the right place? If yes, every collaboration has its own terms of use. Here's our terms and conditions."
+        src="/assets/images/terms-of-use.webp"
+        alt="terms-of-use"
+      />
+      <VStack w={'full'} minH={'100vh'} pt={8} px={20} gap={10}>
         <VStack w={'full'} alignItems={'flex-start'}>
-        <MyText as='heading' title={'Terms of Use'} color='brand.primary'/>
+          <MyText as="heading" title={'Terms of Use'} color="brand.primary" />
           <VStack gap={3} alignItems={'flex-start'}>
             <MyText
               as={'p'}
@@ -63,14 +60,7 @@ export default function TermsOfUse() {
         </VStack>
 
         <VStack w={'full'} alignItems={'flex-start'}>
-          <Text
-            color={'brand.semiblack'}
-            fontWeight={'medium'}
-            as={'h3'}
-            fontSize={'xl'}
-          >
-            User Agreement
-          </Text>
+          <MyText as="heading" title={'User Agreement'} color="brand.primary" />
           <VStack gap={3} alignItems={'flex-start'}>
             <MyText
               as={'p'}
@@ -114,48 +104,62 @@ export default function TermsOfUse() {
         </VStack>
 
         <VStack w={'full'} alignItems={'flex-start'}>
-          <Text
-            color={'brand.semiblack'}
-            fontWeight={'medium'}
-            as={'h3'}
-            fontSize={'xl'}
-          >
-            Accepting the Terms
-          </Text>
+          <MyText
+            as="heading"
+            title={'Accepting the Terms'}
+            color="brand.primary"
+          />
           <VStack gap={3} alignItems={'flex-start'}>
             <MyText as={'p'} title={`You can accept the Terms by:`} />
 
             <Box>
               <OrderedList ml={8} spacing={3}>
                 <ListItem>
-                  Your use of our Services is subject to a legal agreement
-                  between you and Scope Seeker.
+                  <MyText
+                    as={'p'}
+                    title={`Your use of our Services is subject to a legal agreement between you and Scope Seeker.`}
+                  />
                 </ListItem>
 
                 <ListItem>
-                  By using any of our Services, you agree to be bound by our
-                  Terms of Use.
+                  <MyText
+                    as={'p'}
+                    title={`By using any of our Services, you agree to be bound by our
+                    Terms of Use.`}
+                  />
                 </ListItem>
 
                 <ListItem>
-                  If you do not accept these terms, you must not use our
-                  Services.
+                  <MyText
+                    as={'p'}
+                    title={`If you do not accept these terms, you must not use our
+                    Services.`}
+                  />
                 </ListItem>
 
                 <ListItem>
-                  We may update or change our Terms of Use at any time, and your
-                  continued use of our Services indicates your acceptance of
-                  these changes.
+                  <MyText
+                    as={'p'}
+                    title={`We may update or change our Terms of Use at any time, and your
+                    continued use of our Services indicates your acceptance of
+                    these changes.`}
+                  />
                 </ListItem>
 
                 <ListItem>
-                  You can accept our Terms of Use by clicking to agree or by
-                  using our Services.
+                  <MyText
+                    as={'p'}
+                    title={`You can accept our Terms of Use by clicking to agree or by
+                    using our Services.`}
+                  />
                 </ListItem>
 
                 <ListItem>
-                  We recommend that you save or print a copy of our Terms of Use
-                  for your records.
+                  <MyText
+                    as={'p'}
+                    title={`We recommend that you save or print a copy of our Terms of Use
+                    for your records.`}
+                  />
                 </ListItem>
               </OrderedList>
             </Box>
@@ -163,37 +167,42 @@ export default function TermsOfUse() {
         </VStack>
 
         <VStack w={'full'} alignItems={'flex-start'}>
-          <Text
-            color={'brand.semiblack'}
-            fontWeight={'medium'}
-            as={'h3'}
-            fontSize={'xl'}
-          >
-            Modification
-          </Text>
+          <MyText as="heading" title={'Modification'} color="brand.primary" />
           <VStack gap={3} alignItems={'flex-start'}>
             <Box>
               <UnorderedList ml={8} spacing={3}>
                 <ListItem>
-                  scopeseekeer.com may modify, suspend, cancel, or discontinue
-                  any or all channels, products, or services at any time without
-                  prior notice.
+                  <MyText
+                    as={'p'}
+                    title={`scopeseekeer.com may modify, suspend, cancel, or discontinue
+                    any or all channels, products, or services at any time without
+                    prior notice.`}
+                  />
                 </ListItem>
 
                 <ListItem>
-                  Modifications or alterations may be made to any or all of the
-                  content, products, and services on the site without prior
-                  notice.
+                  <MyText
+                    as={'p'}
+                    title={`Modifications or alterations may be made to any or all of the
+                    content, products, and services on the site without prior
+                    notice.`}
+                  />
                 </ListItem>
 
                 <ListItem>
-                  scopeseekeer.com will notify all users of any changes to the
-                  terms and conditions.
+                  <MyText
+                    as={'p'}
+                    title={`scopeseekeer.com will notify all users of any changes to the
+                    terms and conditions.`}
+                  />
                 </ListItem>
 
                 <ListItem>
-                  By continuing to use the Services after the changes have been
-                  made, you accept and agree to the updated Terms.
+                  <MyText
+                    as={'p'}
+                    title={`By continuing to use the Services after the changes have been
+                    made, you accept and agree to the updated Terms.`}
+                  />
                 </ListItem>
               </UnorderedList>
             </Box>
@@ -201,14 +210,11 @@ export default function TermsOfUse() {
         </VStack>
 
         <VStack w={'full'} alignItems={'flex-start'}>
-          <Text
-            color={'brand.semiblack'}
-            fontWeight={'medium'}
-            as={'h3'}
-            fontSize={'xl'}
-          >
-            Registration, Access and Exchange of Information
-          </Text>
+          <MyText
+            as="heading"
+            title={'Registration, Access and Exchange of Information'}
+            color="brand.primary"
+          />
           <VStack gap={3} alignItems={'flex-start'}>
             <MyText
               as={'p'}
@@ -227,19 +233,28 @@ export default function TermsOfUse() {
             <Box>
               <OrderedList ml={8} spacing={3}>
                 <ListItem>
-                  You will not share your account and password with any other
-                  person.
+                  <MyText
+                    as={'p'}
+                    title={`You will not share your account and password with any other
+                    person.`}
+                  />
                 </ListItem>
 
                 <ListItem>
-                  You will not cache any part of the Site in proxy servers for
-                  individuals who have not registered with Unstop.com as users
-                  of the Site.
+                  <MyText
+                    as={'p'}
+                    title={`You will not cache any part of the Site in proxy servers for
+                    individuals who have not registered with Unstop.com as users
+                    of the Site.`}
+                  />
                 </ListItem>
 
                 <ListItem>
-                  You will not make your account and password available to
-                  multiple users on a network.
+                  <MyText
+                    as={'p'}
+                    title={`You will not make your account and password available to
+                    multiple users on a network.`}
+                  />
                 </ListItem>
               </OrderedList>
             </Box>
@@ -264,14 +279,11 @@ export default function TermsOfUse() {
         </VStack>
 
         <VStack w={'full'} alignItems={'flex-start'}>
-          <Text
-            color={'brand.semiblack'}
-            fontWeight={'medium'}
-            as={'h3'}
-            fontSize={'xl'}
-          >
-            Your passwords and account security
-          </Text>
+          <MyText
+            as="heading"
+            title={'Your passwords and account security'}
+            color="brand.primary"
+          />
           <VStack gap={3} alignItems={'flex-start'}>
             <MyText
               as={'p'}
@@ -298,14 +310,7 @@ export default function TermsOfUse() {
         </VStack>
 
         <VStack w={'full'} alignItems={'flex-start'}>
-          <Text
-            color={'brand.semiblack'}
-            fontWeight={'medium'}
-            as={'h3'}
-            fontSize={'xl'}
-          >
-            Privacy Policy
-          </Text>
+          <MyText as="heading" title={'Privacy Policy'} color="brand.primary" />
           <VStack gap={3} alignItems={'flex-start'}>
             <MyText
               as={'p'}
@@ -322,14 +327,11 @@ export default function TermsOfUse() {
         </VStack>
 
         <VStack w={'full'} alignItems={'flex-start'}>
-          <Text
-            color={'brand.semiblack'}
-            fontWeight={'medium'}
-            as={'h3'}
-            fontSize={'xl'}
-          >
-            Advertising Material
-          </Text>
+          <MyText
+            as="heading"
+            title={'Advertising Material'}
+            color="brand.primary"
+          />
           <VStack gap={3} alignItems={'flex-start'}>
             <MyText
               as={'p'}
@@ -354,14 +356,11 @@ export default function TermsOfUse() {
         </VStack>
 
         <VStack w={'full'} alignItems={'flex-start'}>
-          <Text
-            color={'brand.semiblack'}
-            fontWeight={'medium'}
-            as={'h3'}
-            fontSize={'xl'}
-          >
-            User Conduct and Rules
-          </Text>
+          <MyText
+            as="heading"
+            title={'User Conduct and Rules'}
+            color="brand.primary"
+          />
           <VStack gap={3} alignItems={'flex-start'}>
             <MyText
               as={'p'}
@@ -375,61 +374,91 @@ export default function TermsOfUse() {
             <Box>
               <OrderedList ml={8} spacing={3}>
                 <ListItem>
-                  Defame, abuse, harass, stalk, threaten or violate the legal
-                  rights of others.
+                  <MyText
+                    as={'p'}
+                    title={`Defame, abuse, harass, stalk, threaten or violate the legal
+                    rights of others.`}
+                  />
                 </ListItem>
 
                 <ListItem>
-                  Post, upload, distribute, or disseminate any inappropriate,
-                  profane, defamatory, infringing, obscene, indecent, or
-                  unlawful content or information.
+                  <MyText
+                    as={'p'}
+                    title={`Post, upload, distribute, or disseminate any inappropriate,
+                    profane, defamatory, infringing, obscene, indecent, or
+                    unlawful content or information.`}
+                  />
                 </ListItem>
 
                 <ListItem>
-                  Upload files that contain software or other material protected
-                  by intellectual property laws unless you own or control the
-                  rights thereto or have received all necessary consents.
+                  <MyText
+                    as={'p'}
+                    title={`Upload files that contain software or other material protected
+                    by intellectual property laws unless you own or control the
+                    rights thereto or have received all necessary consents.`}
+                  />
                 </ListItem>
 
                 <ListItem>
-                  Upload or distribute files that contain viruses, corrupted
-                  files, or any other similar software or programs that may
-                  damage the operation of the Website or another&apos; s
-                  computer.
+                  <MyText
+                    as={'p'}
+                    title={`Upload or distribute files that contain viruses, corrupted
+                    files, or any other similar software or programs that may
+                    damage the operation of the Website or another&apos; s
+                    computer.`}
+                  />
                 </ListItem>
 
                 <ListItem>
-                  Conduct or forward surveys, contests, pyramid schemes, or
-                  chain letters.
+                  <MyText
+                    as={'p'}
+                    title={`Conduct or forward surveys, contests, pyramid schemes, or
+                    chain letters.`}
+                  />
                 </ListItem>
 
                 <ListItem>
-                  Download any file posted by another user of a Service that you
-                  know, or reasonably should know, cannot be legally distributed
-                  in such manner.
+                  <MyText
+                    as={'p'}
+                    title={`Download any file posted by another user of a Service that you
+                    know, or reasonably should know, cannot be legally distributed
+                    in such manner.`}
+                  />
                 </ListItem>
 
                 <ListItem>
-                  Falsify or delete any author attributions, legal or other
-                  proper notices or proprietary designations or labels of the
-                  origin or source of software or other material contained in a
-                  file that is uploaded.
+                  <MyText
+                    as={'p'}
+                    title={`Falsify or delete any author attributions, legal or other
+                    proper notices or proprietary designations or labels of the
+                    origin or source of software or other material contained in a
+                    file that is uploaded.`}
+                  />
                 </ListItem>
 
                 <ListItem>
-                  Violate any code of conduct or other guidelines that may be
-                  applicable for or to any particular Service.
+                  <MyText
+                    as={'p'}
+                    title={`Violate any code of conduct or other guidelines that may be
+                    applicable for or to any particular Service.`}
+                  />
                 </ListItem>
 
                 <ListItem>
-                  Violate any applicable laws or regulations for the time being
-                  in force in or outside India.
+                  <MyText
+                    as={'p'}
+                    title={`Violate any applicable laws or regulations for the time being
+                    in force in or outside India.`}
+                  />
                 </ListItem>
 
                 <ListItem>
-                  Violate any of the terms and conditions of this Agreement or
-                  any other terms and conditions for the use of the Website
-                  contained elsewhere herein.
+                  <MyText
+                    as={'p'}
+                    title={`Violate any of the terms and conditions of this Agreement or
+                    any other terms and conditions for the use of the Website
+                    contained elsewhere herein.`}
+                  />
                 </ListItem>
               </OrderedList>
             </Box>
@@ -437,14 +466,11 @@ export default function TermsOfUse() {
         </VStack>
 
         <VStack w={'full'} alignItems={'flex-start'}>
-          <Text
-            color={'brand.semiblack'}
-            fontWeight={'medium'}
-            as={'h3'}
-            fontSize={'xl'}
-          >
-            User Warranty and Representation
-          </Text>
+          <MyText
+            as="heading"
+            title={'User Warranty and Representation'}
+            color="brand.primary"
+          />
           <VStack gap={3} alignItems={'flex-start'}>
             <MyText
               as={'p'}
@@ -469,9 +495,12 @@ export default function TermsOfUse() {
             fontWeight={'medium'}
             as={'h3'}
             fontSize={'xl'}
-          >
-            Termination and Access Restriction
-          </Text>
+          ></Text>
+          <MyText
+            as="heading"
+            title={'Termination and Access Restriction'}
+            color="brand.primary"
+          />
           <VStack gap={3} alignItems={'flex-start'}>
             <MyText
               as={'p'}
@@ -485,14 +514,11 @@ export default function TermsOfUse() {
         </VStack>
 
         <VStack w={'full'} alignItems={'flex-start'}>
-          <Text
-            color={'brand.semiblack'}
-            fontWeight={'medium'}
-            as={'h3'}
-            fontSize={'xl'}
-          >
-            Disclaimer of Warranties/Limitation of Liability
-          </Text>
+          <MyText
+            as="heading"
+            title={'Disclaimer of Warranties/Limitation of Liability'}
+            color="brand.primary"
+          />
           <VStack gap={3} alignItems={'flex-start'}>
             <MyText
               as={'p'}
@@ -537,14 +563,11 @@ export default function TermsOfUse() {
         </VStack>
 
         <VStack w={'full'} alignItems={'flex-start'}>
-          <Text
-            color={'brand.semiblack'}
-            fontWeight={'medium'}
-            as={'h3'}
-            fontSize={'xl'}
-          >
-            Indemnification
-          </Text>
+          <MyText
+            as="heading"
+            title={'Indemnification'}
+            color="brand.primary"
+          />
           <VStack gap={3} alignItems={'flex-start'}>
             <MyText
               as={'p'}
@@ -563,24 +586,36 @@ export default function TermsOfUse() {
             <Box>
               <OrderedList ml={8} spacing={3}>
                 <ListItem>
-                  Any breach or alleged breach by you of these Terms of Use or
-                  any other agreement between you and Scope Seeker;
+                  <MyText
+                    as={'p'}
+                    title={`Any breach or alleged breach by you of these Terms of Use or
+                    any other agreement between you and Scope Seeker;`}
+                  />
                 </ListItem>
 
                 <ListItem>
-                  Your use of the website or the services provided by Scope
-                  Seeker;
+                  <MyText
+                    as={'p'}
+                    title={`Your use of the website or the services provided by Scope
+                    Seeker;`}
+                  />
                 </ListItem>
 
                 <ListItem>
-                  Your violation of any law or the rights of any third party;
-                  and
+                  <MyText
+                    as={'p'}
+                    title={`Your violation of any law or the rights of any third party;
+                    and`}
+                  />
                 </ListItem>
 
                 <ListItem>
-                  Any activity related to your account, including but not
-                  limited to negligent or wrongful conduct by you or any other
-                  person accessing the website or services using your account.
+                  <MyText
+                    as={'p'}
+                    title={`Any activity related to your account, including but not
+                    limited to negligent or wrongful conduct by you or any other
+                    person accessing the website or services using your account.`}
+                  />
                 </ListItem>
               </OrderedList>
             </Box>
@@ -598,14 +633,7 @@ export default function TermsOfUse() {
         </VStack>
 
         <VStack w={'full'} alignItems={'flex-start'}>
-          <Text
-            color={'brand.semiblack'}
-            fontWeight={'medium'}
-            as={'h3'}
-            fontSize={'xl'}
-          >
-            Governing Law
-          </Text>
+          <MyText as="heading" title={'Governing Law'} color="brand.primary" />
           <VStack gap={3} alignItems={'flex-start'}>
             <MyText
               as={'p'}
@@ -621,14 +649,7 @@ export default function TermsOfUse() {
         </VStack>
 
         <VStack w={'full'} alignItems={'flex-start'}>
-          <Text
-            color={'brand.semiblack'}
-            fontWeight={'medium'}
-            as={'h3'}
-            fontSize={'xl'}
-          >
-            Severability
-          </Text>
+          <MyText as="heading" title={'Severability'} color="brand.primary" />
           <VStack gap={3} alignItems={'flex-start'}>
             <MyText
               as={'p'}
@@ -645,14 +666,7 @@ export default function TermsOfUse() {
         </VStack>
 
         <VStack w={'full'} alignItems={'flex-start'}>
-          <Text
-            color={'brand.semiblack'}
-            fontWeight={'medium'}
-            as={'h3'}
-            fontSize={'xl'}
-          >
-            Report Abuse
-          </Text>
+          <MyText as="heading" title={'Report Abuse'} color="brand.primary" />
           <VStack gap={3} alignItems={'flex-start'}>
             <MyText
               as={'p'}
@@ -670,14 +684,7 @@ export default function TermsOfUse() {
         </VStack>
 
         <VStack w={'full'} alignItems={'flex-start'}>
-          <Text
-            color={'brand.semiblack'}
-            fontWeight={'medium'}
-            as={'h3'}
-            fontSize={'xl'}
-          >
-            Forum Rules
-          </Text>
+          <MyText as="heading" title={'Forum Rules'} color="brand.primary" />
           <VStack gap={3} alignItems={'flex-start'}>
             <MyText
               as={'p'}
@@ -692,52 +699,61 @@ export default function TermsOfUse() {
             <Box>
               <OrderedList ml={8} spacing={3}>
                 <ListItem>
-                  Users must not post any messages that are obscene, vulgar,
-                  sexually-oriented, hateful, threatening, or otherwise
-                  violative of any laws.
+                  <MyText
+                    as={'p'}
+                    title={`Users must not post any messages that are obscene, vulgar,
+                    sexually-oriented, hateful, threatening, or otherwise
+                    violative of any laws.`}
+                  />
                 </ListItem>
 
                 <ListItem>
-                  The administrators and moderators of the forum will try their
-                  best to keep objectionable messages off the platform, but they
-                  cannot review every message. All messages express the views of
-                  the author, and Scope Seeker will not be held responsible for
-                  the content of any message.
+                  <MyText
+                    as={'p'}
+                    title={`The administrators and moderators of the forum will try their
+                    best to keep objectionable messages off the platform, but they
+                    cannot review every message. All messages express the views of
+                    the author, and Scope Seeker will not be held responsible for
+                    the content of any message.`}
+                  />
                 </ListItem>
 
                 <ListItem>
-                  Scope Seeker reserves the right to remove, edit, move or close
-                  any thread for any reason.
+                  <MyText
+                    as={'p'}
+                    title={`Scope Seeker reserves the right to remove, edit, move or close
+                    any thread for any reason.`}
+                  />
                 </ListItem>
 
                 <ListItem>
-                  Users agree to receive notices from Scope Seeker, including
-                  those regarding changes to the Terms, by email, regular mail,
-                  or postings on the Services.
+                  <MyText
+                    as={'p'}
+                    title={`Users agree to receive notices from Scope Seeker, including
+                    those regarding changes to the Terms, by email, regular mail,
+                    or postings on the Services.`}
+                  />
                 </ListItem>
               </OrderedList>
+            </Box>
 
-              <MyText
-                as={'p'}
-                title={`
+            <MyText
+              as={'p'}
+              title={`
                 We hope that all users will have meaningful and constructive
                 conversations on the forum, helping each other build successful
                 careers based on their skills and interests.
               `}
-              />
-            </Box>
+            />
           </VStack>
         </VStack>
 
         <VStack w={'full'} alignItems={'flex-start'}>
-          <Text
-            color={'brand.semiblack'}
-            fontWeight={'medium'}
-            as={'h3'}
-            fontSize={'xl'}
-          >
-            Ending your relationship with scopeseekeer.com
-          </Text>
+          <MyText
+            as="heading"
+            title={'Ending your relationship with scopeseekeer.com'}
+            color="brand.primary"
+          />
           <VStack gap={3} alignItems={'flex-start'}>
             <MyText
               as={'p'}
