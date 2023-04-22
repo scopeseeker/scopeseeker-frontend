@@ -12,6 +12,7 @@ interface IMyInputProps {
   leftElem?: React.ReactNode;
   rightElem?: React.ReactNode;
   w?: number | string;
+  bg?: string;
   hpr?: string | number;
   [key: string]: any;
 }
@@ -29,6 +30,7 @@ const MyInput: React.FC<IMyInputProps> = (props) => {
     rightElem,
     w,
     hpr,
+    bg='brand.aliceblue',
     ...rest
   } = props;
   const boxRef = useRef<HTMLDivElement>(null);
@@ -53,7 +55,7 @@ const MyInput: React.FC<IMyInputProps> = (props) => {
           </Text>
         )}
         <HStack
-          bg={'brand.aliceblue'}
+          bg={bg}
           px={1}
           ref={boxRef}
           border={'1.7px solid transparent'}
@@ -67,7 +69,7 @@ const MyInput: React.FC<IMyInputProps> = (props) => {
               {leftElem}
             </Center>
           )}
-          <Center w={'80%'}>
+          <Center w={'100%'}>
             <Input
               _focus={{ border: 'none' }}
               onFocus={handleInputFocus}
