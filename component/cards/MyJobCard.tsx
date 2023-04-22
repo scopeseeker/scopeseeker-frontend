@@ -40,12 +40,12 @@ const MyJobCard: React.FC<IMyJobCard> = ({
       px={4}
       h={'fit-content'}
       bg={'brand.white'}
-      // boxShadow={'0px 0px 20px rgb(0,0,0,0.2)'}
+      // boxShadow={'0px 0px 2000px rgb(0,0,0,0.1)'}
       border={'1px solid'}
       borderColor={'brand.darkgray'}
       _hover={{
         borderColor: 'brand.primary',
-        backgroundColor: 'brand.prmiary'
+        boxShadow: '0px 0px 30px rgb(0,0,0,0.1)'
       }}
     >
       <HStack justifyContent={'space-between'} w={'full'}>
@@ -65,9 +65,6 @@ const MyJobCard: React.FC<IMyJobCard> = ({
           <Center
             w={'35px'}
             h={'35px'}
-            // border={'1px'}
-            // borderColor={'gray.400'}
-            // borderRadius={'lg'}
             cursor={'pointer'}
           >
             <Icon name="save" height="16" width="16" />
