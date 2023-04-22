@@ -30,7 +30,7 @@ const Filter = () => {
           Filter Jobs
         </Heading>
       </HStack>
-      <Accordion w="full">
+      <Accordion  w="full">
         <FilterBox
           filterHeading="Company Type"
           filterItems={[
