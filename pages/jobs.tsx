@@ -13,7 +13,7 @@ import {
 } from '@chakra-ui/react';
 import { useState } from 'react';
 
-const Jobs = () => {
+export default function Jobs() {
   const [isSortClicked, setIsSortClicked] = useState(true);
   return (
     <VStack w={'full'} minH={'100vh'} px={28} spacing={0}>
@@ -38,7 +38,7 @@ const Jobs = () => {
           px={'10px'}
         />
         <Divider orientation="vertical" colorScheme="black" />
-        
+
         <MyButton title="Find Jobs" h={'full'} borderRadius={0} px={4} />
       </HStack>
       <Divider />
@@ -214,6 +214,4 @@ const Jobs = () => {
       </HStack>
     </VStack>
   );
-};
-
-export default Jobs;
+}

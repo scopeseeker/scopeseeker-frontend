@@ -1,11 +1,10 @@
 import {
   Box,
-  Button,
   Center,
   Flex,
   HStack,
   Text,
-  useColorMode
+  useColorMode,
 } from '@chakra-ui/react';
 import Link from 'next/link';
 import MyButton from '../button/MyButton';
@@ -56,10 +55,30 @@ const Navbar = () => {
           </HStack>
 
           <HStack gap={6}>
-            <MyText as='link' title='Jobs' href='/jobs' hoverColor={'brand.primary'}/>
-            <MyText as='link' title='Company' href='/jobs' hoverColor={'brand.primary'}/>
-            <MyText as='link' title='About Us' href='/jobs' hoverColor={'brand.primary'}/>           
-            <MyText as='link' title='Contact Us' href='/jobs' hoverColor={'brand.primary'}/>           
+            <MyText
+              as="link"
+              title="Jobs"
+              href="/jobs"
+              hoverColor={'brand.primary'}
+            />
+            <MyText
+              as="link"
+              title="Company"
+              href="/company"
+              hoverColor={'brand.primary'}
+            />
+            <MyText
+              as="link"
+              title="About Us"
+              href="/about-us"
+              hoverColor={'brand.primary'}
+            />
+            <MyText
+              as="link"
+              title="Contact Us"
+              href="/contact-us"
+              hoverColor={'brand.primary'}
+            />
           </HStack>
         </HStack>
 

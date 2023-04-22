@@ -13,7 +13,7 @@ import {
 } from '@chakra-ui/react';
 import Head from 'next/head';
 
-const ContactUs = () => {
+export default function ContactUs(){
   return (
     <>
       <Head>
@@ -157,7 +157,5 @@ const ContactUs = () => {
         </Center>
       </HStack>
     </>
-  );
-};
-
-export default ContactUs;
+  )
+}

@@ -13,7 +13,7 @@ import {
 } from '@chakra-ui/react';
 import { useState } from 'react';
 
-const InfoSteps = () => {
+export default function InfoSteps() {
   // const [isVerify, setIsVerify] = useState(false);
   const isVerify = true;
   const [selectedGender, setSelectedGender] = useState('');
@@ -402,6 +402,4 @@ const InfoSteps = () => {
       </Center>
     </HStack>
   );
-};
-
-export default InfoSteps;
+}
