@@ -45,8 +45,7 @@ const MyJobCard: React.FC<IMyJobCard> = ({
       borderColor={'brand.darkgray'}
       _hover={{
         borderColor: 'brand.primary',
-        borderWidth: '2px',
-        transform: 'traslateY(10px)',
+        backgroundColor: 'brand.prmiary'
       }}
     >
       <HStack justifyContent={'space-between'} w={'full'}>
