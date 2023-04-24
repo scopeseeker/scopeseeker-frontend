@@ -6,6 +6,7 @@ import {
   Flex,
   HStack,
   Heading,
+  Input,
   Text,
   VStack,
 } from '@chakra-ui/react';
@@ -23,17 +24,42 @@ const HeroSection = () => {
           justifyContent={'center'}
           alignItems={'flex-start'}
           px={'55px'}
+          gap={'5px'}
         >
           <Heading color={'brand.primary'}>No More Wasted Time</Heading>
-          <MyText
+          {/* <MyText
             title="Let Us Help You Find Your Next Tech Job Opportunity"
             as="heading"
-          />
+          /> */}
           <MyText
             title="Our platform is dedicated to helping job seekers save time and find the right tech job opportunities that suit their skills and career aspirations."
             as="p"
           />
-          <HStack>
+          <HStack
+            w={'80%'}
+            h={'45px'}
+            m={6}
+            bg={'brand.white'}
+            boxShadow={'0px 0px 80px rgb(0, 0, 0, 0.2)'}
+            borderRadius={6}
+            overflow={'hidden'}
+            justifyContent={'space-between'}
+            pl={'5px'}
+          >
+            <Input
+              type="text"
+              variant={'unstyled'}
+              placeholder="Search by Roles, Company, Tech..."
+              fontSize={'12px'}
+              h={'full'}
+              w={'70%'}
+              px={'10px'}
+            />
+
+            <MyButton title="Find Jobs" h={'full'} borderRadius={0} px={4} />
+          </HStack>
+
+          {/* <HStack>
             <MyButton title="Explore Jobs" size="md" fontSize="14px" />
             <MyButton
               title="Sign Up Today"
@@ -45,7 +71,8 @@ const HeroSection = () => {
               color="brand.primary"
             />
           </HStack>
-          <HStack py={'20px'} >
+           */}
+          <Flex gap={'5px'} py={'20px'} maxW={'25vw'} flexWrap={'wrap'}>
             <Badge
               colorScheme="green"
               fontSize={'10px'}
@@ -79,11 +106,33 @@ const HeroSection = () => {
             >
               Backend Dev.
             </Badge>
-          </HStack>
+            <Badge
+              colorScheme="red"
+              fontSize={'10px'}
+              py={'4px'}
+              px={'10px'}
+              variant={'outline'}
+              borderRadius={'full'}
+              cursor={'pointer'}
+            >
+              Software Engineer
+            </Badge>
+            <Badge
+              colorScheme="purple"
+              fontSize={'10px'}
+              py={'4px'}
+              px={'10px'}
+              variant={'outline'}
+              borderRadius={'full'}
+              cursor={'pointer'}
+            >
+              Java Full Stack
+            </Badge>
+          </Flex>
         </VStack>
         <Center minH={'90vh'} w={'50%'}>
           <MyImage
-            src="/assets/svgs/hero-section-2.svg"
+            src="/assets/images/aa.png"
             alt={'hero-setion-image'}
             width={450}
             height={500}

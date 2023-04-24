@@ -23,14 +23,14 @@ const PageHeroSection: React.FC<IPageHeroSection> = (props) => {
     headColor = 'brand.white',
     paraColor = 'brand.lightgray',
     alt,
-    h = 400,
-    w = 400,
+    h = 300,
+    w = 300,
     src,
   } = props;
   return (
     <HStack
       w={'full'}
-      minH={'50vh'}
+      h={'50vh'}
       bg={'brand.primary'}
       px={20}
       justifyContent={'space-between'}

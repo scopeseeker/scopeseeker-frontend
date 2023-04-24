@@ -7,7 +7,7 @@ const Motive = () => {
     <Center w={{ base: '90vw', md: '90vw', lg: '100vw', xl: '100%' }} px={16}>
       <Flex minH={'60vh'} w={'full'} px={14} gap={36}>
         <MyImage
-          src={'/assets/svgs/hero-section-2.svg'}
+          src={'/assets/images/bb.png'}
           alt="svg-image"
           width={450}
           height={500}

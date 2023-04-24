@@ -32,6 +32,7 @@ const Navbar = () => {
       >
         {/* Left Part of Navbar */}
         <HStack gap={12}>
+            <Link href={'/'}>
           <HStack cursor={'pointer'}>
             <MyImage
               src={'/assets/images/scopeseeker-logo.png'}
@@ -53,6 +54,7 @@ const Navbar = () => {
               </Text>
             </Flex>
           </HStack>
+            </Link>
 
           <HStack gap={6}>
             <MyText

@@ -13,7 +13,7 @@ import {
 } from '@chakra-ui/react';
 import Head from 'next/head';
 
-export default function ContactUs(){
+export default function ContactUs() {
   return (
     <>
       <Head>
@@ -23,7 +23,7 @@ export default function ContactUs(){
         title="Contact Us"
         subtitle="Get in touch with us for any questions or feedback. Our team is always here to assist you. Contact us through our website's contact form or email us at scopeseekerhelp@gmail.com. We value your input and look forward to hearing from you soon."
         alt="contac us img"
-        src="/assets/images/privacy-policy.webp"
+        src="/assets/images/contact-us.png"
       />
       <HStack w={'full'} h={'100vh'}>
         <Center h={'full'} w={'50%'}>
@@ -85,9 +85,21 @@ export default function ContactUs(){
             <Heading fontSize={'2xl'} mb={4}>
               Get more details about us
             </Heading>
-            <HStack w={'55%'} h={16} borderRadius={6} border={'1px solid '} borderColor={'blue.600'} bg={'blue.200'}>
+            <HStack
+              w={'55%'}
+              h={16}
+              borderRadius={6}
+              border={'1px solid '}
+              borderColor={'blue.600'}
+              bg={'blue.200'}
+            >
               <HStack gap={3} w={'full'} p={6}>
-                <Icon name="location" width="30" height="30" color="brand.semiblack" />
+                <Icon
+                  name="location"
+                  width="30"
+                  height="30"
+                  color="brand.semiblack"
+                />
                 <VStack
                   alignItems={'flex-start'}
                   spacing={0}
@@ -102,9 +114,21 @@ export default function ContactUs(){
                 </VStack>
               </HStack>
             </HStack>
-            <HStack w={'55%'} h={16} borderRadius={6}border={'1px solid'} borderColor={'green.800'} bg={'green.200'}>
+            <HStack
+              w={'55%'}
+              h={16}
+              borderRadius={6}
+              border={'1px solid'}
+              borderColor={'green.800'}
+              bg={'green.200'}
+            >
               <HStack gap={4} w={'full'} p={6}>
-                <Icon name="whatsapp" width="30" height="30" color="brand.semiblack" />
+                <Icon
+                  name="whatsapp"
+                  width="30"
+                  height="30"
+                  color="brand.semiblack"
+                />
                 <VStack
                   alignItems={'flex-start'}
                   spacing={0}
@@ -119,9 +143,21 @@ export default function ContactUs(){
                 </VStack>
               </HStack>
             </HStack>
-            <HStack w={'55%'} h={16} borderRadius={6} border={'1px solid'} borderColor={'red.600'} bg={'red.200'}>
+            <HStack
+              w={'55%'}
+              h={16}
+              borderRadius={6}
+              border={'1px solid'}
+              borderColor={'red.600'}
+              bg={'red.200'}
+            >
               <HStack gap={4} w={'full'} p={6}>
-                <Icon name="gmail" width="30" height="30" color="brand.semiblack" />
+                <Icon
+                  name="gmail"
+                  width="30"
+                  height="30"
+                  color="brand.semiblack"
+                />
                 <VStack
                   alignItems={'flex-start'}
                   spacing={0}
@@ -136,9 +172,21 @@ export default function ContactUs(){
                 </VStack>
               </HStack>
             </HStack>
-            <HStack w={'55%'} h={16} borderRadius={6} border={'1px solid'} borderColor={'yellow.600'} bg={'yellow.200'}>
+            <HStack
+              w={'55%'}
+              h={16}
+              borderRadius={6}
+              border={'1px solid'}
+              borderColor={'yellow.600'}
+              bg={'yellow.200'}
+            >
               <HStack gap={4} w={'full'} p={6}>
-                <Icon name="phone" width="30" height="30" color="brand.semiblack" />
+                <Icon
+                  name="phone"
+                  width="30"
+                  height="30"
+                  color="brand.semiblack"
+                />
                 <VStack
                   alignItems={'flex-start'}
                   spacing={0}
@@ -157,5 +205,5 @@ export default function ContactUs(){
         </Center>
       </HStack>
     </>
-  )
+  );
 }
