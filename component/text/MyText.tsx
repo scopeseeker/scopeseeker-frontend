@@ -9,6 +9,7 @@ interface IMyText {
   fontWeight?: number;
   hoverColor?: string;
   fontSize?: { base: string; md: string };
+  [key: string]: any;
 }
 
 const MyText = ({
@@ -19,22 +20,22 @@ const MyText = ({
   fontWeight,
   hoverColor,
   fontSize = { base: '13px', md: '13px' },
+  ...rest
 }: IMyText) => {
-  // As Heading
-  // As Link
-  // as para
-  // as subtitle
+
 
   return (
     <>
       {as === 'p' && (
-        <Text color={color} as={'p'} fontSize={{ base: '14px', md: '15px' }}>
+        <Text color={color} as={'p'} fontSize={{ base: '14px', md: '15px' }}
+        {...rest}>
           {title}
         </Text>
       )}
 
       {as === 'st' && (
-        <Text color={color} as={'span'} fontSize={{ base: '12px', md: '12px' }}>
+        <Text color={color} as={'span'} fontSize={{ base: '12px', md: '12px' }}
+        {...rest}>
           {title}
         </Text>
       )}
@@ -46,6 +47,7 @@ const MyText = ({
           fontFamily={'heading'}
           fontWeight={600}
           fontSize={{ base: '18px', md: '20px' }}
+          {...rest}
         >
           {title}
         </Text>
@@ -57,6 +59,7 @@ const MyText = ({
           fontFamily={'heading'}
           fontWeight={600}
           fontSize={{ base: '14px', md: '14px' }}
+          {...rest}
         >
           {title}
         </Text>
@@ -70,6 +73,7 @@ const MyText = ({
             fontSize={{ base: '12px', md: '14px' }}
             fontWeight={fontWeight}
             _hover={{ opacity: !hoverColor && 0.85, color: hoverColor }}
+            {...rest}
           >
             {title}
           </Text>
@@ -83,6 +87,7 @@ const MyText = ({
           as={'span'}
           fontSize={fontSize}
           fontWeight={fontWeight}
+          {...rest}
         >
           {title}
         </Text>

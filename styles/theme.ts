@@ -36,6 +36,7 @@ const theme = extendTheme({
       primary: '#1A75E8',
       aliceblue: '#F0F8FF',
       cardColor: '#f7f4ff',
+      border: 'lightgray'
     },
   },
   config,
