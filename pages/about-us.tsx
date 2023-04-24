@@ -24,10 +24,8 @@ export default function AboutUs() {
       <PageHeroSection
         title="About Us"
         subtitle="Break all boundaries and be unstoppable with the largest community engagement platform built on gamification"
-        src="/assets/images/about-us.webp"
+        src="/assets/images/about-us.png"
         alt="terms-of-use"
-        w={200}
-        h={200}
       />
       <VStack w={'full'} minH={'100vh'} pt={8} px={20} gap={10}>
         <VStack w={'full'} gap={12}>

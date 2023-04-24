@@ -19,8 +19,9 @@ export default function TermsOfUse() {
       <PageHeroSection
         title="Privacy Policy"
         subtitle="Every human or organisation has three levels of openness: Public, Personal and Private. We do believe in your rights to privacy."
-        src="/assets/images/privacy-policy.webp"
+        src="/assets/images/privacy-policy.png"
         alt="terms-of-use"
+        w={250}
       />
       <VStack w={'full'} minH={'100vh'} pt={8} px={20} gap={10}>
         <VStack w={'full'} alignItems={'flex-start'}>

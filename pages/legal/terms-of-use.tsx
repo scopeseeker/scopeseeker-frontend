@@ -19,7 +19,7 @@ export default function TermsOfUse() {
       <PageHeroSection
         title="Terms & Conditions"
         subtitle="So you think you are at the right place? If yes, every collaboration has its own terms of use. Here's our terms and conditions."
-        src="/assets/images/terms-of-use.webp"
+        src="/assets/images/terms.png"
         alt="terms-of-use"
       />
       <VStack w={'full'} minH={'100vh'} pt={8} px={20} gap={10}>
