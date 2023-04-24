@@ -1,6 +1,7 @@
-import { Badge, Box, Center, HStack, VStack } from '@chakra-ui/react';
+import { Badge, Box, Center, Flex, HStack, VStack } from '@chakra-ui/react';
 import Link from 'next/link';
 import React from 'react';
+import truncatedParagraph from '../../lib/validator';
 import MyButton from '../button/MyButton';
 import Icon from '../icon/Icon';
 import MyImage from '../image/MyImage';
@@ -30,22 +31,20 @@ const MyJobCard: React.FC<IMyJobCard> = ({
 }: IMyJobCard) => {
   return (
     <VStack
-      w={'sm'}
+      w={'3xs'}
       borderRadius={10}
       marginInline={'auto'}
       alignItems={'flex-start'}
       cursor={'pointer'}
-      py={1}
-      pb={3}
-      px={4}
-      h={'fit-content'}
+      px={'16px'}
+      py={'12px'}
+      h={'2xs'}
       bg={'brand.white'}
-      // boxShadow={'0px 0px 2000px rgb(0,0,0,0.1)'}
       border={'1px solid'}
       borderColor={'brand.darkgray'}
       _hover={{
         borderColor: 'brand.primary',
-        boxShadow: '0px 0px 30px rgb(0,0,0,0.1)'
+        boxShadow: '0px 0px 30px rgb(0,0,0,0.1)',
       }}
     >
       <HStack justifyContent={'space-between'} w={'full'}>
@@ -62,17 +61,13 @@ const MyJobCard: React.FC<IMyJobCard> = ({
           />
         </Center>
         <HStack>
-          <Center
-            w={'35px'}
-            h={'35px'}
-            cursor={'pointer'}
-          >
+          <Center w={'35px'} h={'35px'} cursor={'pointer'}>
             <Icon name="save" height="16" width="16" />
           </Center>
         </HStack>
       </HStack>
 
-      <VStack alignItems={'flex-start'} gap={1}>
+      <VStack alignItems={'flex-start'} gap={1} w={'full'}>
         <Box>
           <MyText title={role} as="title" />
           <MyText
@@ -81,7 +76,7 @@ const MyJobCard: React.FC<IMyJobCard> = ({
             fontSize={{ base: '10px', md: '10px' }}
           />
         </Box>
-        <HStack>
+        <Flex gap={'8px'} flexWrap={'wrap'} w={'full'}>
           {jobType.map((item, key) => (
             <Badge
               as={'span'}
@@ -97,22 +92,20 @@ const MyJobCard: React.FC<IMyJobCard> = ({
               {item.label}
             </Badge>
           ))}
-        </HStack>
+        </Flex>
 
-        {/* <Text fontSize={'2xs'} color={'gray.500'}>
-          {companyDesc}
-        </Text> */}
+        <MyText as="st" title={truncatedParagraph(companyDesc)} />
 
         <HStack>
-          <Link href={applyLink}>
-            <MyButton title="Apply Now" fontSize="xs" px={6} />
+          <Link href={'#'}>
+            <MyButton title="Apply Now" size="sm" fontSize="14px" />
           </Link>
-          <Link href={fullDetailedLink}>
+          <Link href={'#'}>
             <MyButton
-              title="Full Details"
-              fontSize="xs"
+              title="See Details"
+              size="sm"
+              fontSize="14px"
               variant="outline"
-              px={6}
             />
           </Link>
         </HStack>

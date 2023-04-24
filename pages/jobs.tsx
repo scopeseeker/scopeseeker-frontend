@@ -1,6 +1,9 @@
 import MyButton from '@/component/button/MyButton';
 import MyJobCard from '@/component/cards/MyJobCard';
+import MyDivider from '@/component/divider/MyDivider';
 import Filter from '@/component/filter/Filter';
+import MyText from '@/component/text/MyText';
+import { jobsFilter } from '@/constant/filterFeilds';
 import {
   Box,
   Divider,
@@ -21,14 +24,16 @@ export default function Jobs() {
       <Head>
         <title>Jobs | Scope Seeker</title>
       </Head>
-      <VStack w={'full'} minH={'100vh'} px={28} spacing={0}>
+      <VStack gap={'40px'} w={'80%'} minH={'100vh'} mx={'auto'} spacing={0}>
         <HStack
           w={'full'}
-          h={'45px'}
-          m={6}
+          mt={'30px'}
+          h={'52px'}
           bg={'brand.white'}
-          boxShadow={'0px 0px 80px rgb(0, 0, 0, 0.2)'}
+          boxShadow={'0px 0px 120px rgb(0, 0, 0, 0.2)'}
           borderRadius={6}
+          border={'1px solid'}
+          borderColor={'brand.border'}
           overflow={'hidden'}
           justifyContent={'space-between'}
           pl={'5px'}
@@ -46,20 +51,14 @@ export default function Jobs() {
 
           <MyButton title="Find Jobs" h={'full'} borderRadius={0} px={4} />
         </HStack>
-        <Divider />
-        <HStack
-          alignItems={'flex-start'}
-          w={'full'}
-          minH={'100vh'}
-          // p={2}
-          pt={12}
-          gap={12}
-        >
-          <Box w={'20%'} pr={2}>
-            <Filter />
+        <MyDivider />
+        <HStack alignItems={'flex-start'} w={'full'} minH={'100vh'}>
+          <Box w={'20%'}>
+            <Filter FilterObject={jobsFilter} />
           </Box>
-          <VStack w={'80%'} h={'100%'}>
-            <HStack justifyContent={'space-between'} w={'full'}>
+          <VStack px={'50px'} w={'80%'} h={'100%'}>
+
+            <HStack  justifyContent={'space-between'} w={'full'}>
               <Heading as={'span'} fontSize={'sm'}>
                 Showing 69 Jobs
               </Heading>
@@ -97,8 +96,8 @@ export default function Jobs() {
                 />
               </HStack>
             </HStack>
-            <Box pt={6} w={'full'}>
-              <Grid templateColumns="repeat(2, 1fr)" gap={4}>
+            <Box pt={6} w={'full'} >
+              <Grid templateColumns="repeat(3, 1fr)" gap={'16px'}>
                 <GridItem>
                   <MyJobCard
                     companyIconLogo={
