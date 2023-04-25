@@ -30,15 +30,13 @@ const MyJobCard: React.FC<IMyJobCard> = ({
   isNamedLogo = false,
 }: IMyJobCard) => {
   return (
-    <VStack
-      w={'3xs'}
+    <Center
+      w={{base: '90vw', sm: '250px'}}
+      h={'315px'}
       borderRadius={10}
-      marginInline={'auto'}
-      alignItems={'flex-start'}
       cursor={'pointer'}
       px={'16px'}
       py={'12px'}
-      h={'2xs'}
       bg={'brand.white'}
       border={'1px solid'}
       borderColor={'brand.darkgray'}
@@ -47,70 +45,81 @@ const MyJobCard: React.FC<IMyJobCard> = ({
         boxShadow: '0px 0px 30px rgb(0,0,0,0.1)',
       }}
     >
-      <HStack justifyContent={'space-between'} w={'full'}>
-        <Center
-          w={isNamedLogo ? 'fit-content' : '45px'}
-          h={'40px'}
-          borderRadius={'full'}
-        >
-          <MyImage
-            src={companyIconLogo}
-            alt="logo"
-            width={isNamedLogo ? 80 : 30}
-            height={30}
-          />
-        </Center>
-        <HStack>
-          <Center w={'35px'} h={'35px'} cursor={'pointer'}>
-            <Icon name="save" height="16" width="16" />
+      <VStack>
+        <HStack justifyContent={'space-between'} w={'full'}>
+          <Center
+            w={isNamedLogo ? 'fit-content' : '45px'}
+            h={'45px'}
+            borderRadius={'full'}
+            bg={'brand.aliceblue'}
+          >
+            <MyImage
+              src={companyIconLogo}
+              alt="logo"
+              width={isNamedLogo ? 80 : 30}
+              height={30}
+            />
           </Center>
+          <HStack>
+            <Center w={'35px'} h={'35px'} cursor={'pointer'}>
+              <Icon name="save" height="16" width="16" />
+            </Center>
+          </HStack>
         </HStack>
-      </HStack>
 
-      <VStack alignItems={'flex-start'} gap={1} w={'full'}>
-        <Box>
-          <MyText title={role} as="title" />
+        <VStack alignItems={'flex-start'} gap={1} w={'full'}>
+          <Box>
+            <MyText title={role} as="title" />
+            <MyText
+              title={companyName}
+              as="span"
+              fontSize={{ base: '10px', md: '10px' }}
+            />
+          </Box>
+          <Flex gap={'8px'} flexWrap={'wrap'} w={'full'}>
+            {jobType.map((item, key) => (
+              <Badge
+                as={'span'}
+                fontSize={'8px'}
+                fontWeight={'medium'}
+                colorScheme={item.color}
+                key={key}
+                px={2}
+                py={1}
+                borderRadius={3}
+              >
+                {item.label}
+              </Badge>
+            ))}
+          </Flex>
+
           <MyText
-            title={companyName}
+            title={location}
             as="span"
             fontSize={{ base: '10px', md: '10px' }}
           />
-        </Box>
-        <Flex gap={'8px'} flexWrap={'wrap'} w={'full'}>
-          {jobType.map((item, key) => (
-            <Badge
-              as={'span'}
-              fontSize={'8px'}
-              fontWeight={'medium'}
-              colorScheme={item.color}
-              key={key}
-              px={2}
-              py={1}
-              borderRadius={3}
-              variant={'outline'}
-            >
-              {item.label}
-            </Badge>
-          ))}
-        </Flex>
+          <MyText as="st" title={truncatedParagraph(companyDesc)} />
 
-        <MyText as="st" title={truncatedParagraph(companyDesc)} />
-
-        <HStack>
-          <Link href={'#'}>
-            <MyButton title="Apply Now" size="sm" fontSize="14px" />
-          </Link>
-          <Link href={'#'}>
-            <MyButton
-              title="See Details"
-              size="sm"
-              fontSize="14px"
-              variant="outline"
-            />
-          </Link>
-        </HStack>
+          <HStack>
+            <Link href={'#'}>
+              <MyButton
+                title="Apply Now"
+                px={'20px'}
+                fontSize={{ base: '14px', md: '12px' }}
+              />
+            </Link>
+            <Link href={'#'}>
+              <MyButton
+                title="See Details"
+                px={'20px'}
+                fontSize={{ base: '14px', md: '12px' }}
+                variant="outline"
+              />
+            </Link>
+          </HStack>
+        </VStack>
       </VStack>
-    </VStack>
+    </Center>
   );
 };
 
