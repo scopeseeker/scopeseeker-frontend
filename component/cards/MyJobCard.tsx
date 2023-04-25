@@ -31,11 +31,11 @@ const MyJobCard: React.FC<IMyJobCard> = ({
 }: IMyJobCard) => {
   return (
     <Center
-      w={{base: '90vw', sm: '250px'}}
-      h={'315px'}
+      w={{ base: '95vw', md: '100%', lg: '250px' }}
+      h={{ base: '315px', sm: '280px', md: '315px' }}
       borderRadius={10}
       cursor={'pointer'}
-      px={'16px'}
+      px={'20px'}
       py={'12px'}
       bg={'brand.white'}
       border={'1px solid'}
@@ -45,7 +45,7 @@ const MyJobCard: React.FC<IMyJobCard> = ({
         boxShadow: '0px 0px 30px rgb(0,0,0,0.1)',
       }}
     >
-      <VStack>
+      <VStack w={'full'}>
         <HStack justifyContent={'space-between'} w={'full'}>
           <Center
             w={isNamedLogo ? 'fit-content' : '45px'}
@@ -99,7 +99,6 @@ const MyJobCard: React.FC<IMyJobCard> = ({
             fontSize={{ base: '10px', md: '10px' }}
           />
           <MyText as="st" title={truncatedParagraph(companyDesc)} />
-
           <HStack>
             <Link href={'#'}>
               <MyButton

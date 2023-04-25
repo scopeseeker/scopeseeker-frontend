@@ -31,6 +31,7 @@ export default function Jobs() {
         mx={'auto'}
         spacing={0}
       >
+        {/* Search Box for Job and Company */}
         <HStack
           w={'full'}
           height={{ base: '40px', sm: '52px' }}
@@ -60,11 +61,16 @@ export default function Jobs() {
         </HStack>
         <MyDivider />
 
-        <HStack alignItems={'flex-start'} w={'full'} minH={'100vh'}>
-          <Box display={{base: 'none', sm: 'initial'}}>
+        <Center
+          alignItems={'flex-start'}
+          w={'full'}
+          minH={'100vh'}
+          gap={'30px'}
+        >
+          <Box display={{ base: 'none', md: 'initial' }}>
             <Filter FilterObject={jobsFilter} />
           </Box>
-          <VStack minH="100vh" w="full" px="20px">
+          <VStack minH="100vh" w="full">
             <HStack w="full" justifyContent="space-between">
               <MyText title="Showing 120 jobs" as="heading" />
               {/* Sort Button */}
@@ -106,11 +112,16 @@ export default function Jobs() {
                 </Center>
               </HStack>
             </HStack>
+            {/* Cards */}
             <Grid
-              templateColumns={{base:"repeat(1, 1fr)", sm: "repeat(2, 1fr)", lg: "repeat(3, 1fr)"}}
-              gap={6}
-              p={'20px'}
+              templateColumns={{
+                base: 'repeat(1, 1fr)',
+                md: 'repeat(2, 1fr)',
+                lg: 'repeat(3, 1fr)',
+              }}
+              gap={{ base: 6, lg: 4, xl: 6 }}
               mx={'auto'}
+              pt={'25px'}
             >
               <GridItem>
                 <MyJobCard
@@ -127,6 +138,9 @@ export default function Jobs() {
                   ]}
                   companyDesc="UX designers measure and optimize applications to improve ease of use
         (usability), and create the best user experience by exploring many
+       diffrent approaches to solve end's-user problems experience by exploring many
+       diffrent approaches to solve end's-user problemsexperience by exploring many
+       diffrent approaches to solve end's-user problemsexperience by exploring many
        diffrent approaches to solve end's-user problems"
                   isNamedLogo={true}
                 />
@@ -228,7 +242,7 @@ export default function Jobs() {
               </GridItem>
             </Grid>
           </VStack>
-        </HStack>
+        </Center>
       </VStack>
     </>
   );

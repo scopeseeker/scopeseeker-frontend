@@ -2,7 +2,7 @@ import Footer from '@/component/footer';
 import Navbar from '@/component/navbar/Navbar';
 import '@/styles/globals.css';
 import theme from '@/styles/theme';
-import { ChakraProvider, Flex } from '@chakra-ui/react';
+import { Center, ChakraProvider, Flex } from '@chakra-ui/react';
 import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 
@@ -16,10 +16,12 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
       {showNavbar && <Navbar />}
-      <Flex flexDirection={'column'}>
-        <Component {...pageProps} />
-        {showNavbar && <Footer />}
-      </Flex>
+      <Center>
+        <Flex flexDirection={'column'} w={{ base: '100%', '2xl': '85%' }}>
+          <Component {...pageProps} />
+        </Flex>
+      </Center>
+      {showNavbar && <Footer />}
     </ChakraProvider>
   );
 }
