@@ -19,9 +19,13 @@ interface IFilter {
 }
 const Filter: React.FC<IFilter> = ({ FilterObject }: IFilter) => {
   return (
-    <VStack w={'212px'} gap={2} alignItems={'flex-start'}>
+    <VStack
+      w={{ base: '180px', lg: '200px' }}
+      gap={2}
+      alignItems={'flex-start'}
+    >
       <HStack w={'full'} spacing={0}>
-        <MyText title='Filter Jobs' as='heading' color='brand.primary'/>
+        <MyText title="Filter Jobs" as="heading" color="brand.primary" />
       </HStack>
       <Accordion w="full">
         {FilterObject.map((item) => (
@@ -38,7 +42,7 @@ const Filter: React.FC<IFilter> = ({ FilterObject }: IFilter) => {
                 </Box>
                 <AccordionIcon />
               </AccordionButton>
-              <AccordionPanel pl={'12px'}>
+              <AccordionPanel pl={'12px'} pr={'4px'}>
                 <CheckboxGroup colorScheme="messenger">
                   <Stack
                     direction={['column', 'column']}
