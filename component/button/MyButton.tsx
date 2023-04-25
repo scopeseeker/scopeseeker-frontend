@@ -4,7 +4,7 @@ import React from 'react';
 interface MyButtonProps {
   title: string;
   borderRadius?: number;
-  fontSize?: {base: string, md: string};
+  fontSize?: {base: string, md: string} | string;
   color?: string;
   bg?: string;
   size?: string;
