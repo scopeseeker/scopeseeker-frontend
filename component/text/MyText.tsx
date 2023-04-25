@@ -46,7 +46,7 @@ const MyText = ({
           as={'span'}
           fontFamily={'heading'}
           fontWeight={600}
-          fontSize={{ base: '18px', md: '20px' }}
+          fontSize={{ base: '16px', md: '18px' }}
           {...rest}
         >
           {title}

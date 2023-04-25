@@ -92,7 +92,6 @@ const jobsFilter = [
     ],
   },
 ];
-
 const companyFilter = [
     {
       category: 'Company Type',
@@ -159,4 +158,4 @@ const companyFilter = [
     },
 ]
 
-export {jobsFilter , companyFilter};
+export {jobsFilter, companyFilter};

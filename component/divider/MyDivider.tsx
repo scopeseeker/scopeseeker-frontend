@@ -3,7 +3,7 @@ import React from 'react'
 
 function MyDivider() {
   return (
-    <Box w={'full'} h={'1px'} bg={'brand.border'}></Box>
+    <Box w={'full'} borderTop={'1px solid'} borderColor={'brand.border'}></Box>
   )
 }
 

@@ -4,14 +4,14 @@ import React from 'react';
 interface MyButtonProps {
   title: string;
   borderRadius?: number;
-  fontSize?: string;
+  fontSize?: {base: string, md: string};
   color?: string;
   bg?: string;
   size?: string;
   variant?: string;
   colorScheme?: string;
   decoration?: string;
-  px?: number;
+  px?: number | string;
   w?: string;
   mt?: number;
   fontWeight?: string;
@@ -21,7 +21,7 @@ interface MyButtonProps {
 const MyButton: React.FC<MyButtonProps> = ({
   title,
   borderRadius,
-  fontSize,
+  fontSize = {base: '14px', md: '16px'},
   variant = 'solid',
   size = 'sm',
   colorScheme = 'messenger',
