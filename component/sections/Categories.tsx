@@ -1,7 +1,7 @@
 import { HStack, IconButton, Text, VStack } from '@chakra-ui/react';
 import MyButton from '../button/MyButton';
-import MyIcon from '../icon/MyIcon';
 import MainHeading from '../main-heading/MainHeading';
+import MyIcon from '../icon/MyIcon';
 
 const Categories = () => {
   return (

@@ -1,5 +1,5 @@
 import MyButton from '@/component/button/MyButton';
-import Icon from '@/component/icon/MyIcon';
+import MyIcon from '@/component/icon/MyIcon';
 import MyInput from '@/component/inputs/MyInput';
 import PageHeroSection from '@/component/page-hero-section/PageHeroSection';
 import {
@@ -17,7 +17,7 @@ export default function ContactUs() {
   return (
     <>
       <Head>
-        <title>Contact-Us</title>
+        <title>Contact Us | Scope Seeker</title>
       </Head>
       <PageHeroSection
         title="Contact Us"
@@ -94,7 +94,7 @@ export default function ContactUs() {
               bg={'blue.200'}
             >
               <HStack gap={3} w={'full'} p={6}>
-                <Icon
+                <MyIcon
                   name="location"
                   width="30"
                   height="30"
@@ -123,7 +123,7 @@ export default function ContactUs() {
               bg={'green.200'}
             >
               <HStack gap={4} w={'full'} p={6}>
-                <Icon
+                <MyIcon
                   name="whatsapp"
                   width="30"
                   height="30"
@@ -152,7 +152,7 @@ export default function ContactUs() {
               bg={'red.200'}
             >
               <HStack gap={4} w={'full'} p={6}>
-                <Icon
+                <MyIcon
                   name="gmail"
                   width="30"
                   height="30"
@@ -181,7 +181,7 @@ export default function ContactUs() {
               bg={'yellow.200'}
             >
               <HStack gap={4} w={'full'} p={6}>
-                <Icon
+                <MyIcon
                   name="phone"
                   width="30"
                   height="30"

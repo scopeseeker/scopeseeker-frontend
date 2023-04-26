@@ -1,15 +1,10 @@
-import { Text } from '@chakra-ui/react'
-import React from 'react'
+import { Text } from '@chakra-ui/react';
 
-function companies() {
+export default function companies() {
   return (
     <div>
-      <Text whiteSpace={'pre-line'}>
-
-      </Text>
-      companies</div>
-
-  )
+      <Text whiteSpace={'pre-line'}></Text>
+      companies
+    </div>
+  );
 }
-
-export default companies
