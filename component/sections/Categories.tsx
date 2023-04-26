@@ -11,8 +11,8 @@ const Categories = () => {
         subTitle={'2020 jobs live - 293 added today'}
       />
 
-      <VStack>
-        <HStack my={4} gap={4}>
+      <VStack w={'full'}>
+        <HStack my={4} gap={4} flexWrap={'wrap'}>
           <VStack
             w={'3xs'}
             bg={'brand.white'}
@@ -114,7 +114,7 @@ const Categories = () => {
           </VStack>
         </HStack>
 
-        <HStack gap={4}>
+        <HStack gap={4} flexWrap={'wrap'}>
           <VStack
             w={'3xs'}
             bg={'brand.white'}

@@ -1,11 +1,11 @@
 import { Box, Center, Flex, Text, VStack } from '@chakra-ui/react';
-import MainHeading from '../main-heading/MainHeading';
 import MyIcon from '../icon/MyIcon';
+import MainHeading from '../main-heading/MainHeading';
 
 const Works = () => {
   return (
-    <Box>
-      <VStack>
+    <Box w={'full'}>
+      <VStack w={'full'}>
         <MainHeading
           title={'Easy way to get your job'}
           subTitle={'Just do simple things and get placed'}
@@ -17,7 +17,6 @@ const Works = () => {
         flexDirection={{ base: 'column', lg: 'row' }}
         gap={14}
         flexShrink={0}
-        px={{ sm: 5, lg: 0 }}
         mt={10}
       >
         <VStack

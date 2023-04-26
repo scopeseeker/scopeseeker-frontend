@@ -16,14 +16,13 @@ import MyText from '../text/MyText';
 
 const HeroSection = () => {
   return (
-    <Box minH={'100vh'} px={12}>
+    <Box minH={'100vh'}>
       <Flex w={'full'} minH={'90vh'}>
         <VStack
           minH={'90vh'}
           w={'50%'}
           justifyContent={'center'}
           alignItems={'flex-start'}
-          px={'55px'}
           gap={'5px'}
         >
           <Heading color={'brand.primary'}>No More Wasted Time</Heading>

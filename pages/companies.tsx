@@ -1,10 +1,13 @@
+import Layout from '@/component/layout/Layout';
 import { Text } from '@chakra-ui/react';
 
 export default function companies() {
   return (
-    <div>
-      <Text whiteSpace={'pre-line'}></Text>
-      companies
-    </div>
+    <Layout>
+      <div>
+        <Text whiteSpace={'pre-line'}></Text>
+        companies
+      </div>
+    </Layout>
   );
 }

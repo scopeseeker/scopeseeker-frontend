@@ -1,5 +1,13 @@
 const jobsFilter = [
   {
+    category: 'Job Type',
+    options: [
+      { label: 'Full Time', value: 'FullTime' },
+      { label: 'Part Time', value: 'PartTime' },
+      { label: 'Internship', value: 'Internship' },
+    ],
+  },
+  {
     category: 'Company Type',
     options: [
       { label: 'Information Technology', value: 'IT' },
@@ -9,14 +17,6 @@ const jobsFilter = [
       { label: 'FinTech', value: 'FinTech' },
       { label: 'Indian MNC', value: 'IndianMNC' },
       { label: 'Unicorn', value: 'Unicorn' },
-    ],
-  },
-  {
-    category: 'Job Type',
-    options: [
-      { label: 'Full Time', value: 'FullTime' },
-      { label: 'Part Time', value: 'PartTime' },
-      { label: 'Internship', value: 'Internship' },
     ],
   },
   {

@@ -1,6 +1,7 @@
-import { HStack, VStack } from '@chakra-ui/react';
+import { Center, HStack, VStack } from '@chakra-ui/react';
 import React from 'react';
 import MyImage from '../image/MyImage';
+import Layout from '../layout/Layout';
 import MainHeading from '../main-heading/MainHeading';
 
 interface IPageHeroSection {
@@ -23,30 +24,34 @@ const PageHeroSection: React.FC<IPageHeroSection> = (props) => {
     headColor = 'brand.white',
     paraColor = 'brand.lightgray',
     alt,
-    h = 300,
-    w = 300,
+    h = 250,
+    w = 250,
     src,
   } = props;
   return (
     <HStack
       w={'full'}
-      h={'50vh'}
+      h={{base: '20vh', md: '50vh'}}
       bg={'brand.primary'}
-      px={20}
       justifyContent={'space-between'}
-      py={6}
+      flexDirection={{ base: 'column', md: 'row' }}
     >
-      <VStack alignItems={align} maxW={'50%'} gap={2}>
-        <MainHeading
-          title={title}
-          subTitle={subtitle}
-          align={align}
-          headColor={headColor}
-          paraColor={paraColor}
-        />
-      </VStack>
-
-      <MyImage src={src} alt={alt} width={w} height={h} />
+      <Layout>
+        <HStack h={'full'} justifyContent={'space-between'}>
+        <VStack alignItems={align} maxW={{ base: '100%', md: '50%' }} gap={2}>
+          <MainHeading
+            title={title}
+            subTitle={subtitle}
+            align={align}
+            headColor={headColor}
+            paraColor={paraColor}
+          />
+        </VStack>
+        <Center maxW={{ base: '100%', md: '50%' }} p={'10px'} h={'full'}>
+          <MyImage src={src} alt={alt} width={w} height={h} />
+        </Center>
+        </HStack>
+      </Layout>
     </HStack>
   );
 };

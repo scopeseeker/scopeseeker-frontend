@@ -6,7 +6,7 @@ import MyIcon from '../icon/MyIcon';
 const Testimonials = () => {
   return (
     <Box>
-      <VStack bg={'brand.aliceblue'} py={28} gap={16} px={5}>
+      <VStack bg={'brand.aliceblue'} py={28} gap={16}>
         <MainHeading
           title={'Join Our Thriving Community'}
           subTitle={'See How Our Job Website Has Changed Lives'}

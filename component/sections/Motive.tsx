@@ -1,18 +1,22 @@
 import { Center, Flex, HStack, Stack, Text } from '@chakra-ui/react';
-import MyImage from '../image/MyImage';
 import MyIcon from '../icon/MyIcon';
+import MyImage from '../image/MyImage';
 
 const Motive = () => {
   return (
-    <Center w={{ base: '90vw', md: '90vw', lg: '100vw', xl: '100%' }} px={16}>
-      <Flex minH={'60vh'} w={'full'} px={14} gap={36}>
+    <Center w={{ base: '90vw', md: '90vw', lg: '100vw', xl: '100%' }}>
+      <Flex
+        minH={'60vh'}
+        w={'full'}
+        gap={36}
+        flexDirection={{ base: 'column', md: 'row' }}
+      >
         <MyImage
           src={'/assets/images/bb.png'}
           alt="svg-image"
           width={450}
           height={500}
         />
-
         <Stack w={'50%'} gap={5} py={14}>
           <Text
             as={'span'}
