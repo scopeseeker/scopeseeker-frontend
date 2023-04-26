@@ -7,9 +7,9 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import Link from 'next/link';
-import MyIcon from '../icon/MyIcon';
 import MyImage from '../image/MyImage';
 import MyText from '../text/MyText';
+import MyIcon from '../icon/MyIcon';
 
 const Footer = () => {
   return (

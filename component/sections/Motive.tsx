@@ -1,6 +1,6 @@
 import { Center, Flex, HStack, Stack, Text } from '@chakra-ui/react';
-import MyIcon from '../icon/MyIcon';
 import MyImage from '../image/MyImage';
+import MyIcon from '../icon/MyIcon';
 
 const Motive = () => {
   return (

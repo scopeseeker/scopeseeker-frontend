@@ -1,6 +1,6 @@
 import { Box, Center, Flex, Text, VStack } from '@chakra-ui/react';
-import MyIcon from '../icon/MyIcon';
 import MainHeading from '../main-heading/MainHeading';
+import MyIcon from '../icon/MyIcon';
 
 const Works = () => {
   return (

@@ -3,9 +3,9 @@ import Link from 'next/link';
 import React from 'react';
 import truncatedParagraph from '../../lib/validator';
 import MyButton from '../button/MyButton';
-import MyIcon from '../icon/MyIcon';
 import MyImage from '../image/MyImage';
 import MyText from '../text/MyText';
+import MyIcon from '../icon/MyIcon';
 interface IMyJobCard {
   companyIconLogo: string;
   role: string;
