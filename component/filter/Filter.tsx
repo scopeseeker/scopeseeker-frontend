@@ -1,3 +1,4 @@
+import { IFilter } from '@/inteface/component-interface';
 import {
   Accordion,
   AccordionButton,
@@ -14,10 +15,7 @@ import {
 } from '@chakra-ui/react';
 import MyText from '../text/MyText';
 
-interface IFilter {
-  FilterObject: any[];
-}
-const Filter: React.FC<IFilter> = ({ FilterObject }: IFilter) => {
+const Filter = ({ FilterObject }: IFilter) => {
   return (
     <VStack
       w={{ base: '180px', lg: '200px' }}
@@ -27,7 +25,7 @@ const Filter: React.FC<IFilter> = ({ FilterObject }: IFilter) => {
       <HStack w={'full'} spacing={0}>
         <MyText title="Filter Jobs" as="heading" color="brand.primary" />
       </HStack>
-      <Accordion w="full" defaultIndex={[0,1]} allowMultiple>
+      <Accordion w="full" defaultIndex={[0, 1]} allowMultiple>
         {FilterObject.map((item) => (
           <>
             <AccordionItem>

@@ -1,23 +1,8 @@
+import { IMyInputProps } from '@/inteface/component-interface';
 import { Center, HStack, Input, Text, VStack } from '@chakra-ui/react';
 import { useRef } from 'react';
 
-interface IMyInputProps {
-  inputFontSize?: string;
-  labelFontSize?: string;
-  labelTitle?: string;
-  placeholder?: string;
-  size?: string;
-  type: string;
-  mt?: number;
-  leftElem?: React.ReactNode;
-  rightElem?: React.ReactNode;
-  w?: number | string;
-  bg?: string;
-  hpr?: string | number;
-  [key: string]: any;
-}
-
-const MyInput: React.FC<IMyInputProps> = (props) => {
+const MyInput = (props: IMyInputProps) => {
   const {
     inputFontSize = 'sm',
     labelFontSize = 'xs',
@@ -30,9 +15,10 @@ const MyInput: React.FC<IMyInputProps> = (props) => {
     rightElem,
     w,
     hpr,
-    bg='brand.aliceblue',
+    bg = 'brand.aliceblue',
     ...rest
   } = props;
+  
   const boxRef = useRef<HTMLDivElement>(null);
 
   const handleInputFocus = () => {

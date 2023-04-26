@@ -7,9 +7,9 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import Link from 'next/link';
+import MyIcon from '../icon/MyIcon';
 import MyImage from '../image/MyImage';
 import MyText from '../text/MyText';
-import MyIcon from '../icon/MyIcon';
 
 const Footer = () => {
   return (
@@ -95,7 +95,7 @@ const Footer = () => {
           >
             <Flex flexDir={'column'} gap={3} p={{ base: 0, md: 4 }}>
               <FooterHeading title={'Links'} />
-              <FooterLink link={'/jobs'} title={'Find Jobs'} />
+              <FooterLink link={'/jobs-portal'} title={'Find Jobs'} />
               <FooterLink link={'/companies'} title={'Find Companies'} />
               <FooterLink link={'#'} title={'Find Categories'} />
               <FooterLink

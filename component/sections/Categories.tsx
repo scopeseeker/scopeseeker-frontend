@@ -1,7 +1,8 @@
+import { popularCategoryObject } from '@/constant/fields';
 import { HStack, IconButton, Text, VStack } from '@chakra-ui/react';
 import MyButton from '../button/MyButton';
-import MainHeading from '../main-heading/MainHeading';
 import MyIcon from '../icon/MyIcon';
+import MainHeading from '../main-heading/MainHeading';
 
 const Categories = () => {
   return (
@@ -12,208 +13,37 @@ const Categories = () => {
       />
 
       <VStack w={'full'}>
-        <HStack my={4} gap={4} flexWrap={'wrap'}>
-          <VStack
-            w={'3xs'}
-            bg={'brand.white'}
-            py={8}
-            gap={6}
-            borderRadius={'lg'}
-          >
-            <IconButton
-              aria-label="categories"
-              icon={<MyIcon name={'instagram'} width={'14px'} />}
-            />
-            <VStack lineHeight={1}>
-              <Text as={'span'} fontSize={'13px'} fontWeight={'semibold'}>
-                FrontEnd Developer
-              </Text>
-              <Text
-                as={'span'}
-                fontSize={'10px'}
-                color={'brand.blackAlpha.600'}
-              >
-                (2 open position)
-              </Text>
-            </VStack>
-          </VStack>
-
-          <VStack
-            w={'3xs'}
-            bg={'brand.white'}
-            py={8}
-            gap={6}
-            borderRadius={'lg'}
-          >
-            <IconButton
-              aria-label="categories"
-              icon={<MyIcon name={'instagram'} width={'14px'} />}
-            />
-            <VStack lineHeight={1}>
-              <Text as={'span'} fontSize={'13px'} fontWeight={'semibold'}>
-                BackEnd Developer
-              </Text>
-              <Text
-                as={'span'}
-                fontSize={'10px'}
-                color={'brand.blackAlpha.600'}
-              >
-                (2 open position)
-              </Text>
-            </VStack>
-          </VStack>
-
-          <VStack
-            w={'3xs'}
-            bg={'brand.white'}
-            py={8}
-            gap={6}
-            borderRadius={'lg'}
-          >
-            <IconButton
-              aria-label="categories"
-              icon={<MyIcon name={'instagram'} width={'14px'} />}
-            />
-            <VStack lineHeight={1}>
-              <Text as={'span'} fontSize={'13px'} fontWeight={'semibold'}>
-                React Developer
-              </Text>
-              <Text
-                as={'span'}
-                fontSize={'10px'}
-                color={'brand.blackAlpha.600'}
-              >
-                (2 open position)
-              </Text>
-            </VStack>
-          </VStack>
-
-          <VStack
-            w={'3xs'}
-            bg={'brand.white'}
-            py={8}
-            gap={6}
-            borderRadius={'lg'}
-          >
-            <IconButton
-              aria-label="categories"
-              icon={<MyIcon name={'instagram'} width={'14px'} />}
-            />
-            <VStack lineHeight={1}>
-              <Text as={'span'} fontSize={'13px'} fontWeight={'semibold'}>
-                DevOps Developer
-              </Text>
-              <Text
-                as={'span'}
-                fontSize={'10px'}
-                color={'brand.blackAlpha.600'}
-              >
-                (2 open position)
-              </Text>
-            </VStack>
-          </VStack>
-        </HStack>
-
-        <HStack gap={4} flexWrap={'wrap'}>
-          <VStack
-            w={'3xs'}
-            bg={'brand.white'}
-            py={8}
-            gap={6}
-            borderRadius={'lg'}
-          >
-            <IconButton
-              aria-label="categories"
-              icon={<MyIcon name={'instagram'} width={'14px'} />}
-            />
-            <VStack lineHeight={1}>
-              <Text as={'span'} fontSize={'13px'} fontWeight={'semibold'}>
-                Software Developer
-              </Text>
-              <Text
-                as={'span'}
-                fontSize={'10px'}
-                color={'brand.blackAlpha.600'}
-              >
-                (2 open position)
-              </Text>
-            </VStack>
-          </VStack>
-
-          <VStack
-            w={'3xs'}
-            bg={'brand.white'}
-            py={8}
-            gap={6}
-            borderRadius={'lg'}
-          >
-            <IconButton
-              aria-label="categories"
-              icon={<MyIcon name={'instagram'} width={'14px'} />}
-            />
-            <VStack lineHeight={1}>
-              <Text as={'span'} fontSize={'13px'} fontWeight={'semibold'}>
-                Mobile Developer
-              </Text>
-              <Text
-                as={'span'}
-                fontSize={'10px'}
-                color={'brand.blackAlpha.600'}
-              >
-                (2 open position)
-              </Text>
-            </VStack>
-          </VStack>
-
-          <VStack
-            w={'3xs'}
-            bg={'brand.white'}
-            py={8}
-            gap={6}
-            borderRadius={'lg'}
-          >
-            <IconButton
-              aria-label="categories"
-              icon={<MyIcon name={'instagram'} width={'14px'} />}
-            />
-            <VStack lineHeight={1}>
-              <Text as={'span'} fontSize={'13px'} fontWeight={'semibold'}>
-                Game Developer
-              </Text>
-              <Text
-                as={'span'}
-                fontSize={'10px'}
-                color={'brand.blackAlpha.600'}
-              >
-                (2 open position)
-              </Text>
-            </VStack>
-          </VStack>
-
-          <VStack
-            w={'3xs'}
-            bg={'brand.white'}
-            py={8}
-            gap={6}
-            borderRadius={'lg'}
-          >
-            <IconButton
-              aria-label="categories"
-              icon={<MyIcon name={'instagram'} width={'14px'} />}
-            />
-            <VStack lineHeight={1}>
-              <Text as={'span'} fontSize={'13px'} fontWeight={'semibold'}>
-                Full Stack Developer
-              </Text>
-              <Text
-                as={'span'}
-                fontSize={'10px'}
-                color={'brand.blackAlpha.600'}
-              >
-                (2 open position)
-              </Text>
-            </VStack>
-          </VStack>
+        <HStack my={4} gap={4} flexWrap={'wrap'} justifyContent={'center'}>
+          <>
+            {popularCategoryObject.map((item) => {
+              return (
+                <VStack
+                  w={'3xs'}
+                  bg={'brand.white'}
+                  py={8}
+                  gap={6}
+                  borderRadius={'lg'}
+                >
+                  <IconButton
+                    aria-label="categories"
+                    icon={<MyIcon name={'instagram'} width={'14px'} />}
+                  />
+                  <VStack lineHeight={1}>
+                    <Text as={'span'} fontSize={'13px'} fontWeight={'semibold'}>
+                      {item.fieldName}
+                    </Text>
+                    <Text
+                      as={'span'}
+                      fontSize={'10px'}
+                      color={'brand.blackAlpha.600'}
+                    >
+                      ({item.opening} open positions)
+                    </Text>
+                  </VStack>
+                </VStack>
+              );
+            })}
+          </>
         </HStack>
       </VStack>
 

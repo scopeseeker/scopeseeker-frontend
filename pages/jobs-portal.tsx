@@ -15,7 +15,7 @@ import {
 } from '@chakra-ui/react';
 import Head from 'next/head';
 import { useState } from 'react';
-import { jobsFilter } from '../constant/filterFeilds';
+import { jobsFilter } from '../constant/filterFields';
 
 export default function Jobs() {
   const [isSortClicked, setIsSortClicked] = useState(true);
@@ -134,7 +134,7 @@ export default function Jobs() {
                     location={'Bhopal, Madhaya Pradesh'}
                     jobType={[
                       { label: 'Full Time', value: 'full', color: 'green' },
-                      { label: 'Part Time', value: 'part', color: 'yellow' },
+                      { label: 'Part Time', value: 'part', color: 'red' },
                       { label: 'Internship', value: 'intern', color: 'blue' },
                       { label: 'Startup', value: 'intern', color: 'purple' },
                       { label: 'Indian MNC', value: 'intern', color: 'cyan' },

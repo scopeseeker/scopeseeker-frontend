@@ -76,7 +76,7 @@ const MyText = ({
           <Text
             color={color}
             as={'span'}
-            fontSize={{ base: '15px', md: '14px' }}
+            fontSize={{ base: '15px', md: '13px' }}
             fontWeight={fontWeight}
             _hover={{ opacity: !hoverColor && 0.85, color: hoverColor }}
             {...rest}
