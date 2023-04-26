@@ -31,7 +31,7 @@ const MyJobCard: React.FC<IMyJobCard> = ({
 }: IMyJobCard) => {
   return (
     <Center
-      w={{ base: '90vw', md: '100%', lg: '250px' }}
+      w={{ base: '90vw', md: '100%', lg: '250px', '2xl': '350px' }}
       h={{ base: '315px', sm: '280px', md: '315px' }}
       borderRadius={10}
       cursor={'pointer'}
