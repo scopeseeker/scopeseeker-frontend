@@ -1,24 +1,14 @@
-import { Badge, Box, Center, Flex, HStack, VStack } from '@chakra-ui/react';
+import { IMyJobCard } from '@/inteface/component-interface';
+import { Box, Center, Flex, HStack, VStack } from '@chakra-ui/react';
 import Link from 'next/link';
-import React from 'react';
 import truncatedParagraph from '../../lib/validator';
+import MyBadge from '../badge/MyBadge';
 import MyButton from '../button/MyButton';
+import MyIcon from '../icon/MyIcon';
 import MyImage from '../image/MyImage';
 import MyText from '../text/MyText';
-import MyIcon from '../icon/MyIcon';
-interface IMyJobCard {
-  companyIconLogo: string;
-  role: string;
-  companyName: string;
-  location: string;
-  jobType: { label: string; value: string; color: string }[];
-  companyDesc: string;
-  applyLink?: string;
-  fullDetailedLink?: string;
-  isNamedLogo?: boolean;
-}
 
-const MyJobCard: React.FC<IMyJobCard> = ({
+const MyJobCard = ({
   companyIconLogo,
   role,
   companyName,
@@ -78,18 +68,7 @@ const MyJobCard: React.FC<IMyJobCard> = ({
           </Box>
           <Flex gap={'8px'} flexWrap={'wrap'} w={'full'}>
             {jobType.map((item, key) => (
-              <Badge
-                as={'span'}
-                fontSize={'8px'}
-                fontWeight={'medium'}
-                colorScheme={item.color}
-                key={key}
-                px={2}
-                py={1}
-                borderRadius={3}
-              >
-                {item.label}
-              </Badge>
+              <MyBadge label={item.label} color={item.color} key={item.value} />
             ))}
           </Flex>
 

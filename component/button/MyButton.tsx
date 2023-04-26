@@ -1,27 +1,10 @@
+import { IMyButtonProps } from '@/inteface/component-interface';
 import { Button } from '@chakra-ui/react';
-import React from 'react';
 
-interface MyButtonProps {
-  title: string;
-  borderRadius?: number;
-  fontSize?: {base: string, md: string} | string;
-  color?: string;
-  bg?: string;
-  size?: string;
-  variant?: string;
-  colorScheme?: string;
-  decoration?: string;
-  px?: number | string;
-  w?: string;
-  mt?: number;
-  fontWeight?: string;
-  [key: string]: any;
-}
-
-const MyButton: React.FC<MyButtonProps> = ({
+const MyButton = ({
   title,
   borderRadius,
-  fontSize = {base: '14px', md: '16px'},
+  fontSize = { base: '14px', md: '16px' },
   variant = 'solid',
   size = 'sm',
   colorScheme = 'messenger',
@@ -33,7 +16,7 @@ const MyButton: React.FC<MyButtonProps> = ({
   mt,
   fontWeight,
   ...rest
-}: MyButtonProps) => {
+}: IMyButtonProps) => {
   return (
     <Button
       size={size}

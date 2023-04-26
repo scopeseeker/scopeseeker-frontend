@@ -20,9 +20,10 @@ const Navbar = () => {
         zIndex={'overlay'}
         px={{ base: '24px', md: '48px' }}
       >
-        <HStack>
+        <HStack gap={'16px'}>
+          {/*Scope Seeker Logo*/}
           <Link href={'/'}>
-            <Center gap={'8px'}>
+            <Center gap={'8px'} mr={'10px'}>
               <MyImage
                 src={'/assets/images/scopeseeker-logo.png'}
                 alt={'secope seeker logo'}
@@ -45,6 +46,87 @@ const Navbar = () => {
               </VStack>
             </Center>
           </Link>
+          {/* Links Sections */}
+          <HStack gap={'12px'}>
+            <Center
+              _hover={{
+                color: 'brand.primary',
+                // borderBottom: '2px solid',
+                // borderColor: 'brand.primary',
+                // paddingBottom: '15px',
+              }}
+            >
+              <Box>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="ionicon"
+                  viewBox="0 0 512 512"
+                  width={'16px'}
+                  height={'16px'}
+                >
+                  <path
+                    d="M320 320H192M80 176a16 16 0 00-16 16v216c0 30.24 25.76 56 56 56h272c30.24 0 56-24.51 56-54.75V192a16 16 0 00-16-16zM160 176v-32a96 96 0 0196-96h0a96 96 0 0196 96v32"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linejoin="round"
+                    stroke-width="28"
+                  />
+                </svg>
+              </Box>
+              <MyText
+                title="Jobs"
+                as="link"
+                href="/jobs-portal"
+                px="4px"
+                _hover={{
+                  color: 'brand.primary',
+                  // borderBottom: '2px solid',
+                  // borderColor: 'brand.primary',
+                  // paddingBottom: '15px',
+                }}
+              />
+            </Center>
+
+            <Center _groupHover={{color: 'brand.primary'}}>
+              <Box _groupHover={{color: 'brand.primary'}}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="ionicon"
+                viewBox="0 0 512 512"
+                width={'16px'}
+                height={'16px'}
+              >
+                <path
+                  d="M176 416v64M80 32h192a32 32 0 0132 32v412a4 4 0 01-4 4H48h0V64a32 32 0 0132-32zM320 192h112a32 32 0 0132 32v256h0-160 0V208a16 16 0 0116-16z"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linejoin="round"
+                  stroke-width="28"
+                />
+              </svg>
+              </Box>
+
+              <MyText
+                title="Companies"
+                as="link"
+                href="/jobs-portal"
+                px="4px"
+              />
+            </Center>
+
+            {/* <MyText
+              title="Companies"
+              as="link"
+              href="/jobs-portal"
+              px="10px"
+              _hover={{
+                color: 'brand.primary',
+                borderBottom: '2px solid',
+                borderColor: 'brand.primary',
+                paddingBottom: '15px',
+              }}
+            /> */}
+          </HStack>
         </HStack>
         <HStack></HStack>
 
@@ -77,7 +159,7 @@ const Navbar = () => {
             <MyText
               as="link"
               title="Jobs"
-              href="/jobs"
+              href="/jobs-portal"
               hoverColor={'brand.primary'}
             />
             <MyText
