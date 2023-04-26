@@ -17,7 +17,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <ChakraProvider theme={theme}>
       {showNavbar && <Navbar />}
       <Center>
-        <Flex flexDirection={'column'} w={{ base: '100%', '2xl': '85%' }}>
+        <Flex flexDirection={'column'} w={'100%'}>
           <Component {...pageProps} />
         </Flex>
       </Center>
