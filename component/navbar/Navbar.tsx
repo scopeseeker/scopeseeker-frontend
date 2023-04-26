@@ -1,4 +1,5 @@
-import { Box, Center, HStack, useColorMode } from '@chakra-ui/react';
+import { Box, Center, HStack, VStack, useColorMode } from '@chakra-ui/react';
+import Link from 'next/link';
 import MyImage from '../image/MyImage';
 import MyText from '../text/MyText';
 
@@ -14,27 +15,37 @@ const Navbar = () => {
         w={'full'}
         h={navHeight}
         justifyContent="space-between"
-        // bg={'brand.white'}
-        bg={'red.100'}
-        boxShadow={'0 4px 40px rgba(0, 0, 0, 0.1)'}
+        bg={'brand.white'}
+        boxShadow={'0 0px 40px rgba(0, 0, 0, 0.2)'}
         zIndex={'overlay'}
         px={{ base: '24px', md: '48px' }}
       >
         <HStack>
-          <Center gap={'8px'}>
-            <MyImage
-              src={'/assets/images/scopeseeker-logo.png'}
-              alt={'secope seeker logo'}
-              width={30}
-              height={30}
-            />
-
-            <MyText lineHeight={'shorter'} title="Scope Seeker" as="title" />
-
-            {/* <MyText lineHeight={'shorter'} title="Seek the scope of your potential" as="st" /> */}
-          </Center>
+          <Link href={'/'}>
+            <Center gap={'8px'}>
+              <MyImage
+                src={'/assets/images/scopeseeker-logo.png'}
+                alt={'secope seeker logo'}
+                width={30}
+                height={30}
+              />
+              <VStack alignItems={'flex-start'} spacing={0}>
+                <MyText
+                  lineHeight={'shorter'}
+                  title="Scope Seeker"
+                  as="title"
+                />
+                <MyText
+                  lineHeight={'shorter'}
+                  title="Seek the scope of your potential"
+                  as="span"
+                  fontSize={{ base: 'none', md: '8px' }}
+                  display={{ base: 'none', md: 'initial' }}
+                />
+              </VStack>
+            </Center>
+          </Link>
         </HStack>
-
         <HStack></HStack>
 
         {/* <HStack gap={12}>

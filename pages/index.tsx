@@ -1,3 +1,4 @@
+import Layout from '@/component/layout/Layout';
 import Categories from '@/component/sections/Categories';
 import Company from '@/component/sections/Company';
 import CompnayCatergories from '@/component/sections/CompnayCatergories';
@@ -23,15 +24,27 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Flex flexDirection={'column'} gap={24}>
-        <HeroSection />
-        <Company />
-        <Works />
+        <Layout>
+          <Flex flexDirection={'column'} gap={24}>
+            <HeroSection />
+            <Company />
+            <Works />
+          </Flex>
+        </Layout>
         <Categories />
-        <CompnayCatergories />
-        <Motive />
+        <Layout>
+          <Flex flexDirection={'column'} gap={24}>
+            <CompnayCatergories />
+            <Motive />
+          </Flex>
+        </Layout>
         <Testimonials />
-        <FAQ />
-        <NewsUpdate />
+        <Layout>
+          <Flex flexDirection={'column'} gap={24}>
+            <FAQ />
+            <NewsUpdate />
+          </Flex>
+        </Layout>
       </Flex>
     </>
   );

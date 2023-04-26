@@ -27,7 +27,7 @@ const Filter: React.FC<IFilter> = ({ FilterObject }: IFilter) => {
       <HStack w={'full'} spacing={0}>
         <MyText title="Filter Jobs" as="heading" color="brand.primary" />
       </HStack>
-      <Accordion w="full">
+      <Accordion w="full" defaultIndex={[0,1]} allowMultiple>
         {FilterObject.map((item) => (
           <>
             <AccordionItem>
@@ -46,7 +46,7 @@ const Filter: React.FC<IFilter> = ({ FilterObject }: IFilter) => {
                 <CheckboxGroup colorScheme="messenger">
                   <Stack
                     direction={['column', 'column']}
-                    maxH={'150px'}
+                    maxH={'130px'}
                     overflowY={'scroll'}
                     css={{
                       '&::-webkit-scrollbar': {

@@ -6,7 +6,7 @@ import MainHeading from '../main-heading/MainHeading';
 
 const CompnayCatergories = () => {
   return (
-    <Center flexDirection={'column'} gap={8} w={'full'} minH={'35vw'} px={10}>
+    <Center flexDirection={'column'} gap={8} w={'full'} minH={'35vw'}>
       <MainHeading
         title={'Featured Companies'}
         subTitle={'companies hiring now'}
