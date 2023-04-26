@@ -1,5 +1,5 @@
 import MyButton from '@/component/button/MyButton';
-import Icon from '@/component/icon/Icon';
+import Icon from '@/component/icon/MyIcon';
 import MyInput from '@/component/inputs/MyInput';
 import PageHeroSection from '@/component/page-hero-section/PageHeroSection';
 import {

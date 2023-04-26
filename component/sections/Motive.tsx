@@ -1,5 +1,5 @@
 import { Center, Flex, HStack, Stack, Text } from '@chakra-ui/react';
-import Icon from '../icon/Icon';
+import MyIcon from '../icon/MyIcon';
 import MyImage from '../image/MyImage';
 
 const Motive = () => {
@@ -36,19 +36,19 @@ const Motive = () => {
           </Stack>
           <Stack>
             <HStack>
-              <Icon name={'check'} width={'20'} color={'green'} />
+              <MyIcon name={'check'} width={'20'} color={'green'} />
               <Text fontSize={'xs'} fontWeight={'normal'}>
                 Do not wait for opportunities, create them.
               </Text>
             </HStack>
             <HStack>
-              <Icon name={'check'} width={'20'} color={'green'} />
+              <MyIcon name={'check'} width={'20'} color={'green'} />
               <Text fontSize={'xs'} fontWeight={'normal'}>
                 Get salary according to your qualifications
               </Text>
             </HStack>
             <HStack>
-              <Icon name={'check'} width={'20'} color={'green'} />
+              <MyIcon name={'check'} width={'20'} color={'green'} />
               <Text fontSize={'xs'} fontWeight={'normal'}>
                 Make money through your skills
               </Text>

@@ -1,5 +1,5 @@
 import { IconButton, Text, VStack } from '@chakra-ui/react';
-import Icon, { IconNameType } from '../icon/Icon';
+import MyIcon, { IconNameType } from '../icon/MyIcon';
 
 interface JobCardsProps {
   iconName: IconNameType;
@@ -14,7 +14,7 @@ const JobCards: React.FC<JobCardsProps> = (props) => {
     <VStack w={'3xs'} bg={'brand.white'} py={8} gap={6} borderRadius={'lg'}>
       <IconButton
         aria-label="categories"
-        icon={<Icon name={iconName} width={'14px'} />}
+        icon={<MyIcon name={iconName} width={'14px'} />}
       />
       <VStack lineHeight={1}>
         <Text as={'span'} fontSize={'13px'} fontWeight={'semibold'}>

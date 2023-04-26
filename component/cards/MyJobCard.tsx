@@ -3,7 +3,7 @@ import Link from 'next/link';
 import React from 'react';
 import truncatedParagraph from '../../lib/validator';
 import MyButton from '../button/MyButton';
-import Icon from '../icon/Icon';
+import MyIcon from '../icon/MyIcon';
 import MyImage from '../image/MyImage';
 import MyText from '../text/MyText';
 interface IMyJobCard {
@@ -62,7 +62,7 @@ const MyJobCard: React.FC<IMyJobCard> = ({
           </Center>
           <HStack>
             <Center w={'35px'} h={'35px'} cursor={'pointer'}>
-              <Icon name="save" height="16" width="16" />
+              <MyIcon name="save" height="16" width="16" />
             </Center>
           </HStack>
         </HStack>

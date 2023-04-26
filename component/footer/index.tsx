@@ -6,7 +6,8 @@ import {
   Text,
   VStack,
 } from '@chakra-ui/react';
-import Icon from '../icon/Icon';
+import Link from 'next/link';
+import MyIcon from '../icon/MyIcon';
 import MyImage from '../image/MyImage';
 import MyText from '../text/MyText';
 
@@ -15,9 +16,9 @@ const Footer = () => {
     <VStack
       bg={'brand.primary'}
       w={'full'}
-      px={{ base: 5, xl: 12 }}
-      pt={12}
-      gap={10}
+      px={{ base: '24px', md: '48px' }}
+      pt={'22px'}
+      gap={'10px'}
       justifyContent={'space-between'}
       color={'brand.white'}
       mt={20}
@@ -38,48 +39,60 @@ const Footer = () => {
               <MyImage
                 src={'/assets/images/scopeseeker-logo.png'}
                 alt={'secope seeker logo'}
-                width={60}
-                height={60}
+                width={42}
+                height={42}
               />
             </Center>
 
             <Flex direction={'column'} gap={1}>
-              <Text
-                as={'span'}
-                lineHeight={'1'}
-                fontSize={'lg'}
-                fontWeight={'medium'}
-              >
-                Scope Seeker
-              </Text>
-              <Text as={'span'} fontSize={'xs'}>
-                Seek the scope of your potential
-              </Text>
+              <MyText
+                as={'heading'}
+                lineHeight={'shorter'}
+                color="brand.white"
+                title="Scope Seeker"
+              />
+              <MyText
+                as={'st'}
+                lineHeight={'shorter'}
+                color="brand.white"
+                title="Seek the scope of your potential"
+              />
             </Flex>
           </HStack>
 
           <MyText
-            as={'st'}
+            as={'span'}
             color={'brand.white'}
             title={
               'Scope Seeker is a cutting-edge web application designed to help job seekers find their dream job with ease'
             }
           />
-          <Flex direction={'column'} mt={5} gap={2}>
+          <Flex direction={'column'} gap={2}>
             <FooterHeading title={'Stay Connected'} />
-            <Text>Email: scopeseekerhelp@gmail.com</Text>
-            <Text>Phone: +91-9617143257</Text>
+            <MyText
+              title="Email: scopeseekerhelp@gmail.com"
+              as="span"
+              color="brand.white"
+            />
+            <MyText
+              title="Phone: +91-9617143257"
+              as="span"
+              color="brand.white"
+            />
           </Flex>
         </Flex>
         <Flex
           w={{ base: '100%', md: 'calc(100%/2)' }}
-          flexDirection={{ base: 'column', sm: 'row' }}
+          // flexDirection={{ base: 'column', sm: 'row' }}
           alignItems={{ base: 'flex-start' }}
           gap={5}
           justifyContent={'center'}
         >
           {/* Links Section */}
-          <Center w={'50%'}>
+          <Center
+            w={'50%'}
+            justifyContent={{ base: 'flex-start', md: 'center' }}
+          >
             <Flex flexDir={'column'} gap={3} p={{ base: 0, md: 4 }}>
               <FooterHeading title={'Links'} />
               <FooterLink link={'/jobs'} title={'Find Jobs'} />
@@ -93,7 +106,10 @@ const Footer = () => {
             </Flex>
           </Center>
           {/* Company Section */}
-          <Center w={'50%'}>
+          <Center
+            w={'50%'}
+            justifyContent={{ base: 'flex-start', md: 'center' }}
+          >
             <Flex flexDir={'column'} gap={3} p={{ base: 0, md: 4 }}>
               <FooterHeading title={'Company'} />
               <FooterLink link={'/about-us'} title={'About Us'} />
@@ -119,10 +135,12 @@ const Footer = () => {
           p={{ base: 0, md: 4 }}
         >
           <FooterHeading title={'Meet Us'} />
-          <Text as={'span'}>
-            Bhanpur, Ayodhya Bypass, Bhopal Madhya Pradesh, India
-          </Text>
-          <Text as={'span'}>
+          <MyText
+            as={'span'}
+            color="brand.white"
+            title="Bhanpur, Ayodhya Bypass, Bhopal Madhya Pradesh, India"
+          />
+          <Text as={'span'} fontSize={'13px'}>
             We
             <Text as={'span'} fontSize={'3xl'}>
               ❤️
@@ -134,26 +152,26 @@ const Footer = () => {
               p={2}
               aria-label="social-meida"
               color={'brand.primary'}
-              icon={<Icon name={'instagram'} height="20" width="20" />}
+              icon={<MyIcon name={'instagram'} height="20" width="20" />}
             />
             <IconButton
               p={2}
               aria-label="social-meida"
               color={'brand.primary'}
-              icon={<Icon name={'linkedin'} height="20" width="20" />}
+              icon={<MyIcon name={'linkedin'} height="20" width="20" />}
             />
             <IconButton
               p={2}
               aria-label="social-meida"
               color={'brand.primary'}
-              icon={<Icon name={'twitter'} height="20" width="20" />}
+              icon={<MyIcon name={'twitter'} height="20" width="20" />}
             />
 
             <IconButton
               p={2}
               aria-label="social-meida"
               color={'brand.primary'}
-              icon={<Icon name={'whatsapp'} height="20" width="20" />}
+              icon={<MyIcon name={'whatsapp'} height="20" width="20" />}
             />
           </HStack>
         </Flex>
@@ -195,16 +213,9 @@ interface IFooterLink {
 
 const FooterLink: React.FC<IFooterLink> = ({ title, link }: IFooterLink) => {
   return (
-    // <Link href={link}>
-    //   <MyButton
-    //     color={'brand.white'}
-    //     _hover={{ color: 'brand.darkgray' }}
-    //     fontWeight={'normal'}
-    //     variant={'link'}
-    //     title={title}
-    //   />
-    // </Link>
-    <MyText title={title} href={link} as="link" color="brand.white" />
+    <Link href={link}>
+      <MyText title={title} as="span" color="brand.white" />
+    </Link>
   );
 };
 

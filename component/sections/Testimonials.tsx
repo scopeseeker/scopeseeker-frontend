@@ -1,5 +1,5 @@
 import { Box, Center, Flex, Text, VStack } from '@chakra-ui/react';
-import Icon from '../icon/Icon';
+import MyIcon from '../icon/MyIcon';
 import MyImage from '../image/MyImage';
 import MainHeading from '../main-heading/MainHeading';
 
@@ -75,7 +75,7 @@ const Testimonials = () => {
                   mt={2}
                 >
                   <Center w={8} h={8} opacity={'0.7'}>
-                    <Icon name={'quotes-left'} width={'full'} />
+                    <MyIcon name={'quotes-left'} width={'full'} />
                   </Center>
                   I’ve got your back. These sixty review request text templates
                   are designed to get you up and running fast. Of course, you
@@ -130,7 +130,7 @@ const Testimonials = () => {
                   mt={2}
                 >
                   <Center w={8} h={8} opacity={'0.7'}>
-                    <Icon name={'quotes-left'} width={'full'} />
+                    <MyIcon name={'quotes-left'} width={'full'} />
                   </Center>
                   I’ve got your back. These sixty review request text templates
                   are designed to get you up and running fast. Of course, you
@@ -184,7 +184,7 @@ const Testimonials = () => {
                   mt={2}
                 >
                   <Center w={8} h={8} opacity={'0.7'}>
-                    <Icon name={'quotes-left'} width={'full'} />
+                    <MyIcon name={'quotes-left'} width={'full'} />
                   </Center>
                   I’ve got your back. These sixty review request text templates
                   are designed to get you up and running fast. Of course, you

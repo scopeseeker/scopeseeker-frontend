@@ -1,37 +1,43 @@
-import {
-  Box,
-  Center,
-  Flex,
-  HStack,
-  Text,
-  useColorMode,
-} from '@chakra-ui/react';
-import Link from 'next/link';
-import MyButton from '../button/MyButton';
-import Icon from '../icon/Icon';
+import { Box, Center, HStack, useColorMode } from '@chakra-ui/react';
 import MyImage from '../image/MyImage';
 import MyText from '../text/MyText';
 
 const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
+  const navHeight = { base: '60px', md: '53px' };
   return (
-    <Box minH={14}>
+    <Box h={navHeight}>
       <HStack
-        zIndex={'overlay'}
-        justifyContent="space-between"
+        position={'fixed'}
         top={0}
         left={0}
-        position={'fixed'}
         w={'full'}
-        px={12}
-        bg={'brand.white'}
-        py={2}
-        h={14}
-        boxShadow={'0 4px 10px rgba(0, 0, 0, 0.1)'}
-        borderBottom={'1px solid rgba(255, 255, 255, 0.69)'}
+        h={navHeight}
+        justifyContent="space-between"
+        // bg={'brand.white'}
+        bg={'red.100'}
+        boxShadow={'0 4px 40px rgba(0, 0, 0, 0.1)'}
+        zIndex={'overlay'}
+        px={{ base: '24px', md: '48px' }}
       >
-        {/* Left Part of Navbar */}
-        <HStack gap={12}>
+        <HStack>
+          <Center gap={'8px'}>
+            <MyImage
+              src={'/assets/images/scopeseeker-logo.png'}
+              alt={'secope seeker logo'}
+              width={30}
+              height={30}
+            />
+
+            <MyText lineHeight={'shorter'} title="Scope Seeker" as="title" />
+
+            {/* <MyText lineHeight={'shorter'} title="Seek the scope of your potential" as="st" /> */}
+          </Center>
+        </HStack>
+
+        <HStack></HStack>
+
+        {/* <HStack gap={12}>
             <Link href={'/'}>
           <HStack cursor={'pointer'}>
             <MyImage
@@ -83,8 +89,6 @@ const Navbar = () => {
             />
           </HStack>
         </HStack>
-
-        {/* Right Part of Navbar */}
         <HStack gap={3}>
           <HStack gap={1}>
             <Link href={'/login'}>
@@ -107,9 +111,9 @@ const Navbar = () => {
             p={2}
             cursor={'pointer'}
           >
-            <Icon name={'darkMode'} width={'16'} color={'orange'} />
+            <MyIcon name={'darkMode'} width={'16'} color={'orange'} />
           </Center>
-        </HStack>
+        </HStack> */}
       </HStack>
     </Box>
   );

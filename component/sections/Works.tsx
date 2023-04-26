@@ -1,5 +1,5 @@
 import { Box, Center, Flex, Text, VStack } from '@chakra-ui/react';
-import Icon from '../icon/Icon';
+import MyIcon from '../icon/MyIcon';
 import MainHeading from '../main-heading/MainHeading';
 
 const Works = () => {
@@ -40,7 +40,7 @@ const Works = () => {
               borderRadius={8}
               color={'brand.white'}
             >
-              <Icon name={'user'} width={'100%'} />
+              <MyIcon name={'user'} width={'100%'} />
             </Center>
 
             <Flex direction={'column'} m={6} gap={2}>
@@ -74,7 +74,7 @@ const Works = () => {
               borderRadius={8}
               color={'brand.white'}
             >
-              <Icon name={'case'} width={'100%'} />
+              <MyIcon name={'case'} width={'100%'} />
             </Center>
 
             <Flex direction={'column'} m={6} gap={2}>
@@ -108,7 +108,7 @@ const Works = () => {
               borderRadius={8}
               color={'brand.white'}
             >
-              <Icon name={'form'} width={'100%'} />
+              <MyIcon name={'form'} width={'100%'} />
             </Center>
 
             <Flex direction={'column'} m={6} gap={2}>

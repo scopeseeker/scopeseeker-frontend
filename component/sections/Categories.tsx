@@ -1,6 +1,6 @@
 import { HStack, IconButton, Text, VStack } from '@chakra-ui/react';
 import MyButton from '../button/MyButton';
-import Icon from '../icon/Icon';
+import MyIcon from '../icon/MyIcon';
 import MainHeading from '../main-heading/MainHeading';
 
 const Categories = () => {
@@ -22,7 +22,7 @@ const Categories = () => {
           >
             <IconButton
               aria-label="categories"
-              icon={<Icon name={'instagram'} width={'14px'} />}
+              icon={<MyIcon name={'instagram'} width={'14px'} />}
             />
             <VStack lineHeight={1}>
               <Text as={'span'} fontSize={'13px'} fontWeight={'semibold'}>
@@ -47,7 +47,7 @@ const Categories = () => {
           >
             <IconButton
               aria-label="categories"
-              icon={<Icon name={'instagram'} width={'14px'} />}
+              icon={<MyIcon name={'instagram'} width={'14px'} />}
             />
             <VStack lineHeight={1}>
               <Text as={'span'} fontSize={'13px'} fontWeight={'semibold'}>
@@ -72,7 +72,7 @@ const Categories = () => {
           >
             <IconButton
               aria-label="categories"
-              icon={<Icon name={'instagram'} width={'14px'} />}
+              icon={<MyIcon name={'instagram'} width={'14px'} />}
             />
             <VStack lineHeight={1}>
               <Text as={'span'} fontSize={'13px'} fontWeight={'semibold'}>
@@ -97,7 +97,7 @@ const Categories = () => {
           >
             <IconButton
               aria-label="categories"
-              icon={<Icon name={'instagram'} width={'14px'} />}
+              icon={<MyIcon name={'instagram'} width={'14px'} />}
             />
             <VStack lineHeight={1}>
               <Text as={'span'} fontSize={'13px'} fontWeight={'semibold'}>
@@ -124,7 +124,7 @@ const Categories = () => {
           >
             <IconButton
               aria-label="categories"
-              icon={<Icon name={'instagram'} width={'14px'} />}
+              icon={<MyIcon name={'instagram'} width={'14px'} />}
             />
             <VStack lineHeight={1}>
               <Text as={'span'} fontSize={'13px'} fontWeight={'semibold'}>
@@ -149,7 +149,7 @@ const Categories = () => {
           >
             <IconButton
               aria-label="categories"
-              icon={<Icon name={'instagram'} width={'14px'} />}
+              icon={<MyIcon name={'instagram'} width={'14px'} />}
             />
             <VStack lineHeight={1}>
               <Text as={'span'} fontSize={'13px'} fontWeight={'semibold'}>
@@ -174,7 +174,7 @@ const Categories = () => {
           >
             <IconButton
               aria-label="categories"
-              icon={<Icon name={'instagram'} width={'14px'} />}
+              icon={<MyIcon name={'instagram'} width={'14px'} />}
             />
             <VStack lineHeight={1}>
               <Text as={'span'} fontSize={'13px'} fontWeight={'semibold'}>
@@ -199,7 +199,7 @@ const Categories = () => {
           >
             <IconButton
               aria-label="categories"
-              icon={<Icon name={'instagram'} width={'14px'} />}
+              icon={<MyIcon name={'instagram'} width={'14px'} />}
             />
             <VStack lineHeight={1}>
               <Text as={'span'} fontSize={'13px'} fontWeight={'semibold'}>
