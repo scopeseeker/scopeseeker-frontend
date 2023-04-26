@@ -4,13 +4,8 @@ import MyImage from '../image/MyImage';
 
 const Motive = () => {
   return (
-    <Center w={{ base: '90vw', md: '90vw', lg: '100vw', xl: '100%' }}>
-      <Flex
-        minH={'60vh'}
-        w={'full'}
-        gap={36}
-        flexDirection={{ base: 'column', md: 'row' }}
-      >
+    <Center w={'100%'} bg={'red.200'}>
+      <Flex w={'full'} gap={36} flexDirection={{ base: 'column', md: 'row' }}>
         <MyImage
           src={'/assets/images/bb.png'}
           alt="svg-image"
