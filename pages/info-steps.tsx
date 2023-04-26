@@ -1,5 +1,5 @@
 import MyButton from '@/component/button/MyButton';
-import Icon from '@/component/icon/Icon';
+import MyIcon from '@/component/icon/MyIcon';
 import MyImage from '@/component/image/MyImage';
 import MyInput from '@/component/inputs/MyInput';
 import MainHeading from '@/component/main-heading/MainHeading';
@@ -89,14 +89,14 @@ export default function InfoSteps() {
                 labelTitle="Full Name"
                 type="text"
                 placeholder="John Doe"
-                leftElem={<Icon name="user" width="16" height="16" />}
+                leftElem={<MyIcon name="user" width="16" height="16" />}
                 w={'sm'}
               />
               <MyInput
                 labelTitle="Email"
                 type="email"
                 placeholder="johndoe@gmail.com"
-                leftElem={<Icon name="gmail" width="16" height="16" />}
+                leftElem={<MyIcon name="gmail" width="16" height="16" />}
                 rightElem={
                   <MyButton
                     title={isVerify ? 'Verified' : 'Verify'}
@@ -111,7 +111,7 @@ export default function InfoSteps() {
                 labelTitle="Phone Number"
                 type="number"
                 placeholder="9876543210"
-                leftElem={<Icon name="phone" width="16" height="16" />}
+                leftElem={<MyIcon name="phone" width="16" height="16" />}
                 rightElem={
                   <MyButton
                     title={isVerify ? 'Verified' : 'Verify'}
@@ -140,7 +140,7 @@ export default function InfoSteps() {
                     borderColor="brand.primary"
                   >
                     <HStack px={4}>
-                      <Icon name="job" height="50" width="50" />
+                      <MyIcon name="job" height="50" width="50" />
 
                       <VStack lineHeight={1} alignItems={'flex-start'}>
                         <Text as={'span'} fontSize={'sm'}>
@@ -164,7 +164,7 @@ export default function InfoSteps() {
                     borderColor="brand.primary"
                   >
                     <HStack px={4}>
-                      <Icon name="fresher" height="50" width="50" />
+                      <MyIcon name="fresher" height="50" width="50" />
 
                       <VStack lineHeight={1} alignItems={'flex-start'}>
                         <Text as={'span'} fontSize={'sm'}>
@@ -183,7 +183,7 @@ export default function InfoSteps() {
                 labelTitle="Organisation/College"
                 type="text"
                 w={'sm'}
-                leftElem={<Icon name="college" width="16" height="16" />}
+                leftElem={<MyIcon name="college" width="16" height="16" />}
                 placeholder="eg: Sagar Institute of Research Technology and Science (SIRTS), Bhopal"
               />
 
@@ -191,7 +191,7 @@ export default function InfoSteps() {
                 labelTitle="Country"
                 type="text"
                 w={'sm'}
-                leftElem={<Icon name="global" width="16" height="16" />}
+                leftElem={<MyIcon name="global" width="16" height="16" />}
                 placeholder="India"
               />
 
@@ -320,7 +320,7 @@ export default function InfoSteps() {
               <VStack w={'full'} alignItems={'flex-start'}>
                 <Text fontSize={'sm'}>Work Experience</Text>
                 <HStack>
-                  <Icon name="add" height="16" width="16" />
+                  <MyIcon name="add" height="16" width="16" />
                   <Text fontSize={'xs'} color="brand.primary">
                     Add Work Experience
                   </Text>
@@ -336,7 +336,7 @@ export default function InfoSteps() {
                 labelTitle="Skills"
                 type="text"
                 w={'sm'}
-                leftElem={<Icon name="pages" width="16" height="16" />}
+                leftElem={<MyIcon name="pages" width="16" height="16" />}
                 placeholder="search skills"
               />
 
@@ -347,21 +347,23 @@ export default function InfoSteps() {
                     labelTitle="Instagram"
                     type="text"
                     w={'sm'}
-                    leftElem={<Icon name="instagram" width="16" height="16" />}
+                    leftElem={
+                      <MyIcon name="instagram" width="16" height="16" />
+                    }
                   />
 
                   <MyInput
                     labelTitle="linkedin"
                     type="text"
                     w={'sm'}
-                    leftElem={<Icon name="linkedin" width="16" height="16" />}
+                    leftElem={<MyIcon name="linkedin" width="16" height="16" />}
                   />
 
                   <MyInput
                     labelTitle="GitHub"
                     type="text"
                     w={'sm'}
-                    leftElem={<Icon name="github" width="16" height="16" />}
+                    leftElem={<MyIcon name="github" width="16" height="16" />}
                   />
                 </VStack>
               </VStack>

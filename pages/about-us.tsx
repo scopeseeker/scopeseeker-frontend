@@ -1,4 +1,4 @@
-import Icon, { IconNameType } from '@/component/icon/Icon';
+import MyIcon, { IconNameType } from '@/component/icon/MyIcon';
 import MyImage from '@/component/image/MyImage';
 import MainHeading from '@/component/main-heading/MainHeading';
 import PageHeroSection from '@/component/page-hero-section/PageHeroSection';
@@ -329,21 +329,21 @@ export default function AboutUs() {
                     aria-label="social-meida"
                     p={2}
                     color={'green.600'}
-                    icon={<Icon name={'whatsapp'} height="20" width="20" />}
+                    icon={<MyIcon name={'whatsapp'} height="20" width="20" />}
                     size={'sm'}
                   />
                   <IconButton
                     aria-label="social-meida"
                     p={2}
                     color={'blue.700'}
-                    icon={<Icon name={'linkedin'} height="20" width="20" />}
+                    icon={<MyIcon name={'linkedin'} height="20" width="20" />}
                     size={'sm'}
                   />
                   <IconButton
                     aria-label="social-meida"
                     p={2}
                     color={'pink.500'}
-                    icon={<Icon name={'instagram'} height="20" width="20" />}
+                    icon={<MyIcon name={'instagram'} height="20" width="20" />}
                     size={'sm'}
                   />
                 </HStack>
@@ -370,21 +370,21 @@ export default function AboutUs() {
                     aria-label="social-meida"
                     p={2}
                     color={'green.600'}
-                    icon={<Icon name={'whatsapp'} height="20" width="20" />}
+                    icon={<MyIcon name={'whatsapp'} height="20" width="20" />}
                     size={'sm'}
                   />
                   <IconButton
                     aria-label="social-meida"
                     p={2}
                     color={'blue.700'}
-                    icon={<Icon name={'linkedin'} height="20" width="20" />}
+                    icon={<MyIcon name={'linkedin'} height="20" width="20" />}
                     size={'sm'}
                   />
                   <IconButton
                     aria-label="social-meida"
                     p={2}
                     color={'pink.500'}
-                    icon={<Icon name={'instagram'} height="20" width="20" />}
+                    icon={<MyIcon name={'instagram'} height="20" width="20" />}
                     size={'sm'}
                   />
                 </HStack>
@@ -411,21 +411,21 @@ export default function AboutUs() {
                     aria-label="social-meida"
                     p={2}
                     color={'green.600'}
-                    icon={<Icon name={'whatsapp'} height="20" width="20" />}
+                    icon={<MyIcon name={'whatsapp'} height="20" width="20" />}
                     size={'sm'}
                   />
                   <IconButton
                     aria-label="social-meida"
                     p={2}
                     color={'blue.700'}
-                    icon={<Icon name={'linkedin'} height="20" width="20" />}
+                    icon={<MyIcon name={'linkedin'} height="20" width="20" />}
                     size={'sm'}
                   />
                   <IconButton
                     aria-label="social-meida"
                     p={2}
                     color={'pink.500'}
-                    icon={<Icon name={'instagram'} height="20" width="20" />}
+                    icon={<MyIcon name={'instagram'} height="20" width="20" />}
                     size={'sm'}
                   />
                 </HStack>
@@ -498,7 +498,7 @@ const WhyBox: React.FC<IWhyBox> = ({
           pt={3}
           pl={3}
         >
-          <Icon color={color} name={iconName} width={'50%'} />
+          <MyIcon color={color} name={iconName} width={'50%'} />
         </Center>
       </VStack>
     </VStack>

@@ -19,23 +19,29 @@ const MyText = ({
   href = '#',
   fontWeight,
   hoverColor,
-  fontSize = { base: '13px', md: '13px' },
+  fontSize = { base: '14px', md: '13px' },
   ...rest
 }: IMyText) => {
-
-
   return (
     <>
       {as === 'p' && (
-        <Text color={color} as={'p'} fontSize={{ base: '14px', md: '15px' }}
-        {...rest}>
+        <Text
+          color={color}
+          as={'p'}
+          fontSize={{ base: '14x', md: '15px' }}
+          {...rest}
+        >
           {title}
         </Text>
       )}
 
       {as === 'st' && (
-        <Text color={color} as={'span'} fontSize={{ base: '12px', md: '12px' }}
-        {...rest}>
+        <Text
+          color={color}
+          as={'span'}
+          fontSize={{ base: '13px', md: '12px' }}
+          {...rest}
+        >
           {title}
         </Text>
       )}
@@ -70,7 +76,7 @@ const MyText = ({
           <Text
             color={color}
             as={'span'}
-            fontSize={{ base: '12px', md: '14px' }}
+            fontSize={{ base: '15px', md: '14px' }}
             fontWeight={fontWeight}
             _hover={{ opacity: !hoverColor && 0.85, color: hoverColor }}
             {...rest}
