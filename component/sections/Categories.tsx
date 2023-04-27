@@ -23,6 +23,7 @@ const Categories = () => {
                   py={8}
                   gap={6}
                   borderRadius={'lg'}
+                  key={item.fieldName}
                 >
                   <IconButton
                     aria-label="categories"
