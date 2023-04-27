@@ -1,18 +1,21 @@
-import { Box, Center, Flex, Text, VStack } from '@chakra-ui/react';
-import MyImage from '../image/MyImage';
-import MainHeading from '../main-heading/MainHeading';
+import truncatedParagraph from '@/lib/validator';
+import { Center, Flex, Grid, Text, VStack } from '@chakra-ui/react';
 import MyIcon from '../icon/MyIcon';
+import MyImage from '../image/MyImage';
+import Layout from '../layout/Layout';
+import MainHeading from '../main-heading/MainHeading';
+import MyText from '../text/MyText';
 
 const Testimonials = () => {
   return (
-    <Box>
-      <VStack bg={'brand.aliceblue'} py={28} gap={16}>
+    <VStack bg={'brand.aliceblue'} py={'42px'}>
+      <Layout>
         <MainHeading
           title={'Join Our Thriving Community'}
           subTitle={'See How Our Job Website Has Changed Lives'}
         />
         <Flex
-          py={4}
+          py={'10px'}
           overflow={'auto'}
           w={'full'}
           css={{
@@ -24,178 +27,177 @@ const Testimonials = () => {
           <Flex
             w={'full'}
             justifyContent={'center'}
-            flexDirection={{ base: 'column', lg: 'row' }}
-            gap={14}
+            alignItems={'center'}
             flexShrink={0}
-            py={10}
-            px={{ sm: 5, lg: 0 }}
+            pt={'100px'}
+            gap={'24px'}
+            px={'20px'}
           >
-            <VStack
-              w={{ base: '100%', lg: 'calc(100%/3.5)' }}
-              h={'2xs'}
-              bg={'brand.white'}
-              boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
-              flexShrink={0}
-              borderRadius={8}
-              justifyContent={'flex-start'}
-              alignItems={'center'}
+            <Grid
+              templateColumns={{
+                base: 'repeat(1, 1fr)',
+                sm: 'repeat(1, 1fr)',
+                md: 'repeat(2, 1fr)',
+                lg: 'repeat(3, 1fr)',
+              }}
+              rowGap={'60px'}
+              columnGap={'20px'}
+              w={'full'}
             >
-              <Center
-                border={'3px solid white'}
-                h={20}
-                w={20}
-                mt={-10}
-                borderRadius={'full'}
-                overflow={'hidden'}
+              <VStack
+                w="100%"
+                h={{ base: 'fit-content', md: '248px' }}
+                bg={'brand.white'}
+                boxShadow={'0 0px 30px rgba(0, 0, 0, 0.1)'}
+                flexShrink={0}
+                borderRadius={8}
+                justifyContent={'flex-start'}
+                alignItems={'center'}
+                px={'28px'}
+                pb={'20px'}
+                display={{
+                  base: 'flex',
+                  md: 'none',
+                  lg: 'flex',
+                }}
               >
-                <MyImage
-                  src={'/assets/images/p12.jpg'}
-                  alt={'secope seeker logo'}
-                  width={80}
-                  height={80}
-                />
-              </Center>
-              <Flex direction={'column'} align={'center'}>
-                <Text as={'span'} fontWeight={'medium'} fontSize={'md'}>
-                  Lokesh Dhakar
-                </Text>
-                <Text
-                  as={'span'}
-                  fontWeight={600}
-                  fontSize={'2xs'}
-                  color={'secondary.100'}
+                <Center
+                  border={'3px solid white'}
+                  h={'78px'}
+                  w={'78px'}
+                  mt={'-34px'}
+                  borderRadius={'full'}
+                  overflow={'hidden'}
                 >
-                  Full Stack Developer
-                </Text>
-                <Text
-                  as={'span'}
-                  px={6}
-                  fontSize={'sm'}
-                  textAlign={'center'}
-                  mt={2}
-                >
-                  <Center w={8} h={8} opacity={'0.7'}>
-                    <MyIcon name={'quotes-left'} width={'full'} />
-                  </Center>
-                  I’ve got your back. These sixty review request text templates
-                  are designed to get you up and running fast. Of course, you
-                  may want to come up doing so mch imaportant thhisngs.
-                </Text>
-              </Flex>
-            </VStack>
-
-            <VStack
-              w={{ base: '100%', lg: 'calc(100%/3.5)' }}
-              h={'2xs'}
-              bg={'brand.primary'}
-              boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
-              flexShrink={0}
-              borderRadius={8}
-              justifyContent={'flex-start'}
-              color={'brand.white'}
-              alignItems={'center'}
-            >
-              <Center
-                border={'3px solid white'}
-                h={20}
-                w={20}
-                mt={-10}
-                borderRadius={'full'}
-                overflow={'hidden'}
+                  <MyImage
+                    src={'/assets/images/p12.jpg'}
+                    alt={'secope seeker logo'}
+                    width={100}
+                    height={100}
+                    style={{ borderRadius: '50%' }}
+                  />
+                </Center>
+                <Flex direction={'column'} align={'center'}>
+                  <MyText as={'heading'} title="Lokesh Dhakar" />
+                  <MyText as={'st'} title="Full Stack Developer" />
+                  <Text as={'span'} fontSize={'sm'} textAlign={'center'}>
+                    <Center w={8} h={8} opacity={'0.7'} py={'10px'}>
+                      <MyIcon name={'quotes-left'} width={'full'} />
+                    </Center>
+                    <MyText
+                      as={'span'}
+                      title={truncatedParagraph(
+                        `I’ve got your back. These sixty review request text templates
+                    are designed to get you up and running fast. Of course, you
+                    may want to come up doing so mch imaportant thhisngs.`,
+                        70
+                      )}
+                      color="brand.darkgray"
+                    />
+                  </Text>
+                </Flex>
+              </VStack>
+              <VStack
+                w="100%"
+                h={{ base: 'fit-content', md: '248px' }}
+                bg={'brand.white'}
+                boxShadow={'0 0px 30px rgba(0, 0, 0, 0.1)'}
+                flexShrink={0}
+                borderRadius={8}
+                justifyContent={'flex-start'}
+                alignItems={'center'}
+                px={'28px'}
+                pb={'20px'}
               >
-                <MyImage
-                  src={'/assets/images/p12.jpg'}
-                  alt={'secope seeker logo'}
-                  width={80}
-                  height={80}
-                />
-              </Center>
-              <Flex direction={'column'} align={'center'}>
-                <Text as={'span'} fontWeight={'medium'} fontSize={'md'}>
-                  Lokesh Dhakar
-                </Text>
-                <Text
-                  as={'span'}
-                  fontWeight={600}
-                  fontSize={'2xs'}
-                  color={'secondary.200'}
+                <Center
+                  border={'3px solid white'}
+                  h={'78px'}
+                  w={'78px'}
+                  mt={'-34px'}
+                  borderRadius={'full'}
+                  overflow={'hidden'}
                 >
-                  Full Stack Developer
-                </Text>
-                <Text
-                  as={'span'}
-                  px={6}
-                  fontSize={'sm'}
-                  textAlign={'center'}
-                  mt={2}
-                >
-                  <Center w={8} h={8} opacity={'0.7'}>
-                    <MyIcon name={'quotes-left'} width={'full'} />
-                  </Center>
-                  I’ve got your back. These sixty review request text templates
-                  are designed to get you up and running fast. Of course, you
-                  may want to come up doing so mch imaportant thhisngs.
-                </Text>
-              </Flex>
-            </VStack>
-
-            <VStack
-              w={{ base: '100%', lg: 'calc(100%/3.5)' }}
-              h={'2xs'}
-              bg={'brand.white'}
-              boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
-              flexShrink={0}
-              borderRadius={8}
-              justifyContent={'flex-start'}
-              alignItems={'center'}
-            >
-              <Center
-                border={'3px solid white'}
-                h={20}
-                w={20}
-                mt={-10}
-                borderRadius={'full'}
-                overflow={'hidden'}
+                  <MyImage
+                    src={'/assets/images/p12.jpg'}
+                    alt={'secope seeker logo'}
+                    width={100}
+                    height={100}
+                    style={{ borderRadius: '50%' }}
+                  />
+                </Center>
+                <Flex direction={'column'} align={'center'}>
+                  <MyText as={'heading'} title="Lokesh Dhakar" />
+                  <MyText as={'st'} title="Full Stack Developer" />
+                  <Text as={'span'} fontSize={'sm'} textAlign={'center'}>
+                    <Center w={8} h={8} opacity={'0.7'} py={'10px'}>
+                      <MyIcon name={'quotes-left'} width={'full'} />
+                    </Center>
+                    <MyText
+                      as={'span'}
+                      title={truncatedParagraph(
+                        `I’ve got your back. These sixty review request text templates
+                    are designed to get you up and running fast. Of course, you
+                    may want to come up doing so mch imaportant thhisngs.`,
+                        70
+                      )}
+                      color="brand.darkgray"
+                    />
+                  </Text>
+                </Flex>
+              </VStack>
+              <VStack
+                w="100%"
+                h={{ base: 'fit-content', md: '248px' }}
+                bg={'brand.white'}
+                boxShadow={'0 0px 30px rgba(0, 0, 0, 0.1)'}
+                flexShrink={0}
+                borderRadius={8}
+                justifyContent={'flex-start'}
+                alignItems={'center'}
+                px={'28px'}
+                pb={'20px'}
               >
-                <MyImage
-                  src={'/assets/images/p12.jpg'}
-                  alt={'secope seeker logo'}
-                  width={80}
-                  height={80}
-                />
-              </Center>
-              <Flex direction={'column'} align={'center'}>
-                <Text as={'span'} fontWeight={'medium'} fontSize={'md'}>
-                  Lokesh Dhakar
-                </Text>
-                <Text
-                  as={'span'}
-                  fontWeight={600}
-                  fontSize={'2xs'}
-                  color={'secondary.100'}
+                <Center
+                  border={'3px solid white'}
+                  h={'78px'}
+                  w={'78px'}
+                  mt={'-34px'}
+                  borderRadius={'full'}
+                  overflow={'hidden'}
                 >
-                  Full Stack Developer
-                </Text>
-                <Text
-                  as={'span'}
-                  px={6}
-                  fontSize={'sm'}
-                  textAlign={'center'}
-                  mt={2}
-                >
-                  <Center w={8} h={8} opacity={'0.7'}>
-                    <MyIcon name={'quotes-left'} width={'full'} />
-                  </Center>
-                  I’ve got your back. These sixty review request text templates
-                  are designed to get you up and running fast. Of course, you
-                  may want to come up doing so mch imaportant thhisngs.
-                </Text>
-              </Flex>
-            </VStack>
+                  <MyImage
+                    src={'/assets/images/p12.jpg'}
+                    alt={'secope seeker logo'}
+                    width={100}
+                    height={100}
+                    style={{ borderRadius: '50%' }}
+                  />
+                </Center>
+                <Flex direction={'column'} align={'center'}>
+                  <MyText as={'heading'} title="Lokesh Dhakar" />
+                  <MyText as={'st'} title="Full Stack Developer" />
+                  <Text as={'span'} fontSize={'sm'} textAlign={'center'}>
+                    <Center w={8} h={8} opacity={'0.7'} py={'10px'}>
+                      <MyIcon name={'quotes-left'} width={'full'} />
+                    </Center>
+                    <MyText
+                      as={'span'}
+                      title={truncatedParagraph(
+                        `I’ve got your back. These sixty review request text templates
+                    are designed to get you up and running fast. Of course, you
+                    may want to come up doing so mch imaportant thhisngs.`,
+                        70
+                      )}
+                      color="brand.darkgray"
+                    />
+                  </Text>
+                </Flex>
+              </VStack>
+            </Grid>
           </Flex>
         </Flex>
-      </VStack>
-    </Box>
+      </Layout>
+    </VStack>
   );
 };
 

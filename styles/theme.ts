@@ -32,11 +32,10 @@ const theme = extendTheme({
       black: 'black',
       semiblack: '#0F1137',
       darkgray: '#718096',
-      lightgray: '#F5F6F8',
+      offwhite: '#F5F6F8',
       primary: '#1A75E8',
       aliceblue: '#F0F8FF',
-      cardColor: '#f7f4ff',
-      border: 'lightgray'
+      lightgray: 'lightgray',
     },
   },
   config,

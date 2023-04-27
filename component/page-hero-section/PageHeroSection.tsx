@@ -22,7 +22,7 @@ const PageHeroSection: React.FC<IPageHeroSection> = (props) => {
     subtitle,
     align = 'flex-start',
     headColor = 'brand.white',
-    paraColor = 'brand.lightgray',
+    paraColor = 'brand.offwhite',
     alt,
     h = 250,
     w = 250,
@@ -31,25 +31,25 @@ const PageHeroSection: React.FC<IPageHeroSection> = (props) => {
   return (
     <HStack
       w={'full'}
-      h={{base: '20vh', md: '50vh'}}
+      h={{ base: '20vh', md: '50vh' }}
       bg={'brand.primary'}
       justifyContent={'space-between'}
       flexDirection={{ base: 'column', md: 'row' }}
     >
       <Layout>
         <HStack h={'full'} justifyContent={'space-between'}>
-        <VStack alignItems={align} maxW={{ base: '100%', md: '50%' }} gap={2}>
-          <MainHeading
-            title={title}
-            subTitle={subtitle}
-            align={align}
-            headColor={headColor}
-            paraColor={paraColor}
-          />
-        </VStack>
-        <Center maxW={{ base: '100%', md: '50%' }} p={'10px'} h={'full'}>
-          <MyImage src={src} alt={alt} width={w} height={h} />
-        </Center>
+          <VStack alignItems={align} maxW={{ base: '100%', md: '50%' }} gap={2}>
+            <MainHeading
+              title={title}
+              subTitle={subtitle}
+              align={align}
+              headColor={headColor}
+              paraColor={paraColor}
+            />
+          </VStack>
+          <Center maxW={{ base: '100%', md: '50%' }} p={'10px'} h={'full'}>
+            <MyImage src={src} alt={alt} width={w} height={h} />
+          </Center>
         </HStack>
       </Layout>
     </HStack>

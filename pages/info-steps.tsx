@@ -369,7 +369,7 @@ export default function InfoSteps() {
                 <HStack
                   alignItems={'center'}
                   border={'1px'}
-                  borderColor={'brand.lightgray'}
+                  borderColor={'brand.offwhite'}
                   borderRadius={50}
                   pr={2}
                 >

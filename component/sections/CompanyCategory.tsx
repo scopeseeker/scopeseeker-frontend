@@ -103,7 +103,7 @@ const FeaturedCompanyCard: React.FC<IFeaturedCompanyCardProps> = (props) => {
       boxShadow={' 0 4px 30px rgba(0, 0, 0, 0.1)'}
       borderRadius={10}
       border={'2px solid'}
-      borderColor={'brand.lightgray'}
+      borderColor={'brand.offwhite'}
       justifyContent={'center'}
       gap={'2px'}
       py={4}
@@ -134,7 +134,7 @@ const FeaturedCompanyCard: React.FC<IFeaturedCompanyCardProps> = (props) => {
 
       <Center
         w={'80%'}
-        bg={'brand.lightgray'}
+        bg={'brand.offwhite'}
         borderRadius={10}
         justifyContent={'center'}
         p={2}
