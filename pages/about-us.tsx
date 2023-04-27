@@ -1,9 +1,12 @@
-import MyIcon, { IconNameType } from '@/component/icon/MyIcon';
-import MyImage from '@/component/image/MyImage';
-import Layout from '@/component/layout/Layout';
-import MainHeading from '@/component/main-heading/MainHeading';
-import PageHeroSection from '@/component/page-hero-section/PageHeroSection';
-import MyText from '@/component/text/MyText';
+import {
+  Layout,
+  MainHeading,
+  MyIcon,
+  MyImage,
+  MyText,
+  PageHeroSection,
+} from '@/component';
+import { IconNameType } from '@/component/icon/MyIcon';
 import {
   Box,
   Center,

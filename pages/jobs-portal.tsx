@@ -1,9 +1,11 @@
-import MyButton from '@/component/button/MyButton';
-import MyJobCard from '@/component/cards/MyJobCard';
-import MyDivider from '@/component/divider/MyDivider';
-import Filter from '@/component/filter/Filter';
-import Layout from '@/component/layout/Layout';
-import MyText from '@/component/text/MyText';
+import {
+  Filter,
+  Layout,
+  MyButton,
+  MyDivider,
+  MyJobCard,
+  MyText,
+} from '@/component';
 import {
   Box,
   Center,

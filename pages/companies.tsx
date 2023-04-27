@@ -1,15 +1,11 @@
-import Layout from '@/component/layout/Layout';
+import { Layout } from '@/component';
 import { Box, Text } from '@chakra-ui/react';
 
 export default function companies() {
   return (
     <Layout>
-      <div>
-        <Text whiteSpace={'pre-line'}></Text>
         companies
-      </div>
-
-<Box color={'red'}>
+{/* <Box color={'red'}>
 
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +22,7 @@ export default function companies() {
           stroke-width="24"
         />
       </svg>
-</Box>
+</Box> */}
 
     </Layout>
   );

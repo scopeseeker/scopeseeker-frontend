@@ -1,5 +1,4 @@
-import Footer from '@/component/footer';
-import Navbar from '@/component/navbar/Navbar';
+import { Footer, Navbar } from '@/component';
 import '@/styles/globals.css';
 import theme from '@/styles/theme';
 import { Center, ChakraProvider, Flex } from '@chakra-ui/react';
@@ -15,7 +14,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <ChakraProvider theme={theme}>
-      {showNavbar && <Navbar />}
+      {showNavbar && <Navbar/>}
       <Center>
         <Flex flexDirection={'column'} w={'100%'}>
           <Component {...pageProps} />

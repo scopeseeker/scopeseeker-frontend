@@ -1,0 +1,9 @@
+export { default as Categories } from './Categories';
+export { default as Company } from './Company';
+export { default as CompanyCategory } from './CompanyCategory';
+export { default as FAQ } from './FAQ';
+export { default as HeroSection } from './HeroSection';
+export { default as Motive } from './Motive';
+export { default as NewsUpdate } from './NewsUpdate';
+export { default as Testimonials } from './Testimonials';
+export { default as Works } from './Works';

@@ -1,13 +1,11 @@
-import MyButton from '@/component/button/MyButton';
-import MyImage from '@/component/image/MyImage';
-import MyInput from '@/component/inputs/MyInput';
+import { MyButton, MyImage, MyInput } from '@/component';
 import {
   Box,
   Center,
   Flex,
   FormControl,
-  Heading,
   HStack,
+  Heading,
   Text,
   VStack,
 } from '@chakra-ui/react';

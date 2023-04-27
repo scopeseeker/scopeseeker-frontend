@@ -2,11 +2,11 @@ import { IMyJobCard } from '@/inteface/component-interface';
 import { Box, Center, Flex, HStack, VStack } from '@chakra-ui/react';
 import Link from 'next/link';
 import truncatedParagraph from '../../lib/validator';
-import MyBadge from '../badge/MyBadge';
 import MyButton from '../button/MyButton';
 import MyIcon from '../icon/MyIcon';
 import MyImage from '../image/MyImage';
 import MyText from '../text/MyText';
+import {MyBadge} from '@/component'
 
 const MyJobCard = ({
   companyIconLogo,
@@ -67,7 +67,7 @@ const MyJobCard = ({
             />
           </Box>
           <Flex gap={'8px'} flexWrap={'wrap'} w={'full'}>
-            {jobType.map((item, key) => (
+            {jobType.map((item) => (
               <MyBadge label={item.label} color={item.color} key={item.value} />
             ))}
           </Flex>
