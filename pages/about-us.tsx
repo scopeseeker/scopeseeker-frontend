@@ -7,6 +7,7 @@ import MyText from '@/component/text/MyText';
 import {
   Box,
   Center,
+  Flex,
   HStack,
   IconButton,
   ListItem,
@@ -43,13 +44,11 @@ export default function AboutUs() {
               />
             </VStack>
 
-            <Center w="full" flexDirection={'column'} pt={8} flexWrap={'wrap'}>
-              <MainHeading
-                title="What we are solving?"
-                subTitle="See why Scope Seeker should be your first choice"
-              />
+            {/* What we are solving part  */}
+            <Flex w="full" pt={8} flexWrap={'wrap'}>
+              <MyText as="heading" title="What we are solving?" />
 
-              <HStack w={'full'} mt={12} gap={5}>
+              <HStack w={'full'} flexDirection={{base: 'column', md: 'row'}} alignItems={'flex-start'} mt={6} gap={5} bg={'blue'}>
                 <WhyBox
                   bg={'red'}
                   color={'white'}
@@ -57,6 +56,7 @@ export default function AboutUs() {
                   cardText="The overwhelming number of job listings online makes it
                 difficult for job seekers to find opportunities that match
                 their skills and preferences."
+                iconName='search'
                 />
 
                 <WhyBox
@@ -91,12 +91,13 @@ export default function AboutUs() {
                   iconName="job"
                 />
               </HStack>
-            </Center>
+            </Flex>
 
+            {/* How we work part */}
             <VStack w={'full'} alignItems={'flex-start'}>
               <MyText as="heading" title="How we work?" />
               <Box>
-                <OrderedList ml={10} spacing={1}>
+                <OrderedList ml={{base: 5, md: 10}} spacing={1}>
                   <ListItem>
                     <AText title="We carefully select tech companies based on their reputation, size, and growth potential." />
                   </ListItem>
@@ -120,7 +121,8 @@ export default function AboutUs() {
               </Box>
             </VStack>
 
-            <VStack w={'full'} px={20} minH={'50vw'} gap={10}>
+            {/* Example part */}
+            <VStack w={'full'} px={20} minH={'50vw'} gap={10} bg={'yellow.300'}>
               <VStack>
                 <MainHeading
                   title="See ScopeSeeker in Action with This Example"
@@ -270,55 +272,55 @@ export default function AboutUs() {
               </VStack>
             </VStack>
 
-            <VStack w={'full'}>
-              <VStack w={'full'} gap={5} alignItems={'flex-start'}>
-                <VStack w={'2xl'}>
-                  <MainHeading
-                    title="The People Who Make It Happen"
-                    align="flex-start"
-                    subTitle="Meet the talented and dedicated individuals who make our business thrive. Our amazing team is the driving force behind our success, and we're proud to introduce them to you."
-                  />
-                </VStack>
+              {/* <VStack>
+                <MainHeading
+                  title="The People Who Make It Happen"
+                  align="flex-start"
+                  subTitle="Meet the talented and dedicated individuals who make our business thrive. Our amazing team is the driving force behind our success, and we're proud to introduce them to you."
+                />
+              </VStack> */}
 
-                <VStack alignItems={'flex-start'} w={'full'}>
-                  <MyText
-                    as={'p'}
-                    title={`Meet the Scope Seeker team, the people behind the innovative
+            {/* Happen part */}
+              <VStack alignItems={'flex-start'} w={'full'}>
+                <MyText as="heading" title="The People Who Make It Happen" />
+                <MyText
+                  as={'p'}
+                  title={`Meet the Scope Seeker team, the people behind the innovative
                     tech job seeker platform.`}
-                  />
-                  <MyText
-                    as={'p'}
-                    title={`Lokesh Dhakar, our founder, is a seasoned full-stack developer
+                />
+                <MyText
+                  as={'p'}
+                  title={`Lokesh Dhakar, our founder, is a seasoned full-stack developer
                     with a passion for helping job seekers find their dream job
                     and creating a more inclusive job market.`}
-                  />
-                  <MyText
-                    as={'p'}
-                    title={`Abhijeet Raj and Abhishek Kumar, our co-founders, are both
+                />
+                <MyText
+                  as={'p'}
+                  title={`Abhijeet Raj and Abhishek Kumar, our co-founders, are both
                     front-end web developers. Their dedication and hard work have
                     been instrumental in making Scope Seeker a success.`}
-                  />
-                  <MyText
-                    as={'p'}
-                    title={`Together, our team is committed to building a platform that
+                />
+                <MyText
+                  as={'p'}
+                  title={`Together, our team is committed to building a platform that
                     empowers job seekers and makes the hiring process more
                     efficient and transparent. We are always striving to improve
                     our services and provide the best possible experience for our
                     users.`}
-                  />
-                </VStack>
+                />
               </VStack>
 
-              <HStack w={'full'} p={20}>
+            {/* Team memberPhoto part  */}
+            <HStack w={'full'} flexDirection={{base: 'column', md: 'row', lg: 'row'}} gap={{base: 8, md: 0, lg: 0}}>
                 <VStack w={'full'} gap={1}>
                   <Center
-                    h={200}
-                    w={200}
+                    h={{base: 250, md: 200}}
+                    w={{base: 250, md: 200}}
                     borderRadius={'full'}
                     bg={'blue.400'}
                     overflow={'hidden'}
                   >
-                    {/* <MyImage src={'/assets/images/p12.jpg'} width={200} height={200} alt='picture'/> */}
+                    <MyImage src={'/assets/images/p12.jpg'} width={200} height={200} alt='picture'/>
                   </Center>
 
                   <VStack spacing={0}>
@@ -355,13 +357,13 @@ export default function AboutUs() {
 
                 <VStack w={'full'} gap={1}>
                   <Center
-                    h={200}
-                    w={200}
+                    h={{base: 250, md: 200}}
+                    w={{base: 250, md: 200}}
                     borderRadius={'full'}
                     bg={'yellow.400'}
                     overflow={'hidden'}
                   >
-                    {/* <MyImage src={'/assets/images/p12.jpg'} width={200} height={200} alt='picture'/> */}
+                    <MyImage src={'/assets/images/p12.jpg'} width={200} height={200} alt='picture'/>
                   </Center>
 
                   <VStack spacing={0}>
@@ -398,13 +400,13 @@ export default function AboutUs() {
 
                 <VStack w={'full'} gap={1}>
                   <Center
-                    h={200}
-                    w={200}
+                    h={{base: 250, md: 200}}
+                    w={{base: 250, md: 200}}
                     borderRadius={'full'}
                     bg={'green.400'}
                     overflow={'hidden'}
                   >
-                    {/* <MyImage src={'/assets/images/p12.jpg'} width={200} height={200} alt='picture'/> */}
+                    <MyImage src={'/assets/images/p12.jpg'} width={200} height={200} alt='picture'/>
                   </Center>
 
                   <VStack spacing={0}>
@@ -438,8 +440,7 @@ export default function AboutUs() {
                     />
                   </HStack>
                 </VStack>
-              </HStack>
-            </VStack>
+            </HStack>
           </VStack>
         </VStack>
       </Layout>
@@ -472,14 +473,14 @@ const WhyBox: React.FC<IWhyBox> = ({
   iconName = 'search',
 }: IWhyBox) => {
   return (
-    <VStack w={56} bg={`${bg}.100`} borderRadius={10} overflow={'hidden'}>
-      <VStack
+    <VStack w={{base: '350px', md: 56}} bg={`${bg}.100`} borderRadius={10} overflow={'hidden'}>
+      <Flex
         w={'full'}
         pt={4}
-        minH={'3xs'}
-        maxH={'2xs'}
+        minH={{base: '140px', md: '210px'}}
         px={4}
         alignItems={'flex-start'}
+        flexDir={'column'}
       >
         <Text
           fontSize={'6xl'}
@@ -491,7 +492,7 @@ const WhyBox: React.FC<IWhyBox> = ({
           {cardNumber}
         </Text>
         <MyText as="span" title={cardText} />
-      </VStack>
+      </Flex>
 
       <VStack
         w={'full'}
@@ -505,9 +506,9 @@ const WhyBox: React.FC<IWhyBox> = ({
           bg={`${bg}.300`}
           borderTopLeftRadius={'full'}
           pt={3}
-          pl={3}
+          pl={10}
         >
-          <MyIcon color={color} name={iconName} width={'50%'} />
+          <MyIcon color={color} name={iconName} width={'70%'} />
         </Center>
       </VStack>
     </VStack>
