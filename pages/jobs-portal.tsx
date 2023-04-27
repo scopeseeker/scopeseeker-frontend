@@ -49,7 +49,7 @@ export default function Jobs() {
               bg={'brand.white'}
               borderLeftRadius={6}
               border={'1px solid'}
-              borderColor={'brand.border'}
+              borderColor={'brand.lightgray'}
               px={'6px'}
             >
               <Input
