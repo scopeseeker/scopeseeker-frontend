@@ -1,6 +1,7 @@
 import { Box, Center, Flex, Text, VStack } from '@chakra-ui/react';
 import MyIcon from '../icon/MyIcon';
 import MainHeading from '../main-heading/MainHeading';
+import MyText from '../text/MyText';
 
 const Works = () => {
   return (
@@ -43,13 +44,8 @@ const Works = () => {
             </Center>
 
             <Flex direction={'column'} m={6} gap={2}>
-              <Text as={'span'} fontWeight={'semibold'} fontSize={'md'}>
-                Register An Account
-              </Text>
-
-              <Text as={'span'} fontWeight={'normal'} color={'secondary.100'}>
-                First you have to create an account here.
-              </Text>
+              <MyText title="Register An Account" as={'title'} />
+              <MyText title="First you have to create an account here." as={'span'} />
             </Flex>
           </Flex>
         </VStack>

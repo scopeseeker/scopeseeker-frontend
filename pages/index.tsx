@@ -1,13 +1,15 @@
-import Layout from '@/component/layout/Layout';
-import Categories from '@/component/sections/Categories';
-import Company from '@/component/sections/Company';
-import CompnayCatergories from '@/component/sections/CompnayCatergories';
-import FAQ from '@/component/sections/FAQ';
-import HeroSection from '@/component/sections/HeroSection';
-import Motive from '@/component/sections/Motive';
-import NewsUpdate from '@/component/sections/NewsUpdate';
-import Testimonials from '@/component/sections/Testimonials';
-import Works from '@/component/sections/Works';
+import {
+  Categories,
+  Company,
+  FAQ,
+  HeroSection,
+  Layout,
+  Motive,
+  NewsUpdate,
+  Testimonials,
+  Works,
+} from '@/component';
+import CompnayCatergories from '@/component/sections/CompanyCategory';
 import { Flex } from '@chakra-ui/react';
 import Head from 'next/head';
 

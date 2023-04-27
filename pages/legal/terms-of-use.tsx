@@ -1,6 +1,4 @@
-import Layout from '@/component/layout/Layout';
-import PageHeroSection from '@/component/page-hero-section/PageHeroSection';
-import MyText from '@/component/text/MyText';
+import { Layout, MyText, PageHeroSection } from '@/component';
 import {
   Box,
   ListItem,

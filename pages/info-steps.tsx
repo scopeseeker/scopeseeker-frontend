@@ -1,8 +1,4 @@
-import MyButton from '@/component/button/MyButton';
-import MyIcon from '@/component/icon/MyIcon';
-import MyImage from '@/component/image/MyImage';
-import MyInput from '@/component/inputs/MyInput';
-import MainHeading from '@/component/main-heading/MainHeading';
+import { MainHeading, MyButton, MyIcon, MyImage, MyInput } from '@/component';
 import {
   Center,
   FormControl,

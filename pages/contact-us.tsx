@@ -1,9 +1,4 @@
-import MyButton from '@/component/button/MyButton';
-import MyIcon from '@/component/icon/MyIcon';
-import MyInput from '@/component/inputs/MyInput';
-import Layout from '@/component/layout/Layout';
-import PageHeroSection from '@/component/page-hero-section/PageHeroSection';
-import MyText from '@/component/text/MyText';
+import { Layout, MyButton, MyIcon, MyInput, MyText, PageHeroSection } from '@/component';
 import {
   Center,
   FormControl,
