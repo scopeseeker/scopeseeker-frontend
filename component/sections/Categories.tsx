@@ -8,7 +8,7 @@ import { MyText } from '../text';
 
 const Categories = () => {
   return (
-    <VStack w={'full'} py={10} bg={'brand.aliceblue'}>
+    <VStack w={'full'} py={'42px'} bg={'brand.aliceblue'}>
       <Layout>
         <MainHeading
           title={'Popular Job Categories'}
@@ -16,15 +16,16 @@ const Categories = () => {
         />
 
         <VStack w={'full'}>
-          <HStack my={4} gap={4} flexWrap={'wrap'} spacing={0} justifyContent={'center'} bg={'red'}>
+          <HStack my={'80px'} gap={'20px'} flexWrap={'wrap'} spacing={0} justifyContent={'center'}>
             <>
               {popularCategoryObject.map((item) => {
                 return (
                   <VStack
-                    w={{base: '100%',sm: '40%', md: '220px'}}
+                    w={{base: '90%',sm: '40%', md: '220px'}}
                     bg={'brand.white'}
-                    py={{base: 10, md: 8}}
-                    borderRadius={'lg'}
+                    py={{base: '40px', md: '32px'}}
+                    borderRadius={'8px'}
+                    gap={{base: '14px', md: '8px'}}
                   >
                     <IconButton
                       aria-label="categories"
@@ -48,7 +49,7 @@ const Categories = () => {
                       <MyText
                         as={'span'}
                         title={`(${item.opening} open positions)`}
-                        fontSize={{base: '13px', md: '10px'}}
+                        fontSize={{base: '11px', md: '10px'}}
                       />
                     </VStack>
                   </VStack>
@@ -57,7 +58,7 @@ const Categories = () => {
             </>
           </HStack>
           <MyButton
-            fontSize={'xs'}
+            fontSize={'12px'}
             bg={'brand.primary'}
             title="Browse All Categories"
           />
