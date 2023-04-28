@@ -16,14 +16,14 @@ const Categories = () => {
         />
 
         <VStack w={'full'}>
-          <HStack my={4} gap={4} flexWrap={'wrap'} justifyContent={'center'}>
+          <HStack my={4} gap={4} flexWrap={'wrap'} spacing={0} justifyContent={'center'} bg={'red'}>
             <>
               {popularCategoryObject.map((item) => {
                 return (
                   <VStack
-                    w={'220px'}
+                    w={{base: '100%',sm: '40%', md: '220px'}}
                     bg={'brand.white'}
-                    py={8}
+                    py={{base: 10, md: 8}}
                     borderRadius={'lg'}
                   >
                     <IconButton
@@ -31,7 +31,7 @@ const Categories = () => {
                       icon={
                         <MyIcon
                           name={'job'}
-                          width="24px"
+                          width='24px'
                           color="brand.primary"
                         />
                       }
