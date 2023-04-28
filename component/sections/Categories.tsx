@@ -3,56 +3,66 @@ import { HStack, IconButton, Text, VStack } from '@chakra-ui/react';
 import MyButton from '../button/MyButton';
 import MyIcon from '../icon/MyIcon';
 import MainHeading from '../main-heading/MainHeading';
+import { Layout } from '../layout';
+import { MyText } from '../text';
 
 const Categories = () => {
   return (
-    <VStack w={'full'} py={10} gap={10} bg={'brand.aliceblue'}>
-      <MainHeading
-        title={'Popular Job Categories'}
-        subTitle={'2020 jobs live - 293 added today'}
-      />
+    <VStack w={'full'} py={10} bg={'brand.aliceblue'}>
+      <Layout>
+        <MainHeading
+          title={'Popular Job Categories'}
+          subTitle={'2020 jobs live - 293 added today'}
+        />
 
-      <VStack w={'full'}>
-        <HStack my={4} gap={4} flexWrap={'wrap'} justifyContent={'center'}>
-          <>
-            {popularCategoryObject.map((item) => {
-              return (
-                <VStack
-                  w={'3xs'}
-                  bg={'brand.white'}
-                  py={8}
-                  gap={6}
-                  borderRadius={'lg'}
-                  key={item.fieldName}
-                >
-                  <IconButton
-                    aria-label="categories"
-                    icon={<MyIcon name={'instagram'} width={'14px'} />}
-                  />
-                  <VStack lineHeight={1}>
-                    <Text as={'span'} fontSize={'13px'} fontWeight={'semibold'}>
-                      {item.fieldName}
-                    </Text>
-                    <Text
-                      as={'span'}
-                      fontSize={'10px'}
-                      color={'brand.blackAlpha.600'}
-                    >
-                      ({item.opening} open positions)
-                    </Text>
+        <VStack w={'full'}>
+          <HStack my={4} gap={4} flexWrap={'wrap'} justifyContent={'center'}>
+            <>
+              {popularCategoryObject.map((item) => {
+                return (
+                  <VStack
+                    w={'220px'}
+                    bg={'brand.white'}
+                    py={8}
+                    borderRadius={'lg'}
+                  >
+                    <IconButton
+                      aria-label="categories"
+                      icon={
+                        <MyIcon
+                          name={'job'}
+                          width="24px"
+                          color="brand.primary"
+                        />
+                      }
+                      size={'lg'}
+                    />
+
+                    <VStack lineHeight={1}>
+                      <MyText
+                        as={'link'}
+                        title={item.fieldName}
+                        color="brand.black"
+                        fontWeight={500}
+                      />
+                      <MyText
+                        as={'span'}
+                        title={`(${item.opening} open positions)`}
+                        fontSize={{base: '13px', md: '10px'}}
+                      />
+                    </VStack>
                   </VStack>
-                </VStack>
-              );
-            })}
-          </>
-        </HStack>
-      </VStack>
-
-      <MyButton
-        fontSize={'xs'}
-        bg={'brand.primary'}
-        title="Browse All Categories"
-      />
+                );
+              })}
+            </>
+          </HStack>
+          <MyButton
+            fontSize={'xs'}
+            bg={'brand.primary'}
+            title="Browse All Categories"
+          />
+        </VStack>
+      </Layout>
     </VStack>
   );
 };
