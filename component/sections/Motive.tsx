@@ -19,7 +19,7 @@ const Motive = () => {
           <Heading
             fontWeight={600}
             color={'brand.primary'}
-            fontSize={{ base: '28px', sm: '42px' }}
+            fontSize={{ base: '28px', sm: '36px' }}
             textAlign={{ base: 'center', sm: 'left' }}
           >
             Millions of Jobs{' '}

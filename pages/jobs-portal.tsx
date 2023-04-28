@@ -135,35 +135,11 @@ export default function Jobs() {
                     companyName={'Tata Consultancy Service'}
                     location={'Bhopal, Madhaya Pradesh'}
                     jobType={[
-                      { label: 'Full Time', value: 'full', color: 'green' },
-                      { label: 'Part Time', value: 'part', color: 'red' },
-                      { label: 'Internship', value: 'intern', color: 'blue' },
-                      { label: 'Startup', value: 'intern', color: 'purple' },
-                      { label: 'Indian MNC', value: 'intern', color: 'cyan' },
-                    ]}
-                    companyDesc="UX designers measure and optimize applications to improve ease of use
-        (usability), and create the best user experience by exploring many
-       diffrent approaches to solve end's-user problems experience by exploring many
-       diffrent approaches to solve end's-user problemsexperience by exploring many
-       diffrent approaches to solve end's-user problemsexperience by exploring many
-       diffrent approaches to solve end's-user problems"
-                    isNamedLogo={true}
-                  />
-                </GridItem>
-                <GridItem>
-                  <MyJobCard
-                    companyIconLogo={
-                      '/assets/images/company-logo/bookmyshow.png'
-                    }
-                    role={'Frontend Developer'}
-                    companyName={'Tata Consultancy Service'}
-                    location={'Bhopal, Madhaya Pradesh'}
-                    jobType={[
-                      { label: 'Full Time', value: 'full', color: 'green' },
-                      { label: 'Part Time', value: 'part', color: 'yellow' },
-                      { label: 'Internship', value: 'intern', color: 'blue' },
-                      { label: 'Startup', value: 'intern', color: 'purple' },
-                      { label: 'Indian MNC', value: 'intern', color: 'cyan' },
+                      'Full Time',
+                      'Part Time',
+                      'Internship',
+                      'Startup',
+                      'Indian MNC',
                     ]}
                     companyDesc="UX designers measure and optimize applications to improve ease of use
         (usability), and create the best user experience by exploring many
@@ -180,11 +156,11 @@ export default function Jobs() {
                     companyName={'Tata Consultancy Service'}
                     location={'Bhopal, Madhaya Pradesh'}
                     jobType={[
-                      { label: 'Full Time', value: 'full', color: 'green' },
-                      { label: 'Part Time', value: 'part', color: 'yellow' },
-                      { label: 'Internship', value: 'intern', color: 'blue' },
-                      { label: 'Startup', value: 'intern', color: 'purple' },
-                      { label: 'Indian MNC', value: 'intern', color: 'cyan' },
+                      'Full Time',
+                      'Part Time',
+                      'Internship',
+                      'Startup',
+                      'Indian MNC',
                     ]}
                     companyDesc="UX designers measure and optimize applications to improve ease of use
         (usability), and create the best user experience by exploring many
@@ -201,11 +177,11 @@ export default function Jobs() {
                     companyName={'Tata Consultancy Service'}
                     location={'Bhopal, Madhaya Pradesh'}
                     jobType={[
-                      { label: 'Full Time', value: 'full', color: 'green' },
-                      { label: 'Part Time', value: 'part', color: 'yellow' },
-                      { label: 'Internship', value: 'intern', color: 'blue' },
-                      { label: 'Startup', value: 'intern', color: 'purple' },
-                      { label: 'Indian MNC', value: 'intern', color: 'cyan' },
+                      'Full Time',
+                      'Part Time',
+                      'Internship',
+                      'Startup',
+                      'Indian MNC',
                     ]}
                     companyDesc="UX designers measure and optimize applications to improve ease of use
         (usability), and create the best user experience by exploring many
@@ -222,11 +198,11 @@ export default function Jobs() {
                     companyName={'Tata Consultancy Service'}
                     location={'Bhopal, Madhaya Pradesh'}
                     jobType={[
-                      { label: 'Full Time', value: 'full', color: 'green' },
-                      { label: 'Part Time', value: 'part', color: 'yellow' },
-                      { label: 'Internship', value: 'intern', color: 'blue' },
-                      { label: 'Startup', value: 'intern', color: 'purple' },
-                      { label: 'Indian MNC', value: 'intern', color: 'cyan' },
+                      'Full Time',
+                      'Part Time',
+                      'Internship',
+                      'Startup',
+                      'Indian MNC',
                     ]}
                     companyDesc="UX designers measure and optimize applications to improve ease of use
         (usability), and create the best user experience by exploring many
@@ -243,11 +219,95 @@ export default function Jobs() {
                     companyName={'Tata Consultancy Service'}
                     location={'Bhopal, Madhaya Pradesh'}
                     jobType={[
-                      { label: 'Full Time', value: 'full', color: 'green' },
-                      { label: 'Part Time', value: 'part', color: 'yellow' },
-                      { label: 'Internship', value: 'intern', color: 'blue' },
-                      { label: 'Startup', value: 'intern', color: 'purple' },
-                      { label: 'Indian MNC', value: 'intern', color: 'cyan' },
+                      'Full Time',
+                      'Part Time',
+                      'Internship',
+                      'Startup',
+                      'Indian MNC',
+                    ]}
+                    companyDesc="UX designers measure and optimize applications to improve ease of use
+        (usability), and create the best user experience by exploring many
+       diffrent approaches to solve end's-user problems"
+                    isNamedLogo={true}
+                  />
+                </GridItem>
+                <GridItem>
+                  <MyJobCard
+                    companyIconLogo={
+                      '/assets/images/company-logo/bookmyshow.png'
+                    }
+                    role={'Frontend Developer'}
+                    companyName={'Tata Consultancy Service'}
+                    location={'Bhopal, Madhaya Pradesh'}
+                    jobType={[
+                      'Full Time',
+                      'Part Time',
+                      'Internship',
+                      'Startup',
+                      'Indian MNC',
+                    ]}
+                    companyDesc="UX designers measure and optimize applications to improve ease of use
+        (usability), and create the best user experience by exploring many
+       diffrent approaches to solve end's-user problems"
+                    isNamedLogo={true}
+                  />
+                </GridItem>
+                <GridItem>
+                  <MyJobCard
+                    companyIconLogo={
+                      '/assets/images/company-logo/bookmyshow.png'
+                    }
+                    role={'Frontend Developer'}
+                    companyName={'Tata Consultancy Service'}
+                    location={'Bhopal, Madhaya Pradesh'}
+                    jobType={[
+                      'Full Time',
+                      'Part Time',
+                      'Internship',
+                      'Startup',
+                      'Indian MNC',
+                    ]}
+                    companyDesc="UX designers measure and optimize applications to improve ease of use
+        (usability), and create the best user experience by exploring many
+       diffrent approaches to solve end's-user problems"
+                    isNamedLogo={true}
+                  />
+                </GridItem>
+                <GridItem>
+                  <MyJobCard
+                    companyIconLogo={
+                      '/assets/images/company-logo/bookmyshow.png'
+                    }
+                    role={'Frontend Developer'}
+                    companyName={'Tata Consultancy Service'}
+                    location={'Bhopal, Madhaya Pradesh'}
+                    jobType={[
+                      'Full Time',
+                      'Part Time',
+                      'Internship',
+                      'Startup',
+                      'Indian MNC',
+                    ]}
+                    companyDesc="UX designers measure and optimize applications to improve ease of use
+        (usability), and create the best user experience by exploring many
+       diffrent approaches to solve end's-user problems"
+                    isNamedLogo={true}
+                  />
+                </GridItem>
+                <GridItem>
+                  <MyJobCard
+                    companyIconLogo={
+                      '/assets/images/company-logo/bookmyshow.png'
+                    }
+                    role={'Frontend Developer'}
+                    companyName={'Tata Consultancy Service'}
+                    location={'Bhopal, Madhaya Pradesh'}
+                    jobType={[
+                      'Full Time',
+                      'Part Time',
+                      'Internship',
+                      'Startup',
+                      'Indian MNC',
                     ]}
                     companyDesc="UX designers measure and optimize applications to improve ease of use
         (usability), and create the best user experience by exploring many

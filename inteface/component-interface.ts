@@ -1,7 +1,7 @@
 export interface IMyBadge {
   color?: string;
   key?: any;
-  label: string;
+  labelArray: string[];
 }
 
 export interface IMyButtonProps {
@@ -26,7 +26,7 @@ export interface IMyJobCard {
   role: string;
   companyName: string;
   location: string;
-  jobType: { label: string; value: string; color: string }[];
+  jobType: string[];
   companyDesc: string;
   applyLink?: string;
   fullDetailedLink?: string;
