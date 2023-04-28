@@ -67,9 +67,7 @@ const MyJobCard = ({
             />
           </Box>
           <Flex gap={'8px'} flexWrap={'wrap'} w={'full'}>
-            {jobType.map((item) => (
-              <MyBadge label={item.label} color={item.color} key={item.value} />
-            ))}
+              <MyBadge labelArray={jobType}/>
           </Flex>
 
           <MyText

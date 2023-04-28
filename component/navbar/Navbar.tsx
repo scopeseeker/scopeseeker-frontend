@@ -68,8 +68,8 @@ const Navbar = () => {
                     d="M320 320H192M80 176a16 16 0 00-16 16v216c0 30.24 25.76 56 56 56h272c30.24 0 56-24.51 56-54.75V192a16 16 0 00-16-16zM160 176v-32a96 96 0 0196-96h0a96 96 0 0196 96v32"
                     fill="none"
                     stroke="currentColor"
-                    stroke-linejoin="round"
-                    stroke-width="28"
+                    strokeLinejoin="round"
+                    strokeWidth="28"
                   />
                 </svg>
               </Box>
@@ -100,8 +100,8 @@ const Navbar = () => {
                   d="M176 416v64M80 32h192a32 32 0 0132 32v412a4 4 0 01-4 4H48h0V64a32 32 0 0132-32zM320 192h112a32 32 0 0132 32v256h0-160 0V208a16 16 0 0116-16z"
                   fill="none"
                   stroke="currentColor"
-                  stroke-linejoin="round"
-                  stroke-width="28"
+                  strokeLinejoin="round"
+                  strokeWidth="28"
                 />
               </svg>
               </Box>

@@ -3,7 +3,6 @@ import {
   Company,
   FAQ,
   HeroSection,
-  Layout,
   Motive,
   NewsUpdate,
   Testimonials,
@@ -25,28 +24,16 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Flex flexDirection={'column'} gap={24}>
-        <Layout>
-          <Flex flexDirection={'column'} gap={24}>
-            <HeroSection />
-            <Company />
-            <Works />
-          </Flex>
-        </Layout>
+      <Flex flexDirection={'column'} gap={'70px'}>
+        <HeroSection />
+        <Company />
+        <Works />
         <Categories />
-        <Layout>
-          <Flex flexDirection={'column'} gap={24}>
-            <CompnayCatergories />
-            <Motive />
-          </Flex>
-        </Layout>
+        <CompnayCatergories />
+        <Motive />
         <Testimonials />
-        <Layout>
-          <Flex flexDirection={'column'} gap={24}>
-            <FAQ />
-            <NewsUpdate />
-          </Flex>
-        </Layout>
+        <FAQ />
+        <NewsUpdate />
       </Flex>
     </>
   );
