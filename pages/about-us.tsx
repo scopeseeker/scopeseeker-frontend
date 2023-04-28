@@ -48,10 +48,10 @@ export default function AboutUs() {
             </VStack>
 
             {/* What we are solving part  */}
-            <Flex w="full" pt={8} flexWrap={'wrap'}>
+            <Flex w="full" flexWrap={'wrap'}>
               <MyText as="heading" title="What we are solving?" />
 
-              <HStack w={'full'} flexDirection={{base: 'column', md: 'row'}} alignItems={'flex-start'} mt={6} gap={5} bg={'blue'}>
+              <HStack w={'full'} flexDirection={{base: 'column', md: 'row'}} alignItems={'center'} mt={6} gap={5} bg={'blue'} spacing={0}>
                 <WhyBox
                   bg={'red'}
                   color={'white'}
@@ -125,7 +125,7 @@ export default function AboutUs() {
             </VStack>
 
             {/* Example part */}
-            <VStack w={'full'} px={20} minH={'50vw'} gap={10} bg={'yellow.300'}>
+            <VStack w={'full'} minH={'50vw'} gap={10} bg={'yellow.300'}>
               <VStack>
                 <MainHeading
                   title="See ScopeSeeker in Action with This Example"
@@ -143,15 +143,15 @@ export default function AboutUs() {
                   pr={12}
                 >
                   <Center
-                    h={'3xs'}
-                    w={'3xs'}
+                    h={'224px'}
+                    w={'224px'}
                     borderRadius={'full'}
                     bg={'red.50'}
                     p={8}
                   >
                     <MyImage
                       alt="example-aboutus"
-                      src={'/assets/images/privacy-policy.webp'}
+                      src={'/assets/images/privacy-policy.png'}
                       width={200}
                       height={200}
                     />
@@ -186,7 +186,7 @@ export default function AboutUs() {
                   >
                     <MyImage
                       alt="example-aboutus"
-                      src={'/assets/images/privacy-policy.webp'}
+                      src={'/assets/images/privacy-policy.png'}
                       width={200}
                       height={200}
                     />
@@ -221,7 +221,7 @@ export default function AboutUs() {
                   >
                     <MyImage
                       alt="example-aboutus"
-                      src={'/assets/images/privacy-policy.webp'}
+                      src={'/assets/images/privacy-policy.png'}
                       width={200}
                       height={200}
                     />
@@ -257,7 +257,7 @@ export default function AboutUs() {
                   >
                     <MyImage
                       alt="example-aboutus"
-                      src={'/assets/images/privacy-policy.webp'}
+                      src={'/assets/images/privacy-policy.png'}
                       width={200}
                       height={200}
                     />
@@ -476,7 +476,7 @@ const WhyBox: React.FC<IWhyBox> = ({
   iconName = 'search',
 }: IWhyBox) => {
   return (
-    <VStack w={{base: '350px', md: 56}} bg={`${bg}.100`} borderRadius={10} overflow={'hidden'}>
+    <VStack w={{base: '100%', sm: '70%' ,md: '224px'}}  bg={`${bg}.100`} borderRadius={10} overflow={'hidden'}>
       <Flex
         w={'full'}
         pt={4}
@@ -499,19 +499,20 @@ const WhyBox: React.FC<IWhyBox> = ({
 
       <VStack
         w={'full'}
-        h={28}
         alignItems={'flex-end'}
         justifyContent={'flex-end'}
       >
         <Center
-          h={100}
-          w={120}
+          h={'100px'}
+          w={'100px'}
           bg={`${bg}.300`}
-          borderTopLeftRadius={'full'}
-          pt={3}
-          pl={10}
+          // borderTopLeftRadius={'full'}
+          borderRadius={'full'}
+          borderEndEndRadius={'0px'}
+          // pt={3}
+          // pl={10}
         >
-          <MyIcon color={color} name={iconName} width={'70%'} />
+          <MyIcon color={color} name={iconName} width={'36px'} />
         </Center>
       </VStack>
     </VStack>

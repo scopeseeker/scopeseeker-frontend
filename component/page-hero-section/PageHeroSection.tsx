@@ -31,7 +31,8 @@ const PageHeroSection: React.FC<IPageHeroSection> = (props) => {
   return (
     <HStack
       w={'full'}
-      h={{ base: '20vh', md: '50vh' }}
+      minH={{ base: '20vh', md: '50vh' }}
+      maxH={'50vh'}
       bg={'brand.primary'}
       justifyContent={'space-between'}
       flexDirection={{ base: 'column', md: 'row' }}
