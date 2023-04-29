@@ -1,11 +1,4 @@
-import {
-  Layout,
-  MainHeading,
-  MyIcon,
-  MyImage,
-  MyText,
-  PageHeroSection,
-} from '@/component';
+import { Layout, MyIcon, MyImage, MyText, PageHeroSection } from '@/component';
 import { IconNameType } from '@/component/icon/MyIcon';
 import {
   Box,
@@ -51,7 +44,14 @@ export default function AboutUs() {
             <Flex w="full" flexWrap={'wrap'}>
               <MyText as="heading" title="What we are solving?" />
 
-              <HStack w={'full'} flexDirection={{base: 'column', md: 'row'}} alignItems={'center'} mt={6} gap={5} bg={'blue'} spacing={0}>
+              <HStack
+                w={'full'}
+                flexDirection={{ base: 'column', md: 'row' }}
+                alignItems={'center'}
+                mt={6}
+                gap={5}
+                spacing={0}
+              >
                 <WhyBox
                   bg={'red'}
                   color={'white'}
@@ -59,7 +59,7 @@ export default function AboutUs() {
                   cardText="The overwhelming number of job listings online makes it
                 difficult for job seekers to find opportunities that match
                 their skills and preferences."
-                iconName='search'
+                  iconName="search"
                 />
 
                 <WhyBox
@@ -100,7 +100,7 @@ export default function AboutUs() {
             <VStack w={'full'} alignItems={'flex-start'}>
               <MyText as="heading" title="How we work?" />
               <Box>
-                <OrderedList ml={{base: 5, md: 10}} spacing={1}>
+                <OrderedList ml={{ base: 5, md: 10 }} spacing={1}>
                   <ListItem>
                     <AText title="We carefully select tech companies based on their reputation, size, and growth potential." />
                   </ListItem>
@@ -125,26 +125,27 @@ export default function AboutUs() {
             </VStack>
 
             {/* Example part */}
-            <VStack w={'full'} minH={'50vw'} gap={10} bg={'yellow.300'}>
-              <VStack>
-                <MainHeading
-                  title="See ScopeSeeker in Action with This Example"
-                  subTitle="Here's a quick example to demonstrate how ScopeSeeker can help simplify the job search process."
-                />
-              </VStack>
+            <VStack alignItems={'flex-start'} w={'full'} minH={'50vw'} gap={10}>
+              <MyText
+                as="heading"
+                title="See ScopeSeeker in Action with This Example"
+              />
 
               <VStack w={'full'} gap={4}>
                 <HStack
-                  w={'full'}
+                  w={{ base: '90%', md: 'full' }}
                   justifyContent={'space-between'}
                   borderWidth="2px"
                   borderColor={'red.300'}
-                  borderRadius="full"
-                  pr={12}
+                  borderRadius={'full'}
+                  gap={'60px'}
+                  pb={{ base: '80px', sm: '0px', md: '0px' }}
+                  pr={{ base: '0px', sm: '48px', md: '48px' }}
+                  flexDirection={{ base: 'column', sm: 'row', md: 'row' }}
                 >
                   <Center
-                    h={'224px'}
-                    w={'224px'}
+                    h={{ base: '100%', sm: '224px', md: '224px' }}
+                    w={{ base: '100%', sm: '224px', md: '224px' }}
                     borderRadius={'full'}
                     bg={'red.50'}
                     p={8}
@@ -168,18 +169,25 @@ export default function AboutUs() {
                     />
                   </Box>
                 </HStack>
+
                 <HStack
-                  w={'full'}
+                  w={{ base: '90%', md: 'full' }}
                   justifyContent={'space-between'}
-                  flexDirection={'row-reverse'}
                   borderWidth="2px"
                   borderColor={'green.400'}
                   borderRadius="full"
-                  pl={12}
+                  gap={'60px'}
+                  pl={{ base: '0px', sm: '48px', md: '48px' }}
+                  pb={{ base: '80px', sm: '0px', md: '0px' }}
+                  flexDirection={{
+                    base: 'column',
+                    sm: 'row-reverse',
+                    md: 'row-reverse',
+                  }}
                 >
                   <Center
-                    h={'3xs'}
-                    w={'3xs'}
+                    h={{ base: '100%', sm: '224px', md: '224px' }}
+                    w={{ base: '100%', sm: '224px', md: '224px' }}
                     borderRadius={'full'}
                     bg={'green.50'}
                     p={8}
@@ -204,17 +212,21 @@ export default function AboutUs() {
                     />
                   </Box>
                 </HStack>
+
                 <HStack
-                  w={'full'}
+                  w={{ base: '90%', md: 'full' }}
                   justifyContent={'space-between'}
                   borderWidth="2px"
-                  borderColor={'yellow.300'}
-                  borderRadius="full"
-                  pr={12}
+                  borderColor={'red.300'}
+                  borderRadius={'full'}
+                  gap={'60px'}
+                  pb={{ base: '80px', sm: '0px', md: '0px' }}
+                  pr={{ base: '0px', sm: '48px', md: '48px' }}
+                  flexDirection={{ base: 'column', sm: 'row', md: 'row' }}
                 >
                   <Center
-                    h={'3xs'}
-                    w={'3xs'}
+                    h={{ base: '100%', sm: '224px', md: '224px' }}
+                    w={{ base: '100%', sm: '224px', md: '224px' }}
                     borderRadius={'full'}
                     bg={'yellow.50'}
                     p={8}
@@ -239,18 +251,25 @@ export default function AboutUs() {
                     />
                   </Box>
                 </HStack>
+
                 <HStack
-                  w={'full'}
+                  w={{ base: '90%', md: 'full' }}
                   justifyContent={'space-between'}
-                  flexDirection={'row-reverse'}
                   borderWidth="2px"
-                  borderColor={'blue.300'}
+                  borderColor={'green.400'}
                   borderRadius="full"
-                  pl={12}
+                  gap={'60px'}
+                  pl={{ base: '0px', sm: '48px', md: '48px' }}
+                  pb={{ base: '80px', sm: '0px', md: '0px' }}
+                  flexDirection={{
+                    base: 'column',
+                    sm: 'row-reverse',
+                    md: 'row-reverse',
+                  }}
                 >
                   <Center
-                    h={'3xs'}
-                    w={'3xs'}
+                    h={{ base: '100%', sm: '224px', md: '224px' }}
+                    w={{ base: '100%', sm: '224px', md: '224px' }}
                     borderRadius={'full'}
                     bg={'blue.50'}
                     p={8}
@@ -275,7 +294,7 @@ export default function AboutUs() {
               </VStack>
             </VStack>
 
-              {/* <VStack>
+            {/* <VStack>
                 <MainHeading
                   title="The People Who Make It Happen"
                   align="flex-start"
@@ -284,165 +303,178 @@ export default function AboutUs() {
               </VStack> */}
 
             {/* Happen part */}
-              <VStack alignItems={'flex-start'} w={'full'}>
-                <MyText as="heading" title="The People Who Make It Happen" />
-                <MyText
-                  as={'p'}
-                  title={`Meet the Scope Seeker team, the people behind the innovative
+            <VStack alignItems={'flex-start'} w={'full'}>
+              <MyText as="heading" title="The People Who Make It Happen" />
+              <MyText
+                as={'p'}
+                title={`Meet the Scope Seeker team, the people behind the innovative
                     tech job seeker platform.`}
-                />
-                <MyText
-                  as={'p'}
-                  title={`Lokesh Dhakar, our founder, is a seasoned full-stack developer
+              />
+              <MyText
+                as={'p'}
+                title={`Lokesh Dhakar, our founder, is a seasoned full-stack developer
                     with a passion for helping job seekers find their dream job
                     and creating a more inclusive job market.`}
-                />
-                <MyText
-                  as={'p'}
-                  title={`Abhijeet Raj and Abhishek Kumar, our co-founders, are both
+              />
+              <MyText
+                as={'p'}
+                title={`Abhijeet Raj and Abhishek Kumar, our co-founders, are both
                     front-end web developers. Their dedication and hard work have
                     been instrumental in making Scope Seeker a success.`}
-                />
-                <MyText
-                  as={'p'}
-                  title={`Together, our team is committed to building a platform that
+              />
+              <MyText
+                as={'p'}
+                title={`Together, our team is committed to building a platform that
                     empowers job seekers and makes the hiring process more
                     efficient and transparent. We are always striving to improve
                     our services and provide the best possible experience for our
                     users.`}
-                />
-              </VStack>
+              />
+            </VStack>
 
             {/* Team memberPhoto part  */}
-            <HStack w={'full'} flexDirection={{base: 'column', md: 'row', lg: 'row'}} gap={{base: 8, md: 0, lg: 0}}>
-                <VStack w={'full'} gap={1}>
-                  <Center
-                    h={{base: 250, md: 200}}
-                    w={{base: 250, md: 200}}
-                    borderRadius={'full'}
-                    bg={'blue.400'}
-                    overflow={'hidden'}
-                  >
-                    <MyImage src={'/assets/images/p12.jpg'} width={200} height={200} alt='picture'/>
-                  </Center>
+            <HStack
+              w={'full'}
+              flexDirection={{ base: 'column', md: 'row', lg: 'row' }}
+              gap={{ base: 8, md: 0, lg: 0 }}
+            >
+              <VStack w={'full'} gap={1}>
+                <Center
+                  h={{ base: 250, md: 200 }}
+                  w={{ base: 250, md: 200 }}
+                  borderRadius={'full'}
+                  bg={'blue.400'}
+                  overflow={'hidden'}
+                >
+                  <MyImage
+                    src={'/assets/images/p12.jpg'}
+                    width={200}
+                    height={200}
+                    alt="picture"
+                  />
+                </Center>
 
-                  <VStack spacing={0}>
-                    <MyText as="heading" title={'Lokesh Dhakar'} />
-                    <MyText as={'span'} title={`Founder`} />
-                  </VStack>
-
-                  <HStack cursor={'pointer'}>
-                    <IconButton
-                      aria-label="social-meida"
-                      p={2}
-                      color={'green.600'}
-                      icon={<MyIcon name={'whatsapp'} height="20" width="20" />}
-                      size={'sm'}
-                    />
-                    <IconButton
-                      aria-label="social-meida"
-                      p={2}
-                      color={'blue.700'}
-                      icon={<MyIcon name={'linkedin'} height="20" width="20" />}
-                      size={'sm'}
-                    />
-                    <IconButton
-                      aria-label="social-meida"
-                      p={2}
-                      color={'pink.500'}
-                      icon={
-                        <MyIcon name={'instagram'} height="20" width="20" />
-                      }
-                      size={'sm'}
-                    />
-                  </HStack>
+                <VStack spacing={0}>
+                  <MyText as="heading" title={'Lokesh Dhakar'} />
+                  <MyText as={'span'} title={`Founder`} />
                 </VStack>
 
-                <VStack w={'full'} gap={1}>
-                  <Center
-                    h={{base: 250, md: 200}}
-                    w={{base: 250, md: 200}}
-                    borderRadius={'full'}
-                    bg={'yellow.400'}
-                    overflow={'hidden'}
-                  >
-                    <MyImage src={'/assets/images/p12.jpg'} width={200} height={200} alt='picture'/>
-                  </Center>
+                <HStack cursor={'pointer'}>
+                  <IconButton
+                    aria-label="social-meida"
+                    p={2}
+                    color={'green.600'}
+                    icon={<MyIcon name={'whatsapp'} height="20" width="20" />}
+                    size={'sm'}
+                  />
+                  <IconButton
+                    aria-label="social-meida"
+                    p={2}
+                    color={'blue.700'}
+                    icon={<MyIcon name={'linkedin'} height="20" width="20" />}
+                    size={'sm'}
+                  />
+                  <IconButton
+                    aria-label="social-meida"
+                    p={2}
+                    color={'pink.500'}
+                    icon={<MyIcon name={'instagram'} height="20" width="20" />}
+                    size={'sm'}
+                  />
+                </HStack>
+              </VStack>
 
-                  <VStack spacing={0}>
-                    <MyText as="heading" title={'Abhijeet Raj'} />
-                    <MyText as={'span'} title={`Co-Founder`} />
-                  </VStack>
+              <VStack w={'full'} gap={1}>
+                <Center
+                  h={{ base: 250, md: 200 }}
+                  w={{ base: 250, md: 200 }}
+                  borderRadius={'full'}
+                  bg={'yellow.400'}
+                  overflow={'hidden'}
+                >
+                  <MyImage
+                    src={'/assets/images/p12.jpg'}
+                    width={200}
+                    height={200}
+                    alt="picture"
+                  />
+                </Center>
 
-                  <HStack cursor={'pointer'}>
-                    <IconButton
-                      aria-label="social-meida"
-                      p={2}
-                      color={'green.600'}
-                      icon={<MyIcon name={'whatsapp'} height="20" width="20" />}
-                      size={'sm'}
-                    />
-                    <IconButton
-                      aria-label="social-meida"
-                      p={2}
-                      color={'blue.700'}
-                      icon={<MyIcon name={'linkedin'} height="20" width="20" />}
-                      size={'sm'}
-                    />
-                    <IconButton
-                      aria-label="social-meida"
-                      p={2}
-                      color={'pink.500'}
-                      icon={
-                        <MyIcon name={'instagram'} height="20" width="20" />
-                      }
-                      size={'sm'}
-                    />
-                  </HStack>
+                <VStack spacing={0}>
+                  <MyText as="heading" title={'Abhijeet Raj'} />
+                  <MyText as={'span'} title={`Co-Founder`} />
                 </VStack>
 
-                <VStack w={'full'} gap={1}>
-                  <Center
-                    h={{base: 250, md: 200}}
-                    w={{base: 250, md: 200}}
-                    borderRadius={'full'}
-                    bg={'green.400'}
-                    overflow={'hidden'}
-                  >
-                    <MyImage src={'/assets/images/p12.jpg'} width={200} height={200} alt='picture'/>
-                  </Center>
+                <HStack cursor={'pointer'}>
+                  <IconButton
+                    aria-label="social-meida"
+                    p={2}
+                    color={'green.600'}
+                    icon={<MyIcon name={'whatsapp'} height="20" width="20" />}
+                    size={'sm'}
+                  />
+                  <IconButton
+                    aria-label="social-meida"
+                    p={2}
+                    color={'blue.700'}
+                    icon={<MyIcon name={'linkedin'} height="20" width="20" />}
+                    size={'sm'}
+                  />
+                  <IconButton
+                    aria-label="social-meida"
+                    p={2}
+                    color={'pink.500'}
+                    icon={<MyIcon name={'instagram'} height="20" width="20" />}
+                    size={'sm'}
+                  />
+                </HStack>
+              </VStack>
 
-                  <VStack spacing={0}>
-                    <MyText as="heading" title={'Abhishek Kumar'} />
-                    <MyText as={'span'} title={`Co-Founder`} />
-                  </VStack>
+              <VStack w={'full'} gap={1}>
+                <Center
+                  h={{ base: 250, md: 200 }}
+                  w={{ base: 250, md: 200 }}
+                  borderRadius={'full'}
+                  bg={'green.400'}
+                  overflow={'hidden'}
+                >
+                  <MyImage
+                    src={'/assets/images/p12.jpg'}
+                    width={200}
+                    height={200}
+                    alt="picture"
+                  />
+                </Center>
 
-                  <HStack cursor={'pointer'}>
-                    <IconButton
-                      aria-label="social-meida"
-                      p={2}
-                      color={'green.600'}
-                      icon={<MyIcon name={'whatsapp'} height="20" width="20" />}
-                      size={'sm'}
-                    />
-                    <IconButton
-                      aria-label="social-meida"
-                      p={2}
-                      color={'blue.700'}
-                      icon={<MyIcon name={'linkedin'} height="20" width="20" />}
-                      size={'sm'}
-                    />
-                    <IconButton
-                      aria-label="social-meida"
-                      p={2}
-                      color={'pink.500'}
-                      icon={
-                        <MyIcon name={'instagram'} height="20" width="20" />
-                      }
-                      size={'sm'}
-                    />
-                  </HStack>
+                <VStack spacing={0}>
+                  <MyText as="heading" title={'Abhishek Kumar'} />
+                  <MyText as={'span'} title={`Co-Founder`} />
                 </VStack>
+
+                <HStack cursor={'pointer'}>
+                  <IconButton
+                    aria-label="social-meida"
+                    p={2}
+                    color={'green.600'}
+                    icon={<MyIcon name={'whatsapp'} height="20" width="20" />}
+                    size={'sm'}
+                  />
+                  <IconButton
+                    aria-label="social-meida"
+                    p={2}
+                    color={'blue.700'}
+                    icon={<MyIcon name={'linkedin'} height="20" width="20" />}
+                    size={'sm'}
+                  />
+                  <IconButton
+                    aria-label="social-meida"
+                    p={2}
+                    color={'pink.500'}
+                    icon={<MyIcon name={'instagram'} height="20" width="20" />}
+                    size={'sm'}
+                  />
+                </HStack>
+              </VStack>
             </HStack>
           </VStack>
         </VStack>
@@ -476,11 +508,16 @@ const WhyBox: React.FC<IWhyBox> = ({
   iconName = 'search',
 }: IWhyBox) => {
   return (
-    <VStack w={{base: '100%', sm: '70%' ,md: '224px'}}  bg={`${bg}.100`} borderRadius={10} overflow={'hidden'}>
+    <VStack
+      w={{ base: '100%', sm: '70%', md: '224px' }}
+      bg={`${bg}.100`}
+      borderRadius={10}
+      overflow={'hidden'}
+    >
       <Flex
         w={'full'}
         pt={4}
-        minH={{base: '140px', md: '210px'}}
+        minH={{ base: '140px', md: '210px' }}
         px={4}
         alignItems={'flex-start'}
         flexDir={'column'}
@@ -497,11 +534,7 @@ const WhyBox: React.FC<IWhyBox> = ({
         <MyText as="span" title={cardText} />
       </Flex>
 
-      <VStack
-        w={'full'}
-        alignItems={'flex-end'}
-        justifyContent={'flex-end'}
-      >
+      <VStack w={'full'} alignItems={'flex-end'} justifyContent={'flex-end'}>
         <Center
           h={'100px'}
           w={'100px'}

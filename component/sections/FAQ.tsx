@@ -16,7 +16,7 @@ const FAQ = () => {
         title={'Frequently Asked Questions'}
         subTitle={'Have any question ?'}
       />
-      <Accordion allowMultiple>
+      <Accordion>
         <VStack gap={2}>
           <AccordionItem
             p={2}
@@ -24,7 +24,6 @@ const FAQ = () => {
             bg={'gray.50'}
             borderRadius={'md'}
             border={'1px solid'}
-            // borderColor={'brand.primary'}
           >
             <AccordionButton _hover={{ backgroundColor: 'none' }}>
               <Box as="span" fontSize={'md'} flex="1" textAlign="left">
@@ -90,7 +89,6 @@ const FAQ = () => {
             bg={'gray.50'}
             borderRadius={'md'}
             border={'1px solid'}
-            // borderColor={'brand.primary'}
           >
             <AccordionButton _hover={{ backgroundColor: 'none' }}>
               <Box as="span" fontSize={'md'} flex="1" textAlign="left">
@@ -112,7 +110,6 @@ const FAQ = () => {
             bg={'gray.50'}
             borderRadius={'md'}
             border={'1px solid'}
-            // borderColor={'brand.primary'}
           >
             <AccordionButton _hover={{ backgroundColor: 'none' }}>
               <Box as="span" fontSize={'md'} flex="1" textAlign="left">
