@@ -48,6 +48,7 @@ export default function AboutUs() {
                 w={'full'}
                 flexDirection={{ base: 'column', md: 'row' }}
                 alignItems={'center'}
+                justifyContent={'center'}
                 mt={6}
                 gap={5}
                 spacing={0}
@@ -125,7 +126,7 @@ export default function AboutUs() {
             </VStack>
 
             {/* Example part */}
-            <VStack alignItems={'flex-start'} w={'full'} minH={'50vw'} gap={10}>
+            <VStack w={'full'} minH={'50vw'} gap={10}>
               <MyText
                 as="heading"
                 title="See ScopeSeeker in Action with This Example"
@@ -133,34 +134,39 @@ export default function AboutUs() {
 
               <VStack w={'full'} gap={4}>
                 <HStack
-                  w={{ base: '90%', md: 'full' }}
+                  w={{ base: '100%', sm: '80%', md: 'full', lg: '80%' }}
                   justifyContent={'space-between'}
                   borderWidth="2px"
                   borderColor={'red.300'}
-                  borderRadius={'full'}
-                  gap={'60px'}
-                  pb={{ base: '80px', sm: '0px', md: '0px' }}
-                  pr={{ base: '0px', sm: '48px', md: '48px' }}
-                  flexDirection={{ base: 'column', sm: 'row', md: 'row' }}
+                  borderRadius={{ base: '0px', md: 'full' }}
+                  flexDirection={{ base: 'column', md: 'row' }}
+                  gap={'10px'}
+                  p={{ base: 0, md: '16px' }}
+                  overflow={'hidden'}
+                  borderTopRadius={{ base: '40px', md: 'full' }}
+                  spacing={0}
                 >
                   <Center
-                    h={{ base: '100%', sm: '224px', md: '224px' }}
-                    w={{ base: '100%', sm: '224px', md: '224px' }}
-                    borderRadius={'full'}
+                    borderRadius={{ md: 'full' }}
                     bg={'red.50'}
-                    p={8}
+                    p={{ base: '12px', md: '28px' }}
+                    w={{ base: '100%', md: 'fit-content' }}
                   >
                     <MyImage
                       alt="example-aboutus"
                       src={'/assets/images/privacy-policy.png'}
-                      width={200}
-                      height={200}
+                      width={80}
+                      height={80}
                     />
                   </Center>
-                  <Box w={'70%'}>
+                  <Box
+                    w={{ base: '100%', md: '80%' }}
+                    p={'10px'}
+                    textAlign={{ base: 'center', md: 'left' }}
+                  >
                     <MyText
                       as="p"
-                      title=" Meet Lokesh, a B.Tech student with a strong skill set who
+                      title=" Meet Aarav, a B.Tech student with a strong skill set who
                   often misses out on job opportunities because he doesn't
                   have the time to search multiple job boards or visit verified
                   career pages. He feels overwhelmed by the sheer number of job
@@ -169,125 +175,129 @@ export default function AboutUs() {
                     />
                   </Box>
                 </HStack>
-
                 <HStack
-                  w={{ base: '90%', md: 'full' }}
+                  w={{ base: '100%', sm: '80%', md: 'full', lg: '80%' }}
                   justifyContent={'space-between'}
                   borderWidth="2px"
-                  borderColor={'green.400'}
-                  borderRadius="full"
-                  gap={'60px'}
-                  pl={{ base: '0px', sm: '48px', md: '48px' }}
-                  pb={{ base: '80px', sm: '0px', md: '0px' }}
-                  flexDirection={{
-                    base: 'column',
-                    sm: 'row-reverse',
-                    md: 'row-reverse',
-                  }}
+                  borderColor={'green.300'}
+                  borderRadius={{ base: '0px', md: 'full' }}
+                  flexDirection={{ base: 'column', md: 'row-reverse' }}
+                  gap={'10px'}
+                  p={{ base: 0, md: '16px' }}
+                  overflow={'hidden'}
+                  borderTopRadius={{ base: '40px', md: 'full' }}
+                  spacing={0}
                 >
                   <Center
-                    h={{ base: '100%', sm: '224px', md: '224px' }}
-                    w={{ base: '100%', sm: '224px', md: '224px' }}
-                    borderRadius={'full'}
+                    borderRadius={{ md: 'full' }}
                     bg={'green.50'}
-                    p={8}
+                    p={{ base: '12px', md: '28px' }}
+                    w={{ base: '100%', md: 'fit-content' }}
                   >
                     <MyImage
                       alt="example-aboutus"
                       src={'/assets/images/privacy-policy.png'}
-                      width={200}
-                      height={200}
+                      width={80}
+                      height={80}
                     />
                   </Center>
-                  <Box w={'70%'}>
+                  <Box
+                    w={{ base: '100%', md: '80%' }}
+                    p={'18px'}
+                    textAlign={{ base: 'center', md: 'left' }}
+                  >
                     <MyText
                       as="p"
                       title="This is where Scope Seeker comes in. With Scope Seeker, Lokesh
-                  can easily search for job opportunities that match his skills
-                  and preferences in one place, saving him time and effort. Our
-                  platform continuously monitors the career pages of selected
-                  tech companies to ensure that we present the latest and most
-                  accurate job opportunities to our users, so Lokesh never has
-                  to worry about missing out on a relevant job opportunity."
+                      can easily search for job opportunities that match his skills
+                      and preferences in one place, saving him time and effort. Our
+                      platform continuously monitors the career pages of selected
+                      tech companies to ensure that we present the latest and most
+                      accurate job opportunities to our users, so Lokesh never has
+                      to worry about missing out on a relevant job opportunity."
                     />
                   </Box>
                 </HStack>
-
                 <HStack
-                  w={{ base: '90%', md: 'full' }}
+                  w={{ base: '100%', sm: '80%', md: 'full', lg: '80%' }}
                   justifyContent={'space-between'}
                   borderWidth="2px"
                   borderColor={'red.300'}
-                  borderRadius={'full'}
-                  gap={'60px'}
-                  pb={{ base: '80px', sm: '0px', md: '0px' }}
-                  pr={{ base: '0px', sm: '48px', md: '48px' }}
-                  flexDirection={{ base: 'column', sm: 'row', md: 'row' }}
+                  borderRadius={{ base: '0px', md: 'full' }}
+                  flexDirection={{ base: 'column', md: 'row' }}
+                  gap={'10px'}
+                  p={{ base: 0, md: '16px' }}
+                  overflow={'hidden'}
+                  borderTopRadius={{ base: '40px', md: 'full' }}
+                  spacing={0}
                 >
                   <Center
-                    h={{ base: '100%', sm: '224px', md: '224px' }}
-                    w={{ base: '100%', sm: '224px', md: '224px' }}
-                    borderRadius={'full'}
-                    bg={'yellow.50'}
-                    p={8}
+                    borderRadius={{ md: 'full' }}
+                    bg={'red.50'}
+                    p={{ base: '12px', md: '28px' }}
+                    w={{ base: '100%', md: 'fit-content' }}
                   >
                     <MyImage
                       alt="example-aboutus"
                       src={'/assets/images/privacy-policy.png'}
-                      width={200}
-                      height={200}
+                      width={80}
+                      height={80}
                     />
                   </Center>
-                  <Box w={'70%'}>
+                  <Box
+                    w={{ base: '100%', md: '80%' }}
+                    p={'10px'}
+                    textAlign={{ base: 'center', md: 'left' }}
+                  >
                     <MyText
                       as="p"
                       title="In addition, Scope Seeker verifies each job listing to ensure
-                    that it is high-quality and relevant to its users, giving
-                    Lokesh the confidence to apply to jobs that are the best fit
-                    for him. Overall, by using Scope Seeker, Lokesh can increase
-                    his chances of finding his dream job in the tech industry
-                    while trusting that the job listings on our platform are
-                    high-quality and relevant to his skills."
+                      that it is high-quality and relevant to its users, giving
+                      Lokesh the confidence to apply to jobs that are the best fit
+                      for him. Overall, by using Scope Seeker, Lokesh can increase
+                      his chances of finding his dream job in the tech industry
+                      while trusting that the job listings on our platform are
+                      high-quality and relevant to his skills."
                     />
                   </Box>
                 </HStack>
-
                 <HStack
-                  w={{ base: '90%', md: 'full' }}
+                  w={{ base: '100%', sm: '80%', md: 'full', lg: '80%' }}
                   justifyContent={'space-between'}
                   borderWidth="2px"
-                  borderColor={'green.400'}
-                  borderRadius="full"
-                  gap={'60px'}
-                  pl={{ base: '0px', sm: '48px', md: '48px' }}
-                  pb={{ base: '80px', sm: '0px', md: '0px' }}
-                  flexDirection={{
-                    base: 'column',
-                    sm: 'row-reverse',
-                    md: 'row-reverse',
-                  }}
+                  borderColor={'green.300'}
+                  borderRadius={{ base: '0px', md: 'full' }}
+                  flexDirection={{ base: 'column', md: 'row-reverse' }}
+                  gap={'10px'}
+                  p={{ base: 0, md: '16px' }}
+                  overflow={'hidden'}
+                  borderTopRadius={{ base: '40px', md: 'full' }}
+                  spacing={0}
                 >
                   <Center
-                    h={{ base: '100%', sm: '224px', md: '224px' }}
-                    w={{ base: '100%', sm: '224px', md: '224px' }}
-                    borderRadius={'full'}
-                    bg={'blue.50'}
-                    p={8}
+                    borderRadius={{ md: 'full' }}
+                    bg={'green.50'}
+                    p={{ base: '12px', md: '28px' }}
+                    w={{ base: '100%', md: 'fit-content' }}
                   >
                     <MyImage
                       alt="example-aboutus"
                       src={'/assets/images/privacy-policy.png'}
-                      width={200}
-                      height={200}
+                      width={80}
+                      height={80}
                     />
                   </Center>
-                  <Box w={'70%'}>
+                  <Box
+                    w={{ base: '100%', md: '80%' }}
+                    p={'18px'}
+                    textAlign={{ base: 'center', md: 'left' }}
+                  >
                     <MyText
                       as="p"
                       title="Overall, by using Scope Seeker, Lokesh can increase his
-                    chances of finding his dream job in the tech industry while
-                    trusting that the job listings on our platform are
-                    high-quality and relevant to his skills."
+                      chances of finding his dream job in the tech industry while
+                      trusting that the job listings on our platform are
+                      high-quality and relevant to his skills."
                     />
                   </Box>
                 </HStack>
