@@ -1,11 +1,6 @@
+import { Layout, MainHeading, MyIcon, MyImage, MyText } from '@/component';
 import truncatedParagraph from '@/lib/validator';
 import { Center, Flex, Grid, Text, VStack } from '@chakra-ui/react';
-import MyIcon from '../icon/MyIcon';
-import MyImage from '../image/MyImage';
-import Layout from '../layout/Layout';
-import MainHeading from '../main-heading/MainHeading';
-import MyText from '../text/MyText';
-
 const Testimonials = () => {
   return (
     <VStack bg={'brand.aliceblue'} py={'42px'}>
@@ -31,12 +26,12 @@ const Testimonials = () => {
             flexShrink={0}
             pt={'100px'}
             gap={'24px'}
-            px={'20px'}
+            // px={'20px'}
           >
             <Grid
               templateColumns={{
                 base: 'repeat(1, 1fr)',
-                sm: 'repeat(1, 1fr)',
+                sm: 'repeat(2, 1fr)',
                 md: 'repeat(2, 1fr)',
                 lg: 'repeat(3, 1fr)',
               }}
@@ -57,7 +52,7 @@ const Testimonials = () => {
                 pb={'20px'}
                 display={{
                   base: 'flex',
-                  md: 'none',
+                  sm: 'none',
                   lg: 'flex',
                 }}
               >

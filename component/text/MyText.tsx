@@ -1,17 +1,6 @@
+import { IMyText } from '@/inteface/component-interface';
 import { Text } from '@chakra-ui/react';
 import Link from 'next/link';
-
-interface IMyText {
-  title: string;
-  as: string;
-  color?: string;
-  href?: string;
-  fontWeight?: number;
-  hoverColor?: string;
-  fontSize?: { base: string; md: string };
-  [key: string]: any;
-}
-
 const MyText = ({
   title,
   as,

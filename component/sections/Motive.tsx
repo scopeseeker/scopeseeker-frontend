@@ -1,7 +1,5 @@
+import { MyIcon, MyImage, MyText } from '@/component';
 import { Center, Flex, HStack, Heading, Stack, Text } from '@chakra-ui/react';
-import MyIcon from '../icon/MyIcon';
-import MyImage from '../image/MyImage';
-import MyText from '../text/MyText';
 
 const Motive = () => {
   return (

@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export interface IMyBadge {
   color?: string;
   key?: any;
@@ -50,5 +52,87 @@ export interface IMyInputProps {
   w?: number | string;
   bg?: string;
   hpr?: string | number;
+  [key: string]: any;
+}
+
+export type IconNameType =
+  | 'job'
+  | 'instagram'
+  | 'darkMode'
+  | 'company'
+  | 'pages'
+  | 'arrow-down'
+  | 'search'
+  | 'linkedin'
+  | 'gmail'
+  | 'facebook'
+  | 'arrow'
+  | 'whatsapp'
+  | 'twitter'
+  | 'quotes-left'
+  | 'quotes-right'
+  | 'user'
+  | 'case'
+  | 'form'
+  | 'phone'
+  | 'fresher'
+  | 'global'
+  | 'college'
+  | 'add'
+  | 'github'
+  | 'check'
+  | 'searchicon'
+  | 'save'
+  | 'share'
+  | 'location'
+  | 'time';
+
+export type IconProps = {
+  name: IconNameType;
+  color?: string;
+  width?: string;
+  height?: string;
+  style?: React.CSSProperties;
+};
+
+export interface IWhyBox {
+  bg: string;
+  color: string;
+  cardNumber: number;
+  cardText: string;
+  iconName?: IconNameType;
+}
+
+export interface ILayoutProps {
+  children: ReactNode;
+  py?: { base: string; md: string };
+}
+export interface IMainHeadingProps {
+  title: string;
+  subTitle?: string;
+  align?: any;
+  headColor?: string;
+  paraColor?: string;
+}
+export interface IPageHeroSection {
+  title: string;
+  subtitle: string;
+  align?: string;
+  headColor?: string;
+  paraColor?: string;
+  alt: string;
+  w?: number;
+  h?: number;
+  src: string;
+}
+
+export interface IMyText {
+  title: string;
+  as: string;
+  color?: string;
+  href?: string;
+  fontWeight?: number;
+  hoverColor?: string;
+  fontSize?: { base: string; md: string };
   [key: string]: any;
 }

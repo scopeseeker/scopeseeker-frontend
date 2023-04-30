@@ -1,4 +1,12 @@
 import {
+  Layout,
+  MyBadge,
+  MyButton,
+  MyDivider,
+  MyImage,
+  MyText,
+} from '@/component';
+import {
   Center,
   Flex,
   HStack,
@@ -7,12 +15,6 @@ import {
   Text,
   VStack,
 } from '@chakra-ui/react';
-import { MyBadge } from '../badge';
-import { MyButton } from '../button';
-import { MyDivider } from '../divider';
-import MyImage from '../image/MyImage';
-import { Layout } from '../layout';
-import { MyText } from '../text';
 
 const HeroSection = () => {
   return (
