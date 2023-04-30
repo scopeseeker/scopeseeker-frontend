@@ -1,15 +1,7 @@
+import { IMainHeadingProps } from '@/inteface/component-interface';
 import { Heading, Text, VStack } from '@chakra-ui/react';
-import React from 'react';
 
-interface MainHeadingProps {
-  title: string;
-  subTitle?: string;
-  align?: any;
-  headColor?: string;
-  paraColor?: string;
-}
-
-const MainHeading: React.FC<MainHeadingProps> = (props) => {
+const MainHeading = (props: IMainHeadingProps) => {
   const {
     title,
     subTitle,

@@ -1,5 +1,5 @@
 import { Layout, MyIcon, MyImage, MyText, PageHeroSection } from '@/component';
-import { IconNameType } from '@/component/icon/MyIcon';
+import { IWhyBox } from '@/inteface/component-interface';
 import {
   Box,
   Center,
@@ -30,28 +30,31 @@ export default function AboutUs() {
           <VStack w={'full'} gap={12}>
             <VStack w={'full'} alignItems={'flex-start'}>
               <MyText as="heading" title="What is Scope Seeker?" />
-              <AText
+              <MyText
+                as={'p'}
                 title={
                   'Scope Seeker is a job seeker website that focuses on simplifying the tech job search process. It offers a centralized platform for job seekers to access curated job listings from selected tech companies. The website presents a curated list of job openings from top tech companies in an easy-to-use format, saving job seekers time in their job search.'
                 }
               />
-              <AText
+              <MyText
+                as={'p'}
                 title={`The platform aims to solve the problem of finding and applying for tech jobs, which can be time-consuming and overwhelming. It focuses on presenting high-quality job listings from top tech companies that match the job seeker's skills and experience. This helps job seekers to save time, reduce the chance of missing out on job opportunities, and increase their chances of finding their dream job in the tech industry.`}
               />
             </VStack>
 
-            {/* What we are solving part  */}
+            {/* What we are solving section  */}
             <Flex w="full" flexWrap={'wrap'}>
               <MyText as="heading" title="What we are solving?" />
 
               <HStack
                 w={'full'}
-                flexDirection={{ base: 'column', md: 'row' }}
+                flexDirection={{ base: 'column', sm: 'row' }}
                 alignItems={'center'}
                 justifyContent={'center'}
-                mt={6}
+                mt={'36px'}
                 gap={5}
                 spacing={0}
+                flexWrap={{ base: 'wrap', lg: 'nowrap' }}
               >
                 <WhyBox
                   bg={'red'}
@@ -97,35 +100,50 @@ export default function AboutUs() {
               </HStack>
             </Flex>
 
-            {/* How we work part */}
+            {/* How we work sections*/}
             <VStack w={'full'} alignItems={'flex-start'}>
               <MyText as="heading" title="How we work?" />
               <Box>
                 <OrderedList ml={{ base: 5, md: 10 }} spacing={1}>
                   <ListItem>
-                    <AText title="We carefully select tech companies based on their reputation, size, and growth potential." />
+                    <MyText
+                      as={'p'}
+                      title="We carefully select tech companies based on their reputation, size, and growth potential."
+                    />
                   </ListItem>
 
                   <ListItem>
-                    <AText title="We evaluate each company's history, turnover, and authenticity to ensure that they are trustworthy and have a good reputation in the tech industry." />
+                    <MyText
+                      as={'p'}
+                      title="We evaluate each company's history, turnover, and authenticity to ensure that they are trustworthy and have a good reputation in the tech industry."
+                    />
                   </ListItem>
 
                   <ListItem>
-                    <AText title="We focus specifically on the career pages of selected tech companies for tech job listings, continuously monitoring them to ensure that we present the latest and most accurate job opportunities to our users." />
+                    <MyText
+                      as={'p'}
+                      title="We focus specifically on the career pages of selected tech companies for tech job listings, continuously monitoring them to ensure that we present the latest and most accurate job opportunities to our users."
+                    />
                   </ListItem>
 
                   <ListItem>
-                    <AText title="Job seekers can search and apply for these jobs directly on the Scope Seeker website, potentially saving them time in their job search." />
+                    <MyText
+                      as={'p'}
+                      title="Job seekers can search and apply for these jobs directly on the Scope Seeker website, potentially saving them time in their job search."
+                    />
                   </ListItem>
 
                   <ListItem>
-                    <AText title="By presenting relevant and trustworthy job opportunities in an easy-to-use format, we aim to save job seekers time and increase their chances of finding their dream job in the tech industry." />
+                    <MyText
+                      as={'p'}
+                      title="By presenting relevant and trustworthy job opportunities in an easy-to-use format, we aim to save job seekers time and increase their chances of finding their dream job in the tech industry."
+                    />
                   </ListItem>
                 </OrderedList>
               </Box>
             </VStack>
 
-            {/* Example part */}
+            {/* Example Sections */}
             <VStack w={'full'} minH={'50vw'} gap={10}>
               <MyText
                 as="heading"
@@ -155,8 +173,8 @@ export default function AboutUs() {
                     <MyImage
                       alt="example-aboutus"
                       src={'/assets/images/privacy-policy.png'}
-                      width={80}
-                      height={80}
+                      width={120}
+                      height={120}
                     />
                   </Center>
                   <Box
@@ -197,8 +215,8 @@ export default function AboutUs() {
                     <MyImage
                       alt="example-aboutus"
                       src={'/assets/images/privacy-policy.png'}
-                      width={80}
-                      height={80}
+                      width={120}
+                      height={120}
                     />
                   </Center>
                   <Box
@@ -240,8 +258,8 @@ export default function AboutUs() {
                     <MyImage
                       alt="example-aboutus"
                       src={'/assets/images/privacy-policy.png'}
-                      width={80}
-                      height={80}
+                      width={120}
+                      height={120}
                     />
                   </Center>
                   <Box
@@ -283,8 +301,8 @@ export default function AboutUs() {
                     <MyImage
                       alt="example-aboutus"
                       src={'/assets/images/privacy-policy.png'}
-                      width={80}
-                      height={80}
+                      width={120}
+                      height={120}
                     />
                   </Center>
                   <Box
@@ -304,15 +322,7 @@ export default function AboutUs() {
               </VStack>
             </VStack>
 
-            {/* <VStack>
-                <MainHeading
-                  title="The People Who Make It Happen"
-                  align="flex-start"
-                  subTitle="Meet the talented and dedicated individuals who make our business thrive. Our amazing team is the driving force behind our success, and we're proud to introduce them to you."
-                />
-              </VStack> */}
-
-            {/* Happen part */}
+            {/* Team Member Sections  */}
             <VStack alignItems={'flex-start'} w={'full'}>
               <MyText as="heading" title="The People Who Make It Happen" />
               <MyText
@@ -341,12 +351,10 @@ export default function AboutUs() {
                     users.`}
               />
             </VStack>
-
-            {/* Team memberPhoto part  */}
             <HStack
               w={'full'}
               flexDirection={{ base: 'column', md: 'row', lg: 'row' }}
-              gap={{ base: 8, md: 0, lg: 0 }}
+              gap={{ base: '68px', md: 0 }}
             >
               <VStack w={'full'} gap={1}>
                 <Center
@@ -358,8 +366,8 @@ export default function AboutUs() {
                 >
                   <MyImage
                     src={'/assets/images/p12.jpg'}
-                    width={200}
-                    height={200}
+                    width={300}
+                    height={300}
                     alt="picture"
                   />
                 </Center>
@@ -404,8 +412,8 @@ export default function AboutUs() {
                 >
                   <MyImage
                     src={'/assets/images/p12.jpg'}
-                    width={200}
-                    height={200}
+                    width={300}
+                    height={300}
                     alt="picture"
                   />
                 </Center>
@@ -450,8 +458,8 @@ export default function AboutUs() {
                 >
                   <MyImage
                     src={'/assets/images/p12.jpg'}
-                    width={200}
-                    height={200}
+                    width={300}
+                    height={300}
                     alt="picture"
                   />
                 </Center>
@@ -492,25 +500,7 @@ export default function AboutUs() {
     </>
   );
 }
-
-interface IText {
-  title: string;
-}
-
-const AText = (props: IText) => {
-  const { title } = props;
-  return <MyText as={'p'} title={title} />;
-};
-
-interface IWhyBox {
-  bg: string;
-  color: string;
-  cardNumber: number;
-  cardText: string;
-  iconName?: IconNameType;
-}
-
-const WhyBox: React.FC<IWhyBox> = ({
+const WhyBox = ({
   bg,
   color,
   cardNumber,
@@ -519,7 +509,7 @@ const WhyBox: React.FC<IWhyBox> = ({
 }: IWhyBox) => {
   return (
     <VStack
-      w={{ base: '100%', sm: '70%', md: '224px' }}
+      w={{ base: '100%', sm: '224px' }}
       bg={`${bg}.100`}
       borderRadius={10}
       overflow={'hidden'}
@@ -549,11 +539,8 @@ const WhyBox: React.FC<IWhyBox> = ({
           h={'100px'}
           w={'100px'}
           bg={`${bg}.300`}
-          // borderTopLeftRadius={'full'}
           borderRadius={'full'}
           borderEndEndRadius={'0px'}
-          // pt={3}
-          // pl={10}
         >
           <MyIcon color={color} name={iconName} width={'36px'} />
         </Center>

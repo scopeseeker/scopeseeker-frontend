@@ -1,22 +1,10 @@
+import { IPageHeroSection } from '@/inteface/component-interface';
 import { Center, HStack, VStack } from '@chakra-ui/react';
-import React from 'react';
 import MyImage from '../image/MyImage';
 import Layout from '../layout/Layout';
 import MainHeading from '../main-heading/MainHeading';
 
-interface IPageHeroSection {
-  title: string;
-  subtitle: string;
-  align?: string;
-  headColor?: string;
-  paraColor?: string;
-  alt: string;
-  w?: number;
-  h?: number;
-  src: string;
-}
-
-const PageHeroSection: React.FC<IPageHeroSection> = (props) => {
+const PageHeroSection = (props: IPageHeroSection) => {
   const {
     title,
     subtitle,

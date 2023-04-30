@@ -87,23 +87,23 @@ const Navbar = () => {
               />
             </Center>
 
-            <Center _groupHover={{color: 'brand.primary'}}>
-              <Box _groupHover={{color: 'brand.primary'}}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="ionicon"
-                viewBox="0 0 512 512"
-                width={'16px'}
-                height={'16px'}
-              >
-                <path
-                  d="M176 416v64M80 32h192a32 32 0 0132 32v412a4 4 0 01-4 4H48h0V64a32 32 0 0132-32zM320 192h112a32 32 0 0132 32v256h0-160 0V208a16 16 0 0116-16z"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinejoin="round"
-                  strokeWidth="28"
-                />
-              </svg>
+            <Center _groupHover={{ color: 'brand.primary' }}>
+              <Box _groupHover={{ color: 'brand.primary' }}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="ionicon"
+                  viewBox="0 0 512 512"
+                  width={'16px'}
+                  height={'16px'}
+                >
+                  <path
+                    d="M176 416v64M80 32h192a32 32 0 0132 32v412a4 4 0 01-4 4H48h0V64a32 32 0 0132-32zM320 192h112a32 32 0 0132 32v256h0-160 0V208a16 16 0 0116-16z"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeLinejoin="round"
+                    strokeWidth="28"
+                  />
+                </svg>
               </Box>
 
               <MyText

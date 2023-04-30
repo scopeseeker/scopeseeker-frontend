@@ -1,45 +1,6 @@
 import { IconLibrary } from '@/constant/IconLibrary';
+import { IconProps } from '@/inteface/component-interface';
 import { Box } from '@chakra-ui/react';
-import React from 'react';
-
-export type IconNameType =
-  | 'job'
-  | 'instagram'
-  | 'darkMode'
-  | 'company'
-  | 'pages'
-  | 'arrow-down'
-  | 'search'
-  | 'linkedin'
-  | 'gmail'
-  | 'facebook'
-  | 'arrow'
-  | 'whatsapp'
-  | 'twitter'
-  | 'quotes-left'
-  | 'quotes-right'
-  | 'user'
-  | 'case'
-  | 'form'
-  | 'phone'
-  | 'fresher'
-  | 'global'
-  | 'college'
-  | 'add'
-  | 'github'
-  | 'check'
-  | 'searchicon'
-  | 'save'
-  | 'share'
-  | 'location'
-  | 'time';
-export type IconProps = {
-  name: IconNameType;
-  color?: string;
-  width?: string;
-  height?: string;
-  style?: React.CSSProperties;
-};
 
 const MyIcon = ({ name, style, color, ...rest }: IconProps) => {
   const transform = IconLibrary[name]?.transform;

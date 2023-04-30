@@ -1,6 +1,5 @@
+import { Layout, MainHeading } from '@/component';
 import { HStack, VStack } from '@chakra-ui/react';
-import { Layout } from '../layout';
-import { MainHeading } from '../main-heading';
 const Works = () => {
   return (
     <Layout>

@@ -198,6 +198,8 @@ const Footer = () => {
   );
 };
 
+export default Footer;
+
 interface IFooterHeading {
   title: string;
 }
@@ -206,17 +208,14 @@ const FooterHeading: React.FC<IFooterHeading> = ({ title }: IFooterHeading) => {
   return <MyText as="heading" title={title} color="brand.white" />;
 };
 
-interface IFooterLink {
-  title: string;
-  link: string;
+interface IFooterHeading {
+  link?: string;
 }
 
-const FooterLink: React.FC<IFooterLink> = ({ title, link }: IFooterLink) => {
+const FooterLink = ({ title, link = '#' }: IFooterHeading) => {
   return (
     <Link href={link}>
       <MyText title={title} as="span" color="brand.white" />
     </Link>
   );
 };
-
-export default Footer;
