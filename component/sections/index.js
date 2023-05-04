@@ -1,9 +1,9 @@
-export { default as Categories } from './Categories';
-export { default as Company } from './Company';
-export { default as CompanyCategory } from './CompanyCategory';
+export { default as Company } from './CompanyList';
 export { default as FAQ } from './FAQ';
+export { default as CompanyCategory } from './FeaturedCompany';
 export { default as HeroSection } from './HeroSection';
-export { default as Motive } from './Motive';
-export { default as NewsUpdate } from './NewsUpdate';
+export { default as Works } from './HowWorks';
+export { default as Motive } from './MoreIntroSection';
+export { default as Categories } from './PopularCategories';
+export { default as NewsUpdate } from './Subscribe';
 export { default as Testimonials } from './Testimonials';
-export { default as Works } from './Works';

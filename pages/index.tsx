@@ -8,7 +8,7 @@ import {
   Testimonials,
   Works,
 } from '@/component';
-import CompnayCatergories from '@/component/sections/CompanyCategory';
+import CompnayCatergories from '@/component/sections/FeaturedCompany';
 import { Flex } from '@chakra-ui/react';
 import Head from 'next/head';
 
