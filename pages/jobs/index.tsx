@@ -17,7 +17,7 @@ import {
 } from '@chakra-ui/react';
 import Head from 'next/head';
 import { useState } from 'react';
-import { jobsFilter } from '../constant/filterFields';
+import { jobsFilter } from '../../constant/filterFields';
 
 export default function Jobs() {
   const [isSortClicked, setIsSortClicked] = useState(true);
