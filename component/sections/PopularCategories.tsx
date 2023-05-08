@@ -18,7 +18,7 @@ const Categories = () => {
         <VStack w={'full'}>
           <HStack my={'80px'} gap={'20px'} flexWrap={'wrap'} spacing={0} justifyContent={'center'}>
             <>
-              {popularCategoryObject.map((item) => {
+              {popularCategoryObject.map((item, key) => {
                 return (
                   <VStack
                     w={{base: '100%',sm: '40%', md: '220px'}}
@@ -26,6 +26,7 @@ const Categories = () => {
                     py={{base: '40px', md: '32px'}}
                     borderRadius={'8px'}
                     gap={{base: '14px', md: '8px'}}
+                    key={key}
                   >
                     <IconButton
                       aria-label="categories"
