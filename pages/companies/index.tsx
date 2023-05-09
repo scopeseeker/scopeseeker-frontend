@@ -1,11 +1,5 @@
-import {
-  Filter,
-  Layout,
-  MyButton,
-  MyDivider,
-  MyJobCard,
-  MyText,
-} from '@/component';
+import { Filter, Layout, MyButton, MyDivider, MyText } from '@/component';
+import MyCompanyCard from '@/component/cards/MyCompanyCard';
 import {
   Box,
   Center,
@@ -214,7 +208,7 @@ export default function CompaniesPage() {
                 pt={'25px'}
               >
                 <GridItem>
-                  <MyJobCard
+                  <MyCompanyCard
                     companyIconLogo={
                       '/assets/images/company-logo/bookmyshow.png'
                     }
@@ -235,7 +229,7 @@ export default function CompaniesPage() {
                   />
                 </GridItem>
                 <GridItem>
-                  <MyJobCard
+                  <MyCompanyCard
                     companyIconLogo={
                       '/assets/images/company-logo/bookmyshow.png'
                     }
@@ -256,7 +250,7 @@ export default function CompaniesPage() {
                   />
                 </GridItem>
                 <GridItem>
-                  <MyJobCard
+                  <MyCompanyCard
                     companyIconLogo={
                       '/assets/images/company-logo/bookmyshow.png'
                     }
@@ -277,7 +271,7 @@ export default function CompaniesPage() {
                   />
                 </GridItem>
                 <GridItem>
-                  <MyJobCard
+                  <MyCompanyCard
                     companyIconLogo={
                       '/assets/images/company-logo/bookmyshow.png'
                     }
@@ -298,7 +292,7 @@ export default function CompaniesPage() {
                   />
                 </GridItem>
                 <GridItem>
-                  <MyJobCard
+                  <MyCompanyCard
                     companyIconLogo={
                       '/assets/images/company-logo/bookmyshow.png'
                     }
@@ -319,70 +313,7 @@ export default function CompaniesPage() {
                   />
                 </GridItem>
                 <GridItem>
-                  <MyJobCard
-                    companyIconLogo={
-                      '/assets/images/company-logo/bookmyshow.png'
-                    }
-                    role={'Frontend Developer'}
-                    companyName={'Tata Consultancy Service'}
-                    location={'Bhopal, Madhaya Pradesh'}
-                    jobType={[
-                      'Full Time',
-                      'Part Time',
-                      'Internship',
-                      'Startup',
-                      'Indian MNC',
-                    ]}
-                    companyDesc="UX designers measure and optimize applications to improve ease of use
-        (usability), and create the best user experience by exploring many
-       diffrent approaches to solve end's-user problems"
-                    isNamedLogo={true}
-                  />
-                </GridItem>
-                <GridItem>
-                  <MyJobCard
-                    companyIconLogo={
-                      '/assets/images/company-logo/bookmyshow.png'
-                    }
-                    role={'Frontend Developer'}
-                    companyName={'Tata Consultancy Service'}
-                    location={'Bhopal, Madhaya Pradesh'}
-                    jobType={[
-                      'Full Time',
-                      'Part Time',
-                      'Internship',
-                      'Startup',
-                      'Indian MNC',
-                    ]}
-                    companyDesc="UX designers measure and optimize applications to improve ease of use
-        (usability), and create the best user experience by exploring many
-       diffrent approaches to solve end's-user problems"
-                    isNamedLogo={true}
-                  />
-                </GridItem>
-                <GridItem>
-                  <MyJobCard
-                    companyIconLogo={
-                      '/assets/images/company-logo/bookmyshow.png'
-                    }
-                    role={'Frontend Developer'}
-                    companyName={'Tata Consultancy Service'}
-                    location={'Bhopal, Madhaya Pradesh'}
-                    jobType={[
-                      'Full Time',
-                      'Part Time',
-                      'Internship',
-                      'Startup',
-                      'Indian MNC',
-                    ]}
-                    companyDesc="UX designers measure and optimize applications to improve ease of use
-        (usability), and create the best user experience by exploring many
-       diffrent approaches to solve end's-user problems"
-                    isNamedLogo={true}
-                  />
-                </GridItem>
-                <GridItem>
-                  <MyJobCard
+                  <MyCompanyCard
                     companyIconLogo={
                       '/assets/images/company-logo/bookmyshow.png'
                     }
