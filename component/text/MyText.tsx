@@ -52,7 +52,7 @@ const MyText = ({
           color={color}
           as={'span'}
           fontFamily={'heading'}
-          fontWeight={600}
+          fontWeight={fontWeight ? fontWeight : 600}
           fontSize={{ base: '14px', md: '14px' }}
           {...rest}
         >

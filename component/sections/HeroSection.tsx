@@ -126,7 +126,7 @@ const HeroSection = () => {
         justifyContent={'center'}
         color={'brand.white'}
         px={'12px'}
-        mt={'42px'}
+        mt={'72px'}
       >
         <VStack w={'120px'} h={'full'} justifyContent={'center'}>
           <MyDivider />

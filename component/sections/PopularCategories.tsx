@@ -1,9 +1,8 @@
 import { popularCategoryObject } from '@/constant/fields';
-import { HStack, IconButton, Text, VStack } from '@chakra-ui/react';
+import { Center, HStack, VStack } from '@chakra-ui/react';
 import MyButton from '../button/MyButton';
-import MyIcon from '../icon/MyIcon';
-import MainHeading from '../main-heading/MainHeading';
 import { Layout } from '../layout';
+import MainHeading from '../main-heading/MainHeading';
 import { MyText } from '../text';
 
 const Categories = () => {
@@ -16,44 +15,103 @@ const Categories = () => {
         />
 
         <VStack w={'full'}>
-          <HStack my={'80px'} gap={'20px'} flexWrap={'wrap'} spacing={0} justifyContent={'center'}>
+          <HStack
+            my={'80px'}
+            gap={'20px'}
+            flexWrap={'wrap'}
+            spacing={0}
+            justifyContent={'center'}
+          >
             <>
               {popularCategoryObject.map((item, key) => {
                 return (
-                  <VStack
-                    w={{base: '100%',sm: '40%', md: '220px'}}
-                    bg={'brand.white'}
-                    py={{base: '40px', md: '32px'}}
-                    borderRadius={'8px'}
-                    gap={{base: '14px', md: '8px'}}
-                    key={key}
-                  >
-                    <IconButton
-                      aria-label="categories"
-                      icon={
-                        <MyIcon
-                          name={'job'}
-                          width='24px'
-                          color="brand.primary"
-                        />
-                      }
-                      size={'lg'}
-                    />
+                  // <VStack
+                  //   w={{base: '100%',sm: '40%', md: '220px'}}
+                  //   bg={'brand.white'}
+                  //   py={{base: '40px', md: '32px'}}
+                  //   borderRadius={'8px'}
+                  //   gap={{base: '14px', md: '8px'}}
+                  //   key={key}
+                  //   flexDirection={'row'}
+                  // >
+                  //   <IconButton
+                  //     aria-label="categories"
+                  //     icon={
+                  //       <MyIcon
+                  //         name={'job'}
+                  //         width='24px'
+                  //         color="brand.primary"
+                  //       />
+                  //     }
+                  //     size={'lg'}
+                  //   />
+                  //   <VStack lineHeight={1}>
+                  //     <MyText
+                  //       as={'link'}
+                  //       title={item.fieldName}
+                  //       color="brand.black"
+                  //       fontWeight={500}
+                  //     />
+                  //   </VStack>
+                  // </VStack>
 
-                    <VStack lineHeight={1}>
-                      <MyText
-                        as={'link'}
-                        title={item.fieldName}
-                        color="brand.black"
-                        fontWeight={500}
-                      />
-                      <MyText
-                        as={'span'}
-                        title={`(${item.opening} open positions)`}
-                        fontSize={{base: '11px', md: '10px'}}
-                      />
-                    </VStack>
-                  </VStack>
+                  <Center
+                    w={{
+                      base: '90vw',
+                      md: '100%',
+                      lg: '250px',
+                      '2xl': '350px',
+                    }}
+                    h={{ base: '315px', sm: '280px', md: '145px' }}
+                    borderRadius={10}
+                    cursor={'pointer'}
+                    px={'20px'}
+                    py={'12px'}
+                    bg={'brand.white'}
+                    border={'1px solid'}
+                    borderColor={'transparent'}
+                    _hover={{
+                      borderColor: 'brand.primary',
+                      boxShadow: '0px 0px 10px rgb(0,0,0,0.1)',
+                    }}
+                    flexDirection={'column'}
+                    gap={'12px'}
+                  >
+                    <Center
+                      bg={'brand.primary'}
+                      p={'8px'}
+                      borderRadius={'50%'}
+                      color={'white'}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="icon icon-tabler icon-tabler-code"
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        stroke-width="1"
+                        stroke="currentColor"
+                        fill="none"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path
+                          stroke="none"
+                          d="M0 0h24v24H0z"
+                          fill="none"
+                        ></path>
+                        <path d="M7 8l-4 4l4 4"></path>
+                        <path d="M17 8l4 4l-4 4"></path>
+                        <path d="M14 4l-4 16"></path>
+                      </svg>
+                    </Center>
+
+                    <MyText
+                      title={item.fieldName}
+                      as="title"
+                      fontWeight={500}
+                    />
+                  </Center>
                 );
               })}
             </>
