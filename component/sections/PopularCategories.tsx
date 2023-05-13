@@ -89,7 +89,7 @@ const Categories = () => {
                         width="32"
                         height="32"
                         viewBox="0 0 24 24"
-                        stroke-width="1"
+                        strokeWidth="1"
                         stroke="currentColor"
                         fill="none"
                         strokeLinecap="round"
