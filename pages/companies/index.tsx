@@ -1,5 +1,6 @@
 import { Filter, Layout, MyButton, MyDivider, MyText } from '@/component';
 import MyCompanyCard from '@/component/cards/MyCompanyCard';
+import { companyFilter } from '@/constant/constantFields';
 import {
   Box,
   Center,
@@ -11,7 +12,6 @@ import {
 } from '@chakra-ui/react';
 import Head from 'next/head';
 import { useState } from 'react';
-import { companyFilter } from '../../constant/filterFields';
 
 export default function CompaniesPage() {
   const [isSortClicked, setIsSortClicked] = useState(true);

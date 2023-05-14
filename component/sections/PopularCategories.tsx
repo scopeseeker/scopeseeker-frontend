@@ -1,8 +1,8 @@
-import { popularCategoryObject } from '@/constant/fields';
+import { popularCategoryObject } from '@/constant/constantFields';
 import { Center, HStack, VStack } from '@chakra-ui/react';
-import MyButton from '../button/MyButton';
+import { MyButton } from '../button';
 import { Layout } from '../layout';
-import MainHeading from '../main-heading/MainHeading';
+import { MainHeading } from '../main-heading';
 import { MyText } from '../text';
 
 const Categories = () => {
@@ -25,36 +25,6 @@ const Categories = () => {
             <>
               {popularCategoryObject.map((item, key) => {
                 return (
-                  // <VStack
-                  //   w={{base: '100%',sm: '40%', md: '220px'}}
-                  //   bg={'brand.white'}
-                  //   py={{base: '40px', md: '32px'}}
-                  //   borderRadius={'8px'}
-                  //   gap={{base: '14px', md: '8px'}}
-                  //   key={key}
-                  //   flexDirection={'row'}
-                  // >
-                  //   <IconButton
-                  //     aria-label="categories"
-                  //     icon={
-                  //       <MyIcon
-                  //         name={'job'}
-                  //         width='24px'
-                  //         color="brand.primary"
-                  //       />
-                  //     }
-                  //     size={'lg'}
-                  //   />
-                  //   <VStack lineHeight={1}>
-                  //     <MyText
-                  //       as={'link'}
-                  //       title={item.fieldName}
-                  //       color="brand.black"
-                  //       fontWeight={500}
-                  //     />
-                  //   </VStack>
-                  // </VStack>
-
                   <Center
                     w={{
                       base: '90vw',

@@ -1,3 +1,4 @@
+import { faqFieldsObject } from '@/constant/constantFields';
 import {
   Accordion,
   AccordionButton,
@@ -8,7 +9,6 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import { MainHeading } from '../main-heading';
-import faqFieldObject from '@/constant/faqField';
 
 const FAQ = () => {
   return (
@@ -19,7 +19,7 @@ const FAQ = () => {
       />
       <Accordion>
         <VStack gap={2}>
-          {faqFieldObject.map((items, key) => {
+          {faqFieldsObject.map((items, key) => {
             return (
               <AccordionItem
                 p={2}
