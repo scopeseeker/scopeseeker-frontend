@@ -6,6 +6,7 @@ import {
   MyJobCard,
   MyText,
 } from '@/component';
+import { jobsFilter } from '@/constant/constantFields';
 import {
   Box,
   Center,
@@ -17,7 +18,6 @@ import {
 } from '@chakra-ui/react';
 import Head from 'next/head';
 import { useState } from 'react';
-import { jobsFilter } from '../../constant/filterFields';
 
 export default function Jobs() {
   const [isSortClicked, setIsSortClicked] = useState(true);
