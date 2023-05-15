@@ -27,6 +27,7 @@ const FAQ = () => {
                 bg={'gray.50'}
                 borderRadius={'md'}
                 border={'1px solid'}
+                key={key}
               >
                 <AccordionButton _hover={{ backgroundColor: 'none' }}>
                   <Box as="span" fontSize={'md'} flex="1" textAlign="left">

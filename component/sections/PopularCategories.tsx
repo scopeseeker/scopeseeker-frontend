@@ -26,6 +26,7 @@ const Categories = () => {
               {popularCategoryObject.map((item, key) => {
                 return (
                   <Center
+                    key={key}
                     w={{
                       base: '90vw',
                       md: '100%',
