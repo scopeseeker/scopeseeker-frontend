@@ -16,8 +16,8 @@ const Categories = () => {
 
         <VStack w={'full'}>
           <HStack
-            my={'80px'}
-            gap={'20px'}
+            py={'80px'}
+            gap={'30px'}
             flexWrap={'wrap'}
             spacing={0}
             justifyContent={'center'}
