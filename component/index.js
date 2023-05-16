@@ -21,8 +21,10 @@ import {
   NewsUpdate,
   Testimonials,
   Works,
+  SignupSection
 } from './sections';
 import { MyText } from './text';
+
 
 export {
   MyBadge,
@@ -48,4 +50,5 @@ export {
   PageHeroSection,
   Testimonials,
   Works,
+  SignupSection
 };

@@ -7,3 +7,4 @@ export { default as Motive } from './MoreIntroSection';
 export { default as Categories } from './PopularCategories';
 export { default as NewsUpdate } from './Subscribe';
 export { default as Testimonials } from './Testimonials';
+export { default as SignupSection } from './SignupSection';

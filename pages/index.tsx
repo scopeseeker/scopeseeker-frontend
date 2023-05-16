@@ -5,6 +5,7 @@ import {
   HeroSection,
   Motive,
   NewsUpdate,
+  SignupSection,
   Testimonials,
   Works,
 } from '@/component';
@@ -33,6 +34,7 @@ export default function Home() {
         <Motive />
         <Testimonials />
         <FAQ />
+        <SignupSection />
         <NewsUpdate />
       </Flex>
     </>
