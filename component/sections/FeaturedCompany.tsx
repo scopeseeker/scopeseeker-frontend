@@ -1,8 +1,7 @@
 import { Center } from '@chakra-ui/react';
-import MyCompanyCard from '../cards/MyCompanyCard';
 import { Layout } from '../layout';
-import MainHeading from '../main-heading/MainHeading';
-
+import { MainHeading } from '../main-heading';
+import { MyCompanyCard } from '../cards';
 const CompnayCatergories = () => {
   return (
     <Layout>
@@ -25,9 +24,10 @@ const CompnayCatergories = () => {
           pt={'40px'}
         >
           <>
-            {[1, 1, 1, 1].map(() => {
+            {[1, 1, 1, 1].map((key) => {
               return (
                 <MyCompanyCard
+                  key={key}
                   companyIconLogo={'/assets/images/company-logo/bookmyshow.png'}
                   role={'Frontend Developer'}
                   companyName={'Tata Consultancy Service'}

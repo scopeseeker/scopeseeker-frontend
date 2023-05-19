@@ -1,6 +1,6 @@
 import { MyBadge } from './badge';
 import { MyButton } from './button';
-import { MyJobCard } from './cards';
+import { MyJobCard, MyCompanyCard } from './cards';
 import { MyDivider } from './divider';
 import { Filter } from './filter';
 import { Footer } from './footer';
@@ -50,5 +50,6 @@ export {
   PageHeroSection,
   Testimonials,
   Works,
-  SignupSection
+  SignupSection,
+  MyCompanyCard
 };

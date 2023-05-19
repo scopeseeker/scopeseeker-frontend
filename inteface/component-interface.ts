@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 
 export interface IMyBadge {
   color?: string;
@@ -40,18 +40,11 @@ export interface IFilter {
 }
 
 export interface IMyInputProps {
-  inputFontSize?: string;
-  labelFontSize?: string;
-  labelTitle?: string;
-  placeholder?: string;
-  size?: string;
+  placeholder: string;
+  leftElement: React.ReactNode;
+  rightElement?: React.ReactNode;
   type: string;
-  mt?: number;
-  leftElem?: React.ReactNode;
-  rightElem?: React.ReactNode;
-  w?: number | string;
-  bg?: string;
-  hpr?: string | number;
+  labelTitle?: string;
   [key: string]: any;
 }
 
