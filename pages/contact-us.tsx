@@ -39,28 +39,28 @@ export default function ContactUs() {
                   <Heading fontSize={'2xl'}>
                     You can share your query here!
                   </Heading>
-                  <MyInput
+                  {/* <MyInput
                     size="sm"
                     labelTitle="Full Name"
                     placeholder="John Doe"
                     w={'100%'}
                     type="text"
-                  />
+                  /> */}
                   <HStack w={'full'}>
-                    <MyInput
+                    {/* <MyInput
                       labelTitle="Email"
                       placeholder="example@gmail.com"
                       w={'50%'}
                       type="text"
                       size={'sm'}
-                    />
-                    <MyInput
+                    /> */}
+                    {/* <MyInput
                       labelTitle="Phone"
                       size="sm"
                       placeholder="9876543211"
                       w={'50%'}
                       type="number"
-                    />
+                    /> */}
                   </HStack>
 
                   <VStack w={'full'} alignItems={'flex-start'}>
