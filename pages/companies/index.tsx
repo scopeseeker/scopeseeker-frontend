@@ -11,103 +11,17 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import Head from 'next/head';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 export default function CompaniesPage() {
   const [isSortClicked, setIsSortClicked] = useState(true);
+  const companyBoxRef = useRef<HTMLDivElement>(null);
   return (
     <>
       <Head>
         <title>Companies | Scope Seeker</title>
       </Head>
       <Layout>
-        <Center
-          w={'full'}
-          h={'30vh'}
-          flexDirection={'column'}
-          pt={'30px'}
-          pb={'60px'}
-        >
-          <MyText as="heading" title="These companies are activily hiring" />
-          <MyText
-            as="span"
-            title="See the all company based on cateogires which are activily hiring."
-          />
-          <HStack pt={'20px'} gap={'8px'}>
-            <Center
-              w={'160px'}
-              boxShadow={'0px 0px 60px rgb(0, 0, 0, 0.1)'}
-              border={'1px solid'}
-              borderColor={'brand.lightgray'}
-              h={'60px'}
-              bg={'brand.white'}
-              borderTopEndRadius={'12px'}
-              borderBottomLeftRadius={'12px'}
-            >
-              <MyText as={'span'} title={'Indian MNCs'} fontWeight={500} />
-            </Center>
-            <Center
-              w={'160px'}
-              boxShadow={'0px 0px 60px rgb(0, 0, 0, 0.1)'}
-              border={'1px solid'}
-              borderColor={'brand.lightgray'}
-              h={'60px'}
-              bg={'brand.white'}
-              borderTopEndRadius={'12px'}
-              borderBottomLeftRadius={'12px'}
-            >
-              <MyText as={'span'} title={'Foriegn MNCs'} fontWeight={500} />
-            </Center>
-            <Center
-              w={'160px'}
-              boxShadow={'0px 0px 60px rgb(0, 0, 0, 0.1)'}
-              border={'1px solid'}
-              borderColor={'brand.lightgray'}
-              h={'60px'}
-              bg={'brand.white'}
-              borderTopEndRadius={'12px'}
-              borderBottomLeftRadius={'12px'}
-            >
-              <MyText as={'span'} title={'FinTech'} fontWeight={500} />
-            </Center>
-            <Center
-              w={'160px'}
-              boxShadow={'0px 0px 60px rgb(0, 0, 0, 0.1)'}
-              border={'1px solid'}
-              borderColor={'brand.lightgray'}
-              h={'60px'}
-              bg={'brand.white'}
-              borderTopEndRadius={'12px'}
-              borderBottomLeftRadius={'12px'}
-            >
-              <MyText as={'span'} title={'HealthCare'} fontWeight={500} />
-            </Center>
-            <Center
-              w={'160px'}
-              boxShadow={'0px 0px 60px rgb(0, 0, 0, 0.1)'}
-              border={'1px solid'}
-              borderColor={'brand.lightgray'}
-              h={'60px'}
-              bg={'brand.white'}
-              borderTopEndRadius={'12px'}
-              borderBottomLeftRadius={'12px'}
-            >
-              <MyText as={'span'} title={'Product Based'} fontWeight={500} />
-            </Center>
-            <Center
-              w={'160px'}
-              boxShadow={'0px 0px 60px rgb(0, 0, 0, 0.1)'}
-              border={'1px solid'}
-              borderColor={'brand.lightgray'}
-              h={'60px'}
-              bg={'brand.white'}
-              borderTopEndRadius={'12px'}
-              borderBottomLeftRadius={'12px'}
-            >
-              <MyText as={'span'} title={'Service Based'} fontWeight={500} />
-            </Center>
-          </HStack>
-        </Center>
         <VStack
           gap={{ base: '30px', lg: '40px' }}
           w={{ base: '100%', lg: '100%' }}
@@ -144,6 +58,127 @@ export default function CompaniesPage() {
             <MyButton title="Find Jobs" size="lg" h={'full'} borderRadius={0} />
           </HStack>
           <MyDivider />
+
+          <HStack
+            maxW={'90%'}
+            bg={'brand.aliceblue'}
+            py={'12px'}
+            borderRadius={'12px'}
+            px={'24px'}
+          >
+            <Center
+              px={'12px'}
+              cursor={'pointer'}
+              onClick={() => {
+                if (companyBoxRef && companyBoxRef.current) {
+                  companyBoxRef.current.scrollLeft -= 168;
+                }
+              }}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="ionicon"
+                viewBox="0 0 512 512"
+                width="24"
+              >
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="32"
+                  d="M249.38 336L170 256l79.38-80M181.03 256H342"
+                />
+                <path
+                  d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-miterlimit="10"
+                  strokeWidth="32"
+                />
+              </svg>
+            </Center>
+            <Center
+              px={'5px'}
+              justifyContent={'flex-start'}
+              gap={'8px'}
+              width={'840px'}
+              py={'12px'}
+              overflowX={'scroll'}
+              css={{
+                '&::-webkit-scrollbar': {
+                  // display: 'none',
+                  height: '5px',
+                },
+              }}
+              cursor={'pointer'}
+              ref={companyBoxRef}
+              scrollBehavior={'smooth'}
+            >
+              <>
+                {[
+                  'Indian MNCs',
+                  'Fortune 500',
+                  'FinTech',
+                  'Unicron',
+                  'Healthcare',
+                  'Information',
+                  'Unicron',
+                  'Healthcare',
+                  'Information',
+                ].map((item, key) => {
+                  return (
+                    <Center
+                      key={key}
+                      w={'160px'}
+                      flexShrink={0}
+                      // boxShadow={'0px 0px 5px rgb(0, 0, 0, 0.1)'}
+                      border={'1px solid'}
+                      borderColor={'brand.lightgray'}
+                      h={'60px'}
+                      borderTopEndRadius={'12px'}
+                      backgroundColor={'brand.white'}
+                      borderBottomLeftRadius={'12px'}
+                    >
+                      <MyText as={'span'} title={item} fontWeight={500} />
+                    </Center>
+                  );
+                })}
+              </>
+            </Center>
+            <Center
+              px={'12px'}
+              cursor={'pointer'}
+              onClick={() => {
+                if (companyBoxRef && companyBoxRef.current) {
+                  companyBoxRef.current.scrollLeft += 168;
+                }
+              }}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="ionicon"
+                viewBox="0 0 512 512"
+                width="24"
+              >
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="32"
+                  d="M262.62 336L342 256l-79.38-80M330.97 256H170"
+                />
+                <path
+                  d="M256 448c106 0 192-86 192-192S362 64 256 64 64 150 64 256s86 192 192 192z"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-miterlimit="10"
+                  strokeWidth="32"
+                />
+              </svg>
+            </Center>
+          </HStack>
 
           <Center
             alignItems={'flex-start'}
@@ -209,9 +244,94 @@ export default function CompaniesPage() {
               >
                 <GridItem>
                   <MyCompanyCard
+                    companyIconLogo={'/assets/images/company-logo/github.png'}
+                    role={'Frontend Developer'}
+                    companyName={'Tata Consultancy Service'}
+                    location={'Bhopal, Madhya Pradesh'}
+                    jobType={[
+                      'Full Time',
+                      'Part Time',
+                      'Internship',
+                      'Startup',
+                      'Indian MNC',
+                    ]}
+                    companyDesc="UX designers measure and optimize applications to improve ease of use (usability), and create the best user experience by exploring many different approaches to solve end-users' problems"
+                  />
+                </GridItem>
+
+                <GridItem>
+                  <MyCompanyCard
+                    companyIconLogo={'/assets/images/company-logo/github.png'}
+                    role={'Software Engineer'}
+                    companyName={'Apple Inc.'}
+                    location={'Cupertino, California'}
+                    jobType={[
+                      'Full Time',
+                      'Remote',
+                      'Contract',
+                      'Fortune 500',
+                      'Tech Giant',
+                    ]}
+                    companyDesc="Apple Inc. is a multinational technology company known for its consumer electronics, software, and online services. They are known for innovative products such as the iPhone, iPad, and Mac."
+                  />
+                </GridItem>
+
+                <GridItem>
+                  <MyCompanyCard
+                    companyIconLogo={'/assets/images/company-logo/google.png'}
+                    role={'Backend Developer'}
+                    companyName={'Google LLC'}
+                    location={'Mountain View, California'}
+                    jobType={[
+                      'Full Time',
+                      'Remote',
+                      'Flexible Hours',
+                      'Tech Giant',
+                      'Silicon Valley',
+                    ]}
+                    companyDesc="Google LLC is an American multinational technology company that specializes in Internet-related services and products. They provide search engine services, online advertising technologies, cloud computing, software, and more."
+                  />
+                </GridItem>
+
+                <GridItem>
+                  <MyCompanyCard
+                    companyIconLogo={'/assets/images/company-logo/google.png'}
+                    role={'Software Engineer'}
+                    companyName={'Microsoft Corporation'}
+                    location={'Redmond, Washington'}
+                    jobType={[
+                      'Full Time',
+                      'Remote',
+                      'Contract',
+                      'Fortune 500',
+                      'Tech Giant',
+                    ]}
+                    companyDesc="Microsoft Corporation is an American multinational technology corporation that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services."
+                  />
+                </GridItem>
+
+                <GridItem>
+                  <MyCompanyCard
                     companyIconLogo={
                       '/assets/images/company-logo/bookmyshow.png'
                     }
+                    role={'DevOps Engineer'}
+                    companyName={'Amazon.com, Inc.'}
+                    location={'Seattle, Washington'}
+                    jobType={[
+                      'Full Time',
+                      'Remote',
+                      'E-commerce',
+                      'Fortune 500',
+                      'Tech Giant',
+                    ]}
+                    companyDesc="Amazon.com, Inc. is an American multinational technology company based in Seattle, Washington. It focuses on e-commerce, cloud computing, digital streaming, and artificial intelligence."
+                  />
+                </GridItem>
+
+                <GridItem>
+                  <MyCompanyCard
+                    companyIconLogo={'/assets/images/company-logo/linkedin.png'}
                     role={'Frontend Developer'}
                     companyName={'Tata Consultancy Service'}
                     location={'Bhopal, Madhaya Pradesh'}
@@ -223,9 +343,8 @@ export default function CompaniesPage() {
                       'Indian MNC',
                     ]}
                     companyDesc="UX designers measure and optimize applications to improve ease of use
-        (usability), and create the best user experience by exploring many
-       diffrent approaches to solve end's-user problems"
-                    isNamedLogo={true}
+      (usability), and create the best user experience by exploring many
+     diffrent approaches to solve end's-user problems"
                   />
                 </GridItem>
                 <GridItem>
@@ -251,9 +370,7 @@ export default function CompaniesPage() {
                 </GridItem>
                 <GridItem>
                   <MyCompanyCard
-                    companyIconLogo={
-                      '/assets/images/company-logo/bookmyshow.png'
-                    }
+                    companyIconLogo={'/assets/images/company-logo/github.png'}
                     role={'Frontend Developer'}
                     companyName={'Tata Consultancy Service'}
                     location={'Bhopal, Madhaya Pradesh'}
@@ -265,9 +382,8 @@ export default function CompaniesPage() {
                       'Indian MNC',
                     ]}
                     companyDesc="UX designers measure and optimize applications to improve ease of use
-        (usability), and create the best user experience by exploring many
-       diffrent approaches to solve end's-user problems"
-                    isNamedLogo={true}
+      (usability), and create the best user experience by exploring many
+     diffrent approaches to solve end's-user problems"
                   />
                 </GridItem>
                 <GridItem>
