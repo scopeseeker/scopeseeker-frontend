@@ -16,6 +16,7 @@ import { useRef, useState } from 'react';
 export default function CompaniesPage() {
   const [isSortClicked, setIsSortClicked] = useState(true);
   const companyBoxRef = useRef<HTMLDivElement>(null);
+
   return (
     <>
       <Head>
@@ -115,7 +116,21 @@ export default function CompaniesPage() {
               ref={companyBoxRef}
               scrollBehavior={'smooth'}
             >
+               <Center
+                      w={'160px'}
+                      flexShrink={0}
+                      border={'1px solid'}
+                      borderColor={'brand.lightgray'}
+                      h={'60px'}
+                      borderTopEndRadius={'12px'}
+                      backgroundColor={'brand.white'}
+                      borderBottomLeftRadius={'12px'}
+                      bgColor={'brand.primary'}
+                    >
+                      <MyText as={'span'} color='brand.white' title={'Space'} fontWeight={500} />
+                    </Center>
               <>
+
                 {[
                   'Indian MNCs',
                   'Fortune 500',
@@ -135,6 +150,7 @@ export default function CompaniesPage() {
                       // boxShadow={'0px 0px 5px rgb(0, 0, 0, 0.1)'}
                       border={'1px solid'}
                       borderColor={'brand.lightgray'}
+                      color={'brand.black'}
                       h={'60px'}
                       borderTopEndRadius={'12px'}
                       backgroundColor={'brand.white'}
@@ -186,6 +202,7 @@ export default function CompaniesPage() {
             minH={'100vh'}
             gap={'30px'}
           >
+            {/* Filter */}
             <Box display={{ base: 'none', md: 'initial' }}>
               <Filter FilterObject={companyFilter} />
             </Box>
