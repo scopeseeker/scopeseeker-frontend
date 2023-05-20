@@ -6,7 +6,7 @@ import MyButton from '../button/MyButton';
 import MyIcon from '../icon/MyIcon';
 import MyImage from '../image/MyImage';
 import MyText from '../text/MyText';
-import {MyBadge} from '@/component'
+import { MyBadge } from '@/component';
 
 const MyJobCard = ({
   companyIconLogo,
@@ -38,16 +38,19 @@ const MyJobCard = ({
       <VStack w={'full'}>
         <HStack justifyContent={'space-between'} w={'full'}>
           <Center
-            w={isNamedLogo ? 'fit-content' : '45px'}
-            h={'45px'}
+            w={isNamedLogo ? 'fit-content' : '52px'}
+            h={isNamedLogo ? '42px' : '52px'}
             borderRadius={'full'}
+            my={isNamedLogo ? '5px' : '0px'}
+            p={'8px'}
+            overflow={'hidden'}
             bg={'brand.aliceblue'}
           >
             <MyImage
               src={companyIconLogo}
               alt="logo"
-              width={isNamedLogo ? 80 : 30}
-              height={30}
+              width={isNamedLogo ? 80 : 80}
+              height={80}
             />
           </Center>
           <HStack>
@@ -57,7 +60,7 @@ const MyJobCard = ({
           </HStack>
         </HStack>
 
-        <VStack alignItems={'flex-start'} gap={1} w={'full'}>
+        <VStack alignItems={'flex-start'} gap={'2px'} w={'full'}>
           <Box>
             <MyText title={role} as="title" />
             <MyText
@@ -67,7 +70,7 @@ const MyJobCard = ({
             />
           </Box>
           <Flex gap={'8px'} flexWrap={'wrap'} w={'full'}>
-              <MyBadge labelArray={jobType}/>
+            <MyBadge labelArray={jobType} />
           </Flex>
 
           <MyText
@@ -75,19 +78,23 @@ const MyJobCard = ({
             as="span"
             fontSize={{ base: '10px', md: '10px' }}
           />
-          <MyText as="st" title={truncatedParagraph(companyDesc)} />
-          <HStack>
+          <Flex h={'54px'} overflow={'hidden'} gap={0}>
+            <MyText
+              as="st"
+              title={truncatedParagraph(companyDesc)}
+              overflowWrap={'break-word'}
+            />
+          </Flex>
+          <HStack w={'full'}>
             <Link href={'#'}>
               <MyButton
                 title="Apply Now"
-                px={'20px'}
                 fontSize={{ base: '14px', md: '12px' }}
               />
             </Link>
             <Link href={'#'}>
               <MyButton
                 title="See Details"
-                px={'20px'}
                 fontSize={{ base: '14px', md: '12px' }}
                 variant="outline"
               />

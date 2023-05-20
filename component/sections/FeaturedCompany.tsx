@@ -23,8 +23,24 @@ const CompnayCatergories = () => {
           gap={'30px'}
           pt={'40px'}
         >
+          <MyCompanyCard
+                  companyIconLogo={'/assets/images/company-logo/linkedin.png'}
+                  role={'Frontend Developer'}
+                  companyName={'Tata Consultancy Service'}
+                  location={'Bhopal, Madhaya Pradesh'}
+                  jobType={[
+                    'Full Time',
+                    'Part Time',
+                    'Internship',
+                    'Startup',
+                    'Indian MNC',
+                  ]}
+                  companyDesc="UX designers measure and optimize applications to improve ease of use
+      (usability), and create the best user experience by exploring many
+     diffrent approaches to solve end's-user problems"
+                />
           <>
-            {[1, 1, 1, 1].map((key) => {
+            {[1, 1].map((key) => {
               return (
                 <MyCompanyCard
                   key={key}
@@ -47,6 +63,22 @@ const CompnayCatergories = () => {
               );
             })}
           </>
+          <MyCompanyCard
+                  companyIconLogo={'/assets/images/company-logo/github.png'}
+                  role={'Frontend Developer'}
+                  companyName={'Tata Consultancy Service'}
+                  location={'Bhopal, Madhaya Pradesh'}
+                  jobType={[
+                    'Full Time',
+                    'Part Time',
+                    'Internship',
+                    'Startup',
+                    'Indian MNC',
+                  ]}
+                  companyDesc="UX designers measure and optimize applications to improve ease of use
+      (usability), and create the best user experience by exploring many
+     diffrent approaches to solve end's-user problems"
+                />
         </Center>
       </Center>
     </Layout>
