@@ -1,5 +1,5 @@
 import { MyButton, MyInput } from '@/component';
-import { Box, Flex } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
 
 export default function Dashboard() {
   return (
@@ -46,7 +46,7 @@ export default function Dashboard() {
             width="24"
             height="24"
             viewBox="0 0 24 24"
-            stroke-width="1.2"
+            strokeWidth="1.2"
             stroke="currentColor"
             fill="none"
             stroke-linecap="round"
@@ -69,7 +69,7 @@ export default function Dashboard() {
             width="24"
             height="24"
             viewBox="0 0 24 24"
-            stroke-width="1.2"
+            strokeWidth="1.2"
             stroke="currentColor"
             fill="none"
             stroke-linecap="round"
@@ -110,7 +110,7 @@ export default function Dashboard() {
             width="24"
             height="24"
             viewBox="0 0 24 24"
-            stroke-width="1.2"
+            strokeWidth="1.2"
             stroke="currentColor"
             fill="none"
             stroke-linecap="round"
