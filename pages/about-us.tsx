@@ -7,8 +7,8 @@ import {
   HStack,
   IconButton,
   ListItem,
-  OrderedList,
   Text,
+  UnorderedList,
   VStack,
 } from '@chakra-ui/react';
 import Head from 'next/head';
@@ -104,7 +104,7 @@ export default function AboutUs() {
             <VStack w={'full'} alignItems={'flex-start'}>
               <MyText as="heading" title="How we work?" />
               <Box>
-                <OrderedList ml={{ base: 5, md: 10 }} spacing={1}>
+                <UnorderedList ml={{ base: 5, md: 10 }} spacing={1}>
                   <ListItem>
                     <MyText
                       as={'p'}
@@ -139,7 +139,7 @@ export default function AboutUs() {
                       title="By presenting relevant and trustworthy job opportunities in an easy-to-use format, we aim to save job seekers time and increase their chances of finding their dream job in the tech industry."
                     />
                   </ListItem>
-                </OrderedList>
+                </UnorderedList>
               </Box>
             </VStack>
 
