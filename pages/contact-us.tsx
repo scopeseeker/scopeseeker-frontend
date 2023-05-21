@@ -17,21 +17,16 @@ export default function ContactUs() {
       </Head>
       <PageHeroSection
         title="Contact Us"
-        subtitle="Get in touch with us for any questions or feedback. Our team is always here to assist you."
+        subtitle="We eagerly await your contact to address any inquiries, comments, or ideas you may have. Our team of experts is here to extend a helping hand, offering unrivaled assistance that goes above and beyond."
         alt="contac us img"
         src="/assets/images/contact-us.png"
       />
       <Layout>
-        <MyText
-          title={`If you have any questions, feedback, or suggestions, please don't hesitate to reach out to us. We're always happy to hear from our customers and are committed to providing exceptional customer service. There are several ways you can get in touch with us. The easiest way is to use our website's contact form, which you can find on the "Contact Us" page. Alternatively, you can send us an email at scopeseekerhelp@gmail.com. We check our inbox regularly and will respond to your message as soon as possible.`}
-          as="p"
-        />
-
         <VStack w={'full'} minH={'100vh'}>
           <Center w={'100%'} h={'full'} boxShadow={'lg'} py={10} margin={20}>
             <VStack>
               {/* <MyText as='heading' title='You can share yout query here'/> */}
-              <Heading size={'md'}>You can share your query here!</Heading>
+              <MyText as='heading' title='You can share your query here!'/>
               <HStack pt={10}>
                 <MyInput
                   placeholder="John"
@@ -277,18 +272,6 @@ export default function ContactUs() {
               </VStack>
             </Center>
           </VStack>
-        </VStack>
-
-        <VStack gap={4} w={'full'} alignItems={'flex-start'} marginTop={20}>
-          <MyText
-            title={` In addition to these digital communication channels, you can also contact us by phone or WhatsApp. Our phone number is +919617143257, and we're available to take your call or message during our business hours. If you prefer to meet with us in person, you're welcome to visit us at our location. We're located at Bhanpur, Bhopal Madhya Pradesh, and our business hours are 10AM to 7PM (Mon-Sun).`}
-            as="p"
-          />
-          <MyText title="We are more active on Saturday-Sunday" as="title" />
-          <MyText
-            title={`We appreciate your interest in our company and look forward to hearing from you soon. Your input is valuable to us, and we're always striving to improve our products and services to better meet your needs. Thank you for choosing Scopeseeker.`}
-            as="p"
-          />
         </VStack>
       </Layout>
     </>
