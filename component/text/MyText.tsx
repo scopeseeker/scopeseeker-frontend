@@ -35,6 +35,18 @@ const MyText = ({
         </Text>
       )}
 
+      {as === 'small' && (
+        <Text
+          color={color}
+          as={'span'}
+          fontSize={{ base: '10px', md: '11px' }}
+          fontWeight={fontWeight}
+          {...rest}
+        >
+          {title}
+        </Text>
+      )}
+
       {as === 'heading' && (
         <Text
           color={color}
