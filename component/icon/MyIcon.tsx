@@ -1,23 +1,39 @@
-import { IconLibrary } from '@/constant/IconLibrary';
-import { IconProps } from '@/inteface/component-interface';
-import { Box } from '@chakra-ui/react';
+import { IconData, IconNameType } from '@/constant/IconLibrary';
+import { Center } from '@chakra-ui/react';
+import React from 'react';
 
-const MyIcon = ({ name, style, color, ...rest }: IconProps) => {
-  const transform = IconLibrary[name]?.transform;
-  const path = IconLibrary[name]?.path;
+interface IMyIconProps {
+  color?: string;
+  width?: string;
+  height?: string;
+  strokeWidth?: string;
+  name: IconNameType;
+}
 
+const MyIcon = ({
+  color = 'brand.black',
+  width = '24px',
+  height = '24px',
+  strokeWidth = '1.5',
+  name,
+}: IMyIconProps) => {
   return (
-    <Box color={color}>
+    <Center color={color}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        style={style}
+        width={width}
+        height={height}
         viewBox="0 0 24 24"
-        {...rest}
-        className="custom-icon"
+        strokeWidth={strokeWidth}
+        stroke="currentColor"
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       >
-        <path d={path} fill="currentColor" transform={transform} />
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        {IconData[name]}
       </svg>
-    </Box>
+    </Center>
   );
 };
 

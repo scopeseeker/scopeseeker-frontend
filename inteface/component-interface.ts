@@ -1,3 +1,4 @@
+import { IconNameType } from '@/constant/IconLibrary';
 import React, { ReactNode } from 'react';
 
 export interface IMyBadge {
@@ -48,45 +49,6 @@ export interface IMyInputProps {
   [key: string]: any;
 }
 
-export type IconNameType =
-  | 'job'
-  | 'instagram'
-  | 'darkMode'
-  | 'company'
-  | 'pages'
-  | 'arrow-down'
-  | 'search'
-  | 'linkedin'
-  | 'gmail'
-  | 'facebook'
-  | 'arrow'
-  | 'whatsapp'
-  | 'twitter'
-  | 'quotes-left'
-  | 'quotes-right'
-  | 'user'
-  | 'case'
-  | 'form'
-  | 'phone'
-  | 'fresher'
-  | 'global'
-  | 'college'
-  | 'add'
-  | 'github'
-  | 'check'
-  | 'searchicon'
-  | 'save'
-  | 'share'
-  | 'location'
-  | 'time';
-
-export type IconProps = {
-  name: IconNameType;
-  color?: string;
-  width?: string;
-  height?: string;
-  style?: React.CSSProperties;
-};
 
 export interface IWhyBox {
   bg: string;
