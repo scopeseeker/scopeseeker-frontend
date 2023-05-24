@@ -508,7 +508,12 @@ export default function DynamicPage() {
             </HStack>
 
             {/* Similar Jobs */}
-            <VStack w={'full'} alignItems={'flex-start'} gap={'20px'} pt={'40px'}>
+            <VStack
+              w={'full'}
+              alignItems={'flex-start'}
+              gap={'20px'}
+              pt={'40px'}
+            >
               <MyText as="heading" title="Similar Jobs" />
 
               <HStack gap={'15px'}>

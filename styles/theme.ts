@@ -34,6 +34,8 @@ const theme = extendTheme({
       darkgray: '#718096',
       offwhite: '#F5F6F8',
       primary: '#1A75E8',
+      secondary: '#1A53E8',
+      ternary: '#1A05E8',
       aliceblue: '#F0F8FF',
       lightgray: 'lightgray',
     },

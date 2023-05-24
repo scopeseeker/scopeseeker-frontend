@@ -1,12 +1,12 @@
+import { MyBadge } from '@/component';
 import { IMyJobCard } from '@/inteface/component-interface';
-import { Box, Center, Flex, HStack, VStack } from '@chakra-ui/react';
+import { Center, Flex, HStack, VStack } from '@chakra-ui/react';
 import Link from 'next/link';
 import truncatedParagraph from '../../lib/validator';
 import MyButton from '../button/MyButton';
 import MyIcon from '../icon/MyIcon';
 import MyImage from '../image/MyImage';
 import MyText from '../text/MyText';
-import { MyBadge } from '@/component';
 
 const MyJobCard = ({
   companyIconLogo,
@@ -15,18 +15,15 @@ const MyJobCard = ({
   location,
   jobType,
   companyDesc,
-  applyLink = '#',
-  fullDetailedLink = '#',
-  isNamedLogo = false,
 }: IMyJobCard) => {
   return (
     <Center
       w={'100%'}
       // h={{ base: '342px', sm: '280px', md: '315px' }}
-      borderRadius={10}
+      borderRadius={'8px'}
       cursor={'pointer'}
       px={'20px'}
-      py={'18px'}
+      py={'16px'}
       bg={'brand.white'}
       border={'1px solid'}
       borderColor={'brand.darkgray'}
@@ -37,7 +34,7 @@ const MyJobCard = ({
     >
       <VStack w={'full'}>
         <HStack justifyContent={'space-between'} w={'full'}>
-        <Center
+          <Center
             w={'56px'}
             h={'56px'}
             borderRadius={'full'}
@@ -47,48 +44,31 @@ const MyJobCard = ({
           >
             <MyImage src={companyIconLogo} alt="logo" width={80} height={80} />
           </Center>
-          <HStack>
-            <Center w={'35px'} h={'35px'} cursor={'pointer'}>
-              <MyIcon name="save" height="16" width="16" />
-            </Center>
-          </HStack>
+          <MyIcon name="save" />
         </HStack>
 
         <VStack alignItems={'flex-start'} gap={'2px'} w={'full'}>
           <VStack spacing={0} gap={0} alignItems={'flex-start'}>
             <MyText title={role} as="title" />
-            <MyText
-              title={companyName}
-              as="small"
-            />
+            <MyText title={`${companyName} - ${location}`} as="small" />
           </VStack>
           <Flex gap={'8px'} flexWrap={'wrap'} w={'full'}>
             <MyBadge labelArray={jobType} />
           </Flex>
-          <MyText
-            title={location}
-            as="small"
-          />
-          <Flex h={'54px'} overflow={'hidden'} gap={0}>
+          {/* <MyText title={location} as="small" /> */}
+          <Flex h={{ base: '64px', md: '36px' }} overflow={'hidden'} gap={0}>
             <MyText
               as="small"
-              title={truncatedParagraph(companyDesc)}
+              title={truncatedParagraph(companyDesc, 18)}
               overflowWrap={'break-word'}
             />
           </Flex>
-          <HStack w={'full'} bg={'red.200'}>
+          <HStack w={'full'}>
             <Link href={'#'}>
-              <MyButton
-                title="Apply Now"
-                fontSize={{ base: '14px', md: '12px' }}
-              />
+              <MyButton title="Apply Now" />
             </Link>
             <Link href={'#'}>
-              <MyButton
-                title="See Details"
-                fontSize={{ base: '14px', md: '12px' }}
-                variant="outline"
-              />
+              <MyButton title="See Details" variant="outline" />
             </Link>
           </HStack>
         </VStack>
