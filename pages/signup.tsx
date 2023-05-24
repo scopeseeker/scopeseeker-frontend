@@ -15,7 +15,7 @@ export default function Signup() {
   return (
     <>
       <Head>
-        <title>Login | Scope Seeker</title>
+        <title>SignUp | Scope Seeker</title>
       </Head>
 
       <HStack h={'100vh'} w={'full'} bg={'white'}>
@@ -93,13 +93,13 @@ export default function Signup() {
                 type="email"
                 labelTitle="Email Address"
                 placeholder="example@gmail.com"
-                leftElement={<MyIcon name="job" />}
+                leftElement={<MyIcon name="email" />}
               />
               <MyInput
-                type="email"
+                type="phone"
                 labelTitle="Phone Number"
-                placeholder="example@gmail.com"
-                leftElement={<MyIcon name="job" />}
+                placeholder="XXXXXX8879"
+                leftElement={<MyIcon name="phone" />}
               />
             </HStack>
             <HStack w={'full'}>
@@ -107,13 +107,13 @@ export default function Signup() {
                 type="password"
                 labelTitle="Password"
                 placeholder="✶✶✶✶✶✶✶✶"
-                leftElement={<MyIcon name="job" />}
+                leftElement={<MyIcon name="password" />}
               />
               <MyInput
                 type="password"
                 labelTitle="Confirm Password"
                 placeholder="✶✶✶✶✶✶✶✶"
-                leftElement={<MyIcon name="job" />}
+                leftElement={<MyIcon name="confirmation" />}
               />
             </HStack>
             <MyButton title="Signup"/>
