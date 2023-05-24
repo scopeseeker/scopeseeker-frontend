@@ -17,7 +17,7 @@ const MyText = ({
         <Text
           color={color}
           as={'p'}
-          fontSize={{ base: '12px', md: '15px' }}
+          fontSize={{ base: '16px', md: '15px' , "2xl": "18px"}}
           {...rest}
         >
           {title}
@@ -39,7 +39,7 @@ const MyText = ({
         <Text
           color={color}
           as={'span'}
-          fontSize={{ base: '10px', md: '11px' }}
+          fontSize={{ base: '14px', md: '12px', "2xl": '14px' }}
           fontWeight={fontWeight}
           {...rest}
         >
@@ -53,7 +53,7 @@ const MyText = ({
           as={'span'}
           fontFamily={'heading'}
           fontWeight={600}
-          fontSize={{ base: '16px', md: '22px' }}
+          fontSize={{ base: '24px', md: '20px', "2xl": '22px' }}
           {...rest}
         >
           {title}
@@ -65,7 +65,7 @@ const MyText = ({
           as={'span'}
           fontFamily={'heading'}
           fontWeight={fontWeight ? fontWeight : 600}
-          fontSize={{ base: '14px', md: '14px' }}
+          fontSize={{ base: '17px', md: '15px', "2xl": "16px" }}
           {...rest}
         >
           {title}
