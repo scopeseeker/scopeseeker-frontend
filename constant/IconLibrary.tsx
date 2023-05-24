@@ -32,7 +32,9 @@ export type IconNameType =
   | 'save'
   | 'share'
   | 'location'
-  | 'time';
+  | 'time'
+  | 'verify'
+  | 'heart';
 
 type IconData = {
   [K in IconNameType]: JSX.Element;
@@ -113,8 +115,6 @@ export const IconData: IconData = {
       <path d="M21 21l-6 -6"></path>
     </>
   ),
-<<<<<<< Updated upstream
-=======
   verify: (
     <>
       <path
@@ -136,7 +136,6 @@ export const IconData: IconData = {
       <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855"></path>
     </>
   ),
->>>>>>> Stashed changes
 
   // Place icon it's dummy
 
