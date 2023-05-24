@@ -8,14 +8,16 @@ const MainHeading = (props: IMainHeadingProps) => {
     align = 'center',
     headColor = 'brand.black',
     paraColor = 'brand.darkgray',
+    fontsize = { base: '20px', md: '28px' },
+    ...rest
   } = props;
   return (
-    <VStack alignItems={align} w={'full'}>
+    <VStack alignItems={align} w={'full'} {...rest}>
       <Heading
         color={headColor}
-        fontSize={{ base: '20px', md: '28px' }}
+        fontSize={fontsize}
         fontWeight={'600'}
-        textAlign={'center'}
+        textAlign={align}
       >
         {title}
       </Heading>

@@ -68,6 +68,9 @@ export interface IMainHeadingProps {
   align?: any;
   headColor?: string;
   paraColor?: string;
+  fontsize?: { base: string, md: string };
+  [key: string]: any;
+
 }
 export interface IPageHeroSection {
   title: string;
