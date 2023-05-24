@@ -98,8 +98,8 @@ import {
                 
               </HStack>
               <HStack>
-              <MyButton title="Login" w={'160px'} />
-              <MyButton title="Forget Password" w={'160px'} />
+              <MyButton title="Login" />
+              <MyButton title="Forget Password"/>
               </HStack>
               <MyDivider />
               <VStack w={'full'}>
