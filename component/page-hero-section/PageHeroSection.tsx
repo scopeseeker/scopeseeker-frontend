@@ -19,7 +19,7 @@ const PageHeroSection = (props: IPageHeroSection) => {
   return (
     <HStack
       w={'full'}
-      minH={{ base: '20vh', md: '50vh' }}
+      h={{ base: '20vh', md: '300px' }}
       maxH={'50vh'}
       bg={'brand.primary'}
       justifyContent={'space-between'}

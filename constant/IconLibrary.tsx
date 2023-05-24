@@ -1,5 +1,6 @@
 export type IconNameType =
   | 'job'
+  | 'person-circle'
   | 'file'
   | 'menu'
   | 'whatsapp'
@@ -126,6 +127,13 @@ export const IconData: IconData = {
   heart: (
     <>
       <path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"></path>
+    </>
+  ),
+  'person-circle': (
+    <>
+      <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+      <path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+      <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855"></path>
     </>
   ),
 
