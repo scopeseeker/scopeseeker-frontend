@@ -47,11 +47,6 @@ const NewsUpdate = () => {
             {/* <Center bg={'brand.primary'}  h={'full'} px={5} borderRadius={'full'}> */}
             <MyButton
               title="Subscribe"
-              size="sm"
-              borderRadius={50}
-              fontSize={'xs'}
-              px={8}
-              color="brand.white"
             />
             {/* </Center> */}
           </HStack>

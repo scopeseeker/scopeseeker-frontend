@@ -431,7 +431,7 @@ export default function DynamicPage() {
                   </VStack>
                 </VStack>
 
-                <MyButton title="Apply" fontSize={'12px'} w="15%" />
+                <MyButton title="Apply"/>
 
                 {/* Share Job */}
                 <HStack w={'full'} alignItems={'center'} gap={'10px'}>

@@ -88,8 +88,6 @@ const Categories = () => {
             </>
           </HStack>
           <MyButton
-            fontSize={'12px'}
-            bg={'brand.primary'}
             title="Browse All Categories"
           />
         </VStack>
