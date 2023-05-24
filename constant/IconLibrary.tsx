@@ -35,6 +35,9 @@ export type IconNameType =
   | 'time'
   | 'verify'
   | 'heart';
+  | 'time'
+  | 'verify'
+  | 'heart';
 
 type IconData = {
   [K in IconNameType]: JSX.Element;
