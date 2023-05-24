@@ -6,7 +6,7 @@ import {
   MyJobCard,
   MyText,
 } from '@/component';
-import { jobCardFields, jobsFilter } from '@/constant/constantFields';
+import {jobCardFields, jobsFilter } from '@/constant/constantFields';
 import {
   Box,
   Center,

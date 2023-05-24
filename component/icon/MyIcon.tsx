@@ -1,13 +1,12 @@
 import { IconData, IconNameType } from '@/constant/IconLibrary';
 import { Center } from '@chakra-ui/react';
-import React from 'react';
 
 interface IMyIconProps {
   color?: string;
   width?: string;
   height?: string;
   strokeWidth?: string;
-  name: IconNameType;
+  name: IconNameType | string;
 }
 
 const MyIcon = ({
