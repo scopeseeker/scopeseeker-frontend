@@ -9,17 +9,9 @@ export interface IMyBadge {
 
 export interface IMyButtonProps {
   title: string;
-  borderRadius?: number;
   fontSize?: { base: string; md: string } | string;
-  color?: string;
-  bg?: string;
-  size?: string;
   variant?: string;
-  colorScheme?: string;
-  decoration?: string;
-  px?: number | string;
   w?: string;
-  mt?: number;
   fontWeight?: string;
   [key: string]: any;
 }
@@ -49,7 +41,6 @@ export interface IMyInputProps {
   [key: string]: any;
 }
 
-
 export interface IWhyBox {
   bg: string;
   color: string;
@@ -68,9 +59,8 @@ export interface IMainHeadingProps {
   align?: any;
   headColor?: string;
   paraColor?: string;
-  fontsize?: { base: string, md: string };
+  fontsize?: { base: string; md: string };
   [key: string]: any;
-
 }
 export interface IPageHeroSection {
   title: string;

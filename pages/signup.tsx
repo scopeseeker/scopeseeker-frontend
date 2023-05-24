@@ -7,11 +7,11 @@ import {
   MyInput,
   MyText,
 } from '@/component';
-import { Box, Center, HStack, Stack, VStack } from '@chakra-ui/react';
+import { Box, Center, HStack, VStack } from '@chakra-ui/react';
 import Head from 'next/head';
 import Link from 'next/link';
 
-export default function Login() {
+export default function Signup() {
   return (
     <>
       <Head>
@@ -59,14 +59,19 @@ export default function Login() {
               </Link>
             </HStack>
             <Center flexDirection={'column'} w={'full'} h={'100%'} gap={'42px'}>
-            <MainHeading
-              title="Start your journey with Scope Seeker."
-              headColor="white"
-              subTitle="Take the first step towards your dream job with us where your future starts to unfold."
-              paraColor="lightgray"
-              align={'start'}
-            />
-            <MyImage alt='signup' src={'/assets/images/signup-image.png'} width={350} height={350}/>
+              <MainHeading
+                title="Start your journey with Scope Seeker."
+                headColor="white"
+                subTitle="Take the first step towards your dream job with us where your future starts to unfold."
+                paraColor="lightgray"
+                align={'start'}
+              />
+              <MyImage
+                alt="signup"
+                src={'/assets/images/signup-image.png'}
+                width={350}
+                height={350}
+              />
             </Center>
           </VStack>
         </VStack>

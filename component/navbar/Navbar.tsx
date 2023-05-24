@@ -90,7 +90,7 @@ const Navbar = () => {
               <MyText
                 title="Company"
                 as="link"
-                href="/companies"
+                href="/company"
                 color="currentColor"
               />
             </Center>

@@ -6,7 +6,7 @@ import {
   MyJobCard,
   MyText,
 } from '@/component';
-import { jobsFilter } from '@/constant/constantFields';
+import { jobCardFields, jobsFilter } from '@/constant/constantFields';
 import {
   Box,
   Center,
@@ -120,201 +120,29 @@ export default function Jobs() {
                 templateColumns={{
                   base: 'repeat(1, 1fr)',
                   md: 'repeat(2, 1fr)',
-                  lg: 'repeat(3, 1fr)',
+                  lg: 'repeat(2, 1fr)',
                 }}
                 gap={{ base: 6, lg: 4, xl: 6 }}
                 mx={'auto'}
                 pt={'25px'}
+                width={'100%'}
               >
-                <GridItem>
-                  <MyJobCard
-                    companyIconLogo={
-                      '/assets/images/company-logo/bookmyshow.png'
-                    }
-                    role={'Frontend Developer'}
-                    companyName={'Tata Consultancy Service'}
-                    location={'Bhopal, Madhaya Pradesh'}
-                    jobType={[
-                      'Full Time',
-                      'Part Time',
-                      'Internship',
-                      'Startup',
-                      'Indian MNC',
-                    ]}
-                    companyDesc="UX designers measure and optimize applications to improve ease of use
-        (usability), and create the best user experience by exploring many
-       diffrent approaches to solve end's-user problems"
-                    isNamedLogo={true}
-                  />
-                </GridItem>
-                <GridItem>
-                  <MyJobCard
-                    companyIconLogo={
-                      '/assets/images/company-logo/bookmyshow.png'
-                    }
-                    role={'Frontend Developer'}
-                    companyName={'Tata Consultancy Service'}
-                    location={'Bhopal, Madhaya Pradesh'}
-                    jobType={[
-                      'Full Time',
-                      'Part Time',
-                      'Internship',
-                      'Startup',
-                      'Indian MNC',
-                    ]}
-                    companyDesc="UX designers measure and optimize applications to improve ease of use
-        (usability), and create the best user experience by exploring many
-       diffrent approaches to solve end's-user problems"
-                    isNamedLogo={true}
-                  />
-                </GridItem>
-                <GridItem>
-                  <MyJobCard
-                    companyIconLogo={
-                      '/assets/images/company-logo/bookmyshow.png'
-                    }
-                    role={'Frontend Developer'}
-                    companyName={'Tata Consultancy Service'}
-                    location={'Bhopal, Madhaya Pradesh'}
-                    jobType={[
-                      'Full Time',
-                      'Part Time',
-                      'Internship',
-                      'Startup',
-                      'Indian MNC',
-                    ]}
-                    companyDesc="UX designers measure and optimize applications to improve ease of use
-        (usability), and create the best user experience by exploring many
-       diffrent approaches to solve end's-user problems"
-                    isNamedLogo={true}
-                  />
-                </GridItem>
-                <GridItem>
-                  <MyJobCard
-                    companyIconLogo={
-                      '/assets/images/company-logo/bookmyshow.png'
-                    }
-                    role={'Frontend Developer'}
-                    companyName={'Tata Consultancy Service'}
-                    location={'Bhopal, Madhaya Pradesh'}
-                    jobType={[
-                      'Full Time',
-                      'Part Time',
-                      'Internship',
-                      'Startup',
-                      'Indian MNC',
-                    ]}
-                    companyDesc="UX designers measure and optimize applications to improve ease of use
-        (usability), and create the best user experience by exploring many
-       diffrent approaches to solve end's-user problems"
-                    isNamedLogo={true}
-                  />
-                </GridItem>
-                <GridItem>
-                  <MyJobCard
-                    companyIconLogo={
-                      '/assets/images/company-logo/bookmyshow.png'
-                    }
-                    role={'Frontend Developer'}
-                    companyName={'Tata Consultancy Service'}
-                    location={'Bhopal, Madhaya Pradesh'}
-                    jobType={[
-                      'Full Time',
-                      'Part Time',
-                      'Internship',
-                      'Startup',
-                      'Indian MNC',
-                    ]}
-                    companyDesc="UX designers measure and optimize applications to improve ease of use
-        (usability), and create the best user experience by exploring many
-       diffrent approaches to solve end's-user problems"
-                    isNamedLogo={true}
-                  />
-                </GridItem>
-                <GridItem>
-                  <MyJobCard
-                    companyIconLogo={
-                      '/assets/images/company-logo/bookmyshow.png'
-                    }
-                    role={'Frontend Developer'}
-                    companyName={'Tata Consultancy Service'}
-                    location={'Bhopal, Madhaya Pradesh'}
-                    jobType={[
-                      'Full Time',
-                      'Part Time',
-                      'Internship',
-                      'Startup',
-                      'Indian MNC',
-                    ]}
-                    companyDesc="UX designers measure and optimize applications to improve ease of use
-        (usability), and create the best user experience by exploring many
-       diffrent approaches to solve end's-user problems"
-                    isNamedLogo={true}
-                  />
-                </GridItem>
-                <GridItem>
-                  <MyJobCard
-                    companyIconLogo={
-                      '/assets/images/company-logo/bookmyshow.png'
-                    }
-                    role={'Frontend Developer'}
-                    companyName={'Tata Consultancy Service'}
-                    location={'Bhopal, Madhaya Pradesh'}
-                    jobType={[
-                      'Full Time',
-                      'Part Time',
-                      'Internship',
-                      'Startup',
-                      'Indian MNC',
-                    ]}
-                    companyDesc="UX designers measure and optimize applications to improve ease of use
-        (usability), and create the best user experience by exploring many
-       diffrent approaches to solve end's-user problems"
-                    isNamedLogo={true}
-                  />
-                </GridItem>
-                <GridItem>
-                  <MyJobCard
-                    companyIconLogo={
-                      '/assets/images/company-logo/bookmyshow.png'
-                    }
-                    role={'Frontend Developer'}
-                    companyName={'Tata Consultancy Service'}
-                    location={'Bhopal, Madhaya Pradesh'}
-                    jobType={[
-                      'Full Time',
-                      'Part Time',
-                      'Internship',
-                      'Startup',
-                      'Indian MNC',
-                    ]}
-                    companyDesc="UX designers measure and optimize applications to improve ease of use
-        (usability), and create the best user experience by exploring many
-       diffrent approaches to solve end's-user problems"
-                    isNamedLogo={true}
-                  />
-                </GridItem>
-                <GridItem>
-                  <MyJobCard
-                    companyIconLogo={
-                      '/assets/images/company-logo/bookmyshow.png'
-                    }
-                    role={'Frontend Developer'}
-                    companyName={'Tata Consultancy Service'}
-                    location={'Bhopal, Madhaya Pradesh'}
-                    jobType={[
-                      'Full Time',
-                      'Part Time',
-                      'Internship',
-                      'Startup',
-                      'Indian MNC',
-                    ]}
-                    companyDesc="UX designers measure and optimize applications to improve ease of use
-        (usability), and create the best user experience by exploring many
-       diffrent approaches to solve end's-user problems"
-                    isNamedLogo={true}
-                  />
-                </GridItem>
+                <>
+                  {jobCardFields.map((item, key) => {
+                    return (
+                      <GridItem key={key}>
+                        <MyJobCard
+                          companyIconLogo={item.companyIconLogo}
+                          role={item.role}
+                          companyName={item.companyName}
+                          location={item.location}
+                          jobType={item.jobType}
+                          companyDesc={item.companyDesc}
+                        />
+                      </GridItem>
+                    );
+                  })}
+                </>
               </Grid>
             </VStack>
           </Center>
