@@ -307,10 +307,97 @@ const companyFilter = [
   },
 ];
 
+const companyBenifits = [
+  {
+    label: 'Salary',
+    src: '/assets/images/company-logo/google.png',
+    value:
+      'This company has a very compited salary model where you can get a high amount then compiteter this company has a very compited salary model where you can get a high amount then compiteter This company has a very compited',
+  },
+
+  {
+    label: 'Leader',
+    src: '/assets/images/company-logo/linkedin.png',
+    value:
+      'Pichai Sundararajan (born June 10, 1972), better known as Sundar Pichai (/ˈsʊndɑːr pɪˈtʃaɪ/), is an Indian-American business executive. He is the chief executive officer (CEO) of Alphabet Inc. and its subsidiary Google.',
+  },
+
+  {
+    label: 'Leader',
+    src: '/assets/images/company-logo/linkedin.png',
+    value:
+      'Pichai Sundararajan (born June 10, 1972), better known as Sundar Pichai (/ˈsʊndɑːr pɪˈtʃaɪ/), is an Indian-American business executive. He is the chief executive officer (CEO) of Alphabet Inc. and its subsidiary Google.',
+  },
+  {
+    label: 'Salary',
+    src: '/assets/images/company-logo/google.png',
+    value:
+      'This company has a very compited salary model where you can get a high amount then compiteter this company has a very compited salary model where you can get a high amount then compiteter This company has a very compited',
+  },
+
+  {
+    label: 'Leader',
+    src: '/assets/images/company-logo/linkedin.png',
+    value:
+      'Pichai Sundararajan (born June 10, 1972), better known as Sundar Pichai (/ˈsʊndɑːr pɪˈtʃaɪ/), is an Indian-American business executive. He is the chief executive officer (CEO) of Alphabet Inc. and its subsidiary Google.',
+  },
+
+  {
+    label: 'Leader',
+    src: '/assets/images/company-logo/linkedin.png',
+    value:
+      'Pichai Sundararajan (born June 10, 1972), better known as Sundar Pichai (/ˈsʊndɑːr pɪˈtʃaɪ/), is an Indian-American business executive. He is the chief executive officer (CEO) of Alphabet Inc. and its subsidiary Google.',
+  },
+];
+
+const employeeBenifits = [
+  {
+    iconName: 'home',
+    value: 'Work from home',
+  },
+  {
+    iconName: 'health',
+    value: 'Health Insurance',
+  },
+  {
+    iconName: 'cafeteria',
+    value: 'cafeteria',
+  },
+  {
+    iconName: 'beach',
+    value: 'Team Outings',
+  },
+  {
+    iconName: 'home',
+    value: 'Work from home',
+  },
+  {
+    iconName: 'home',
+    value: 'Work from home',
+  },
+  {
+    iconName: 'home',
+    value: 'Work from home',
+  },
+  {
+    iconName: 'home',
+    value: 'Work from home',
+  },
+  {
+    iconName: 'home',
+    value: 'Work from home',
+  },
+  {
+    iconName: 'home',
+    value: 'Work from home',
+  },
+];
+
 export {
   faqFieldsObject,
   popularCategoryObject,
   jobsFilter,
   companyFilter,
-  jobCardFields,
+  companyBenifits,
+  employeeBenifits,
 };

@@ -38,7 +38,12 @@ export type IconNameType =
   | 'email'
   | 'password'
   | 'confirmation'
-  | 'forget';
+  | 'forget'
+  | 'home'
+  | 'health'
+  | 'cafeteria'
+  | 'beach'
+  | string;
 
 type IconData = {
   [K in IconNameType]: JSX.Element;
@@ -178,6 +183,41 @@ export const IconData: IconData = {
    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
    <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
    <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
+    </>
+  ),
+  home: (
+    <>
+      <path d="M15 22v-2"></path>
+      <path d="M18 22v-4"></path>
+      <path d="M21 22v-6"></path>
+      <path d="M19 12.494v-.494h2l-9 -9l-9 9h2v7a2 2 0 0 0 2 2h4"></path>
+      <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v.5"></path>
+    </>
+  ),
+  health: (
+    <>
+      <path d="M8 8v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2"></path>
+      <path d="M4 8m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path>
+      <path d="M10 14h4"></path>
+      <path d="M12 12v4"></path>
+    </>
+  ),
+  cafeteria: (
+    <>
+      <path d="M3 14c.83 .642 2.077 1.017 3.5 1c1.423 .017 2.67 -.358 3.5 -1c.83 -.642 2.077 -1.017 3.5 -1c1.423 -.017 2.67 .358 3.5 1"></path>
+      <path d="M8 3a2.4 2.4 0 0 0 -1 2a2.4 2.4 0 0 0 1 2"></path>
+      <path d="M12 3a2.4 2.4 0 0 0 -1 2a2.4 2.4 0 0 0 1 2"></path>
+      <path d="M3 10h14v5a6 6 0 0 1 -6 6h-2a6 6 0 0 1 -6 -6v-5z"></path>
+      <path d="M16.746 16.726a3 3 0 1 0 .252 -5.555"></path>
+    </>
+  ),
+  beach: (
+    <>
+      <path d="M17.553 16.75a7.5 7.5 0 0 0 -10.606 0"></path>
+      <path d="M18 3.804a6 6 0 0 0 -8.196 2.196l10.392 6a6 6 0 0 0 -2.196 -8.196z"></path>
+      <path d="M16.732 10c1.658 -2.87 2.225 -5.644 1.268 -6.196c-.957 -.552 -3.075 1.326 -4.732 4.196"></path>
+      <path d="M15 9l-3 5.196"></path>
+      <path d="M3 19.25a2.4 2.4 0 0 1 1 -.25a2.4 2.4 0 0 1 2 1a2.4 2.4 0 0 0 2 1a2.4 2.4 0 0 0 2 -1a2.4 2.4 0 0 1 2 -1a2.4 2.4 0 0 1 2 1a2.4 2.4 0 0 0 2 1a2.4 2.4 0 0 0 2 -1a2.4 2.4 0 0 1 2 -1a2.4 2.4 0 0 1 1 .25"></path>
     </>
   ),
 
