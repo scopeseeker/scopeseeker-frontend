@@ -8,7 +8,7 @@ const MainHeading = (props: IMainHeadingProps) => {
     align = 'center',
     headColor = 'brand.black',
     paraColor = 'brand.darkgray',
-    fontsize = { base: '20px', md: '28px' },
+    fontsize = { base: '26px', md: '28px' },
     ...rest
   } = props;
   return (
@@ -25,7 +25,7 @@ const MainHeading = (props: IMainHeadingProps) => {
         as={'span'}
         textAlign={align}
         color={paraColor}
-        fontSize={{ base: '12px', md: '14px' }}
+        fontSize={{ base: '14px', md: '14px' }}
       >
         {subTitle}
       </Text>

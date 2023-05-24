@@ -21,12 +21,12 @@ const MyJobCard = ({
 }: IMyJobCard) => {
   return (
     <Center
-      w={{ base: '90vw', md: '100%', lg: '250px', '2xl': '350px' }}
-      h={{ base: '315px', sm: '280px', md: '315px' }}
+      w={'100%'}
+      // h={{ base: '342px', sm: '280px', md: '315px' }}
       borderRadius={10}
       cursor={'pointer'}
       px={'20px'}
-      py={'12px'}
+      py={'18px'}
       bg={'brand.white'}
       border={'1px solid'}
       borderColor={'brand.darkgray'}
@@ -37,21 +37,15 @@ const MyJobCard = ({
     >
       <VStack w={'full'}>
         <HStack justifyContent={'space-between'} w={'full'}>
-          <Center
-            w={isNamedLogo ? 'fit-content' : '52px'}
-            h={isNamedLogo ? '42px' : '52px'}
+        <Center
+            w={'56px'}
+            h={'56px'}
             borderRadius={'full'}
-            my={isNamedLogo ? '5px' : '0px'}
-            p={'8px'}
+            p={'6px'}
             overflow={'hidden'}
             bg={'brand.aliceblue'}
           >
-            <MyImage
-              src={companyIconLogo}
-              alt="logo"
-              width={isNamedLogo ? 80 : 80}
-              height={80}
-            />
+            <MyImage src={companyIconLogo} alt="logo" width={80} height={80} />
           </Center>
           <HStack>
             <Center w={'35px'} h={'35px'} cursor={'pointer'}>
@@ -61,31 +55,28 @@ const MyJobCard = ({
         </HStack>
 
         <VStack alignItems={'flex-start'} gap={'2px'} w={'full'}>
-          <Box>
+          <VStack spacing={0} gap={0} alignItems={'flex-start'}>
             <MyText title={role} as="title" />
             <MyText
               title={companyName}
-              as="span"
-              fontSize={{ base: '10px', md: '10px' }}
+              as="small"
             />
-          </Box>
+          </VStack>
           <Flex gap={'8px'} flexWrap={'wrap'} w={'full'}>
             <MyBadge labelArray={jobType} />
           </Flex>
-
           <MyText
             title={location}
-            as="span"
-            fontSize={{ base: '10px', md: '10px' }}
+            as="small"
           />
           <Flex h={'54px'} overflow={'hidden'} gap={0}>
             <MyText
-              as="st"
+              as="small"
               title={truncatedParagraph(companyDesc)}
               overflowWrap={'break-word'}
             />
           </Flex>
-          <HStack w={'full'}>
+          <HStack w={'full'} bg={'red.200'}>
             <Link href={'#'}>
               <MyButton
                 title="Apply Now"
