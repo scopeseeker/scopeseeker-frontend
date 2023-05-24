@@ -400,4 +400,5 @@ export {
   companyFilter,
   companyBenifits,
   employeeBenifits,
+  jobCardFields
 };
