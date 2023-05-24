@@ -120,9 +120,6 @@ export default function ContactUs() {
 
               <MyButton
                 title="Submit"
-                fontSize={'12px'}
-                borderRadius={4}
-                w="full"
               />
             </VStack>
           </Center>

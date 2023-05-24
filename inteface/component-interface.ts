@@ -11,7 +11,7 @@ export interface IMyButtonProps {
   title: string;
   fontSize?: { base: string; md: string } | string;
   variant?: string;
-  w?: string;
+  w?: { base: string; md: string };
   fontWeight?: string;
   [key: string]: any;
 }

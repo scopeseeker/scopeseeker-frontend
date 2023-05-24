@@ -23,6 +23,7 @@ const MyBadge = ({ labelArray, key }: IMyBadge) => {
           px={'8px'}
           py={'1px'}
           borderRadius={'6px'}
+          key={key}
         >
           <Text
             fontSize={{ base: '12px', md: '9.5px' }}

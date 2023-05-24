@@ -60,7 +60,7 @@ export default function Jobs() {
                 px={'4px'}
               />
             </HStack>
-            <MyButton title="Find Jobs" size="lg" h={'full'} borderRadius={0} />
+            <MyButton title="Find Jobs"/>
           </HStack>
           <MyDivider />
 

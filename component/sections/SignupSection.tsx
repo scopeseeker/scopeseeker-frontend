@@ -25,11 +25,9 @@ const SignupSection = () => {
               as="p"
             />
             <HStack pt={'12px'}>
-              <MyButton title="Register a New Account" size="lg" />
+              <MyButton title="Register a New Account"/>
               <MyButton
                 title="Sign In to Your Account"
-                border={'1.5px solid black'}
-                size="lg"
                 variant="outline"
               />
             </HStack>

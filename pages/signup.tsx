@@ -116,7 +116,7 @@ export default function Signup() {
                 leftElement={<MyIcon name="confirmation" />}
               />
             </HStack>
-            <MyButton title="Signup" w={'160px'} />
+            <MyButton title="Signup"/>
             <MyDivider />
             <VStack w={'full'}>
               <MyText as="heading" fontWeight={400} title="Or" />

@@ -93,15 +93,11 @@ const MyCompanyCard = ({
             <Link href={'#'}>
               <MyButton
                 title="Full Details"
-                fontSize={{ base: '14px', md: '12px' }}
-                px="18px"
               />
             </Link>
             <Link href={'#'}>
               <MyButton
                 title="View Jobs"
-                fontSize={{ base: '14px', md: '12px' }}
-                px="18px"
                 variant="outline"
               />
             </Link>

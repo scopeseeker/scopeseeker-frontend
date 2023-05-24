@@ -86,9 +86,6 @@ const HeroSection = () => {
               </HStack>
               <MyButton
                 title="Find Jobs"
-                size="lg"
-                h={'full'}
-                borderRadius={0}
               />
             </HStack>
             <Flex

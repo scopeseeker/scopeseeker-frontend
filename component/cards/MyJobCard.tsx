@@ -47,7 +47,11 @@ const MyJobCard = ({
           <MyIcon name="save" />
         </HStack>
 
-        <VStack alignItems={'flex-start'} gap={'2px'} w={'full'}>
+        <VStack
+          alignItems={'flex-start'}
+          gap={{ base: '2px', '2xl': '8px' }}
+          w={'full'}
+        >
           <VStack spacing={0} gap={0} alignItems={'flex-start'}>
             <MyText title={role} as="title" />
             <MyText title={`${companyName} - ${location}`} as="small" />
@@ -56,7 +60,11 @@ const MyJobCard = ({
             <MyBadge labelArray={jobType} />
           </Flex>
           {/* <MyText title={location} as="small" /> */}
-          <Flex h={{ base: '64px', md: '36px' }} overflow={'hidden'} gap={0}>
+          <Flex
+            h={{ base: '64px', md: '36px', '2xl': '44px' }}
+            overflow={'hidden'}
+            gap={0}
+          >
             <MyText
               as="small"
               title={truncatedParagraph(companyDesc, 18)}
