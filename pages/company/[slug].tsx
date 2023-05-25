@@ -69,7 +69,7 @@ export default function DynamicPage() {
                 borderRadius={'5px'}
                 gap={'5px'}
               >
-                <MyText as="st" title="Add to favourite" />
+                <MyText as='small' title="Add to favourite" />
                 <MyIcon name="heart" width="15px" />
               </Center>
             </HStack>
@@ -85,7 +85,7 @@ export default function DynamicPage() {
                 <MyText
                   as="small"
                   fontWeight={500}
-                  title="ST"
+                  title='small'
                   color="brand.white"
                 />
               </Center>

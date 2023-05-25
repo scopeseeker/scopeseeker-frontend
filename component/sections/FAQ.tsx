@@ -9,6 +9,7 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import { MainHeading } from '../main-heading';
+import { MyText } from '../text';
 
 const FAQ = () => {
   return (
@@ -17,26 +18,33 @@ const FAQ = () => {
         title={'Frequently Asked Questions'}
         subTitle={'Have any question ?'}
       />
-      <Accordion>
+      <Accordion allowMultiple>
         <VStack gap={2}>
           {faqFieldsObject.map((items, key) => {
             return (
               <AccordionItem
                 p={2}
                 w={{ base: '85vw', lg: '65vw', xl: '55vw' }}
-                bg={'gray.50'}
+                bg={'brand.white'}
                 borderRadius={'md'}
                 border={'1px solid'}
+                borderColor={'brand.darkgray'}
                 key={key}
+                
               >
                 <AccordionButton _hover={{ backgroundColor: 'none' }}>
-                  <Box as="span" fontSize={'md'} flex="1" textAlign="left">
-                    {items.qus}
-                  </Box>
+                  <MyText
+                    title={items.qus}
+                    as="span"
+                    width={'100%'}
+                    textAlign={'start'}
+                  />
                   <AccordionIcon />
                 </AccordionButton>
 
-                <AccordionPanel fontSize={'sm'}> {items.ans}</AccordionPanel>
+                <AccordionPanel>
+                  <MyText title={items.ans} as="p" />
+                </AccordionPanel>
               </AccordionItem>
             );
           })}

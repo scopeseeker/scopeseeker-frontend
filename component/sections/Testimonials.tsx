@@ -74,7 +74,7 @@ const Testimonials = () => {
                 </Center>
                 <Flex direction={'column'} align={'center'}>
                   <MyText as={'heading'} title="Lokesh Dhakar" />
-                  <MyText as={'st'} title="Full Stack Developer" />
+                  <MyText as={'span'} title="Full Stack Developer" />
                   <Text as={'span'} fontSize={'sm'} textAlign={'center'}>
                     <Center w={8} h={8} opacity={'0.7'} py={'10px'}>
                       <MyIcon name={'quotes-left'} width={'full'} />
@@ -122,7 +122,7 @@ const Testimonials = () => {
                 </Center>
                 <Flex direction={'column'} align={'center'}>
                   <MyText as={'heading'} title="Lokesh Dhakar" />
-                  <MyText as={'st'} title="Full Stack Developer" />
+                  <MyText as={'span'} title="Full Stack Developer" />
                   <Text as={'span'} fontSize={'sm'} textAlign={'center'}>
                     <Center w={8} h={8} opacity={'0.7'} py={'10px'}>
                       <MyIcon name={'quotes-left'} width={'full'} />
@@ -170,7 +170,7 @@ const Testimonials = () => {
                 </Center>
                 <Flex direction={'column'} align={'center'}>
                   <MyText as={'heading'} title="Lokesh Dhakar" />
-                  <MyText as={'st'} title="Full Stack Developer" />
+                  <MyText as={'span'} title="Full Stack Developer" />
                   <Text as={'span'} fontSize={'sm'} textAlign={'center'}>
                     <Center w={8} h={8} opacity={'0.7'} py={'10px'}>
                       <MyIcon name={'quotes-left'} width={'full'} />

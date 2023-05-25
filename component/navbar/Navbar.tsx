@@ -41,7 +41,7 @@ const Navbar = () => {
                   lineHeight={'shorter'}
                   title="Seek the scope of your potential"
                   as="span"
-                  fontSize={{ base: 'none', md: '8px' }}
+                  fontSize={{ base: 'none', md: '10px'}}
                   display={{ base: 'none', md: 'initial' }}
                 />
               </VStack>
@@ -88,7 +88,7 @@ const Navbar = () => {
               />
             </Center>
             <Center _hover={{ color: 'brand.primary' }} gap={'4px'}>
-            <MyIcon
+              <MyIcon
                 name="company"
                 width="18px"
                 height="18px"
@@ -104,7 +104,7 @@ const Navbar = () => {
             </Center>
 
             <Center _hover={{ color: 'brand.primary' }} gap={'4px'}>
-            <MyIcon
+              <MyIcon
                 name="company"
                 width="18px"
                 height="18px"
@@ -118,7 +118,6 @@ const Navbar = () => {
                 color="currentColor"
               />
             </Center>
-            
           </HStack>
         </HStack>
         <HStack></HStack>
