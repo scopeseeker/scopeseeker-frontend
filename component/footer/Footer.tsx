@@ -14,18 +14,17 @@ import { Layout } from '../layout';
 
 const Footer = () => {
   return (
-    
-      <VStack
-        bg={'brand.primary'}
-        w={'full'}
-        pt={'22px'}
-        gap={'10px'}
-        justifyContent={'space-between'}
-        color={'brand.white'}
-        mt={20}
-      >
-        <Layout>
-                  <Flex
+    <VStack
+      bg={'brand.primary'}
+      w={'full'}
+      pt={'22px'}
+      gap={'10px'}
+      justifyContent={'space-between'}
+      color={'brand.white'}
+      mt={20}
+    >
+      <Layout>
+        <Flex
           w={'full'}
           gap={{ base: 5, md: '2', xl: 10 }}
           flexDirection={{ base: 'column', md: 'row' }}
@@ -54,7 +53,7 @@ const Footer = () => {
                   title="Scope Seeker"
                 />
                 <MyText
-                  as={'st'}
+                  as={'small'}
                   lineHeight={'shorter'}
                   color="brand.white"
                   title="Seek the scope of your potential"
@@ -142,13 +141,11 @@ const Footer = () => {
               color="brand.white"
               title="Bhanpur, Ayodhya Bypass, Bhopal Madhya Pradesh, India"
             />
-            <Text as={'span'} fontSize={'13px'}>
-              We
-              <Text as={'span'} fontSize={'3xl'}>
-                ❤
-              </Text>
-              new friends
-            </Text>
+            <HStack spacing={0}>
+              <MyText as="span" title="We" color="brand.white" />
+              <MyText as="heading" title="💗" color="brand.white" />
+              <MyText as="span" title="new friends" color="brand.white" />
+            </HStack>
             <HStack py={2}>
               <IconButton
                 p={2}
@@ -189,15 +186,19 @@ const Footer = () => {
           color={'brand.white'}
           flexDirection={{ base: 'column', md: 'row' }}
         >
-          <Text as={'span'} fontSize={'xs'}>
-            &copy; 2023 Scope Seeker. All Right Reserved
-          </Text>
-          <Text as={'span'} fontSize={'xs'}>
-            Images Credit: Design by Freepik
-          </Text>
+          <MyText
+            as={'span'}
+            title={`© 2023 Scope Seeker. All Right Reserved`}
+            color="brand.white"
+          />
+          <MyText
+            as={'span'}
+            title={'Images Credit: Design by Freepik'}
+            color="brand.white"
+          />
         </Flex>
-    </Layout>
-      </VStack>
+      </Layout>
+    </VStack>
   );
 };
 

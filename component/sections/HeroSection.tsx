@@ -23,7 +23,7 @@ const HeroSection = () => {
         flexDirection={{ base: 'column', md: 'row' }}
         w={'full'}
         gap={'50px'}
-        mt={'24px'}
+        h={'56vh'}
       >
         <Center
           w={{ base: '100%', md: '60%' }}
@@ -133,7 +133,7 @@ const HeroSection = () => {
         <HStack>
           <MyText
             title={`Say Goodbye to Job Search Stress: Streamline Your Hunt with the Ultimate Jobseeker Platform!`}
-            as={'st'}
+            as={'span'}
             color="brand.white"
             textAlign={'center'}
           />

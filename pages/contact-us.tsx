@@ -156,7 +156,7 @@ export default function ContactUs() {
                         color={'brand.semiblack'}
                       />
                       <MyText
-                        as={'st'}
+                        as={'small'}
                         title="Bhopal sonagiri sector C183"
                         color={'brand.semiblack'}
                       />
@@ -190,7 +190,7 @@ export default function ContactUs() {
                         color={'brand.semiblack'}
                       />
                       <MyText
-                        as={'st'}
+                        as={'small'}
                         title={'09039122683'}
                         color={'brand.semiblack'}
                       />
@@ -225,7 +225,7 @@ export default function ContactUs() {
                         color={'brand.semiblack'}
                       />
                       <MyText
-                        as={'st'}
+                        as={'small'}
                         fontSize={{ base: '13px', md: '10px' }}
                         title="scopeseekerhelp@gmail.com"
                         color={'brand.semiblack'}
@@ -259,7 +259,7 @@ export default function ContactUs() {
                         color={'brand.semiblack'}
                       />
                       <MyText
-                        as={'st'}
+                        as={'small'}
                         title="09039122683"
                         color={'brand.semiblack'}
                       />

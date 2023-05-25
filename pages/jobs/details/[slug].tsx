@@ -84,7 +84,7 @@ export default function DynamicPage() {
                 marginBottom={'30px'}
               >
                 <MyText as="title" title="Full Stack Web Developer" />
-                <MyText as="st" title="Tata Consultancy Sevice" />
+                <MyText as="small" title="Tata Consultancy Sevice" />
               </VStack>
 
               <HStack pb={'30px'}>
@@ -138,7 +138,7 @@ export default function DynamicPage() {
                         title="Experience"
                         color={'gray.500'}
                       />
-                      <MyText as="st" title="Minumum 1 year" />
+                      <MyText as="span" title="Minumum 1 year" />
                     </VStack>
                   </Center>
 
@@ -164,7 +164,7 @@ export default function DynamicPage() {
 
                     <VStack spacing={0} alignItems={'flex-start'}>
                       <MyText as="small" title="Type" color={'gray.500'} />
-                      <MyText as="st" title="Full Type" />
+                      <MyText as="span" title="Full Type" />
                     </VStack>
                   </Center>
 
@@ -199,7 +199,7 @@ export default function DynamicPage() {
 
                     <VStack spacing={0} alignItems={'flex-start'}>
                       <MyText as="small" title="Location" color={'gray.500'} />
-                      <MyText as="st" title="Bengluru" />
+                      <MyText as="span" title="Bengluru" />
                     </VStack>
                   </Center>
                 </HStack>
@@ -215,7 +215,11 @@ export default function DynamicPage() {
                       py={'3px'}
                       borderRadius={'3px'}
                     >
-                      <MyText as="st" title="JavaScript" color="brand.white" />
+                      <MyText
+                        as="small"
+                        title="JavaScript"
+                        color="brand.white"
+                      />
                     </Center>
 
                     <Center
@@ -224,7 +228,7 @@ export default function DynamicPage() {
                       py={'3px'}
                       borderRadius={'3px'}
                     >
-                      <MyText as="st" title="ReactJS" color="brand.white" />
+                      <MyText as="small" title="ReactJS" color="brand.white" />
                     </Center>
 
                     <Center
@@ -233,7 +237,11 @@ export default function DynamicPage() {
                       py={'3px'}
                       borderRadius={'3px'}
                     >
-                      <MyText as="st" title="TypeScript" color="brand.white" />
+                      <MyText
+                        as="small"
+                        title="TypeScript"
+                        color="brand.white"
+                      />
                     </Center>
 
                     <Center
@@ -242,7 +250,7 @@ export default function DynamicPage() {
                       py={'3px'}
                       borderRadius={'3px'}
                     >
-                      <MyText as="st" title="NextJs" color="brand.white" />
+                      <MyText as="small" title="NextJs" color="brand.white" />
                     </Center>
                   </HStack>
                 </VStack>

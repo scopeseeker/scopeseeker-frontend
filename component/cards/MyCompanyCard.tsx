@@ -84,7 +84,7 @@ const MyCompanyCard = ({
           </Flex>
           <Flex h={'58px'} overflow={'hidden'} gap={0}>
             <MyText
-              as="st"
+              as="small"
               title={truncatedParagraph(companyDesc)}
               overflowWrap={'break-word'}
             />
