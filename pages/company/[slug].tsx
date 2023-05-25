@@ -7,9 +7,7 @@ import { useRouter } from 'next/router';
 
 export default function DynamicPage() {
   const router = useRouter();
-  const {
-    query: { slug },
-  } = router;
+  const{ slug } = router.query;
   return (
     <>
       <Head>
@@ -28,7 +26,7 @@ export default function DynamicPage() {
             borderRadius={'10px'}
           >
             <VStack spacing={0}>
-              <MyText as="heading" title="Full Stack Web Developer" />
+              <MyText as="heading" title={`Full ${slug} Stack Web Developer`}/>
               <MyText as="span" title="Tata Consultancy Service" />
             </VStack>
           </Center>
