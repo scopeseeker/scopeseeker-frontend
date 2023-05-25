@@ -88,27 +88,8 @@ export default function DynamicPage() {
               </VStack>
 
               <HStack pb={'30px'}>
-                <Center
-                  w={'112px'}
-                  borderRadius={'20px'}
-                  h={'36px'}
-                  bg={'brand.lightgray'}
-                >
-                  <MyText as="span" fontWeight={500} title="Save" />
-                </Center>
-                <Center
-                  w={'112px'}
-                  borderRadius={'20px'}
-                  h={'36px'}
-                  bg={'brand.primary'}
-                >
-                  <MyText
-                    as="span"
-                    color="brand.white"
-                    fontWeight={500}
-                    title="Apply"
-                  />
-                </Center>
+                <MyButton title="Save" variant="outline" px={'36px'} />
+                <MyButton title="Apply" px={'36px'} />
               </HStack>
             </HStack>
 
@@ -431,7 +412,7 @@ export default function DynamicPage() {
                   </VStack>
                 </VStack>
 
-                <MyButton title="Apply"/>
+                <MyButton title="Apply" px={'36px'} />
 
                 {/* Share Job */}
                 <HStack w={'full'} alignItems={'center'} gap={'10px'}>

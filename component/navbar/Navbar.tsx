@@ -2,6 +2,7 @@ import { Box, Center, HStack, VStack, useColorMode } from '@chakra-ui/react';
 import Link from 'next/link';
 import MyImage from '../image/MyImage';
 import MyText from '../text/MyText';
+import { MyIcon } from '../icon';
 
 const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -48,22 +49,18 @@ const Navbar = () => {
           </Link>
           {/* Links Sections */}
           <HStack gap={'12px'}>
-            <Center _hover={{ color: 'brand.primary' }} gap={'4px'}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="ionicon"
-                viewBox="0 0 512 512"
-                width={'16px'}
-                height={'16px'}
-              >
-                <path
-                  d="M320 320H192M80 176a16 16 0 00-16 16v216c0 30.24 25.76 56 56 56h272c30.24 0 56-24.51 56-54.75V192a16 16 0 00-16-16zM160 176v-32a96 96 0 0196-96h0a96 96 0 0196 96v32"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinejoin="round"
-                  strokeWidth="28"
-                />
-              </svg>
+            <Center
+              _hover={{ color: 'brand.primary' }}
+              gap={'4px'}
+              cursor={'pointer'}
+            >
+              <MyIcon
+                name="job"
+                width="18px"
+                height="18px"
+                strokeWidth="1.2"
+                color="currentColor"
+              />
               <MyText
                 title="Jobs"
                 as="link"
@@ -71,22 +68,33 @@ const Navbar = () => {
                 color="currentColor"
               />
             </Center>
+            <Center
+              _hover={{ color: 'brand.primary' }}
+              gap={'4px'}
+              cursor={'pointer'}
+            >
+              <MyIcon
+                name="job"
+                width="18px"
+                height="18px"
+                strokeWidth="1.2"
+                color="currentColor"
+              />
+              <MyText
+                title="Jobs Details"
+                as="link"
+                href="/jobs/details/dfasdfasf"
+                color="currentColor"
+              />
+            </Center>
             <Center _hover={{ color: 'brand.primary' }} gap={'4px'}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="ionicon"
-                viewBox="0 0 512 512"
-                width={'16px'}
-                height={'16px'}
-              >
-                <path
-                  d="M320 320H192M80 176a16 16 0 00-16 16v216c0 30.24 25.76 56 56 56h272c30.24 0 56-24.51 56-54.75V192a16 16 0 00-16-16zM160 176v-32a96 96 0 0196-96h0a96 96 0 0196 96v32"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinejoin="round"
-                  strokeWidth="28"
-                />
-              </svg>
+            <MyIcon
+                name="company"
+                width="18px"
+                height="18px"
+                strokeWidth="1.2"
+                color="currentColor"
+              />
               <MyText
                 title="Company"
                 as="link"
@@ -94,6 +102,23 @@ const Navbar = () => {
                 color="currentColor"
               />
             </Center>
+
+            <Center _hover={{ color: 'brand.primary' }} gap={'4px'}>
+            <MyIcon
+                name="company"
+                width="18px"
+                height="18px"
+                strokeWidth="1.2"
+                color="currentColor"
+              />
+              <MyText
+                title="Company Details"
+                as="link"
+                href="/company/asddfasdf"
+                color="currentColor"
+              />
+            </Center>
+            
           </HStack>
         </HStack>
         <HStack></HStack>
