@@ -10,7 +10,7 @@ export interface IMyBadge {
 export interface IMyButtonProps {
   title: string;
   borderRadius?: string
-  variant?: string;
+  variant?: 'outline' | 'solid';
   px?: string; 
   [key: string]: any;
 }
