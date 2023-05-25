@@ -1,5 +1,6 @@
 import { Layout, MyIcon, MyImage, MyText } from '@/component';
 import Benifits from '@/component/comapany-details/Benifits';
+import JobTab from '@/component/comapany-details/JobTab';
 import Overview from '@/component/comapany-details/Overview';
 import { Center, HStack, Tab, TabIndicator, TabList, TabPanel, TabPanels, Tabs, VStack } from '@chakra-ui/react';
 import Head from 'next/head';
@@ -117,8 +118,8 @@ export default function DynamicPage() {
             </HStack>
 
             {/* Tabs */}
-            <HStack paddingTop={'30px'}>
-              <Tabs position="relative" variant="unstyled">
+            <HStack paddingTop={'30px'} w={'full'}>
+              <Tabs position="relative" variant="unstyled" w={'full'}>
                 <TabList>
                   <Tab> <MyText as='title' title='Overview'/> </Tab>
                   <Tab> <MyText as='title' title='Benifits'/> </Tab>
@@ -138,7 +139,7 @@ export default function DynamicPage() {
                     <Benifits/>
                   </TabPanel>
                   <TabPanel>
-                    <p>three!</p>
+                    <JobTab/>
                   </TabPanel>
                 </TabPanels>
               </Tabs>

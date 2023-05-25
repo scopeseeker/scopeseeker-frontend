@@ -40,7 +40,7 @@ const Navbar = () => {
                 <MyText
                   lineHeight={'shorter'}
                   title="Seek the scope of your potential"
-                  as="span"
+                  as="small"
                   fontSize={{ base: 'none', md: '10px'}}
                   display={{ base: 'none', md: 'initial' }}
                 />

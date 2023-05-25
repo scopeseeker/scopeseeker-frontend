@@ -12,16 +12,17 @@ const Overview = () => {
       <MyText as="heading" title="About US" />
 
       <HStack
-        w={'85vw'}
-        h={'60vh'}
-        bg={'brand.aliceblue'}
+        w={'65vw'}
+        h={'50vh'}
+        boxShadow= '0px 0px 30px rgb(0,0,0,0.2)'
         padding={'20px'}
         justifyContent={'space-between'}
         borderRadius={'10px'}
+        gap={'20px'}
       >
         {/* Video Part */}
         <Box w={'500px'} h={'full'} borderRadius={'10px'} overflow={'hidden'}>
-          <AspectRatio maxW="500px" ratio={1.5}>
+          <AspectRatio maxW="500px" h={'full'} ratio={1.5}>
             <iframe
               src="https://www.youtube.com/embed/uYRygzr_W0U"
               title="Capgemini Containerization Service Powered by Red Hat"
@@ -36,7 +37,7 @@ const Overview = () => {
           <MyText as="heading" title="Camgimini" />
           <Box overflow={'scroll'} pr={'40px'}>
             <MyText
-              as="span"
+              as="p"
               title="Capgemini is a multinational consulting, technology services, and digital transformation company. It is headquartered in Paris, France. Capgemini provides services in various areas such as consulting, technology services, and digital transformation. The company offers a wide range of services including strategy and transformation, application services, infrastructure services, engineering services, business process outsourcing, and more.Capgemini has a global presence with offices and delivery centers in numerous countries around the world. It serves clients in various industries including automotive, banking, consumer products, energy, healthcare, insurance, manufacturing, retail, telecommunications, and others.The company is known for its expertise in areas such as cloud computing, cybersecurity, artificial intelligence, data analytics, and digital customer experience. Capgemini works with clients to help them navigate through digital disruptions, improve operational efficiency, enhance customer experience, and drive innovation.Capgemini has a diverse workforce comprising professionals from different backgrounds and expertise. It fosters a collaborative and inclusive work environment and encourages continuous learning and development.Please note that the information provided here is based on the knowledge available up until September 2021, and there may have been updates or changes in Capgeminis operations since then."
             />
           </Box>
