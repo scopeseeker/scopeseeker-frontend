@@ -6,7 +6,7 @@ import {
   MyJobCard,
   MyText,
 } from '@/component';
-import {jobCardFields, jobsFilter } from '@/constant/constantFields';
+import { jobCardFields, jobsFilter } from '@/constant/constantFields';
 import {
   Box,
   Center,
@@ -39,29 +39,23 @@ export default function Jobs() {
             w={'full'}
             height={{ base: '40px', sm: '52px' }}
             boxShadow={'0px 0px 120px rgb(0, 0, 0, 0.2)'}
-            borderRadius={6}
+            borderRadius={'50px'}
             overflow={'hidden'}
             spacing={0}
+            justifyContent={'space-between'}
           >
-            <HStack
-              w={'full'}
+            <Input
+              variant={'unstyled'}
+              mx={'20px'}
               h={'full'}
-              bg={'brand.white'}
-              borderLeftRadius={6}
-              border={'1px solid'}
-              borderColor={'brand.lightgray'}
-              px={'6px'}
-            >
-              <Input
-                fontSize={{ base: '12px', md: '14px' }}
-                placeholder={'Search by Roles, Company, Technologies...'}
-                type="text"
-                variant={'unstyled'}
-                px={'4px'}
-              />
-            </HStack>
-            <MyButton title="Find Jobs"/>
+              placeholder="Search by role, companies, technologies..."
+              fontSize={'14px'}
+              width={'30%'}
+            />
+
+            <MyButton title="Find Jobs" h={'100%'} px={'20px'} />
           </HStack>
+
           <MyDivider />
 
           <Center
