@@ -4,90 +4,97 @@ import Link from 'next/link';
 const MyText = ({
   title,
   as,
-  color = 'brand.semiblack',
+  color = 'brand.black',
   href = '#',
   fontWeight,
-  hoverColor,
-  fontSize = { base: '13px', md: '13px' },
+  fontSize,
   ...rest
 }: IMyText) => {
   return (
     <>
-      {as === 'p' && (
-        <Text
-          color={color}
-          as={'p'}
-          fontSize={{ base: '16px', md: '15px', '2xl': '18px' }}
-          {...rest}
-        >
-          {title}
-        </Text>
-      )}
-
-      {as === 'small' && (
-        <Text
-          color={color}
-          as={'span'}
-          fontSize={{ base: '14px', md: '12px', '2xl': '14px' }}
-          fontWeight={fontWeight}
-          {...rest}
-        >
-          {title}
-        </Text>
-      )}
-
-      {as === 'heading' && (
-        <Text
-          color={color}
-          as={'span'}
-          fontFamily={'heading'}
-          fontWeight={600}
-          fontSize={{ base: '24px', md: '20px', '2xl': '22px' }}
-          {...rest}
-        >
-          {title}
-        </Text>
-      )}
-      {as === 'title' && (
-        <Text
-          color={color}
-          as={'span'}
-          fontFamily={'heading'}
-          fontWeight={fontWeight ? fontWeight : 600}
-          fontSize={{ base: '17px', md: '15px', '2xl': '16px' }}
-          {...rest}
-        >
-          {title}
-        </Text>
-      )}
-
-      {as === 'link' && (
-        <Link href={href}>
-          <Text
-            color={color}
-            display={'block'}
-            as={'span'}
-            fontSize={fontSize}
-            fontWeight={fontWeight}
-            {...rest}
-          >
-            {title}
-          </Text>
-        </Link>
-      )}
-
-      {as === 'span' && (
-        <Text
-          color={color}
-          display={'block'}
-          as={'span'}
-          fontSize={fontSize}
-          fontWeight={fontWeight}
-          {...rest}
-        >
-          {title}
-        </Text>
-      )}
+      {(() => {
+        switch (as) {
+          case 'p':
+            return (
+              <Text
+                as={'p'}
+                color={color}
+                fontSize={{ base: '16px', md: '15px', '2xl': '18px' }}
+                {...rest}
+              >
+                {title}
+              </Text>
+            );
+          case 'small':
+            return (
+              <Text
+                as={'span'}
+                color={color}
+                fontSize={{ base: '14px', md: '12px', '2xl': '14px' }}
+                fontWeight={fontWeight}
+                {...rest}
+              >
+                {title}
+              </Text>
+            );
+          case 'heading':
+            return (
+              <Text
+                as={'h3'}
+                color={color}
+                fontSize={{ base: '24px', md: '20px', '2xl': '22px' }}
+                fontFamily={'heading'}
+                fontWeight={600}
+                {...rest}
+              >
+                {title}
+              </Text>
+            );
+          case 'title':
+            return (
+              <Text
+                as={'span'}
+                color={color}
+                fontSize={{ base: '17px', md: '15px', '2xl': '16px' }}
+                fontFamily={'heading'}
+                fontWeight={fontWeight || 600}
+                {...rest}
+              >
+                {title}
+              </Text>
+            );
+          case 'link':
+            return (
+              <Link href={href}>
+                <Text
+                  as={'span'}
+                  color={color}
+                  fontSize={{ base: '13px', md: '13px' }}
+                  display={'block'}
+                  fontWeight={fontWeight}
+                  {...rest}
+                >
+                  {title}
+                </Text>
+              </Link>
+            );
+          case 'span':
+            return (
+              <Text
+                as={'span'}
+                color={color}
+                fontSize={{ base: '13px', md: '13px' }}
+                display={'block'}
+                fontWeight={fontWeight}
+                {...rest}
+              >
+                {title}
+              </Text>
+            );
+          default:
+            return null;
+        }
+      })()}
     </>
   );
 };

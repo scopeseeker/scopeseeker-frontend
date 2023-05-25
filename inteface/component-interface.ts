@@ -9,9 +9,9 @@ export interface IMyBadge {
 
 export interface IMyButtonProps {
   title: string;
-  borderRadius?: string
+  borderRadius?: string;
   variant?: 'outline' | 'solid';
-  px?: string; 
+  px?: string;
   [key: string]: any;
 }
 
@@ -75,11 +75,12 @@ export interface IPageHeroSection {
 
 export interface IMyText {
   title: string;
-  as: string;
+  as: 'span' | 'small' | 'heading' | 'link' | 'title' | 'p';
   color?: string;
   href?: string;
   fontWeight?: number;
-  hoverColor?: string;
-  fontSize?: { base: string; md: string };
+  fontSize?:
+    | { base: string; md: string }
+    | { base: string; md: string; '2xl': string };
   [key: string]: any;
 }
