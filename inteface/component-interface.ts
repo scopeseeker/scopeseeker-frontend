@@ -9,10 +9,9 @@ export interface IMyBadge {
 
 export interface IMyButtonProps {
   title: string;
-  fontSize?: { base: string; md: string } | string;
+  borderRadius?: string
   variant?: string;
-  w?: { base: string; md: string };
-  fontWeight?: string;
+  px?: string; 
   [key: string]: any;
 }
 

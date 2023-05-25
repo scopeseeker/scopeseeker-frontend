@@ -63,18 +63,19 @@ const HeroSection = () => {
               w={{ base: '100%', lg: '80%' }}
               height={{ base: '42px', md: '48px', lg: '42px' }}
               boxShadow={'0px 0px 120px rgb(0, 0, 0, 0.2)'}
-              borderRadius={6}
+              borderRadius={'20px'}
               overflow={'hidden'}
               spacing={0}
+              justifyContent={'space-between'}
             >
               <HStack
-                w={'full'}
+                w={'70%'}
                 h={'full'}
                 bg={'brand.white'}
                 borderLeftRadius={6}
-                border={'1px solid'}
+                // border={'1px solid'}
                 borderColor={'brand.lightgray'}
-                px={'6px'}
+                px={'12px'}
               >
                 <Input
                   fontSize={{ base: '12px', md: '12px' }}
@@ -86,6 +87,7 @@ const HeroSection = () => {
               </HStack>
               <MyButton
                 title="Find Jobs"
+                
               />
             </HStack>
             <Flex
