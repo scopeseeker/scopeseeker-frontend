@@ -20,7 +20,7 @@ import {
   
         <HStack h={'100vh'} flexDirection={{ base: 'column', md: 'row' }} w={'full'} bg={'white'}>
           {/* Left Part */}
-          <VStack h={'full'}  w={{ base: '100%', md: 'full', lg: '30%' }} p={'10px'} >
+          <VStack h={'full'}  w={{ base: '100%', md: '50%', lg: '30%' }} p={'10px'} >
             <VStack
               w={'full'}
               h={'full'}
