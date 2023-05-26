@@ -18,9 +18,18 @@ export default function Signup() {
         <title>SignUp | Scope Seeker</title>
       </Head>
 
-      <HStack h={'100vh'} w={'full'} bg={'white'}>
+      <HStack
+        h={'100vh'}
+        w={'full'}
+        flexDirection={{ base: 'column', md: 'row' }}
+        bg={'white'}
+      >
         {/* Left Part */}
-        <VStack h={'full'} w={'30%'} p={'10px'}>
+        <VStack
+          h={'full'}
+          p={'10px'}
+          w={{ base: '100%', sm: '100%', md: '40%', lg: '30%' }} 
+        >
           <VStack
             w={'full'}
             h={'full'}
@@ -46,6 +55,7 @@ export default function Signup() {
                       as="title"
                       color="white"
                     />
+
                     <MyText
                       lineHeight={'shorter'}
                       title="Seek the scope of your potential"
@@ -66,18 +76,29 @@ export default function Signup() {
                 paraColor="lightgray"
                 align={'start'}
               />
-              <MyImage
-                alt="signup"
-                src={'/assets/images/signup-image.png'}
-                width={350}
-                height={350}
-              />
+              <Center display={{ base: 'none', md: 'flex' }}>
+                <MyImage
+                  alt="signup"
+                  src={'/assets/images/signup-image.png'}
+                  width={350}
+                  height={350}
+                />
+              </Center>
             </Center>
           </VStack>
         </VStack>
         {/* Right part */}
-        <Center w={'70%'} h={'full'} p={'20px'} gap={'28px'}>
-          <VStack w={'60%'} alignItems={'flex-start'} gap={'8px'}>
+        <Center
+          w={{ base: '100%', sm: '100%', md: '70%', lg: '70%' }} 
+          h={'full'}
+          p={'20px'}
+          gap={'28px'}
+        >
+          <VStack
+            w={{ base: '100%', md: '60%' }}
+            alignItems={'flex-start'}
+            gap={'8px'}
+          >
             <Box>
               <MyText as="heading" title="Sign Up Into Scope Seeker" />
               <MyText as="p" title="Already have an account" />
@@ -88,7 +109,11 @@ export default function Signup() {
               placeholder="Lokesh Dhakar"
               leftElement={<MyIcon name="person-circle" />}
             />
-            <HStack w={'full'}>
+            <HStack
+              w={'full'}
+              flexDirection={{ base: 'column', sm: 'column', md: 'row' }}
+              gap={'4px'}
+            >
               <MyInput
                 type="email"
                 labelTitle="Email Address"
@@ -96,13 +121,17 @@ export default function Signup() {
                 leftElement={<MyIcon name="email" />}
               />
               <MyInput
-                type="phone"
+                type="number"
                 labelTitle="Phone Number"
                 placeholder="XXXXXX8879"
                 leftElement={<MyIcon name="phone" />}
               />
             </HStack>
-            <HStack w={'full'}>
+            <HStack
+              w={'full'}
+              flexDirection={{ base: 'column', sm: 'column', md: 'row' }}
+              gap={'4px'}
+            >
               <MyInput
                 type="password"
                 labelTitle="Password"
@@ -116,7 +145,7 @@ export default function Signup() {
                 leftElement={<MyIcon name="confirmation" />}
               />
             </HStack>
-            <MyButton title="Signup"/>
+            <MyButton title="Signup" />
             <MyDivider />
             <VStack w={'full'}>
               <MyText as="heading" fontWeight={400} title="Or" />
