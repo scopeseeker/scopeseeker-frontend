@@ -18,9 +18,9 @@ import {
           <title>Login | Scope Seeker</title>
         </Head>
   
-        <HStack h={'100vh'} w={'full'} bg={'white'}>
+        <HStack h={'100vh'} flexDirection={{ base: 'column', md: 'row' }} w={'full'} bg={'white'}>
           {/* Left Part */}
-          <VStack h={'full'} w={'30%'} p={'10px'}>
+          <VStack h={'full'}  w={{ base: '100%', md: 'full', lg: '30%' }} p={'10px'} >
             <VStack
               w={'full'}
               h={'full'}
@@ -32,7 +32,7 @@ import {
               {/*Scope Seeker Logo*/}
               <HStack w={'full'}>
                 <Link href={'/'}>
-                  <Center gap={'8px'} mr={'10px'}>
+                  <Center gap={'8px'} mr={'10px'} >
                     <MyImage
                       src={'/assets/images/scopeseeker-logo.png'}
                       alt={'secope seeker logo'}
@@ -58,7 +58,7 @@ import {
                   </Center>
                 </Link>
               </HStack>
-              <Center flexDirection={'column'} w={'full'} h={'100%'} gap={'42px'}>
+              <Center flexDirection={'column'} w={'full'} h={'100%'} gap={'42px'} >
                 <MainHeading
                   title="Experience the Future of Job with Scope Seeker"
                   headColor="white"
@@ -66,18 +66,21 @@ import {
                   paraColor="lightgray"
                   align={'start'}
                 />
+                <Center display={{base:'none',md:'flex'}}>
+
                 <MyImage
                   alt="signup"
                   src={'/assets/images/signup-image.png'}
                   width={350}
                   height={350}
-                />
+                  />
+                  </Center>
               </Center>
             </VStack>
           </VStack>
           {/* Right part */}
-          <Center w={'70%'} h={'full'} p={'20px'} gap={'28px'}>
-            <VStack w={'60%'} alignItems={'flex-start'} gap={'8px'}>
+          <Center w={{ base: '100%', md: 'full', lg: '70%' }} h={'full'} p={'20px'} gap={'28px'}>
+            <VStack w={{ base:'100%',md:'60%'}} alignItems={'flex-start'} gap={'8px'}>
               <Box>
                 <MyText as="heading" title="Log Into Scope Seeker" />
                 <MyText as="p" title="Do not have an account ?" />
