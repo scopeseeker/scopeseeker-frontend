@@ -393,6 +393,94 @@ const employeeBenifits = [
   },
 ];
 
+const companyDescTable = [
+  {
+    name: 'Founded in',
+    value: '1967 (56 yrs old)',
+  },
+  {
+    name: 'Headquaters',
+    value: 'Paris, France',
+  },
+  {
+    name: 'Office location',
+    value: 'Hyderabad/Secunderabad | Chennai | Navi Mumbai',
+  },
+  {
+    name: 'Official website',
+    value: 'https://www.capgemini.com/in-en/',
+  },
+  {
+    name: 'Company gmail',
+    value: 'camgimini@gmail.com',
+  },
+  {
+    name: 'CEO',
+    value: 'Ashwin Yardi',
+  },
+  {
+    name: 'Nature of Business',
+    value: 'Service | B2B',
+  },
+  {
+    name: 'Contact No.',
+    value: '9431887356',
+  },
+  {
+    name: 'Ownership',
+    value: 'Public',
+  },
+  {
+    name: 'Type of company',
+    value: 'Foreign MNC',
+  },
+  {
+    name: 'Founder',
+    value: 'Serge Kampf',
+  },
+];
+
+const companySubsidiaries = [
+  {
+    image: '/assets/images/company-logo/capgemini.png',
+    name: 'Capgemini Engineering',
+  },
+  {
+    image: '/assets/images/company-logo/capgiminilogo.png',
+    name: 'LiquidHub',
+  },
+  {
+    image: '/assets/images/company-logo/capgemini.png',
+    name: 'Saintlife Pharmaceuticals ',
+  },
+  {
+    image: '/assets/images/company-logo/capgiminilogo.png',
+    name: 'IGATE',
+  },
+  {
+    image: '/assets/images/company-logo/capgemini.png',
+    name: 'Thesys Technologies',
+  },
+];
+
+const companyLeaders = [
+  {
+    image: '/assets/images/p12.jpg',
+    name: 'Aiman Ezzat',
+    organisation: 'Chief Executive Officer and Director',
+  },
+  {
+    image: '/assets/images/p12.jpg',
+    name: 'Michael Schulte',
+    organisation: 'CEO, Northen Europe Strategic Business Unit',
+  },
+  {
+    image: '/assets/images/p12.jpg',
+    name: 'Cyril Garica',
+    organisation: 'Head of global sustainability services',
+  },
+];
+
 export {
   faqFieldsObject,
   popularCategoryObject,
@@ -400,5 +488,8 @@ export {
   companyFilter,
   companyBenifits,
   employeeBenifits,
-  jobCardFields
+  jobCardFields,
+  companyDescTable,
+  companySubsidiaries,
+  companyLeaders,
 };
