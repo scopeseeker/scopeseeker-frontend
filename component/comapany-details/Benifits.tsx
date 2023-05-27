@@ -67,7 +67,7 @@ const Benifits = () => {
       >
         <MyText as="heading" title="Benifits reported by employee" />
         <Grid
-          templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(7, 1fr)' }}
+          templateColumns={{ base: 'repeat(2, 1fr)', md: 'repeat(7, 1fr)' }}
           gap={'22px'}
         >
           <>

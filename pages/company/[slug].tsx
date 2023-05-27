@@ -19,7 +19,7 @@ export default function DynamicPage() {
         <VStack w={'full'} px={'32px'} py={'32px'} gap={'30px'}>
           <Center
             w={'full'}
-            h={'30vh'}
+            h={'200px'}
             backgroundImage={
               'radial-gradient(circle at center center, transparent, #EBECFF), repeating-radial-gradient(circle at center center, brand.aliceblue, brand.aliceblue, 1px, transparent 28px, transparent 1px)'
             }

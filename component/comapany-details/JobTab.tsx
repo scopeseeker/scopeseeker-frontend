@@ -1,12 +1,11 @@
-import { Box, Center, HStack, VStack } from '@chakra-ui/react';
-import React from 'react';
-import { MyText } from '../text';
-import { MyInput } from '../inputs';
+import { Center, HStack, VStack } from '@chakra-ui/react';
 import { MyIcon } from '../icon';
+import { MyInput } from '../inputs';
+import { MyText } from '../text';
 
 const JobTab = () => {
   return (
-    <VStack w={'full'} px={'100px'}>
+    <VStack w={'full'} px={'100px'} marginTop={'20px'}>
       <HStack
         w={'full'}
         py={'20px'}
@@ -37,15 +36,15 @@ const JobTab = () => {
         </Center>
       </HStack>
 
-        {/* Search part */}
+      {/* Search part */}
       <HStack w={'full'} pt={'30px'}>
-        <MyText as='title' title='Capgemini Jobs'/>
+        <MyText as="title" title="Capgemini Jobs" />
         <HStack w={'full'}>
-        <MyInput
-                  type="text"
-                  placeholder="search jobs here.."
-                  leftElement={<MyIcon name="search" />}
-                />
+          <MyInput
+            type="text"
+            placeholder="search jobs here.."
+            leftElement={<MyIcon name="search" />}
+          />
         </HStack>
       </HStack>
     </VStack>
