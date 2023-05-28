@@ -51,6 +51,7 @@ export interface IWhyBox {
 export interface ILayoutProps {
   children: ReactNode;
   py?: { base: string; md: string };
+  w?: any;
 }
 export interface IMainHeadingProps {
   title: string;
