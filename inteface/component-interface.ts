@@ -52,6 +52,7 @@ export interface ILayoutProps {
   children: ReactNode;
   py?: { base: string; md: string };
   w?: any;
+  [key: string] : any;
 }
 export interface IMainHeadingProps {
   title: string;

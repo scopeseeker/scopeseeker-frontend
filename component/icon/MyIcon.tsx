@@ -13,7 +13,7 @@ const MyIcon = ({
   color = 'brand.black',
   width = '24px',
   height = '24px',
-  strokeWidth = '1.5',
+  strokeWidth = '1.2',
   name,
 }: IMyIconProps) => {
   return (
