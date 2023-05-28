@@ -20,7 +20,7 @@ export default function Login() {
       </Head>
 
       <HStack
-        h={'100%'}
+        h={'100vh'}
         flexDirection={{ base: 'column', md: 'row' }}
         w={'full'}
         bg={'white'}

@@ -44,7 +44,7 @@ const MyText = ({
                 color={color}
                 fontSize={{ base: '24px', md: '20px', '2xl': '22px' }}
                 fontFamily={'heading'}
-                fontWeight={600}
+                fontWeight={fontWeight || 600}
                 {...rest}
               >
                 {title}
