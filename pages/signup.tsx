@@ -1,4 +1,5 @@
 import {
+  Layout,
   MainHeading,
   MyButton,
   MyDivider,
@@ -35,8 +36,8 @@ export default function Signup() {
             h={'full'}
             bg={'brand.primary'}
             borderRadius={'8px'}
-            gap={'50px'}
-            p={'32px'}
+            gap={'32px'}
+            p={'28px'}
           >
             {/*Scope Seeker Logo*/}
             <HStack w={'full'}>
@@ -68,7 +69,7 @@ export default function Signup() {
                 </Center>
               </Link>
             </HStack>
-            <Center flexDirection={'column'} w={'full'} h={'100%'} gap={'42px'}>
+            <Center flexDirection={'column'} w={'full'} h={'100%'} gap={'32px'}>
               <MainHeading
                 title="Start your journey with Scope Seeker."
                 headColor="white"
@@ -80,24 +81,26 @@ export default function Signup() {
                 <MyImage
                   alt="signup"
                   src={'/assets/images/signup-image.png'}
-                  width={350}
-                  height={350}
+                  width={250}
+                  height={250}
                 />
               </Center>
             </Center>
           </VStack>
         </VStack>
         {/* Right part */}
+        <Layout
+        w={{ base: '100%', sm: '100%', md: '70%', lg: '70%' }} 
+        >
+
         <Center
-          w={{ base: '100%', sm: '100%', md: '70%', lg: '70%' }} 
+          w={'100%'} 
           h={'full'}
-          p={'20px'}
-          gap={'28px'}
         >
           <VStack
             w={{ base: '100%', md: '60%' }}
             alignItems={'flex-start'}
-            gap={'8px'}
+            gap={'10px'}
           >
             <Box>
               <MyText as="heading" title="Sign Up Into Scope Seeker" />
@@ -192,6 +195,8 @@ export default function Signup() {
             </VStack>
           </VStack>
         </Center>
+        </Layout>
+
       </HStack>
     </>
   );
