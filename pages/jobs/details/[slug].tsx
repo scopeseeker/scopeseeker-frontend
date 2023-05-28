@@ -180,7 +180,7 @@ export default function JobDetailsPage() {
                     }}
                     h={'full'}
                     w={{ base: 'full', md: '150px' }}
-                    pr={'10px'}
+                    pr={{base: '70px', md: '10px'}}
                   >
                     <Center w={{ base: '35px', md: '25px' }}>
                       <svg
@@ -212,7 +212,7 @@ export default function JobDetailsPage() {
                     gap={3}
                     h={'full'}
                     w={{ base: 'full', md: '150px' }}
-                    pr={'10px'}
+                    pr={{base: '70px', md: '10px'}}
                   >
                     <Center w={{ base: '35px', md: '25px' }}>
                       <svg

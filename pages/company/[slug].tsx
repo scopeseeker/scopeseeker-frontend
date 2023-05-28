@@ -2,13 +2,13 @@ import { Layout, MyIcon, MyImage, MyText } from '@/component';
 import Benifits from '@/component/comapany-details/Benifits';
 import JobTab from '@/component/comapany-details/JobTab';
 import Overview from '@/component/comapany-details/Overview';
-import { Center, HStack, Tab, TabIndicator, TabList, TabPanel, TabPanels, Tabs, VStack } from '@chakra-ui/react';
+import { Box, Center, HStack, Tab, TabIndicator, TabList, TabPanel, TabPanels, Tabs, VStack } from '@chakra-ui/react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 export default function DynamicPage() {
   const router = useRouter();
-  const{ slug } = router.query;
+  const { slug } = router.query;
   return (
     <>
       <Head>
@@ -16,7 +16,12 @@ export default function DynamicPage() {
       </Head>
 
       <Layout>
-        <VStack w={'full'} px={'32px'} py={'32px'} gap={'30px'}>
+        <VStack
+          w={'full'}
+          px={{ base: '0px', md: '32px' }}
+          py={{ base: '10px', md: '32px' }}
+          gap={'30px'}
+        >
           <Center
             w={'full'}
             h={'200px'}
@@ -26,19 +31,31 @@ export default function DynamicPage() {
             position="relative"
             borderRadius={'10px'}
           >
-            <VStack spacing={0}>
-              <MyText as="heading" title={`Full ${slug} Stack Web Developer`}/>
+            <VStack spacing={0} textAlign={'center'}>
+              <MyText as="heading" title={`Full ${slug} Stack Web Developer`} />
               <MyText as="span" title="Tata Consultancy Service" />
             </VStack>
           </Center>
 
-          <VStack w={'full'} px={'30px'} alignItems={'flex-start'}>
+          <VStack
+            w={'full'}
+            px={{ base: '0px', md: '30px' }}
+            alignItems={'flex-start'}
+          >
             {/* Company Logo */}
-            <HStack w={'full'} py={'13px'} justifyContent={'space-between'}>
+            <HStack
+              w={'full'}
+              py={{ base: '0px', md: '13px' }}
+              pb={{base: '30px', md: '0px'}}
+              justifyContent={'space-between'}
+              flexDir={{ base: 'column', md: 'row' }}
+              alignItems={{ base: 'flex-start', md: 'center' }}
+              gap={'15px'}
+            >
               <HStack>
                 <Center
-                  h={'60px'}
-                  w={'60px'}
+                  h={{ base: '70px', md: '60px' }}
+                  w={{ base: '70px', md: '60px' }}
                   borderRadius={'5px'}
                   bg={'brand.lightgray'}
                 >
@@ -59,7 +76,6 @@ export default function DynamicPage() {
                 </VStack>
               </HStack>
 
-              {/* Right Part */}
               <Center
                 bg={'red.100'}
                 px={'8px'}
@@ -68,7 +84,7 @@ export default function DynamicPage() {
                 borderRadius={'5px'}
                 gap={'5px'}
               >
-                <MyText as='small' title="Add to favourite" />
+                <MyText as="small" title="Add to favourite" />
                 <MyIcon name="heart" width="15px" />
               </Center>
             </HStack>
