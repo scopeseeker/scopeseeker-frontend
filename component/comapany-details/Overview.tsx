@@ -9,16 +9,20 @@ import {
   Center,
   Grid,
   HStack,
+  ListItem,
   Table,
   Tbody,
   Td,
   Tr,
+  UnorderedList,
   VStack,
 } from '@chakra-ui/react';
+import { useRef } from 'react';
 import { MyImage } from '../image';
 import { MyText } from '../text';
 
 const Overview = () => {
+  const companyBoxRef = useRef<HTMLDivElement>(null);
   return (
     <VStack
       w={'full'}
@@ -54,10 +58,44 @@ const Overview = () => {
           <VStack w={'500px'} h={'full'} alignItems={'flex-start'}>
             <MyText as="heading" title="Camgimini" />
             <Box overflow={'scroll'} pr={'40px'}>
-              <MyText
-                as="p"
-                title="Capgemini is a multinational consulting, technology services, and digital transformation company. It is headquartered in Paris, France. Capgemini provides services in various areas such as consulting, technology services, and digital transformation. The company offers a wide range of services including strategy and transformation, application services, infrastructure services, engineering services, business process outsourcing, and more.Capgemini has a global presence with offices and delivery centers in numerous countries around the world. It serves clients in various industries including automotive, banking, consumer products, energy, healthcare, insurance, manufacturing, retail, telecommunications, and others.The company is known for its expertise in areas such as cloud computing, cybersecurity, artificial intelligence, data analytics, and digital customer experience. Capgemini works with clients to help them navigate through digital disruptions, improve operational efficiency, enhance customer experience, and drive innovation.Capgemini has a diverse workforce comprising professionals from different backgrounds and expertise. It fosters a collaborative and inclusive work environment and encourages continuous learning and development.Please note that the information provided here is based on the knowledge available up until September 2021, and there may have been updates or changes in Capgeminis operations since then."
-              />
+              <UnorderedList>
+                <ListItem>
+                  <MyText
+                    as="p"
+                    title="Capgemini is a global consulting, technology services, and digital transformation company."
+                  />
+                </ListItem>
+                <ListItem>
+                  <MyText
+                    as="p"
+                    title="It was founded in 1967 and operates in over 50 countries."
+                  />
+                </ListItem>
+                <ListItem>
+                  <MyText
+                    as="p"
+                    title="Capgemini offers consulting, technology services, and digital transformation solutions."
+                  />
+                </ListItem>
+                <ListItem>
+                  <MyText
+                    as="p"
+                    title="They assist clients in various industries and help them embrace digital technologies."
+                  />
+                </ListItem>
+                <ListItem>
+                  <MyText
+                    as="p"
+                    title="Capgemini has a strong global presence with offices and delivery centers worldwide."
+                  />
+                </ListItem>
+                <ListItem>
+                  <MyText
+                    as="p"
+                    title="They follow a collaborative approach, working closely with clients to develop tailored solutions."
+                  />
+                </ListItem>
+              </UnorderedList>
             </Box>
           </VStack>
         </HStack>
@@ -127,40 +165,121 @@ const Overview = () => {
         {/* Company Leaders Section */}
         <VStack gap={'20px'} w={'full'} alignItems={'flex-start'}>
           <MyText as="heading" title="Leaders of comapany" />
-          <HStack gap={'20px'}>
-            <>
-              {companyLeaders.map((item, key) => {
-                return (
-                  <Center
-                    w={'200px'}
-                    h={'250px'}
-                    boxShadow="0px 10px 30px rgb(0,0,0,0.1)"
-                    borderRadius={'5px'}
-                    flexDir={'column'}
-                    gap={'20px'}
-                  >
+          <HStack>
+            <Center
+              px={'12px'}
+              cursor={'pointer'}
+              onClick={() => {
+                if (companyBoxRef && companyBoxRef.current) {
+                  companyBoxRef.current.scrollLeft -= 168;
+                }
+              }}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="ionicon"
+                viewBox="0 0 512 512"
+                width="24"
+              >
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="32"
+                  d="M249.38 336L170 256l79.38-80M181.03 256H342"
+                />
+                <path
+                  d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-miterlimit="10"
+                  strokeWidth="32"
+                />
+              </svg>
+            </Center>
+            <HStack
+              gap={'20px'}
+              maxW={'60%'}
+              overflowX={'scroll'}
+              h={'300px'}
+              css={{
+                '&::-webkit-scrollbar': {
+                  display: 'none',
+                },
+              }}
+              cursor={'pointer'}
+              ref={companyBoxRef}
+              scrollBehavior={'smooth'}
+            >
+              <>
+                {companyLeaders.map((item, key) => {
+                  return (
                     <Center
-                      h={'100px'}
-                      w={'100px'}
-                      borderRadius={'full'}
-                      overflow={'hidden'}
+                      flexShrink={0}
+                      key={key}
+                      w={'200px'}
+                      h={'280px'}
+                      boxShadow="0px 10px 30px rgb(0,0,0,0.1)"
+                      borderRadius={'5px'}
+                      flexDir={'column'}
+                      gap={'20px'}
                     >
-                      <MyImage
-                        src={item.image}
-                        width={100}
-                        height={100}
-                        alt="picture"
-                      />
-                    </Center>
+                      <Center
+                        h={'100px'}
+                        w={'100px'}
+                        borderRadius={'full'}
+                        overflow={'hidden'}
+                      >
+                        <MyImage
+                          src={item.image}
+                          width={100}
+                          height={100}
+                          alt="picture"
+                        />
+                      </Center>
 
-                    <VStack textAlign={'center'} spacing={0}>
-                      <MyText as="title" title={item.name} />
-                      <MyText as="small" title={item.organisation} />
-                    </VStack>
-                  </Center>
-                );
-              })}
-            </>
+                      <VStack textAlign={'center'} spacing={0}>
+                        <MyText as="title" title={item.name} />
+                        <MyText as="small" title={item.organisation} />
+                      </VStack>
+                    </Center>
+                  );
+                })}
+              </>
+            </HStack>
+            <Center
+              px={'12px'}
+              cursor={'pointer'}
+              onClick={() => {
+                if (companyBoxRef && companyBoxRef.current) {
+                  companyBoxRef.current.scrollLeft += 168;
+                }
+              }}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="ionicon"
+                viewBox="0 0 512 512"
+                width="24"
+              >
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="32"
+                  d="M262.62 336L342 256l-79.38-80M330.97 256H170"
+                />
+                <path
+                  d="M256 448c106 0 192-86 192-192S362 64 256 64 64 150 64 256s86 192 192 192z"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-miterlimit="10"
+                  strokeWidth="32"
+                />
+              </svg>
+            </Center>
           </HStack>
         </VStack>
       </VStack>
