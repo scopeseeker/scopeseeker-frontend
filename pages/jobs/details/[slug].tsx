@@ -1,5 +1,12 @@
-import { Layout, MyButton, MyImage, MyJobCard, MyText } from '@/component';
-import { Box, Center, HStack, VStack } from '@chakra-ui/react';
+import {
+  Layout,
+  MyBadge,
+  MyButton,
+  MyImage,
+  MyJobCard,
+  MyText,
+} from '@/component';
+import { Box, Center, Flex, Grid, HStack, VStack } from '@chakra-ui/react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
@@ -12,42 +19,44 @@ export default function JobDetailsPage() {
         <title>Job Details | Scope Seeker</title>
       </Head>
 
-      <VStack w={'full'} px={'32px'} py={'62px'}>
-        <Center
-          w={'full'}
-          h={'200px'}
-          backgroundImage={
-            'radial-gradient(circle at center center, transparent, #EBECFF), repeating-radial-gradient(circle at center center, brand.aliceblue, brand.aliceblue, 1px, transparent 28px, transparent 1px)'
-          }
-          position="relative"
-          borderRadius={'10px'}
-        >
-          <VStack spacing={0}>
-            <MyText as="heading" title={`Full ${slug} Stack Web Developer`} />
-            <MyText as="span" title="Tata Consultancy Service" />
-          </VStack>
-
+      <VStack w={'full'} py={{ base: '30px', md: '32px', lg: '62px' }} px={{base: '0px', md: '32px'}}> 
+        <Box w={'full'} px={{base: '15px', md: '0px'}}>
           <Center
-            h={'80px'}
-            w={'80px'}
-            bg={'brand.semiblack'}
-            position={'absolute'}
-            top={'150px'}
-            left={'50px'}
-            borderRadius={'5px'}
+            w={'full'}
+            h={'200px'}
+            backgroundImage={
+              'radial-gradient(circle at center center, transparent, #EBECFF), repeating-radial-gradient(circle at center center, brand.aliceblue, brand.aliceblue, 1px, transparent 28px, transparent 1px)'
+            }
+            position="relative"
+            borderRadius={'10px'}
           >
-            <MyImage
-              src={'/assets/images/company-logo/google.png'}
-              alt={'company logo'}
-              width={50}
-              height={50}
-            />
+            <VStack spacing={0} textAlign={'center'}>
+              <MyText as="heading" title={`Full ${slug} Stack Web Developer`} />
+              <MyText as="span" title="Tata Consultancy Service" />
+            </VStack>
+
+            <Center
+              h={{ base: '60px', md: '80px' }}
+              w={{ base: '60px', md: '80px' }}
+              bg={'brand.semiblack'}
+              position={'absolute'}
+              top={{ base: '170px', md: '150px'}}
+              left={{ base: '24px', md: '30px', lg: '50px'}}
+              borderRadius={'5px'}
+            >
+              <MyImage
+                src={'/assets/images/company-logo/google.png'}
+                alt={'company logo'}
+                width={50}
+                height={50}
+              />
+            </Center>
           </Center>
-        </Center>
+        </Box>
 
         <Layout>
           <VStack w={'full'} alignItems={'flex-start'}>
-            <HStack w={'full'} pr={'8px'} mt={'-36px'}>
+            <HStack w={'full'} pr={{ base: '0px', md: '8px' }} mt={'-36px'}>
               <HStack
                 width={'100%'}
                 justifyContent={'flex-end'}
@@ -73,13 +82,20 @@ export default function JobDetailsPage() {
                 ></Center>
               </HStack>
             </HStack>
-            <HStack w={'full'} justifyContent={'space-between'}>
+            <HStack
+              w={'full'}
+              justifyContent={'space-between'}
+              flexDir={{ base: 'column', md: 'row' }}
+              alignItems={'flex-start'}
+              spacing={0}
+            >
               <VStack
                 spacing={0}
                 alignItems={'flex-start'}
                 justifyContent={'flex-start'}
                 h={'100%'}
                 marginBottom={'30px'}
+                marginTop={{ base: '30px', md: '0px' }}
               >
                 <MyText as="title" title="Full Stack Web Developer" />
                 <MyText as="small" title="Tata Consultancy Sevice" />
@@ -92,24 +108,33 @@ export default function JobDetailsPage() {
             </HStack>
 
             <HStack alignItems={'flex-start'} gap={'24px'}>
-              {/* Left Psrt */}
+              {/* Left Part */}
               <VStack w={'70%'} alignItems={'flex-start'} gap={'30px'}>
                 {/* Experiece Div Start */}
 
-                <HStack h={'80px'} bg={'brand.aliceblue'} borderRadius={'10px'}>
+                <HStack
+                  h={{ base: '300px', md: '80px' }}
+                  bg={'brand.aliceblue'}
+                  borderRadius={'10px'}
+                  w={{ base: '320px', md: 'fit-content' }}
+                  flexDir={{ base: 'column', md: 'row' }}
+                >
                   <Center
                     gap={3}
-                    borderRight={'1px'}
-                    borderColor={'brand.lightgray'}
+                    borderRight={{ base: 'none', md: '1px' }}
+                    borderBottom={{ base: '1px', md: 'none' }}
+                    borderColor={{
+                      base: 'brand.lightgray',
+                      md: 'brand.lightgray',
+                    }}
                     h={'full'}
-                    w={'180px'}
+                    w={{ base: 'full', md: '180px' }}
                   >
-                    <Center>
+                    <Center w={{ base: '35px', md: '25px' }}>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="ionicon"
                         viewBox="0 0 512 512"
-                        width={'25px'}
                       >
                         <path
                           fill="none"
@@ -135,25 +160,33 @@ export default function JobDetailsPage() {
                         as="small"
                         title="Experience"
                         color={'gray.500'}
+                        fontSize={{ base: '15px', md: '12px' }}
                       />
-                      <MyText as="span" title="Minumum 1 year" />
+                      <MyText
+                        as="span"
+                        title="Minumum 1 year"
+                        fontSize={{ base: '17px', md: '13px' }}
+                      />
                     </VStack>
                   </Center>
 
                   <Center
-                    gap={2}
-                    borderRight={'1px'}
-                    borderColor={'brand.lightgray'}
+                    gap={3}
+                    borderRight={{ base: 'none', md: '1px' }}
+                    borderBottom={{ base: '1px', md: 'none' }}
+                    borderColor={{
+                      base: 'brand.lightgray',
+                      md: 'brand.lightgray',
+                    }}
                     h={'full'}
-                    w={'150px'}
+                    w={{ base: 'full', md: '150px' }}
                     pr={'10px'}
                   >
-                    <Center>
+                    <Center w={{ base: '35px', md: '25px' }}>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="ionicon"
                         viewBox="0 0 512 512"
-                        width={'25px'}
                       >
                         <path d="M258.9 48C141.92 46.42 46.42 141.92 48 258.9c1.56 112.19 92.91 203.54 205.1 205.1 117 1.6 212.48-93.9 210.88-210.88C462.44 140.91 371.09 49.56 258.9 48zm126.42 327.25a4 4 0 01-6.14-.32 124.27 124.27 0 00-32.35-29.59C321.37 329 289.11 320 256 320s-65.37 9-90.83 25.34a124.24 124.24 0 00-32.35 29.58 4 4 0 01-6.14.32A175.32 175.32 0 0180 259c-1.63-97.31 78.22-178.76 175.57-179S432 158.81 432 256a175.32 175.32 0 01-46.68 119.25z" />
                         <path d="M256 144c-19.72 0-37.55 7.39-50.22 20.82s-19 32-17.57 51.93C191.11 256 221.52 288 256 288s64.83-32 67.79-71.24c1.48-19.74-4.8-38.14-17.68-51.82C293.39 151.44 275.59 144 256 144z" />
@@ -161,18 +194,31 @@ export default function JobDetailsPage() {
                     </Center>
 
                     <VStack spacing={0} alignItems={'flex-start'}>
-                      <MyText as="small" title="Type" color={'gray.500'} />
-                      <MyText as="span" title="Full Type" />
+                      <MyText
+                        as="small"
+                        title="Type"
+                        color={'gray.500'}
+                        fontSize={{ base: '15px', md: '12px' }}
+                      />
+                      <MyText
+                        as="span"
+                        title="Full Type"
+                        fontSize={{ base: '17px', md: '13px' }}
+                      />
                     </VStack>
                   </Center>
 
-                  <Center gap={3} pr={'10px'} h={'full'} w={'150px'}>
-                    <Center>
+                  <Center
+                    gap={3}
+                    h={'full'}
+                    w={{ base: 'full', md: '150px' }}
+                    pr={'10px'}
+                  >
+                    <Center w={{ base: '35px', md: '25px' }}>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="ionicon"
                         viewBox="0 0 512 512"
-                        width={'25px'}
                       >
                         <path
                           d="M256 48c-79.5 0-144 61.39-144 137 0 87 96 224.87 131.25 272.49a15.77 15.77 0 0025.5 0C304 409.89 400 272.07 400 185c0-75.61-64.5-137-144-137z"
@@ -196,19 +242,29 @@ export default function JobDetailsPage() {
                     </Center>
 
                     <VStack spacing={0} alignItems={'flex-start'}>
-                      <MyText as="small" title="Location" color={'gray.500'} />
-                      <MyText as="span" title="Bengluru" />
+                      <MyText
+                        as="small"
+                        title="Location"
+                        color={'gray.500'}
+                        fontSize={{ base: '15px', md: '12px' }}
+                      />
+                      <MyText
+                        as="span"
+                        title="Bengluru"
+                        fontSize={{ base: '17px', md: '13px' }}
+                      />
                     </VStack>
                   </Center>
                 </HStack>
 
                 {/* Required Skills part*/}
-                <VStack alignItems={'flex-start'} pt={'30px'}>
+                <VStack alignItems={'flex-start'} gap={'10px'}>
                   <MyText as="heading" title="Required Skills" />
 
                   <HStack>
                     <Center
-                      bg={'brand.primary'}
+                      borderWidth={'1px'}
+                      borderColor={'brand.darkgray'}
                       px={'10px'}
                       py={'3px'}
                       borderRadius={'3px'}
@@ -216,21 +272,27 @@ export default function JobDetailsPage() {
                       <MyText
                         as="small"
                         title="JavaScript"
-                        color="brand.white"
+                        color="brand.darkgray"
                       />
                     </Center>
 
                     <Center
-                      bg={'brand.primary'}
+                      borderWidth={'1px'}
+                      borderColor={'brand.darkgray'}
                       px={'10px'}
                       py={'3px'}
                       borderRadius={'3px'}
                     >
-                      <MyText as="small" title="ReactJS" color="brand.white" />
+                      <MyText
+                        as="small"
+                        title="ReactJS"
+                        color="brand.darkgray"
+                      />
                     </Center>
 
                     <Center
-                      bg={'brand.primary'}
+                      borderWidth={'1px'}
+                      borderColor={'brand.darkgray'}
                       px={'10px'}
                       py={'3px'}
                       borderRadius={'3px'}
@@ -238,25 +300,31 @@ export default function JobDetailsPage() {
                       <MyText
                         as="small"
                         title="TypeScript"
-                        color="brand.white"
+                        color="brand.darkgray"
                       />
                     </Center>
 
                     <Center
-                      bg={'brand.primary'}
+                      borderWidth={'1px'}
+                      borderColor={'brand.darkgray'}
                       px={'10px'}
                       py={'3px'}
                       borderRadius={'3px'}
                     >
-                      <MyText as="small" title="NextJs" color="brand.white" />
+                      <MyText
+                        as="small"
+                        title="NextJs"
+                        color="brand.darkgray"
+                      />
                     </Center>
                   </HStack>
+          
                 </VStack>
 
                 {/* Overview */}
                 <VStack alignItems={'flex-start'}>
                   <MyText as="heading" title="Overview" />
-                  <Box w={'85%'}>
+                  <Box w={{ base: '130%', md: '120%', lg: '85%' }}>
                     <MyText
                       as="span"
                       title="Google is a multinational technology company that specializes in Internet-related services and products. It was founded in 1998 by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University. Google mission is to organize the world information and make it universally accessible and useful."
@@ -268,7 +336,10 @@ export default function JobDetailsPage() {
                 <VStack alignItems={'flex-start'}>
                   <MyText as="heading" title="Job Description" />
 
-                  <VStack w={'full'} alignItems={'flex-start'}>
+                  <VStack
+                    w={{ base: '130%', md: '120%', lg: '85%' }}
+                    alignItems={'flex-start'}
+                  >
                     <HStack>
                       <Box
                         h={'10px'}
@@ -277,10 +348,12 @@ export default function JobDetailsPage() {
                         borderRadius={'50px'}
                         borderColor={'brand.primary'}
                       ></Box>
-                      <MyText
-                        as="span"
-                        title="Designing, coding, and modifying websites and web applications from layout to functionality, following best practices and industry standards."
-                      />
+                      <Box>
+                        <MyText
+                          as="span"
+                          title="Designing, coding, and modifying websites and web applications from layout to functionality, following best practices and industry standards."
+                        />
+                      </Box>
                     </HStack>
 
                     <HStack>
@@ -345,7 +418,10 @@ export default function JobDetailsPage() {
                 <VStack alignItems={'flex-start'}>
                   <MyText as="heading" title="Key Responsibility" />
 
-                  <VStack w={'full'} alignItems={'flex-start'}>
+                  <VStack
+                    w={{ base: '130%', md: '120%', lg: '85%' }}
+                    alignItems={'flex-start'}
+                  >
                     <HStack>
                       <Box
                         h={'10px'}
@@ -421,9 +497,14 @@ export default function JobDetailsPage() {
                 <MyButton title="Apply" px={'36px'} />
 
                 {/* Share Job */}
-                <HStack w={'full'} alignItems={'center'} gap={'10px'}>
+                <HStack
+                  w={'full'}
+                  alignItems={{ base: 'flex-start', md: 'center' }}
+                  gap={'10px'}
+                  flexDir={{ base: 'column', md: 'row' }}
+                >
                   <MyText as="title" title="Share this job" />
-                  <HStack gap={'5px'}>
+                  <Flex gap={'10px'} flexWrap={'wrap'}>
                     <Center
                       h={'30px'}
                       gap={'5px'}
@@ -484,7 +565,7 @@ export default function JobDetailsPage() {
                       </svg>
                       <MyText as="small" title="Instagram" fontWeight={500} />
                     </Center>
-                  </HStack>
+                  </Flex>
                 </HStack>
               </VStack>
 
@@ -503,7 +584,17 @@ export default function JobDetailsPage() {
             >
               <MyText as="heading" title="Similar Jobs" />
 
-              <HStack gap={'15px'}>
+              <Grid
+                templateColumns={{
+                  base: 'repeat(1, 1fr)',
+                  md: 'repeat(2, 1fr)',
+                  lg: 'repeat(2, 1fr)',
+                }}
+                gap={{ base: 6, lg: 4, xl: 6 }}
+                mx={'auto'}
+                pt={'25px'}
+                width={'100%'}
+              >
                 <MyJobCard
                   companyIconLogo={'/assets/images/company-logo/bookmyshow.png'}
                   role={'Frontend Developer'}
@@ -557,7 +648,7 @@ export default function JobDetailsPage() {
        diffrent approaches to solve end's-user problems"
                   isNamedLogo={true}
                 />
-              </HStack>
+              </Grid>
             </VStack>
           </VStack>
         </Layout>
