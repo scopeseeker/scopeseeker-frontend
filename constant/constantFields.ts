@@ -479,6 +479,21 @@ const companyLeaders = [
     name: 'Cyril Garica',
     organisation: 'Head of global sustainability services',
   },
+  {
+    image: '/assets/images/p12.jpg',
+    name: 'Cyril Garica',
+    organisation: 'Head of global sustainability services',
+  },
+  {
+    image: '/assets/images/p12.jpg',
+    name: 'Cyril Garica',
+    organisation: 'Head of global sustainability services',
+  },
+  {
+    image: '/assets/images/p12.jpg',
+    name: 'Cyril Garica',
+    organisation: 'Head of global sustainability services',
+  },
 ];
 
 export {
