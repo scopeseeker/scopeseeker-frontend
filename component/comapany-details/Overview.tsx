@@ -35,17 +35,18 @@ const Overview = () => {
       {/* Company About us */}
       <VStack w={'full'} gap={'60px'} alignItems={'flex-start'}>
         <HStack
-          w={'850px'}
-          h={'300px'}
+          w={{base: 'full', md: 'full', lg: '850px'}}
+          h={{base: 'fit-content', md: 'fit-content', lg: '300px'}}
           boxShadow="0px 0px 30px rgb(0,0,0,0.2)"
           padding={'20px'}
           justifyContent={'space-between'}
           borderRadius={'10px'}
           gap={'20px'}
+          flexDirection={{base: 'column', md: 'column', lg: 'row'}}
         >
           {/* Video Part */}
-          <Box w={'500px'} h={'full'} borderRadius={'10px'} overflow={'hidden'}>
-            <AspectRatio maxW="500px" h={'full'} ratio={1.5}>
+          <Box w={{base: 'full', md: 'full', lg: '500px'}} h={'full'} borderRadius={'10px'} overflow={'hidden'}>
+            <AspectRatio maxW={{base: '500px', md: '600px', lg: '500px'}} h={'full'} ratio={1.5}>
               <iframe
                 src="https://www.youtube.com/embed/uYRygzr_W0U"
                 title="Capgemini Containerization Service Powered by Red Hat"
@@ -55,9 +56,9 @@ const Overview = () => {
             </AspectRatio>
           </Box>
 
-          <VStack w={'500px'} h={'full'} alignItems={'flex-start'}>
+          <VStack w={{base: 'full', md: '500px'}} h={{base: '300px', md: '250px', lg: 'full'}} alignItems={'flex-start'}>
             <MyText as="heading" title="Camgimini" />
-            <Box overflow={'scroll'} pr={'40px'}>
+            <Box overflow={'scroll'} pr={{base: '20px', md: '20px', lg: '40px'}}>
               <UnorderedList>
                 <ListItem>
                   <MyText
@@ -107,11 +108,12 @@ const Overview = () => {
             borderColor={'brand.lightgray'}
             borderRadius={'10px'}
             overflow={'hidden'}
+            w={{base: 'full', md: '850px'}}
           >
-            <Table variant="striped" colorScheme="gray" w={'850px'}>
+            <Table variant="striped" colorScheme="gray">
               <Tbody>
                 {companyDescTable.map((item, key) => (
-                  <Tr key={key}>
+                    <Tr key={key} flexDir={{base: 'column', md: 'row'}} display={'flex'}>
                     <Td>
                       <MyText as="title" title={item.name} />
                     </Td>
@@ -137,8 +139,8 @@ const Overview = () => {
               {companySubsidiaries.map((item, key) => {
                 return (
                   <HStack
-                    w={'200px'}
-                    h={'70px'}
+                    w={{base: '300px', md: '200px'}}
+                    h={{base: '90px', md: '70px'}}
                     borderWidth={'1px'}
                     borderColor={'brand.lightgray'}
                     borderRadius={'5px'}
