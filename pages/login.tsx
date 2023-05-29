@@ -27,7 +27,7 @@ export default function Login() {
       >
         {/* Left Part */}
         <VStack
-          h={'full'}
+          h={{base:'60%',md:'full'}}
           w={{ base: '100%', md: '50%', lg: '30%' }}
           p={'10px'}
         >
@@ -123,7 +123,7 @@ export default function Login() {
               <MyDivider />
               <VStack w={'full'}>
                 <MyText as="heading" fontWeight={400} title="Or" />
-                <HStack gap={'6px'}>
+                <HStack gap={'6px'} flexDirection={{base:'column',sm:'row', md:'row'}} spacing={0}>
                   <Link href={'#'}>
                     <Center
                       px={'24px'}
@@ -140,7 +140,9 @@ export default function Login() {
                         width={20}
                         height={20}
                       />
-                      <MyText as="span" title="Login with Google" />
+                      <MyText as="span" title="Login with Google" 
+                      whitespace='nowrap'
+                     />
                     </Center>
                   </Link>
                   <Link href={'#'}>
