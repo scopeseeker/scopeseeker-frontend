@@ -1,4 +1,4 @@
-import { Filter, Layout, MyButton, MyDivider, MyText } from '@/component';
+import { Filter, Layout, MyButton, MyDivider, MyIcon, MyText } from '@/component';
 import MyCompanyCard from '@/component/cards/MyCompanyCard';
 import { companyFilter } from '@/constant/constantFields';
 import {
@@ -51,7 +51,7 @@ export default function CompaniesPage() {
 
             <MyButton title="Find Jobs" h={'100%'} px={'20px'} />
           </HStack>
-          
+
           <MyDivider />
 
           <HStack
@@ -70,28 +70,8 @@ export default function CompaniesPage() {
                 }
               }}
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="ionicon"
-                viewBox="0 0 512 512"
-                width="24"
-              >
-                <path
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="32"
-                  d="M249.38 336L170 256l79.38-80M181.03 256H342"
-                />
-                <path
-                  d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-miterlimit="10"
-                  strokeWidth="32"
-                />
-              </svg>
+                        <MyIcon name='arrow'/>
+
             </Center>
             <Center
               px={'5px'}
@@ -110,21 +90,25 @@ export default function CompaniesPage() {
               ref={companyBoxRef}
               scrollBehavior={'smooth'}
             >
-               <Center
-                      w={'160px'}
-                      flexShrink={0}
-                      border={'1px solid'}
-                      borderColor={'brand.lightgray'}
-                      h={'60px'}
-                      borderTopEndRadius={'12px'}
-                      backgroundColor={'brand.white'}
-                      borderBottomLeftRadius={'12px'}
-                      bgColor={'brand.primary'}
-                    >
-                      <MyText as={'span'} color='brand.white' title={'Space'} fontWeight={500} />
-                    </Center>
+              <Center
+                w={'160px'}
+                flexShrink={0}
+                border={'1px solid'}
+                borderColor={'brand.lightgray'}
+                h={'60px'}
+                borderTopEndRadius={'12px'}
+                backgroundColor={'brand.white'}
+                borderBottomLeftRadius={'12px'}
+                bgColor={'brand.primary'}
+              >
+                <MyText
+                  as={'span'}
+                  color="brand.white"
+                  title={'Space'}
+                  fontWeight={500}
+                />
+              </Center>
               <>
-
                 {[
                   'Indian MNCs',
                   'Fortune 500',
@@ -165,28 +149,7 @@ export default function CompaniesPage() {
                 }
               }}
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="ionicon"
-                viewBox="0 0 512 512"
-                width="24"
-              >
-                <path
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="32"
-                  d="M262.62 336L342 256l-79.38-80M330.97 256H170"
-                />
-                <path
-                  d="M256 448c106 0 192-86 192-192S362 64 256 64 64 150 64 256s86 192 192 192z"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-miterlimit="10"
-                  strokeWidth="32"
-                />
-              </svg>
+           <MyIcon name='arrow'/>
             </Center>
           </HStack>
 
