@@ -110,7 +110,7 @@ export default function Signup() {
               type="text"
               labelTitle="Full Name"
               placeholder="Lokesh Dhakar"
-              leftElement={<MyIcon name="person-circle" />}
+              leftElement={<MyIcon name="personCircle" />}
             />
             <HStack
               w={'full'}

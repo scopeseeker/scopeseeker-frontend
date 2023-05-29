@@ -54,6 +54,16 @@ export interface ILayoutProps {
   w?: any;
   [key: string] : any;
 }
+
+export interface IMyIconProps {
+  color?: string;
+  width?: string;
+  height?: string;
+  strokeWidth?: string;
+  name: IconNameType | string;
+  [key: string]: any;
+}
+
 export interface IMainHeadingProps {
   title: string;
   subTitle?: string;

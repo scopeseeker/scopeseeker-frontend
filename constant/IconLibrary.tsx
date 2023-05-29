@@ -1,6 +1,6 @@
 export type IconNameType =
   | 'job'
-  | 'person-circle'
+  | 'personCircle'
   | 'file'
   | 'menu'
   | 'whatsapp'
@@ -8,16 +8,17 @@ export type IconNameType =
   | 'linkedin'
   | 'instagram'
   | 'twitter'
+  | 'telegram'
   | 'createAccount'
   | 'search'
   | 'darkMode'
   | 'company'
   | 'pages'
-  | 'arrow-down'
+  | 'arrowDown'
   | 'gmail'
   | 'arrow'
-  | 'quotes-left'
-  | 'quotes-right'
+  | 'quotesLeft'
+  | 'quotesRight'
   | 'user'
   | 'case'
   | 'form'
@@ -43,6 +44,7 @@ export type IconNameType =
   | 'health'
   | 'cafeteria'
   | 'beach'
+  | 'borderCircle'
   | string;
 
 type IconData = {
@@ -92,12 +94,18 @@ export const IconData: IconData = {
       <path d="M3 3l18 18"></path>
     </>
   ),
+  borderCircle: <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>,
 
   menu: (
     <>
       <path d="M4 6l16 0" />
       <path d="M4 12l16 0" />
       <path d="M4 18l16 0" />
+    </>
+  ),
+  telegram: (
+    <>
+      <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4"></path>
     </>
   ),
   whatsapp: (
@@ -166,7 +174,7 @@ export const IconData: IconData = {
       <path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"></path>
     </>
   ),
-  'person-circle': (
+  personCircle: (
     <>
       <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
       <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
@@ -218,7 +226,7 @@ export const IconData: IconData = {
       <path d="M9 13h6" />
     </>
   ),
-  'arrow-down': (
+  arrowDown: (
     <>
       <path d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" />
       <path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2" />
@@ -240,12 +248,12 @@ export const IconData: IconData = {
       <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"></path>
     </>
   ),
-  'quotes-left': (
+  quotesLeft: (
     <>
       <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"></path>
     </>
   ),
-  'quotes-right': (
+  quotesRight: (
     <>
       <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path>
       <path d="M8 11l0 5"></path>

@@ -1,13 +1,6 @@
 import { IconData, IconNameType } from '@/constant/IconLibrary';
+import { IMyIconProps } from '@/inteface/component-interface';
 import { Center } from '@chakra-ui/react';
-
-interface IMyIconProps {
-  color?: string;
-  width?: string;
-  height?: string;
-  strokeWidth?: string;
-  name: IconNameType | string;
-}
 
 const MyIcon = ({
   color = 'brand.black',
@@ -15,9 +8,10 @@ const MyIcon = ({
   height = '24px',
   strokeWidth = '1.2',
   name,
+  ...rest
 }: IMyIconProps) => {
   return (
-    <Center color={color}>
+    <Center color={color} {...rest}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={width}

@@ -29,10 +29,10 @@ const MyButton = ({
       _active={
         variant === 'outline' ? { bg: 'transparent' } : { bg: 'brand.ternary' }
       }
-      {...rest}
       px={px}
       cursor={'pointer'}
       color={variant === 'outline' ? 'brand.darkgray' : 'brand.white'}
+      {...rest}
     >
       <MyText as="span" color={'currentColor'} title={title} />
     </Center>
