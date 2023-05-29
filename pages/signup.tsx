@@ -152,7 +152,7 @@ export default function Signup() {
             <MyDivider />
             <VStack w={'full'}>
               <MyText as="heading" fontWeight={400} title="Or" />
-              <HStack gap={'6px'}>
+              <HStack gap={'6px'} flexDirection={{base:'column',sm:'row',md:'row'}} spacing={0}>
                 <Link href={'#'}>
                   <Center
                     px={'24px'}
