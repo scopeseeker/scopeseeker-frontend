@@ -20,6 +20,7 @@ import {
 import { useRef } from 'react';
 import { MyImage } from '../image';
 import { MyText } from '../text';
+import { MyIcon } from '../icon';
 
 const Overview = () => {
   const companyBoxRef = useRef<HTMLDivElement>(null);
@@ -35,18 +36,27 @@ const Overview = () => {
       {/* Company About us */}
       <VStack w={'full'} gap={'60px'} alignItems={'flex-start'}>
         <HStack
-          w={{base: 'full', md: 'full', lg: '850px'}}
-          h={{base: 'fit-content', md: 'fit-content', lg: '300px'}}
+          w={{ base: 'full', md: 'full', lg: '850px' }}
+          h={{ base: 'fit-content', md: 'fit-content', lg: '300px' }}
           boxShadow="0px 0px 30px rgb(0,0,0,0.2)"
           padding={'20px'}
           justifyContent={'space-between'}
           borderRadius={'10px'}
           gap={'20px'}
-          flexDirection={{base: 'column', md: 'column', lg: 'row'}}
+          flexDirection={{ base: 'column', md: 'column', lg: 'row' }}
         >
           {/* Video Part */}
-          <Box w={{base: 'full', md: 'full', lg: '500px'}} h={'full'} borderRadius={'10px'} overflow={'hidden'}>
-            <AspectRatio maxW={{base: '500px', md: '600px', lg: '500px'}} h={'full'} ratio={1.5}>
+          <Box
+            w={{ base: 'full', md: 'full', lg: '500px' }}
+            h={'full'}
+            borderRadius={'10px'}
+            overflow={'hidden'}
+          >
+            <AspectRatio
+              maxW={{ base: '500px', md: '600px', lg: '500px' }}
+              h={'full'}
+              ratio={1.5}
+            >
               <iframe
                 src="https://www.youtube.com/embed/uYRygzr_W0U"
                 title="Capgemini Containerization Service Powered by Red Hat"
@@ -56,9 +66,16 @@ const Overview = () => {
             </AspectRatio>
           </Box>
 
-          <VStack w={{base: 'full', md: '500px'}} h={{base: '300px', md: '250px', lg: 'full'}} alignItems={'flex-start'}>
+          <VStack
+            w={{ base: 'full', md: '500px' }}
+            h={{ base: '300px', md: '250px', lg: 'full' }}
+            alignItems={'flex-start'}
+          >
             <MyText as="heading" title="Camgimini" />
-            <Box overflow={'scroll'} pr={{base: '20px', md: '20px', lg: '40px'}}>
+            <Box
+              overflow={'scroll'}
+              pr={{ base: '20px', md: '20px', lg: '40px' }}
+            >
               <UnorderedList>
                 <ListItem>
                   <MyText
@@ -108,12 +125,16 @@ const Overview = () => {
             borderColor={'brand.lightgray'}
             borderRadius={'10px'}
             overflow={'hidden'}
-            w={{base: 'full', md: '850px'}}
+            w={{ base: 'full', md: '850px' }}
           >
             <Table variant="striped" colorScheme="gray">
               <Tbody>
                 {companyDescTable.map((item, key) => (
-                    <Tr key={key} flexDir={{base: 'column', md: 'row'}} display={'flex'}>
+                  <Tr
+                    key={key}
+                    flexDir={{ base: 'column', md: 'row' }}
+                    display={'flex'}
+                  >
                     <Td>
                       <MyText as="title" title={item.name} />
                     </Td>
@@ -139,8 +160,8 @@ const Overview = () => {
               {companySubsidiaries.map((item, key) => {
                 return (
                   <HStack
-                    w={{base: '300px', md: '200px'}}
-                    h={{base: '90px', md: '70px'}}
+                    w={{ base: '300px', md: '200px' }}
+                    h={{ base: '90px', md: '70px' }}
                     borderWidth={'1px'}
                     borderColor={'brand.lightgray'}
                     borderRadius={'5px'}
@@ -167,7 +188,7 @@ const Overview = () => {
         {/* Company Leaders Section */}
         <VStack gap={'20px'} w={'full'} alignItems={'flex-start'}>
           <MyText as="heading" title="Leaders of comapany" />
-          <HStack>
+          <HStack w={'full'}>
             <Center
               px={'12px'}
               cursor={'pointer'}
@@ -177,32 +198,11 @@ const Overview = () => {
                 }
               }}
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="ionicon"
-                viewBox="0 0 512 512"
-                width="24"
-              >
-                <path
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="32"
-                  d="M249.38 336L170 256l79.38-80M181.03 256H342"
-                />
-                <path
-                  d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-miterlimit="10"
-                  strokeWidth="32"
-                />
-              </svg>
+              <MyIcon name="arrow" />
             </Center>
             <HStack
               gap={'20px'}
-              maxW={'60%'}
+              w={'100%'}
               overflowX={'scroll'}
               h={'300px'}
               css={{
@@ -221,8 +221,7 @@ const Overview = () => {
                       flexShrink={0}
                       key={key}
                       w={'200px'}
-                      h={'280px'}
-                      boxShadow="0px 10px 30px rgb(0,0,0,0.1)"
+                      h={'250px'}
                       borderRadius={'5px'}
                       flexDir={'column'}
                       gap={'20px'}
@@ -259,28 +258,7 @@ const Overview = () => {
                 }
               }}
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="ionicon"
-                viewBox="0 0 512 512"
-                width="24"
-              >
-                <path
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="32"
-                  d="M262.62 336L342 256l-79.38-80M330.97 256H170"
-                />
-                <path
-                  d="M256 448c106 0 192-86 192-192S362 64 256 64 64 150 64 256s86 192 192 192z"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-miterlimit="10"
-                  strokeWidth="32"
-                />
-              </svg>
+              <MyIcon name="arrow" />
             </Center>
           </HStack>
         </VStack>

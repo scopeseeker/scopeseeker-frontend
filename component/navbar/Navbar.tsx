@@ -114,7 +114,7 @@ const Navbar = () => {
               <MyText
                 title="Company Details"
                 as="link"
-                href="/company/asddfasdf"
+                href="/company/details/asddfasdf"
                 color="currentColor"
               />
             </Center>
