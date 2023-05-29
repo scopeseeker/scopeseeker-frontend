@@ -1,5 +1,13 @@
-import { Layout, MyButton, MyIcon, MyImage, MyText } from '@/component';
-import { Center, HStack, VStack } from '@chakra-ui/react';
+import {
+  Layout,
+  MyButton,
+  MyDivider,
+  MyIcon,
+  MyImage,
+  MyJobCard,
+  MyText,
+} from '@/component';
+import { Box, Center, Flex, Grid, HStack, VStack } from '@chakra-ui/react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
@@ -87,12 +95,10 @@ export default function JobDetailsPage() {
                 <MyButton title="Save" variant="outline" px={'36px'} />
               </HStack>
             </HStack>
-
-            {/* Next  */}
           </VStack>
           <HStack
             alignItems={'flex-start'}
-            gap={'24px'}
+            gap={'32px'}
             w={'100%'}
             flexDirection={{ base: 'column', md: 'row' }}
             spacing={0}
@@ -101,22 +107,27 @@ export default function JobDetailsPage() {
             <VStack
               w={{ base: '100%', md: '70%' }}
               alignItems={'flex-start'}
-              gap={'30px'}
-              h={'160vh'}
+              gap={'32px'}
             >
-              {/* Experiece Div Start */}
-
+              {/* Quick Info Div*/}
               <HStack
                 bg={'brand.aliceblue'}
                 borderRadius={'10px'}
                 flexDir={{ base: 'column', md: 'row' }}
-                w={'100%'}
+                borderRight={'12px'}
+                overflow={'hidden'}
+                gap={0}
+                spacing={0}
+                border={'1px solid'}
+                borderColor={'brand.lightgray'}
               >
                 <Center
                   gap={'12px'}
-                  borderColor={'brand.lightgray'}
                   h={'full'}
-                  w={{ base: 'full', md: '200px' }}
+                  w={{ base: '70vw', sm: '50vw', md: '170px', lg: '200px' }}
+                  py={'18px'}
+                  justifyContent={{ base: 'flex-start', md: 'center' }}
+                  px={{ base: '32px', md: '10px' }}
                 >
                   <MyIcon name="job" />
 
@@ -129,397 +140,327 @@ export default function JobDetailsPage() {
                     <MyText as="span" title="Minumum 1 year" />
                   </VStack>
                 </Center>
+                <Center
+                  gap={'12px'}
+                  h={'full'}
+                  w={{ base: '70vw', sm: '50vw', md: '170px', lg: '200px' }}
+                  py={'18px'}
+                  justifyContent={{ base: 'flex-start', md: 'center' }}
+                  px={{ base: '32px', md: '10px' }}
+                  borderX={{ base: '0px solid', md: '1px solid' }}
+                  borderY={{ base: '1px solid', md: '0px solid' }}
+                  borderColor={{
+                    base: 'brand.lightgray',
+                    md: 'brand.lightgray',
+                  }}
+                >
+                  <MyIcon name="instagram" />
+
+                  <VStack spacing={0} alignItems={'flex-start'}>
+                    <MyText as="small" title="Type" color={'brand.darkgray'} />
+                    <MyText as="span" title="Full Time" />
+                  </VStack>
+                </Center>
+                <Center
+                  gap={'12px'}
+                  h={'full'}
+                  w={{ base: '70vw', sm: '50vw', md: '170px', lg: '200px' }}
+                  py={'18px'}
+                  justifyContent={{ base: 'flex-start', md: 'center' }}
+                  px={{ base: '32px', md: '10px' }}
+                >
+                  <MyIcon name="job" />
+
+                  <VStack spacing={0} alignItems={'flex-start'}>
+                    <MyText
+                      as="small"
+                      title="Location"
+                      color={'brand.darkgray'}
+                    />
+                    <MyText as="span" title="Mumbai" />
+                  </VStack>
+                </Center>
               </HStack>
 
               {/* Required Skills part*/}
-              {/* <VStack alignItems={'flex-start'} gap={'10px'}>
+              <VStack alignItems={'flex-start'} gap={'10px'}>
                 <MyText as="heading" title="Required Skills" />
 
-                <HStack>
-                  <Center
-                    borderWidth={'1px'}
-                    borderColor={'brand.darkgray'}
-                    px={'10px'}
-                    py={'3px'}
-                    borderRadius={'3px'}
-                  >
-                    <MyText
-                      as="small"
-                      title="JavaScript"
-                      color="brand.darkgray"
-                    />
-                  </Center>
-
-                  <Center
-                    borderWidth={'1px'}
-                    borderColor={'brand.darkgray'}
-                    px={'10px'}
-                    py={'3px'}
-                    borderRadius={'3px'}
-                  >
-                    <MyText as="small" title="ReactJS" color="brand.darkgray" />
-                  </Center>
-
-                  <Center
-                    borderWidth={'1px'}
-                    borderColor={'brand.darkgray'}
-                    px={'10px'}
-                    py={'3px'}
-                    borderRadius={'3px'}
-                  >
-                    <MyText
-                      as="small"
-                      title="TypeScript"
-                      color="brand.darkgray"
-                    />
-                  </Center>
-
-                  <Center
-                    borderWidth={'1px'}
-                    borderColor={'brand.darkgray'}
-                    px={'10px'}
-                    py={'3px'}
-                    borderRadius={'3px'}
-                  >
-                    <MyText as="small" title="NextJs" color="brand.darkgray" />
-                  </Center>
+                <HStack
+                  flexWrap={'wrap'}
+                  gap={'6px'}
+                  spacing={0}
+                  maxW={{ base: '100%', md: '80%' }}
+                >
+                  {[
+                    'JavaScript',
+                    'React.js',
+                    'Angular.js',
+                    'Node.js',
+                    'MongdoDB',
+                    'Express.js',
+                    'Node.js',
+                    'MongdoDB',
+                    'Express.js',
+                    'Node.js',
+                    'MongdoDB',
+                    'Express.js',
+                  ].map((item, key) => {
+                    return (
+                      <Center
+                        key={key}
+                        borderWidth={'1px'}
+                        borderColor={'brand.darkgray'}
+                        px={'10px'}
+                        py={'3px'}
+                        borderRadius={'6px'}
+                        bg={'brand.offwhite'}
+                      >
+                        <MyText
+                          as="small"
+                          title={item}
+                          color="brand.darkgray"
+                        />
+                      </Center>
+                    );
+                  })}
                 </HStack>
-              </VStack> */}
+              </VStack>
 
               {/* Overview */}
-              {/* <VStack alignItems={'flex-start'}>
+              <VStack alignItems={'flex-start'}>
                 <MyText as="heading" title="Overview" />
-                <Box w={{ base: '130%', md: '120%', lg: '85%' }}>
-                  <MyText
-                    as="span"
-                    title="Google is a multinational technology company that specializes in Internet-related services and products. It was founded in 1998 by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University. Google mission is to organize the world information and make it universally accessible and useful."
-                  />
-                </Box>
-              </VStack> */}
+                <MyText
+                  as="p"
+                  title="Google is a multinational technology company that specializes in Internet-related services and products. It was founded in 1998 by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University. Google mission is to organize the world information and make it universally accessible and useful."
+                />
+              </VStack>
 
               {/* Job Description */}
-              {/* <VStack alignItems={'flex-start'}>
+              <VStack alignItems={'flex-start'}>
                 <MyText as="heading" title="Job Description" />
 
-                <VStack
-                  w={{ base: '130%', md: '120%', lg: '85%' }}
-                  alignItems={'flex-start'}
-                >
-                  <HStack>
-                    <Box
-                      h={'10px'}
-                      w={'10px'}
-                      border={'2px'}
-                      borderRadius={'50px'}
-                      borderColor={'brand.primary'}
-                    ></Box>
-                    <Box>
-                      <MyText
-                        as="span"
-                        title="Designing, coding, and modifying websites and web applications from layout to functionality, following best practices and industry standards."
-                      />
-                    </Box>
-                  </HStack>
-
-                  <HStack>
-                    <Box
-                      h={'10px'}
-                      w={'10px'}
-                      border={'2px'}
-                      borderRadius={'50px'}
-                      borderColor={'brand.primary'}
-                    ></Box>
-                    <MyText
-                      as="span"
-                      title="Collaborating with cross-functional teams to gather and define project requirements and specifications."
-                    />
-                  </HStack>
-
-                  <HStack>
-                    <Box
-                      h={'10px'}
-                      w={'10px'}
-                      border={'2px'}
-                      borderRadius={'50px'}
-                      borderColor={'brand.primary'}
-                    ></Box>
-                    <MyText
-                      as="span"
-                      title="Developing user-facing features and building efficient, reusable, and scalable code."
-                    />
-                  </HStack>
-
-                  <HStack>
-                    <Box
-                      h={'10px'}
-                      w={'10px'}
-                      border={'2px'}
-                      borderRadius={'50px'}
-                      borderColor={'brand.primary'}
-                    ></Box>
-                    <MyText
-                      as="span"
-                      title="Implementing front-end interfaces using HTML, CSS, and JavaScript frameworks like React, Angular, or Vue.js."
-                    />
-                  </HStack>
-
-                  <HStack>
-                    <Box
-                      h={'10px'}
-                      w={'10px'}
-                      border={'2px'}
-                      borderRadius={'50px'}
-                      borderColor={'brand.primary'}
-                    ></Box>
-                    <MyText
-                      as="span"
-                      title="Creating and integrating server-side APIs and web services using technologies such as Node.js, Python, or PHP."
-                    />
-                  </HStack>
+                <VStack alignItems={'flex-start'}>
+                  {[
+                    'We are seeking a talented Software Engineer to join our team. The ideal candidate will have experience in developing high-quality software solutions and a passion for cutting-edge technologies.',
+                    'We are looking for a motivated Marketing Coordinator to join our marketing team. The ideal candidate will be responsible for implementing marketing strategies, coordinating campaigns, and analyzing market data.',
+                    'We are hiring a Customer Service Representative to provide exceptional service to our clients. The successful candidate will handle inquiries, resolve complaints, and ensure customer satisfaction.',
+                  ].map((item, key) => {
+                    return (
+                      <HStack
+                        gap={'6px'}
+                        spacing={0}
+                        alignItems={'flex-start'}
+                        key={key}
+                      >
+                        <Center mt={'5px'}>
+                          <MyIcon
+                            name="borderCircle"
+                            width="13px"
+                            height="13px"
+                            strokeWidth="4"
+                            color="brand.primary"
+                          />
+                        </Center>
+                        <MyText as="p" title={item} />
+                      </HStack>
+                    );
+                  })}
                 </VStack>
-              </VStack> */}
+              </VStack>
 
               {/* Key Responsibility */}
-              {/* <VStack alignItems={'flex-start'}>
-                <MyText as="heading" title="Key Responsibility" />
+              <VStack alignItems={'flex-start'}>
+                <MyText as="heading" title="Key Responsibilities" />
 
-                <VStack
-                  w={{ base: '130%', md: '120%', lg: '85%' }}
-                  alignItems={'flex-start'}
-                >
-                  <HStack>
-                    <Box
-                      h={'10px'}
-                      w={'10px'}
-                      border={'2px'}
-                      borderRadius={'50px'}
-                      borderColor={'brand.primary'}
-                    ></Box>
-                    <MyText
-                      as="span"
-                      title="Develop and maintain web applications, ensuring high-quality and efficient code across the full stack."
-                    />
-                  </HStack>
-
-                  <HStack>
-                    <Box
-                      h={'10px'}
-                      w={'10px'}
-                      border={'2px'}
-                      borderRadius={'50px'}
-                      borderColor={'brand.primary'}
-                    ></Box>
-                    <MyText
-                      as="span"
-                      title="Collaborate with the development team to gather requirements and translate them into technical specifications."
-                    />
-                  </HStack>
-
-                  <HStack>
-                    <Box
-                      h={'10px'}
-                      w={'10px'}
-                      border={'2px'}
-                      borderRadius={'50px'}
-                      borderColor={'brand.primary'}
-                    ></Box>
-                    <MyText
-                      as="span"
-                      title="Design and implement user interfaces, ensuring a seamless and intuitive user experience."
-                    />
-                  </HStack>
-
-                  <HStack>
-                    <Box
-                      h={'10px'}
-                      w={'10px'}
-                      border={'2px'}
-                      borderRadius={'50px'}
-                      borderColor={'brand.primary'}
-                    ></Box>
-                    <MyText
-                      as="span"
-                      title="Build and integrate server-side APIs and web services, ensuring proper functionality and scalability."
-                    />
-                  </HStack>
-
-                  <HStack>
-                    <Box
-                      h={'10px'}
-                      w={'10px'}
-                      border={'2px'}
-                      borderRadius={'50px'}
-                      borderColor={'brand.primary'}
-                    ></Box>
-                    <MyText
-                      as="span"
-                      title="Create and maintain databases, ensuring data integrity, security, and optimal performance."
-                    />
-                  </HStack>
+                <VStack alignItems={'flex-start'}>
+                  {[
+                    'Design and implement software applications using programming languages such as Python and Java',
+                    'Collaborate with cross-functional teams to gather and analyze requirements',
+                    'Write clean, efficient, and maintainable code',
+                    'Conduct thorough testing and debugging of applications',
+                    'Participate in code reviews and provide constructive feedback',
+                    'Stay up-to-date with industry trends and technologies',
+                    'Assist in troubleshooting and resolving software defects',
+                    'Document software specifications and user manuals',
+                  ].map((item, key) => {
+                    return (
+                      <HStack
+                        gap={'6px'}
+                        spacing={0}
+                        alignItems={'flex-start'}
+                        key={key}
+                      >
+                        <Center mt={'5px'}>
+                          <MyIcon
+                            name="borderCircle"
+                            width="13px"
+                            height="13px"
+                            strokeWidth="4"
+                            color="brand.primary"
+                          />
+                        </Center>
+                        <MyText as="p" title={item} />
+                      </HStack>
+                    );
+                  })}
                 </VStack>
-              </VStack> */}
+              </VStack>
 
-              <MyButton title="Apply" px={'36px'} />
+              {/* Buttons */}
+              <HStack w={'full'}>
+                <MyButton
+                  title="Apply"
+                  py={{ base: '24px', md: '18px' }}
+                  w={{ base: '100%', md: '16vw' }}
+                />
+                <MyButton
+                  w={'100%'}
+                  display={{ base: 'flex', md: 'none' }}
+                  title="Save"
+                  variant="outline"
+                  py={'24px'}
+                />
+              </HStack>
 
               {/* Share Job */}
-              {/* <HStack
-                w={'full'}
-                alignItems={{ base: 'flex-start', md: 'center' }}
-                gap={'10px'}
-                flexDir={{ base: 'column', md: 'row' }}
-              >
-                <MyText as="title" title="Share this job" />
-                <Flex gap={'10px'} flexWrap={'wrap'}>
-                  <Center
-                    h={'30px'}
-                    gap={'5px'}
-                    bg={'green.100'}
-                    borderRadius={'4px'}
-                    px={'10px'}
-                    cursor={'pointer'}
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="ionicon"
-                      viewBox="0 0 512 512"
-                      width={'15px'}
-                    >
-                      <path
-                        d="M414.73 97.1A222.14 222.14 0 00256.94 32C134 32 33.92 131.58 33.87 254a220.61 220.61 0 0029.78 111L32 480l118.25-30.87a223.63 223.63 0 00106.6 27h.09c122.93 0 223-99.59 223.06-222A220.18 220.18 0 00414.73 97.1zM256.94 438.66h-.08a185.75 185.75 0 01-94.36-25.72l-6.77-4-70.17 18.32 18.73-68.09-4.41-7A183.46 183.46 0 0171.53 254c0-101.73 83.21-184.5 185.48-184.5a185 185 0 01185.33 184.64c-.04 101.74-83.21 184.52-185.4 184.52zm101.69-138.19c-5.57-2.78-33-16.2-38.08-18.05s-8.83-2.78-12.54 2.78-14.4 18-17.65 21.75-6.5 4.16-12.07 1.38-23.54-8.63-44.83-27.53c-16.57-14.71-27.75-32.87-31-38.42s-.35-8.56 2.44-11.32c2.51-2.49 5.57-6.48 8.36-9.72s3.72-5.56 5.57-9.26.93-6.94-.46-9.71-12.54-30.08-17.18-41.19c-4.53-10.82-9.12-9.35-12.54-9.52-3.25-.16-7-.2-10.69-.2a20.53 20.53 0 00-14.86 6.94c-5.11 5.56-19.51 19-19.51 46.28s20 53.68 22.76 57.38 39.3 59.73 95.21 83.76a323.11 323.11 0 0031.78 11.68c13.35 4.22 25.5 3.63 35.1 2.2 10.71-1.59 33-13.42 37.63-26.38s4.64-24.06 3.25-26.37-5.11-3.71-10.69-6.48z"
-                        fillRule="evenodd"
-                      />
-                    </svg>
-                    <MyText as="small" title="Whatsapp" fontWeight={500} />
-                  </Center>
-
-                  <Center
-                    h={'30px'}
-                    gap={'5px'}
-                    bg={'blue.200'}
-                    borderRadius={'4px'}
-                    px={'10px'}
-                    cursor={'pointer'}
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="ionicon"
-                      viewBox="0 0 512 512"
-                      width={'15px'}
-                    >
-                      <path d="M444.17 32H70.28C49.85 32 32 46.7 32 66.89v374.72C32 461.91 49.85 480 70.28 480h373.78c20.54 0 35.94-18.21 35.94-38.39V66.89C480.12 46.7 464.6 32 444.17 32zm-273.3 373.43h-64.18V205.88h64.18zM141 175.54h-.46c-20.54 0-33.84-15.29-33.84-34.43 0-19.49 13.65-34.42 34.65-34.42s33.85 14.82 34.31 34.42c-.01 19.14-13.31 34.43-34.66 34.43zm264.43 229.89h-64.18V296.32c0-26.14-9.34-44-32.56-44-17.74 0-28.24 12-32.91 23.69-1.75 4.2-2.22 9.92-2.22 15.76v113.66h-64.18V205.88h64.18v27.77c9.34-13.3 23.93-32.44 57.88-32.44 42.13 0 74 27.77 74 87.64z" />
-                    </svg>
-                    <MyText as="small" title="Linkdein" fontWeight={500} />
-                  </Center>
-
-                  <Center
-                    h={'30px'}
-                    gap={'5px'}
-                    bg={'red.200'}
-                    borderRadius={'4px'}
-                    px={'10px'}
-                    cursor={'pointer'}
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="ionicon"
-                      viewBox="0 0 512 512"
-                      width={'15px'}
-                    >
-                      <path d="M349.33 69.33a93.62 93.62 0 0193.34 93.34v186.66a93.62 93.62 0 01-93.34 93.34H162.67a93.62 93.62 0 01-93.34-93.34V162.67a93.62 93.62 0 0193.34-93.34h186.66m0-37.33H162.67C90.8 32 32 90.8 32 162.67v186.66C32 421.2 90.8 480 162.67 480h186.66C421.2 480 480 421.2 480 349.33V162.67C480 90.8 421.2 32 349.33 32z" />
-                      <path d="M377.33 162.67a28 28 0 1128-28 27.94 27.94 0 01-28 28zM256 181.33A74.67 74.67 0 11181.33 256 74.75 74.75 0 01256 181.33m0-37.33a112 112 0 10112 112 112 112 0 00-112-112z" />
-                    </svg>
-                    <MyText as="small" title="Instagram" fontWeight={500} />
-                  </Center>
-                </Flex>
-              </HStack> */}
+              <HStack w={'full'} gap={'10px'}>
+                <MyText as="title" title="Share this job:" />
+                <HStack>
+                  <MyIcon name="whatsapp" cursor={'pointer'} />
+                  <MyIcon name="telegram" cursor={'pointer'} />
+                  <MyIcon name="instagram" cursor={'pointer'} />
+                  <MyIcon name="facebook" cursor={'pointer'} />
+                  <MyIcon name="linkedin" cursor={'pointer'} />
+                </HStack>
+              </HStack>
             </VStack>
 
             {/* Right Part */}
             <VStack
               w={{ base: '100%', md: '30%' }}
-              bg={'brand.aliceblue'}
-              border={'1px solid'}
-              borderColor={'brand.lightgray'}
-              h={'160vh'}
-              borderRadius={'8px'}
-            ></VStack>
+              borderRadius={'4px'}
+              h={'160vh'}pl={'12px'}
+            >
+              <Center
+                px={'12px'}
+                color={'brand.white'}
+                bg={'brand.primary'}
+                w={'100%'}
+                h={'250px'}
+                gap={'12px'}
+                borderRadius={'20px'}
+                flexDirection={'column'}
+                alignItems={'flex-start'}
+              >
+                <MyText
+                  as="title"
+                  color="currentColor"
+                  title="Join Our Tech Job Updates WhatsApp Group!"
+                />
+                <MyText
+                  color="currentColor"
+                  as="span"
+                  title="Stay ahead in your tech career with our exclusive WhatsApp group. Get instant job updates, curated tech news, career tips, and network with industry professionals."
+                />
+                <MyButton
+                  title="Join Now"
+                  bg={'brand.white'}
+                  color={'green.400'}
+                  px={'42px'}
+                  fontWeight={600}
+                />
+              </Center>
+            </VStack>
           </HStack>
 
           {/* Similar Jobs */}
-          {/* <VStack
-              w={'full'}
-              alignItems={'flex-start'}
-              gap={'20px'}
-              pt={'40px'}
+          <VStack w={'full'} alignItems={'flex-start'} gap={'20px'} pt={'40px'}>
+            <MyText as="heading" title="Similar Jobs" />
+
+            <Grid
+              templateColumns={{
+                base: 'repeat(1, 1fr)',
+                md: 'repeat(2, 1fr)',
+                lg: 'repeat(2, 1fr)',
+              }}
+              gap={{ base: 6, lg: 4, xl: 6 }}
+              mx={'auto'}
+              pt={'25px'}
+              width={'100%'}
             >
-              <MyText as="heading" title="Similar Jobs" />
-
-              <Grid
-                templateColumns={{
-                  base: 'repeat(1, 1fr)',
-                  md: 'repeat(2, 1fr)',
-                  lg: 'repeat(2, 1fr)',
-                }}
-                gap={{ base: 6, lg: 4, xl: 6 }}
-                mx={'auto'}
-                pt={'25px'}
-                width={'100%'}
-              >
-                <MyJobCard
-                  companyIconLogo={'/assets/images/company-logo/bookmyshow.png'}
-                  role={'Frontend Developer'}
-                  companyName={'Tata Consultancy Service'}
-                  location={'Bhopal, Madhaya Pradesh'}
-                  jobType={[
-                    'Full Time',
-                    'Part Time',
-                    'Internship',
-                    'Startup',
-                    'Indian MNC',
-                  ]}
-                  companyDesc="UX designers measure and optimize applications to improve ease of use
+              <MyJobCard
+                companyIconLogo={'/assets/images/company-logo/bookmyshow.png'}
+                role={'Frontend Developer'}
+                companyName={'Tata Consultancy Service'}
+                location={'Bhopal, Madhaya Pradesh'}
+                jobType={[
+                  'Full Time',
+                  'Part Time',
+                  'Internship',
+                  'Startup',
+                  'Indian MNC',
+                ]}
+                companyDesc="UX designers measure and optimize applications to improve ease of use
 (usability), and create the best user experience by exploring many
 diffrent approaches to solve end's-user problems"
-                  isNamedLogo={true}
-                />
-
-                <MyJobCard
-                  companyIconLogo={'/assets/images/company-logo/bookmyshow.png'}
-                  role={'Frontend Developer'}
-                  companyName={'Tata Consultancy Service'}
-                  location={'Bhopal, Madhaya Pradesh'}
-                  jobType={[
-                    'Full Time',
-                    'Part Time',
-                    'Internship',
-                    'Startup',
-                    'Indian MNC',
-                  ]}
-                  companyDesc="UX designers measure and optimize applications to improve ease of use
+                isNamedLogo={true}
+              />
+              <MyJobCard
+                companyIconLogo={'/assets/images/company-logo/bookmyshow.png'}
+                role={'Frontend Developer'}
+                companyName={'Tata Consultancy Service'}
+                location={'Bhopal, Madhaya Pradesh'}
+                jobType={[
+                  'Full Time',
+                  'Part Time',
+                  'Internship',
+                  'Startup',
+                  'Indian MNC',
+                ]}
+                companyDesc="UX designers measure and optimize applications to improve ease of use
 (usability), and create the best user experience by exploring many
 diffrent approaches to solve end's-user problems"
-                  isNamedLogo={true}
-                />
+                isNamedLogo={true}
+              />
 
-                <MyJobCard
-                  companyIconLogo={'/assets/images/company-logo/bookmyshow.png'}
-                  role={'Frontend Developer'}
-                  companyName={'Tata Consultancy Service'}
-                  location={'Bhopal, Madhaya Pradesh'}
-                  jobType={[
-                    'Full Time',
-                    'Part Time',
-                    'Internship',
-                    'Startup',
-                    'Indian MNC',
-                  ]}
-                  companyDesc="UX designers measure and optimize applications to improve ease of use
+              <MyJobCard
+                companyIconLogo={'/assets/images/company-logo/bookmyshow.png'}
+                role={'Frontend Developer'}
+                companyName={'Tata Consultancy Service'}
+                location={'Bhopal, Madhaya Pradesh'}
+                jobType={[
+                  'Full Time',
+                  'Part Time',
+                  'Internship',
+                  'Startup',
+                  'Indian MNC',
+                ]}
+                companyDesc="UX designers measure and optimize applications to improve ease of use
 (usability), and create the best user experience by exploring many
 diffrent approaches to solve end's-user problems"
-                  isNamedLogo={true}
-                />
-              </Grid>
-            </VStack> */}
+                isNamedLogo={true}
+              />
+
+              <MyJobCard
+                companyIconLogo={'/assets/images/company-logo/bookmyshow.png'}
+                role={'Frontend Developer'}
+                companyName={'Tata Consultancy Service'}
+                location={'Bhopal, Madhaya Pradesh'}
+                jobType={[
+                  'Full Time',
+                  'Part Time',
+                  'Internship',
+                  'Startup',
+                  'Indian MNC',
+                ]}
+                companyDesc="UX designers measure and optimize applications to improve ease of use
+(usability), and create the best user experience by exploring many
+diffrent approaches to solve end's-user problems"
+                isNamedLogo={true}
+              />
+            </Grid>
+          </VStack>
         </Layout>
       </VStack>
     </>
