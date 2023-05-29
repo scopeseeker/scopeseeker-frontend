@@ -1,4 +1,4 @@
-import { Center, Grid, HStack, VStack } from '@chakra-ui/react';
+import { Box, Center, Grid, HStack, VStack } from '@chakra-ui/react';
 import Link from 'next/link';
 import { MyButton } from '../button';
 import { MyJobCard } from '../cards';
@@ -8,13 +8,13 @@ import { MyText } from '../text';
 
 const JobTab = () => {
   return (
-    <VStack w={'full'} px={'100px'} marginTop={'20px'} gap={'50px'}>
+    <VStack w={'full'} marginTop={'20px'} gap={'50px'}>
       <HStack
         w={'full'}
-        py={'20px'}
-        px={'20px'}
+        p={'10px'}
         borderRadius={'10px'}
-        boxShadow="0px 10px 30px rgb(0,0,0,0.1)"
+        border={'1px'}
+        borderColor={'brand.lightgray'}
       >
         <Center
           w={'100px'}
@@ -40,15 +40,19 @@ const JobTab = () => {
       </HStack>
 
       {/* Search part */}
-      <HStack w={'full'} gap={'10px'}>
-        <HStack w={'full'}>
-          <MyInput
-            type="text"
-            placeholder="Job title or keyword"
-            leftElement={<MyIcon name="search" width="20" height="20" />}
-          />
-        </HStack>
-        <MyButton title="Search" />
+      <HStack
+        w={'full'}
+        gap={'10px'}
+        flexDir={{ base: 'column', sm: 'row', md: 'row' }}
+      >
+        <MyInput
+          type="text"
+          placeholder="Job title or keyword"
+          leftElement={<MyIcon name="search" width="20" height="20" />}
+        />
+        <Box w={{ base: 'full', sm: 'initial', md: 'initial' }}>
+          <MyButton title="Search" />
+        </Box>
       </HStack>
 
       {/* Job card part */}
@@ -130,7 +134,13 @@ const JobTab = () => {
       </Grid>
 
       {/* Button Part */}
-      <HStack w={'full'} alignItems={'flex-start'} gap={'10px'}>
+      <HStack
+        w={'full'}
+        alignItems={'flex-start'}
+        gap={'10px'}
+        flexDir={{ base: 'column', sm: 'row', md: 'row' }}
+        spacing={0}
+      >
         <Link href={'#'}>
           <Center
             px={'20px'}

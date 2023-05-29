@@ -44,10 +44,12 @@ const Overview = () => {
           borderRadius={'10px'}
           gap={'20px'}
           flexDirection={{ base: 'column', md: 'column', lg: 'row' }}
+          alignItems={'flex-start'}
+          spacing={0}
         >
           {/* Video Part */}
           <Box
-            w={{ base: 'full', md: 'full', lg: '500px' }}
+            w={{ base: 'full', md: 'full', lg: '400px' }}
             h={'full'}
             borderRadius={'10px'}
             overflow={'hidden'}
@@ -67,59 +69,37 @@ const Overview = () => {
           </Box>
 
           <VStack
-            w={{ base: 'full', md: '500px' }}
+            w={{ base: 'full', md: '570px' }}
             h={{ base: '300px', md: '250px', lg: 'full' }}
             alignItems={'flex-start'}
           >
             <MyText as="heading" title="Camgimini" />
             <Box
               overflow={'scroll'}
-              pr={{ base: '20px', md: '20px', lg: '40px' }}
+              pr={{ base: '20px', md: '20px', lg: '30px' }}
             >
-              <UnorderedList>
-                <ListItem>
-                  <MyText
-                    as="p"
-                    title="Capgemini is a global consulting, technology services, and digital transformation company."
-                  />
-                </ListItem>
-                <ListItem>
-                  <MyText
-                    as="p"
-                    title="It was founded in 1967 and operates in over 50 countries."
-                  />
-                </ListItem>
-                <ListItem>
-                  <MyText
-                    as="p"
-                    title="Capgemini offers consulting, technology services, and digital transformation solutions."
-                  />
-                </ListItem>
-                <ListItem>
-                  <MyText
-                    as="p"
-                    title="They assist clients in various industries and help them embrace digital technologies."
-                  />
-                </ListItem>
-                <ListItem>
-                  <MyText
-                    as="p"
-                    title="Capgemini has a strong global presence with offices and delivery centers worldwide."
-                  />
-                </ListItem>
-                <ListItem>
-                  <MyText
-                    as="p"
-                    title="They follow a collaborative approach, working closely with clients to develop tailored solutions."
-                  />
-                </ListItem>
-              </UnorderedList>
+              {[
+                'Capgemini is a global consulting, technology services, and digital transformation company.',
+                'It was founded in 1967 and operates in over 50 countries.',
+                'Capgemini offers consulting, technology services, and digital transformation solutions.',
+                'They assist clients in various industries and help them embrace digital technologies.',
+                'Capgemini has a strong global presence with offices and delivery centers worldwide.',
+                'They follow a collaborative approach, working closely with clients to develop tailored solutions.',
+              ].map((item, key) => {
+                return (
+                  <UnorderedList key={key}>
+                    <ListItem>
+                      <MyText as="p" title={item} />
+                    </ListItem>
+                  </UnorderedList>
+                );
+              })}
             </Box>
           </VStack>
         </HStack>
 
         {/* Table Section*/}
-        <VStack>
+        {/* <VStack>
           <Box
             borderWidth={'1px'}
             borderColor={'brand.lightgray'}
@@ -133,7 +113,7 @@ const Overview = () => {
                   <Tr
                     key={key}
                     flexDir={{ base: 'column', md: 'row' }}
-                    display={'flex'}
+                    display={{base: 'flex', md: 'initial'}}
                   >
                     <Td>
                       <MyText as="title" title={item.name} />
@@ -146,14 +126,18 @@ const Overview = () => {
               </Tbody>
             </Table>
           </Box>
-        </VStack>
+        </VStack> */}
 
         {/* Company Subsidiaries Section*/}
         <VStack w={'full'} alignItems={'flex-start'} gap={'20px'}>
           <MyText as="heading" title="Capgemini Subsidiaries" />
 
           <Grid
-            templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(4, 1fr)' }}
+            templateColumns={{
+              base: 'repeat(1, 1fr)',
+              md: 'repeat(3, 1fr)',
+              lg: 'repeat(4, 1fr)'
+            }}
             gap={'22px'}
           >
             <>
@@ -194,11 +178,11 @@ const Overview = () => {
               cursor={'pointer'}
               onClick={() => {
                 if (companyBoxRef && companyBoxRef.current) {
-                  companyBoxRef.current.scrollLeft -= 168;
+                  companyBoxRef.current.scrollLeft -= 220;
                 }
               }}
             >
-              <MyIcon name="arrow" />
+              <MyIcon name="arrowLeft" />
             </Center>
             <HStack
               gap={'20px'}
@@ -221,16 +205,20 @@ const Overview = () => {
                       flexShrink={0}
                       key={key}
                       w={'200px'}
-                      h={'250px'}
+                      h={'270px'}
                       borderRadius={'5px'}
                       flexDir={'column'}
                       gap={'20px'}
+                      border={'2px'}
+                      borderColor={'brand.lightgray'}
                     >
                       <Center
                         h={'100px'}
                         w={'100px'}
                         borderRadius={'full'}
                         overflow={'hidden'}
+                        border={'2px'}
+                        borderColor={'brand.darkgray'}
                       >
                         <MyImage
                           src={item.image}
@@ -254,11 +242,11 @@ const Overview = () => {
               cursor={'pointer'}
               onClick={() => {
                 if (companyBoxRef && companyBoxRef.current) {
-                  companyBoxRef.current.scrollLeft += 168;
+                  companyBoxRef.current.scrollLeft += 220;
                 }
               }}
             >
-              <MyIcon name="arrow" />
+              <MyIcon name="arrowRight" />
             </Center>
           </HStack>
         </VStack>
