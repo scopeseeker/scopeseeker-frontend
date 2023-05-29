@@ -70,7 +70,7 @@ export default function CompaniesPage() {
                 }
               }}
             >
-                        <MyIcon name='arrow'/>
+                        <MyIcon name='arrowLeft'/>
 
             </Center>
             <Center
@@ -149,7 +149,7 @@ export default function CompaniesPage() {
                 }
               }}
             >
-           <MyIcon name='arrow'/>
+           <MyIcon name='arrowRight'/>
             </Center>
           </HStack>
 
