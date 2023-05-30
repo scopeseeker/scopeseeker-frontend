@@ -128,8 +128,8 @@ export default function Login() {
                 >
                   <Link href={'#'}>
                     <Center
-                      px={{ base: '42px', sm: '24px' }}
-                      py={'8px'}
+                      px={{ base: '52px', sm: '24px' }}
+                      py={{ base: '12px', sm: '8px' }}
                       borderRadius={'80px'}
                       border={'1.5px solid'}
                       borderColor={'brand.darkgray'}
@@ -152,8 +152,8 @@ export default function Login() {
                   </Link>
                   <Link href={'#'}>
                     <Center
-                      px={{ base: '42px', sm: '24px' }}
-                      py={'8px'}
+                      px={{ base: '52px', sm: '24px' }}
+                      py={{ base: '12px', sm: '8px' }}
                       borderRadius={'80px'}
                       border={'1.5px solid'}
                       borderColor={'brand.darkgray'}
