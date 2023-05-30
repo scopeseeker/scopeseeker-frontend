@@ -20,15 +20,16 @@ export default function Login() {
       </Head>
 
       <HStack
-        h={'100vh'}
+        h={{ base: '100%', md: '100vh' }}
         flexDirection={{ base: 'column', md: 'row' }}
         w={'full'}
-        bg={'white'}
+        bg={'brand.white'}
+        spacing={0}
       >
         {/* Left Part */}
         <VStack
-          h={{base:'60%',md:'full'}}
-          w={{ base: '100%', md: '50%', lg: '30%' }}
+          w={{ base: '100%', md: '40%', lg: '30%' }}
+          h={{ base: 'fit-content', md: 'full' }}
           p={'10px'}
         >
           <VStack
@@ -59,9 +60,7 @@ export default function Login() {
                     <MyText
                       lineHeight={'shorter'}
                       title="Seek the scope of your potential"
-                      as="span"
-                      fontSize={{ base: 'none', md: '10px' }}
-                      display={{ base: 'none', md: 'initial' }}
+                      as="small"
                       color="white"
                     />
                   </VStack>
@@ -71,9 +70,9 @@ export default function Login() {
             <Center flexDirection={'column'} w={'full'} h={'100%'} gap={'32px'}>
               <MainHeading
                 title="Experience the Future of Job with Scope Seeker"
-                headColor="white"
+                headColor="brand.white"
                 subTitle="Simplify, Streamline, and Succeed with Our Next-Generation Platform"
-                paraColor="lightgray"
+                paraColor="brand.lightgray"
                 align={'start'}
               />
               <Center display={{ base: 'none', md: 'flex' }}>
@@ -88,13 +87,10 @@ export default function Login() {
           </VStack>
         </VStack>
         {/* Right part */}
-        <Layout w={{ base: '100%', md: 'full', lg: '70%' }}>
-          <Center
-            w={'100%'}
-            h={'full'}
-          >
+        <Layout w={{ base: '100%', md: '60%', lg: '70%' }} h={'full'}>
+          <Center w={'100%'} h={'full'} pb={{ base: '24px', md: '0px' }}>
             <VStack
-              w={{ base: '100%', md: '60%' }}
+              w={{ base: '100%', md: '90%', lg: '65%' }}
               alignItems={'flex-start'}
               gap={'10px'}
             >
@@ -117,20 +113,27 @@ export default function Login() {
                 />
               </HStack>
               <HStack>
-                <MyButton title="Login" />
+                <MyButton title="Login" px={'42px'} />
                 <MyButton title="Forget Password" />
               </HStack>
               <MyDivider />
               <VStack w={'full'}>
                 <MyText as="heading" fontWeight={400} title="Or" />
-                <HStack gap={'6px'} flexDirection={{base:'column',sm:'row', md:'row'}} spacing={0}>
+                <HStack
+                  gap={{ base: '6px', sm: '8px', md: '6px' }}
+                  flexDirection={{ base: 'column', sm: 'row', md: 'row' }}
+                  spacing={0}
+                  justifyContent={'center'}
+                  w={'full'}
+                >
                   <Link href={'#'}>
                     <Center
-                      px={'24px'}
-                      py={'6px'}
+                      px={{ base: '42px', sm: '24px' }}
+                      py={'8px'}
                       borderRadius={'80px'}
                       border={'1.5px solid'}
-                      borderColor={'red'}
+                      borderColor={'brand.darkgray'}
+                      bg={'brand.aliceblue'}
                       gap={'10px'}
                       cursor={'pointer'}
                     >
@@ -140,18 +143,21 @@ export default function Login() {
                         width={20}
                         height={20}
                       />
-                      <MyText as="span" title="Login with Google" 
-                      whitespace='nowrap'
-                     />
+                      <MyText
+                        as="span"
+                        title="Login with Google"
+                        whitespace="nowrap"
+                      />
                     </Center>
                   </Link>
                   <Link href={'#'}>
                     <Center
-                      px={'24px'}
-                      py={'6px'}
+                      px={{ base: '42px', sm: '24px' }}
+                      py={'8px'}
                       borderRadius={'80px'}
                       border={'1.5px solid'}
-                      borderColor={'brand.black'}
+                      borderColor={'brand.darkgray'}
+                      bg={'brand.aliceblue'}
                       gap={'10px'}
                       cursor={'pointer'}
                     >
