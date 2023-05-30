@@ -70,7 +70,7 @@ export interface IMainHeadingProps {
   align?: any;
   headColor?: string;
   paraColor?: string;
-  fontsize?: { base: string; md: string };
+  fontsize?: { base: string; md: string } | any;
   [key: string]: any;
 }
 export interface IPageHeroSection {
