@@ -46,6 +46,7 @@ export type IconNameType =
   | 'cafeteria'
   | 'beach'
   | 'borderCircle'
+  | 'hamburgerMenu'
   | string;
 
 type IconData = {
@@ -380,6 +381,13 @@ export const IconData: IconData = {
       <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
       <path d="M12 12h3.5"></path>
       <path d="M12 7v5"></path>
+    </>
+  ),
+  hamburgerMenu: (
+    <>
+      <path d="M4 6l16 0" />
+      <path d="M4 12l16 0" />
+      <path d="M4 18l16 0" />
     </>
   ),
 };
