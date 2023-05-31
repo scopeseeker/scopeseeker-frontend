@@ -55,13 +55,13 @@ export default function Login() {
                       lineHeight={'shorter'}
                       title="Scope Seeker"
                       as="title"
-                      color="white"
+                      color="brand.white"
                     />
                     <MyText
                       lineHeight={'shorter'}
                       title="Seek the scope of your potential"
                       as="small"
-                      color="white"
+                      color="brand.white"
                     />
                   </VStack>
                 </Center>
