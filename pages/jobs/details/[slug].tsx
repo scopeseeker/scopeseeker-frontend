@@ -1,13 +1,12 @@
 import {
   Layout,
   MyButton,
-  MyDivider,
   MyIcon,
   MyImage,
   MyJobCard,
   MyText,
 } from '@/component';
-import { Box, Center, Flex, Grid, HStack, VStack } from '@chakra-ui/react';
+import { Center, Grid, HStack, VStack } from '@chakra-ui/react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
@@ -340,7 +339,8 @@ export default function JobDetailsPage() {
             <VStack
               w={{ base: '100%', md: '30%' }}
               borderRadius={'4px'}
-              h={'160vh'}pl={'12px'}
+              h={'160vh'}
+              pl={'12px'}
             >
               <Center
                 px={'12px'}
@@ -404,7 +404,6 @@ export default function JobDetailsPage() {
                 companyDesc="UX designers measure and optimize applications to improve ease of use
 (usability), and create the best user experience by exploring many
 diffrent approaches to solve end's-user problems"
-                isNamedLogo={true}
               />
               <MyJobCard
                 companyIconLogo={'/assets/images/company-logo/bookmyshow.png'}
@@ -421,7 +420,6 @@ diffrent approaches to solve end's-user problems"
                 companyDesc="UX designers measure and optimize applications to improve ease of use
 (usability), and create the best user experience by exploring many
 diffrent approaches to solve end's-user problems"
-                isNamedLogo={true}
               />
 
               <MyJobCard
@@ -439,7 +437,6 @@ diffrent approaches to solve end's-user problems"
                 companyDesc="UX designers measure and optimize applications to improve ease of use
 (usability), and create the best user experience by exploring many
 diffrent approaches to solve end's-user problems"
-                isNamedLogo={true}
               />
 
               <MyJobCard
@@ -457,7 +454,6 @@ diffrent approaches to solve end's-user problems"
                 companyDesc="UX designers measure and optimize applications to improve ease of use
 (usability), and create the best user experience by exploring many
 diffrent approaches to solve end's-user problems"
-                isNamedLogo={true}
               />
             </Grid>
           </VStack>

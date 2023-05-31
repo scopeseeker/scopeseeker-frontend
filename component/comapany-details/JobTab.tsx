@@ -75,7 +75,6 @@ const JobTab = () => {
           companyDesc="UX designers measure and optimize applications to improve ease of use
         (usability), and create the best user experience by exploring many
        diffrent approaches to solve end's-user problems"
-          isNamedLogo={true}
         />
 
         <MyJobCard
@@ -93,7 +92,6 @@ const JobTab = () => {
           companyDesc="UX designers measure and optimize applications to improve ease of use
         (usability), and create the best user experience by exploring many
        diffrent approaches to solve end's-user problems"
-          isNamedLogo={true}
         />
 
         <MyJobCard
@@ -111,7 +109,7 @@ const JobTab = () => {
           companyDesc="UX designers measure and optimize applications to improve ease of use
         (usability), and create the best user experience by exploring many
        diffrent approaches to solve end's-user problems"
-          isNamedLogo={true}
+         
         />
 
         <MyJobCard
@@ -129,7 +127,7 @@ const JobTab = () => {
           companyDesc="UX designers measure and optimize applications to improve ease of use
         (usability), and create the best user experience by exploring many
        diffrent approaches to solve end's-user problems"
-          isNamedLogo={true}
+        
         />
       </Grid>
 

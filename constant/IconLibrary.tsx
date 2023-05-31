@@ -356,9 +356,7 @@ export const IconData: IconData = {
   ),
   save: (
     <>
-      <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"></path>
-      <path d="M7 11l5 5l5 -5"></path>
-      <path d="M12 4l0 12"></path>
+      <path d="M9 4h6a2 2 0 0 1 2 2v14l-5 -3l-5 3v-14a2 2 0 0 1 2 -2"></path>
     </>
   ),
   share: (

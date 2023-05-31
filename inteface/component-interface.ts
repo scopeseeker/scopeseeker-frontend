@@ -24,7 +24,15 @@ export interface IMyJobCard {
   companyDesc: string;
   applyLink?: string;
   fullDetailedLink?: string;
-  isNamedLogo?: boolean;
+}
+export interface IMyCompanyCard {
+  companyLogo: string;
+  rating: string;
+  companyName: string;
+  tags: string[];
+  companyDesc: string;
+  fullDetailLink: string;
+  viewJobs: string;
 }
 
 export interface IFilter {
@@ -52,7 +60,7 @@ export interface ILayoutProps {
   children: ReactNode;
   py?: { base: string; md: string };
   w?: any;
-  [key: string] : any;
+  [key: string]: any;
 }
 
 export interface IMyIconProps {
