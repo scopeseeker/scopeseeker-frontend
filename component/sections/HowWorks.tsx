@@ -8,7 +8,7 @@ const Works = () => {
           title="Easy Way To Get Job"
           subTitle="The first step to getting a job on Scope Seekr is to create a profile"
         />
-        <HStack justifyContent={'center'} gap={'30px'} w={'full'} pt={'40px'}>
+        <HStack justifyContent={'center'} flexDirection={{base:'column', md:'row'}} gap={'30px'} w={'full'} pt={'40px'}>
           <HowBox>
             <Box color={'brand.black'}>
                 <MyIcon name='createAccount' width='38' height='38' strokeWidth='1'/>
