@@ -1,6 +1,13 @@
-import { Filter, Layout, MyButton, MyDivider, MyIcon, MyText } from '@/component';
-import MyCompanyCard from '@/component/cards/MyCompanyCard';
-import { companyFilter } from '@/constant/constantFields';
+import {
+  Filter,
+  Layout,
+  MyButton,
+  MyCompanyCard,
+  MyDivider,
+  MyIcon,
+  MyText,
+} from '@/component';
+import { companyCardFields, companyFilter } from '@/constant/constantFields';
 import {
   Box,
   Center,
@@ -70,8 +77,7 @@ export default function CompaniesPage() {
                 }
               }}
             >
-                        <MyIcon name='arrowLeft'/>
-
+              <MyIcon name="arrowLeft" />
             </Center>
             <Center
               px={'5px'}
@@ -149,7 +155,7 @@ export default function CompaniesPage() {
                 }
               }}
             >
-           <MyIcon name='arrowRight'/>
+              <MyIcon name="arrowRight" />
             </Center>
           </HStack>
 
@@ -210,219 +216,30 @@ export default function CompaniesPage() {
                 templateColumns={{
                   base: 'repeat(1, 1fr)',
                   md: 'repeat(2, 1fr)',
-                  lg: 'repeat(3, 1fr)',
+                  lg: 'repeat(2, 1fr)',
                 }}
                 gap={{ base: 6, lg: 4, xl: 6 }}
                 mx={'auto'}
                 pt={'25px'}
+                width={'100%'}
               >
-                <GridItem>
-                  <MyCompanyCard
-                    companyIconLogo={'/assets/images/company-logo/github.png'}
-                    role={'Frontend Developer'}
-                    companyName={'Tata Consultancy Service'}
-                    location={'Bhopal, Madhya Pradesh'}
-                    jobType={[
-                      'Full Time',
-                      'Part Time',
-                      'Internship',
-                      'Startup',
-                      'Indian MNC',
-                    ]}
-                    companyDesc="UX designers measure and optimize applications to improve ease of use (usability), and create the best user experience by exploring many different approaches to solve end-users' problems"
-                  />
-                </GridItem>
-
-                <GridItem>
-                  <MyCompanyCard
-                    companyIconLogo={'/assets/images/company-logo/github.png'}
-                    role={'Software Engineer'}
-                    companyName={'Apple Inc.'}
-                    location={'Cupertino, California'}
-                    jobType={[
-                      'Full Time',
-                      'Remote',
-                      'Contract',
-                      'Fortune 500',
-                      'Tech Giant',
-                    ]}
-                    companyDesc="Apple Inc. is a multinational technology company known for its consumer electronics, software, and online services. They are known for innovative products such as the iPhone, iPad, and Mac."
-                  />
-                </GridItem>
-
-                <GridItem>
-                  <MyCompanyCard
-                    companyIconLogo={'/assets/images/company-logo/google.png'}
-                    role={'Backend Developer'}
-                    companyName={'Google LLC'}
-                    location={'Mountain View, California'}
-                    jobType={[
-                      'Full Time',
-                      'Remote',
-                      'Flexible Hours',
-                      'Tech Giant',
-                      'Silicon Valley',
-                    ]}
-                    companyDesc="Google LLC is an American multinational technology company that specializes in Internet-related services and products. They provide search engine services, online advertising technologies, cloud computing, software, and more."
-                  />
-                </GridItem>
-
-                <GridItem>
-                  <MyCompanyCard
-                    companyIconLogo={'/assets/images/company-logo/google.png'}
-                    role={'Software Engineer'}
-                    companyName={'Microsoft Corporation'}
-                    location={'Redmond, Washington'}
-                    jobType={[
-                      'Full Time',
-                      'Remote',
-                      'Contract',
-                      'Fortune 500',
-                      'Tech Giant',
-                    ]}
-                    companyDesc="Microsoft Corporation is an American multinational technology corporation that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services."
-                  />
-                </GridItem>
-
-                <GridItem>
-                  <MyCompanyCard
-                    companyIconLogo={
-                      '/assets/images/company-logo/bookmyshow.png'
-                    }
-                    role={'DevOps Engineer'}
-                    companyName={'Amazon.com, Inc.'}
-                    location={'Seattle, Washington'}
-                    jobType={[
-                      'Full Time',
-                      'Remote',
-                      'E-commerce',
-                      'Fortune 500',
-                      'Tech Giant',
-                    ]}
-                    companyDesc="Amazon.com, Inc. is an American multinational technology company based in Seattle, Washington. It focuses on e-commerce, cloud computing, digital streaming, and artificial intelligence."
-                  />
-                </GridItem>
-
-                <GridItem>
-                  <MyCompanyCard
-                    companyIconLogo={'/assets/images/company-logo/linkedin.png'}
-                    role={'Frontend Developer'}
-                    companyName={'Tata Consultancy Service'}
-                    location={'Bhopal, Madhaya Pradesh'}
-                    jobType={[
-                      'Full Time',
-                      'Part Time',
-                      'Internship',
-                      'Startup',
-                      'Indian MNC',
-                    ]}
-                    companyDesc="UX designers measure and optimize applications to improve ease of use
-      (usability), and create the best user experience by exploring many
-     diffrent approaches to solve end's-user problems"
-                  />
-                </GridItem>
-                <GridItem>
-                  <MyCompanyCard
-                    companyIconLogo={
-                      '/assets/images/company-logo/bookmyshow.png'
-                    }
-                    role={'Frontend Developer'}
-                    companyName={'Tata Consultancy Service'}
-                    location={'Bhopal, Madhaya Pradesh'}
-                    jobType={[
-                      'Full Time',
-                      'Part Time',
-                      'Internship',
-                      'Startup',
-                      'Indian MNC',
-                    ]}
-                    companyDesc="UX designers measure and optimize applications to improve ease of use
-        (usability), and create the best user experience by exploring many
-       diffrent approaches to solve end's-user problems"
-                    isNamedLogo={true}
-                  />
-                </GridItem>
-                <GridItem>
-                  <MyCompanyCard
-                    companyIconLogo={'/assets/images/company-logo/github.png'}
-                    role={'Frontend Developer'}
-                    companyName={'Tata Consultancy Service'}
-                    location={'Bhopal, Madhaya Pradesh'}
-                    jobType={[
-                      'Full Time',
-                      'Part Time',
-                      'Internship',
-                      'Startup',
-                      'Indian MNC',
-                    ]}
-                    companyDesc="UX designers measure and optimize applications to improve ease of use
-      (usability), and create the best user experience by exploring many
-     diffrent approaches to solve end's-user problems"
-                  />
-                </GridItem>
-                <GridItem>
-                  <MyCompanyCard
-                    companyIconLogo={
-                      '/assets/images/company-logo/bookmyshow.png'
-                    }
-                    role={'Frontend Developer'}
-                    companyName={'Tata Consultancy Service'}
-                    location={'Bhopal, Madhaya Pradesh'}
-                    jobType={[
-                      'Full Time',
-                      'Part Time',
-                      'Internship',
-                      'Startup',
-                      'Indian MNC',
-                    ]}
-                    companyDesc="UX designers measure and optimize applications to improve ease of use
-        (usability), and create the best user experience by exploring many
-       diffrent approaches to solve end's-user problems"
-                    isNamedLogo={true}
-                  />
-                </GridItem>
-                <GridItem>
-                  <MyCompanyCard
-                    companyIconLogo={
-                      '/assets/images/company-logo/bookmyshow.png'
-                    }
-                    role={'Frontend Developer'}
-                    companyName={'Tata Consultancy Service'}
-                    location={'Bhopal, Madhaya Pradesh'}
-                    jobType={[
-                      'Full Time',
-                      'Part Time',
-                      'Internship',
-                      'Startup',
-                      'Indian MNC',
-                    ]}
-                    companyDesc="UX designers measure and optimize applications to improve ease of use
-        (usability), and create the best user experience by exploring many
-       diffrent approaches to solve end's-user problems"
-                    isNamedLogo={true}
-                  />
-                </GridItem>
-                <GridItem>
-                  <MyCompanyCard
-                    companyIconLogo={
-                      '/assets/images/company-logo/bookmyshow.png'
-                    }
-                    role={'Frontend Developer'}
-                    companyName={'Tata Consultancy Service'}
-                    location={'Bhopal, Madhaya Pradesh'}
-                    jobType={[
-                      'Full Time',
-                      'Part Time',
-                      'Internship',
-                      'Startup',
-                      'Indian MNC',
-                    ]}
-                    companyDesc="UX designers measure and optimize applications to improve ease of use
-        (usability), and create the best user experience by exploring many
-       diffrent approaches to solve end's-user problems"
-                    isNamedLogo={true}
-                  />
-                </GridItem>
+                <>
+                  {companyCardFields.map((item, key) => {
+                    return (
+                      <GridItem key={key}>
+                        <MyCompanyCard
+                          companyDesc={item.companyDescription}
+                          companyName={item.companyName}
+                          tags={item.tags}
+                          rating={item.rating}
+                          companyLogo={item.companyLogo}
+                          fullDetailLink={item.fullDetailsLink}
+                          viewJobs={item.viewJobsLink}
+                        />
+                      </GridItem>
+                    );
+                  })}
+                </>
               </Grid>
             </VStack>
           </Center>

@@ -1,3 +1,69 @@
+const companyCardFields = [
+  {
+    companyName: 'ABC Corp',
+    companyLogo: '/assets/images/company-logo/amazon.png',
+    rating: '4.3 Rating | 459 Reviews',
+    companyDescription:
+      'ABC Corp is a leading software development company specializing in web and mobile applications.',
+    tags: ['Software', 'Development', 'Web', 'Mobile'],
+    fullDetailsLink: '/company/details/asdf',
+    viewJobsLink: '/company/details/jobs',
+  },
+  {
+    companyName: 'XYZ Ltd',
+    companyLogo: '/assets/images/company-logo/bookmyshow.png',
+    rating: '3.3 Rating | 359 Reviews',
+    companyDescription:
+      'XYZ Ltd is a multinational conglomerate providing a wide range of technology products and services.',
+    tags: [
+      'Technology',
+      'Multinational',
+      'Conglomerate',
+      'Products',
+      'Services',
+    ],
+    fullDetailsLink: '/company/details/asdf',
+    viewJobsLink: '/company/details/jobs',
+  },
+  {
+    companyName: 'PQR Inc',
+    companyLogo: '/assets/images/company-logo/google.png',
+    rating: '4.8 Rating | 59 Reviews',
+    companyDescription:
+      'PQR Inc is a technology-driven company offering innovative solutions in the software and energy sectors.',
+    tags: ['Technology', 'Software', 'Innovation', 'Energy'],
+    fullDetailsLink: '/company/details/pqr',
+    viewJobsLink: '/company/details/jobs',
+  },
+  {
+    companyName: 'RST Tech',
+    companyLogo: '/assets/images/company-logo/amazon.png',
+    rating: '4.5 Rating | 120 Reviews',
+    companyDescription:
+      'RST Tech is a technology consulting firm specializing in digital transformation and cloud solutions.',
+    tags: ['Technology', 'Consulting', 'Digital', 'Transformation', 'Cloud'],
+    fullDetailsLink: '/company/details/rst',
+    viewJobsLink: '/company/details/rst/jobs',
+  },
+  {
+    companyName: 'MNO Group',
+    companyLogo: '/assets/images/company-logo/github.png',
+    rating: '4.2 Rating | 80 Reviews',
+    companyDescription:
+      'MNO Group is a diversified technology conglomerate with interests in software, hardware, and services.',
+    tags: [
+      'Technology',
+      'Diversified',
+      'Conglomerate',
+      'Software',
+      'Hardware',
+      'Services',
+    ],
+    fullDetailsLink: '/company/details/mno',
+    viewJobsLink: '/company/details/mno/jobs',
+  },
+];
+
 const jobCardFields = [
   {
     companyIconLogo: '/assets/images/company-logo/google.png',
@@ -507,4 +573,5 @@ export {
   companyDescTable,
   companySubsidiaries,
   companyLeaders,
+  companyCardFields,
 };

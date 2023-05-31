@@ -1,7 +1,8 @@
 import { Center } from '@chakra-ui/react';
+import { MyCompanyCard } from '../cards';
 import { Layout } from '../layout';
 import { MainHeading } from '../main-heading';
-import { MyCompanyCard } from '../cards';
+import { companyCardFields } from '@/constant/constantFields';
 const CompnayCatergories = () => {
   return (
     <Layout>
@@ -23,62 +24,21 @@ const CompnayCatergories = () => {
           gap={'30px'}
           pt={'40px'}
         >
-          <MyCompanyCard
-                  companyIconLogo={'/assets/images/company-logo/linkedin.png'}
-                  role={'Frontend Developer'}
-                  companyName={'Tata Consultancy Service'}
-                  location={'Bhopal, Madhaya Pradesh'}
-                  jobType={[
-                    'Full Time',
-                    'Part Time',
-                    'Internship',
-                    'Startup',
-                    'Indian MNC',
-                  ]}
-                  companyDesc="UX designers measure and optimize applications to improve ease of use
-      (usability), and create the best user experience by exploring many
-     diffrent approaches to solve end's-user problems"
-                />
           <>
-            {[1, 1].map((key) => {
+            {companyCardFields.map((item, key) => {
               return (
                 <MyCompanyCard
-                  key={key}
-                  companyIconLogo={'/assets/images/company-logo/bookmyshow.png'}
-                  role={'Frontend Developer'}
-                  companyName={'Tata Consultancy Service'}
-                  location={'Bhopal, Madhaya Pradesh'}
-                  jobType={[
-                    'Full Time',
-                    'Part Time',
-                    'Internship',
-                    'Startup',
-                    'Indian MNC',
-                  ]}
-                  companyDesc="UX designers measure and optimize applications to improve ease of use
-      (usability), and create the best user experience by exploring many
-     diffrent approaches to solve end's-user problems"
-                  isNamedLogo={true}
+                  companyDesc={item.companyDescription}
+                  companyName={item.companyName}
+                  tags={item.tags}
+                  rating={item.rating}
+                  companyLogo={item.companyLogo}
+                  fullDetailLink={item.fullDetailsLink}
+                  viewJobs={item.viewJobsLink}
                 />
               );
             })}
           </>
-          <MyCompanyCard
-                  companyIconLogo={'/assets/images/company-logo/github.png'}
-                  role={'Frontend Developer'}
-                  companyName={'Tata Consultancy Service'}
-                  location={'Bhopal, Madhaya Pradesh'}
-                  jobType={[
-                    'Full Time',
-                    'Part Time',
-                    'Internship',
-                    'Startup',
-                    'Indian MNC',
-                  ]}
-                  companyDesc="UX designers measure and optimize applications to improve ease of use
-      (usability), and create the best user experience by exploring many
-     diffrent approaches to solve end's-user problems"
-                />
         </Center>
       </Center>
     </Layout>
