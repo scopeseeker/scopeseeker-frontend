@@ -20,24 +20,25 @@ export default function Signup() {
       </Head>
 
       <HStack
-        h={'100vh'}
-        w={'full'}
+        h={{ base: '100%', md: '100vh' }}
         flexDirection={{ base: 'column', md: 'row' }}
-        bg={'white'}
+        w={'full'}
+        bg={'brand.white'}
+        spacing={0}
       >
         {/* Left Part */}
         <VStack
-          h={'full'}
-          p={'10px'}
-          w={{ base: '100%', sm: '100%', md: '40%', lg: '30%' }} 
+            w={{ base: '100%', md: '40%', lg: '30%' }}
+            h={{ base: 'fit-content', md: 'full' }}
+            p={'10px'} 
         >
           <VStack
             w={'full'}
             h={'full'}
             bg={'brand.primary'}
             borderRadius={'8px'}
-            gap={'32px'}
-            p={'28px'}
+            gap={'24px'}
+            p={'24px'}
           >
             {/*Scope Seeker Logo*/}
             <HStack w={'full'}>
@@ -54,16 +55,14 @@ export default function Signup() {
                       lineHeight={'shorter'}
                       title="Scope Seeker"
                       as="title"
-                      color="white"
+                      color="brand.white"
                     />
 
                     <MyText
                       lineHeight={'shorter'}
                       title="Seek the scope of your potential"
-                      as="span"
-                      fontSize={{ base: 'none', md: '10px' }}
-                      display={{ base: 'none', md: 'initial' }}
-                      color="white"
+                      as="small"
+                      color="brand.white"
                     />
                   </VStack>
                 </Center>
@@ -90,15 +89,14 @@ export default function Signup() {
         </VStack>
         {/* Right part */}
         <Layout
-        w={{ base: '100%', sm: '100%', md: '70%', lg: '70%' }} 
+        w={{ base: '100%', md: '60%', lg: '70%' }} h={'full'}
         >
 
         <Center
-          w={'100%'} 
-          h={'full'}
+          w={'100%'} h={'full'} pb={{ base: '24px', md: '0px' }}
         >
           <VStack
-            w={{ base: '100%', md: '60%' }}
+            w={{ base: '100%', md: '90%', lg: '65%' }}
             alignItems={'flex-start'}
             gap={'10px'}
           >
@@ -148,20 +146,25 @@ export default function Signup() {
                 leftElement={<MyIcon name="confirmation" />}
               />
             </HStack>
-            <MyButton title="Signup" />
+            <MyButton title="Signup" px={'42px'}/>
             <MyDivider />
             <VStack w={'full'}>
               <MyText as="heading" fontWeight={400} title="Or" />
-              <HStack gap={'6px'} flexDirection={{base:'column',sm:'row',md:'row'}} spacing={0}>
+              <HStack  gap={{ base: '6px', sm: '8px', md: '6px' }}
+                  flexDirection={{ base: 'column', sm: 'row', md: 'row' }}
+                  spacing={0}
+                  justifyContent={'center'}
+                  w={'full'} >
                 <Link href={'#'}>
                   <Center
-                    px={'24px'}
-                    py={'6px'}
-                    borderRadius={'80px'}
-                    border={'1.5px solid'}
-                    borderColor={'red'}
-                    gap={'10px'}
-                    cursor={'pointer'}
+                   px={{ base: '52px', sm: '24px' }}
+                   py={{ base: '12px', sm: '8px' }}
+                   borderRadius={'80px'}
+                   border={'1.5px solid'}
+                   borderColor={'brand.darkgray'}
+                   bg={'brand.aliceblue'}
+                   gap={'10px'}
+                   cursor={'pointer'}
                   >
                     <MyImage
                       alt="google"
@@ -174,13 +177,14 @@ export default function Signup() {
                 </Link>
                 <Link href={'#'}>
                   <Center
-                    px={'24px'}
-                    py={'6px'}
-                    borderRadius={'80px'}
-                    border={'1.5px solid'}
-                    borderColor={'brand.black'}
-                    gap={'10px'}
-                    cursor={'pointer'}
+                   px={{ base: '52px', sm: '24px' }}
+                   py={{ base: '12px', sm: '8px' }}
+                   borderRadius={'80px'}
+                   border={'1.5px solid'}
+                   borderColor={'brand.darkgray'}
+                   bg={'brand.aliceblue'}
+                   gap={'10px'}
+                   cursor={'pointer'}
                   >
                     <MyImage
                       alt="github"
