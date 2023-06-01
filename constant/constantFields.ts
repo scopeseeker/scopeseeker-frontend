@@ -201,16 +201,16 @@ const popularCategoryObject = [
     opening: 2,
     iconName: 'java',
   },
-  {
-    fieldName: 'Full-Stack Developer',
-    opening: 9,
-    iconName: 'fullstack',
-  },
-  {
-    fieldName: 'Web Developer',
-    opening: 1,
-    iconName: 'web',
-  },
+  // {
+  //   fieldName: 'Full-Stack Developer',
+  //   opening: 9,
+  //   iconName: 'fullstack',
+  // },
+  // {
+  //   fieldName: 'Web Developer',
+  //   opening: 1,
+  //   iconName: 'web',
+  // },
 ];
 
 const jobsFilter = [
