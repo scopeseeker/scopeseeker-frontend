@@ -5,7 +5,7 @@ const companyCardFields = [
     rating: '4.3 Rating | 459 Reviews',
     companyDescription:
       'ABC Corp is a leading software development company specializing in web and mobile applications.',
-    tags: ['Software', 'Development', 'Web', 'Mobile'],
+    tags: ['Software', 'Development', 'Web', 'Mobile', 'Technology'],
     fullDetailsLink: '/company/details/asdf',
     viewJobsLink: '/company/details/jobs',
   },
@@ -31,7 +31,7 @@ const companyCardFields = [
     rating: '4.8 Rating | 59 Reviews',
     companyDescription:
       'PQR Inc is a technology-driven company offering innovative solutions in the software and energy sectors.',
-    tags: ['Technology', 'Software', 'Innovation', 'Energy'],
+    tags: ['Technology', 'Software', 'Innovation', 'Energy', 'Technology'],
     fullDetailsLink: '/company/details/pqr',
     viewJobsLink: '/company/details/jobs',
   },

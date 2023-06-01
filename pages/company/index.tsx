@@ -235,6 +235,7 @@ export default function CompaniesPage() {
                           companyLogo={item.companyLogo}
                           fullDetailLink={item.fullDetailsLink}
                           viewJobs={item.viewJobsLink}
+                          key={key}
                         />
                       </GridItem>
                     );

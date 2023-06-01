@@ -1,4 +1,4 @@
-import { Center } from '@chakra-ui/react';
+import { Center, Grid, GridItem } from '@chakra-ui/react';
 import { MyCompanyCard } from '../cards';
 import { Layout } from '../layout';
 import { MainHeading } from '../main-heading';
@@ -24,21 +24,37 @@ const CompnayCatergories = () => {
           gap={'30px'}
           pt={'40px'}
         >
-          <>
-            {companyCardFields.map((item, key) => {
-              return (
-                <MyCompanyCard
-                  companyDesc={item.companyDescription}
-                  companyName={item.companyName}
-                  tags={item.tags}
-                  rating={item.rating}
-                  companyLogo={item.companyLogo}
-                  fullDetailLink={item.fullDetailsLink}
-                  viewJobs={item.viewJobsLink}
-                />
-              );
-            })}
-          </>
+          <Grid
+            templateColumns={{
+              base: 'repeat(1, 1fr)',
+              md: 'repeat(2, 1fr)',
+              lg: 'repeat(3, 1fr)',
+            }}
+            gap={{ base: 6, lg: 4, xl: 6 }}
+            mx={'auto'}
+            pt={'25px'}
+            width={'100%'}
+            overflow={'scroll'}
+          >
+            <>
+              {companyCardFields.map((item, key) => {
+                return (
+                  <GridItem key={key}>
+                    <MyCompanyCard
+                      companyDesc={item.companyDescription}
+                      companyName={item.companyName}
+                      tags={item.tags}
+                      rating={item.rating}
+                      companyLogo={item.companyLogo}
+                      fullDetailLink={item.fullDetailsLink}
+                      viewJobs={item.viewJobsLink}
+                      key={key}
+                    />
+                  </GridItem>
+                );
+              })}
+            </>
+          </Grid>
         </Center>
       </Center>
     </Layout>
