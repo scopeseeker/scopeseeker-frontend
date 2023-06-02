@@ -47,6 +47,7 @@ export type IconNameType =
   | 'beach'
   | 'borderCircle'
   | 'hamburgerMenu'
+  | 'chevronDown'
   | string;
 
 type IconData = {
@@ -60,6 +61,12 @@ export const IconData: IconData = {
       <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
       <path d="M9 17h6" />
       <path d="M9 13h6" />
+    </>
+  ),
+  chevronDown: (
+    <>
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M6 9l6 6l6 -6"></path>
     </>
   ),
   job: (

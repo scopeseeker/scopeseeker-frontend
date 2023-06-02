@@ -27,6 +27,7 @@ const Categories = () => {
               {popularCategoryObject.map((item, key) => {
                 return (
                   <Center
+                    key={key}
                     cursor={'pointer'}
                     w={'280px'}
                     h={'80px'}
@@ -39,7 +40,8 @@ const Categories = () => {
                       borderColor: 'brand.primary',
                       boxShadow: '0px 0px 20px rgba(0, 0, 0, 0.1)',
                     }}
-                    px={'12px'}
+                    px={'18px'}
+                    justifyContent={'flex-start'}
                   >
                     <Center
                       p={'10px'}
@@ -49,8 +51,7 @@ const Categories = () => {
                       <MyIcon name="job" color="brand.white" />
                     </Center>
                     <MyText
-                      as="title"
-                      fontWeight={500}
+                      as="p"
                       title={item.fieldName}
                     />
                   </Center>
