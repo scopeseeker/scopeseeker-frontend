@@ -48,6 +48,9 @@ export type IconNameType =
   | 'borderCircle'
   | 'hamburgerMenu'
   | 'chevronDown'
+  | 'userVerification'
+  | 'circleCheck'
+  | 'userEdit'
   | string;
 
 type IconData = {
@@ -75,6 +78,26 @@ export const IconData: IconData = {
       <path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2" />
       <path d="M12 12l0 .01" />
       <path d="M3 13a20 20 0 0 0 18 0" />
+    </>
+  ),
+  userVerification: (
+    <>
+      <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
+      <path d="M6 21v-2a4 4 0 0 1 4 -4h4"></path>
+      <path d="M15 19l2 2l4 -4"></path>
+    </>
+  ),
+  circleCheck: (
+    <>
+      <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+      <path d="M9 12l2 2l4 -4"></path>
+    </>
+  ),
+  userEdit: (
+    <>
+   <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
+   <path d="M6 21v-2a4 4 0 0 1 4 -4h3.5"></path>
+   <path d="M18.42 15.61a2.1 2.1 0 0 1 2.97 2.97l-3.39 3.42h-3v-3l3.42 -3.39z"></path>
     </>
   ),
   email: (
