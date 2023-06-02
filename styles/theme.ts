@@ -38,6 +38,7 @@ const theme = extendTheme({
       ternary: '#1A05E8',
       aliceblue: '#F0F8FF',
       lightgray: 'lightgray',
+      transprimary: '#1a75e817',
     },
   },
   config,

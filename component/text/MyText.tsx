@@ -20,6 +20,7 @@ const MyText = ({
                 as={'p'}
                 color={color}
                 fontSize={{ base: '16px', md: '15px', '2xl': '18px' }}
+                fontWeight={fontWeight}
                 {...rest}
               >
                 {title}
@@ -30,7 +31,9 @@ const MyText = ({
               <Text
                 as={'span'}
                 color={color}
-                fontSize={fontSize || { base: '14px', md: '12px', '2xl': '14px' }}
+                fontSize={
+                  fontSize || { base: '14px', md: '12px', '2xl': '14px' }
+                }
                 fontWeight={fontWeight}
                 {...rest}
               >
