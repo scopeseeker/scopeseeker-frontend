@@ -118,9 +118,7 @@ export default function ContactUs() {
                 />
               </VStack>
 
-              <MyButton
-                title="Submit"
-              />
+              <MyButton title="Submit" />
             </VStack>
           </Center>
 
