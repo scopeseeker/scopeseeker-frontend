@@ -48,6 +48,7 @@ export type IconNameType =
   | 'borderCircle'
   | 'hamburgerMenu'
   | 'chevronDown'
+  | 'chevronRight'
   | 'userVerification'
   | 'circleCheck'
   | 'userEdit'
@@ -76,6 +77,12 @@ export const IconData: IconData = {
     <>
       <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
       <path d="M6 9l6 6l6 -6"></path>
+    </>
+  ),
+  chevronRight: (
+    <>
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M9 6l6 6l-6 6"></path>
     </>
   ),
   job: (

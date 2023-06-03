@@ -1,16 +1,9 @@
-import {
-  Center,
-  Flex,
-  HStack,
-  IconButton,
-  Text,
-  VStack,
-} from '@chakra-ui/react';
+import { Center, Flex, HStack, IconButton, VStack } from '@chakra-ui/react';
 import Link from 'next/link';
 import MyIcon from '../icon/MyIcon';
 import MyImage from '../image/MyImage';
-import MyText from '../text/MyText';
 import { Layout } from '../layout';
+import MyText from '../text/MyText';
 
 const Footer = () => {
   return (
@@ -123,7 +116,10 @@ const Footer = () => {
                   link={'/legal/privacy-policy'}
                   title={'Privacy Policy'}
                 />
-                <FooterLink link={'/contact-us'} title={'Report an Issue'} />
+                <FooterLink
+                  link={'/request-company'}
+                  title={'Report an Issue'}
+                />
               </Flex>
             </Center>
           </Flex>
