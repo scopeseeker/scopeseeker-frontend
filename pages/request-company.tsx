@@ -1,11 +1,11 @@
 import {
-    Layout,
-    MainHeading,
-    MyButton,
-    MyIcon,
-    MyInput,
-    MyText,
-    PageHeroSection
+  Layout,
+  MainHeading,
+  MyButton,
+  MyIcon,
+  MyInput,
+  MyText,
+  PageHeroSection,
 } from '@/component';
 import { Box, Center, HStack, Textarea, VStack } from '@chakra-ui/react';
 import Head from 'next/head';
@@ -14,7 +14,7 @@ export default function RequestPage() {
   return (
     <>
       <Head>
-        <title>Request | Scope Seeker</title>
+        <title>Request Company| Scope Seeker</title>
       </Head>
       <PageHeroSection
         title="We value your opinion"
@@ -31,7 +31,7 @@ export default function RequestPage() {
           />
           <HStack
             justifyContent={'center'}
-            flexDirection={{ base: 'column',md:'row', }}
+            flexDirection={{ base: 'column', md: 'row' }}
             gap={'30px'}
             w={'full'}
             p={'40px'}
@@ -79,7 +79,7 @@ export default function RequestPage() {
               />
             </RequestBox>
           </HStack>
-          <Center w={'100%'} h={'full'}  >
+          <Center w={'100%'} h={'full'}>
             <VStack
               w={{ base: '100%', md: '90%', lg: '65%' }}
               alignItems={'flex-start'}
@@ -101,39 +101,36 @@ export default function RequestPage() {
                 placeholder="example@gmail.com"
                 leftElement={<MyIcon name="email" />}
               />
-              
-              <HStack w={'full'} flexDir={{base:'column', md:'row'}}>
 
-              <MyInput
+              <HStack w={'full'} flexDir={{ base: 'column', md: 'row' }}>
+                <MyInput
                   type="number"
                   labelTitle="Phone(Optional) "
                   placeholder="+91 XXXXXXXX20"
                   leftElement={<MyIcon name="phone" />}
-              />
+                />
                 <MyInput
                   type="text"
                   labelTitle="Country"
                   placeholder="India"
                   leftElement={<MyIcon name="global" />}
-                  />
-                  
+                />
               </HStack>
-              <HStack flexDir={{base:'column',sm:'row'}}>
-              <MyInput
-                type="text"
-                labelTitle="Company Name"
-                placeholder="ScopeSeeker"
-                leftElement={<MyIcon name="company" />}
-              />
-              <MyInput
-                type="text"
-                labelTitle="Company Field"
-                placeholder="Tech/Non-Tech"
-                leftElement={<MyIcon name="company" />}
-              />
-
+              <HStack flexDir={{ base: 'column', sm: 'row' }}>
+                <MyInput
+                  type="text"
+                  labelTitle="Company Name"
+                  placeholder="ScopeSeeker"
+                  leftElement={<MyIcon name="company" />}
+                />
+                <MyInput
+                  type="text"
+                  labelTitle="Company Field"
+                  placeholder="Tech/Non-Tech"
+                  leftElement={<MyIcon name="company" />}
+                />
               </HStack>
-              <VStack w={'full'}  alignItems={'flex-start'} >
+              <VStack w={'full'} alignItems={'flex-start'}>
                 <MyText as="span" title="Tell me about Yourself" />
                 <Textarea
                   w={'100%'}

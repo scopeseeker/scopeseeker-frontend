@@ -1,7 +1,6 @@
 import {
   Avatar,
   Box,
-  Button,
   Center,
   Drawer,
   DrawerBody,
@@ -11,7 +10,6 @@ import {
   DrawerOverlay,
   Flex,
   HStack,
-  IconButton,
   Menu,
   MenuButton,
   MenuList,
@@ -54,7 +52,7 @@ const Navbar = () => {
         h={navHeight}
         justifyContent="space-between"
         bg={'brand.white'}
-        boxShadow={'0 0px 10px rgba(0, 0, 0, 0.2)'}
+        boxShadow={'0 0px 10px rgba(0, 0, 0, 0.1)'}
         zIndex={'overlay'}
         px={{ base: '24px', md: '25px', lg: '48px' }}
       >
@@ -84,80 +82,7 @@ const Navbar = () => {
               </VStack>
             </Center>
           </Link>
-          {/* Links Sections */}
-          {/* <HStack gap={'12px'} display={{ base: 'none', md: 'flex' }}>
-            <Center
-              _hover={{ color: 'brand.primary' }}
-              gap={'4px'}
-              cursor={'pointer'}
-            >
-              <MyIcon
-                name="job"
-                width="18px"
-                height="18px"
-                strokeWidth="1.2"
-                color="currentColor"
-              />
-              <MyText
-                title="Jobs"
-                as="link"
-                href="/jobs"
-                color="currentColor"
-              />
-            </Center>
 
-            <Center _hover={{ color: 'brand.primary' }} gap={'4px'}>
-              <MyIcon
-                name="company"
-                width="18px"
-                height="18px"
-                strokeWidth="1.2"
-                color="currentColor"
-              />
-              <MyText
-                title="Company"
-                as="link"
-                href="/company"
-                color="currentColor"
-              />
-            </Center>
-
-            <Center
-              _hover={{ color: 'brand.primary' }}
-              gap={'4px'}
-              cursor={'pointer'}
-            >
-              <MyIcon
-                name="user"
-                width="18px"
-                height="18px"
-                strokeWidth="1.2"
-                color="currentColor"
-              />
-              <MyText
-                title="About us"
-                as="link"
-                href="/about-us"
-                color="currentColor"
-              />
-            </Center>
-
-            <Center _hover={{ color: 'brand.primary' }} gap={'4px'}>
-              <MyIcon
-                name="phone"
-                width="18px"
-                height="18px"
-                strokeWidth="1.2"
-                color="currentColor"
-              />
-              <MyText
-                title="Contact us"
-                as="link"
-                href="/contact-us"
-                color="currentColor"
-              />
-            </Center>
-          </HStack> */}
           {/* <MyLinkElements display={{ base: 'none', md: 'flex' }} /> */}
           <Flex display={{ base: 'none', md: 'flex' }}>
             <DesktopNav />
@@ -166,6 +91,31 @@ const Navbar = () => {
 
         {/* Login, signup and avatar section */}
         <HStack>
+          <Center
+            onClick={toggleColorMode}
+            cursor={'pointer'}
+            p={'8px'}
+            bg={'brand.aliceblue'}
+            border={'1px solid'}
+            borderColor={'brand.lightgray'}
+            borderRadius={'50%'}
+          >
+            {colorMode === 'light' ? (
+              <Center>
+                <MyIcon name="darkMode" width="18px" height="18px" />
+              </Center>
+            ) : (
+              <Center>
+                <MyIcon
+                  name="sun"
+                  width="18px"
+                  height="18px"
+                  transition={'all .3s ease'}
+                  transitionDelay={'.3s'}
+                />
+              </Center>
+            )}
+          </Center>
           <HStack display={{ base: 'none', md: 'flex' }}>
             {avatar ? (
               ''
@@ -179,20 +129,6 @@ const Navbar = () => {
                   />
                   <MyButton title="Sign Up" onClick={handleLoginSignup} />
                 </HStack>
-                <Box
-                  onClick={toggleColorMode}
-                  cursor={'pointer'}
-                  px={'5px'}
-                  py={'3px'}
-                  bg={'brand.lightgray'}
-                  borderRadius={'5px'}
-                >
-                  {colorMode === 'light' ? (
-                    <MyIcon name="darkMode" width="20px" />
-                  ) : (
-                    <MyIcon name="sun" width="20px" />
-                  )}
-                </Box>
               </HStack>
             )}
 
@@ -548,7 +484,7 @@ const DesktopNav = () => {
             {navItem.children && (
               <PopoverContent
                 border={'none'}
-                boxShadow={'0px 0px 30px rgb(0,0,0,0.12)'}
+                // boxShadow={'0px 0px 30px rgb(0,0,0,0.12)'}
                 bg={'brand.white'}
                 p={'10px'}
                 borderRadius={'5px'}
@@ -575,7 +511,7 @@ const DesktopSubNav = ({ label, href }: NavItem) => {
       borderRadius={'8px'}
       _hover={{ bg: 'brand.aliceblue' }}
     >
-      <Stack direction={'row'} align={'center'}>
+      <Stack direction={'row'} align={'center'} px={'6px'}>
         <Box>
           <MyText
             as="link"
@@ -595,7 +531,7 @@ const DesktopSubNav = ({ label, href }: NavItem) => {
           align={'center'}
           flex={1}
         >
-          <MyIcon name="arrowRight" />
+          <MyIcon name="chevronRight" width="20px" height="20px" />
         </Flex>
       </Stack>
     </Box>
@@ -617,13 +553,23 @@ const NAV_ITEMS: Array<NavItem> = [
     href: '/jobs',
     children: [
       {
-        label: 'Fresher jobs',
-        subLabel: 'Trending Design to inspire you',
+        label: 'Full Stack Web Developer',
         href: '#',
       },
       {
-        label: 'MNC jobs',
-        subLabel: 'Up-and-coming Designers',
+        label: 'Frontend Development',
+        href: '#',
+      },
+      {
+        label: 'Java Developer',
+        href: '#',
+      },
+      {
+        label: 'Software Engineer',
+        href: '#',
+      },
+      {
+        label: 'Recommanded Jobs',
         href: '#',
       },
     ],
@@ -634,13 +580,19 @@ const NAV_ITEMS: Array<NavItem> = [
     href: '/company',
     children: [
       {
-        label: 'Top companies',
-        subLabel: 'Find your dream design job',
+        label: `MNC's Companies`,
         href: '#',
       },
       {
-        label: 'IT companies',
-        subLabel: 'An exclusive list for contract work',
+        label: 'Unicorn Companies',
+        href: '#',
+      },
+      {
+        label: 'Fortune 500',
+        href: '#',
+      },
+      {
+        label: 'Recommanded Companies',
         href: '#',
       },
     ],
