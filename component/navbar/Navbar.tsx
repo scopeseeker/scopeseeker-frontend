@@ -1,6 +1,7 @@
 import {
   Avatar,
   Box,
+  Button,
   Center,
   Drawer,
   DrawerBody,
@@ -8,7 +9,16 @@ import {
   DrawerContent,
   DrawerHeader,
   DrawerOverlay,
+  Flex,
   HStack,
+  IconButton,
+  Menu,
+  MenuButton,
+  MenuList,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+  Stack,
   VStack,
   useColorMode,
   useDisclosure,
@@ -46,7 +56,7 @@ const Navbar = () => {
         bg={'brand.white'}
         boxShadow={'0 0px 10px rgba(0, 0, 0, 0.2)'}
         zIndex={'overlay'}
-        px={{ base: '24px', md: '25px',lg: '48px' }}
+        px={{ base: '24px', md: '25px', lg: '48px' }}
       >
         <HStack gap={'16px'}>
           {/*Scope Seeker Logo*/}
@@ -148,25 +158,188 @@ const Navbar = () => {
               />
             </Center>
           </HStack> */}
-          <MyLinkElements display={{ base: 'none', md: 'flex' }} />
+          {/* <MyLinkElements display={{ base: 'none', md: 'flex' }} /> */}
+          <Flex display={{ base: 'none', md: 'flex' }}>
+            <DesktopNav />
+          </Flex>
         </HStack>
 
         {/* Login, signup and avatar section */}
         <HStack>
           <HStack display={{ base: 'none', md: 'flex' }}>
-            <MyButton
-              title="Login"
-              variant="outline"
-              onClick={handleLoginSignup}
-            />
-            <MyButton title="Sign Up" onClick={handleLoginSignup} />
+            {avatar ? (
+              ''
+            ) : (
+              <HStack gap={'20px'}>
+                <HStack>
+                  <MyButton
+                    title="Login"
+                    variant="outline"
+                    onClick={handleLoginSignup}
+                  />
+                  <MyButton title="Sign Up" onClick={handleLoginSignup} />
+                </HStack>
+                <Box
+                  onClick={toggleColorMode}
+                  cursor={'pointer'}
+                  px={'5px'}
+                  py={'3px'}
+                  bg={'brand.lightgray'}
+                  borderRadius={'5px'}
+                >
+                  {colorMode === 'light' ? (
+                    <MyIcon name="darkMode" width="20px" />
+                  ) : (
+                    <MyIcon name="sun" width="20px" />
+                  )}
+                </Box>
+              </HStack>
+            )}
+
             {avatar && (
-              <Avatar
-                name="Dan Abrahmov"
-                src="https://bit.ly/dan-abramov"
-                w={'35px'}
-                h={'35px'}
-              />
+              <HStack gap={'15px'}>
+                <Menu>
+                  <MenuButton>
+                    <MyIcon name={'notification'} />
+                  </MenuButton>
+
+                  <MenuList>
+                    <VStack
+                      px={'30px'}
+                      py={'20px'}
+                      alignItems={'flex-start'}
+                      w={'380px'}
+                      h={'350px'}
+                    >
+                      <HStack
+                        justifyContent={'space-between'}
+                        alignItems={'center'}
+                        w={'full'}
+                      >
+                        <MyText as="title" title="Notification (1)" />
+                        <MyText
+                          as="span"
+                          title="Mark all as read"
+                          color="brand.primary"
+                          cursor={'pointer'}
+                        />
+                      </HStack>
+                    </VStack>
+                  </MenuList>
+                </Menu>
+
+                <Menu>
+                  <MenuButton>
+                    <Avatar
+                      src="https://bit.ly/dan-abramov"
+                      w={'35px'}
+                      h={'35px'}
+                    />
+                  </MenuButton>
+
+                  <MenuList>
+                    <Box px={'30px'} py={'20px'} w={'350px'}>
+                      <HStack gap={'5px'} alignItems={'flex-start'}>
+                        <Box
+                          w={'60px'}
+                          h={'60px'}
+                          borderRadius={'100%'}
+                          border={'2px'}
+                          borderColor={'brand.primary'}
+                        >
+                          <Avatar
+                            src="https://bit.ly/dan-abramov"
+                            h={'full'}
+                            w={'full'}
+                          />
+                        </Box>
+
+                        <VStack alignItems={'flex-start'} gap={'5px'}>
+                          <VStack spacing={0} alignItems={'flex-start'}>
+                            <MyText as="title" title="Abhishek Kumar" />
+                            <MyText
+                              as="span"
+                              title="example123@gmail.com"
+                              color="brand.darkgray"
+                            />
+                          </VStack>
+
+                          <MyText
+                            as="link"
+                            title="View & Update Profile"
+                            color={'brand.primary'}
+                            fontWeight={500}
+                          />
+                        </VStack>
+                      </HStack>
+
+                      <Box
+                        borderBottom={'1px'}
+                        borderColor={'brand.lightgray'}
+                        marginTop={'20px'}
+                      ></Box>
+
+                      <VStack
+                        alignItems={'flex-start'}
+                        marginTop={'20px'}
+                        gap={'8px'}
+                      >
+                        <HStack cursor={'pointer'}>
+                          <MyIcon name="user" width="20px" strokeWidth="2" />
+                          <MyText as="span" title="My Profile" />
+                        </HStack>
+
+                        <HStack cursor={'pointer'}>
+                          <MyIcon
+                            name="settings"
+                            width="20px"
+                            strokeWidth="2"
+                          />
+                          <MyText as="span" title="Account Setting" />
+                        </HStack>
+
+                        <HStack cursor={'pointer'}>
+                          <MyIcon
+                            name="questionMark"
+                            width="20px"
+                            strokeWidth="2"
+                          />
+                          <MyText as="span" title="FAQ" />
+                        </HStack>
+
+                        <HStack cursor={'pointer'}>
+                          <MyIcon
+                            name="chartPie"
+                            width="20px"
+                            strokeWidth="2"
+                          />
+                          <MyText as="span" title="Dashboard" />
+                        </HStack>
+
+                        <HStack cursor={'pointer'}>
+                          <MyIcon name="logout" width="20px" strokeWidth="2" />
+                          <MyText as="span" title="Logout" />
+                        </HStack>
+                      </VStack>
+                    </Box>
+                  </MenuList>
+                </Menu>
+
+                <Box
+                  onClick={toggleColorMode}
+                  cursor={'pointer'}
+                  px={'5px'}
+                  py={'3px'}
+                  bg={'brand.lightgray'}
+                  borderRadius={'5px'}
+                >
+                  {colorMode === 'light' ? (
+                    <MyIcon name="darkMode" width="20px" />
+                  ) : (
+                    <MyIcon name="sun" width="20px" />
+                  )}
+                </Box>
+              </HStack>
             )}
           </HStack>
 
@@ -203,14 +376,25 @@ const Navbar = () => {
                   {avatar ? (
                     ''
                   ) : (
-                    <HStack w={'full'} alignItems={'flex-start'} mt={'40px'} flexDir={'column'} spacing={0} gap={'10px'}>
+                    <HStack
+                      w={'full'}
+                      alignItems={'flex-start'}
+                      mt={'40px'}
+                      flexDir={'column'}
+                      spacing={0}
+                      gap={'10px'}
+                    >
                       <MyButton
                         title="Login"
                         variant="outline"
                         onClick={handleLoginSignup}
-                        width= {'100%'}
+                        width={'100%'}
                       />
-                      <MyButton title="Sign Up" onClick={handleLoginSignup} width= {'100%'}/>
+                      <MyButton
+                        title="Sign Up"
+                        onClick={handleLoginSignup}
+                        width={'100%'}
+                      />
                     </HStack>
                   )}
                 </DrawerBody>
@@ -334,3 +518,141 @@ const MyLinkElements = ({
     </HStack>
   );
 };
+
+// Test data
+
+const DesktopNav = () => {
+  return (
+    <Stack direction={'row'} gap={'12px'}>
+      {NAV_ITEMS.map((navItem) => (
+        <Box key={navItem.label}>
+          <Popover trigger={'hover'} placement={'bottom-start'}>
+            <PopoverTrigger>
+              <Center _hover={{ color: 'brand.primary' }} gap={'4px'}>
+                <MyIcon
+                  name={navItem.iconName}
+                  width="18px"
+                  height="18px"
+                  strokeWidth="1.2"
+                  color="currentColor"
+                />
+                <MyText
+                  title={navItem.label}
+                  as="link"
+                  href={navItem.href}
+                  color="currentColor"
+                />
+              </Center>
+            </PopoverTrigger>
+
+            {navItem.children && (
+              <PopoverContent
+                border={'none'}
+                boxShadow={'0px 0px 30px rgb(0,0,0,0.12)'}
+                bg={'brand.white'}
+                p={'10px'}
+                borderRadius={'5px'}
+              >
+                <Stack>
+                  {navItem.children.map((child) => (
+                    <DesktopSubNav key={child.label} {...child} />
+                  ))}
+                </Stack>
+              </PopoverContent>
+            )}
+          </Popover>
+        </Box>
+      ))}
+    </Stack>
+  );
+};
+
+const DesktopSubNav = ({ label, href }: NavItem) => {
+  return (
+    <Box
+      role={'group'}
+      p={'7px'}
+      borderRadius={'8px'}
+      _hover={{ bg: 'brand.aliceblue' }}
+    >
+      <Stack direction={'row'} align={'center'}>
+        <Box>
+          <MyText
+            as="link"
+            title={label}
+            transition={'all .3s ease'}
+            _groupHover={{ color: 'brand.primary' }}
+            fontWeight={500}
+            href={href}
+          />
+        </Box>
+        <Flex
+          transition={'all .3s ease'}
+          transform={'translateX(-10px)'}
+          opacity={0}
+          _groupHover={{ opacity: '100%', transform: 'translateX(0)' }}
+          justify={'flex-end'}
+          align={'center'}
+          flex={1}
+        >
+          <MyIcon name="arrowRight" />
+        </Flex>
+      </Stack>
+    </Box>
+  );
+};
+
+interface NavItem {
+  label: string;
+  subLabel?: string;
+  children?: Array<NavItem>;
+  href?: string;
+  iconName?: any;
+}
+
+const NAV_ITEMS: Array<NavItem> = [
+  {
+    label: 'Jobs',
+    iconName: 'job',
+    href: '/jobs',
+    children: [
+      {
+        label: 'Fresher jobs',
+        subLabel: 'Trending Design to inspire you',
+        href: '#',
+      },
+      {
+        label: 'MNC jobs',
+        subLabel: 'Up-and-coming Designers',
+        href: '#',
+      },
+    ],
+  },
+  {
+    label: 'Company',
+    iconName: 'company',
+    href: '/company',
+    children: [
+      {
+        label: 'Top companies',
+        subLabel: 'Find your dream design job',
+        href: '#',
+      },
+      {
+        label: 'IT companies',
+        subLabel: 'An exclusive list for contract work',
+        href: '#',
+      },
+    ],
+  },
+  {
+    label: 'About us',
+    iconName: 'user',
+    href: '/about-us',
+  },
+  {
+    label: 'Contact us',
+    iconName: 'phone',
+    href: '/contact-us',
+  },
+];
