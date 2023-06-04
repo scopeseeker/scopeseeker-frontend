@@ -89,7 +89,7 @@ export default function DynamicPage() {
                 <VStack spacing={0} alignItems={'flex-start'}>
                   <HStack justifyContent={'flex-start'}>
                     <MyText as="title" title="Campgemini" />
-                    <MyIcon name="verify" width="15px" color="brand.primary" />
+                    <MyIcon name="verifyFill" width="15px" color="brand.primary" />
                   </HStack>
                   <MyText as="small" title="4.2 Ratings/ 160 Reviews" />
                 </VStack>

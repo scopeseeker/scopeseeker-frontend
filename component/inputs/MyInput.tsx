@@ -118,13 +118,7 @@ const MyInput = ({
               color={'brand.black'}
               pl={'6px'}
             >
-              <Center
-                // bg={'brand.primary'}
-                p={'3px'}
-                borderRadius={'50%'}
-                width={'25px'}
-                height={'25px'}
-              >
+              <Center width={'25px'} height={'25px'} p={'3px'}>
                 {leftElement}
               </Center>
             </InputLeftElement>
@@ -138,10 +132,7 @@ const MyInput = ({
             borderWidth={{ base: '1.8px', md: '1.4px' }}
             variant={'unstyled'}
             pr={'50px'}
-            // borderRadius={'20px 20px 20px 20px'}
-            // borderRadius={'15px 15px 15px 15px'}
             borderRadius={'8px 8px 8px 8px'}
-            // borderRadius={'5px 15px 5px 15px'}
             _focus={{ border: '1.5px solid', borderColor: 'brand.primary' }}
           />
           {rightElement && (
