@@ -63,7 +63,7 @@ export type IconNameType =
   | 'sun'
   | 'checklist'
   | 'delete'
-  |'edit'
+  | 'edit'
   | 'upload'
   | string;
 
@@ -88,35 +88,35 @@ export const IconData: IconData = {
   ),
   edit: (
     <>
-   <path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4"></path>
-   <path d="M13.5 6.5l4 4"></path>
+      <path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4"></path>
+      <path d="M13.5 6.5l4 4"></path>
     </>
   ),
   dribble: (
     <>
-   <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
-   <path d="M12 12a8 8 0 0 0 8 4"></path>
-   <path d="M7.5 13.5a12 12 0 0 0 8.5 6.5"></path>
-   <path d="M12 12a8 8 0 0 0 -7.464 4.928"></path>
-   <path d="M12.951 7.353a12 12 0 0 0 -9.88 4.111"></path>
-   <path d="M12 12a8 8 0 0 0 -.536 -8.928"></path>
-   <path d="M15.549 15.147a12 12 0 0 0 1.38 -10.611"></path>
+      <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+      <path d="M12 12a8 8 0 0 0 8 4"></path>
+      <path d="M7.5 13.5a12 12 0 0 0 8.5 6.5"></path>
+      <path d="M12 12a8 8 0 0 0 -7.464 4.928"></path>
+      <path d="M12.951 7.353a12 12 0 0 0 -9.88 4.111"></path>
+      <path d="M12 12a8 8 0 0 0 -.536 -8.928"></path>
+      <path d="M15.549 15.147a12 12 0 0 0 1.38 -10.611"></path>
     </>
   ),
   upload: (
     <>
-   <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"></path>
-   <path d="M7 9l5 -5l5 5"></path>
-   <path d="M12 4l0 12"></path>
+      <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"></path>
+      <path d="M7 9l5 -5l5 5"></path>
+      <path d="M12 4l0 12"></path>
     </>
   ),
   delete: (
     <>
-   <path d="M4 7l16 0"></path>
-   <path d="M10 11l0 6"></path>
-   <path d="M14 11l0 6"></path>
-   <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
-   <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
+      <path d="M4 7l16 0"></path>
+      <path d="M10 11l0 6"></path>
+      <path d="M14 11l0 6"></path>
+      <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
+      <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
     </>
   ),
   chevronRight: (
@@ -509,12 +509,12 @@ export const IconData: IconData = {
     <>
       <path
         d="M14.235 19c.865 0 1.322 1.024 .745 1.668a3.992 3.992 0 0 1 -2.98 1.332a3.992 3.992 0 0 1 -2.98 -1.332c-.552 -.616 -.158 -1.579 .634 -1.661l.11 -.006h4.471z"
-        stroke-width="0"
+        strokeWidth="0"
         fill="currentColor"
       ></path>
       <path
         d="M12 2c1.358 0 2.506 .903 2.875 2.141l.046 .171l.008 .043a8.013 8.013 0 0 1 4.024 6.069l.028 .287l.019 .289v2.931l.021 .136a3 3 0 0 0 1.143 1.847l.167 .117l.162 .099c.86 .487 .56 1.766 -.377 1.864l-.116 .006h-16c-1.028 0 -1.387 -1.364 -.493 -1.87a3 3 0 0 0 1.472 -2.063l.021 -.143l.001 -2.97a8 8 0 0 1 3.821 -6.454l.248 -.146l.01 -.043a3.003 3.003 0 0 1 2.562 -2.29l.182 -.017l.176 -.004z"
-        stroke-width="0"
+        strokeWidth="0"
         fill="currentColor"
       ></path>
     </>
