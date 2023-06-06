@@ -1,7 +1,8 @@
 import { IMyText } from '@/inteface/component-interface';
 import { Text } from '@chakra-ui/react';
 import Link from 'next/link';
-const MyText = ({
+const 
+MyText = ({
   title,
   as,
   color = 'brand.black',
