@@ -1,8 +1,18 @@
 import {
   Box,
   Center,
+  Collapse,
+  Drawer,
+  DrawerBody,
+  DrawerCloseButton,
+  DrawerContent,
+  DrawerHeader,
+  DrawerOverlay,
   Flex,
   HStack,
+  Menu,
+  MenuButton,
+  MenuList,
   Popover,
   PopoverContent,
   PopoverTrigger,
@@ -14,6 +24,7 @@ import {
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { MyButton } from '../button';
+import { MyDivider } from '../divider';
 import { MyIcon } from '../icon';
 import MyImage from '../image/MyImage';
 import MyText from '../text/MyText';
@@ -23,11 +34,18 @@ const Navbar = () => {
   const navHeight = { base: '60px', md: '53px' };
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [isLogin, setIsLogin] = useState(true);
-  const [avatar, setAvatar] = useState(false);
   const { isOpen, onOpen, onClose, onToggle } = useDisclosure();
+  const [isJobOpen, setJobOpen] = useState(false);
+  const [isCompanyOpen, setCompanyOpen] = useState(false);
 
-  const handleLoginSignup = () => {
-    setAvatar(true);
+  const handleJobClick = () => {
+    setJobOpen(!isJobOpen);
+    setCompanyOpen(false); // Close the Company collapse
+  };
+
+  const handleCompanyClick = () => {
+    setCompanyOpen(!isCompanyOpen);
+    setJobOpen(false); // Close the Job collapse
   };
 
   return (
@@ -45,7 +63,7 @@ const Navbar = () => {
         px={{ base: '24px', md: '25px', lg: '48px' }}
       >
         <HStack gap={'16px'}>
-          {/*Scope Seeker Logo*/}
+          {/* Scope Seeker Logo */}
           <Link href={'/'}>
             <Center gap={'8px'} mr={'10px'}>
               <MyImage
@@ -99,33 +117,245 @@ const Navbar = () => {
           </Flex>
         </HStack>
 
-        {/* Login, signup and avatar section */}
+        {/* Right Part of Navbar */}
         <HStack>
           <HStack>
-            <HStack spacing={0} gap={'12px'}>
-              <HStack
-                gap={'12px'}
-                spacing={0}
-                display={{ base: 'none', md: 'flex' }}
-              >
-                <Link href={'/login'}>
-                  <MyButton
-                    variant="outline"
-                    title="Log In"
-                    py={'6px'}
-                    h={'fit-content'}
-                  />
-                </Link>
-                <Link href={'/signup'}>
-                  <MyButton title="Sign Up" py={'6px'} h={'fit-content'} />
-                </Link>
-              </HStack>
+            <HStack spacing={0} gap={'16px'}>
+              {!isLogin && (
+                <HStack
+                  gap={'12px'}
+                  spacing={0}
+                  display={{ base: 'none', md: 'flex' }}
+                >
+                  <Link href={'/login'}>
+                    <MyButton
+                      variant="outline"
+                      title="Log In"
+                      py={'6px'}
+                      h={'fit-content'}
+                    />
+                  </Link>
+                  <Link href={'/signup'}>
+                    <MyButton title="Sign Up" py={'6px'} h={'fit-content'} />
+                  </Link>
+                </HStack>
+              )}
+              {isLogin && (
+                <>
+                  <Center
+                    display={{ base: 'none', md: 'flex' }}
+                    borderRadius={'50px'}
+                    px={'12px'}
+                    py={'4px'}
+                    bg={'brand.primary'}
+                    gap={'4px'}
+                  >
+                    <MyIcon color="brand.white" name="chartPie" width="20px" />
+                    <MyText
+                      as="link"
+                      title="Dashboard"
+                      href="/dashboard"
+                      color={'brand.white'}
+                    />
+                  </Center>
+                  {/* Notification part  */}
+                  <Menu>
+                    <MenuButton>
+                      <MyIcon name={'bellFilled'} />
+                    </MenuButton>
+
+                    <MenuList
+                      boxShadow="0px 0px 30px rgb(0,0,0,0.12)"
+                      mt={'16px'}
+                    >
+                      <VStack
+                        px={'30px'}
+                        py={'15px'}
+                        alignItems={'flex-start'}
+                        w={'380px'}
+                        h={'350px'}
+                      >
+                        <HStack
+                          justifyContent={'space-between'}
+                          alignItems={'center'}
+                          w={'full'}
+                        >
+                          <MyText as="title" title="Notification (1)" />
+                          <MyText
+                            as="span"
+                            title="Mark all as read"
+                            color="brand.primary"
+                            cursor={'pointer'}
+                          />
+                        </HStack>
+
+                        <VStack></VStack>
+                      </VStack>
+                    </MenuList>
+                  </Menu>
+                  {/* Avatar */}
+                  <Menu>
+                    <MenuButton>
+                      <Center
+                        borderRadius={'50%'}
+                        bg={'brand.offwhite'}
+                        border={'1.5px solid'}
+                        borderColor={'brand.primary'}
+                        w={'32px'}
+                        h={'32px'}
+                        cursor={'pointer'}
+                        overflow={'hidden'}
+                      >
+                        <MyImage
+                          src={'/assets/images/p12.jpg'}
+                          alt="profile"
+                          width={32}
+                          height={32}
+                        />
+                      </Center>
+                    </MenuButton>
+
+                    <MenuList
+                      boxShadow="0px 0px 30px rgb(0,0,0,0.12)"
+                      mt={'12px'}
+                    >
+                      <Box px={'30px'} py={'20px'} w={'350px'}>
+                        <HStack gap={'5px'} alignItems={'flex-start'}>
+                          <Center
+                            w={'60px'}
+                            h={'60px'}
+                            borderRadius={'100%'}
+                            border={'2px'}
+                            borderColor={'brand.primary'}
+                            overflow={'hidden'}
+                          >
+                            <MyImage
+                              src={'/assets/images/p12.jpg'}
+                              alt="profile"
+                              width={60}
+                              height={60}
+                            />
+                          </Center>
+
+                          <VStack alignItems={'flex-start'} gap={'5px'}>
+                            <VStack spacing={0} alignItems={'flex-start'}>
+                              <MyText as="title" title="Abhishek Kumar" />
+                              <MyText
+                                as="span"
+                                title="example123@gmail.com"
+                                color="brand.darkgray"
+                              />
+                            </VStack>
+
+                            <MyText
+                              as="link"
+                              title="View & Update Profile"
+                              color={'brand.primary'}
+                              fontWeight={500}
+                            />
+                          </VStack>
+                        </HStack>
+                        <MyDivider mt={'20px'} />
+
+                        <VStack
+                          alignItems={'flex-start'}
+                          marginTop={'20px'}
+                          gap={'8px'}
+                        >
+                          <HStack
+                            cursor={'pointer'}
+                            _hover={{ color: 'brand.primary' }}
+                          >
+                            <MyIcon
+                              name="chartPie"
+                              width="20px"
+                              color={'currentColor'}
+                            />
+                            <MyText
+                              as="span"
+                              title="Dashboard"
+                              color={'currentColor'}
+                            />
+                          </HStack>
+
+                          <HStack
+                            cursor={'pointer'}
+                            _hover={{ color: 'brand.primary' }}
+                          >
+                            <MyIcon
+                              name="user"
+                              width="20px"
+                              color={'currentColor'}
+                            />
+                            <MyText
+                              as="span"
+                              title="My Profile"
+                              color={'currentColor'}
+                            />
+                          </HStack>
+
+                          <HStack
+                            cursor={'pointer'}
+                            _hover={{ color: 'brand.primary' }}
+                          >
+                            <MyIcon
+                              name="settings"
+                              width="20px"
+                              color={'currentColor'}
+                            />
+                            <MyText
+                              as="span"
+                              title="Account Setting"
+                              color={'currentColor'}
+                            />
+                          </HStack>
+
+                          <HStack
+                            cursor={'pointer'}
+                            _hover={{ color: 'brand.primary' }}
+                          >
+                            <MyIcon
+                              name="questionMark"
+                              width="20px"
+                              color={'currentColor'}
+                            />
+                            <MyText
+                              as="span"
+                              title="FAQ"
+                              color={'currentColor'}
+                            />
+                          </HStack>
+
+                          <HStack
+                            cursor={'pointer'}
+                            _hover={{ color: 'brand.primary' }}
+                          >
+                            <MyIcon
+                              name="logout"
+                              width="20px"
+                              color={'currentColor'}
+                            />
+                            <MyText
+                              as="span"
+                              title="Logout"
+                              color={'currentColor'}
+                            />
+                          </HStack>
+                        </VStack>
+                      </Box>
+                    </MenuList>
+                  </Menu>
+                </>
+              )}
+
+              {/* DarkMode */}
               <Center
                 borderRadius={'50%'}
                 bg={'brand.offwhite'}
                 border={'1px solid'}
                 borderColor={'brand.black'}
-                p={'6px'}
+                w={'32px'}
+                h={'32px'}
                 cursor={'pointer'}
                 onClick={() => {
                   setIsDarkMode(!isDarkMode);
@@ -138,9 +368,94 @@ const Navbar = () => {
                   strokeWidth="1.5"
                 />
               </Center>
-              <Center display={{ base: 'flex', lg: 'none' }}>
+
+              <Center display={{ base: 'flex', lg: 'none' }} onClick={onOpen}>
                 <MyIcon name="hamburgerMenu" />
               </Center>
+              <Drawer
+                isOpen={isOpen}
+                placement="right"
+                onClose={onClose}
+                size={'xs'}
+              >
+                <DrawerOverlay />
+                <DrawerContent>
+                  <DrawerHeader>
+                    <DrawerCloseButton />
+                  </DrawerHeader>
+                  <DrawerBody>
+                    <VStack
+                      w={'full'}
+                      h={'full'}
+                      alignItems={'flex-start'}
+                      gap={'12px'}
+                      spacing={0}
+                      py={'18px'}
+                    >
+                      <NavLink
+                        iconName="case"
+                        title="Jobs"
+                        onClick={handleJobClick}
+                      />
+                      <Collapse in={isJobOpen}>
+                        <VStack
+                          borderLeft={'1px solid'}
+                          px={'12px'}
+                          mx={'12px'}
+                          borderColor={'brand.lightgray'}
+                          alignItems={'flex-start'}
+                        >
+                          <MyText as="link" title="Full Stack Developer" />
+                          <MyText as="link" title="Backend Developer" />
+                          <MyText as="link" title="Android Developer" />
+                          {isLogin && (
+                            <>
+                              <MyText as="link" title=" Recommanded Jobs" />
+                              <MyText as="link" title="Saved Jobs" />
+                            </>
+                          )}
+                        </VStack>
+                      </Collapse>
+                      <NavLink
+                        iconName="company"
+                        title="Company"
+                        onClick={handleCompanyClick}
+                      />
+                      <Collapse in={isCompanyOpen}>
+                        <VStack
+                          borderLeft={'1px solid'}
+                          px={'12px'}
+                          mx={'12px'}
+                          borderColor={'brand.lightgray'}
+                          alignItems={'flex-start'}
+                        >
+                          <MyText as="link" title="MNC's" />
+                          <MyText as="link" title="Unicorn" />
+                          <MyText as="link" title="Fourtune 500" />
+                          {isLogin && (
+                            <>
+                              <MyText
+                                as="link"
+                                title=" Recommanded Companies"
+                              />
+                              <MyText as="link" title="Favouriate Comapanies" />
+                            </>
+                          )}
+                        </VStack>
+                      </Collapse>
+                      <NavLink iconName="user" title="About Us" />
+                      <NavLink iconName="phone" title="Contact Us" />
+                      <MyButton
+                        title="Login"
+                        variant="outline"
+                        h={'32px'}
+                        w={'120px'}
+                      />
+                      <MyButton title="Signup" w={'120px'} h={'32px'} />
+                    </VStack>
+                  </DrawerBody>
+                </DrawerContent>
+              </Drawer>
             </HStack>
           </HStack>
         </HStack>
@@ -153,10 +468,11 @@ export default Navbar;
 interface INavLink {
   iconName: string;
   title: string;
+  [key: string]: any;
 }
-const NavLink = ({ iconName, title }: INavLink) => {
+const NavLink = ({ iconName, title, ...rest }: INavLink) => {
   return (
-    <Center _hover={{ color: 'brand.primary' }} gap={'4px'}>
+    <Center _hover={{ color: 'brand.primary' }} gap={'4px'} {...rest}>
       <MyIcon
         name={iconName}
         width="18px"
