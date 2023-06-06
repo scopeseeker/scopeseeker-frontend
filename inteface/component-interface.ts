@@ -12,6 +12,7 @@ export interface IMyButtonProps {
   borderRadius?: string;
   variant?: 'outline' | 'solid';
   px?: string;
+  h?: string;
   [key: string]: any;
 }
 

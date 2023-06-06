@@ -29,8 +29,8 @@ const SignupSection = () => {
           as="p"
         />
         <HStack pt={'12px'} flexDir={{base: 'column',sm: 'row', md: 'row'}} spacing={0} gap={'15px'}>
-          <MyButton title="Register a New Account" />
-          <MyButton title="Sign In to Your Account" variant="outline" />
+          <MyButton title="Register a New Account" px='50px'/>
+          <MyButton title="Sign In to Your Account" variant="outline" px='50px'/>
         </HStack>
       </VStack>
     </Center>

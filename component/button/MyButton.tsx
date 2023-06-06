@@ -7,12 +7,13 @@ const MyButton = ({
   borderRadius,
   variant = 'solid',
   px='16px',
+  h,
   ...rest
 }: IMyButtonProps) => {
   return (
     <Center
       borderRadius={borderRadius || '50px'}
-      h={'36px'}
+      h={h || '36px'}
       bg={variant === 'outline' ? 'transparent' : 'brand.primary'}
       borderColor={variant === 'outline' ? 'brand.darkgray' : 'transparent'}
       borderWidth="1px"
