@@ -65,6 +65,8 @@ export type IconNameType =
   | 'delete'
   | 'edit'
   | 'upload'
+  | 'behance'
+  | 'figma'
   | string;
 
 type IconData = {
@@ -90,6 +92,21 @@ export const IconData: IconData = {
     <>
       <path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4"></path>
       <path d="M13.5 6.5l4 4"></path>
+    </>
+  ),
+  figma: (
+    <>
+   <path d="M15 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+   <path d="M6 3m0 3a3 3 0 0 1 3 -3h6a3 3 0 0 1 3 3v0a3 3 0 0 1 -3 3h-6a3 3 0 0 1 -3 -3z"></path>
+   <path d="M9 9a3 3 0 0 0 0 6h3m-3 0a3 3 0 1 0 3 3v-15"></path>
+    </>
+  ),
+  behance: (
+    <>
+   <path d="M3 18v-12h4.5a3 3 0 0 1 0 6a3 3 0 0 1 0 6h-4.5"></path>
+   <path d="M3 12l4.5 0"></path>
+   <path d="M14 13h7a3.5 3.5 0 0 0 -7 0v2a3.5 3.5 0 0 0 6.64 1"></path>
+   <path d="M16 6l3 0"></path>
     </>
   ),
   dribble: (

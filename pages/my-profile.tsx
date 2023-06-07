@@ -90,7 +90,7 @@ export default function Profile() {
                   <HStack>
                     <Box
                       w={'400px'}
-                      h={'20px'}
+                      h={'10px'}
                       borderRadius={'20px'}
                       border={'1px solid '}
                       borderColor={'brand.lightgray'}
@@ -103,7 +103,7 @@ export default function Profile() {
                         borderRadius={'20px'}
                       ></Box>
                     </Box>
-                    <MyText title="40%" as={'title'} />
+                    <MyText title="40%" as={'span'} />
                   </HStack>
                 </VStack>
               </VStack>
@@ -215,33 +215,95 @@ export default function Profile() {
             />
           </Center>
 
-          <VStack gap={'32px'}>
+          
+
+          <VStack gap={'64px'}>
+
+          {/* personal detail */}
+          <HStack w={'full'} gap={'10px'}>
+            <VStack
+              w={'50%'}
+              alignItems={'flex-start'}
+              gap={'32px'}
+              boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
+              p={'20px'}
+              borderRadius={'8px'}
+            >
+              <MyText title="Personal Detals" as={'heading'} />
+              <VStack w={'full'} alignItems={'flex-start'}>
+                <HStack justifyContent={'space-between'} gap={'42px'}>
+                  <VStack spacing={0} alignItems={'flex-start'} w={'120px'}>
+                    <MyText title="Date Of Birth" as={'p'} />
+                    <MyText title="07/08/2003" as={'span'} />
+                  </VStack>
+                  <VStack spacing={0} alignItems={'flex-start'} w={'120px'}>
+                    <MyText title="Location" as={'p'} />
+                    <MyText title="Bhopal" as={'span'} />
+                  </VStack>
+                </HStack>
+                <HStack justifyContent={'space-between'} gap={'42px'}>
+                  <VStack spacing={0} alignItems={'flex-start'} w={'120px'}>
+                    <MyText title="Location" as={'p'} />
+                    <MyText title="Bhopal" as={'span'} />
+                  </VStack>
+                  <VStack
+                    spacing={0}
+                    alignItems={'flex-start'}
+                    w={'120px'}
+                  >
+                    <MyText title="State" as={'p'} />
+                    <MyText title="MP" as={'span'} />
+                  </VStack>
+                </HStack>
+              </VStack>
+            </VStack>
+            <VStack
+              w={'50%'}
+              alignItems={'flex-start'}
+              bg={'brand.aliceblue'}
+              boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
+              p={'20px'}
+              borderRadius={'8px'}
+            >
+               <MyText title="Recent Activity" as={'heading'} />  
+               <MyText title='You submitted the task' as={'small'}/>
+               <MyText title='You applied in flipkart' as={'small'}/>
+               <MyText title='Recently view company' as={'small'}/>
+               <MyText title='Checking the information of Amazon' as={'small'}/>
+               <MyText title='Last read article on Blockchain' as={'small'}/>
+               
+
+            </VStack>
+          </HStack>
+
             {/* Resume section */}
             <VStack
               w={'full'}
               gap={'10px'}
               spacing={0}
               alignItems={'flex-start'}
+              boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
+              p={'20px'}
+              borderRadius={'8px'}
             >
               <MyText title="Resume" as={'heading'} />
               <HStack w={'full'} h={'40px'} justifyContent={'space-between'}>
                 <Center
-                  w={'400px'}
-                  h={'30px'}
                   border={'1px solid'}
                   borderColor={'brand.darkgray'}
                   justifyContent={'flex-start'}
-                  px={'10px'}
+                  p={'8px'}
                   borderRadius={'8px'}
                 >
                   <MyText
                     title="Lokesh.pdf Updated on (june 06 2023)"
-                    as={'span'}
+                    as={'small'}
                   />
                 </Center>
                 <HStack>
                   <Center
                     w={'30px'}
+                    h={'30px'}
                     borderRadius={'50%'}
                     bg={'brand.aliceblue'}
                   >
@@ -278,23 +340,21 @@ export default function Profile() {
                 </Center>
               </Center>
             </VStack>
-            {/* summary section */}
-            <VStack w={'full'} alignItems={'flex-start'}>
-              <MyText title="Summary" as={'heading'} />
-              <Box w={'80%'}>
-                <MyText
-                  title="The IT professional is highly skilled in software development, network administration, system maintenance, and cybersecurity. Proficient in programming languages like Java and Python, they have developed web applications using frameworks such as Django and Ruby on Rails. Their expertise extends to configuring and managing enterprise-level networks, implementing robust security measures. With a proven track record of meeting project deadlines, they possess strong problem-solving and communication skills. Committed to staying updated with the latest technologies, this proactive IT professional brings a comprehensive skill set, adaptability, and a proactive approach to contribute effectively to any IT team or project."
-                  as={'span'}
-                />
-              </Box>
-            </VStack>
+
             {/* Skills section */}
-            <VStack alignItems={'flex-start'} w={'full'} gap={'10px'}>
+            <VStack
+              alignItems={'flex-start'}
+              boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
+              p={'20px'}
+              borderRadius={'8px'}
+              w={'full'}
+              gap={'10px'}
+            >
               <MyText as="heading" title="Skills" />
 
               <HStack
                 flexWrap={'wrap'}
-                gap={'6px'}
+                gap={'10px'}
                 spacing={0}
                 maxW={{ base: '100%', md: '80%' }}
               >
@@ -328,9 +388,34 @@ export default function Profile() {
                 })}
               </HStack>
             </VStack>
+            {/* summary section */}
+            <VStack
+              w={'full'}
+              boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
+              p={'20px'}
+              borderRadius={'8px'}
+              alignItems={'flex-start'}
+              bg={'brand.aliceblue'}
+            >
+              <MyText title="Summary" as={'heading'} />
+              <Box>
+                <MyText
+                  title="The IT professional is highly skilled in software development, network administration, system maintenance, and cybersecurity. Proficient in programming languages like Java and Python, they have developed web applications using frameworks such as Django and Ruby on Rails. Their expertise extends to configuring and managing enterprise-level networks, implementing robust security measures. With a proven track record of meeting project deadlines, they possess strong problem-solving and communication skills. Committed to staying updated with the latest technologies, this proactive IT professional brings a comprehensive skill set, adaptability, and a proactive approach to contribute effectively to any IT team or project."
+                  as={'small'}
+                />
+              </Box>
+            </VStack>
 
             {/* Education section */}
-            <VStack w={'full'} spacing={0} gap={0} alignItems={'flex-start'}>
+            <VStack
+              w={'full'}
+              spacing={0}
+              gap={0}
+              alignItems={'flex-start'}
+              boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
+              p={'20px'}
+              borderRadius={'8px'}
+            >
               <MyText title="Education" as={'heading'} />
               <VStack
                 w={'full'}
@@ -374,8 +459,16 @@ export default function Profile() {
                 </VStack>
               </VStack>
             </VStack>
-
-            <VStack w={'full'} spacing={0} alignItems={'flex-start'}>
+            {/* work */}
+            <VStack
+              w={'full'}
+              spacing={0}
+              bg={'brand.aliceblue'}
+              alignItems={'flex-start'}
+              boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
+              p={'20px'}
+              borderRadius={'8px'}
+            >
               <MyText title="Work Experience" as={'heading'} />
               <VStack
                 p={'10px'}
@@ -391,8 +484,14 @@ export default function Profile() {
                 <MyText title="2024" as={'small'} />
               </VStack>
             </VStack>
-
-            <VStack w={'full'} alignItems={'flex-start'}>
+            {/* social */}
+            <VStack
+              w={'full'}
+              alignItems={'flex-start'}
+              boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
+              p={'20px'}
+              borderRadius={'8px'}
+            >
               <MyText title="Social Links" as={'heading'} />
 
               <HStack>
@@ -408,6 +507,8 @@ export default function Profile() {
                   placeholder="LinkedIn Link"
                   leftElement={<MyIcon name="linkedin" />}
                 />
+              </HStack>
+              <HStack>
                 <MyInput
                   type="text"
                   labelTitle="Instagram"
@@ -421,37 +522,20 @@ export default function Profile() {
                   leftElement={<MyIcon name="dribble" />}
                 />
               </HStack>
-            </VStack>
-
-            <VStack w={'full'} alignItems={'flex-start'} gap={'32px'}>
-              <MyText title="Personal Detals" as={'heading'} />
-              <VStack w={'full'} alignItems={'flex-start'}>
-                <HStack justifyContent={'space-between'} gap={'42px'}> 
-                  <VStack spacing={0} alignItems={'flex-start'} w={'120px'}>
-                    <MyText title="Date Of Birth" as={'p'} />
-                    <MyText title="07/08/2003" as={'span'} />
-                  </VStack>
-                  <VStack spacing={0} alignItems={'flex-start'} w={'120px'}>
-                    <MyText title="Location" as={'p'} />
-                    <MyText title="Bhopal" as={'span'} />
-                  </VStack>
-                </HStack>
-                <HStack justifyContent={'space-between'} gap={'42px'}>
-                  <VStack spacing={0} alignItems={'flex-start'} w={'120px'}>
-                    <MyText title="Location" as={'p'} />
-                    <MyText title="Bhopal" as={'span'} />
-                  </VStack>
-                  <VStack
-                    spacing={0}
-                    alignItems={'flex-start'}
-                    bg={'red.100'}
-                    w={'120px'}
-                  >
-                    <MyText title="State" as={'p'} />
-                    <MyText title="MP" as={'span'} />
-                  </VStack>
-                </HStack>
-              </VStack>
+              <HStack>
+                <MyInput
+                  type="text"
+                  labelTitle="Behance"
+                  placeholder="Behance Link"
+                  leftElement={<MyIcon name="behance" />}
+                />
+                <MyInput
+                  type="text"
+                  labelTitle="Figma"
+                  placeholder="Figma Link"
+                  leftElement={<MyIcon name="figma" />}
+                />
+              </HStack>
             </VStack>
           </VStack>
         </VStack>
