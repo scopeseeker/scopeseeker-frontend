@@ -9,8 +9,7 @@ export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const showNavbar =
     router.asPath !== '/login' &&
-    router.asPath !== '/signup' &&
-    router.asPath !== '/info-steps';
+    router.asPath !== '/signup';
 
   return (
     <ChakraProvider theme={theme}>
