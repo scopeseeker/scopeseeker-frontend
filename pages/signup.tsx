@@ -8,11 +8,29 @@ import {
   MyInput,
   MyText,
 } from '@/component';
-import { Box, Center, HStack, VStack } from '@chakra-ui/react';
+import {
+  Box,
+  Center,
+  Fade,
+  HStack,
+  PinInput,
+  PinInputField,
+  VStack,
+  useDisclosure,
+} from '@chakra-ui/react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { useState } from 'react';
 
 export default function Signup() {
+  const [isOtpOpen, setIisOtpOpen] = useState(false);
+  const { isOpen, onToggle } = useDisclosure();
+
+  const handleClickOnBtn = () => {
+    setIisOtpOpen(!isOtpOpen);
+    onToggle();
+  };
+
   return (
     <>
       <Head>
@@ -28,9 +46,9 @@ export default function Signup() {
       >
         {/* Left Part */}
         <VStack
-            w={{ base: '100%', md: '40%', lg: '30%' }}
-            h={{ base: 'fit-content', md: 'full' }}
-            p={'10px'} 
+          w={{ base: '100%', md: '40%', lg: '30%' }}
+          h={{ base: 'fit-content', md: 'full' }}
+          p={'10px'}
         >
           <VStack
             w={'full'}
@@ -88,119 +106,180 @@ export default function Signup() {
           </VStack>
         </VStack>
         {/* Right part */}
-        <Layout
-        w={{ base: '100%', md: '60%', lg: '70%' }} h={'full'}
-        >
+        <Layout w={{ base: '100%', md: '60%', lg: '70%' }} h={'full'}>
+          <Center w={'100%'} h={'full'} pb={{ base: '24px', md: '0px' }}>
+            <VStack
+              w={{ base: '100%', md: '90%', lg: '65%' }}
+              gap={'10px'}
+              alignItems={'flex-start'}
+            >
+              <VStack
+                w={'full'}
+                alignItems={'flex-start'}
+                gap={'10px'}
+                display={isOtpOpen ? 'none' : 'flex'}
+              >
+                <Box>
+                  <MyText as="heading" title="Sign Up Into Scope Seeker" />
+                  <MyText as="p" title="Already have an account" />
+                </Box>
+                <MyInput
+                  type="text"
+                  labelTitle="Full Name"
+                  placeholder="Lokesh Dhakar"
+                  leftElement={<MyIcon name="personCircle" />}
+                />
+                <HStack
+                  w={'full'}
+                  flexDirection={{ base: 'column', sm: 'column', md: 'row' }}
+                  gap={'4px'}
+                >
+                  <MyInput
+                    type="email"
+                    labelTitle="Email Address"
+                    placeholder="example@gmail.com"
+                    leftElement={<MyIcon name="email" />}
+                  />
+                  <MyInput
+                    type="number"
+                    labelTitle="Phone Number"
+                    placeholder="XXXXXX8879"
+                    leftElement={<MyIcon name="phone" />}
+                  />
+                </HStack>
+                <HStack
+                  w={'full'}
+                  flexDirection={{ base: 'column', sm: 'column', md: 'row' }}
+                  gap={'4px'}
+                >
+                  <MyInput
+                    type="password"
+                    labelTitle="Password"
+                    placeholder="✶✶✶✶✶✶✶✶"
+                    leftElement={<MyIcon name="password" />}
+                  />
+                  <MyInput
+                    type="password"
+                    labelTitle="Confirm Password"
+                    placeholder="✶✶✶✶✶✶✶✶"
+                    leftElement={<MyIcon name="confirmation" />}
+                  />
+                </HStack>
 
-        <Center
-          w={'100%'} h={'full'} pb={{ base: '24px', md: '0px' }}
-        >
-          <VStack
-            w={{ base: '100%', md: '90%', lg: '65%' }}
-            alignItems={'flex-start'}
-            gap={'10px'}
-          >
-            <Box>
-              <MyText as="heading" title="Sign Up Into Scope Seeker" />
-              <MyText as="p" title="Already have an account" />
-            </Box>
-            <MyInput
-              type="text"
-              labelTitle="Full Name"
-              placeholder="Lokesh Dhakar"
-              leftElement={<MyIcon name="personCircle" />}
-            />
-            <HStack
-              w={'full'}
-              flexDirection={{ base: 'column', sm: 'column', md: 'row' }}
-              gap={'4px'}
-            >
-              <MyInput
-                type="email"
-                labelTitle="Email Address"
-                placeholder="example@gmail.com"
-                leftElement={<MyIcon name="email" />}
-              />
-              <MyInput
-                type="number"
-                labelTitle="Phone Number"
-                placeholder="XXXXXX8879"
-                leftElement={<MyIcon name="phone" />}
-              />
-            </HStack>
-            <HStack
-              w={'full'}
-              flexDirection={{ base: 'column', sm: 'column', md: 'row' }}
-              gap={'4px'}
-            >
-              <MyInput
-                type="password"
-                labelTitle="Password"
-                placeholder="✶✶✶✶✶✶✶✶"
-                leftElement={<MyIcon name="password" />}
-              />
-              <MyInput
-                type="password"
-                labelTitle="Confirm Password"
-                placeholder="✶✶✶✶✶✶✶✶"
-                leftElement={<MyIcon name="confirmation" />}
-              />
-            </HStack>
-            <MyButton title="Signup" px={'42px'}/>
-            <MyDivider />
-            <VStack w={'full'}>
-              <MyText as="heading" fontWeight={400} title="Or" />
-              <HStack  gap={{ base: '6px', sm: '8px', md: '6px' }}
+                <MyButton
+                  title="Signup"
+                  px={'42px'}
+                  onClick={handleClickOnBtn}
+                />
+              </VStack>
+              {/* OTP Div */}
+              <Center w={'full'} h={'full'}>
+                <Fade in={isOpen}>
+                  <Center
+                    w={'full'}
+                    h={'full'}
+                    borderRadius={'8px'}
+                    flexDirection={'column'}
+                    gap={'20px'}
+                    display={isOtpOpen ? 'flex' : 'none'}
+                    pb={'20px'}
+                  >
+                    <MyIcon
+                      name={'sheild'}
+                      color="brand.primary"
+                      width="42"
+                      height="42"
+                    />
+                    <VStack spacing={0}>
+                      <MyText
+                        title="Enter verification code here"
+                        as={'heading'}
+                      />
+                      <MyText
+                        title="We have sent you code to abhijeetraj900@gmail.com"
+                        as={'p'}
+                      />
+                    </VStack>
+                    <HStack>
+                      <PinInput otp>
+                        <PinInputField />
+                        <PinInputField />
+                        <PinInputField />
+                        <PinInputField />
+                      </PinInput>
+                    </HStack>
+                    <HStack>
+                      <MyText title="Not get the code?" as={'p'} />
+                      <MyText title="Click here to resend" as={'link'} />
+                    </HStack>
+                    <HStack>
+                      <MyButton
+                        title="Cancel"
+                        variant="outline"
+                        px={'28px'}
+                        py={'18px'}
+                      />
+                      <MyButton title="Verify" px={'28px'} py={'18px'} />
+                    </HStack>
+                  </Center>
+                </Fade>
+              </Center>
+
+              <MyDivider />
+              <VStack w={'full'}>
+                <MyText as="heading" fontWeight={400} title="Or" />
+                <HStack
+                  gap={{ base: '6px', sm: '8px', md: '6px' }}
                   flexDirection={{ base: 'column', sm: 'row', md: 'row' }}
                   spacing={0}
                   justifyContent={'center'}
-                  w={'full'} >
-                <Link href={'#'}>
-                  <Center
-                   px={{ base: '52px', sm: '24px' }}
-                   py={{ base: '12px', sm: '8px' }}
-                   borderRadius={'80px'}
-                   border={'1.5px solid'}
-                   borderColor={'brand.darkgray'}
-                   bg={'brand.aliceblue'}
-                   gap={'10px'}
-                   cursor={'pointer'}
-                  >
-                    <MyImage
-                      alt="google"
-                      src={'/assets/images/company-logo/google.png'}
-                      width={20}
-                      height={20}
-                    />
-                    <MyText as="span" title="Signup with Google" />
-                  </Center>
-                </Link>
-                <Link href={'#'}>
-                  <Center
-                   px={{ base: '52px', sm: '24px' }}
-                   py={{ base: '12px', sm: '8px' }}
-                   borderRadius={'80px'}
-                   border={'1.5px solid'}
-                   borderColor={'brand.darkgray'}
-                   bg={'brand.aliceblue'}
-                   gap={'10px'}
-                   cursor={'pointer'}
-                  >
-                    <MyImage
-                      alt="github"
-                      src={'/assets/images/company-logo/github.png'}
-                      width={20}
-                      height={20}
-                    />
-                    <MyText as="span" title="Signup with GitHub" />
-                  </Center>
-                </Link>
-              </HStack>
+                  w={'full'}
+                >
+                  <Link href={'#'}>
+                    <Center
+                      px={{ base: '52px', sm: '24px' }}
+                      py={{ base: '12px', sm: '8px' }}
+                      borderRadius={'80px'}
+                      border={'1.5px solid'}
+                      borderColor={'brand.darkgray'}
+                      bg={'brand.aliceblue'}
+                      gap={'10px'}
+                      cursor={'pointer'}
+                    >
+                      <MyImage
+                        alt="google"
+                        src={'/assets/images/company-logo/google.png'}
+                        width={20}
+                        height={20}
+                      />
+                      <MyText as="span" title="Signup with Google" />
+                    </Center>
+                  </Link>
+                  <Link href={'#'}>
+                    <Center
+                      px={{ base: '52px', sm: '24px' }}
+                      py={{ base: '12px', sm: '8px' }}
+                      borderRadius={'80px'}
+                      border={'1.5px solid'}
+                      borderColor={'brand.darkgray'}
+                      bg={'brand.aliceblue'}
+                      gap={'10px'}
+                      cursor={'pointer'}
+                    >
+                      <MyImage
+                        alt="github"
+                        src={'/assets/images/company-logo/github.png'}
+                        width={20}
+                        height={20}
+                      />
+                      <MyText as="span" title="Signup with GitHub" />
+                    </Center>
+                  </Link>
+                </HStack>
+              </VStack>
             </VStack>
-          </VStack>
-        </Center>
+          </Center>
         </Layout>
-
       </HStack>
     </>
   );
