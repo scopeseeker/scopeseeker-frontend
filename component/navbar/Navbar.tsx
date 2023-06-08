@@ -112,8 +112,8 @@ const Navbar = () => {
                 </>
               )}
             </DesktopNav>
-            <NavLink iconName="user" title="About Us" />
-            <NavLink iconName="phone" title="Contact Us" />
+            <NavLink iconName="user" title="About Us" href="/about-us" />
+            <NavLink iconName="phone" title="Contact Us" href="/contact-us" />
           </Flex>
         </HStack>
 
@@ -188,8 +188,6 @@ const Navbar = () => {
                             cursor={'pointer'}
                           />
                         </HStack>
-
-                        <VStack></VStack>
                       </VStack>
                     </MenuList>
                   </Menu>
@@ -368,7 +366,7 @@ const Navbar = () => {
                   strokeWidth="1.5"
                 />
               </Center>
-
+              {/* Mobile Drawer */}
               <Center display={{ base: 'flex', lg: 'none' }} onClick={onOpen}>
                 <MyIcon name="hamburgerMenu" />
               </Center>
@@ -396,6 +394,7 @@ const Navbar = () => {
                         iconName="case"
                         title="Jobs"
                         onClick={handleJobClick}
+                        href="#"
                       />
                       <Collapse in={isJobOpen}>
                         <VStack
@@ -405,13 +404,33 @@ const Navbar = () => {
                           borderColor={'brand.lightgray'}
                           alignItems={'flex-start'}
                         >
-                          <MyText as="link" title="Full Stack Developer" />
-                          <MyText as="link" title="Backend Developer" />
-                          <MyText as="link" title="Android Developer" />
+                          <MyText
+                            as="link"
+                            title="Full Stack Developer"
+                            onClick={onClose}
+                          />
+                          <MyText
+                            as="link"
+                            title="Backend Developer"
+                            onClick={onClose}
+                          />
+                          <MyText
+                            as="link"
+                            title="Android Developer"
+                            onClick={onClose}
+                          />
                           {isLogin && (
                             <>
-                              <MyText as="link" title=" Recommanded Jobs" />
-                              <MyText as="link" title="Saved Jobs" />
+                              <MyText
+                                as="link"
+                                title=" Recommanded Jobs"
+                                onClick={onClose}
+                              />
+                              <MyText
+                                as="link"
+                                title="Saved Jobs"
+                                onClick={onClose}
+                              />
                             </>
                           )}
                         </VStack>
@@ -420,6 +439,7 @@ const Navbar = () => {
                         iconName="company"
                         title="Company"
                         onClick={handleCompanyClick}
+                        href="#"
                       />
                       <Collapse in={isCompanyOpen}>
                         <VStack
@@ -429,29 +449,58 @@ const Navbar = () => {
                           borderColor={'brand.lightgray'}
                           alignItems={'flex-start'}
                         >
-                          <MyText as="link" title="MNC's" />
-                          <MyText as="link" title="Unicorn" />
-                          <MyText as="link" title="Fourtune 500" />
+                          <MyText as="link" title="MNC's" onClick={onClose} />
+                          <MyText as="link" title="Unicorn" onClick={onClose} />
+                          <MyText
+                            as="link"
+                            title="Fourtune 500"
+                            onClick={onClose}
+                          />
                           {isLogin && (
                             <>
                               <MyText
                                 as="link"
                                 title=" Recommanded Companies"
+                                onClick={onClose}
                               />
-                              <MyText as="link" title="Favouriate Comapanies" />
+                              <MyText
+                                as="link"
+                                title="Favouriate Comapanies"
+                                onClick={onClose}
+                              />
                             </>
                           )}
                         </VStack>
                       </Collapse>
-                      <NavLink iconName="user" title="About Us" />
-                      <NavLink iconName="phone" title="Contact Us" />
-                      <MyButton
-                        title="Login"
-                        variant="outline"
-                        h={'32px'}
-                        w={'120px'}
+                      <NavLink
+                        iconName="user"
+                        title="About Us"
+                        href="/about-us"
+                        onClick={onClose}
                       />
-                      <MyButton title="Signup" w={'120px'} h={'32px'} />
+                      <NavLink
+                        iconName="phone"
+                        title="Contact Us"
+                        href="/contact-us"
+                        onClick={onClose}
+                      />
+                      {!isLogin && (
+                        <>
+                          <MyButton
+                            title="Login"
+                            variant="outline"
+                            h={'32px'}
+                            w={'120px'}
+                          />
+                          <MyButton title="Signup" w={'120px'} h={'32px'} />
+                        </>
+                      )}
+                      <NavLink
+                        iconName="chartPie"
+                        title="Dashboard"
+                        href="/dashboard"
+                        onClick={onClose}
+                      />
                     </VStack>
                   </DrawerBody>
                 </DrawerContent>
@@ -468,9 +517,10 @@ export default Navbar;
 interface INavLink {
   iconName: string;
   title: string;
+  href?: string;
   [key: string]: any;
 }
-const NavLink = ({ iconName, title, ...rest }: INavLink) => {
+const NavLink = ({ iconName, title, href = '#', ...rest }: INavLink) => {
   return (
     <Center _hover={{ color: 'brand.primary' }} gap={'4px'} {...rest}>
       <MyIcon
@@ -480,7 +530,7 @@ const NavLink = ({ iconName, title, ...rest }: INavLink) => {
         strokeWidth="1.2"
         color="currentColor"
       />
-      <MyText title={title} as="link" href={'#'} color="currentColor" />
+      <MyText title={title} as="link" href={href} color="currentColor" />
     </Center>
   );
 };
