@@ -23,7 +23,6 @@ const HeroSection = () => {
         flexDirection={{ base: 'column', md: 'row' }}
         w={'full'}
         gap={'50px'}
-        h={'56vh'}
       >
         <Center
           w={{ base: '100%', md: '60%' }}
