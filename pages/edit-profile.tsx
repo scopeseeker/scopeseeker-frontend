@@ -69,7 +69,7 @@ const LeftScrollDivText = ({ title }: ILeftScrollDivText) => {
     <>
       <Center
         cursor={'pointer'}
-        _hover={{ bg: 'brand.transprimary' }}
+        
         w={'full'}
         py={'6px'}
         borderRadius={'8px'}
@@ -78,7 +78,7 @@ const LeftScrollDivText = ({ title }: ILeftScrollDivText) => {
         px={'16px'}
         transition={'all ease-in-out .2s'}
       >
-        <MyText title={title} as="span" />
+        <MyText title={title} as="span" _hover={{color: 'brand.primary'}} />
       </Center>
       <MyDivider />
     </>
