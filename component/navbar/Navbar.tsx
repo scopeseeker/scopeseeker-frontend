@@ -120,7 +120,7 @@ const Navbar = () => {
         {/* Right Part of Navbar */}
         <HStack>
           <HStack>
-            <HStack spacing={0} gap={'16px'}>
+            <HStack spacing={0} gap={{ base: '10px', md: '16px' }}>
               {!isLogin && (
                 <HStack
                   gap={'12px'}
@@ -158,9 +158,10 @@ const Navbar = () => {
                       color={'brand.white'}
                     />
                   </Center>
+
                   {/* Notification part  */}
                   <Menu>
-                    <MenuButton>
+                    <MenuButton display={{ base: 'none', md: 'initial' }}>
                       <MyIcon name={'bellFilled'} />
                     </MenuButton>
 
@@ -191,6 +192,28 @@ const Navbar = () => {
                       </VStack>
                     </MenuList>
                   </Menu>
+
+                  {/* DarkMode */}
+                  <Center
+                    borderRadius={'50%'}
+                    bg={'brand.offwhite'}
+                    border={'1px solid'}
+                    borderColor={'brand.black'}
+                    w={'32px'}
+                    h={'32px'}
+                    cursor={'pointer'}
+                    onClick={() => {
+                      setIsDarkMode(!isDarkMode);
+                    }}
+                  >
+                    <MyIcon
+                      name={isDarkMode ? 'sun' : 'moon'}
+                      width="20px"
+                      height="20px"
+                      strokeWidth="1.5"
+                    />
+                  </Center>
+
                   {/* Avatar */}
                   <Menu>
                     <MenuButton>
@@ -216,6 +239,7 @@ const Navbar = () => {
                     <MenuList
                       boxShadow="0px 0px 30px rgb(0,0,0,0.12)"
                       mt={'12px'}
+                      mr={{ base: '12px', sm: '0px' }}
                     >
                       <Box px={'30px'} py={'20px'} w={'350px'}>
                         <HStack gap={'5px'} alignItems={'flex-start'}>
@@ -343,168 +367,167 @@ const Navbar = () => {
                       </Box>
                     </MenuList>
                   </Menu>
+                  {/* Mobile Drawer */}
+                  <Center
+                    display={{ base: 'flex', lg: 'none' }}
+                    onClick={onOpen}
+                  >
+                    <MyIcon name="hamburgerMenu" width="32px" height="32px" />
+                  </Center>
+                  <Drawer
+                    isOpen={isOpen}
+                    placement="right"
+                    onClose={onClose}
+                    size={'xs'}
+                  >
+                    <DrawerOverlay />
+                    <DrawerContent>
+                      <DrawerHeader>
+                        <DrawerCloseButton />
+                      </DrawerHeader>
+                      <DrawerBody>
+                        <VStack
+                          w={'full'}
+                          h={'full'}
+                          alignItems={'flex-start'}
+                          gap={'12px'}
+                          spacing={0}
+                          py={'18px'}
+                        >
+                          <NavLink
+                            iconName="case"
+                            title="Jobs"
+                            onClick={handleJobClick}
+                            href="#"
+                            rightIcon={true}
+                          />
+
+                          <Collapse in={isJobOpen}>
+                            <VStack
+                              borderLeft={'1px solid'}
+                              px={'12px'}
+                              mx={'12px'}
+                              borderColor={'brand.lightgray'}
+                              alignItems={'flex-start'}
+                            >
+                              <MyText
+                                as="link"
+                                title="Full Stack Developer"
+                                onClick={onClose}
+                              />
+                              <MyText
+                                as="link"
+                                title="Backend Developer"
+                                onClick={onClose}
+                              />
+                              <MyText
+                                as="link"
+                                title="Android Developer"
+                                onClick={onClose}
+                              />
+                              {isLogin && (
+                                <>
+                                  <MyText
+                                    as="link"
+                                    title=" Recommanded Jobs"
+                                    onClick={onClose}
+                                  />
+                                  <MyText
+                                    as="link"
+                                    title="Saved Jobs"
+                                    onClick={onClose}
+                                  />
+                                </>
+                              )}
+                            </VStack>
+                          </Collapse>
+                          <NavLink
+                            iconName="company"
+                            title="Company"
+                            onClick={handleCompanyClick}
+                            href="#"
+                            rightIcon={true}
+                          />
+                          <Collapse in={isCompanyOpen}>
+                            <VStack
+                              borderLeft={'1px solid'}
+                              px={'12px'}
+                              mx={'12px'}
+                              borderColor={'brand.lightgray'}
+                              alignItems={'flex-start'}
+                            >
+                              <MyText
+                                as="link"
+                                title="MNC's"
+                                onClick={onClose}
+                              />
+                              <MyText
+                                as="link"
+                                title="Unicorn"
+                                onClick={onClose}
+                              />
+                              <MyText
+                                as="link"
+                                title="Fourtune 500"
+                                onClick={onClose}
+                              />
+                              {isLogin && (
+                                <>
+                                  <MyText
+                                    as="link"
+                                    title=" Recommanded Companies"
+                                    onClick={onClose}
+                                  />
+                                  <MyText
+                                    as="link"
+                                    title="Favouriate Comapanies"
+                                    onClick={onClose}
+                                  />
+                                </>
+                              )}
+                            </VStack>
+                          </Collapse>
+                          <NavLink
+                            iconName="user"
+                            title="About Us"
+                            href="/about-us"
+                            onClick={onClose}
+                          />
+                          <NavLink
+                            iconName="phone"
+                            title="Contact Us"
+                            href="/contact-us"
+                            onClick={onClose}
+                          />
+                          {!isLogin && (
+                            <>
+                              <MyButton
+                                title="Login"
+                                variant="outline"
+                                h={'32px'}
+                                w={'120px'}
+                              />
+                              <MyButton title="Signup" w={'120px'} h={'32px'} />
+                            </>
+                          )}
+                          <NavLink
+                            iconName="chartPie"
+                            title="Dashboard"
+                            href="/dashboard"
+                            onClick={onClose}
+                            border={'1px solid'}
+                            borderRadius={'20px'}
+                            p={'6px'}
+                            px={'18px'}
+                            bg={"brand.primary"}
+                            color={'brand.white'}
+                          />
+                        </VStack>
+                      </DrawerBody>
+                    </DrawerContent>
+                  </Drawer>
                 </>
               )}
-
-              {/* DarkMode */}
-              <Center
-                borderRadius={'50%'}
-                bg={'brand.offwhite'}
-                border={'1px solid'}
-                borderColor={'brand.black'}
-                w={'32px'}
-                h={'32px'}
-                cursor={'pointer'}
-                onClick={() => {
-                  setIsDarkMode(!isDarkMode);
-                }}
-              >
-                <MyIcon
-                  name={isDarkMode ? 'sun' : 'moon'}
-                  width="20px"
-                  height="20px"
-                  strokeWidth="1.5"
-                />
-              </Center>
-              {/* Mobile Drawer */}
-              <Center display={{ base: 'flex', lg: 'none' }} onClick={onOpen}>
-                <MyIcon name="hamburgerMenu" />
-              </Center>
-              <Drawer
-                isOpen={isOpen}
-                placement="right"
-                onClose={onClose}
-                size={'xs'}
-              >
-                <DrawerOverlay />
-                <DrawerContent>
-                  <DrawerHeader>
-                    <DrawerCloseButton />
-                  </DrawerHeader>
-                  <DrawerBody>
-                    <VStack
-                      w={'full'}
-                      h={'full'}
-                      alignItems={'flex-start'}
-                      gap={'12px'}
-                      spacing={0}
-                      py={'18px'}
-                    >
-                      <NavLink
-                        iconName="case"
-                        title="Jobs"
-                        onClick={handleJobClick}
-                        href="#"
-                      />
-                      <Collapse in={isJobOpen}>
-                        <VStack
-                          borderLeft={'1px solid'}
-                          px={'12px'}
-                          mx={'12px'}
-                          borderColor={'brand.lightgray'}
-                          alignItems={'flex-start'}
-                        >
-                          <MyText
-                            as="link"
-                            title="Full Stack Developer"
-                            onClick={onClose}
-                          />
-                          <MyText
-                            as="link"
-                            title="Backend Developer"
-                            onClick={onClose}
-                          />
-                          <MyText
-                            as="link"
-                            title="Android Developer"
-                            onClick={onClose}
-                          />
-                          {isLogin && (
-                            <>
-                              <MyText
-                                as="link"
-                                title=" Recommanded Jobs"
-                                onClick={onClose}
-                              />
-                              <MyText
-                                as="link"
-                                title="Saved Jobs"
-                                onClick={onClose}
-                              />
-                            </>
-                          )}
-                        </VStack>
-                      </Collapse>
-                      <NavLink
-                        iconName="company"
-                        title="Company"
-                        onClick={handleCompanyClick}
-                        href="#"
-                      />
-                      <Collapse in={isCompanyOpen}>
-                        <VStack
-                          borderLeft={'1px solid'}
-                          px={'12px'}
-                          mx={'12px'}
-                          borderColor={'brand.lightgray'}
-                          alignItems={'flex-start'}
-                        >
-                          <MyText as="link" title="MNC's" onClick={onClose} />
-                          <MyText as="link" title="Unicorn" onClick={onClose} />
-                          <MyText
-                            as="link"
-                            title="Fourtune 500"
-                            onClick={onClose}
-                          />
-                          {isLogin && (
-                            <>
-                              <MyText
-                                as="link"
-                                title=" Recommanded Companies"
-                                onClick={onClose}
-                              />
-                              <MyText
-                                as="link"
-                                title="Favouriate Comapanies"
-                                onClick={onClose}
-                              />
-                            </>
-                          )}
-                        </VStack>
-                      </Collapse>
-                      <NavLink
-                        iconName="user"
-                        title="About Us"
-                        href="/about-us"
-                        onClick={onClose}
-                      />
-                      <NavLink
-                        iconName="phone"
-                        title="Contact Us"
-                        href="/contact-us"
-                        onClick={onClose}
-                      />
-                      {!isLogin && (
-                        <>
-                          <MyButton
-                            title="Login"
-                            variant="outline"
-                            h={'32px'}
-                            w={'120px'}
-                          />
-                          <MyButton title="Signup" w={'120px'} h={'32px'} />
-                        </>
-                      )}
-                      <NavLink
-                        iconName="chartPie"
-                        title="Dashboard"
-                        href="/dashboard"
-                        onClick={onClose}
-                      />
-                    </VStack>
-                  </DrawerBody>
-                </DrawerContent>
-              </Drawer>
             </HStack>
           </HStack>
         </HStack>
@@ -519,10 +542,17 @@ interface INavLink {
   title: string;
   href?: string;
   [key: string]: any;
+  rightIcon?: boolean;
 }
-const NavLink = ({ iconName, title, href = '#', ...rest }: INavLink) => {
+const NavLink = ({
+  iconName,
+  title,
+  href = '#',
+  rightIcon = false,
+  ...rest
+}: INavLink) => {
   return (
-    <Center _hover={{ color: 'brand.primary' }} gap={'4px'} {...rest}>
+    <Center _hover={{ color: 'brand.primary' }} gap={'3px'} {...rest}>
       <MyIcon
         name={iconName}
         width="18px"
@@ -531,6 +561,14 @@ const NavLink = ({ iconName, title, href = '#', ...rest }: INavLink) => {
         color="currentColor"
       />
       <MyText title={title} as="link" href={href} color="currentColor" />
+      {rightIcon && (
+        <MyIcon
+          name="chevronDown"
+          width="18px"
+          height="18px"
+          color="currentColor"
+        />
+      )}
     </Center>
   );
 };
@@ -553,6 +591,12 @@ const DesktopNav = ({ iconName, title, children }: IDesktopNav) => {
                 color="currentColor"
               />
               <MyText title={title} as="link" href={'#'} color="currentColor" />
+              <MyIcon
+                name="chevronDown"
+                width="18px"
+                height="18px"
+                color="currentColor"
+              />
             </Center>
           </PopoverTrigger>
           <PopoverContent
