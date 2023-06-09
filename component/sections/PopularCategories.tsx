@@ -1,10 +1,10 @@
 import { popularCategoryObject } from '@/constant/constantFields';
 import { Center, HStack, VStack } from '@chakra-ui/react';
 import { MyButton } from '../button';
+import { MyIcon } from '../icon';
 import { Layout } from '../layout';
 import { MainHeading } from '../main-heading';
 import { MyText } from '../text';
-import { MyIcon } from '../icon';
 
 const Categories = () => {
   return (
@@ -15,9 +15,8 @@ const Categories = () => {
           subTitle={'2020 jobs live - 293 added today'}
         />
 
-        <VStack w={'full'}>
+        <VStack w={'full'} pt={'72px'} gap={'52px'}>
           <HStack
-            py={'80px'}
             gap={'30px'}
             flexWrap={'wrap'}
             spacing={0}
@@ -50,16 +49,13 @@ const Categories = () => {
                     >
                       <MyIcon name="job" color="brand.white" />
                     </Center>
-                    <MyText
-                      as="p"
-                      title={item.fieldName}
-                    />
+                    <MyText as="p" title={item.fieldName} />
                   </Center>
                 );
               })}
             </>
           </HStack>
-          <MyButton title="Browse All Categories" />
+          <MyButton title="Browser All Category" />
         </VStack>
       </Layout>
     </VStack>

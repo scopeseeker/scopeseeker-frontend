@@ -20,13 +20,13 @@ const MyBadge = ({ labelArray, key }: IMyBadge) => {
         <Center
           border={'1px solid'}
           borderColor={'brand.darkgray'}
-          px={'8px'}
-          py={'1px'}
-          borderRadius={'6px'}
+          px={'10px'}
+          py={'3px'}
+          borderRadius={'4px'}
           key={key}
         >
           <Text
-            fontSize={{ base: '12px', md: '9.5px' }}
+            fontSize={{ base: '12px', md: '10px' }}
             color={'brand.darkgray'}
           >
             {item}
