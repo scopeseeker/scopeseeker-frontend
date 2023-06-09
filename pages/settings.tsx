@@ -1,4 +1,12 @@
-import { Layout, MainHeading, MyButton, MyIcon, MyText } from '@/component';
+import {
+  Layout,
+  MainHeading,
+  MyButton,
+  MyIcon,
+  MyInput,
+  MyText,
+  OtpVerifyBox,
+} from '@/component';
 import {
   AlertDialog,
   AlertDialogBody,
@@ -9,6 +17,10 @@ import {
   AlertDialogOverlay,
   Box,
   HStack,
+  Modal,
+  ModalCloseButton,
+  ModalContent,
+  ModalOverlay,
   Switch,
   Tab,
   TabList,
@@ -22,7 +34,21 @@ import Head from 'next/head';
 import React, { useRef, useState } from 'react';
 
 export default function Settings() {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const {
+    isOpen: isOpenSetting,
+    onOpen: onOpenSetting,
+    onClose: onCloseSetting,
+  } = useDisclosure();
+  const {
+    isOpen: isOpenModal,
+    onOpen: onOpenModal,
+    onClose: onCloseModal,
+  } = useDisclosure();
+  const {
+    isOpen: isChangeEmailBox,
+    onOpen: onOpenEmailBox,
+    onClose: onCloseEmailBox,
+  } = useDisclosure();
   const cancelRef = useRef(null);
   const [isVerify, setIsVerify] = useState(true);
 
@@ -71,7 +97,7 @@ export default function Settings() {
                 <VStack
                   alignItems={'flex-start'}
                   gap={'32px'}
-                  w={{ base: '100%',sm: '70%', md: '100%', lg: '80%' }}
+                  w={{ base: '100%', sm: '70%', md: '100%', lg: '80%' }}
                 >
                   <MyText as="heading" title="Account Setting" />
 
@@ -82,9 +108,62 @@ export default function Settings() {
                       value="lokesh@gmail.com"
                       button="Change Email"
                       isVerify={isVerify}
+                      onOpenModel={onOpenModal}
+                      onOpenEmailBox={onOpenEmailBox}
                     >
                       <MyIcon name="verifyFill" color="green" width="18px" />
                     </SettingElemsDivTemplate>
+
+                    {/* Verify Email Modal */}
+                    <Modal
+                      isOpen={isOpenModal}
+                      onClose={onCloseModal}
+                      isCentered
+                    >
+                      <ModalOverlay backdropFilter="blur(1px)" />
+                      <ModalContent py={'20px'}>
+                        <ModalCloseButton />
+                        <OtpVerifyBox
+                          value="abhishek123@gmail.com"
+                          onClose={onCloseModal}
+                          align={'center'}
+                        />
+                      </ModalContent>
+                    </Modal>
+
+                    {/* Change Email Modal */}
+                    <Modal
+                      isOpen={isChangeEmailBox}
+                      onClose={onCloseEmailBox}
+                      isCentered
+                    >
+                      <ModalOverlay backdropFilter="blur(1px)" />
+                      <ModalContent py={'20px'}>
+                        <ModalCloseButton />
+                        <VStack
+                          alignItems={'flex-start'}
+                          px={'30px'}
+                          gap={'15px'}
+                        >
+                          <VStack alignItems={'flex-start'} spacing={0}>
+                            <MyText as="title" title="Change Email" />
+                            <MyText
+                              as="span"
+                              title="We will send you a verification email on this email ID"
+                            />
+                          </VStack>
+                          <MyInput
+                            type="text"
+                            placeholder="Enter email"
+                            leftElement={<MyIcon name="email" />}
+                          />
+                          <HStack>
+                            <MyButton title="Cancel" variant="outline" />
+                            <MyButton title="Verify" />
+                          </HStack>
+                        </VStack>
+                      </ModalContent>
+                    </Modal>
 
                     {/* Password */}
                     <SettingElemsDivTemplate
@@ -120,15 +199,16 @@ export default function Settings() {
                         borderColor={'red'}
                         borderWidth={'1.5px'}
                         color={'red'}
-                        onClick={onOpen}
+                        onClick={onOpenSetting}
                         w={{ base: 'full', sm: 'initial', md: 'initial' }}
                       />
                     </HStack>
 
+                    {/* Delete Account Alert Box */}
                     <AlertDialog
-                      isOpen={isOpen}
+                      isOpen={isOpenSetting}
                       leastDestructiveRef={cancelRef}
-                      onClose={onClose}
+                      onClose={onCloseSetting}
                       isCentered
                     >
                       <AlertDialogOverlay backdropFilter="blur(1px)">
@@ -147,14 +227,14 @@ export default function Settings() {
                             <MyButton
                               title="Cancel"
                               ref={cancelRef}
-                              onClick={onClose}
+                              onClick={onCloseSetting}
                               borderRadius="5px"
                               variant="outline"
                             />
                             <MyButton
                               title="Delete"
                               colorScheme="red"
-                              onClick={onClose}
+                              onClick={onCloseSetting}
                               borderRadius="5px"
                               ml={'10px'}
                               bg={'red'}
@@ -222,6 +302,8 @@ interface ISettingElemsDivTemplate {
   button: string;
   children?: React.ReactNode;
   isVerify?: boolean;
+  onOpenModel?: () => void;
+  onOpenEmailBox?: () => void;
 }
 
 const SettingElemsDivTemplate = ({
@@ -230,6 +312,8 @@ const SettingElemsDivTemplate = ({
   button,
   children,
   isVerify,
+  onOpenModel,
+  onOpenEmailBox,
 }: ISettingElemsDivTemplate) => {
   return (
     <Box
@@ -272,9 +356,14 @@ const SettingElemsDivTemplate = ({
             gap={'10px'}
           >
             {isVerify && (
-              <MyButton title={'Verify'} variant={'outline'} h="30px" />
+              <MyButton
+                title={'Verify'}
+                variant={'outline'}
+                h="30px"
+                onClick={onOpenModel}
+              />
             )}
-            <MyButton title={button} h="30px" />
+            <MyButton title={button} h="30px" onClick={onOpenEmailBox} />
           </HStack>
         </HStack>
       </HStack>
