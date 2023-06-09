@@ -51,6 +51,7 @@ export type IconNameType =
   | 'hamburgerMenu'
   | 'chevronDown'
   | 'chevronRight'
+  | 'chevronLeft'
   | 'userVerification'
   | 'circleCheck'
   | 'userEdit'
@@ -68,6 +69,10 @@ export type IconNameType =
   | 'behance'
   | 'figma'
   | 'sheild'
+  | 'statistics'
+  | 'users'
+  | 'target'
+  | 'point'
   | string;
 
 type IconData = {
@@ -89,10 +94,45 @@ export const IconData: IconData = {
       <path d="M6 9l6 6l6 -6"></path>
     </>
   ),
+  chevronLeft: (
+    <>
+   <path d="M15 6l-6 6l6 6"></path>
+    </>
+  ),
+  target: (
+    <>
+   <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+   <path d="M12 7a5 5 0 1 0 5 5"></path>
+   <path d="M13 3.055a9 9 0 1 0 7.941 7.945"></path>
+   <path d="M15 6v3h3l3 -3h-3v-3z"></path>
+   <path d="M15 9l-3 3"></path>
+    </>
+  ),
   edit: (
     <>
       <path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4"></path>
       <path d="M13.5 6.5l4 4"></path>
+    </>
+  ),
+  users: (
+    <>
+   <path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path>
+   <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
+   <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+   <path d="M21 21v-2a4 4 0 0 0 -3 -3.85"></path>
+    </>
+  ),
+ point: (
+    <>
+   <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path>
+    </>
+  ),
+  statistics: (
+    <>
+   <path d="M3 12m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path>
+   <path d="M9 8m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path>
+   <path d="M15 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path>
+   <path d="M4 20l14 0"></path>
     </>
   ),
   sheild: (
