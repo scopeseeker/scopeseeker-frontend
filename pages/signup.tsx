@@ -7,14 +7,13 @@ import {
   MyImage,
   MyInput,
   MyText,
+  OtpVerifyBox,
 } from '@/component';
 import {
   Box,
   Center,
   Fade,
   HStack,
-  PinInput,
-  PinInputField,
   VStack,
   useDisclosure,
 } from '@chakra-ui/react';
@@ -23,11 +22,11 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 export default function Signup() {
-  const [isOtpOpen, setIisOtpOpen] = useState(false);
+  const [isOtpBoxOpen, setIsOtpBoxOpen] = useState(false);
   const { isOpen, onToggle } = useDisclosure();
 
   const handleClickOnBtn = () => {
-    setIisOtpOpen(!isOtpOpen);
+    setIsOtpBoxOpen(!isOtpBoxOpen);
     onToggle();
   };
 
@@ -117,7 +116,7 @@ export default function Signup() {
                 w={'full'}
                 alignItems={'flex-start'}
                 gap={'10px'}
-                display={isOtpOpen ? 'none' : 'flex'}
+                display={isOtpBoxOpen ? 'none' : 'flex'}
               >
                 <Box>
                   <MyText as="heading" title="Sign Up Into Scope Seeker" />
@@ -175,53 +174,10 @@ export default function Signup() {
               {/* OTP Div */}
               <Center w={'full'} h={'full'}>
                 <Fade in={isOpen}>
-                  <Center
-                    w={'full'}
-                    h={'full'}
-                    borderRadius={'8px'}
-                    flexDirection={'column'}
-                    gap={'20px'}
-                    display={isOtpOpen ? 'flex' : 'none'}
-                    pb={'20px'}
-                  >
-                    <MyIcon
-                      name={'sheild'}
-                      color="brand.primary"
-                      width="42"
-                      height="42"
-                    />
-                    <VStack spacing={0}>
-                      <MyText
-                        title="Enter verification code here"
-                        as={'heading'}
-                      />
-                      <MyText
-                        title="We have sent you code to abhijeetraj900@gmail.com"
-                        as={'p'}
-                      />
-                    </VStack>
-                    <HStack>
-                      <PinInput otp>
-                        <PinInputField />
-                        <PinInputField />
-                        <PinInputField />
-                        <PinInputField />
-                      </PinInput>
-                    </HStack>
-                    <HStack>
-                      <MyText title="Not get the code?" as={'p'} />
-                      <MyText title="Click here to resend" as={'link'} />
-                    </HStack>
-                    <HStack>
-                      <MyButton
-                        title="Cancel"
-                        variant="outline"
-                        px={'28px'}
-                        py={'18px'}
-                      />
-                      <MyButton title="Verify" px={'28px'} py={'18px'} />
-                    </HStack>
-                  </Center>
+                  <OtpVerifyBox
+                    display={isOtpBoxOpen ? 'flex' : 'none'}
+                    value="abhijeetraj900@gmail.com"
+                  />
                 </Fade>
               </Center>
 

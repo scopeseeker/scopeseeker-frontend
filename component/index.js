@@ -11,6 +11,7 @@ import { Layout } from './layout';
 import { MainHeading } from './main-heading';
 import { Navbar } from './navbar';
 import { PageHeroSection } from './page-hero-section';
+import OtpVerifyBox from './otp-verify-box/OtpVerifyBox';
 import {
   Categories,
   Company,
@@ -51,5 +52,6 @@ export {
   Testimonials,
   Works,
   SignupSection,
-  MyCompanyCard
+  MyCompanyCard,
+  OtpVerifyBox
 };
