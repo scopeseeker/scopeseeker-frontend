@@ -8,7 +8,6 @@ import {
   AlertDialogHeader,
   AlertDialogOverlay,
   Box,
-  Button,
   HStack,
   Switch,
   Tab,
@@ -32,16 +31,24 @@ export default function Settings() {
       <Head>
         <title>Settings | Scope Seeker</title>
       </Head>
-      <Layout>
+      <Layout w={'full'}>
         <VStack w={'full'} alignItems={'flex-start'} gap={'20px'}>
-          <MainHeading title="Settings" align={'start'} />
+          <MainHeading
+            title="Settings"
+            align={'start'}
+            subTitle="Customize account visibility, notifications, and profile for personalized experience."
+          />
           <Tabs variant="unstyled" w={'full'}>
-            <TabList gap={'32px'} marginBottom={'10px'}>
+            <TabList
+              gap={{ base: '12px', md: '32px' }}
+              marginBottom={'32px'}
+              w={'full'}
+            >
               <Tab
                 _selected={{ color: 'white', bg: 'brand.primary' }}
                 border={'1px solid'}
                 borderColor={'brand.lightgray'}
-                w={'220px'}
+                w={{ base: '50%', md: '220px' }}
                 h={'60px'}
                 borderRadius={'10px'}
               >
@@ -51,17 +58,21 @@ export default function Settings() {
                 _selected={{ color: 'white', bg: 'brand.primary' }}
                 border={'1px solid'}
                 borderColor={'brand.lightgray'}
-                w={'220px'}
+                w={{ base: '50%', md: '220px' }}
                 h={'60px'}
                 borderRadius={'10px'}
               >
                 Email Setting
               </Tab>
             </TabList>
-            <TabPanels>
+            <TabPanels alignItems={'flex-start'}>
               {/* Account setting Tab */}
-              <TabPanel>
-                <VStack alignItems={'flex-start'} gap={'5px'} w={'80%'}>
+              <TabPanel px={0}>
+                <VStack
+                  alignItems={'flex-start'}
+                  gap={'32px'}
+                  w={{ base: '100%',sm: '70%', md: '100%', lg: '80%' }}
+                >
                   <MyText as="heading" title="Account Setting" />
 
                   <VStack alignItems={'flex-start'} w={'full'} gap={'20px'}>
@@ -93,7 +104,14 @@ export default function Settings() {
                     </SettingElemsDivTemplate>
 
                     {/* Delete Account */}
-                    <HStack gap={'40px'}>
+                    <HStack
+                      gap={{ base: '15px', sm: '40px', md: '40px' }}
+                      flexDir={{ base: 'column', sm: 'row', md: 'row' }}
+                      w={'full'}
+                      spacing={0}
+                      alignItems={{ base: 'flex-start', md: 'center' }}
+                      paddingTop={'12px'}
+                    >
                       <MyText as="title" title="Delete my account:" />
                       <MyButton
                         title={'Delete Account'}
@@ -103,6 +121,7 @@ export default function Settings() {
                         borderWidth={'1.5px'}
                         color={'red'}
                         onClick={onOpen}
+                        w={{ base: 'full', sm: 'initial', md: 'initial' }}
                       />
                     </HStack>
 
@@ -112,14 +131,16 @@ export default function Settings() {
                       onClose={onClose}
                       isCentered
                     >
-                      <AlertDialogOverlay>
-                        <AlertDialogContent>
+                      <AlertDialogOverlay backdropFilter="blur(1px)">
+                        <AlertDialogContent mx={'8px'}>
                           <AlertDialogHeader fontSize="lg" fontWeight="bold">
                             You want to delete the account?
+                            <AlertDialogCloseButton />
                           </AlertDialogHeader>
 
                           <AlertDialogBody>
-                            Are you sure? You can&aposa;t undo this action afterwards.
+                            Are you sure? You can&aposa;t undo this action
+                            afterwards.
                           </AlertDialogBody>
 
                           <AlertDialogFooter>
@@ -144,13 +165,17 @@ export default function Settings() {
                       </AlertDialogOverlay>
                     </AlertDialog>
 
-                    <MyButton title="SignOut" px="50px" />
+                    <MyButton
+                      title="SignOut"
+                      px="50px"
+                      w={{ base: 'full', sm: 'initial' }}
+                    />
                   </VStack>
                 </VStack>
               </TabPanel>
 
               {/* Email setting Tab */}
-              <TabPanel>
+              <TabPanel px={0}>
                 <VStack alignItems={'flex-start'} gap={'5px'}>
                   <MyText as={'heading'} title="Newsletter Preference" />
                   <VStack alignItems={'flex-start'} w={'full'} gap={'20px'}>
@@ -176,7 +201,10 @@ export default function Settings() {
                       dets="Stay updated on the latest job opportunities with XYZ Enterprises by subscribing to our email notifications."
                     />
 
-                    <EmailSettingElemsDivTemplate label='Blog' dets='New blog post: "How to Land Your Dream Job'/>
+                    <EmailSettingElemsDivTemplate
+                      label="Blog"
+                      dets='New blog post: "How to Land Your Dream Job'
+                    />
                   </VStack>
                 </VStack>
               </TabPanel>
@@ -213,20 +241,36 @@ const SettingElemsDivTemplate = ({
       w={'full'}
       bg={'brand.offwhite'}
     >
-      <HStack whiteSpace={'nowrap'} position={'relative'}>
-        <MyText as="title" title={label} />
+      <HStack whiteSpace={'nowrap'} spacing={0}>
         <HStack
           justifyContent={'space-between'}
-          right={0}
-          position={'absolute'}
-          w={'75%'}
+          w={'full'}
+          flexDir={{ base: 'column', md: 'row' }}
+          alignItems={{ base: 'flex-start', md: 'center' }}
+          spacing={0}
+          flexWrap={'wrap'}
         >
-          <HStack spacing={0} gap={'4px'}>
-            <MyText as="span" title={value} />
-            {children}
+          <HStack
+            gap={{ base: '0px', sm: '20px', md: '70px' }}
+            flexDir={{ base: 'column', sm: 'row', md: 'row' }}
+            alignItems={{ base: 'flex-start', sm: 'center', md: 'center' }}
+            spacing={0}
+            mb={{ base: '10px', md: '0px' }}
+          >
+            <Box w={{ base: '100px', sm: 'initial', md: '100px' }}>
+              <MyText as="title" title={label} />
+            </Box>
+            <HStack spacing={0} gap={'4px'}>
+              <MyText as="span" title={value} />
+              {children}
+            </HStack>
           </HStack>
 
-          <HStack>
+          <HStack
+            alignItems={{ base: 'flex-start', md: 'center' }}
+            spacing={0}
+            gap={'10px'}
+          >
             {isVerify && (
               <MyButton title={'Verify'} variant={'outline'} h="30px" />
             )}
@@ -254,7 +298,7 @@ const EmailSettingElemsDivTemplate = ({
       borderColor={'brand.lightgray'}
       p={'20px'}
       _hover={{ bg: 'brand.aliceblue' }}
-      w={'60%'}
+      w={{ base: '100%', md: '100%', lg: '60%' }}
     >
       <HStack justifyContent={'space-between'}>
         <VStack alignItems={'flex-start'}>
