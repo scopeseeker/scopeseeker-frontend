@@ -34,23 +34,43 @@ import Head from 'next/head';
 import React, { useRef, useState } from 'react';
 
 export default function Settings() {
+  // for Delete Account
   const {
     isOpen: isOpenSetting,
     onOpen: onOpenSetting,
     onClose: onCloseSetting,
   } = useDisclosure();
+  // For verify Email account
   const {
     isOpen: isOpenModal,
     onOpen: onOpenModal,
     onClose: onCloseModal,
   } = useDisclosure();
+  // For Change Email Account
   const {
     isOpen: isChangeEmailBox,
     onOpen: onOpenEmailBox,
     onClose: onCloseEmailBox,
   } = useDisclosure();
+  // For Verify Phone Number
+  const {
+    isOpen: isOpenVerifyNumberModel,
+    onOpen: onOpenVerifyNumberModel,
+    onClose: onCloseVerifyNumberModel,
+  } = useDisclosure();
+  // For Change Number
+  const {
+    isOpen: isOpenChangeNumber,
+    onOpen: onOpenChangeNumber,
+    onClose: onCloseChangeNumber,
+  } = useDisclosure();
   const cancelRef = useRef(null);
   const [isVerify, setIsVerify] = useState(true);
+  const [open, setOpen] = useState(false);
+
+  const handleEmailVerifyBtn = () => {
+    setOpen(!open);
+  };
 
   return (
     <>
@@ -144,6 +164,7 @@ export default function Settings() {
                           alignItems={'flex-start'}
                           px={'30px'}
                           gap={'15px'}
+                          display={open ? 'none' : 'flex'}
                         >
                           <VStack alignItems={'flex-start'} spacing={0}>
                             <MyText as="title" title="Change Email" />
@@ -158,10 +179,24 @@ export default function Settings() {
                             leftElement={<MyIcon name="email" />}
                           />
                           <HStack>
-                            <MyButton title="Cancel" variant="outline" />
-                            <MyButton title="Verify" />
+                            <MyButton
+                              title="Cancel"
+                              variant="outline"
+                              onClick={onCloseEmailBox}
+                            />
+                            <MyButton
+                              title="Verify"
+                              onClick={handleEmailVerifyBtn}
+                            />
                           </HStack>
                         </VStack>
+
+                        <OtpVerifyBox
+                          value="abhishek123@gmail.com"
+                          onClose={onCloseEmailBox}
+                          align={'center'}
+                          display={open ? 'flex' : 'none'}
+                        />
                       </ModalContent>
                     </Modal>
 
@@ -178,9 +213,77 @@ export default function Settings() {
                       value="+91XXXXXXXX32"
                       button="Change Number"
                       isVerify={isVerify}
+                      onOpenModel={onOpenVerifyNumberModel}
+                      onOpenEmailBox={onOpenChangeNumber}
                     >
                       <MyIcon name="verifyFill" color="green" width="18px" />
                     </SettingElemsDivTemplate>
+
+                    {/* Verify Phone Number */}
+                    <Modal
+                      isOpen={isOpenVerifyNumberModel}
+                      onClose={onCloseVerifyNumberModel}
+                      isCentered
+                    >
+                      <ModalOverlay backdropFilter="blur(1px)" />
+                      <ModalContent py={'20px'}>
+                        <ModalCloseButton />
+                        <OtpVerifyBox
+                          value="+91XXXXXXXX04"
+                          onClose={onCloseVerifyNumberModel}
+                          align={'center'}
+                        />
+                      </ModalContent>
+                    </Modal>
+
+                    {/* Change Phone Number */}
+                    <Modal
+                      isOpen={isOpenChangeNumber}
+                      onClose={onCloseChangeNumber}
+                      isCentered
+                    >
+                      <ModalOverlay backdropFilter="blur(1px)" />
+                      <ModalContent py={'20px'}>
+                        <ModalCloseButton />
+                        <VStack
+                          alignItems={'flex-start'}
+                          px={'30px'}
+                          gap={'15px'}
+                          display={open ? 'none' : 'flex'}
+                        >
+                          <VStack alignItems={'flex-start'} spacing={0}>
+                            <MyText as="title" title="Change Number" />
+                            <MyText
+                              as="span"
+                              title="We will send you a verification OTP on this Phone Number"
+                            />
+                          </VStack>
+                          <MyInput
+                            type="text"
+                            placeholder="Enter Number"
+                            leftElement={<MyIcon name="phone" />}
+                          />
+                          <HStack>
+                            <MyButton
+                              title="Cancel"
+                              variant="outline"
+                              onClick={onCloseChangeNumber}
+                            />
+                            <MyButton
+                              title="Verify"
+                              onClick={handleEmailVerifyBtn}
+                            />
+                          </HStack>
+                        </VStack>
+
+                        <OtpVerifyBox
+                          value="+91XXXXXXXX54"
+                          onClose={onCloseChangeNumber}
+                          align={'center'}
+                          display={open ? 'flex' : 'none'}
+                        />
+                      </ModalContent>
+                    </Modal>
 
                     {/* Delete Account */}
                     <HStack
@@ -219,7 +322,7 @@ export default function Settings() {
                           </AlertDialogHeader>
 
                           <AlertDialogBody>
-                            Are you sure? You can&aposa;t undo this action
+                            Are you sure? You can&#x27;t undo this action
                             afterwards.
                           </AlertDialogBody>
 
