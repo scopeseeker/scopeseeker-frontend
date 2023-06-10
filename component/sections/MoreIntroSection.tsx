@@ -1,5 +1,6 @@
 import { Layout, MyIcon, MyImage, MyText } from '@/component';
 import { Center, Flex, HStack, Heading, Stack, Text } from '@chakra-ui/react';
+import Image from 'next/image';
 
 const Motive = () => {
   return (
@@ -7,9 +8,9 @@ const Motive = () => {
       <Flex w={'full'} flexDirection={{ base: 'column', md: 'row' }}>
         <Center w={{ base: '100%', md: '50%' }}>
           <MyImage
-            src={'/assets/images/bb.png'}
-            alt="svg-image"
-            width={450}
+            src={'/assets/svgs/teamup.svg'}
+            alt="svg"
+            width={500}
             height={500}
           />
         </Center>

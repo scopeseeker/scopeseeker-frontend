@@ -84,10 +84,7 @@ const HeroSection = () => {
                   px={'4px'}
                 />
               </HStack>
-              <MyButton
-                title="Find Jobs"
-                
-              />
+              <MyButton title="Find Jobs" />
             </HStack>
             <Flex
               gap={'5px'}
@@ -110,10 +107,10 @@ const HeroSection = () => {
         </Center>
         <Center justifyContent={'flex-end'} h={'full'}>
           <MyImage
-            src="/assets/images/hero-section-img.png"
-            alt={'hero-setion-image'}
-            width={320}
-            height={350}
+            src={'/assets/svgs/office.svg'}
+            alt="svg"
+            width={500}
+            height={500}
           />
         </Center>
       </Center>
