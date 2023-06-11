@@ -3,6 +3,7 @@ import {
   Layout,
   MyButton,
   MyDivider,
+  MyIcon,
   MyJobCard,
   MyText,
 } from '@/component';
@@ -14,6 +15,7 @@ import {
   GridItem,
   HStack,
   Input,
+  Select,
   VStack,
 } from '@chakra-ui/react';
 import Head from 'next/head';
@@ -21,6 +23,7 @@ import { useState } from 'react';
 
 export default function Jobs() {
   const [isSortClicked, setIsSortClicked] = useState(true);
+
   return (
     <>
       <Head>
@@ -52,6 +55,44 @@ export default function Jobs() {
               fontSize={'14px'}
               width={'30%'}
             />
+
+
+            <HStack>
+            <Select borderRadius={'12px'} size='sm' placeholder="Location" >
+              <option value="option1">Bhopal</option>
+              <option value="option2">New Delhi</option>
+              <option value="option3">NewYork</option>
+            </Select>
+            <Select borderRadius={'8px'} size='sm'  placeholder="Job Type">
+              <option value="option1">IT</option>
+              <option value="option2">Software Development</option>
+              <option value="option3">Web Development</option>
+            </Select>
+            <Select borderRadius={'8px'} size='sm' placeholder="Experience">
+              <option value="option1">0-2years</option>
+              <option value="option2">2-5 years</option>
+              <option value="option3">5-9 years</option>
+            </Select>
+
+            </HStack>
+
+            
+
+            {/* <Popover>
+              <PopoverTrigger>
+                <HStack cursor={'pointer'}>
+                  <MyIcon name="location" />
+                  <MyText title="Location" as={'title'} />
+                  <MyIcon name="chevronDown" />
+                </HStack>
+              </PopoverTrigger>
+              <Portal>
+                <PopoverContent>
+                  <PopoverCloseButton />
+                  <PopoverBody></PopoverBody>
+                </PopoverContent>
+              </Portal>
+            </Popover> */}
 
             <MyButton title="Find Jobs" h={'100%'} px={'20px'} />
           </HStack>
