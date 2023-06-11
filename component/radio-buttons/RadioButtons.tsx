@@ -21,6 +21,7 @@ function RadioButtons(props: any) {
         }}
         px={'10px'}
         py={'5px'}
+        fontSize={'13px'}
       >
         {props.children}
       </Box>
