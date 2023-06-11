@@ -1,11 +1,10 @@
 import {
   Filter,
   Layout,
-  MyButton,
-  MyDivider,
   MyIcon,
   MyJobCard,
   MyText,
+  PageHeroSection,
 } from '@/component';
 import { jobCardFields, jobsFilter } from '@/constant/constantFields';
 import {
@@ -15,7 +14,6 @@ import {
   GridItem,
   HStack,
   Input,
-  Select,
   VStack,
 } from '@chakra-ui/react';
 import Head from 'next/head';
@@ -29,6 +27,12 @@ export default function Jobs() {
       <Head>
         <title>Jobs | Scope Seeker</title>
       </Head>
+      <PageHeroSection
+        title="Explore The Oppournities"
+        alt="jobs"
+        subtitle="Here you will find the job according to your skills."
+        src="/assets/images/terms.png"
+      />
       <Layout>
         <VStack
           gap={{ base: '30px', lg: '40px' }}
@@ -36,69 +40,8 @@ export default function Jobs() {
           minH={'100vh'}
           mx={'auto'}
           spacing={0}
+          mt={'32px'}
         >
-          {/* Search Box for Job and Company */}
-          <HStack
-            w={'full'}
-            height={{ base: '40px', sm: '52px' }}
-            boxShadow={'0px 0px 120px rgb(0, 0, 0, 0.2)'}
-            borderRadius={'50px'}
-            overflow={'hidden'}
-            spacing={0}
-            justifyContent={'space-between'}
-          >
-            <Input
-              variant={'unstyled'}
-              mx={'20px'}
-              h={'full'}
-              placeholder="Search by role, companies, technologies..."
-              fontSize={'14px'}
-              width={'30%'}
-            />
-
-
-            <HStack>
-            <Select borderRadius={'12px'} size='sm' placeholder="Location" >
-              <option value="option1">Bhopal</option>
-              <option value="option2">New Delhi</option>
-              <option value="option3">NewYork</option>
-            </Select>
-            <Select borderRadius={'8px'} size='sm'  placeholder="Job Type">
-              <option value="option1">IT</option>
-              <option value="option2">Software Development</option>
-              <option value="option3">Web Development</option>
-            </Select>
-            <Select borderRadius={'8px'} size='sm' placeholder="Experience">
-              <option value="option1">0-2years</option>
-              <option value="option2">2-5 years</option>
-              <option value="option3">5-9 years</option>
-            </Select>
-
-            </HStack>
-
-            
-
-            {/* <Popover>
-              <PopoverTrigger>
-                <HStack cursor={'pointer'}>
-                  <MyIcon name="location" />
-                  <MyText title="Location" as={'title'} />
-                  <MyIcon name="chevronDown" />
-                </HStack>
-              </PopoverTrigger>
-              <Portal>
-                <PopoverContent>
-                  <PopoverCloseButton />
-                  <PopoverBody></PopoverBody>
-                </PopoverContent>
-              </Portal>
-            </Popover> */}
-
-            <MyButton title="Find Jobs" h={'100%'} px={'20px'} />
-          </HStack>
-
-          <MyDivider />
-
           <Center
             alignItems={'flex-start'}
             w={'full'}
@@ -109,8 +52,40 @@ export default function Jobs() {
               <Filter FilterObject={jobsFilter} />
             </Box>
             <VStack minH="100vh" w="full">
-              <HStack w="full" justifyContent="space-between">
-                <MyText title="Showing 120 jobs" as="heading" />
+              <HStack w="full" justifyContent="space-between" gap={'62px'}>
+                <HStack
+                  overflow={'hidden'}
+                  spacing={0}
+                  justifyContent={'space-between'}
+                  border={'1px solid'}
+                  borderColor={'brand.lightgray'}
+                  pl={'12px'}
+                  w={{ base: '100%', sm: '70%', md: '60%', lg: '50%' }}
+                  borderRadius={'60px'}
+                  boxShadow={'0px 0px 20px rgba(0,0,0,0.1)'}
+                >
+                  <Input
+                    variant={'unstyled'}
+                    h={'full'}
+                    placeholder="Search by Role, Location, Type..."
+                    fontSize={'14px'}
+                  />
+                  <Center
+                    cursor={'pointer'}
+                    p={'8px'}
+                    px={'10px'}
+                    bg={'brand.primary'}
+                    borderRadius={'0px'}
+                  >
+                    <MyIcon
+                      name="search"
+                      color="brand.white"
+                      width="20px"
+                      height="20px"
+                      strokeWidth="2"
+                    />
+                  </Center>
+                </HStack>
                 {/* Sort Button */}
                 <HStack
                   w="140px"
@@ -120,6 +95,8 @@ export default function Jobs() {
                   border={'1.5px solid'}
                   borderColor={'brand.primary'}
                   spacing={0}
+                  flexShrink={0}
+                  display={{ base: 'none', sm: 'flex' }}
                 >
                   <Center
                     h={'full'}
@@ -159,7 +136,7 @@ export default function Jobs() {
                 }}
                 gap={{ base: 6, lg: 4, xl: 6 }}
                 mx={'auto'}
-                pt={'25px'}
+                pt={'42px'}
                 width={'100%'}
               >
                 <>
