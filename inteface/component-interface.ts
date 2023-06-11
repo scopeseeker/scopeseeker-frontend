@@ -46,6 +46,7 @@ export interface IMyInputProps {
   rightElement?: React.ReactNode;
   type: string;
   labelTitle?: string;
+  onChange?: any; 
   [key: string]: any;
 }
 
