@@ -9,10 +9,9 @@ import {
 import RadioComp from '@/component/radio-buttons/RadioButtons';
 import {
   Box,
-  Button,
   Center,
+  Collapse,
   HStack,
-  Input,
   Select,
   Textarea,
   VStack,
@@ -27,6 +26,12 @@ function EditProfile() {
 
   const [items, setItems] = useState<string[]>([]);
   const [inputText, setInputText] = useState('');
+  const [showExperience, setShowExperience] = React.useState(false);
+  const [showEducation, setShowEducation] = useState(false);
+
+  const handleOpenWorkExperience = () => setShowExperience(!showExperience);
+
+  const handleOpenEdcation = () => setShowEducation(!showEducation);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputText(e.target.value);
@@ -78,7 +83,7 @@ function EditProfile() {
             <FiledDivTempalate>
               <MyText as="title" title="Basic Information" />
 
-              <VStack w={'full'} alignItems={'flex-start'} gap={'10px'}>
+              <VStack w={'full'} alignItems={'flex-start'} gap={'22px'}>
                 <MyInput
                   labelTitle="Full Name"
                   type="text"
@@ -173,7 +178,11 @@ function EditProfile() {
                 {/* For Course Specialization */}
                 <VStack alignItems={'flex-start'}>
                   <MyText as="span" title="Course Specialization" />
-                  <Select placeholder="Computer Science" w={'500px'} fontSize={'13px'}>
+                  <Select
+                    placeholder="Computer Science"
+                    w={'500px'}
+                    fontSize={'13px'}
+                  >
                     {[
                       'Aerospace',
                       'Automotive',
@@ -218,69 +227,323 @@ function EditProfile() {
                     resize={'none'}
                   />
                 </VStack>
-
-                {/* For Skills */}
-                <VStack alignItems={'flex-start'} w={'full'}>
-                  <MyText as="span" title="Skills" />
-                  <Box w={'full'}>
-                    <HStack w={'full'}>
-                      <MyInput
-                      type='text'
-                        placeholder="Type something..."
-                        value={inputText}
-                        onChange={handleInputChange}
-                        leftElement={<MyIcon name='code'/>}
-                      />
-                      <Box w={'20%'}>
-                        <MyButton title="Add item" onClick={handleAddItem} />
-                      </Box>
-                    </HStack>
-                    <HStack mt={'10px'}>
-                      {items.map((item, index) => (
-                        <Box
-                          key={index}
-                          // boxShadow="0px 0px 30px rgb(0,0,0,0.1)"
-                          display={'flex'}
-                          alignItems={'center'}
-                          pl={'10px'}
-                          borderRadius={'5px'}
-                          borderWidth={'1.5px'}
-                          borderColor={'brand.primary'}
-                        >
-                          <MyText
-                            as="span"
-                            title={item}
-                            color="brand.darkgray"
-                          />
-                          <Box
-                            px={0}
-                            
-                            onClick={() => handleDeleteItem(index)}
-                          >
-                            <MyIcon name="cross" width="16px" />
-                          </Box>
-                        </Box>
-                      ))}
-                    </HStack>
-                  </Box>
-                </VStack>
               </VStack>
             </FiledDivTempalate>
+
+            {/* Resume Section */}
             <FiledDivTempalate>
               <MyText as="title" title="Resume" />
+              <VStack w={'full'} gap={'20px'}>
+                <HStack w={'full'} justifyContent={'space-between'}>
+                  <MyText title="Lokesh.pdf" as={'small'} />
+
+                  <Center
+                    w={'30px'}
+                    h={'30px'}
+                    borderRadius={'50%'}
+                    bg={'brand.aliceblue'}
+                    cursor={'pointer'}
+                  >
+                    <MyIcon name={'delete'} />
+                  </Center>
+                </HStack>
+
+                <Center w={'full'}>
+                  <Center
+                    h={'220px'}
+                    w={'full'}
+                    border={'2px dashed'}
+                    borderColor={'brand.darkgray'}
+                    bg={'brand.aliceblue'}
+                    flexDir={'column'}
+                    gap={'8px'}
+                    borderRadius={'10px'}
+                  >
+                    <MyIcon name={'upload'} />
+                    <MyButton title="Upload Resume" />
+                    <MyText
+                      title="Supported formate .pdf .doc .docx, upto 2 MB "
+                      as={'span'}
+                      color="brand.darkgray"
+                    />
+                  </Center>
+                </Center>
+              </VStack>
             </FiledDivTempalate>
+
+            {/* Skill Section */}
             <FiledDivTempalate>
               <MyText as="title" title="Skills" />
+              <VStack alignItems={'flex-start'} w={'full'}>
+                <Box w={'full'}>
+                  <HStack w={'full'}>
+                    <MyInput
+                      type="text"
+                      placeholder="Type something..."
+                      value={inputText}
+                      onChange={handleInputChange}
+                      leftElement={<MyIcon name="college" />}
+                    />
+                    <Box w={'20%'}>
+                      <MyButton title="Add item" onClick={handleAddItem} />
+                    </Box>
+                  </HStack>
+                  <HStack
+                    mt={'20px'}
+                    flexWrap={'wrap'}
+                    spacing={0}
+                    gap={'10px'}
+                  >
+                    {items.map((item, index) => (
+                      <Box
+                        key={index}
+                        display={'flex'}
+                        alignItems={'center'}
+                        px={'8px'}
+                        borderRadius={'5px'}
+                        borderWidth={'1.5px'}
+                        borderColor={'brand.primary'}
+                        gap={'5px'}
+                      >
+                        <MyText as="span" title={item} color="brand.primary" />
+                        <Box onClick={() => handleDeleteItem(index)}>
+                          <MyIcon
+                            name="cross"
+                            width="16px"
+                            cursor={'pointer'}
+                            color="red.500"
+                          />
+                        </Box>
+                      </Box>
+                    ))}
+                  </HStack>
+                </Box>
+              </VStack>
             </FiledDivTempalate>
+
+            {/* Work Experience */}
             <FiledDivTempalate>
-              <MyText as="title" title="Work Experience" />
+              <HStack>
+                <MyText as="title" title="Work Experience" />
+                <MyIcon
+                  name="add"
+                  onClick={handleOpenWorkExperience}
+                  cursor={'pointer'}
+                  width="16px"
+                  color="brand.primary"
+                  strokeWidth="2.5"
+                />
+              </HStack>
+              <Collapse in={showExperience}>
+                <VStack gap={'22px'} w={'full'}>
+                  <HStack w={'full'}>
+                    <MyInput
+                      labelTitle="Designation"
+                      leftElement={<MyIcon name="job" />}
+                      type="text"
+                      placeholder="Type your designation"
+                    />
+                    <MyInput
+                      labelTitle="Sector"
+                      leftElement={<MyIcon name="fresher" />}
+                      type="text"
+                      placeholder="Type your Sector"
+                    />
+                  </HStack>
+
+                  <HStack>
+                    <MyInput
+                      labelTitle="From (Year)"
+                      leftElement={<MyIcon name="time" />}
+                      type="text"
+                      placeholder="Enter Year"
+                    />
+                    <MyInput
+                      labelTitle="To (Year)"
+                      leftElement={<MyIcon name="time" />}
+                      type="text"
+                      placeholder="Enter Year"
+                    />
+                  </HStack>
+
+                  <HStack>
+                    <MyInput
+                      labelTitle="Organisation"
+                      leftElement={<MyIcon name="college" />}
+                      type="text"
+                      placeholder="Enter Organisation"
+                    />
+                    <MyInput
+                      labelTitle="Country"
+                      leftElement={<MyIcon name="company" />}
+                      type="text"
+                      placeholder="Enter Country"
+                    />
+                  </HStack>
+
+                  <HStack>
+                    <MyInput
+                      labelTitle="State"
+                      leftElement={<MyIcon name="company" />}
+                      type="text"
+                      placeholder="Enter Your State"
+                    />
+                    <MyInput
+                      labelTitle="City"
+                      leftElement={<MyIcon name="company" />}
+                      type="text"
+                      placeholder="Enter Your City"
+                    />
+                  </HStack>
+                </VStack>
+              </Collapse>
             </FiledDivTempalate>
+
+            {/* Education */}
             <FiledDivTempalate>
-              <MyText as="title" title="Education" />
+              <HStack>
+                <MyText as="title" title="Education" />
+                <MyIcon
+                  name="add"
+                  onClick={handleOpenEdcation}
+                  cursor={'pointer'}
+                  width="16px"
+                  color="brand.primary"
+                  strokeWidth="2.5"
+                />
+              </HStack>
+              <Collapse in={showEducation}>
+                <VStack gap={'22px'} w={'full'}>
+                  <HStack w={'full'}>
+                    <MyInput
+                      labelTitle="Qualification"
+                      leftElement={<MyIcon name="job" />}
+                      type="text"
+                      placeholder="Enter your qualification"
+                    />
+                    <MyInput
+                      labelTitle="Degree "
+                      leftElement={<MyIcon name="fresher" />}
+                      type="text"
+                      placeholder="Enter your degree"
+                    />
+                  </HStack>
+
+                  <HStack w={'full'}>
+                    <MyInput
+                      labelTitle="From (Year)"
+                      leftElement={<MyIcon name="time" />}
+                      type="text"
+                      placeholder="Enter year"
+                    />
+                    <MyInput
+                      labelTitle="To (Year)"
+                      leftElement={<MyIcon name="time" />}
+                      type="text"
+                      placeholder="Enter year"
+                    />
+                  </HStack>
+
+                  <HStack w={'full'}>
+                    <MyInput
+                      labelTitle="Percentage"
+                      leftElement={<MyIcon name="college" />}
+                      type="text"
+                      placeholder="Enter your percentage"
+                    />
+                    <MyInput
+                      labelTitle="CGPA"
+                      leftElement={<MyIcon name="company" />}
+                      type="text"
+                      placeholder="Enter your cgpa"
+                    />
+                  </HStack>
+
+                  <HStack w={'full'}>
+                    <MyInput
+                      labelTitle="Specialization"
+                      leftElement={<MyIcon name="company" />}
+                      type="text"
+                      placeholder="Enter your specialization"
+                    />
+                    <MyInput
+                      labelTitle="University "
+                      leftElement={<MyIcon name="company" />}
+                      type="text"
+                      placeholder="Enter your university"
+                    />
+                  </HStack>
+
+                  <MyInput
+                    labelTitle="Institute"
+                    leftElement={<MyIcon name="college" />}
+                    type="text"
+                    placeholder="Enter your Institute"
+                  />
+
+                  <HStack>
+                    <MyInput
+                      labelTitle="Country"
+                      leftElement={<MyIcon name="college" />}
+                      type="text"
+                      placeholder="Enter your country"
+                    />
+                    <MyInput
+                      labelTitle="State"
+                      leftElement={<MyIcon name="college" />}
+                      type="text"
+                      placeholder="Enter your state"
+                    />
+                    <MyInput
+                      labelTitle="City"
+                      leftElement={<MyIcon name="college" />}
+                      type="text"
+                      placeholder="Enter your city"
+                    />
+                  </HStack>
+                </VStack>
+              </Collapse>
             </FiledDivTempalate>
+
+            {/* Social Links  */}
             <FiledDivTempalate>
               <MyText as="title" title="Social Media" />
+              <VStack gap={'22px'} w={'full'} alignItems={'flex-start'}>
+                <HStack w={'full'}>
+                  <MyInput
+                    labelTitle="Linkedin"
+                    leftElement={<MyIcon name="linkedin" />}
+                    type="text"
+                    placeholder="Enter the link"
+                  />
+                  <MyInput
+                    labelTitle="Facebook"
+                    leftElement={<MyIcon name="facebook" />}
+                    type="text"
+                    placeholder="Enter the link"
+                  />
+                </HStack>
+
+                <HStack w={'full'}>
+                  <MyInput
+                    labelTitle="Instagram"
+                    leftElement={<MyIcon name="instagram" />}
+                    type="text"
+                    placeholder="Enter the link"
+                  />
+                  <MyInput
+                    labelTitle="GitHub"
+                    leftElement={<MyIcon name="github" />}
+                    type="text"
+                    placeholder="Enter the link"
+                  />
+                </HStack>
+              </VStack>
             </FiledDivTempalate>
+
+            <VStack w={'full'} alignItems={'flex-start'}>
+              <MyButton title="Submit" px="50px" py={'10px'} />
+            </VStack>
           </VStack>
         </HStack>
       </Layout>
