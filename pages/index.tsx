@@ -32,7 +32,40 @@ export default function Home() {
       <Flex flexDirection={'column'} gap={'70px'}>
         {/* <HeroSection /> */}
         <Layout>
-          <VStack w={'full'} h={'full'}>
+          <VStack w={'full'} h={'full'} position={'relative'} gap={'32px'}>
+            <Center position={'absolute'} top={'35%'} left={'10%'}>
+              <MyImage
+                alt="ico"
+                src={'/assets/images/bag.png'}
+                width={55}
+                height={55}
+              />
+            </Center>
+            <Center position={'absolute'} bottom={'20%'} left={'0%'}>
+              <MyImage
+                alt="ico"
+                src={'/assets/images/calender.png'}
+                width={45}
+                height={45}
+              />
+            </Center>
+            <Center position={'absolute'} top={'35%'} right={'10%'}>
+              <MyImage
+                alt="ico"
+                src={'/assets/images/bell.png'}
+                width={45}
+                height={45}
+              />
+            </Center>
+            <Center position={'absolute'} bottom={'20%'} right={'0%'}>
+              <MyImage
+                alt="ico"
+                src={'/assets/images/outfit.png'}
+                width={45}
+                height={45}
+              />
+            </Center>
+            
             <HStack w={'full'} h={'full'} justifyContent={'center'}>
               <VStack>
                 <Center
@@ -127,7 +160,6 @@ export default function Home() {
               justifyContent={'center'}
               color={'brand.white'}
               px={'12px'}
-              mt={'72px'}
               w={'full'}
             >
               <VStack w={'120px'} h={'full'} justifyContent={'center'}>
