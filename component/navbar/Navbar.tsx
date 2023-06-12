@@ -23,9 +23,9 @@ import {
 } from '@chakra-ui/react';
 import Link from 'next/link';
 import React, { useState } from 'react';
-import { MyButton } from '../button';
-import { MyDivider } from '../divider';
-import { MyIcon } from '../icon';
+import MyButton from '../button/MyButton';
+import MyDivider from '../divider/MyDivider';
+import MyIcon from '../icon/MyIcon';
 import MyImage from '../image/MyImage';
 import MyText from '../text/MyText';
 
@@ -519,7 +519,7 @@ const Navbar = () => {
                             borderRadius={'20px'}
                             p={'6px'}
                             px={'18px'}
-                            bg={"brand.primary"}
+                            bg={'brand.primary'}
                             color={'brand.white'}
                           />
                         </VStack>

@@ -165,7 +165,11 @@ export default function Dashboard() {
               gap={'12px'}
               w={'60%'}
             >
-              <MyText title="Welcome back Lokesh!" as="heading" color='brand.white' />
+              <MyText
+                title="Welcome back Lokesh!"
+                as="heading"
+                color="brand.white"
+              />
               <MyText
                 as="p"
                 title="Unlocking Opportunities and Streamlining Your Path to Success: Your Dynamic Job Seeking Companion, Providing Insights, Resources, and Tools Tailored to Your Unique Career Goals, Helping You Stand Out and Land Your Dream Job with Confidence and Ease."
@@ -201,7 +205,12 @@ export default function Dashboard() {
               >
                 <HStack>
                   <Center bg={'brand.primary'} p={'8px'} borderRadius={'50%'}>
-                    <MyIcon name="users" width="30px" height="30px" color='brand.white' />
+                    <MyIcon
+                      name="users"
+                      width="30px"
+                      height="30px"
+                      color="brand.white"
+                    />
                   </Center>
                   <VStack spacing={0} alignItems={'flex-start'}>
                     <MyText title="42" as={'title'} />
@@ -219,7 +228,12 @@ export default function Dashboard() {
               >
                 <HStack>
                   <Center bg={'brand.primary'} p={'8px'} borderRadius={'50%'}>
-                    <MyIcon name="target" width="30px" height="30px" color='brand.white' />
+                    <MyIcon
+                      name="target"
+                      width="30px"
+                      height="30px"
+                      color="brand.white"
+                    />
                   </Center>
                   <VStack spacing={0} alignItems={'flex-start'}>
                     <MyText title="42" as={'title'} />
@@ -237,7 +251,12 @@ export default function Dashboard() {
               >
                 <HStack>
                   <Center bg={'brand.primary'} p={'8px'} borderRadius={'50%'}>
-                    <MyIcon name="file" width="30px" height="30px" color='brand.white' />
+                    <MyIcon
+                      name="file"
+                      width="30px"
+                      height="30px"
+                      color="brand.white"
+                    />
                   </Center>
                   <VStack spacing={0} alignItems={'flex-start'}>
                     <MyText title="42" as={'title'} />

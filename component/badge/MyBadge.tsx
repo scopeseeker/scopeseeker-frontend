@@ -1,19 +1,7 @@
 import { IMyBadge } from '@/inteface/component-interface';
-import { Badge, Center, Text } from '@chakra-ui/react';
-import { MyText } from '../text';
+import { Center, Text } from '@chakra-ui/react';
 
 const MyBadge = ({ labelArray, key }: IMyBadge) => {
-  // const badgeColor = [
-  //   'teal',
-  //   'pink',
-  //   'yellow',
-  //   'purple',
-  //   'green',
-  //   'cyan',
-  //   'orange',
-  //   'blue',
-  //   'red',
-  // ];
   return (
     <>
       {labelArray.map((item, key) => (

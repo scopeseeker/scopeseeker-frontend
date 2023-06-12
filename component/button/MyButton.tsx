@@ -1,12 +1,12 @@
 import { IMyButtonProps } from '@/inteface/component-interface';
 import { Center } from '@chakra-ui/react';
-import { MyText } from '../text';
+import MyText from '../text/MyText';
 
 const MyButton = ({
   title,
   borderRadius,
   variant = 'solid',
-  px='16px',
+  px = '16px',
   h,
   ...rest
 }: IMyButtonProps) => {

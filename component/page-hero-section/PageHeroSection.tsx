@@ -36,7 +36,12 @@ const PageHeroSection = (props: IPageHeroSection) => {
               paraColor={paraColor}
             />
           </VStack>
-          <Center  display={{base: 'none', md: 'flex'}} maxW={'50%'} p={'10px'} h={'full'}>
+          <Center
+            display={{ base: 'none', md: 'flex' }}
+            maxW={'50%'}
+            p={'10px'}
+            h={'full'}
+          >
             <MyImage src={src} alt={alt} width={w} height={h} />
           </Center>
         </HStack>

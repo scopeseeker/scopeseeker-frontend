@@ -66,7 +66,6 @@ const Filter = ({ FilterObject }: IFilter) => {
                         key={option.value}
                         value={option.value}
                         size={'sm'}
-                      
                       >
                         <Flex alignItems={'center'} h={'full'}>
                           <MyText as="span" title={option.label} />

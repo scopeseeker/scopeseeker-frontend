@@ -1,7 +1,8 @@
-import { MyButton } from '@/component';
-import { Center, Flex, Heading, HStack, Input, Text } from '@chakra-ui/react';
 
-const NewsUpdate = () => {
+import { Center, Flex, Heading, HStack, Input, Text } from '@chakra-ui/react';
+import MyButton from '../button/MyButton';
+
+const Subscribe = () => {
   return (
     <Center w={'full'}>
       <Flex
@@ -45,9 +46,7 @@ const NewsUpdate = () => {
               px={4}
             />
             {/* <Center bg={'brand.primary'}  h={'full'} px={5} borderRadius={'full'}> */}
-            <MyButton
-              title="Subscribe"
-            />
+            <MyButton title="Subscribe" />
             {/* </Center> */}
           </HStack>
         </Center>
@@ -57,4 +56,4 @@ const NewsUpdate = () => {
   );
 };
 
-export default NewsUpdate;
+export default Subscribe;

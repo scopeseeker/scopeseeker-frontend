@@ -1,7 +1,7 @@
+import { MyImage } from '@/component';
 import { Center } from '@chakra-ui/react';
-import MyImage from '../image/MyImage';
 
-const Company = () => {
+const CompanyList = () => {
   return (
     <Center gap={10} w={'full'} flexWrap={'wrap'}>
       <MyImage
@@ -46,4 +46,4 @@ const Company = () => {
   );
 };
 
-export default Company;
+export default CompanyList;

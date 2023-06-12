@@ -1,45 +1,50 @@
-import { MyBadge } from './badge';
-import { MyButton } from './button';
-import { MyJobCard, MyCompanyCard } from './cards';
-import { MyDivider } from './divider';
-import { Filter } from './filter';
-import { Footer } from './footer';
-import { MyIcon } from './icon';
-import { MyImage } from './image';
-import { MyInput } from './inputs';
-import { Layout } from './layout';
-import { MainHeading } from './main-heading';
-import { Navbar } from './navbar';
-import { PageHeroSection } from './page-hero-section';
+import MyBadge from './badge/MyBadge';
+import MyButton from './button/MyButton';
+import MyCompanyCard from './cards/MyCompanyCard';
+import MyJobCard from './cards/MyJobCard';
+import Benifits from './comapany-details/Benifits';
+import JobTab from './comapany-details/JobTab';
+import Overview from './comapany-details/Overview';
+import MyDivider from './divider/MyDivider';
+import Filter from './filter/Filter';
+import Footer from './footer/Footer';
+import MyIcon from './icon/MyIcon';
+import MyImage from './image/MyImage';
+import MyInput from './inputs/MyInput';
+import Layout from './layout/Layout';
+import MainHeading from './main-heading/MainHeading';
+import Navbar from './navbar/Navbar';
 import OtpVerifyBox from './otp-verify-box/OtpVerifyBox';
-import {
-  Categories,
-  Company,
-  CompanyCategory,
-  FAQ,
-  HeroSection,
-  Motive,
-  NewsUpdate,
-  Testimonials,
-  Works,
-  SignupSection
-} from './sections';
-import { MyText } from './text';
-
+import PageHeroSection from './page-hero-section/PageHeroSection';
+import RadioComp from './radio-buttons/RadioButtons';
+import CompanyList from './sections/CompanyList';
+import FAQ from './sections/FAQ';
+import FeaturedCompany from './sections/FeaturedCompany';
+import HeroSection from './sections/HeroSection';
+import HowWorks from './sections/HowWorks';
+import MoreIntroSection from './sections/MoreIntroSection';
+import PopularCategories from './sections/PopularCategories';
+import SignupSection from './sections/SignupSection';
+import Subscribe from './sections/Subscribe';
+import Testimonials from './sections/Testimonials';
+import MyText from './text/MyText';
 
 export {
-  MyBadge,
-  Categories,
-  Company,
-  CompanyCategory,
+  Benifits,
+  CompanyList,
   FAQ,
+  FeaturedCompany,
   Filter,
   Footer,
   HeroSection,
+  HowWorks,
+  JobTab,
   Layout,
   MainHeading,
-  Motive,
+  MoreIntroSection,
+  MyBadge,
   MyButton,
+  MyCompanyCard,
   MyDivider,
   MyIcon,
   MyImage,
@@ -47,11 +52,12 @@ export {
   MyJobCard,
   MyText,
   Navbar,
-  NewsUpdate,
+  OtpVerifyBox,
+  Overview,
   PageHeroSection,
-  Testimonials,
-  Works,
+  PopularCategories,
+  RadioComp,
   SignupSection,
-  MyCompanyCard,
-  OtpVerifyBox
+  Subscribe,
+  Testimonials,
 };

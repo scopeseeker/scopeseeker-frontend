@@ -1,19 +1,19 @@
 import {
-  Categories,
-  Company,
+  CompanyList,
   FAQ,
+  FeaturedCompany,
+  HowWorks,
   Layout,
-  Motive,
+  MoreIntroSection,
   MyButton,
   MyDivider,
   MyImage,
   MyText,
-  NewsUpdate,
+  PopularCategories,
   SignupSection,
+  Subscribe,
   Testimonials,
-  Works,
 } from '@/component';
-import CompnayCatergories from '@/component/sections/FeaturedCompany';
 import { Center, Flex, HStack, Heading, VStack } from '@chakra-ui/react';
 import Head from 'next/head';
 
@@ -148,15 +148,15 @@ export default function Home() {
           </VStack>
         </Layout>
 
-        <Company />
-        <Works />
-        <Categories />
-        <CompnayCatergories />
-        <Motive />
+        <CompanyList />
+        <HowWorks />
+        <PopularCategories />
+        <FeaturedCompany />
+        <MoreIntroSection />
         <Testimonials />
         <FAQ />
         <SignupSection />
-        <NewsUpdate />
+        <Subscribe />
       </Flex>
     </>
   );

@@ -1,8 +1,4 @@
-import {
-  companyDescTable,
-  companyLeaders,
-  companySubsidiaries,
-} from '@/constant/constantFields';
+import { companyLeaders, companySubsidiaries } from '@/constant/constantFields';
 import {
   AspectRatio,
   Box,
@@ -10,17 +6,13 @@ import {
   Grid,
   HStack,
   ListItem,
-  Table,
-  Tbody,
-  Td,
-  Tr,
   UnorderedList,
   VStack,
 } from '@chakra-ui/react';
 import { useRef } from 'react';
-import { MyImage } from '../image';
-import { MyText } from '../text';
-import { MyIcon } from '../icon';
+import MyIcon from '../icon/MyIcon';
+import MyImage from '../image/MyImage';
+import MyText from '../text/MyText';
 
 const Overview = () => {
   const companyBoxRef = useRef<HTMLDivElement>(null);
@@ -136,7 +128,7 @@ const Overview = () => {
             templateColumns={{
               base: 'repeat(1, 1fr)',
               md: 'repeat(3, 1fr)',
-              lg: 'repeat(4, 1fr)'
+              lg: 'repeat(4, 1fr)',
             }}
             gap={'22px'}
           >

@@ -215,66 +215,60 @@ export default function Profile() {
             />
           </Center>
 
-          
-
           <VStack gap={'64px'}>
-
-          {/* personal detail */}
-          <HStack w={'full'} gap={'10px'}>
-            <VStack
-              w={'50%'}
-              alignItems={'flex-start'}
-              gap={'32px'}
-              boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
-              p={'20px'}
-              borderRadius={'8px'}
-            >
-              <MyText title="Personal Detals" as={'heading'} />
-              <VStack w={'full'} alignItems={'flex-start'}>
-                <HStack justifyContent={'space-between'} gap={'42px'}>
-                  <VStack spacing={0} alignItems={'flex-start'} w={'120px'}>
-                    <MyText title="Date Of Birth" as={'p'} />
-                    <MyText title="07/08/2003" as={'span'} />
-                  </VStack>
-                  <VStack spacing={0} alignItems={'flex-start'} w={'120px'}>
-                    <MyText title="Location" as={'p'} />
-                    <MyText title="Bhopal" as={'span'} />
-                  </VStack>
-                </HStack>
-                <HStack justifyContent={'space-between'} gap={'42px'}>
-                  <VStack spacing={0} alignItems={'flex-start'} w={'120px'}>
-                    <MyText title="Location" as={'p'} />
-                    <MyText title="Bhopal" as={'span'} />
-                  </VStack>
-                  <VStack
-                    spacing={0}
-                    alignItems={'flex-start'}
-                    w={'120px'}
-                  >
-                    <MyText title="State" as={'p'} />
-                    <MyText title="MP" as={'span'} />
-                  </VStack>
-                </HStack>
+            {/* personal detail */}
+            <HStack w={'full'} gap={'10px'}>
+              <VStack
+                w={'50%'}
+                alignItems={'flex-start'}
+                gap={'32px'}
+                boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
+                p={'20px'}
+                borderRadius={'8px'}
+              >
+                <MyText title="Personal Detals" as={'heading'} />
+                <VStack w={'full'} alignItems={'flex-start'}>
+                  <HStack justifyContent={'space-between'} gap={'42px'}>
+                    <VStack spacing={0} alignItems={'flex-start'} w={'120px'}>
+                      <MyText title="Date Of Birth" as={'p'} />
+                      <MyText title="07/08/2003" as={'span'} />
+                    </VStack>
+                    <VStack spacing={0} alignItems={'flex-start'} w={'120px'}>
+                      <MyText title="Location" as={'p'} />
+                      <MyText title="Bhopal" as={'span'} />
+                    </VStack>
+                  </HStack>
+                  <HStack justifyContent={'space-between'} gap={'42px'}>
+                    <VStack spacing={0} alignItems={'flex-start'} w={'120px'}>
+                      <MyText title="Location" as={'p'} />
+                      <MyText title="Bhopal" as={'span'} />
+                    </VStack>
+                    <VStack spacing={0} alignItems={'flex-start'} w={'120px'}>
+                      <MyText title="State" as={'p'} />
+                      <MyText title="MP" as={'span'} />
+                    </VStack>
+                  </HStack>
+                </VStack>
               </VStack>
-            </VStack>
-            <VStack
-              w={'50%'}
-              alignItems={'flex-start'}
-              bg={'brand.aliceblue'}
-              boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
-              p={'20px'}
-              borderRadius={'8px'}
-            >
-               <MyText title="Recent Activity" as={'heading'} />  
-               <MyText title='You submitted the task' as={'small'}/>
-               <MyText title='You applied in flipkart' as={'small'}/>
-               <MyText title='Recently view company' as={'small'}/>
-               <MyText title='Checking the information of Amazon' as={'small'}/>
-               <MyText title='Last read article on Blockchain' as={'small'}/>
-               
-
-            </VStack>
-          </HStack>
+              <VStack
+                w={'50%'}
+                alignItems={'flex-start'}
+                bg={'brand.aliceblue'}
+                boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
+                p={'20px'}
+                borderRadius={'8px'}
+              >
+                <MyText title="Recent Activity" as={'heading'} />
+                <MyText title="You submitted the task" as={'small'} />
+                <MyText title="You applied in flipkart" as={'small'} />
+                <MyText title="Recently view company" as={'small'} />
+                <MyText
+                  title="Checking the information of Amazon"
+                  as={'small'}
+                />
+                <MyText title="Last read article on Blockchain" as={'small'} />
+              </VStack>
+            </HStack>
 
             {/* Resume section */}
             <VStack

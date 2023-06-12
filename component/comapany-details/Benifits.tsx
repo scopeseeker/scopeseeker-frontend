@@ -1,9 +1,9 @@
 import { companyBenifits, employeeBenifits } from '@/constant/constantFields';
 import truncatedParagraph from '@/lib/validator';
 import { Center, Grid, HStack, VStack } from '@chakra-ui/react';
-import { MyIcon } from '../icon';
-import { MyImage } from '../image';
-import { MyText } from '../text';
+import MyIcon from '../icon/MyIcon';
+import MyImage from '../image/MyImage';
+import MyText from '../text/MyText';
 
 const Benifits = () => {
   return (

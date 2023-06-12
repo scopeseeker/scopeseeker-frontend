@@ -5,11 +5,10 @@ import {
   AccordionIcon,
   AccordionItem,
   AccordionPanel,
-  Box,
   VStack,
 } from '@chakra-ui/react';
-import { MainHeading } from '../main-heading';
-import { MyText } from '../text';
+import MainHeading from '../main-heading/MainHeading';
+import MyText from '../text/MyText';
 
 const FAQ = () => {
   return (
@@ -30,7 +29,6 @@ const FAQ = () => {
                 border={'1px solid'}
                 borderColor={'brand.darkgray'}
                 key={key}
-                
               >
                 <AccordionButton _hover={{ backgroundColor: 'none' }}>
                   <MyText

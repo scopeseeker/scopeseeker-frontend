@@ -1,6 +1,6 @@
 import { Box } from '@chakra-ui/react';
 
-function MyDivider({...rest}: any) {
+function MyDivider({ ...rest }: any) {
   return (
     <Box
       w={'full'}

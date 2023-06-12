@@ -1,10 +1,10 @@
 import { Box, Center, Grid, HStack, VStack } from '@chakra-ui/react';
 import Link from 'next/link';
-import { MyButton } from '../button';
-import { MyJobCard } from '../cards';
-import { MyIcon } from '../icon';
-import { MyInput } from '../inputs';
-import { MyText } from '../text';
+import MyText from '../text/MyText';
+import MyInput from '../inputs/MyInput';
+import MyIcon from '../icon/MyIcon';
+import MyButton from '../button/MyButton';
+import MyJobCard from '../cards/MyJobCard';
 
 const JobTab = () => {
   return (
@@ -109,7 +109,6 @@ const JobTab = () => {
           companyDesc="UX designers measure and optimize applications to improve ease of use
         (usability), and create the best user experience by exploring many
        diffrent approaches to solve end's-user problems"
-         
         />
 
         <MyJobCard
@@ -127,7 +126,6 @@ const JobTab = () => {
           companyDesc="UX designers measure and optimize applications to improve ease of use
         (usability), and create the best user experience by exploring many
        diffrent approaches to solve end's-user problems"
-        
         />
       </Grid>
 
