@@ -562,6 +562,91 @@ const companyLeaders = [
   },
 ];
 
+const articleFields = [
+  {
+    articleImage:"/assets/images/blog.jpg",
+    articleHeading: "Web Development",
+    articleHighlight:'Web development involves creating and maintaining websites.',
+    articlePara:'Web development is the process of designing, building, and maintaining websites and web applications. It encompasses a range of tasks, including frontend development, backend development, and database management',
+    articleButton:'Read more',
+    dateIcon:'date',
+    articledate:'23.23.23'
+  },
+  {
+    articleImage:"/assets/images/blog.jpg",
+    articleHeading: "Web Development",
+    articleHighlight:'Web development involves creating and maintaining websites.',
+    articlePara:'Web development is the process of designing, building, and maintaining websites and web applications. It encompasses a range of tasks, including frontend development, backend development, and database management',
+    articleButton:'Read more',
+    dateIcon:'date',
+    articledate:'23.23.23'
+  },
+  {
+    articleImage:"/assets/images/blog.jpg",
+    articleHeading: "Web Development",
+    articleHighlight:'Web development involves creating and maintaining websites.',
+    articlePara:'Web development is the process of designing, building, and maintaining websites and web applications. It encompasses a range of tasks, including frontend development, backend development, and database management',
+    articleButton:'Read more',
+    dateIcon:'date',
+    articledate:'23.23.23'
+  },
+  {
+    articleImage:"/assets/images/blog.jpg",
+    articleHeading: "Web Development",
+    articleHighlight:'Web development involves creating and maintaining websites.',
+    articlePara:'Web development is the process of designing, building, and maintaining websites and web applications. It encompasses a range of tasks, including frontend development, backend development, and database management',
+    articleButton:'Read more',
+    dateIcon:'date',
+    articledate:'23.23.23'
+  },
+  {
+    articleImage:"/assets/images/blog.jpg",
+    articleHeading: "Web Development",
+    articleHighlight:'Web development involves creating and maintaining websites.',
+    articlePara:'Web development is the process of designing, building, and maintaining websites and web applications. It encompasses a range of tasks, including frontend development, backend development, and database management',
+    articleButton:'Read more',
+    dateIcon:'date',
+    articledate:'23.23.23'
+  },
+  {
+    articleImage:"/assets/images/blog.jpg",
+    articleHeading: "Web Development",
+    articleHighlight:'Web development involves creating and maintaining websites.',
+    articlePara:'Web development is the process of designing, building, and maintaining websites and web applications. It encompasses a range of tasks, including frontend development, backend development, and database management',
+    articleButton:'Read more',
+    dateIcon:'date',
+    articledate:'23.23.23'
+  },
+  {
+    articleImage:"/assets/images/blog.jpg",
+    articleHeading: "Web Development",
+    articleHighlight:'Web development involves creating and maintaining websites.',
+    articlePara:'Web development is the process of designing, building, and maintaining websites and web applications. It encompasses a range of tasks, including frontend development, backend development, and database management',
+    articleButton:'Read more',
+    dateIcon:'date',
+    articledate:'23.23.23'
+  },
+  {
+    articleImage:"/assets/images/blog.jpg",
+    articleHeading: "Web Development",
+    articleHighlight:'Web development involves creating and maintaining websites.',
+    articlePara:'Web development is the process of designing, building, and maintaining websites and web applications. It encompasses a range of tasks, including frontend development, backend development, and database management',
+    articleButton:'Read more',
+    dateIcon:'date',
+    articledate:'23.23.23'
+  },
+  {
+    articleImage:"/assets/images/blog.jpg",
+    articleHeading: "Web Development",
+    articleHighlight:'Web development involves creating and maintaining websites.',
+    articlePara:'Web development is the process of designing, building, and maintaining websites and web applications. It encompasses a range of tasks, including frontend development, backend development, and database management',
+    articleButton:'Read more',
+    dateIcon:'date',
+    articledate:'23.23.23'
+  },
+
+];
+
 export {
   faqFieldsObject,
   popularCategoryObject,
@@ -574,4 +659,5 @@ export {
   companySubsidiaries,
   companyLeaders,
   companyCardFields,
+  articleFields
 };

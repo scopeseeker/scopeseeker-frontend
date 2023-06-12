@@ -107,3 +107,14 @@ export interface IMyText {
     | { base: string; md: string; '2xl': string };
   [key: string]: any;
 }
+
+export interface IMyArticleCard {
+  articleImage: string;
+  articleHeading: string;
+  articleHighlight: string;
+  articlePara: string;
+  articleButton: string;
+  dateIcon: string;
+  articledate: string;
+  
+}
