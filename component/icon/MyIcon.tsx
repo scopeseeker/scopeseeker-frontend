@@ -4,9 +4,9 @@ import { Center } from '@chakra-ui/react';
 
 const MyIcon = ({
   color = 'brand.black',
-  width = '24px',
-  height = '24px',
-  strokeWidth = '1.2',
+  width = '20px',
+  height = '20px',
+  strokeWidth = '1',
   name,
   ...rest
 }: IMyIconProps) => {

@@ -43,12 +43,12 @@ function RadioComp({ options, onClick }: IRadioBtnProps) {
   const group = getRootProps();
 
   return (
-    <HStack {...group}>
+    <HStack {...group} flexWrap={'wrap'} spacing={0} gap={'6px'}>
       {options.map((value) => {
         const radio = getRadioProps({ value });
         return (
           <RadioButtons
-            key={value}
+            key={value} 
             {...radio}
             options={options}
             onClick={onClick}
