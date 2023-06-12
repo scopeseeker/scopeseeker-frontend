@@ -1,13 +1,10 @@
-import { Box, Center, Grid, GridItem, HStack, VStack } from '@chakra-ui/react';
-import { MyCompanyCard } from '../cards';
+import { Box, Center, Grid, GridItem, VStack } from '@chakra-ui/react';
+import { MyBadge } from '../badge';
+import { MyButton } from '../button';
+import { MyImage } from '../image';
 import { Layout } from '../layout';
 import { MainHeading } from '../main-heading';
-import { companyCardFields } from '@/constant/constantFields';
-import { MyImage } from '../image';
 import { MyText } from '../text';
-import { MyButton } from '../button';
-import { MyBadge } from '../badge';
-import { MyIcon } from '../icon';
 const CompnayCatergories = () => {
   return (
     <Layout w={'full'}>
@@ -91,17 +88,20 @@ const CompnayCatergories = () => {
                     />
                   </Box>
 
-                  <HStack w={'100%'}>
+                  <Center w={'100%'}>
                     {/* <MyButton w={'50%'} title="Full Details" /> */}
-                    <MyButton w={'100%'} title="View Jobs" />
-                  </HStack>
+                    <MyButton
+                      w={{ base: '70%', sm: '50%', md: '60%' }}
+                      title="View Jobs"
+                    />
+                  </Center>
                 </VStack>
               </GridItem>
             );
           })}
         </Grid>
         <Center w={'full'}>
-            <MyButton title='See All Company' px={'28px'}/>
+          <MyButton title="See All Company" px={'28px'} />
         </Center>
       </Center>
     </Layout>

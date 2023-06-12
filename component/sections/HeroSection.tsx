@@ -107,7 +107,7 @@ const HeroSection = () => {
         </Center>
         <Center justifyContent={'flex-end'} h={'full'}>
           <MyImage
-            src={'/assets/svgs/office.svg'}
+            src={'/assets/svgs/h1.svg'}
             alt="svg"
             width={500}
             height={500}
