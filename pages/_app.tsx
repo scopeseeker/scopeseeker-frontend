@@ -7,13 +7,11 @@ import { useRouter } from 'next/router';
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
-  const showNavbar =
-    router.asPath !== '/login' &&
-    router.asPath !== '/signup';
+  const showNavbar = router.asPath !== '/login' && router.asPath !== '/signup';
 
   return (
     <ChakraProvider theme={theme}>
-      {showNavbar && <Navbar/>}
+      {showNavbar && <Navbar />}
       <Center>
         <Flex flexDirection={'column'} w={'100%'}>
           <Component {...pageProps} />

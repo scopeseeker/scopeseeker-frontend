@@ -1,8 +1,7 @@
 import { Layout, MyIcon, MyImage, MyText } from '@/component';
 import { Center, Flex, HStack, Heading, Stack, Text } from '@chakra-ui/react';
-import Image from 'next/image';
 
-const Motive = () => {
+const MoreIntroSection = () => {
   return (
     <Layout>
       <Flex w={'full'} flexDirection={{ base: 'column', md: 'row' }}>
@@ -62,4 +61,4 @@ const Motive = () => {
   );
 };
 
-export default Motive;
+export default MoreIntroSection;

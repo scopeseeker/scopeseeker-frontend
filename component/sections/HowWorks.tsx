@@ -1,6 +1,6 @@
 import { Layout, MainHeading, MyIcon, MyText } from '@/component';
 import { Box, Center, HStack, VStack } from '@chakra-ui/react';
-const Works = () => {
+const HowWorks = () => {
   return (
     <Layout>
       <VStack gap={'32px'}>
@@ -8,10 +8,21 @@ const Works = () => {
           title="Easy Way To Get Job"
           subTitle="The first step to getting a job on Scope Seekr is to create a profile"
         />
-        <HStack justifyContent={'center'} flexDirection={{base:'column', md:'row'}} gap={'30px'} w={'full'} pt={'40px'}>
+        <HStack
+          justifyContent={'center'}
+          flexDirection={{ base: 'column', md: 'row' }}
+          gap={'30px'}
+          w={'full'}
+          pt={'40px'}
+        >
           <HowBox>
             <Box color={'brand.black'}>
-                <MyIcon name='createAccount' width='38' height='38' strokeWidth='1'/>
+              <MyIcon
+                name="createAccount"
+                width="38"
+                height="38"
+                strokeWidth="1"
+              />
             </Box>
             <MyText as="title" title={'Create an account'} />
             <MyText
@@ -23,8 +34,7 @@ const Works = () => {
           </HowBox>
           <HowBox>
             <Box color={'brand.black'}>
-            <MyIcon name='file' width='38' height='38' strokeWidth='1'/>
-
+              <MyIcon name="file" width="38" height="38" strokeWidth="1" />
             </Box>
             <MyText as="title" title={'Complete Your Profile'} />
             <MyText
@@ -34,8 +44,7 @@ const Works = () => {
           </HowBox>
           <HowBox>
             <Box color={'brand.black'}>
-            <MyIcon name='search' width='38' height='38' strokeWidth='1'/>
-
+              <MyIcon name="search" width="38" height="38" strokeWidth="1" />
             </Box>
             <MyText as="title" title={'Search For Jobs'} />
             <MyText
@@ -51,7 +60,7 @@ const Works = () => {
   );
 };
 
-export default Works;
+export default HowWorks;
 
 const HowBox = ({ children }: any) => {
   return (

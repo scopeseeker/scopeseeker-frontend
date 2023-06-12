@@ -5,8 +5,8 @@ import {
   MyIcon,
   MyInput,
   MyText,
+  RadioComp,
 } from '@/component';
-import RadioComp from '@/component/radio-buttons/RadioButtons';
 import {
   Box,
   Center,

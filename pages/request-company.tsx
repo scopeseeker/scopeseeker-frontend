@@ -1,6 +1,5 @@
 import {
   Layout,
-  MainHeading,
   MyButton,
   MyIcon,
   MyInput,

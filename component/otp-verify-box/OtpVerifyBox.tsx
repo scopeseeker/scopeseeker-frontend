@@ -5,9 +5,9 @@ import {
   PinInputField,
   VStack,
 } from '@chakra-ui/react';
-import { MyButton } from '../button';
-import { MyIcon } from '../icon';
-import { MyText } from '../text';
+import MyIcon from '../icon/MyIcon';
+import MyText from '../text/MyText';
+import MyButton from '../button/MyButton';
 
 interface IOtpVerifyBox {
   value?: string;

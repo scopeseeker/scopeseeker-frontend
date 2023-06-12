@@ -1,11 +1,11 @@
 import { Box, Center, Grid, GridItem, VStack } from '@chakra-ui/react';
-import { MyBadge } from '../badge';
-import { MyButton } from '../button';
-import { MyImage } from '../image';
-import { Layout } from '../layout';
-import { MainHeading } from '../main-heading';
-import { MyText } from '../text';
-const CompnayCatergories = () => {
+import MyButton from '../button/MyButton';
+import MyImage from '../image/MyImage';
+import Layout from '../layout/Layout';
+import MainHeading from '../main-heading/MainHeading';
+import MyText from '../text/MyText';
+import MyBadge from '../badge/MyBadge';
+const FeaturedCompany = () => {
   return (
     <Layout w={'full'}>
       <Center flexDirection={'column'} w={'full'} gap={'72px'}>
@@ -108,4 +108,4 @@ const CompnayCatergories = () => {
   );
 };
 
-export default CompnayCatergories;
+export default FeaturedCompany;

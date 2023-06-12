@@ -1,5 +1,4 @@
 import { Box, HStack, useRadio, useRadioGroup } from '@chakra-ui/react';
-import React from 'react';
 
 function RadioButtons(props: any) {
   const { getInputProps, getRadioProps } = useRadio(props);

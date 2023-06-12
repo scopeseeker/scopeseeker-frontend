@@ -1,12 +1,12 @@
 import { popularCategoryObject } from '@/constant/constantFields';
 import { Center, HStack, VStack } from '@chakra-ui/react';
-import { MyButton } from '../button';
-import { MyIcon } from '../icon';
-import { Layout } from '../layout';
-import { MainHeading } from '../main-heading';
-import { MyText } from '../text';
+import MyButton from '../button/MyButton';
+import MyIcon from '../icon/MyIcon';
+import Layout from '../layout/Layout';
+import MainHeading from '../main-heading/MainHeading';
+import MyText from '../text/MyText';
 
-const Categories = () => {
+const PopularCategories = () => {
   return (
     <VStack w={'full'} py={'42px'} bg={'brand.aliceblue'}>
       <Layout>
@@ -62,4 +62,4 @@ const Categories = () => {
   );
 };
 
-export default Categories;
+export default PopularCategories;
