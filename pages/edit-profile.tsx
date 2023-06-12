@@ -3,6 +3,7 @@ import {
   MyButton,
   MyDivider,
   MyIcon,
+  MyImage,
   MyInput,
   MyText,
   RadioComp,
@@ -29,6 +30,11 @@ function EditProfile() {
   const [inputText, setInputText] = useState('');
   const [showExperience, setShowExperience] = React.useState(false);
   const [showEducation, setShowEducation] = useState(false);
+  const [isWorkExperience, setIsWorkExperience] = useState([{}]);
+
+  const handleWorkExperience = () => {
+    
+  }
 
   const handleOpenWorkExperience = () => setShowExperience(!showExperience);
 
@@ -272,10 +278,14 @@ function EditProfile() {
                     w={'30px'}
                     h={'30px'}
                     borderRadius={'50%'}
-                    bg={'brand.aliceblue'}
+                    bg={'red'}
                     cursor={'pointer'}
                   >
-                    <MyIcon name={'delete'} />
+                    <MyIcon
+                      name={'delete'}
+                      color="brand.white"
+                      strokeWidth="2"
+                    />
                   </Center>
                 </HStack>
 
@@ -376,6 +386,24 @@ function EditProfile() {
                   />
                 </HStack>
               </HStack>
+              {/* Add Work Experience Box*/}
+              {isWorkExperience.length > 0 && 
+              <VStack py={'20px'} w={'full'} gap={'20px'}>
+                <AddBoxTemplete
+                  role="Full Stack Web Developer"
+                  companyImage="/assets/images/company-logo/amazon.png"
+                  companyName="Align Essential"
+                  period="Jan 18, 2023 - Feb 28, 2023"
+                />
+
+                <AddBoxTemplete
+                  role="Full Stack Web Developer"
+                  companyImage="/assets/images/company-logo/amazon.png"
+                  companyName="Align Essential"
+                  period="Jan 18, 2023 - Feb 28, 2023"
+                />
+              </VStack>
+              }
               <Collapse in={showExperience} style={{ width: '100%' }}>
                 <VStack w={'full'} gap={'22px'}>
                   <HStack
@@ -458,7 +486,7 @@ function EditProfile() {
                     />
                   </HStack>
                   <HStack w={'full'}>
-                    <MyButton title="Submit" px="50px" />
+                    <MyButton title="Submit" px="50px" onClick={handleWorkExperience}/>
                     <MyButton title="Cancel" px="50px" variant="outline" />
                   </HStack>
                 </VStack>
@@ -484,6 +512,23 @@ function EditProfile() {
                   />
                 </HStack>
               </HStack>
+
+              <VStack py={'20px'} w={'full'} gap={'20px'}>
+                <AddBoxTemplete
+                  role="Sagar Institute of Research & Technology (SIRT), Bhopal "
+                  companyImage="/assets/images/company-logo/amazon.png"
+                  companyName="B.Tech"
+                  period="2020 - 2024"
+                />
+
+                <AddBoxTemplete
+                  role="Sagar Institute of Research & Technology (SIRT), Bhopal "
+                  companyImage="/assets/images/company-logo/amazon.png"
+                  companyName="B.Tech"
+                  period="2020 - 2024"
+                />
+              </VStack>
+
               <Collapse in={showEducation} style={{ width: '100%' }}>
                 <VStack gap={'22px'} w={'full'}>
                   <HStack
@@ -703,5 +748,70 @@ const FiledDivTempalate = ({ children }: IFiledDivTempalate) => {
     >
       {children}
     </VStack>
+  );
+};
+
+interface IAddBoxTemplete {
+  role: string;
+  companyName: string;
+  period: string;
+  companyImage: string;
+}
+
+const AddBoxTemplete = ({
+  role,
+  companyName,
+  period,
+  companyImage,
+}: IAddBoxTemplete) => {
+  return (
+    <HStack
+      w={'full'}
+      justifyContent={'space-between'}
+      borderWidth={'1px'}
+      borderColor={'brand.lightgray'}
+      px={'20px'}
+      py={'10px'}
+      borderRadius={'20px'}
+    >
+      <HStack>
+        <Center
+          h={'70px'}
+          w={'70px'}
+          borderRadius={'50px'}
+          bg={'brand.aliceblue'}
+        >
+          <MyImage alt="img" src={companyImage} width={40} height={40} />
+        </Center>
+        <VStack spacing={0} alignItems={'flex-start'}>
+          <MyText as="span" title={role} />
+          <MyText as="small" title={companyName} />
+          <MyText as="small" title={period} color="brand.darkgray" />
+        </VStack>
+      </HStack>
+
+      {/* Icon Part  */}
+      <HStack>
+        <Center
+          w={'30px'}
+          h={'30px'}
+          borderRadius={'50%'}
+          bg={'brand.primary'}
+          cursor={'pointer'}
+        >
+          <MyIcon name={'edit'} color="brand.white" strokeWidth="2" />
+        </Center>
+
+        <Center
+          w={'30px'}
+          h={'30px'}
+          borderRadius={'50%'}
+          bg={'red'}
+          cursor={'pointer'}
+        >
+          <MyIcon name={'delete'} color="brand.white" strokeWidth="2" />
+        </Center>
+      </HStack>
+    </HStack>
   );
 };
