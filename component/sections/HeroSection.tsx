@@ -1,143 +1,151 @@
-import {
-  Layout,
-  MyBadge,
-  MyButton,
-  MyDivider,
-  MyImage,
-  MyText,
-} from '@/component';
-import {
-  Center,
-  Flex,
-  HStack,
-  Heading,
-  Input,
-  Text,
-  VStack,
-} from '@chakra-ui/react';
+import { Layout, MyButton, MyDivider, MyImage, MyText } from '@/component';
+import { Center, HStack, Heading, VStack } from '@chakra-ui/react';
 
 const HeroSection = () => {
   return (
     <Layout>
-      <Center
-        flexDirection={{ base: 'column', md: 'row' }}
-        w={'full'}
-        gap={'50px'}
-      >
-        <Center
-          w={{ base: '100%', md: '60%' }}
-          h={'full'}
-          justifyContent={{ base: 'center', md: 'flex-start' }}
-        >
-          <VStack
-            w={{ base: '100%', sm: '90%', md: '95%', lg: '80%' }}
-            justifyContent={'center'}
-            alignItems={{ base: 'center', md: 'flex-start' }}
-            gap={'5px'}
-            py={{ base: '28px', md: '0px' }}
-            h={'fit-content'}
-          >
-            <Heading
-              fontWeight={600}
-              color={'brand.primary'}
-              fontSize={{ base: '28px', md: '24px', lg: '28px' }}
-              textAlign={{ base: 'center', md: 'left' }}
-            >
-              No More Wasted Time
-              <Text
-                color={'brand.semiblack'}
-                fontSize={{ base: '24px', md: '22px', lg: '24px' }}
-                textAlign={{ base: 'center', md: 'left' }}
-              >
-                Find job that suits you
-              </Text>
-            </Heading>
-            <MyText
-              title="Our platform is dedicated to helping job seekers save time and find the right tech job opportunities that suit their skills and career aspirations."
-              as="span"
-              textAlign={{ base: 'center', md: 'left' }}
-            />
-            {/* Search Box */}
-            <HStack
-              w={{ base: '100%', lg: '80%' }}
-              height={{ base: '42px', md: '48px', lg: '42px' }}
-              boxShadow={'0px 0px 120px rgb(0, 0, 0, 0.2)'}
-              borderRadius={'20px'}
-              overflow={'hidden'}
-              spacing={0}
-              justifyContent={'space-between'}
-            >
-              <HStack
-                w={'70%'}
-                h={'full'}
-                bg={'brand.white'}
-                borderLeftRadius={6}
-                // border={'1px solid'}
-                borderColor={'brand.lightgray'}
-                px={'12px'}
-              >
-                <Input
-                  fontSize={{ base: '12px', md: '12px' }}
-                  placeholder={'Search by Roles, Company, Technologies...'}
-                  type="text"
-                  variant={'unstyled'}
-                  px={'4px'}
-                />
-              </HStack>
-              <MyButton title="Find Jobs" />
-            </HStack>
-            <Flex
-              gap={'5px'}
-              py={'10px'}
-              maxW={{ base: '100%', lg: '70%' }}
-              flexWrap={'wrap'}
-              justifyContent={{ base: 'center', md: 'flex-start' }}
-            >
-              <MyBadge
-                labelArray={[
-                  'Full Stack Developer',
-                  'Devops Engineer',
-                  'Frontend Developer',
-                  'Software Engineer',
-                  'Java Developer',
-                ]}
-              />
-            </Flex>
-          </VStack>
-        </Center>
-        <Center justifyContent={'flex-end'} h={'full'}>
+      <VStack w={'full'} h={'full'} position={'relative'} gap={'32px'}>
+        <Center position={'absolute'} top={'35%'} left={'10%'}>
           <MyImage
-            src={'/assets/svgs/h1.svg'}
-            alt="svg"
-            width={500}
-            height={500}
+            alt="ico"
+            src={'/assets/images/bag.png'}
+            width={55}
+            height={55}
           />
         </Center>
-      </Center>
-      <HStack
-        h={'72px'}
-        borderRadius={10}
-        bg={'brand.primary'}
-        justifyContent={'center'}
-        color={'brand.white'}
-        px={'12px'}
-        mt={'72px'}
-      >
-        <VStack w={'120px'} h={'full'} justifyContent={'center'}>
-          <MyDivider />
-        </VStack>
-        <HStack>
-          <MyText
-            title={`Say Goodbye to Job Search Stress: Streamline Your Hunt with the Ultimate Jobseeker Platform!`}
-            as={'span'}
-            color="brand.white"
-            textAlign={'center'}
+        <Center position={'absolute'} bottom={'20%'} left={'0%'}>
+          <MyImage
+            alt="ico"
+            src={'/assets/images/calender.png'}
+            width={45}
+            height={45}
           />
+        </Center>
+        <Center position={'absolute'} top={'35%'} right={'10%'}>
+          <MyImage
+            alt="ico"
+            src={'/assets/images/bell.png'}
+            width={45}
+            height={45}
+          />
+        </Center>
+        <Center position={'absolute'} bottom={'20%'} right={'0%'}>
+          <MyImage
+            alt="ico"
+            src={'/assets/images/outfit.png'}
+            width={45}
+            height={45}
+          />
+        </Center>
+
+        <HStack w={'full'} h={'full'} justifyContent={'center'}>
+          <VStack>
+            <Center
+              bg={'brand.transprimary'}
+              border={'1px solid'}
+              borderColor={'brand.darkgray'}
+              px={'16px'}
+              py={'2px'}
+              borderRadius={'20px'}
+            >
+              <MyText as="small" title="Get All Oppournity Here 💼" />
+            </Center>
+            <Heading>Accelerate Your Job Hunt</Heading>
+            <HStack>
+              <Heading>Save Time, Embrace All</Heading>
+              <Heading color={'brand.primary'}>Opportunities</Heading>
+              {/* <Heading>Here</Heading> */}
+            </HStack>
+            <MyText
+              textAlign={'center'}
+              maxW={'55%'}
+              color="brand.darkgray"
+              as="span"
+              title="Discover your path to success on our job seeker website. With a vast range of job listings and valuable resources, we provide the platform for you to shine."
+            />
+            <HStack>
+              <MyButton title="Explore Now" href="/jobs" />
+              <MyButton title="Signup Now" variant="outline" href="/signup" />
+            </HStack>
+            <HStack gap={'280px'}>
+              <Center
+                w={'180px'}
+                h={'250px'}
+                borderRadius={'0px 30px 0px 60px'}
+                justifyContent={'end'}
+                alignItems={'end'}
+                position={'relative'}
+                overflow={'hidden'}
+              >
+                <Center
+                  w={'180px'}
+                  h={'200px'}
+                  borderRadius={'0px 60px 0px 60px'}
+                  bg={'brand.primary'}
+                >
+                  <MyImage
+                    src={'/assets/images/main.png'}
+                    alt="hero-section"
+                    width={500}
+                    height={500}
+                    style={{ position: 'absolute', bottom: 0 }}
+                  />
+                </Center>
+              </Center>
+
+              <Center
+                w={'180px'}
+                h={'250px'}
+                borderRadius={'30px 0px 60px 0px'}
+                justifyContent={'end'}
+                alignItems={'end'}
+                position={'relative'}
+                overflow={'hidden'}
+              >
+                <Center
+                  w={'180px'}
+                  h={'200px'}
+                  borderRadius={'60px 0px 60px 0px'}
+                  bg={'brand.primary'}
+                >
+                  <MyImage
+                    src={'/assets/images/women.png'}
+                    alt="hero-section"
+                    width={500}
+                    height={500}
+                    style={{ position: 'absolute', bottom: 0 }}
+                  />
+                </Center>
+              </Center>
+            </HStack>
+          </VStack>
         </HStack>
-        <VStack w={'120px'} h={'full'} justifyContent={'center'}>
-          <MyDivider />
-        </VStack>
-      </HStack>
+
+        <HStack
+          h={'72px'}
+          borderRadius={10}
+          bg={'brand.primary'}
+          justifyContent={'center'}
+          color={'brand.white'}
+          px={'12px'}
+          w={'full'}
+        >
+          <VStack w={'120px'} h={'full'} justifyContent={'center'}>
+            <MyDivider />
+          </VStack>
+          <HStack>
+            <MyText
+              title={`Say Goodbye to Job Search Stress: Streamline Your Hunt with the Ultimate Jobseeker Platform!`}
+              as={'span'}
+              color="brand.white"
+              textAlign={'center'}
+            />
+          </HStack>
+          <VStack w={'120px'} h={'full'} justifyContent={'center'}>
+            <MyDivider />
+          </VStack>
+        </HStack>
+      </VStack>
     </Layout>
   );
 };
