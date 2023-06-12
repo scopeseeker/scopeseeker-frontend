@@ -16,6 +16,8 @@ const MyInput = ({
   type,
   labelTitle,
   onChange,
+  value,
+  ...rest
 }: IMyInputProps) => {
   return (
     <>
@@ -46,6 +48,8 @@ const MyInput = ({
             borderRadius={'8px 8px 8px 8px'}
             _focus={{ border: '1.5px solid', borderColor: 'brand.primary' }}
             onChange={onChange}
+            value={value}
+            {...rest}
           />
           {rightElement && (
             <InputRightElement

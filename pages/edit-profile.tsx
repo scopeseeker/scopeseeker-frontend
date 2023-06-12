@@ -16,6 +16,7 @@ import {
   Textarea,
   VStack,
 } from '@chakra-ui/react';
+import Head from 'next/head';
 import React, { useState } from 'react';
 
 function EditProfile() {
@@ -51,15 +52,27 @@ function EditProfile() {
 
   return (
     <>
-      <Layout w={'full'} h={'100vh'}>
-        <HStack w={'full'} h={'full'} gap={'12px'}>
+      <Head>
+        <title>Edit Profile | Scope Seeker</title>
+      </Head>
+      <Layout w={'full'}>
+        <HStack
+          w={'full'}
+          spacing={0}
+          h={'full'}
+          gap={'32px'}
+          justifyContent={'flex-start'}
+          alignItems={'flex-start'}
+        >
           {/* Left Part */}
-          <VStack w={'212px'} h={'full'} position={'relative'} gap={'18px'}>
+          <VStack
+            w={'212px'}
+            gap={'18px'}
+            display={{ base: 'none', lg: 'initial' }}
+          >
             <VStack
-              w={'full'}
               border={'1px solid'}
               borderColor={'brand.lightgray'}
-              alignItems={'flex-start'}
               borderRadius={'8px'}
               bg={'brand.aliceblue'}
               p="12px"
@@ -73,13 +86,9 @@ function EditProfile() {
             </VStack>
             <MyButton title="Skip For Now" w={'full'} />
           </VStack>
-          <VStack
-            w={'80%'}
-            h={'full'}
-            overflowX={'scroll'}
-            p={'12px'}
-            gap={'42px'}
-          >
+          {/* Right Part */}
+          <VStack w={{ base: 'full', lg: '80%' }} h={'full'} gap={'42px'}>
+            {/* Basic Information */}
             <FiledDivTempalate>
               <MyText as="title" title="Basic Information" />
 
@@ -91,7 +100,12 @@ function EditProfile() {
                   leftElement={<MyIcon name="user" />}
                 />
 
-                <HStack w={'full'}>
+                <HStack
+                  w={'full'}
+                  flexDir={{ base: 'column', md: 'row' }}
+                  spacing={0}
+                  gap={'22px'}
+                >
                   <MyInput
                     labelTitle="Email"
                     type="text"
@@ -104,6 +118,7 @@ function EditProfile() {
                     type="number"
                     placeholder="+91XXXXXXXX23"
                     leftElement={<MyIcon name="phone" />}
+                    maxLength={10}
                   />
                 </HStack>
 
@@ -114,7 +129,12 @@ function EditProfile() {
                   leftElement={<MyIcon name="college" />}
                 />
 
-                <HStack w={'full'}>
+                <HStack
+                  w={'full'}
+                  flexDir={{ base: 'column', md: 'row' }}
+                  spacing={0}
+                  gap={'22px'}
+                >
                   <MyInput
                     labelTitle="Country"
                     type="text"
@@ -139,7 +159,7 @@ function EditProfile() {
                   />
                 </VStack>
 
-                {/* For USer Type */}
+                {/* For User Type */}
                 <VStack alignItems={'flex-start'}>
                   <MyText as="span" title="User Type" />
                   <RadioComp
@@ -180,7 +200,7 @@ function EditProfile() {
                   <MyText as="span" title="Course Specialization" />
                   <Select
                     placeholder="Computer Science"
-                    w={'500px'}
+                    // w={'500px'}
                     fontSize={'13px'}
                   >
                     {[
@@ -206,7 +226,7 @@ function EditProfile() {
                 {/* For Year of Graduation */}
                 <VStack alignItems={'flex-start'}>
                   <MyText as="span" title="Year Of Graduation" />
-                  <Select placeholder="2016" w={'500px'} fontSize={'13px'}>
+                  <Select placeholder="2016" fontSize={'13px'}>
                     {['2017', '2018', '2019', '2020', '2021', '2022'].map(
                       (value, key) => {
                         return (
@@ -233,8 +253,19 @@ function EditProfile() {
             {/* Resume Section */}
             <FiledDivTempalate>
               <MyText as="title" title="Resume" />
-              <VStack w={'full'} gap={'20px'}>
-                <HStack w={'full'} justifyContent={'space-between'}>
+              <VStack
+                alignSelf={'center'}
+                w={{ base: 'full', md: '80%' }}
+                gap={'20px'}
+              >
+                <HStack
+                  w={'full'}
+                  justifyContent={'space-between'}
+                  borderWidth={'1.5px'}
+                  borderColor={'brand.lightgray'}
+                  p={'10px'}
+                  borderRadius={'10px'}
+                >
                   <MyText title="Lokesh.pdf" as={'small'} />
 
                   <Center
@@ -248,25 +279,25 @@ function EditProfile() {
                   </Center>
                 </HStack>
 
-                <Center w={'full'}>
-                  <Center
-                    h={'220px'}
-                    w={'full'}
-                    border={'2px dashed'}
-                    borderColor={'brand.darkgray'}
-                    bg={'brand.aliceblue'}
-                    flexDir={'column'}
-                    gap={'8px'}
-                    borderRadius={'10px'}
-                  >
-                    <MyIcon name={'upload'} />
-                    <MyButton title="Upload Resume" />
+                <Center
+                  h={'220px'}
+                  w={'full'}
+                  border={'2px dashed'}
+                  borderColor={'brand.darkgray'}
+                  bg={'brand.aliceblue'}
+                  flexDir={'column'}
+                  gap={'15px'}
+                  borderRadius={'10px'}
+                >
+                  <MyIcon name={'upload'} />
+                  <MyButton title="Upload Resume" />
+                  <Box w={{ base: '80%', md: 'initial' }}>
                     <MyText
-                      title="Supported formate .pdf .doc .docx, upto 2 MB "
+                      title="Supported Formats: doc, docx, rtf, pdf, upto 2 MB"
                       as={'span'}
                       color="brand.darkgray"
                     />
-                  </Center>
+                  </Box>
                 </Center>
               </VStack>
             </FiledDivTempalate>
@@ -276,7 +307,12 @@ function EditProfile() {
               <MyText as="title" title="Skills" />
               <VStack alignItems={'flex-start'} w={'full'}>
                 <Box w={'full'}>
-                  <HStack w={'full'}>
+                  <HStack
+                    w={'full'}
+                    flexDir={{ base: 'column', md: 'row' }}
+                    spacing={0}
+                    gap={'10px'}
+                  >
                     <MyInput
                       type="text"
                       placeholder="Type something..."
@@ -284,7 +320,7 @@ function EditProfile() {
                       onChange={handleInputChange}
                       leftElement={<MyIcon name="college" />}
                     />
-                    <Box w={'20%'}>
+                    <Box w={{ base: '100%', md: '20%' }}>
                       <MyButton title="Add item" onClick={handleAddItem} />
                     </Box>
                   </HStack>
@@ -323,20 +359,31 @@ function EditProfile() {
 
             {/* Work Experience */}
             <FiledDivTempalate>
-              <HStack>
+              <HStack justifyContent={'space-between'} w={'full'}>
                 <MyText as="title" title="Work Experience" />
-                <MyIcon
-                  name="add"
-                  onClick={handleOpenWorkExperience}
-                  cursor={'pointer'}
-                  width="16px"
-                  color="brand.primary"
-                  strokeWidth="2.5"
-                />
+                <HStack onClick={handleOpenWorkExperience} cursor={'pointer'}>
+                  <MyIcon
+                    name="add"
+                    width="16px"
+                    color="brand.primary"
+                    strokeWidth="2.5"
+                  />
+                  <MyText
+                    as="span"
+                    title="Add"
+                    color="brand.primary"
+                    fontWeight={600}
+                  />
+                </HStack>
               </HStack>
-              <Collapse in={showExperience}>
-                <VStack gap={'22px'} w={'full'}>
-                  <HStack w={'full'}>
+              <Collapse in={showExperience} style={{ width: '100%' }}>
+                <VStack w={'full'} gap={'22px'}>
+                  <HStack
+                    flexDir={{ base: 'column', md: 'row' }}
+                    spacing={0}
+                    gap={'22px'}
+                    w={'full'}
+                  >
                     <MyInput
                       labelTitle="Designation"
                       leftElement={<MyIcon name="job" />}
@@ -351,7 +398,12 @@ function EditProfile() {
                     />
                   </HStack>
 
-                  <HStack>
+                  <HStack
+                    flexDir={{ base: 'column', md: 'row' }}
+                    spacing={0}
+                    gap={'22px'}
+                    w={'full'}
+                  >
                     <MyInput
                       labelTitle="From (Year)"
                       leftElement={<MyIcon name="time" />}
@@ -366,7 +418,12 @@ function EditProfile() {
                     />
                   </HStack>
 
-                  <HStack>
+                  <HStack
+                    flexDir={{ base: 'column', md: 'row' }}
+                    spacing={0}
+                    gap={'22px'}
+                    w={'full'}
+                  >
                     <MyInput
                       labelTitle="Organisation"
                       leftElement={<MyIcon name="college" />}
@@ -381,7 +438,12 @@ function EditProfile() {
                     />
                   </HStack>
 
-                  <HStack>
+                  <HStack
+                    flexDir={{ base: 'column', md: 'row' }}
+                    spacing={0}
+                    gap={'22px'}
+                    w={'full'}
+                  >
                     <MyInput
                       labelTitle="State"
                       leftElement={<MyIcon name="company" />}
@@ -395,26 +457,41 @@ function EditProfile() {
                       placeholder="Enter Your City"
                     />
                   </HStack>
+                  <HStack w={'full'}>
+                    <MyButton title="Submit" px="50px" />
+                    <MyButton title="Cancel" px="50px" variant="outline" />
+                  </HStack>
                 </VStack>
               </Collapse>
             </FiledDivTempalate>
 
             {/* Education */}
             <FiledDivTempalate>
-              <HStack>
+              <HStack justifyContent={'space-between'} w={'full'}>
                 <MyText as="title" title="Education" />
-                <MyIcon
-                  name="add"
-                  onClick={handleOpenEdcation}
-                  cursor={'pointer'}
-                  width="16px"
-                  color="brand.primary"
-                  strokeWidth="2.5"
-                />
+                <HStack onClick={handleOpenEdcation} cursor={'pointer'}>
+                  <MyIcon
+                    name="add"
+                    width="16px"
+                    color="brand.primary"
+                    strokeWidth="2.5"
+                  />
+                  <MyText
+                    as="span"
+                    title="Add"
+                    color="brand.primary"
+                    fontWeight={600}
+                  />
+                </HStack>
               </HStack>
-              <Collapse in={showEducation}>
+              <Collapse in={showEducation} style={{ width: '100%' }}>
                 <VStack gap={'22px'} w={'full'}>
-                  <HStack w={'full'}>
+                  <HStack
+                    w={'full'}
+                    flexDir={{ base: 'column', md: 'row' }}
+                    spacing={0}
+                    gap={'22px'}
+                  >
                     <MyInput
                       labelTitle="Qualification"
                       leftElement={<MyIcon name="job" />}
@@ -429,7 +506,12 @@ function EditProfile() {
                     />
                   </HStack>
 
-                  <HStack w={'full'}>
+                  <HStack
+                    w={'full'}
+                    flexDir={{ base: 'column', md: 'row' }}
+                    spacing={0}
+                    gap={'22px'}
+                  >
                     <MyInput
                       labelTitle="From (Year)"
                       leftElement={<MyIcon name="time" />}
@@ -444,7 +526,12 @@ function EditProfile() {
                     />
                   </HStack>
 
-                  <HStack w={'full'}>
+                  <HStack
+                    w={'full'}
+                    flexDir={{ base: 'column', md: 'row' }}
+                    spacing={0}
+                    gap={'22px'}
+                  >
                     <MyInput
                       labelTitle="Percentage"
                       leftElement={<MyIcon name="college" />}
@@ -459,7 +546,12 @@ function EditProfile() {
                     />
                   </HStack>
 
-                  <HStack w={'full'}>
+                  <HStack
+                    w={'full'}
+                    flexDir={{ base: 'column', md: 'row' }}
+                    spacing={0}
+                    gap={'22px'}
+                  >
                     <MyInput
                       labelTitle="Specialization"
                       leftElement={<MyIcon name="company" />}
@@ -481,25 +573,33 @@ function EditProfile() {
                     placeholder="Enter your Institute"
                   />
 
-                  <HStack>
+                  <HStack
+                    flexDir={{ base: 'column', md: 'row' }}
+                    spacing={0}
+                    gap={'22px'}
+                  >
                     <MyInput
                       labelTitle="Country"
-                      leftElement={<MyIcon name="college" />}
+                      leftElement={<MyIcon name="company" />}
                       type="text"
                       placeholder="Enter your country"
                     />
                     <MyInput
                       labelTitle="State"
-                      leftElement={<MyIcon name="college" />}
+                      leftElement={<MyIcon name="company" />}
                       type="text"
                       placeholder="Enter your state"
                     />
                     <MyInput
                       labelTitle="City"
-                      leftElement={<MyIcon name="college" />}
+                      leftElement={<MyIcon name="company" />}
                       type="text"
                       placeholder="Enter your city"
                     />
+                  </HStack>
+                  <HStack w={'full'}>
+                    <MyButton title="Submit" px="50px" />
+                    <MyButton title="Cancel" px="50px" variant="outline" />
                   </HStack>
                 </VStack>
               </Collapse>
@@ -509,7 +609,12 @@ function EditProfile() {
             <FiledDivTempalate>
               <MyText as="title" title="Social Media" />
               <VStack gap={'22px'} w={'full'} alignItems={'flex-start'}>
-                <HStack w={'full'}>
+                <HStack
+                  w={'full'}
+                  flexDir={{ base: 'column', md: 'row' }}
+                  spacing={0}
+                  gap={'22px'}
+                >
                   <MyInput
                     labelTitle="Linkedin"
                     leftElement={<MyIcon name="linkedin" />}
@@ -524,7 +629,12 @@ function EditProfile() {
                   />
                 </HStack>
 
-                <HStack w={'full'}>
+                <HStack
+                  w={'full'}
+                  flexDir={{ base: 'column', md: 'row' }}
+                  spacing={0}
+                  gap={'22px'}
+                >
                   <MyInput
                     labelTitle="Instagram"
                     leftElement={<MyIcon name="instagram" />}
@@ -590,7 +700,6 @@ const FiledDivTempalate = ({ children }: IFiledDivTempalate) => {
       w={'full'}
       borderRadius={'8px'}
       flexShrink={0}
-      // h={'320px'}
     >
       {children}
     </VStack>
