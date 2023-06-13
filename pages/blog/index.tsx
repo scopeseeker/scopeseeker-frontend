@@ -111,6 +111,7 @@ export default function Blog() {
                 borderLeft={'1.5px solid'}
                 spacing={0}
                 borderColor={'brand.darkgray'}
+                display={{base:'none',md:'flex'}}
               ></VStack>
 
               <HStack
@@ -122,6 +123,7 @@ export default function Blog() {
                 pl={'12px'}
                 w={{ base: '100%', sm: '70%', md: '30%', lg: '30%' }}
                 borderRadius={'60px'}
+                display={{base:'none',md:'flex'}}
               >
                 <Input
                   variant={'unstyled'}
@@ -148,7 +150,7 @@ export default function Blog() {
           </Center>
 
           {/* Article section */}
-          <VStack w={'full'} alignItems={'center'} gap={'72px'}>
+          {/* <VStack w={'full'} bg={'red.200'} alignItems={'center'} gap={{base:'32px',md:'72px'}}>
             <MainHeading
               title="Scope Seeker All Blogs"
               subTitle="Here you will find all the articles that make your knowledge more efficient"
@@ -156,11 +158,11 @@ export default function Blog() {
             <Grid
               templateColumns={{
                 base: 'repeat(1, 1fr)',
-                md: 'repeat(2, 1fr)',
+                md: 'repeat(1, 1fr)',
                 lg: 'repeat(1, 1fr)',
               }}
               gridGap={'42px'}
-              width={'80%'}
+              width={{base:'100%',md:'80%'}}
             >
               <>
                 {articleFields.map((item, key) => {
@@ -179,7 +181,7 @@ export default function Blog() {
                 })}
               </>
             </Grid>
-            <Center w={'60%'} p={'12px'} gap={'32px'}>
+            <Center w={{base:'80%',md:'60%'}} p={'12px'} gap={'32px'}>
               <Center cursor={'pointer'}
                 width={'30px'}
                 height={'30px'}
@@ -210,7 +212,7 @@ export default function Blog() {
                 />
               </Center>
             </Center>
-          </VStack>
+          </VStack> */}
         </Center>
       </Layout>
     </>

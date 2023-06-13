@@ -15,8 +15,10 @@ const MyArticleCard = ({
   return (
     <HStack
       w={'full'}
-      px={'12px'}
-      py={'16px'}
+      bg={'red.600'}
+      flexDir={{base:'column', md:'row'}}
+      px={{base: '6px',md:'12px'}}
+      py={{base:'9px',md:'16px'}}
       borderRadius={'12px'}
       border={'1px solid'}
       borderColor={'brand.lightgray'}
@@ -24,7 +26,7 @@ const MyArticleCard = ({
       _hover={{ borderColor: 'brand.primary' }}
     >
       <Center
-        w={'350px'}
+        w={{base:'350px',md:'350px'}}
         borderRadius={'12px'}
         overflow={'hidden'}
         flexShrink={0}
@@ -47,7 +49,7 @@ const MyArticleCard = ({
           />
         </Link>
         <MyText as="span" title={truncatedParagraph(paragraph, 20)} />
-        <HStack gap={'12px'}>
+        <HStack gap={{base:'64px',md:'12px'}} bg={'yellow.100'} w={'full'}>
           <Link href={readMore}>
             <MyButton title={'Read More'} />
           </Link>
