@@ -1,5 +1,6 @@
 import MyBadge from './badge/MyBadge';
 import MyButton from './button/MyButton';
+import MyArticleCard from './cards/MyArticleCard';
 import MyCompanyCard from './cards/MyCompanyCard';
 import MyJobCard from './cards/MyJobCard';
 import Benifits from './comapany-details/Benifits';
@@ -45,6 +46,7 @@ export {
   MyBadge,
   MyButton,
   MyCompanyCard,
+  MyArticleCard,
   MyDivider,
   MyIcon,
   MyImage,

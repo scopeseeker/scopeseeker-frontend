@@ -109,12 +109,10 @@ export interface IMyText {
 }
 
 export interface IMyArticleCard {
-  articleImage: string;
-  articleHeading: string;
-  articleHighlight: string;
-  articlePara: string;
-  articleButton: string;
-  dateIcon: string;
-  articledate: string;
-  
+  image: string
+  category: string
+  heading: string
+  paragraph: string
+  readMore: string
+  date: string
 }

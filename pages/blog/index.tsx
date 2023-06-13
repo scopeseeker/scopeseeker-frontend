@@ -1,18 +1,23 @@
 import {
   Layout,
   MainHeading,
-  MyButton,
+  MyArticleCard,
   MyIcon,
-  MyImage,
   MyText,
   PageHeroSection,
 } from '@/component';
-import { Box, Center, Grid, GridItem, HStack, Input, VStack } from '@chakra-ui/react';
-import Head from 'next/head';
-import MyArticleCard from './MyArticleCard';
 import { articleFields } from '@/constant/constantFields';
+import {
+  Center,
+  Grid,
+  GridItem,
+  HStack,
+  Input,
+  VStack,
+} from '@chakra-ui/react';
+import Head from 'next/head';
 
-export default function blog() {
+export default function Blog() {
   return (
     <>
       <Head>
@@ -26,19 +31,19 @@ export default function blog() {
       />
 
       <Layout>
-        <Center gap={'32px'} w={'full'} flexDirection={'column'} mt={'32px'}>
+        <Center gap={'100px'} w={'full'} flexDirection={'column'}>
           {/* Qucik links */}
-          <Center w={'full'}>
+          <Center w={'full'} mt={'32px'}>
             <Center
-              w={'80%'}
               borderRadius={'50px'}
               color={'brand.black'}
               justifyContent={'space-between'}
-              px={'32px'}
+              px={'12px'}
               py={'8px'}
               gap={'12px'}
               border={'1px solid'}
               borderColor={'brand.lightgray'}
+              bg={'brand.aliceblue'}
             >
               <MyText
                 cursor={'pointer'}
@@ -101,12 +106,13 @@ export default function blog() {
               />
               <VStack
                 h={'20px'}
-                w={'0px'}
+                // w={'0px'}
                 bg={'brand.black'}
-                borderLeft={'1px solid'}
+                borderLeft={'1.5px solid'}
                 spacing={0}
-                borderColor={'brand.black'}
+                borderColor={'brand.darkgray'}
               ></VStack>
+
               <HStack
                 overflow={'hidden'}
                 spacing={0}
@@ -120,7 +126,7 @@ export default function blog() {
                 <Input
                   variant={'unstyled'}
                   h={'full'}
-                  placeholder="Search by Role, Location, Type..."
+                  placeholder="Search Blogs..."
                   fontSize={'14px'}
                 />
                 <Center
@@ -141,73 +147,69 @@ export default function blog() {
             </Center>
           </Center>
 
-          {/* Post section */}
-
-          <VStack w={'80%'} gap={'32px'} pt={'40px'}>
-            <VStack alignItems={'flex-start'}>
-              <MyText title="Recent Post" as={'heading'} />
-              <HStack w={'full'} gap={'68px'}>
-                <Box w={'40%'} borderRadius={'8px'} overflow={'hidden'} bg={'red.200'}>
-                  <MyImage
-                    src={'/assets/images/blog.jpg'}
-                    alt="post"
-                    width={450}
-                    height={300}
-                  />
-                </Box>
-                <VStack w={'60%'} alignItems={'flex-start'} gap={'12px'}>
-                  <HStack>
-                    <MyText
-                      title="Development"
-                      as={'title'}
-                      color="brand.primary"
-                    />
-                    <MyIcon name="time" />
-                    <MyText title="2hr ago" as={'span'} />
-                  </HStack>
-                  <Box alignItems={'flex-start'} w={'90%'}>
-                    <MainHeading
-                      title="Virtual reality advancements redefine entertainment, education, and training experiences"
-                      align={'flex-start'}
-                    />
-                  </Box>
-                  <MyButton title="Read more" />
-                </VStack>
-              </HStack>
-            </VStack>
-            {/* Article section */}
-            <VStack w={'full'} pt={'32px'}  alignItems={'flex-start'}>
-              <MyText title="Must Read Articles" as="heading" />
-              <Grid templateColumns={{
-                  base: 'repeat(1, 1fr)',
-                  md: 'repeat(2, 1fr)',
-                  lg: 'repeat(3, 1fr)',
-                }}
-                gap={{ base: 6, lg: 4, xl: 4 }}
-                mx={'auto'}
-                gridGap={'50px'}
-                
-                width={'100%'}
-              >
-                <>
+          {/* Article section */}
+          <VStack w={'full'} alignItems={'center'} gap={'72px'}>
+            <MainHeading
+              title="Scope Seeker All Blogs"
+              subTitle="Here you will find all the articles that make your knowledge more efficient"
+            />
+            <Grid
+              templateColumns={{
+                base: 'repeat(1, 1fr)',
+                md: 'repeat(2, 1fr)',
+                lg: 'repeat(1, 1fr)',
+              }}
+              gridGap={'42px'}
+              width={'80%'}
+            >
+              <>
                 {articleFields.map((item, key) => {
-                  return(
+                  return (
                     <GridItem key={key}>
-                      <MyArticleCard 
-                      articleImage={item.articleImage}
-                      articleHeading={item.articleHeading}
-                      articleHighlight={item.articleHighlight}
-                      articlePara={item.articlePara}
-                      articleButton={item.articleButton}
-                      dateIcon={item.dateIcon}
-                      articledate={item.articledate}/>
+                      <MyArticleCard
+                        image={item.image}
+                        category={item.category}
+                        heading={item.heading}
+                        paragraph={item.paragraph}
+                        readMore={item.readMore}
+                        date={item.date}
+                      />
                     </GridItem>
-                 );
+                  );
                 })}
               </>
+            </Grid>
+            <Center w={'60%'} p={'12px'} gap={'32px'}>
+              <Center cursor={'pointer'}
+                width={'30px'}
+                height={'30px'}
+                bg={'brand.primary'}
+                borderRadius={'50%'}
+              >
+                <MyIcon
+                  name="chevronLeft"
+                  strokeWidth="2"
+                  color="brand.white"
+                />
+              </Center>
 
-              </Grid>
-            </VStack>
+              <Center px={'12px'} h={'20px'}>
+                <MyText as="title" title="Page 1 of 20" />
+              </Center>
+
+              <Center cursor={'pointer'}
+                width={'30px'}
+                height={'30px'}
+                bg={'brand.primary'}
+                borderRadius={'50%'}
+              >
+                <MyIcon
+                  name="chevronRight"
+                  strokeWidth="2"
+                  color="brand.white"
+                />
+              </Center>
+            </Center>
           </VStack>
         </Center>
       </Layout>
