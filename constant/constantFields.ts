@@ -564,87 +564,65 @@ const companyLeaders = [
 
 const articleFields = [
   {
-    articleImage:"/assets/images/blog.jpg",
-    articleHeading: "Web Development",
-    articleHighlight:'Web development involves creating and maintaining websites.',
-    articlePara:'Web development is the process of designing, building, and maintaining websites and web applications. It encompasses a range of tasks, including frontend development, backend development, and database management',
-    articleButton:'Read more',
-    dateIcon:'date',
-    articledate:'23.23.23'
+    image: '/assets/images/blog.jpg',
+    category: 'Blockchain',
+    heading:
+      'Demystifying Blockchain Technology: Exploring Its Potential Beyond Cryptocurrency',
+    paragraph:
+      'Blockchain technology has gained significant attention beyond its association with cryptocurrencies. This blog post delves into the fundamentals of blockchain, its decentralized nature, and its transformative impact on various industries, including finance, supply chain, and healthcare.',
+    readMore: '/blog/876543',
+    date: '1 July 2023',
   },
   {
-    articleImage:"/assets/images/blog.jpg",
-    articleHeading: "Web Development",
-    articleHighlight:'Web development involves creating and maintaining websites.',
-    articlePara:'Web development is the process of designing, building, and maintaining websites and web applications. It encompasses a range of tasks, including frontend development, backend development, and database management',
-    articleButton:'Read more',
-    dateIcon:'date',
-    articledate:'23.23.23'
+    image: '/assets/images/blog.jpg',
+    category: 'Internet of Things (IoT)',
+    heading:
+      'Connecting the World: Exploring the Internet of Things and Its Impact on Everyday Life',
+    paragraph:
+      'The Internet of Things (IoT) revolutionizes the way devices and systems interact, creating a seamlessly connected world. This blog post discusses the concept of IoT, its applications in smart homes, healthcare, transportation, and the challenges and opportunities presented by this rapidly expanding ecosystem.',
+    readMore: '/blog/876543',
+    date: '6 July 2023',
   },
   {
-    articleImage:"/assets/images/blog.jpg",
-    articleHeading: "Web Development",
-    articleHighlight:'Web development involves creating and maintaining websites.',
-    articlePara:'Web development is the process of designing, building, and maintaining websites and web applications. It encompasses a range of tasks, including frontend development, backend development, and database management',
-    articleButton:'Read more',
-    dateIcon:'date',
-    articledate:'23.23.23'
+    image: '/assets/images/blog.jpg',
+    category: 'Cloud Computing',
+    heading:
+      'Unleashing the Power of the Cloud: Exploring Cloud Computing Technologies',
+    paragraph:
+      'Cloud computing has revolutionized the way businesses and individuals store, access, and process data. This blog post provides an overview of cloud computing models, such as Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS), along with the benefits and challenges of adopting cloud-based solutions.',
+    readMore: '/blog/876543',
+    date: '11 July 2023',
   },
   {
-    articleImage:"/assets/images/blog.jpg",
-    articleHeading: "Web Development",
-    articleHighlight:'Web development involves creating and maintaining websites.',
-    articlePara:'Web development is the process of designing, building, and maintaining websites and web applications. It encompasses a range of tasks, including frontend development, backend development, and database management',
-    articleButton:'Read more',
-    dateIcon:'date',
-    articledate:'23.23.23'
+    image: '/assets/images/blog.jpg',
+    category: 'Augmented Reality (AR)',
+    heading:
+      'Transforming Reality: Exploring the Exciting World of Augmented Reality',
+    paragraph:
+      'Augmented Reality (AR) blends virtual elements with the real world, enhancing our perception and interaction. This blog post dives into the applications of AR in gaming, education, retail, and other industries, and showcases the latest advancements that are shaping the future of augmented reality experiences.',
+    readMore: '/blog/876543',
+    date: '16 July 2023',
   },
   {
-    articleImage:"/assets/images/blog.jpg",
-    articleHeading: "Web Development",
-    articleHighlight:'Web development involves creating and maintaining websites.',
-    articlePara:'Web development is the process of designing, building, and maintaining websites and web applications. It encompasses a range of tasks, including frontend development, backend development, and database management',
-    articleButton:'Read more',
-    dateIcon:'date',
-    articledate:'23.23.23'
+    image: '/assets/images/blog.jpg',
+    category: 'Cybersecurity',
+    heading:
+      'Staying Safe in a Digital Age: Essential Cybersecurity Practices for Individuals and Businesses',
+    paragraph:
+      'With the growing number of cyber threats, it is crucial to prioritize cybersecurity to protect sensitive information. This blog post offers practical tips and best practices for individuals and businesses to strengthen their cybersecurity defenses, including strong passwords, regular software updates, and employee awareness training.',
+    readMore: '/blog/876543',
+    date: '21 July 2023',
   },
   {
-    articleImage:"/assets/images/blog.jpg",
-    articleHeading: "Web Development",
-    articleHighlight:'Web development involves creating and maintaining websites.',
-    articlePara:'Web development is the process of designing, building, and maintaining websites and web applications. It encompasses a range of tasks, including frontend development, backend development, and database management',
-    articleButton:'Read more',
-    dateIcon:'date',
-    articledate:'23.23.23'
+    image: '/assets/images/blog.jpg',
+    category: 'Machine Learning',
+    heading:
+      'Demystifying Machine Learning: Understanding the Fundamentals and Real-World Applications',
+    paragraph:
+      'Machine Learning is at the forefront of technological advancements, enabling systems to learn and improve from data without explicit programming. This blog post provides an introduction to machine learning algorithms, explores popular use cases in fields like healthcare and finance, and discusses the ethical considerations surrounding its implementation.',
+    readMore: '/blog/876543',
+    date: '26 July 2023',
   },
-  {
-    articleImage:"/assets/images/blog.jpg",
-    articleHeading: "Web Development",
-    articleHighlight:'Web development involves creating and maintaining websites.',
-    articlePara:'Web development is the process of designing, building, and maintaining websites and web applications. It encompasses a range of tasks, including frontend development, backend development, and database management',
-    articleButton:'Read more',
-    dateIcon:'date',
-    articledate:'23.23.23'
-  },
-  {
-    articleImage:"/assets/images/blog.jpg",
-    articleHeading: "Web Development",
-    articleHighlight:'Web development involves creating and maintaining websites.',
-    articlePara:'Web development is the process of designing, building, and maintaining websites and web applications. It encompasses a range of tasks, including frontend development, backend development, and database management',
-    articleButton:'Read more',
-    dateIcon:'date',
-    articledate:'23.23.23'
-  },
-  {
-    articleImage:"/assets/images/blog.jpg",
-    articleHeading: "Web Development",
-    articleHighlight:'Web development involves creating and maintaining websites.',
-    articlePara:'Web development is the process of designing, building, and maintaining websites and web applications. It encompasses a range of tasks, including frontend development, backend development, and database management',
-    articleButton:'Read more',
-    dateIcon:'date',
-    articledate:'23.23.23'
-  },
-
 ];
 
 export {
@@ -659,5 +637,5 @@ export {
   companySubsidiaries,
   companyLeaders,
   companyCardFields,
-  articleFields
+  articleFields,
 };
