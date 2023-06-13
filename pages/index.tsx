@@ -4,18 +4,13 @@ import {
   FeaturedCompany,
   HeroSection,
   HowWorks,
-  Layout,
   MoreIntroSection,
-  MyButton,
-  MyDivider,
-  MyImage,
-  MyText,
   PopularCategories,
   SignupSection,
   Subscribe,
   Testimonials,
 } from '@/component';
-import { Center, Flex, HStack, Heading, VStack } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
 import Head from 'next/head';
 
 export default function Home() {

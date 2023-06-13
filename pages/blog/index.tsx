@@ -16,8 +16,13 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import Head from 'next/head';
+import { useState } from 'react';
 
 export default function Blog() {
+  const [activeElement, setActiveElement] = useState('All');
+  const handleCategoryClick = (id: string) => {
+    setActiveElement(id);
+  };
   return (
     <>
       <Head>
@@ -31,138 +36,117 @@ export default function Blog() {
       />
 
       <Layout>
-        <Center gap={'100px'} w={'full'} flexDirection={'column'}>
-          {/* Qucik links */}
-          <Center w={'full'} mt={'32px'}>
-            <Center
-              borderRadius={'50px'}
-              color={'brand.black'}
-              justifyContent={'space-between'}
-              px={'12px'}
-              py={'8px'}
-              gap={'12px'}
-              border={'1px solid'}
-              borderColor={'brand.lightgray'}
-              bg={'brand.aliceblue'}
-            >
-              <MyText
-                cursor={'pointer'}
-                as="span"
-                title="All"
-                color="currentColor"
-                _hover={{ bg: 'brand.primary', color: 'brand.white' }}
-                px={'18px'}
-                py={'4px'}
-                borderRadius={'50px'}
-                transition={'all ease .2s'}
-              />
-
-              <MyText
-                cursor={'pointer'}
-                as="span"
-                title="Development"
-                color="currentColor"
-                _hover={{ bg: 'brand.primary', color: 'brand.white' }}
-                px={'18px'}
-                py={'4px'}
-                borderRadius={'50px'}
-                transition={'all ease .2s'}
-              />
-
-              <MyText
-                cursor={'pointer'}
-                as="span"
-                title="Tips & Tricks"
-                color="currentColor"
-                _hover={{ bg: 'brand.primary', color: 'brand.white' }}
-                px={'18px'}
-                py={'4px'}
-                borderRadius={'50px'}
-                transition={'all ease .2s'}
-              />
-
-              <MyText
-                cursor={'pointer'}
-                as="span"
-                title="Technology"
-                color="currentColor"
-                _hover={{ bg: 'brand.primary', color: 'brand.white' }}
-                px={'18px'}
-                py={'4px'}
-                borderRadius={'50px'}
-                transition={'all ease .2s'}
-              />
-
-              <MyText
-                cursor={'pointer'}
-                as="span"
-                title="Business"
-                color="currentColor"
-                _hover={{ bg: 'brand.primary', color: 'brand.white' }}
-                px={'18px'}
-                py={'4px'}
-                borderRadius={'50px'}
-                transition={'all ease .2s'}
-              />
-              <VStack
-                h={'20px'}
-                // w={'0px'}
-                bg={'brand.black'}
-                borderLeft={'1.5px solid'}
-                spacing={0}
-                borderColor={'brand.darkgray'}
-                display={{base:'none',md:'flex'}}
-              ></VStack>
-
-              <HStack
-                overflow={'hidden'}
-                spacing={0}
-                justifyContent={'space-between'}
-                border={'1px solid'}
-                borderColor={'brand.primary'}
-                pl={'12px'}
-                w={{ base: '100%', sm: '70%', md: '30%', lg: '30%' }}
-                borderRadius={'60px'}
-                display={{base:'none',md:'flex'}}
-              >
-                <Input
-                  variant={'unstyled'}
-                  h={'full'}
-                  placeholder="Search Blogs..."
-                  fontSize={'14px'}
-                />
-                <Center
-                  cursor={'pointer'}
-                  p={'8px'}
-                  px={'10px'}
-                  borderRadius={'0px'}
-                >
-                  <MyIcon
-                    name="search"
-                    color="brand.primary"
-                    width="20px"
-                    height="20px"
-                    strokeWidth="2"
-                  />
-                </Center>
-              </HStack>
-            </Center>
-          </Center>
-
-          {/* Article section */}
-          <VStack w={'full'}  alignItems={'center'} gap={{base:'32px',md:'72px'}}>
+        <Center gap={'72px'} w={'full'} flexDirection={'column'}>
+          <VStack gap={'52px'} mt={'32px'}>
             <MainHeading
               title="Scope Seeker All Blogs"
               subTitle="Here you will find all the articles that make your knowledge more efficient"
             />
+            {/* Qucik links */}
+            <Center w={'full'}>
+              <Center
+                borderRadius={{ base: '10px', md: '50px' }}
+                color={'brand.black'}
+                justifyContent={'space-between'}
+                px={'12px'}
+                py={'8px'}
+                gap={'12px'}
+                border={'1px solid'}
+                borderColor={'brand.lightgray'}
+                bg={'brand.aliceblue'}
+                flexDir={{ base: 'column', md: 'row' }}
+              >
+                <HStack flexDirection={{ base: 'column', sm: 'row' }}>
+                  {[
+                    'All',
+                    'Development',
+                    'Interview Preparation',
+                    'Tips&Tricks',
+                  ].map((item, key) => {
+                    return (
+                      <>
+                        <MyText
+                          key={key}
+                          cursor={'pointer'}
+                          as="span"
+                          title={item}
+                          _hover={{ bg: 'brand.primary', color: 'brand.white' }}
+                          px={'18px'}
+                          py={'4px'}
+                          textAlign={'center'}
+                          borderRadius={'50px'}
+                          transition={'all ease .2s'}
+                          bg={
+                            activeElement === item
+                              ? 'brand.primary'
+                              : 'transparent'
+                          }
+                          color={
+                            activeElement === item
+                              ? 'brand.white'
+                              : 'currentColor'
+                          }
+                          onClick={() => handleCategoryClick(item)}
+                        />
+                      </>
+                    );
+                  })}
+                </HStack>
+
+                <VStack
+                  h={'20px'}
+                  bg={'brand.black'}
+                  borderLeft={'1.5px solid'}
+                  spacing={0}
+                  borderColor={'brand.darkgray'}
+                  display={{ base: 'none', xl: 'flex' }}
+                ></VStack>
+
+                <HStack
+                  overflow={'hidden'}
+                  spacing={0}
+                  justifyContent={'space-between'}
+                  border={'1px solid'}
+                  borderColor={'brand.primary'}
+                  pl={'12px'}
+                  w={{ base: '100%', sm: '70%', md: '30%', lg: '30%' }}
+                  borderRadius={'60px'}
+                >
+                  <Input
+                    variant={'unstyled'}
+                    h={'full'}
+                    placeholder="Search Blogs..."
+                    fontSize={'14px'}
+                  />
+                  <Center
+                    cursor={'pointer'}
+                    p={'8px'}
+                    px={'10px'}
+                    borderRadius={'0px'}
+                  >
+                    <MyIcon
+                      name="search"
+                      color="brand.primary"
+                      width="20px"
+                      height="20px"
+                      strokeWidth="2"
+                    />
+                  </Center>
+                </HStack>
+              </Center>
+            </Center>
+          </VStack>
+
+          {/* Article section */}
+          <VStack
+            w={'full'}
+            alignItems={'center'}
+            gap={{ base: '32px', md: '72px' }}
+          >
             <Grid
-              templateColumns={{
-                base: 'repeat(1, 1fr)',
-                md: 'repeat(1, 1fr)',
-                lg: 'repeat(1, 1fr)',
-              }}
+              templateColumns={'repeat(1, 1fr)'}
               gridGap={'42px'}
-              width={{base:'100%',md:'80%'}}
+              width={{ base: '100%', sm: '80%', xl: '80%', '2xl': '70%' }}
             >
               <>
                 {articleFields.map((item, key) => {
@@ -181,8 +165,13 @@ export default function Blog() {
                 })}
               </>
             </Grid>
-            <Center w={{base:'80%',md:'60%'}} p={'12px'} gap={'32px'}>
-              <Center cursor={'pointer'}
+            <Center
+              w={'100%'}
+              p={{ base: '0px', sm: '12px' }}
+              gap={{ base: '12px', sm: '32px' }}
+            >
+              <Center
+                cursor={'pointer'}
                 width={'30px'}
                 height={'30px'}
                 bg={'brand.primary'}
@@ -199,7 +188,8 @@ export default function Blog() {
                 <MyText as="title" title="Page 1 of 20" />
               </Center>
 
-              <Center cursor={'pointer'}
+              <Center
+                cursor={'pointer'}
                 width={'30px'}
                 height={'30px'}
                 bg={'brand.primary'}
@@ -212,7 +202,7 @@ export default function Blog() {
                 />
               </Center>
             </Center>
-          </VStack> 
+          </VStack>
         </Center>
       </Layout>
     </>

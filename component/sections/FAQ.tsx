@@ -22,12 +22,13 @@ const FAQ = () => {
           {faqFieldsObject.map((items, key) => {
             return (
               <AccordionItem
-                p={2}
+                p={'8px'}
                 w={{ base: '85vw', lg: '65vw', xl: '55vw' }}
                 bg={'brand.white'}
                 borderRadius={'md'}
                 border={'1px solid'}
-                borderColor={'brand.darkgray'}
+                borderColor={'brand.lightgray'}
+                _hover={{borderColor: 'brand.primary'}}
                 key={key}
               >
                 <AccordionButton _hover={{ backgroundColor: 'none' }}>
