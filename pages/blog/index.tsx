@@ -150,7 +150,7 @@ export default function Blog() {
           </Center>
 
           {/* Article section */}
-          <VStack w={'full'} bg={'red.200'} alignItems={'center'} gap={{base:'32px',md:'72px'}}>
+          <VStack w={'full'}  alignItems={'center'} gap={{base:'32px',md:'72px'}}>
             <MainHeading
               title="Scope Seeker All Blogs"
               subTitle="Here you will find all the articles that make your knowledge more efficient"
