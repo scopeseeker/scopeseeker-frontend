@@ -32,10 +32,6 @@ function EditProfile() {
   const [showEducation, setShowEducation] = useState(false);
   const [isWorkExperience, setIsWorkExperience] = useState([{}]);
 
-  const handleWorkExperience = () => {
-    
-  }
-
   const handleOpenWorkExperience = () => setShowExperience(!showExperience);
 
   const handleOpenEdcation = () => setShowEducation(!showEducation);
@@ -387,23 +383,23 @@ function EditProfile() {
                 </HStack>
               </HStack>
               {/* Add Work Experience Box*/}
-              {isWorkExperience.length > 0 && 
-              <VStack py={'20px'} w={'full'} gap={'20px'}>
-                <AddBoxTemplete
-                  role="Full Stack Web Developer"
-                  companyImage="/assets/images/company-logo/amazon.png"
-                  companyName="Align Essential"
-                  period="Jan 18, 2023 - Feb 28, 2023"
-                />
+              {isWorkExperience.length > 0 && (
+                <VStack py={'20px'} w={'full'} gap={'20px'}>
+                  <AddBoxTemplete
+                    role="Full Stack Web Developer"
+                    companyImage="/assets/images/company-logo/amazon.png"
+                    companyName="Align Essential"
+                    period="Jan 18, 2023 - Feb 28, 2023"
+                  />
 
-                <AddBoxTemplete
-                  role="Full Stack Web Developer"
-                  companyImage="/assets/images/company-logo/amazon.png"
-                  companyName="Align Essential"
-                  period="Jan 18, 2023 - Feb 28, 2023"
-                />
-              </VStack>
-              }
+                  <AddBoxTemplete
+                    role="Full Stack Web Developer"
+                    companyImage="/assets/images/company-logo/amazon.png"
+                    companyName="Align Essential"
+                    period="Jan 18, 2023 - Feb 28, 2023"
+                  />
+                </VStack>
+              )}
               <Collapse in={showExperience} style={{ width: '100%' }}>
                 <VStack w={'full'} gap={'22px'}>
                   <HStack
@@ -486,7 +482,7 @@ function EditProfile() {
                     />
                   </HStack>
                   <HStack w={'full'}>
-                    <MyButton title="Submit" px="50px" onClick={handleWorkExperience}/>
+                    <MyButton title="Submit" px="50px" />
                     <MyButton title="Cancel" px="50px" variant="outline" />
                   </HStack>
                 </VStack>
@@ -773,16 +769,25 @@ const AddBoxTemplete = ({
       px={'20px'}
       py={'10px'}
       borderRadius={'20px'}
+      flexDir={{ base: 'column', md: 'row' }}
+      gap={{ base: '10px', md: '0px' }}
     >
-      <HStack>
-        <Center
-          h={'70px'}
-          w={'70px'}
-          borderRadius={'50px'}
-          bg={'brand.aliceblue'}
-        >
-          <MyImage alt="img" src={companyImage} width={40} height={40} />
-        </Center>
+      <HStack
+        flexDir={{ base: 'column', sm: 'row' }}
+        gap={{ base: '10px', sm: '0px' }}
+        alignItems={{ base: 'flex-start', sm: 'center' }}
+        w={'full'}
+      >
+        <Box>
+          <Center
+            h={'70px'}
+            w={'70px'}
+            borderRadius={'50px'}
+            bg={'brand.aliceblue'}
+          >
+            <MyImage alt="img" src={companyImage} width={40} height={40} />
+          </Center>
+        </Box>
         <VStack spacing={0} alignItems={'flex-start'}>
           <MyText as="span" title={role} />
           <MyText as="small" title={companyName} />
@@ -791,7 +796,7 @@ const AddBoxTemplete = ({
       </HStack>
 
       {/* Icon Part  */}
-      <HStack>
+      <HStack justifyContent={'flex-end'} w={'full'}>
         <Center
           w={'30px'}
           h={'30px'}
