@@ -10,14 +10,14 @@ const SkillsSection = () => {
     setInputText(e.target.value);
   };
 
-  const handleAddItem = () => {
+  const handleAddItem = (): void => {
     if (inputText.trim() !== '') {
       setItems([...items, inputText.trim()]);
       setInputText('');
     }
   };
 
-  const handleDeleteItem = (index: number) => {
+  const handleDeleteItem = (index: number): void => {
     const updatedItems = items.filter((_, i) => i !== index);
     setItems(updatedItems);
   };
