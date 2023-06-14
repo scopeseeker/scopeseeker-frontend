@@ -75,6 +75,8 @@ export type IconNameType =
   | 'point'
   | 'cross'
   | 'calenderTime'
+  | 'bookmark'
+  | 'like'
   | string;
 
 type IconData = {
@@ -101,6 +103,19 @@ export const IconData: IconData = {
       <path d="M15 6l-6 6l6 6"></path>
     </>
   ),
+
+   like : (
+    <>
+   <path d="M7 11v8a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1v-7a1 1 0 0 1 1 -1h3a4 4 0 0 0 4 -4v-1a2 2 0 0 1 4 0v5h3a2 2 0 0 1 2 2l-1 5a2 3 0 0 1 -2 2h-7a3 3 0 0 1 -3 -3"></path>
+    </>
+   ),
+   bookmark : (
+    <>
+   <path d="M12.357 17.214l-.357 -.214l-5 3v-14a2 2 0 0 1 2 -2h6a2 2 0 0 1 2 2v6.5"></path>
+   <path d="M16 19h6"></path>
+   <path d="M19 16v6"></path>
+    </>
+   ),
   date: (
     <>
       <path d="M4 5m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path>
