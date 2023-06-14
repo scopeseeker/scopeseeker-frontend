@@ -12,6 +12,7 @@ const MyButton = ({
 }: IMyButtonProps) => {
   return (
     <Center
+      as={'button'}
       borderRadius={borderRadius || '50px'}
       h={h || '36px'}
       bg={variant === 'outline' ? 'transparent' : 'brand.primary'}

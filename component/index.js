@@ -17,7 +17,7 @@ import MainHeading from './main-heading/MainHeading';
 import Navbar from './navbar/Navbar';
 import OtpVerifyBox from './otp-verify-box/OtpVerifyBox';
 import PageHeroSection from './page-hero-section/PageHeroSection';
-import RadioComp from './radio-buttons/RadioButtons';
+import RadioButton from './radio-buttons/RadioButton';
 import CompanyList from './sections/CompanyList';
 import FAQ from './sections/FAQ';
 import FeaturedCompany from './sections/FeaturedCompany';
@@ -58,7 +58,7 @@ export {
   Overview,
   PageHeroSection,
   PopularCategories,
-  RadioComp,
+  RadioButton,
   SignupSection,
   Subscribe,
   Testimonials,
