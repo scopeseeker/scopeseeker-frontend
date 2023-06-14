@@ -17,6 +17,7 @@ const MyInput = ({
   labelTitle,
   onChange,
   value,
+  name,
   ...rest
 }: IMyInputProps) => {
   return (
@@ -49,6 +50,7 @@ const MyInput = ({
             _focus={{ border: '1.5px solid', borderColor: 'brand.primary' }}
             onChange={onChange}
             value={value}
+            name={name}
             {...rest}
           />
           {rightElement && (
