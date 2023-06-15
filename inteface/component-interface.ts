@@ -49,6 +49,7 @@ export interface IMyInputProps {
   onChange?: any; 
   value?: string;
   name?: string;
+  pr?: string;
   [key: string]: any;
 }
 
