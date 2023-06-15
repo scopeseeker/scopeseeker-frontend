@@ -156,7 +156,7 @@ const EducationSection = () => {
               placeholder="Enter your city"
             />
           </HStack>
-          <HStack w={'full'}>
+          <HStack w={'full'} flexWrap={'wrap'} spacing={0} gap={'12px'}>
             <MyButton title="Submit" px="50px" />
             <MyButton title="Cancel" px="50px" variant="outline" />
           </HStack>

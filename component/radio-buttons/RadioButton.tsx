@@ -15,7 +15,7 @@ const RadioButton = ({ name, options, onChange }: IRadioButton) => {
   };
   return (
     <RadioGroup onChange={handleChange} value={selectedValue} name={name}>
-      <Stack direction="row" gap={'12px'}>
+      <Stack direction="row" gap={'12px'} flexWrap={'wrap'} spacing={0}>
         {options.map((option, key) => {
           return (
             <>

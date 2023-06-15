@@ -8,6 +8,7 @@ const MyButton = ({
   variant = 'solid',
   px = '16px',
   h,
+  cursor = 'pointer',
   ...rest
 }: IMyButtonProps) => {
   return (
@@ -32,7 +33,7 @@ const MyButton = ({
         variant === 'outline' ? { bg: 'transparent' } : { bg: 'brand.ternary' }
       }
       px={px}
-      cursor={'pointer'}
+      cursor={cursor}
       color={variant === 'outline' ? 'brand.darkgray' : 'brand.white'}
       {...rest}
     >
