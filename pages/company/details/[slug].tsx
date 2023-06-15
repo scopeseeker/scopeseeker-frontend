@@ -157,24 +157,67 @@ export default function DynamicPage() {
 
             {/* Tabs */}
             <HStack paddingTop={'30px'} w={'full'}>
-              <Tabs position="relative" variant="unstyled" w={'full'}>
-                <TabList>
-                  <Tab>
-                    <MyText as="title" title="Overview" />
+              <Tabs  position="relative" variant="unstyled" w={'full'}>
+                <TabList gap={'10px'}>
+                  <Tab
+                    _selected={{ color: 'white', bg: 'brand.primary' }}
+                    border={'1px solid'}
+                    borderColor={'brand.lightgray'}
+                    w={{ base: '50%', md: '150px' }}
+                    h={'60px'}
+                    borderRadius={'10px'}
+                  >
+                    Overview
                   </Tab>
-                  <Tab>
-                    <MyText as="title" title="Benifits" />
+                  
+                  <Tab
+                    _selected={{ color: 'white', bg: 'brand.primary' }}
+                    border={'1px solid'}
+                    borderColor={'brand.lightgray'}
+                    minW={{ base: '50%', md: '150px' }}
+                    h={'60px'}
+                    borderRadius={'10px'}
+                  >
+                    Benifits
                   </Tab>
-                  <Tab>
-                    <MyText as="title" title="Jobs" />
+                  <Tab
+                    _selected={{ color: 'white', bg: 'brand.primary' }}
+                    border={'1px solid'}
+                    borderColor={'brand.lightgray'}
+                    w={{ base: '50%', md: '150px' }}
+                    h={'60px'}
+                    borderRadius={'10px'}
+                  >
+                    Jobs
                   </Tab>
+                  <Tab
+                    _selected={{ color: 'white', bg: 'brand.primary' }}
+                    border={'1px solid'}
+                    borderColor={'brand.lightgray'}
+                    minW={{ base: '50%', md: '150px' }}
+                    h={'60px'}
+                    borderRadius={'10px'}
+                  >
+                    Hiring Process
+                  </Tab>
+                  <Tab
+                    _selected={{ color: 'white', bg: 'brand.primary' }}
+                    border={'1px solid'}
+                    borderColor={'brand.lightgray'}
+                    minW={{ base: '50%', md: '150px' }}
+                    h={'60px'}
+                    borderRadius={'10px'}
+                  >
+                    Helpfull Resouces
+                  </Tab>
+                 
                 </TabList>
-                <TabIndicator
+                {/* <TabIndicator
                   mt="-1.5px"
                   height="2px"
                   bg="brand.primary"
                   borderRadius="1px"
-                />
+                /> */}
                 <TabPanels>
                   <TabPanel>
                     <Overview />
