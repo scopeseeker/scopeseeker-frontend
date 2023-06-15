@@ -6,8 +6,7 @@ import {
   MyInput,
   MyText,
 } from '@/component';
-import truncatedParagraph from '@/lib/validator';
-import { Box, Center, Flex, HStack, VStack } from '@chakra-ui/react';
+import { Center, Flex, HStack, VStack } from '@chakra-ui/react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -18,10 +17,15 @@ export default function Category() {
   return (
     <>
       <Layout>
-        <Flex w={'full'} h={'full'} flexDirection={'row'} gap={'72px'}>
+        <Flex
+          w={'full'}
+          h={'full'}
+          flexDirection={'row'}
+          gap={'72px'}
+          py={'32px'}
+        >
           {/* Left Blog Part */}
           <VStack w={'70%'} gap={'72px'} alignItems={'flex-start'}>
-            {/* This is the Heading and blog detail section */}
             <VStack w={'full'}>
               <MainHeading title="Complete Frontend Guide" align={'start'} />
               <HStack w={'full'} justifyContent={'space-between'}>
@@ -179,285 +183,238 @@ export default function Category() {
                   as={'p'}
                 />
               </VStack>
+              <VStack alignItems={'flex-start'} gap={'12px'}>
+                <MyText
+                  title="The Basics of Frontend Development"
+                  as={'heading'}
+                />
+                <MyText title={`slug: ${slug}`} as={'title'} />
+                <MyText
+                  title="HTML (Hypertext Markup Language)
+                HTML forms the foundation of every webpage. It defines the structure and content, enabling you to create headings, paragraphs, images, links, and more. Mastering HTML is essential for building well-structured web pages.
+
+                CSS (Cascading Style Sheets)
+                CSS is responsible for the visual styling of your web pages. With CSS, you can control the layout, colors, fonts, and overall design of your site. Understanding CSS selectors, properties, and how to apply them will help you create visually appealing and responsive interfaces.
+                
+                JavaScript brings interactivity and functionality to your web pages. It allows you to manipulate HTML elements, handle events, make API calls, and create dynamic user experiences. Learning JavaScript empowers you to add behaviors and make your website more engaging."
+                  as={'p'}
+                />
+              </VStack>
+              <VStack alignItems={'flex-start'} gap={'12px'}>
+                <MyText
+                  title="Prerequisites for frontend development"
+                  as={'heading'}
+                />
+                <MyText
+                  title="Programming Languages: Proficiency in at least one backend programming language is essential. Common languages for backend development include:
+
+                Python: Known for its simplicity and versatility, Python is widely used in backend development.
+                JavaScript: Node.js allows you to use JavaScript on the server-side, making it a popular choice for full-stack development.
+                Java: Renowned for its reliability and performance, Java is commonly used in enterprise-level applications.
+                Ruby: Often associated with the Ruby on Rails framework, Ruby is known for its elegant syntax and developer-friendly environment.
+                PHP: Widely used in web development, PHP powers many popular content management systems and frameworks."
+                  as={'p'}
+                />
+              </VStack>
+              <VStack alignItems={'flex-start'} gap={'12px'}>
+                <MyText
+                  title="The Basics of Frontend Development"
+                  as={'heading'}
+                />
+                <MyText title={`slug: ${slug}`} as={'title'} />
+                <MyText
+                  title="HTML (Hypertext Markup Language)
+                HTML forms the foundation of every webpage. It defines the structure and content, enabling you to create headings, paragraphs, images, links, and more. Mastering HTML is essential for building well-structured web pages.
+
+                CSS (Cascading Style Sheets)
+                CSS is responsible for the visual styling of your web pages. With CSS, you can control the layout, colors, fonts, and overall design of your site. Understanding CSS selectors, properties, and how to apply them will help you create visually appealing and responsive interfaces.
+                
+                JavaScript brings interactivity and functionality to your web pages. It allows you to manipulate HTML elements, handle events, make API calls, and create dynamic user experiences. Learning JavaScript empowers you to add behaviors and make your website more engaging."
+                  as={'p'}
+                />
+              </VStack>
+              <VStack alignItems={'flex-start'} gap={'12px'}>
+                <MyText
+                  title="Prerequisites for frontend development"
+                  as={'heading'}
+                />
+                <MyText
+                  title="Programming Languages: Proficiency in at least one backend programming language is essential. Common languages for backend development include:
+
+                Python: Known for its simplicity and versatility, Python is widely used in backend development.
+                JavaScript: Node.js allows you to use JavaScript on the server-side, making it a popular choice for full-stack development.
+                Java: Renowned for its reliability and performance, Java is commonly used in enterprise-level applications.
+                Ruby: Often associated with the Ruby on Rails framework, Ruby is known for its elegant syntax and developer-friendly environment.
+                PHP: Widely used in web development, PHP powers many popular content management systems and frameworks."
+                  as={'p'}
+                />
+              </VStack>
             </VStack>
           </VStack>
 
           {/* Right Blog Part */}
-          <VStack w={'30%'} justifyContent={'flex-start'} gap={'32px'}>
-            <Center
-              w={'full'}
-              h={'150px'}
-              bg={'brand.aliceblue'}
-              border={'1px solid'}
-              borderColor={'brand.lightgray'}
-              borderRadius={'12px'}
-            >
-              <VStack w={'80%'} alignItems={'flex-start'}>
-                <Center w={'full'} gap={'6px'} justifyContent={'flex-start'}>
-                  <Center p={'2px'} borderRadius={'8px'} bg={'brand.primary'}>
-                    <MyIcon
-                      name="email"
-                      height="40px"
-                      width="45px"
-                      color="brand.white"
-                    />
-                  </Center>
-                  <VStack spacing={0} gap={0}>
-                    <MyText
-                      title="Subscribe"
-                      as="heading"
-                      color="brand.primary"
-                    />
-                    <MyText title="to our Newsletter" as="span" />
-                  </VStack>
-                </Center>
-                <HStack w={'full'}>
-                  <MyInput
-                    type="email"
-                    placeholder="Enter your email"
-                    leftElement={<MyIcon name="gmail" />}
-                  />
-                  <Center
-                    p={'1px'}
-                    bg={'brand.primary'}
-                    borderRadius={'50px'}
-                    cursor={'pointer'}
-                  >
-                    <MyIcon name="arrowRight" color="brand.white" />
-                  </Center>
-                </HStack>
-              </VStack>
-            </Center>
-
+          <VStack w={'30%'} position={'relative'}>
             <VStack
-              alignItems={'flex-start'}
-              p={'10px'}
-              w={'full'}
-              
-              border={'1px solid'}
-              borderColor={'brand.lightgray'}
-              borderRadius={'12px'}
+              w={'100%'}
+              justifyContent={'flex-start'}
+              gap={'32px'}
+              p={'12px'}
+              position={'sticky'}
+              top={'10%'}
             >
-              <Center w={'full'} justifyContent={'flex-start'}>
-              <MyText title="Featured Category" as="heading" />
-              </Center>
-              
               <Center
-                borderRadius={'12px'}
                 w={'full'}
-                h={'400px'}
-                
-                alignItems={'flex-start'}
-                justifyContent={'flex-start'}
-                flexFlow={'column'}
-                
+                bg={'brand.aliceblue'}
+                border={'1px solid'}
+                borderColor={'brand.lightgray'}
+                borderRadius={'6px'}
+                p={'12px'}
               >
-                <VStack
-                  w={'full'}
-                  flexDirection={'column'}
-                  gap={'1px'}
-                  alignItems={'flex-start'}
-                  overflow={'scroll'}
-                  css={{
-                    '&::-webkit-scrollbar': {
-                      width: '2px',
-                    },
-                    '&::-webkit-scrollbar-thumb': {
-                      backgroundColor: 'brand.primary',
-                      borderRadius: '2px',
-                    },
-                  }}
-                >
-                  <Center alignItems={'flex-start'}>
-                    <Center
-                      p={'10px'}
-                      borderRadius={'8px'}
-                      m={'6px'}
-                      bg={'brand.aliceblue'}
-                    >
-                      <MyIcon name="job" height="35px" width="35px" />
-                    </Center>
-                    <Center m={'8px'}>
+                <VStack w={'full'} alignItems={'flex-start'}>
+                  <Center w={'full'} gap={'6px'} justifyContent={'flex-start'}>
+                    <HStack spacing={'4px'}>
                       <MyText
-                        title={truncatedParagraph(
-                          'Proficiency in at least one backend programming language is essential. Common languages for backend development include',
-                          8
-                        )}
-                        as="p"
-                        _hover={{color:'brand.primary'}}
-                        cursor={'pointer'}
+                        title="Subscribe"
+                        as="title"
+                        color="brand.primary"
                       />
-                    </Center>
+                      <MyText title="to our Newsletter" as="span" />
+                    </HStack>
                   </Center>
-                  <Center alignItems={'flex-start'}>
+                  <HStack w={'full'}>
+                    <MyInput
+                      type="email"
+                      placeholder="Enter your email"
+                      leftElement={<MyIcon name="gmail" />}
+                      pr="4px"
+                    />
                     <Center
-                      p={'10px'}
-                      borderRadius={'8px'}
-                      m={'6px'}
-                      bg={'brand.aliceblue'}
+                      bg={'brand.primary'}
+                      borderRadius={'50px'}
+                      cursor={'pointer'}
+                      p={'4px'}
                     >
-                      <MyIcon name="job" height="35px" width="35px" />
+                      <MyIcon name="arrowRight" color="brand.white" />
                     </Center>
-                    <Center m={'8px'}>
-                      <MyText
-                        title={truncatedParagraph(
-                          'Proficiency in at least one backend programming language is essential. Common languages for backend development include',
-                          8
-                        )}
-                        as="p"
-                        _hover={{color:'brand.primary'}}
-                        cursor={'pointer'}
-                      />
-                    </Center>
-                  </Center>
-                  <Center alignItems={'flex-start'}>
-                    <Center
-                      p={'10px'}
-                      borderRadius={'8px'}
-                      m={'6px'}
-                      bg={'brand.aliceblue'}
-                    >
-                      <MyIcon name="job" height="35px" width="35px" />
-                    </Center>
-                    <Center m={'8px'}>
-                      <MyText
-                        title={truncatedParagraph(
-                          'Proficiency in at least one backend programming language is essential. Common languages for backend development include',
-                          8
-                        )}
-                        as="p"
-                        _hover={{color:'brand.primary'}}
-                        cursor={'pointer'}
-                      />
-                    </Center>
-                  </Center>
-                  <Center alignItems={'flex-start'}>
-                    <Center
-                      p={'10px'}
-                      borderRadius={'8px'}
-                      m={'6px'}
-                      bg={'brand.aliceblue'}
-                    >
-                      <MyIcon name="job" height="35px" width="35px" />
-                    </Center>
-                    <Center m={'8px'}>
-                      <MyText
-                        title={truncatedParagraph(
-                          'Proficiency in at least one backend programming language is essential. Common languages for backend development include',
-                          8
-                        )}
-                        as="p"
-                        _hover={{color:'brand.primary'}}
-                        cursor={'pointer'}
-                      />
-                    </Center>
-                  </Center>
-                  <Center alignItems={'flex-start'}>
-                    <Center
-                      p={'10px'}
-                      borderRadius={'8px'}
-                      m={'6px'}
-                      bg={'brand.aliceblue'}
-                    >
-                      <MyIcon name="job" height="35px" width="35px" />
-                    </Center>
-                    <Center m={'8px'}>
-                      <MyText
-                        title={truncatedParagraph(
-                          'Proficiency in at least one backend programming language is essential. Common languages for backend development include',
-                          8
-                        )}
-                        as="p"
-                        _hover={{color:'brand.primary'}}
-                        cursor={'pointer'}
-                      />
-                    </Center>
-                  </Center>
-                  <Center alignItems={'flex-start'}>
-                    <Center
-                      p={'10px'}
-                      borderRadius={'8px'}
-                      m={'6px'}
-                      bg={'brand.aliceblue'}
-                    >
-                      <MyIcon name="job" height="35px" width="35px" />
-                    </Center>
-                    <Center m={'8px'}>
-                      <MyText
-                        title={truncatedParagraph(
-                          'Proficiency in at least one backend programming language is essential. Common languages for backend development include',
-                          8
-                        )}
-                        as="p"
-                        _hover={{color:'brand.primary'}}
-                        cursor={'pointer'}
-                      />
-                    </Center>
-                  </Center>
-
+                  </HStack>
                 </VStack>
               </Center>
-            </VStack>
 
-            <Center w={'full'} gap={'8px'}>
-              <Center
-                w={'120px'}
-                flexDir={'column'}
-                px={'40px'}
-                py={'20px'}
-                bg={'brand.aliceblue'}
-                gap={'6px'}
-                borderRadius={'12px'}
+              <VStack
+                alignItems={'flex-start'}
+                p={'12px'}
+                w={'full'}
+                border={'1px solid'}
+                borderColor={'brand.lightgray'}
+                borderRadius={'6px'}
+                gap={'12px'}
               >
-                <Center p={'6px'} bg={'brand.primary'} borderRadius={'50px'}>
-                  <MyIcon
-                    name="like"
-                    height="25px"
-                    color="brand.white"
-                    width="25px"
-                  />
-                </Center>
-                <MyText title="Like" as="span" />
-              </Center>
+                <MyText title="Explore Categories" as="title" />
+
+                <VStack w={'full'} flexDirection={'column'}>
+                  {[
+                    'Development',
+                    'Interview',
+                    'Frontend',
+                    'Backend',
+                    'Tips & Tricks',
+                  ].map((item, key) => {
+                    return (
+                      <>
+                        <HStack
+                          key={key}
+                          w={'100%'}
+                          p={'12px'}
+                          border={'1px solid'}
+                          borderColor={'brand.lightgray'}
+                          borderRadius={'4px'}
+                          cursor={'pointer'}
+                          _hover={{ borderColor: 'brand.primary' }}
+                        >
+                          <Center
+                            w="36px"
+                            h="36px"
+                            borderRadius={'50%'}
+                            bg={'brand.primary'}
+                          >
+                            <MyIcon
+                              name="instagram"
+                              color="brand.white"
+                              width="24px"
+                              height="24px"
+                            />
+                          </Center>
+                          <MyText as="span" title={item} fontWeight={500} />
+                        </HStack>
+                      </>
+                    );
+                  })}
+                </VStack>
+              </VStack>
+
               <Center
-                bg={'brand.aliceblue'}
-                w={'120px'}
-                flexDir={'column'}
-                px={'40px'}
-                py={'20px'}
-                gap={'6px'}
-                borderRadius={'12px'}
+                p={'12px'}
+                w={'full'}
+                gap={'12px'}
+                borderRadius={'6px'}
+                border={'1px solid'}
+                borderColor={'brand.lightgray'}
               >
-                <Center p={'6px'} bg={'brand.primary'} borderRadius={'50px'}>
-                  <MyIcon
-                    name="save"
-                    height="25px"
-                    color="brand.white"
-                    width="25px"
-                  />
+                <Center
+                  w={'120px'}
+                  flexDir={'column'}
+                  px={'40px'}
+                  py={'20px'}
+                  bg={'brand.aliceblue'}
+                  gap={'6px'}
+                  borderRadius={'12px'}
+                  cursor={'pointer'}
+                  _hover={{ bg: 'brand.transprimary' }}
+                >
+                  <Center
+                    w={'36px'}
+                    h={'36px'}
+                    bg={'brand.primary'}
+                    borderRadius={'50px'}
+                  >
+                    <MyIcon
+                      name="like"
+                      height="24px"
+                      color="brand.white"
+                      width="24px"
+                    />
+                  </Center>
+                  <MyText title="Like" as="span" />
                 </Center>
-                <MyText title="Save" as="span" />
-              </Center>
-              <Center
-                w={'120px'}
-                flexDir={'column'}
-                px={'40px'}
-                py={'20px'}
-                bg={'brand.aliceblue'}
-                gap={'6px'}
-                borderRadius={'12px'}
-              >
-                <Center p={'6px'} bg={'brand.primary'} borderRadius={'50px'}>
-                  <MyIcon
-                    name="bookmark"
-                    height="25px"
-                    color="brand.white"
-                    width="25px"
-                  />
+
+                <Center
+                  w={'120px'}
+                  flexDir={'column'}
+                  px={'40px'}
+                  py={'20px'}
+                  bg={'brand.aliceblue'}
+                  gap={'6px'}
+                  borderRadius={'12px'}
+                  cursor={'pointer'}
+                  _hover={{ bg: 'brand.transprimary' }}
+                >
+                  <Center
+                    w={'36px'}
+                    h={'36px'}
+                    bg={'brand.primary'}
+                    borderRadius={'50px'}
+                  >
+                    <MyIcon
+                      name="save"
+                      height="24px"
+                      color="brand.white"
+                      width="24px"
+                    />
+                  </Center>
+                  <MyText title="Save" as="span" />
                 </Center>
-                <MyText title="ReadList" as="span" />
               </Center>
-            </Center>
+            </VStack>
           </VStack>
         </Flex>
       </Layout>

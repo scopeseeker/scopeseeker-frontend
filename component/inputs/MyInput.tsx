@@ -18,6 +18,7 @@ const MyInput = ({
   onChange,
   value,
   name,
+  pr='50px',
   ...rest
 }: IMyInputProps) => {
   return (
@@ -45,7 +46,7 @@ const MyInput = ({
             height={{ base: '52px', md: '42px' }}
             borderWidth={{ base: '1.8px', md: '1.4px' }}
             variant={'unstyled'}
-            pr={'50px'}
+            pr={pr}
             borderRadius={'8px 8px 8px 8px'}
             _focus={{ border: '1.5px solid', borderColor: 'brand.primary' }}
             onChange={onChange}
