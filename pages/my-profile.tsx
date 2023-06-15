@@ -1,14 +1,8 @@
-import {
-  Layout,
-  MyButton,
-  MyDivider,
-  MyIcon,
-  MyImage,
-  MyInput,
-  MyText,
-} from '@/component';
+import { Layout, MyButton, MyIcon, MyImage, MyText } from '@/component';
+import AddBoxTemplete from '@/section-components/edit-profile/templates/AddBoxTemplate';
 import { Box, Center, HStack, VStack } from '@chakra-ui/react';
 import Head from 'next/head';
+import Link from 'next/link';
 
 export default function Profile() {
   return (
@@ -110,22 +104,42 @@ export default function Profile() {
             </Center>
             {/* left section */}
 
-            <Center h={'full'}>
+            <VStack gap={'20px'}>
               <Center
-                w={'220px'}
-                h={'140px'}
-                bg={'brand.primary'}
+                bg={'brand.white'}
                 borderRadius={'12px'}
-                px={'32px'}
+                px={'22px'}
+                py={'10px'}
+                borderWidth={'1.5px'}
+                borderColor={'brand.lighgray'}
               >
                 <MyText
                   title="14 Pending Actions"
                   as={'heading'}
                   textAlign={'center'}
+                />
+              </Center>
+
+              <Center
+                gap={'10px'}
+                cursor={'pointer'}
+                bg={'brand.primary'}
+                px={'20px'}
+                py={'10px'}
+                borderRadius={'10px'}
+                borderWidth={'1px'}
+                borderColor={'brand.lightgray'}
+              >
+                <Link href={'/edit-profile'}>
+                  <MyIcon name="edit" color="brand.white" />
+                </Link>
+                <MyText
+                  as="link"
+                  title="Edit Full Profile"
                   color="brand.white"
                 />
               </Center>
-            </Center>
+            </VStack>
           </Center>
           {/* Quick section */}
           <Center
@@ -136,215 +150,214 @@ export default function Profile() {
             px={'32px'}
             py={'12px'}
             gap={'32px'}
+            borderWidth={'1px'}
           >
+            {[
+              'Basic Details',
+              'Resume',
+              'Skills',
+              'Education',
+              'Work Experience',
+            ].map((item, key) => {
+              return (
+                <>
+                  <MyText
+                    key={key}
+                    cursor={'pointer'}
+                    as="span"
+                    title={item}
+                    color="currentColor"
+                  />
+                  <VStack
+                    h={'20px'}
+                    w={'0px'}
+                    bg={'brand.white'}
+                    borderLeft={'1px solid'}
+                    spacing={0}
+                    borderColor={'brand.white'}
+                  ></VStack>
+                </>
+              );
+            })}
             <MyText
               cursor={'pointer'}
               as="span"
-              title="User Details"
-              color="currentColor"
-            />
-            <VStack
-              h={'20px'}
-              w={'0px'}
-              bg={'brand.white'}
-              borderLeft={'1px solid'}
-              spacing={0}
-              borderColor={'brand.white'}
-            ></VStack>
-            <MyText
-              cursor={'pointer'}
-              as="span"
-              title="Resume"
-              color="currentColor"
-            />
-            <VStack
-              h={'20px'}
-              w={'0px'}
-              bg={'brand.white'}
-              borderLeft={'1px solid'}
-              spacing={0}
-              borderColor={'brand.white'}
-            ></VStack>
-            <MyText
-              cursor={'pointer'}
-              as="span"
-              title="Education"
-              color="currentColor"
-            />
-            <VStack
-              h={'20px'}
-              w={'0px'}
-              bg={'brand.white'}
-              borderLeft={'1px solid'}
-              spacing={0}
-              borderColor={'brand.white'}
-            ></VStack>
-            <MyText
-              cursor={'pointer'}
-              as="span"
-              title="Work Experience"
-              color="currentColor"
-            />
-            <VStack
-              h={'20px'}
-              w={'0px'}
-              bg={'brand.white'}
-              borderLeft={'1px solid'}
-              spacing={0}
-              borderColor={'brand.white'}
-            ></VStack>
-            <MyText
-              cursor={'pointer'}
-              as="span"
-              title="Social Links"
-              color="currentColor"
-            />
-            <VStack
-              h={'20px'}
-              w={'0px'}
-              bg={'brand.white'}
-              borderLeft={'1px solid'}
-              spacing={0}
-              borderColor={'brand.white'}
-            ></VStack>
-            <MyText
-              cursor={'pointer'}
-              as="span"
-              title="User Details"
+              title={'Social Links'}
               color="currentColor"
             />
           </Center>
 
-          <VStack gap={'64px'}>
+          <VStack gap={'72px'}>
             {/* personal detail */}
-            <HStack w={'full'} gap={'10px'}>
-              <VStack
-                w={'50%'}
-                alignItems={'flex-start'}
-                gap={'32px'}
-                boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
-                p={'20px'}
-                borderRadius={'8px'}
-              >
-                <MyText title="Personal Detals" as={'heading'} />
-                <VStack w={'full'} alignItems={'flex-start'}>
-                  <HStack justifyContent={'space-between'} gap={'42px'}>
-                    <VStack spacing={0} alignItems={'flex-start'} w={'120px'}>
-                      <MyText title="Date Of Birth" as={'p'} />
-                      <MyText title="07/08/2003" as={'span'} />
-                    </VStack>
-                    <VStack spacing={0} alignItems={'flex-start'} w={'120px'}>
-                      <MyText title="Location" as={'p'} />
-                      <MyText title="Bhopal" as={'span'} />
-                    </VStack>
-                  </HStack>
-                  <HStack justifyContent={'space-between'} gap={'42px'}>
-                    <VStack spacing={0} alignItems={'flex-start'} w={'120px'}>
-                      <MyText title="Location" as={'p'} />
-                      <MyText title="Bhopal" as={'span'} />
-                    </VStack>
-                    <VStack spacing={0} alignItems={'flex-start'} w={'120px'}>
-                      <MyText title="State" as={'p'} />
-                      <MyText title="MP" as={'span'} />
-                    </VStack>
-                  </HStack>
-                </VStack>
-              </VStack>
-              <VStack
-                w={'50%'}
-                alignItems={'flex-start'}
+            <VStack w={'full'} alignItems={'flex-start'} gap={'12px'}>
+              <HStack gap={'6px'}>
+                <MyText title="Personal Details" as={'heading'} />
+                <Link href={'/edit-profile'}>
+                  <MyIcon name="edit" />
+                </Link>
+              </HStack>
+              <HStack
                 bg={'brand.aliceblue'}
-                boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
-                p={'20px'}
-                borderRadius={'8px'}
+                borderRadius={'10px'}
+                flexDir={{ base: 'column', md: 'row' }}
+                borderRight={'12px'}
+                overflow={'hidden'}
+                gap={0}
+                spacing={0}
+                border={'1px solid'}
+                borderColor={'brand.lightgray'}
               >
-                <MyText title="Recent Activity" as={'heading'} />
-                <MyText title="You submitted the task" as={'small'} />
-                <MyText title="You applied in flipkart" as={'small'} />
-                <MyText title="Recently view company" as={'small'} />
-                <MyText
-                  title="Checking the information of Amazon"
-                  as={'small'}
-                />
-                <MyText title="Last read article on Blockchain" as={'small'} />
-              </VStack>
-            </HStack>
+                <Center
+                  gap={'12px'}
+                  h={'full'}
+                  w={{ base: '70vw', sm: '50vw', md: '170px', lg: '200px' }}
+                  py={'18px'}
+                  justifyContent={{ base: 'flex-start', md: 'center' }}
+                  px={{ base: '32px', md: '10px' }}
+                >
+                  <MyIcon name="calenderTime" />
+
+                  <VStack spacing={0} alignItems={'flex-start'}>
+                    <MyText
+                      as="small"
+                      title="Date of Birth"
+                      color={'brand.darkgray'}
+                    />
+                    <MyText as="span" title="14 April 2002" />
+                  </VStack>
+                </Center>
+                <Center
+                  gap={'12px'}
+                  h={'full'}
+                  w={{ base: '70vw', sm: '50vw', md: '170px', lg: '200px' }}
+                  py={'18px'}
+                  justifyContent={{ base: 'flex-start', md: 'center' }}
+                  px={{ base: '32px', md: '10px' }}
+                  borderX={{ base: '0px solid', md: '1px solid' }}
+                  borderY={{ base: '1px solid', md: '0px solid' }}
+                  borderColor={{
+                    base: 'brand.lightgray',
+                    md: 'brand.lightgray',
+                  }}
+                >
+                  <MyIcon name="global" />
+
+                  <VStack spacing={0} alignItems={'flex-start'}>
+                    <MyText
+                      as="small"
+                      title="Country"
+                      color={'brand.darkgray'}
+                    />
+                    <MyText as="span" title="India" />
+                  </VStack>
+                </Center>
+                <Center
+                  gap={'12px'}
+                  h={'full'}
+                  w={{ base: '70vw', sm: '50vw', md: '170px', lg: '200px' }}
+                  py={'18px'}
+                  justifyContent={{ base: 'flex-start', md: 'center' }}
+                  px={{ base: '32px', md: '10px' }}
+                >
+                  <MyIcon name="company" />
+
+                  <VStack spacing={0} alignItems={'flex-start'}>
+                    <MyText as="small" title="City" color={'brand.darkgray'} />
+                    <MyText as="span" title="Bhopal" />
+                  </VStack>
+                </Center>
+
+                <Center
+                  gap={'12px'}
+                  h={'full'}
+                  w={{ base: '70vw', sm: '50vw', md: '170px', lg: '200px' }}
+                  py={'18px'}
+                  justifyContent={{ base: 'flex-start', md: 'center' }}
+                  px={{ base: '32px', md: '10px' }}
+                  borderX={{ base: '0px solid', md: '1px solid' }}
+                  borderY={{ base: '1px solid', md: '0px solid' }}
+                  borderColor={{
+                    base: 'brand.lightgray',
+                    md: 'brand.lightgray',
+                  }}
+                >
+                  <MyIcon name="building" />
+
+                  <VStack spacing={0} alignItems={'flex-start'}>
+                    <MyText as="small" title="State" color={'brand.darkgray'} />
+                    <MyText as="span" title="Madhya Pradesh" />
+                  </VStack>
+                </Center>
+              </HStack>
+            </VStack>
+
+            {/* summary section */}
+            <VStack
+              w={'full'}
+              borderRadius={'8px'}
+              alignItems={'flex-start'}
+              gap={'12px'}
+            >
+              <HStack gap={'6px'}>
+                <MyText title="Summary" as={'heading'} />
+                <Link href={'/edit-profile'}>
+                  <MyIcon name="edit" />
+                </Link>
+              </HStack>
+              <MyText
+                title="The IT professional is highly skilled in software development, network administration, system maintenance, and cybersecurity. Proficient in programming languages like Java and Python, they have developed web applications using frameworks such as Django and Ruby on Rails. Their expertise extends to configuring and managing enterprise-level networks, implementing robust security measures. With a proven track record of meeting project deadlines, they possess strong problem-solving and communication skills. Committed to staying updated with the latest technologies, this proactive IT professional brings a comprehensive skill set, adaptability, and a proactive approach to contribute effectively to any IT team or project."
+                as={'small'}
+              />
+            </VStack>
 
             {/* Resume section */}
             <VStack
               w={'full'}
-              gap={'10px'}
-              spacing={0}
               alignItems={'flex-start'}
-              boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
-              p={'20px'}
               borderRadius={'8px'}
+              gap={'12px'}
             >
-              <MyText title="Resume" as={'heading'} />
-              <HStack w={'full'} h={'40px'} justifyContent={'space-between'}>
-                <Center
-                  border={'1px solid'}
-                  borderColor={'brand.darkgray'}
-                  justifyContent={'flex-start'}
-                  p={'8px'}
-                  borderRadius={'8px'}
-                >
-                  <MyText
-                    title="Lokesh.pdf Updated on (june 06 2023)"
-                    as={'small'}
-                  />
-                </Center>
-                <HStack>
-                  <Center
-                    w={'30px'}
-                    h={'30px'}
-                    borderRadius={'50%'}
-                    bg={'brand.aliceblue'}
-                  >
-                    <MyIcon name={'delete'} />
-                  </Center>
-                  <Center
-                    h={'30px'}
-                    w={'30px'}
-                    borderRadius={'50%'}
-                    bg={'brand.aliceblue'}
-                  >
-                    <MyIcon name={'edit'} />
-                  </Center>
-                </HStack>
+              <HStack gap={'6px'}>
+                <MyText title="Resume" as={'heading'} />
+                <Link href={'/edit-profile'}>
+                  <MyIcon name="edit" />
+                </Link>
               </HStack>
+              <HStack
+                w={'45%'}
+                justifyContent={'space-between'}
+                borderWidth={'1.5px'}
+                borderColor={'brand.lightgray'}
+                p={'10px'}
+                borderRadius={'10px'}
+              >
+                <MyText title="Lokesh.pdf" as={'small'} />
 
-              <Center h={'300px'} w={'full'}>
                 <Center
-                  h={'220px'}
-                  w={'80%'}
-                  border={'2px dashed'}
-                  borderColor={'brand.darkgray'}
-                  bg={'brand.aliceblue'}
-                  flexDir={'column'}
-                  gap={'8px'}
+                  w={'30px'}
+                  h={'30px'}
+                  borderRadius={'50%'}
+                  bg={'red'}
+                  cursor={'pointer'}
                 >
-                  <MyIcon name={'upload'} />
-                  <MyButton title="Upload Resume" />
-                  <MyText
-                    title="Supported formate .pdf .doc .docx "
-                    as={'span'}
-                    color="brand.darkgray"
-                  />
+                  <MyIcon name={'delete'} color="brand.white" strokeWidth="2" />
                 </Center>
-              </Center>
+              </HStack>
             </VStack>
 
             {/* Skills section */}
             <VStack
               alignItems={'flex-start'}
-              boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
-              p={'20px'}
               borderRadius={'8px'}
               w={'full'}
-              gap={'10px'}
+              gap={'12px'}
             >
-              <MyText as="heading" title="Skills" />
+              <HStack gap={'6px'}>
+                <MyText title="Skills" as={'heading'} />
+                <Link href={'/edit-profile'}>
+                  <MyIcon name="edit" />
+                </Link>
+              </HStack>
 
               <HStack
                 flexWrap={'wrap'}
@@ -382,153 +395,166 @@ export default function Profile() {
                 })}
               </HStack>
             </VStack>
-            {/* summary section */}
-            <VStack
-              w={'full'}
-              boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
-              p={'20px'}
-              borderRadius={'8px'}
-              alignItems={'flex-start'}
-              bg={'brand.aliceblue'}
-            >
-              <MyText title="Summary" as={'heading'} />
-              <Box>
-                <MyText
-                  title="The IT professional is highly skilled in software development, network administration, system maintenance, and cybersecurity. Proficient in programming languages like Java and Python, they have developed web applications using frameworks such as Django and Ruby on Rails. Their expertise extends to configuring and managing enterprise-level networks, implementing robust security measures. With a proven track record of meeting project deadlines, they possess strong problem-solving and communication skills. Committed to staying updated with the latest technologies, this proactive IT professional brings a comprehensive skill set, adaptability, and a proactive approach to contribute effectively to any IT team or project."
-                  as={'small'}
-                />
-              </Box>
-            </VStack>
 
             {/* Education section */}
             <VStack
               w={'full'}
               spacing={0}
-              gap={0}
               alignItems={'flex-start'}
-              boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
-              p={'20px'}
               borderRadius={'8px'}
             >
-              <MyText title="Education" as={'heading'} />
-              <VStack
-                w={'full'}
-                p={'10px'}
-                justifyContent={'flex-start'}
-                alignItems={'flex-start'}
-                spacing={0}
-                gap={'6px'}
-              >
-                <VStack w={'full'} alignItems={'flex-start'} spacing={0}>
-                  <HStack w={'full'} justifyContent={'space-between'}>
-                    <MyText title="B-tech computer Science" as={'p'} />
-                    <MyText title="97%" as={'p'} />
-                  </HStack>
+              <HStack gap={'6px'}>
+                <MyText title="Education" as={'heading'} />
+                <Link href={'/edit-profile'}>
+                  <MyIcon name="edit" />
+                </Link>
+              </HStack>
+              <VStack pt={'20px'} w={'full'} gap={'20px'}>
+                <AddBoxTemplete
+                  role="Sagar Institute of Research & Technology (SIRT), Bhopal "
+                  companyImage="/assets/images/company-logo/amazon.png"
+                  companyName="B.Tech"
+                  period="2020 - 2024"
+                />
 
-                  <MyText
-                    title="Sagar Institute of research and technology, Bhopal"
-                    as={'span'}
-                  />
-                  <MyText title="2020-2024| full time" as={'small'} />
-                </VStack>
-
-                <MyDivider />
-
-                <VStack w={'full'} alignItems={'flex-start'} spacing={0}>
-                  <HStack w={'full'} justifyContent={'space-between'}>
-                    <MyText title="Class 12th" as={'p'} />
-                    <MyText title="99%" as={'p'} />
-                  </HStack>
-                  <MyText title="2022" as={'span'} />
-                  <MyText title="School Name" as={'small'} />
-                </VStack>
-                <MyDivider />
-                <VStack w={'full'} alignItems={'flex-start'} spacing={0}>
-                  <HStack w={'full'} justifyContent={'space-between'}>
-                    <MyText title="Class 10th" as={'p'} />
-                    <MyText title="97%" as={'p'} />
-                  </HStack>
-                  <MyText title="2022" as={'span'} />
-                  <MyText title="School Name" as={'small'} />
-                </VStack>
+                <AddBoxTemplete
+                  role="Sagar Institute of Research & Technology (SIRT), Bhopal "
+                  companyImage="/assets/images/company-logo/amazon.png"
+                  companyName="B.Tech"
+                  period="2020 - 2024"
+                />
               </VStack>
             </VStack>
             {/* work */}
             <VStack
               w={'full'}
               spacing={0}
-              bg={'brand.aliceblue'}
               alignItems={'flex-start'}
-              boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
-              p={'20px'}
               borderRadius={'8px'}
             >
-              <MyText title="Work Experience" as={'heading'} />
-              <VStack
-                p={'10px'}
-                w={'full'}
-                spacing={0}
-                alignItems={'flex-start'}
-              >
-                <MyText title="FullStack Developer" as={'p'} />
-                <HStack w={'full'} justifyContent={'space-between'}>
-                  <MyText title="Company Name" as={'span'} />
-                  <MyText title="Internship Paid" as={'span'} />
-                </HStack>
-                <MyText title="2024" as={'small'} />
+              <HStack gap={'6px'}>
+                <MyText title="Work Experience" as={'heading'} />
+                <Link href={'/edit-profile'}>
+                  <MyIcon name="edit" />
+                </Link>
+              </HStack>
+              <VStack pt={'20px'} w={'full'} gap={'20px'}>
+                <AddBoxTemplete
+                  role="Full Stack Web Developer"
+                  companyImage="/assets/images/company-logo/amazon.png"
+                  companyName="Align Essential"
+                  period="Jan 18, 2023 - Feb 28, 2023"
+                />
+
+                <AddBoxTemplete
+                  role="Full Stack Web Developer"
+                  companyImage="/assets/images/company-logo/amazon.png"
+                  companyName="Align Essential"
+                  period="Jan 18, 2023 - Feb 28, 2023"
+                />
               </VStack>
             </VStack>
             {/* social */}
             <VStack
               w={'full'}
               alignItems={'flex-start'}
-              boxShadow={'0 4px 30px rgba(0, 0, 0, 0.1)'}
-              p={'20px'}
               borderRadius={'8px'}
+              gap={'12px'}
             >
-              <MyText title="Social Links" as={'heading'} />
+              <HStack gap={'6px'}>
+                <MyText title="Social Links" as={'heading'} />
+                <Link href={'/edit-profile'}>
+                  <MyIcon name="edit" />
+                </Link>
+              </HStack>
+              <HStack gap={'10px'}>
+                <Center
+                  gap={'5px'}
+                  borderWidth={'1.4px'}
+                  borderColor={'brand.lightgray'}
+                  borderRadius={'10px'}
+                  px={'10px'}
+                  py={'5px'}
+                  _hover={{
+                    bg: 'brand.primary',
+                    color: 'brand.white',
+                    borderColor: 'brand.primary',
+                  }}
+                  cursor={'pointer'}
+                >
+                  <MyIcon
+                    name="github"
+                    strokeWidth="1.2"
+                    color="currentColor"
+                  />
+                  <MyText as="link" title="GitHub" color="currentColor" />
+                </Center>
 
-              <HStack>
-                <MyInput
-                  type="text"
-                  labelTitle="GitHub"
-                  placeholder="GitHub Link"
-                  leftElement={<MyIcon name="github" />}
-                />
-                <MyInput
-                  type="text"
-                  labelTitle="LinkedIn"
-                  placeholder="LinkedIn Link"
-                  leftElement={<MyIcon name="linkedin" />}
-                />
-              </HStack>
-              <HStack>
-                <MyInput
-                  type="text"
-                  labelTitle="Instagram"
-                  placeholder="Instagram Link"
-                  leftElement={<MyIcon name="instagram" />}
-                />
-                <MyInput
-                  type="text"
-                  labelTitle="Dribble"
-                  placeholder="Dribble Link"
-                  leftElement={<MyIcon name="dribble" />}
-                />
-              </HStack>
-              <HStack>
-                <MyInput
-                  type="text"
-                  labelTitle="Behance"
-                  placeholder="Behance Link"
-                  leftElement={<MyIcon name="behance" />}
-                />
-                <MyInput
-                  type="text"
-                  labelTitle="Figma"
-                  placeholder="Figma Link"
-                  leftElement={<MyIcon name="figma" />}
-                />
+                <Center
+                  gap={'5px'}
+                  borderWidth={'1.4px'}
+                  borderColor={'brand.lightgray'}
+                  borderRadius={'10px'}
+                  px={'10px'}
+                  py={'5px'}
+                  _hover={{
+                    bg: 'brand.primary',
+                    color: 'brand.white',
+                    borderColor: 'brand.primary',
+                  }}
+                  cursor={'pointer'}
+                >
+                  <MyIcon
+                    name="linkedin"
+                    strokeWidth="1.2"
+                    color="currentColor"
+                  />
+                  <MyText as="link" title="Linkedin" color="currentColor" />
+                </Center>
+
+                <Center
+                  gap={'5px'}
+                  borderWidth={'1.4px'}
+                  borderColor={'brand.lightgray'}
+                  borderRadius={'10px'}
+                  px={'10px'}
+                  py={'5px'}
+                  _hover={{
+                    bg: 'brand.primary',
+                    color: 'brand.white',
+                    borderColor: 'brand.primary',
+                  }}
+                  cursor={'pointer'}
+                >
+                  <MyIcon
+                    name="instagram"
+                    strokeWidth="1.2"
+                    color="currentColor"
+                  />
+                  <MyText as="link" title="Instagram" color="currentColor" />
+                </Center>
+
+                <Center
+                  gap={'5px'}
+                  borderWidth={'1.4px'}
+                  borderColor={'brand.lightgray'}
+                  borderRadius={'10px'}
+                  px={'10px'}
+                  py={'5px'}
+                  _hover={{
+                    bg: 'brand.primary',
+                    color: 'brand.white',
+                    borderColor: 'brand.primary',
+                  }}
+                  cursor={'pointer'}
+                >
+                  <MyIcon
+                    name="leetcode"
+                    strokeWidth="1.2"
+                    color="currentColor"
+                  />
+                  <MyText as="link" title="LeetCode" color="currentColor" />
+                </Center>
               </HStack>
             </VStack>
           </VStack>
