@@ -20,16 +20,34 @@ export default function Category() {
         <Flex
           w={'full'}
           h={'full'}
-          flexDirection={'row'}
+          flexDirection={{ base: 'column', md: 'row' }}
           gap={'72px'}
           py={'32px'}
         >
           {/* Left Blog Part */}
-          <VStack w={'70%'} gap={'72px'} alignItems={'flex-start'}>
+          <VStack
+            w={{ base: 'full', md: '70%' }}
+            gap={'72px'}
+            alignItems={'flex-start'}
+          >
             <VStack w={'full'}>
               <MainHeading title="Complete Frontend Guide" align={'start'} />
-              <HStack w={'full'} justifyContent={'space-between'}>
-                <HStack gap={'18px'}>
+              <HStack
+                spacing={0}
+                w={'full'}
+                gap={{ base: '30px' }}
+                flexDirection={{ base: 'column', sm: 'row' }}
+                alignItems={{ base: 'flex-start', sm: 'normal' }}
+                justifyContent={'space-between'}
+              >
+                <HStack
+                  gap={{ base: '6px', sm: '10px', md: '18px' }}
+                  spacing={0}
+                  alignItems={{ base: 'flex-start', md: 'normal' }}
+                  flexDirection={{ base: 'column', md: 'row' }}
+                  flexWrap={'wrap'}
+                  flexShrink={0}
+                >
                   <Center gap={'4px'}>
                     <MyImage
                       src={'/assets/images/scopeseeker-logo.png'}
@@ -70,7 +88,14 @@ export default function Category() {
                 </HStack>
 
                 {/* Social  Icons */}
-                <HStack>
+                <HStack
+                  spacing={0}
+                  gap={'4px'}
+                 
+                  pt={{base:'6px',sm:'6px',md:'0px'}}
+                  alignItems={{base:'center', sm:'flex-start',md:'center'}}
+                  
+                >
                   <MyIcon
                     name="whatsapp"
                     _hover={{ color: 'brand.primary' }}
@@ -253,7 +278,7 @@ export default function Category() {
           </VStack>
 
           {/* Right Blog Part */}
-          <VStack w={'30%'} position={'relative'}>
+          <VStack w={{base:'full',sm:'full',md:'30%'}} position={'relative'}>
             <VStack
               w={'100%'}
               justifyContent={'flex-start'}
@@ -262,6 +287,69 @@ export default function Category() {
               position={'sticky'}
               top={'10%'}
             >
+              <Center
+                p={{base:'6px',md:'12px'}}
+                w={'full'}
+                gap={'12px'}
+                borderRadius={'6px'}
+                border={'1px solid'}
+                borderColor={'brand.lightgray'}
+              >
+                <Center
+                  w={'full'}
+                  flexDir={'column'}
+                  px={'40px'}
+                  py={'20px'}
+                  bg={'brand.aliceblue'}
+                  gap={'6px'}
+                  borderRadius={'12px'}
+                  cursor={'pointer'}
+                  _hover={{ bg: 'brand.transprimary' }}
+                >
+                  <Center
+                    w={'36px'}
+                    h={'36px'}
+                    bg={'brand.primary'}
+                    borderRadius={'50px'}
+                  >
+                    <MyIcon
+                      name="like"
+                      height="24px"
+                      color="brand.white"
+                      width="24px"
+                    />
+                  </Center>
+                  <MyText title="Like" as="span" />
+                </Center>
+
+                <Center
+                  w={'full'}
+                  flexDir={'column'}
+                  px={'40px'}
+                  py={'20px'}
+                  bg={'brand.aliceblue'}
+                  gap={'6px'}
+                  borderRadius={'12px'}
+                  cursor={'pointer'}
+                  _hover={{ bg: 'brand.transprimary' }}
+                >
+                  <Center
+                    w={'36px'}
+                    h={'36px'}
+                    bg={'brand.primary'}
+                    borderRadius={'50px'}
+                  >
+                    <MyIcon
+                      name="save"
+                      height="24px"
+                      color="brand.white"
+                      width="24px"
+                    />
+                  </Center>
+                  <MyText title="Save" as="span" />
+                </Center>
+              </Center>
+
               <Center
                 w={'full'}
                 bg={'brand.aliceblue'}
@@ -352,68 +440,7 @@ export default function Category() {
                 </VStack>
               </VStack>
 
-              <Center
-                p={'12px'}
-                w={'full'}
-                gap={'12px'}
-                borderRadius={'6px'}
-                border={'1px solid'}
-                borderColor={'brand.lightgray'}
-              >
-                <Center
-                  w={'120px'}
-                  flexDir={'column'}
-                  px={'40px'}
-                  py={'20px'}
-                  bg={'brand.aliceblue'}
-                  gap={'6px'}
-                  borderRadius={'12px'}
-                  cursor={'pointer'}
-                  _hover={{ bg: 'brand.transprimary' }}
-                >
-                  <Center
-                    w={'36px'}
-                    h={'36px'}
-                    bg={'brand.primary'}
-                    borderRadius={'50px'}
-                  >
-                    <MyIcon
-                      name="like"
-                      height="24px"
-                      color="brand.white"
-                      width="24px"
-                    />
-                  </Center>
-                  <MyText title="Like" as="span" />
-                </Center>
-
-                <Center
-                  w={'120px'}
-                  flexDir={'column'}
-                  px={'40px'}
-                  py={'20px'}
-                  bg={'brand.aliceblue'}
-                  gap={'6px'}
-                  borderRadius={'12px'}
-                  cursor={'pointer'}
-                  _hover={{ bg: 'brand.transprimary' }}
-                >
-                  <Center
-                    w={'36px'}
-                    h={'36px'}
-                    bg={'brand.primary'}
-                    borderRadius={'50px'}
-                  >
-                    <MyIcon
-                      name="save"
-                      height="24px"
-                      color="brand.white"
-                      width="24px"
-                    />
-                  </Center>
-                  <MyText title="Save" as="span" />
-                </Center>
-              </Center>
+              
             </VStack>
           </VStack>
         </Flex>
