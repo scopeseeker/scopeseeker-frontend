@@ -7,6 +7,7 @@ import {
   MyText,
 } from '@/component';
 import { Center, Flex, HStack, VStack } from '@chakra-ui/react';
+import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -16,6 +17,9 @@ export default function Category() {
   const { slug } = router.query;
   return (
     <>
+      <Head>
+        <title>Blog Details | Scope Seeker</title>
+      </Head>
       <Layout>
         <Flex
           w={'full'}
@@ -41,11 +45,12 @@ export default function Category() {
                 justifyContent={'space-between'}
               >
                 <HStack
-                  gap={{ base: '6px', sm: '10px', md: '18px' }}
+                  gap={{ base: '12px', md: '12px' }}
                   spacing={0}
-                  alignItems={{ base: 'flex-start', md: 'normal' }}
-                  flexDirection={{ base: 'column', md: 'row' }}
+                  alignItems={{ base: 'flex-start', md: 'center' }}
+                  // flexDirection={{ base: 'column', sm: 'row' }}
                   flexWrap={'wrap'}
+                  w={'full'}
                   flexShrink={0}
                 >
                   <Center gap={'4px'}>
@@ -85,57 +90,58 @@ export default function Category() {
                       color="brand.darkgray"
                     />
                   </Center>
-                </HStack>
 
-                {/* Social  Icons */}
-                <HStack
-                  spacing={0}
-                  gap={'4px'}
-                 
-                  pt={{base:'6px',sm:'6px',md:'0px'}}
-                  alignItems={{base:'center', sm:'flex-start',md:'center'}}
-                  
-                >
-                  <MyIcon
-                    name="whatsapp"
-                    _hover={{ color: 'brand.primary' }}
-                    cursor={'pointer'}
-                    strokeWidth="1.2"
-                    width="24px"
-                    height="24px"
-                  />
-                  <MyIcon
-                    name="instagram"
-                    _hover={{ color: 'brand.primary' }}
-                    cursor={'pointer'}
-                    strokeWidth="1.2"
-                    width="24px"
-                    height="24px"
-                  />
-                  <MyIcon
-                    name="facebook"
-                    _hover={{ color: 'brand.primary' }}
-                    cursor={'pointer'}
-                    strokeWidth="1.2"
-                    width="24px"
-                    height="24px"
-                  />
-                  <MyIcon
-                    name="twitter"
-                    _hover={{ color: 'brand.primary' }}
-                    cursor={'pointer'}
-                    strokeWidth="1.2"
-                    width="24px"
-                    height="24px"
-                  />
-                  <MyIcon
-                    name="linkedin"
-                    _hover={{ color: 'brand.primary' }}
-                    cursor={'pointer'}
-                    strokeWidth="1.2"
-                    width="24px"
-                    height="24px"
-                  />
+                  {/* Social  Icons */}
+                  <HStack
+                    spacing={0}
+                    gap={'4px'}
+                    alignItems={{
+                      base: 'center',
+                      sm: 'flex-start',
+                      md: 'center',
+                    }}
+                  >
+                    <MyIcon
+                      name="whatsapp"
+                      _hover={{ color: 'brand.primary' }}
+                      cursor={'pointer'}
+                      strokeWidth="1.2"
+                      width="24px"
+                      height="24px"
+                    />
+                    <MyIcon
+                      name="instagram"
+                      _hover={{ color: 'brand.primary' }}
+                      cursor={'pointer'}
+                      strokeWidth="1.2"
+                      width="24px"
+                      height="24px"
+                    />
+                    <MyIcon
+                      name="facebook"
+                      _hover={{ color: 'brand.primary' }}
+                      cursor={'pointer'}
+                      strokeWidth="1.2"
+                      width="24px"
+                      height="24px"
+                    />
+                    <MyIcon
+                      name="twitter"
+                      _hover={{ color: 'brand.primary' }}
+                      cursor={'pointer'}
+                      strokeWidth="1.2"
+                      width="24px"
+                      height="24px"
+                    />
+                    <MyIcon
+                      name="linkedin"
+                      _hover={{ color: 'brand.primary' }}
+                      cursor={'pointer'}
+                      strokeWidth="1.2"
+                      width="24px"
+                      height="24px"
+                    />
+                  </HStack>
                 </HStack>
               </HStack>
             </VStack>
@@ -278,7 +284,10 @@ export default function Category() {
           </VStack>
 
           {/* Right Blog Part */}
-          <VStack w={{base:'full',sm:'full',md:'30%'}} position={'relative'}>
+          <VStack
+            w={{ base: 'full', sm: 'full', md: '30%' }}
+            position={'relative'}
+          >
             <VStack
               w={'100%'}
               justifyContent={'flex-start'}
@@ -288,7 +297,7 @@ export default function Category() {
               top={'10%'}
             >
               <Center
-                p={{base:'6px',md:'12px'}}
+                p={{ base: '6px', md: '12px' }}
                 w={'full'}
                 gap={'12px'}
                 borderRadius={'6px'}
@@ -298,8 +307,7 @@ export default function Category() {
                 <Center
                   w={'full'}
                   flexDir={'column'}
-                  px={'40px'}
-                  py={'20px'}
+                  p={'12px'}
                   bg={'brand.aliceblue'}
                   gap={'6px'}
                   borderRadius={'12px'}
@@ -325,9 +333,8 @@ export default function Category() {
                 <Center
                   w={'full'}
                   flexDir={'column'}
-                  px={'40px'}
-                  py={'20px'}
                   bg={'brand.aliceblue'}
+                  p={'12px'}
                   gap={'6px'}
                   borderRadius={'12px'}
                   cursor={'pointer'}
@@ -399,7 +406,18 @@ export default function Category() {
               >
                 <MyText title="Explore Categories" as="title" />
 
-                <VStack w={'full'} flexDirection={'column'}>
+                <VStack
+                  w={'full'}
+                  flexDirection={{ base: 'column', sm: 'row', md: 'column' }}
+                  alignItems={{
+                    base: 'center',
+                    sm: 'flex-start',
+                    md: 'center',
+                  }}
+                  flexWrap={'wrap'}
+                  spacing={0}
+                  gap={'8px'}
+                >
                   {[
                     'Development',
                     'Interview',
@@ -411,7 +429,7 @@ export default function Category() {
                       <>
                         <HStack
                           key={key}
-                          w={'100%'}
+                          w={{ base: '100%', sm: '45%', md: '100%' }}
                           p={'12px'}
                           border={'1px solid'}
                           borderColor={'brand.lightgray'}
@@ -439,8 +457,6 @@ export default function Category() {
                   })}
                 </VStack>
               </VStack>
-
-              
             </VStack>
           </VStack>
         </Flex>
