@@ -188,7 +188,7 @@ const WorkExperienceSection = () => {
               onChange={handleWorkInputChange}
             />
           </HStack>
-          <HStack w={'full'}>
+          <HStack w={'full'} flexWrap={'wrap'} spacing={0} gap={'12px'}>
             <MyButton title="Submit" px="50px" onClick={handleWorkExperience} />
             <MyButton title="Cancel" px="50px" variant="outline" />
           </HStack>

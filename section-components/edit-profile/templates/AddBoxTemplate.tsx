@@ -50,7 +50,7 @@ interface IAddBoxTemplete {
         </HStack>
   
         {/* Icon Part  */}
-        <HStack justifyContent={'flex-end'} w={'full'}>
+        <HStack justifyContent={{base: 'flex-start', sm: 'flex-end'}} w={'full'}>
           <Center
             w={'30px'}
             h={'30px'}

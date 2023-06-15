@@ -13,6 +13,7 @@ export interface IMyButtonProps {
   variant?: 'outline' | 'solid';
   px?: string;
   h?: string;
+  cursor?: string;
   [key: string]: any;
 }
 

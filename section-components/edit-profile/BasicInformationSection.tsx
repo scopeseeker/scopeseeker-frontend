@@ -1,6 +1,6 @@
 import { MyButton, MyIcon, MyInput, MyText, RadioButton } from '@/component';
+import { useCustomToast } from '@/lib/toast';
 import {
-  Button,
   FormControl,
   HStack,
   Select,
@@ -27,6 +27,7 @@ interface FormData {
 }
 
 const BasicInformationSection = () => {
+  const showToast = useCustomToast();
   const [formData, setFormData] = useState<FormData>({
     fullName: '',
     email: '',
@@ -65,13 +66,28 @@ const BasicInformationSection = () => {
     }
   };
 
-  const handleSubmit = () => {
-    // Send the formData to the backend API or perform any other action
-    console.log('Form Data:', formData);
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const { phone, ...formDataWithoutPhone } = formData;
+    // Check if any fields are empty
+    const hasEmptyFields = Object.values(formDataWithoutPhone).some(
+      (value) => value.trim() === ''
+    );
+
+    if (hasEmptyFields) {
+      showToast({
+        title: 'Error',
+        description: 'Please Fill in  all required fields',
+        status: 'error',
+      });
+      return;
+    }
+    console.log(formData);
   };
 
   return (
-    <FormControl isRequired>
+    <FormControl>
       <form>
         <SectionTempalate>
           <MyText as="title" title="Basic Information" />
@@ -204,9 +220,9 @@ const BasicInformationSection = () => {
                   'Instrument',
                   'Other',
                   'Not Applicable',
-                ].map((value, key) => {
+                ].map((value, index) => {
                   return (
-                    <option value={value} key={key}>
+                    <option value={value} key={index}>
                       {value}
                     </option>
                   );
