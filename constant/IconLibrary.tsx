@@ -77,6 +77,8 @@ export type IconNameType =
   | 'calenderTime'
   | 'bookmark'
   | 'like'
+  | 'leetcode'
+  | 'building'
   | string;
 
 type IconData = {
@@ -104,18 +106,18 @@ export const IconData: IconData = {
     </>
   ),
 
-   like : (
+  like: (
     <>
-   <path d="M7 11v8a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1v-7a1 1 0 0 1 1 -1h3a4 4 0 0 0 4 -4v-1a2 2 0 0 1 4 0v5h3a2 2 0 0 1 2 2l-1 5a2 3 0 0 1 -2 2h-7a3 3 0 0 1 -3 -3"></path>
+      <path d="M7 11v8a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1v-7a1 1 0 0 1 1 -1h3a4 4 0 0 0 4 -4v-1a2 2 0 0 1 4 0v5h3a2 2 0 0 1 2 2l-1 5a2 3 0 0 1 -2 2h-7a3 3 0 0 1 -3 -3"></path>
     </>
-   ),
-   bookmark : (
+  ),
+  bookmark: (
     <>
-   <path d="M12.357 17.214l-.357 -.214l-5 3v-14a2 2 0 0 1 2 -2h6a2 2 0 0 1 2 2v6.5"></path>
-   <path d="M16 19h6"></path>
-   <path d="M19 16v6"></path>
+      <path d="M12.357 17.214l-.357 -.214l-5 3v-14a2 2 0 0 1 2 -2h6a2 2 0 0 1 2 2v6.5"></path>
+      <path d="M16 19h6"></path>
+      <path d="M19 16v6"></path>
     </>
-   ),
+  ),
   date: (
     <>
       <path d="M4 5m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path>
@@ -640,6 +642,24 @@ export const IconData: IconData = {
     <>
       <path d="M18 6l-12 12"></path>
       <path d="M6 6l12 12"></path>
+    </>
+  ),
+  leetcode: (
+    <>
+      <path d="M12 13h7.5"></path>
+      <path d="M9.424 7.268l4.999 -4.999"></path>
+      <path d="M16.633 16.644l-2.402 2.415a3.189 3.189 0 0 1 -4.524 0l-3.77 -3.787a3.223 3.223 0 0 1 0 -4.544l3.77 -3.787a3.189 3.189 0 0 1 4.524 0l2.302 2.313"></path>
+    </>
+  ),
+  building: (
+    <>
+      <path d="M3 21h18"></path>
+      <path d="M19 21v-4"></path>
+      <path d="M19 17a2 2 0 0 0 2 -2v-2a2 2 0 1 0 -4 0v2a2 2 0 0 0 2 2z"></path>
+      <path d="M14 21v-14a3 3 0 0 0 -3 -3h-4a3 3 0 0 0 -3 3v14"></path>
+      <path d="M9 17v4"></path>
+      <path d="M8 13h2"></path>
+      <path d="M8 9h2"></path>
     </>
   ),
 };
