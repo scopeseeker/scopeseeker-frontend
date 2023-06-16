@@ -1,5 +1,6 @@
-import { MyIcon, MyImage, MyInput, MyJobCard, MyText } from '@/component';
+import { MyIcon, MyImage, MyInput, MyText } from '@/component';
 import { jobCardFields } from '@/constant/constantFields';
+import { MyJobCard } from '@/section-components';
 import {
   Box,
   Center,

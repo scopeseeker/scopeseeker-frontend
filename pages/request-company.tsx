@@ -3,9 +3,9 @@ import {
   MyButton,
   MyIcon,
   MyInput,
-  MyText,
-  PageHeroSection,
+  MyText
 } from '@/component';
+import { PageHeader } from '@/section-components';
 import { Box, Center, HStack, Textarea, VStack } from '@chakra-ui/react';
 import Head from 'next/head';
 
@@ -15,7 +15,7 @@ export default function RequestPage() {
       <Head>
         <title>Request Company| Scope Seeker</title>
       </Head>
-      <PageHeroSection
+      <PageHeader
         title="Request A Company"
         subtitle="Add a company to our job listing platform and help expand opportunities for job seekers. Submit your request now and connect job seekers with the right companies."
         src="/assets/images/request.png"

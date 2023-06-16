@@ -3,9 +3,9 @@ import {
   MyButton,
   MyIcon,
   MyInput,
-  MyText,
-  PageHeroSection,
+  MyText
 } from '@/component';
+import { PageHeader } from '@/section-components';
 import { Center, HStack, Heading, Textarea, VStack } from '@chakra-ui/react';
 import Head from 'next/head';
 
@@ -15,7 +15,7 @@ export default function ContactUs() {
       <Head>
         <title>Contact Us | Scope Seeker</title>
       </Head>
-      <PageHeroSection
+      <PageHeader
         title="Contact Us"
         subtitle="We eagerly await your contact to address any inquiries, comments, or ideas you may have. Our team of experts is here to extend a helping hand, offering unrivaled assistance that goes above and beyond."
         alt="contac us img"

@@ -5,8 +5,8 @@ import {
   MyIcon,
   MyInput,
   MyText,
-  OtpVerifyBox,
 } from '@/component';
+import { OtpVerifyBox } from '@/section-components';
 import {
   AlertDialog,
   AlertDialogBody,

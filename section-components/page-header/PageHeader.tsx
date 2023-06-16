@@ -1,8 +1,6 @@
+import { Layout, MainHeading, MyImage } from '@/component';
 import { IPageHeroSection } from '@/inteface/component-interface';
 import { Center, HStack, VStack } from '@chakra-ui/react';
-import MyImage from '../image/MyImage';
-import Layout from '../layout/Layout';
-import MainHeading from '../main-heading/MainHeading';
 
 const PageHeroSection = (props: IPageHeroSection) => {
   const {

@@ -1,12 +1,11 @@
 import {
   Layout,
   MainHeading,
-  MyArticleCard,
   MyIcon,
-  MyText,
-  PageHeroSection,
+  MyText
 } from '@/component';
 import { articleFields } from '@/constant/constantFields';
+import { MyArticleCard, PageHeader } from '@/section-components';
 import {
   Center,
   Grid,
@@ -28,7 +27,7 @@ export default function Blog() {
       <Head>
         <title>Blog | Scope Seeker</title>
       </Head>
-      <PageHeroSection
+      <PageHeader
         title="Expanding Our Knowledge & Yours, One Blog at a Time"
         alt="blogs"
         subtitle="All the latest news and events of our creative team."

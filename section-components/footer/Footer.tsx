@@ -1,9 +1,6 @@
+import { Layout, MyIcon, MyImage, MyText } from '@/component';
 import { Center, Flex, HStack, IconButton, VStack } from '@chakra-ui/react';
 import Link from 'next/link';
-import MyIcon from '../icon/MyIcon';
-import MyImage from '../image/MyImage';
-import MyText from '../text/MyText';
-import Layout from '../layout/Layout';
 
 const Footer = () => {
   return (

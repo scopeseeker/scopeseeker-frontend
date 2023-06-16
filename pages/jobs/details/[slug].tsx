@@ -3,9 +3,9 @@ import {
   MyButton,
   MyIcon,
   MyImage,
-  MyJobCard,
   MyText,
 } from '@/component';
+import { MyJobCard } from '@/section-components';
 import { Center, Grid, HStack, VStack } from '@chakra-ui/react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';

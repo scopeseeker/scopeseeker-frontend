@@ -1,3 +1,4 @@
+import { MyButton, MyIcon, MyText } from '@/component';
 import {
   Center,
   HStack,
@@ -5,9 +6,6 @@ import {
   PinInputField,
   VStack,
 } from '@chakra-ui/react';
-import MyIcon from '../icon/MyIcon';
-import MyText from '../text/MyText';
-import MyButton from '../button/MyButton';
 
 interface IOtpVerifyBox {
   value?: string;

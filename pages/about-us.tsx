@@ -1,5 +1,6 @@
-import { Layout, MyIcon, MyImage, MyText, PageHeroSection } from '@/component';
+import { Layout, MyIcon, MyImage, MyText } from '@/component';
 import { IWhyBox } from '@/inteface/component-interface';
+import { PageHeader } from '@/section-components';
 import {
   Box,
   Center,
@@ -19,7 +20,7 @@ export default function AboutUs() {
       <Head>
         <title>About Us | Scope Seeker</title>
       </Head>
-      <PageHeroSection
+      <PageHeader
         title="About Us"
         subtitle="Break all boundaries and be unstoppable with the largest community engagement platform built on gamification"
         src="/assets/images/about-us.png"
