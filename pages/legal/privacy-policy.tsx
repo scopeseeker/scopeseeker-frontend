@@ -1,4 +1,5 @@
-import { Layout, MyText, PageHeroSection } from '@/component';
+import { Layout, MyText } from '@/component';
+import { PageHeader } from '@/section-components';
 import {
   Box,
   ListItem,
@@ -9,13 +10,13 @@ import {
 } from '@chakra-ui/react';
 import Head from 'next/head';
 
-export default function TermsOfUse() {
+export default function PrivacyPolicy() {
   return (
     <>
       <Head>
         <title>Privacy Policy | Scope Seeker</title>
       </Head>
-      <PageHeroSection
+      <PageHeader
         title="Privacy Policy"
         subtitle="Every human or organisation has three levels of openness: Public, Personal and Private. We do believe in your rights to privacy."
         src="/assets/images/privacy-policy.png"

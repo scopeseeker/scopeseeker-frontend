@@ -1,4 +1,5 @@
-import { Layout, MyText, PageHeroSection } from '@/component';
+import { Layout, MyText } from '@/component';
+import { PageHeader } from '@/section-components';
 import {
   Box,
   ListItem,
@@ -14,7 +15,7 @@ export default function TermsOfUse() {
       <Head>
         <title>Terms & Conditions | Scope Seeker</title>
       </Head>
-      <PageHeroSection
+      <PageHeader
         title="Terms & Conditions"
         subtitle="So you think you are at the right place? If yes, every collaboration has its own terms of use. Here's our terms and conditions."
         src="/assets/images/terms.png"

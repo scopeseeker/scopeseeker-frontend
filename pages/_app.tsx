@@ -1,4 +1,4 @@
-import { Footer, Navbar } from '@/component';
+import { Footer, Navbar } from '@/section-components';
 import '@/styles/globals.css';
 import theme from '@/styles/theme';
 import { Center, ChakraProvider, Flex } from '@chakra-ui/react';

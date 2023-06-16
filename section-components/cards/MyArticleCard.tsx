@@ -1,7 +1,7 @@
 import { MyButton, MyIcon, MyImage, MyText } from '@/component';
 import { IMyArticleCard } from '@/inteface/component-interface';
 import truncatedParagraph from '@/lib/validator';
-import { Box, Center, HStack, VStack } from '@chakra-ui/react';
+import { Center, HStack, VStack } from '@chakra-ui/react';
 import Link from 'next/link';
 
 const MyArticleCard = ({
@@ -26,17 +26,14 @@ const MyArticleCard = ({
       gap={'12px'}
     >
       <Center
-        w={{ base: '100%', md: '250px', lg: '300px'}}
+        w={{ base: '100%', md: '250px', lg: '300px' }}
         borderRadius={'12px'}
         overflow={'hidden'}
         flexShrink={0}
       >
         <MyImage src={image} alt="article image" width={600} height={600} />
       </Center>
-      <VStack
-        w={'full'}
-        alignItems={'start'}
-      >
+      <VStack w={'full'} alignItems={'start'}>
         <MyText
           as="span"
           title={category}

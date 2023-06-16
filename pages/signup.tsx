@@ -7,8 +7,8 @@ import {
   MyImage,
   MyInput,
   MyText,
-  OtpVerifyBox,
 } from '@/component';
+import { OtpVerifyBox } from '@/section-components';
 import {
   Box,
   Center,

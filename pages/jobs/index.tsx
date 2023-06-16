@@ -2,11 +2,10 @@ import {
   Filter,
   Layout,
   MyIcon,
-  MyJobCard,
-  MyText,
-  PageHeroSection,
+  MyText
 } from '@/component';
 import { jobCardFields, jobsFilter } from '@/constant/constantFields';
+import { MyJobCard, PageHeader } from '@/section-components';
 import {
   Box,
   Center,
@@ -27,7 +26,7 @@ export default function Jobs() {
       <Head>
         <title>Jobs | Scope Seeker</title>
       </Head>
-      <PageHeroSection
+      <PageHeader
         title="Explore The Oppournities"
         alt="jobs"
         subtitle="Here you will find the job according to your skills."

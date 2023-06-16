@@ -2,12 +2,12 @@ import {
   Filter,
   Layout,
   MyButton,
-  MyCompanyCard,
   MyDivider,
   MyIcon,
   MyText,
 } from '@/component';
 import { companyCardFields, companyFilter } from '@/constant/constantFields';
+import { MyCompanyCard } from '@/section-components';
 import {
   Box,
   Center,

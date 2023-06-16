@@ -1,6 +1,7 @@
-import { MyButton, MyIcon, MyInput, MyJobCard, MyText } from '@/component';
+import { MyButton, MyIcon, MyInput, MyText } from '@/component';
 import { Box, Center, Grid, HStack, VStack } from '@chakra-ui/react';
 import Link from 'next/link';
+import MyJobCard from '../cards/MyJobCard';
 
 const JobTab = () => {
   return (
