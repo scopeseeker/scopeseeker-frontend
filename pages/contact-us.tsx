@@ -25,7 +25,6 @@ export default function ContactUs() {
         <VStack w={'full'} minH={'100vh'}>
           <Center w={'100%'} h={'full'} boxShadow={'lg'} py={10} margin={20}>
             <VStack>
-              {/* <MyText as='heading' title='You can share yout query here'/> */}
               <MyText as="heading" title="You can share your query here!" />
               <HStack pt={10}>
                 <MyInput

@@ -1,10 +1,7 @@
+import { Layout, MainHeading, MyButton, MyIcon, MyText } from '@/component';
 import { popularCategoryObject } from '@/constant/constantFields';
 import { Center, HStack, VStack } from '@chakra-ui/react';
-import MyButton from '../button/MyButton';
-import MyIcon from '../icon/MyIcon';
-import Layout from '../layout/Layout';
-import MainHeading from '../main-heading/MainHeading';
-import MyText from '../text/MyText';
+
 
 const PopularCategories = () => {
   return (

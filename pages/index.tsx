@@ -9,7 +9,7 @@ import {
   SignupSection,
   Subscribe,
   Testimonials,
-} from '@/component';
+} from '@/section-components';
 import { Flex } from '@chakra-ui/react';
 import Head from 'next/head';
 
