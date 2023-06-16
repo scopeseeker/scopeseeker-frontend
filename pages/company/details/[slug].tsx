@@ -1,18 +1,10 @@
-import {
-  Benifits,
-  JobTab,
-  Layout,
-  MyIcon,
-  MyImage,
-  MyText,
-  Overview,
-} from '@/component';
+import { Layout, MyIcon, MyImage, MyText } from '@/component';
+import { Benifits, JobTab, Overview } from '@/section-components';
 
 import {
   Center,
   HStack,
   Tab,
-  TabIndicator,
   TabList,
   TabPanel,
   TabPanels,
@@ -157,25 +149,25 @@ export default function DynamicPage() {
 
             {/* Tabs */}
             <HStack paddingTop={'30px'} w={'full'}>
-              <Tabs  position="relative" variant="unstyled" w={'full'}>
-                <TabList gap={'10px'}>
+              <Tabs position="relative" variant="unstyled" w={'full'}>
+                <TabList gap={'18px'}>
                   <Tab
                     _selected={{ color: 'white', bg: 'brand.primary' }}
                     border={'1px solid'}
                     borderColor={'brand.lightgray'}
                     w={{ base: '50%', md: '150px' }}
-                    h={'60px'}
+                    h={'50px'}
                     borderRadius={'10px'}
                   >
                     Overview
                   </Tab>
-                  
+
                   <Tab
                     _selected={{ color: 'white', bg: 'brand.primary' }}
                     border={'1px solid'}
                     borderColor={'brand.lightgray'}
                     minW={{ base: '50%', md: '150px' }}
-                    h={'60px'}
+                    h={'50px'}
                     borderRadius={'10px'}
                   >
                     Benifits
@@ -185,7 +177,7 @@ export default function DynamicPage() {
                     border={'1px solid'}
                     borderColor={'brand.lightgray'}
                     w={{ base: '50%', md: '150px' }}
-                    h={'60px'}
+                    h={'50px'}
                     borderRadius={'10px'}
                   >
                     Jobs
@@ -195,7 +187,7 @@ export default function DynamicPage() {
                     border={'1px solid'}
                     borderColor={'brand.lightgray'}
                     minW={{ base: '50%', md: '150px' }}
-                    h={'60px'}
+                    h={'50px'}
                     borderRadius={'10px'}
                   >
                     Hiring Process
@@ -205,19 +197,12 @@ export default function DynamicPage() {
                     border={'1px solid'}
                     borderColor={'brand.lightgray'}
                     minW={{ base: '50%', md: '150px' }}
-                    h={'60px'}
+                    h={'50px'}
                     borderRadius={'10px'}
                   >
                     Helpfull Resouces
                   </Tab>
-                 
                 </TabList>
-                {/* <TabIndicator
-                  mt="-1.5px"
-                  height="2px"
-                  bg="brand.primary"
-                  borderRadius="1px"
-                /> */}
                 <TabPanels>
                   <TabPanel>
                     <Overview />
@@ -227,6 +212,12 @@ export default function DynamicPage() {
                   </TabPanel>
                   <TabPanel>
                     <JobTab />
+                  </TabPanel>
+                  <TabPanel>
+                    <MyText as="span" title="Hiring Process" />
+                  </TabPanel>
+                  <TabPanel>
+                    <MyText as="span" title="Helpful Resourcess" />
                   </TabPanel>
                 </TabPanels>
               </Tabs>

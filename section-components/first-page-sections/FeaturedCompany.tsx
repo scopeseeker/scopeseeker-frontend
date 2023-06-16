@@ -1,10 +1,6 @@
+import { Layout, MainHeading, MyBadge, MyButton, MyImage, MyText } from '@/component';
 import { Box, Center, Grid, GridItem, VStack } from '@chakra-ui/react';
-import MyButton from '../button/MyButton';
-import MyImage from '../image/MyImage';
-import Layout from '../layout/Layout';
-import MainHeading from '../main-heading/MainHeading';
-import MyText from '../text/MyText';
-import MyBadge from '../badge/MyBadge';
+
 const FeaturedCompany = () => {
   return (
     <Layout w={'full'}>

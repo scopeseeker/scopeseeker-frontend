@@ -1,7 +1,6 @@
+import { Layout, MyButton, MyText } from '@/component';
 import { Center, HStack, Heading, VStack } from '@chakra-ui/react';
-import MyButton from '../button/MyButton';
-import Layout from '../layout/Layout';
-import MyText from '../text/MyText';
+
 
 const SignupSection = () => {
   return (

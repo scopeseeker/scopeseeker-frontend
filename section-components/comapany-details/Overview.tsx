@@ -1,3 +1,4 @@
+import { MyIcon, MyImage, MyText } from '@/component';
 import { companyLeaders, companySubsidiaries } from '@/constant/constantFields';
 import {
   AspectRatio,
@@ -10,9 +11,6 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import { useRef } from 'react';
-import MyIcon from '../icon/MyIcon';
-import MyImage from '../image/MyImage';
-import MyText from '../text/MyText';
 
 const Overview = () => {
   const companyBoxRef = useRef<HTMLDivElement>(null);

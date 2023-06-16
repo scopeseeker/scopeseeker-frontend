@@ -29,7 +29,12 @@ const HeroSection = () => {
             height={45}
           />
         </Center>
-        <Center position={'absolute'} bottom={'20%'} right={'0%'} transform={'rotate(25deg)'}>
+        <Center
+          position={'absolute'}
+          bottom={'20%'}
+          right={'0%'}
+          transform={'rotate(25deg)'}
+        >
           <MyImage
             alt="ico"
             src={'/assets/images/outfit.png'}
