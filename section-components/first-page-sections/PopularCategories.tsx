@@ -1,6 +1,7 @@
 import { Layout, MainHeading, MyButton, MyIcon, MyText } from '@/component';
 import { popularCategoryObject } from '@/constant/constantFields';
 import { Center, HStack, VStack } from '@chakra-ui/react';
+import Link from 'next/link';
 
 
 const PopularCategories = () => {
@@ -52,7 +53,10 @@ const PopularCategories = () => {
               })}
             </>
           </HStack>
+          <Link href={'/jobs'}>
           <MyButton title="Browser All Category" />
+          </Link>
+          
         </VStack>
       </Layout>
     </VStack>
