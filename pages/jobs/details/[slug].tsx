@@ -311,7 +311,7 @@ export default function JobDetailsPage() {
                 <MyButton
                   title="Apply"
                   py={{ base: '24px', md: '18px' }}
-                  w={{ base: '100%', md: '16vw' }}
+                  w={'100%'}
                 />
                 <MyButton
                   w={'100%'}

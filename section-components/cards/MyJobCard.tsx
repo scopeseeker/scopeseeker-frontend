@@ -11,10 +11,12 @@ const MyJobCard = ({
   location,
   jobType,
   companyDesc,
+  w,
+  ...rest
 }: IMyJobCard) => {
   return (
     <Center
-      w={'100%'}
+      w={w || '100%'}
       // h={{ base: '342px', sm: '280px', md: '315px' }}
       borderRadius={'8px'}
       cursor={'pointer'}
@@ -27,6 +29,7 @@ const MyJobCard = ({
         borderColor: 'brand.primary',
         boxShadow: '0px 0px 30px rgb(0,0,0,0.1)',
       }}
+      {...rest}
     >
       <VStack w={'full'}>
         <HStack justifyContent={'space-between'} w={'full'}>
@@ -55,7 +58,7 @@ const MyJobCard = ({
           <Flex gap={'8px'} flexWrap={'wrap'} w={'full'}>
             <MyBadge labelArray={jobType} />
           </Flex>
-          <Flex
+          {/* <Flex
             h={{ base: '64px', md: '36px', '2xl': '44px' }}
             overflow={'hidden'}
             gap={0}
@@ -65,7 +68,7 @@ const MyJobCard = ({
               title={truncatedParagraph(companyDesc, 18)}
               overflowWrap={'break-word'}
             />
-          </Flex>
+          </Flex> */}
           <HStack w={'full'}>
             <Link href={'#'}>
               <MyButton title="Apply Now" />
