@@ -1,5 +1,6 @@
 import { Layout, MyButton, MyDivider, MyImage, MyText } from '@/component';
 import { Box, Center, HStack, Heading, VStack } from '@chakra-ui/react';
+import Link from 'next/link';
 
 const HeroSection = () => {
   return (
@@ -98,8 +99,13 @@ const HeroSection = () => {
               title="Discover your path to success on our job seeker website. With a vast range of job listings and valuable resources, we provide the platform for you to shine."
             />
             <HStack>
-              <MyButton title="Explore Now" href="/jobs" />
-              <MyButton title="Signup Now" variant="outline" href="/signup" />
+              <Link href={'/jobs'}>
+              <MyButton title="Explore Now"/>
+              </Link>
+              <Link href={'/signup'}>
+              <MyButton title="Signup Now" variant="outline" />
+              </Link>
+              
             </HStack>
 
             <HStack gap={{ sm: '30px', md: '60px', lg: '112px' }}>

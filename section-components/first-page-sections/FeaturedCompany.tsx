@@ -1,5 +1,13 @@
-import { Layout, MainHeading, MyBadge, MyButton, MyImage, MyText } from '@/component';
-import { Box, Center, Grid, GridItem, VStack } from '@chakra-ui/react';
+import {
+  Layout,
+  MainHeading,
+  MyBadge,
+  MyButton,
+  MyImage,
+  MyText,
+} from '@/component';
+import { Box, Center, Grid, GridItem, HStack, VStack } from '@chakra-ui/react';
+import Link from 'next/link';
 
 const FeaturedCompany = () => {
   return (
@@ -84,12 +92,14 @@ const FeaturedCompany = () => {
                     />
                   </Box>
 
-                  <Center w={'100%'}>
+                  <Center w={'full'}>
                     {/* <MyButton w={'50%'} title="Full Details" /> */}
-                    <MyButton
-                      w={{ base: '70%', sm: '50%', md: '60%' }}
-                      title="View Jobs"
-                    />
+                      
+                        <MyButton
+                          w={{ base: '70%', sm: '50%', md: '60%' }}
+                          title="View Jobs"
+                        />
+                      
                   </Center>
                 </VStack>
               </GridItem>
@@ -97,7 +107,9 @@ const FeaturedCompany = () => {
           })}
         </Grid>
         <Center w={'full'}>
-          <MyButton title="See All Company" px={'28px'} />
+          <Link href={'/company'}>
+            <MyButton title="See All Company" px={'28px'} />
+          </Link>
         </Center>
       </Center>
     </Layout>
