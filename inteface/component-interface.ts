@@ -14,6 +14,7 @@ export interface IMyButtonProps {
   px?: string;
   h?: string;
   cursor?: string;
+  w?: string | any;
   [key: string]: any;
 }
 
@@ -26,6 +27,8 @@ export interface IMyJobCard {
   companyDesc: string;
   applyLink?: string;
   fullDetailedLink?: string;
+  [key: string]: any;
+
 }
 export interface IMyCompanyCard {
   companyLogo: string;

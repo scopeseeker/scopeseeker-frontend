@@ -1,19 +1,14 @@
-import { MyIcon, MyImage, MyInput, MyText } from '@/component';
+import {
+  Layout,
+  MainHeading,
+  MyButton,
+  MyIcon,
+  MyImage,
+  MyText,
+} from '@/component';
 import { jobCardFields } from '@/constant/constantFields';
 import { MyJobCard } from '@/section-components';
-import {
-  Box,
-  Center,
-  Grid,
-  GridItem,
-  HStack,
-  Tab,
-  TabList,
-  TabPanel,
-  TabPanels,
-  Tabs,
-  VStack,
-} from '@chakra-ui/react';
+import { Box, Center, HStack, Heading, VStack } from '@chakra-ui/react';
 import { useRef, useState } from 'react';
 
 export default function Dashboard() {
@@ -21,506 +16,257 @@ export default function Dashboard() {
   const [isSortClicked, setIsSortClicked] = useState(true);
 
   return (
-    <Box w={'full'} h={'100vh'} px={'12px'}>
-      <HStack w={'full'} h={'full'} gap={'12px'} py={'29px'}>
-        {/* Left Part */}
-        <VStack w={'212px'} h={'full'} position={'relative'} gap={'18px'}>
+    <Layout w={'full'}>
+      <VStack alignItems={'flex-start'} gap={'32px'}>
+        <MainHeading
+          title="Dashboard"
+          subTitle="Stay organized by monitoring saved jobs, applied jobs, and favorite companies all in one place."
+          align={'start'}
+        />
+        <HStack w={'full'} alignItems={'start'}>
           <VStack
-            w={'full'}
-            borderRight={'1px solid'}
-            borderColor={'brand.lightgray'}
-            alignItems={'flex-start'}
-            gap={'12px'}
-            h={'full'}
-            p="12px"
+            w={'20%'}
+            px={'12px'}
+            gap={'32px'}
+            position={'sticky'}
+            top={90}
           >
-            <VStack w={'full'} spacing={0}>
-              <Center
-                w={'120px'}
-                h={'120px'}
-                bg={'green.300'}
-                borderRadius={'50%'}
-                m={'4px'}
-                overflow={'hidden'}
-                border={'2px solid'}
-                borderColor={'brand.primary'}
-              >
-                <MyImage
-                  src={'/assets/images/p12.jpg'}
-                  alt="profile"
-                  width={120}
-                  height={120}
-                />
-              </Center>
-              <MyText as="title" title="Lokesh Dhakar" />
-              <MyText as="small" title="lokeshdhakar@gmail.com" />
-            </VStack>
-            <VStack w={'full'} gap={'4px'}>
-              <Center
-                gap={'4px'}
-                justifyContent={'flex-start'}
-                px={'18px'}
-                w={'full'}
-              >
-                <MyIcon
-                  name="chartPie"
-                  width="20px"
-                  height="20px"
-                  strokeWidth="1"
-                />
-                <MyText as="link" title="Dasdhboard" />
-              </Center>
-              <Center
-                gap={'4px'}
-                justifyContent={'flex-start'}
-                px={'18px'}
-                w={'full'}
-              >
-                <MyIcon
-                  name="case"
-                  width="20px"
-                  height="20px"
-                  strokeWidth="1"
-                />
-                <MyText as="link" title="Recommanded Jobs" />
-              </Center>
-              <Center
-                gap={'4px'}
-                justifyContent={'flex-start'}
-                px={'18px'}
-                w={'full'}
-              >
-                <MyIcon
-                  name="company"
-                  width="20px"
-                  height="20px"
-                  strokeWidth="1"
-                />
-                <MyText as="link" title="Favourate Company" />
-              </Center>
-              <Center
-                gap={'4px'}
-                justifyContent={'flex-start'}
-                px={'18px'}
-                w={'full'}
-              >
-                <MyIcon
-                  name="company"
-                  width="20px"
-                  height="20px"
-                  strokeWidth="1"
-                />
-                <MyText as="link" title="Favourate Company" />
-              </Center>
-              <Center
-                gap={'4px'}
-                justifyContent={'flex-start'}
-                px={'18px'}
-                w={'full'}
-              >
-                <MyIcon
-                  name="company"
-                  width="20px"
-                  height="20px"
-                  strokeWidth="1"
-                />
-                <MyText as="link" title="Favourate Company" />
-              </Center>
-            </VStack>
-          </VStack>
-        </VStack>
-        <VStack
-          w={'80%'}
-          h={'full'}
-          overflowX={'scroll'}
-          p={'12px'}
-          gap={'42px'}
-          // bg={'red.50'}
-        >
-          {/* My Dashboard */}
-          <HStack justifyContent={'flex-start'} w={'full'} gap={'10px'}>
-            <MyText title="My Dashboard" as="heading" />
-            <Box w={'80%'} alignItems={'flex-start'}>
-              <MyInput
-                type="text"
-                placeholder="Search"
-                leftElement={<MyIcon name="search" />}
-              />
-            </Box>
-          </HStack>
-
-          <Center
-            w={'full'}
-            bg={'brand.primary'}
-            justifyContent={'space-between'}
-            alignItems={'flex-start'}
-            px={'30px'}
-            py={'20px'}
-            borderRadius={'8px'}
-            border={'1px solid'}
-            borderColor={'brand.lightgray'}
-          >
-            <VStack
-              alignItems={'flex-start'}
-              spacing={0}
-              gap={'12px'}
-              w={'60%'}
-            >
-              <MyText
-                title="Welcome back Lokesh!"
-                as="heading"
-                color="brand.white"
-              />
-              <MyText
-                as="p"
-                title="Unlocking Opportunities and Streamlining Your Path to Success: Your Dynamic Job Seeking Companion, Providing Insights, Resources, and Tools Tailored to Your Unique Career Goals, Helping You Stand Out and Land Your Dream Job with Confidence and Ease."
-              />
-            </VStack>
-            <MyImage
-              src={'/assets/images/welcome.png'}
-              alt="logo"
-              height={250}
-              width={250}
-            />
-          </Center>
-          <VStack w={'full'} alignItems={'flex-start'} gap={'8px'}>
-            <HStack>
-              <MyIcon name={'statistics'} color="brand.primary" />
-              <MyText title="Statistics" as={'heading'} />
-            </HStack>
-
-            {/* Statistics */}
-            <HStack
-              gap={'10px'}
-              borderRadius={'8px'}
-              boxShadow={'md'}
-              p={'10px'}
-            >
-              <Center
-                borderRight={'8px'}
-                borderColor={'brand.primary'}
-                flexDirection={'column'}
-                p={'20px'}
-                bg={'brand.aliceblue'}
-                borderRadius={'8px'}
-              >
-                <HStack>
-                  <Center bg={'brand.primary'} p={'8px'} borderRadius={'50%'}>
-                    <MyIcon
-                      name="users"
-                      width="30px"
-                      height="30px"
-                      color="brand.white"
-                    />
-                  </Center>
-                  <VStack spacing={0} alignItems={'flex-start'}>
-                    <MyText title="42" as={'title'} />
-                    <MyText title="Vistors Jobs" as={'span'} />
-                  </VStack>
-                </HStack>
-              </Center>
-              <Center
-                borderRight={'8px'}
-                borderColor={'brand.primary'}
-                flexDirection={'column'}
-                p={'20px'}
-                bg={'brand.aliceblue'}
-                borderRadius={'8px'}
-              >
-                <HStack>
-                  <Center bg={'brand.primary'} p={'8px'} borderRadius={'50%'}>
-                    <MyIcon
-                      name="target"
-                      width="30px"
-                      height="30px"
-                      color="brand.white"
-                    />
-                  </Center>
-                  <VStack spacing={0} alignItems={'flex-start'}>
-                    <MyText title="42" as={'title'} />
-                    <MyText title="Recomended Jobs" as={'span'} />
-                  </VStack>
-                </HStack>
-              </Center>
-              <Center
-                borderRight={'8px'}
-                borderColor={'brand.primary'}
-                flexDirection={'column'}
-                p={'20px'}
-                bg={'brand.aliceblue'}
-                borderRadius={'8px'}
-              >
-                <HStack>
-                  <Center bg={'brand.primary'} p={'8px'} borderRadius={'50%'}>
-                    <MyIcon
-                      name="file"
-                      width="30px"
-                      height="30px"
-                      color="brand.white"
-                    />
-                  </Center>
-                  <VStack spacing={0} alignItems={'flex-start'}>
-                    <MyText title="42" as={'title'} />
-                    <MyText title="Applied Jobs" as={'span'} />
-                  </VStack>
-                </HStack>
-              </Center>
-            </HStack>
-          </VStack>
-
-          {/* Job section added */}
-
-          <VStack w={'full'} alignItems={'flex-start'}>
-            <Tabs variant="enclosed" w={'full'}>
-              <TabList>
-                <Tab>
-                  <HStack>
-                    <MyIcon name="point" color="brand.primary" />
-                    <MyText title="Recommded Jobs" as={'heading'} />
-                  </HStack>
-                </Tab>
-                <Tab>
-                  <HStack>
-                    <MyIcon name="point" color="brand.primary" />
-                    <MyText title="Recently Viewed" as={'heading'} />
-                  </HStack>
-                </Tab>
-                <Tab>
-                  <HStack>
-                    <MyIcon name="point" color="brand.primary" />
-                    <MyText title="Applied Jobs" as={'heading'} />
-                  </HStack>
-                </Tab>
-              </TabList>
-              <TabPanels>
-                {/* Recommended Jobs  */}
-                <TabPanel>
-                  <Grid
-                    templateColumns={{
-                      base: 'repeat(1, 1fr)',
-                      md: 'repeat(2, 1fr)',
-                      lg: 'repeat(2, 1fr)',
-                    }}
-                    gap={{ base: 6, lg: 4, xl: 6 }}
-                    mx={'auto'}
-                    pt={'25px'}
-                    width={'100%'}
-                  >
-                    <>
-                      {jobCardFields.map((item, key) => {
-                        return (
-                          <GridItem key={key}>
-                            <MyJobCard
-                              companyIconLogo={item.companyIconLogo}
-                              role={item.role}
-                              companyName={item.companyName}
-                              location={item.location}
-                              jobType={item.jobType}
-                              companyDesc={item.companyDesc}
-                            />
-                          </GridItem>
-                        );
-                      })}
-                    </>
-                  </Grid>
-                </TabPanel>
-                {/* Favorouite Jobs */}
-                <TabPanel>
-                  <Grid
-                    templateColumns={{
-                      base: 'repeat(1, 1fr)',
-                      md: 'repeat(2, 1fr)',
-                      lg: 'repeat(2, 1fr)',
-                    }}
-                    gap={{ base: 6, lg: 4, xl: 6 }}
-                    mx={'auto'}
-                    pt={'25px'}
-                    width={'100%'}
-                  >
-                    <>
-                      {jobCardFields.map((item, key) => {
-                        return (
-                          <GridItem key={key}>
-                            <MyJobCard
-                              companyIconLogo={item.companyIconLogo}
-                              role={item.role}
-                              companyName={item.companyName}
-                              location={item.location}
-                              jobType={item.jobType}
-                              companyDesc={item.companyDesc}
-                            />
-                          </GridItem>
-                        );
-                      })}
-                    </>
-                  </Grid>
-                </TabPanel>
-                {/* Applied jobs */}
-                <TabPanel>
-                  <Grid
-                    templateColumns={{
-                      base: 'repeat(1, 1fr)',
-                      md: 'repeat(2, 1fr)',
-                      lg: 'repeat(2, 1fr)',
-                    }}
-                    gap={{ base: 6, lg: 4, xl: 6 }}
-                    mx={'auto'}
-                    pt={'25px'}
-                    width={'100%'}
-                  >
-                    <>
-                      {jobCardFields.map((item, key) => {
-                        return (
-                          <GridItem key={key}>
-                            <MyJobCard
-                              companyIconLogo={item.companyIconLogo}
-                              role={item.role}
-                              companyName={item.companyName}
-                              location={item.location}
-                              jobType={item.jobType}
-                              companyDesc={item.companyDesc}
-                            />
-                          </GridItem>
-                        );
-                      })}
-                    </>
-                  </Grid>
-                </TabPanel>
-              </TabPanels>
-            </Tabs>
-          </VStack>
-          {/* Favorouite section added */}
-          <VStack w={'full'} alignItems={'flex-start'}>
-            <HStack>
-              <MyIcon name="heart" />
-              <MyText title="Favorouite Company" as={'heading'} />
-            </HStack>
-
             <Center
+              cursor={'pointer'}
               w={'full'}
-              gap={'16px'}
-              p={'10px'}
-              borderRadius={'8px'}
-              boxShadow={'lg'}
+              h={'60px'}
+              borderRadius={'6px'}
+              bg={'brand.primary'}
             >
-              <Center
-                border={'1px solid'}
-                borderColor={'brand.lightgray'}
-                borderRadius={'50%'}
-                cursor={'pointer'}
-                onClick={() => {
-                  if (companyBoxRef && companyBoxRef.current) {
-                    companyBoxRef.current.scrollLeft -= 168;
-                  }
-                }}
-              >
-                <MyIcon name="chevronLeft" />
-              </Center>
+              <MyText as="title" title="My Profile" color="brand.white" />
+            </Center>
+            <VStack w={'full'} gap={'8px'}>
+              {[
+                { name: 'Dashboard', icon: 'chartPie' },
+                { name: 'Helpful Resources', icon: 'case' },
+                { name: 'Preferred Companies', icon: 'case' },
+                { name: 'Saved Jobs', icon: 'save' },
+                { name: 'Recommanded Jobs', icon: 'case' },
+              ].map((items, index) => {
+                return (
+                  <>
+                    <Center
+                      w={'full'}
+                      key={index}
+                      justifyContent={'flex-start'}
+                      borderRadius={'8px'}
+                      bg={'brand.transprimary'}
+                      border={'1px solid'}
+                      borderColor={'brand.lightgray'}
+                      px={'12px'}
+                      py={'6px'}
+                      gap={'4px'}
+                      cursor={'pointer'}
+                      _hover={{ bg: 'brand.aliceblue' }}
+                    >
+                      <MyIcon name={items.icon} width="22px" height="22px" />
+                      <MyText as="span" title={items.name} />
+                    </Center>
+                  </>
+                );
+              })}
+            </VStack>
 
-              <HStack
-                w={'full'}
-                p={'10px'}
-                gap={'12px'}
-                overflowX={'scroll'}
-                css={{
-                  '&::-webkit-scrollbar': {
-                    // display: 'none',
-                    height: '5px',
-                  },
-                }}
-                cursor={'pointer'}
-                ref={companyBoxRef}
-                scrollBehavior={'smooth'}
-              >
-                <CompanyBox
-                  companyLogo="/assets/images/company-logo/google.png"
-                  companyName="Amazon"
-                />
-                <CompanyBox
-                  companyLogo="/assets/images/company-logo/google.png"
-                  companyName="Amazon"
-                />
-                <CompanyBox
-                  companyLogo="/assets/images/company-logo/google.png"
-                  companyName="Amazon"
-                />
-                <CompanyBox
-                  companyLogo="/assets/images/company-logo/google.png"
-                  companyName="Amazon"
-                />
-                <CompanyBox
-                  companyLogo="/assets/images/company-logo/google.png"
-                  companyName="Amazon"
-                />
-                <CompanyBox
-                  companyLogo="/assets/images/company-logo/google.png"
-                  companyName="Amazon"
-                />
-                <CompanyBox
-                  companyLogo="/assets/images/company-logo/google.png"
-                  companyName="Amazon"
-                />
-
-                <CompanyBox
-                  companyLogo="/assets/images/company-logo/bookmyshow.png"
-                  companyName="Amazon"
-                />
-                <CompanyBox
-                  companyLogo="/assets/images/company-logo/google.png"
-                  companyName="Amazon"
-                />
-                <CompanyBox
-                  companyLogo="/assets/images/company-logo/github.png"
-                  companyName="GitHub"
-                />
-                <CompanyBox
-                  companyLogo="/assets/images/company-logo/linkedin.png"
-                  companyName="LinkedIn"
-                />
-              </HStack>
-
-              <Center
-                border={'1px solid'}
-                borderColor={'brand.lightgray'}
-                borderRadius={'50%'}
-                cursor={'pointer'}
-                onClick={() => {
-                  if (companyBoxRef && companyBoxRef.current) {
-                    companyBoxRef.current.scrollLeft += 168;
-                  }
-                }}
-              >
-                <MyIcon name="chevronRight" />
-              </Center>
+            <Center overflow={'hidden'} p={'10px'} pb={'0'} w={'full'}>
+              <MyImage
+                src={'/assets/images/plant.png'}
+                alt="section"
+                width={180}
+                height={180}
+              />
             </Center>
           </VStack>
-        </VStack>
-      </HStack>
-    </Box>
+          <VStack width={'80%'}>
+            <VStack w={'90%'} gap={'52px'}>
+              <HStack
+                w={'full'}
+                h={'160px'}
+                borderRadius={'12px'}
+                justifyContent={'space-between'}
+                bgGradient="linear(to-r, brand.aliceblue,brand.aliceblue, transparent, transparent)"
+                p={'12px'}
+                px={'32px'}
+                position={'relative'}
+              >
+                <Box w={'50%'}>
+                  <Heading color={'brand.primary'}>Hello, Lokesh</Heading>
+                  <MyText
+                    as="span"
+                    title={`Choose a job you love, and you'll never work.`}
+                  />
+                </Box>
+                <Center position={'absolute'} right={0} bottom={0}>
+                  <MyImage
+                    src={'/assets/images/d.png'}
+                    alt="homepage"
+                    width={300}
+                    height={200}
+                  />
+                </Center>
+              </HStack>
+              {/* Overview */}
+              <VStack w={'full'} alignItems={'flex-start'} gap={'22px'}>
+                <MyText as="heading" title="Overview" />
+                <HStack gap={'12px'}>
+                  {[
+                    { count: '34', tag: 'Visited Jobs' },
+                    { count: '04', tag: 'Saved Jobs' },
+                    { count: '14', tag: 'Applied Jobs' },
+                  ].map((item, index) => {
+                    return (
+                      <>
+                        <Center
+                          key={index}
+                          w={'230px'}
+                          borderRadius={'8px'}
+                          h={'80px'}
+                          boxShadow={'0px 4px 6px rgba(0,0,0,0.1)'}
+                          border={'1px solid'}
+                          borderColor={'brand.darkgray'}
+                          bg={'brand.aliceblue'}
+                          borderRight={'8px solid'}
+                          borderRightColor={'brand.primary'}
+                          px={'12px'}
+                          gap={'12px'}
+                          justifyContent={'flex-start'}
+                        >
+                          <Center
+                            w={'52px'}
+                            h={'52px'}
+                            borderRadius={'50%'}
+                            bg={'brand.primary'}
+                          >
+                            <MyIcon
+                              name="user"
+                              width="30px"
+                              height="30px"
+                              color="brand.white"
+                            />
+                          </Center>
+                          <VStack spacing={0} alignItems={'flex-start'}>
+                            <MyText as="heading" title={item.count} />
+                            <MyText as="span" title={item.tag} />
+                          </VStack>
+                        </Center>
+                      </>
+                    );
+                  })}
+                </HStack>
+              </VStack>
+              {/* Recommanded Jobs */}
+              <VStack w={'full'} alignItems={'flex-start'} gap={'18px'}>
+                <HStack w={'full'} justifyContent={'space-between'}>
+                  <MyText as="heading" title="Recommanded Jobs" />
+                  <MyButton title="View All" />
+                </HStack>
+                <HStack
+                  w={'full'}
+                  overflow={'scroll'}
+                  gap={'14px'}
+                  py={'18px'}
+                  __css={{
+                    '&::-webkit-scrollbar': {
+                      height: '8px',
+                    },
+                  }}
+                >
+                  {jobCardFields.map((item, key) => {
+                    return (
+                      <MyJobCard
+                        key={key}
+                        companyIconLogo={item.companyIconLogo}
+                        role={item.role}
+                        companyName={item.companyName}
+                        location={item.location}
+                        jobType={item.jobType}
+                        companyDesc={item.companyDesc}
+                        flexShrink={0}
+                        w={'49%'}
+                      />
+                    );
+                  })}
+                </HStack>
+              </VStack>
+
+              {/* Blog Suggestion */}
+              <VStack w={'full'} alignItems={'flex-start'} gap={'32px'}>
+                <HStack w={'full'} justifyContent={'space-between'}>
+                  <MyText as="heading" title="Must Read Blog" />
+                  <MyButton title="See More" />
+                </HStack>
+                <HStack
+                  w={'full'}
+                  overflow={'scroll'}
+                  gap={'20px'}
+                  __css={{
+                    '&::-webkit-scrollbar': {
+                      height: '8px',
+                    },
+                  }}
+                  pb={'18px'}
+                >
+                  {[1, 2, 3, 4].map((key) => {
+                    return (
+                      <>
+                        <Center
+                          key={key}
+                          w={'48%'}
+                          borderRadius={'20px'}
+                          h={'100px'}
+                          bg={'brand.white'}
+                          border={'1px solid'}
+                          borderColor={'brand.lightgray'}
+                          justifyContent={'flex-start'}
+                          p={'8px'}
+                          gap={'18px'}
+                          flexShrink={0}
+                          boxShadow={'0px 0px 10px rgba(0, 0, 0, 0.1)'}
+                          cursor={'pointer'}
+                          _hover={{ borderColor: 'brand.primary' }}
+                        >
+                          <Center
+                            w={'140px'}
+                            height={'100%'}
+                            bg={'green.200'}
+                            borderRadius={'20px'}
+                            overflow={'hidden'}
+                          >
+                            <MyImage
+                              alt="blog"
+                              width={500}
+                              height={500}
+                              src={'/assets/images/blog.jpg'}
+                            />
+                          </Center>
+                          <Box>
+                            <MyText
+                              as="title"
+                              title="Frontend Development Guide"
+                            />
+                            <HStack>
+                              <MyText
+                                as="span"
+                                title="Development"
+                                color="brand.primary"
+                                fontWeight={500}
+                              />
+                            </HStack>
+                          </Box>
+                        </Center>
+                      </>
+                    );
+                  })}
+                </HStack>
+              </VStack>
+            </VStack>
+          </VStack>
+        </HStack>
+      </VStack>
+    </Layout>
   );
 }
-
-interface ICompanyBox {
-  companyName: string;
-  companyLogo: string;
-}
-
-const CompanyBox = ({ companyName, companyLogo }: ICompanyBox) => {
-  return (
-    <Center
-      px={'40px'}
-      h={'80px'}
-      gap={'8px'}
-      borderRadius="8px"
-      border={'1px solid'}
-      _hover={{
-        borderColor: 'brand.primary',
-        boxShadow: '0px 0px 30px rgb(0,0,0,0.1)',
-      }}
-      borderColor={'brand.darkgray'}
-    >
-      <MyImage src={companyLogo} alt="company logo" height={30} width={30} />
-      <MyText title={companyName} as={'title'} />
-    </Center>
-  );
-};

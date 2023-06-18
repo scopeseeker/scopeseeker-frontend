@@ -88,7 +88,6 @@ export default function CompaniesPage() {
               overflowX={'scroll'}
               css={{
                 '&::-webkit-scrollbar': {
-                  // display: 'none',
                   height: '5px',
                 },
               }}
