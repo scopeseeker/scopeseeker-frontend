@@ -12,20 +12,22 @@ export default function Profile() {
       </Head>
       <Layout>
         {/* Main VStack Box */}
-        <VStack gap={'34px'} px={'32px'}>
+        <VStack gap={'34px'} px={{ base: '0px', md: '32px' }}>
           {/* Profile and Detail section */}
           <Center
             bg={'brand.aliceblue'}
-            border={'1px solid'}
+            borderWidth={'1px'}
             borderColor={'brand.darkgray'}
             borderRadius={'12px'}
-            justifyContent={'center'}
             py={'18px'}
-            px={'32px'}
-            gap={'32px'}
+            px={{ base: '20px', md: '32px' }}
+            justifyContent={'space-between'}
             w={'full'}
+            flexDir={{ base: 'column', md: 'row' }}
+            gap={{ base: '40px', md: 'initial' }}
           >
-            <Center flexDirection={'column'} gap={'12px'} h={'full'}>
+            {/* Profile Section */}
+            <VStack gap={'12px'}>
               <Center
                 w={'180px'}
                 h={'180px'}
@@ -43,68 +45,76 @@ export default function Profile() {
                 />
               </Center>
               <MyButton title="Edit Picture" />
-            </Center>
-            {/* mid section name and details */}
-            <Center h={'full'}>
-              <VStack
-                w={'100%'}
-                h={'100%'}
-                p={'20px'}
+            </VStack>
+
+            {/* Mid Section */}
+            <VStack
+              alignItems={'flex-start'}
+              width={{ base: 'full', md: '45%' }}
+              px={{ base: '0px', md: '25px' }}
+            >
+              <MyText title="Abhishek Kumar" as={'heading'} />
+              <HStack
+                w={'full'}
+                py={'8px'}
+                justifyContent={'space-between'}
                 alignItems={'flex-start'}
+                spacing={0}
+                flexDir={{ base: 'column', lg: 'initial' }}
+                gap={{ base: '10px', lg: 'initial' }}
               >
-                <MyText title="Lokesh Dhakar" as={'heading'} />
-                <VStack py={'8px'}>
-                  <HStack w={'full'} h={'full'} alignItems={'flex-start'}>
-                    <HStack w={'200px'}>
-                      <MyIcon name={'location'} />
-                      <MyText title="Bhopal" as={'span'} />
-                    </HStack>
-                    <HStack w={'200px'}>
-                      <MyIcon name={'phone'} />
-                      <MyText title=" +91 9999999999" as={'span'} />
-                      <MyIcon name={'verifyOutline'} color="green" />
-                    </HStack>
-                  </HStack>
-
-                  <HStack w={'full'} h={'full'} alignItems={'flex-start'}>
-                    <HStack w={'200px'}>
-                      <MyIcon name={'case'} />
-                      <MyText title="Freshers" as={'span'} />
-                    </HStack>
-                    <HStack w={'200px'}>
-                      <MyIcon name={'gmail'} />
-                      <MyText title="exapmle@gmail.com" as={'span'} />
-                      <MyIcon name={'verifyOutline'} color="green" />
-                    </HStack>
-                  </HStack>
-                </VStack>
-                {/* Profile bar */}
                 <VStack alignItems={'flex-start'}>
-                  <MyText title="Profile Complete" as={'title'} />
                   <HStack>
-                    <Box
-                      w={'400px'}
-                      h={'10px'}
-                      borderRadius={'20px'}
-                      border={'1px solid '}
-                      borderColor={'brand.lightgray'}
-                      overflow={'hidden'}
-                    >
-                      <Box
-                        w={'200px'}
-                        h={'full'}
-                        bg={'brand.primary'}
-                        borderRadius={'20px'}
-                      ></Box>
-                    </Box>
-                    <MyText title="40%" as={'span'} />
+                    <MyIcon name={'location'} />
+                    <MyText title="Bhopal" as={'span'} />
+                  </HStack>
+
+                  <HStack>
+                    <MyIcon name={'case'} />
+                    <MyText title="Freshers" as={'span'} />
                   </HStack>
                 </VStack>
-              </VStack>
-            </Center>
-            {/* left section */}
 
-            <VStack gap={'20px'}>
+                <VStack alignItems={'flex-start'}>
+                  <HStack>
+                    <MyIcon name={'phone'} />
+                    <MyText title=" +91 9999999999" as={'span'} />
+                    <MyIcon name={'verifyOutline'} color="green" />
+                  </HStack>
+
+                  <HStack>
+                    <MyIcon name={'gmail'} />
+                    <MyText title="exapmle@gmail.com" as={'span'} />
+                    <MyIcon name={'verifyOutline'} color="green" />
+                  </HStack>
+                </VStack>
+              </HStack>
+
+              <VStack alignItems={'flex-start'} w={'full'} py={'8px'}>
+                <MyText title="Profile Complete" as={'title'} />
+                <HStack w={'full'}>
+                  <Box
+                    w={'full'}
+                    h={'10px'}
+                    borderRadius={'20px'}
+                    border={'1px solid '}
+                    borderColor={'brand.lightgray'}
+                    overflow={'hidden'}
+                  >
+                    <Box
+                      w={'40%'}
+                      h={'full'}
+                      bg={'brand.primary'}
+                      borderRadius={'20px'}
+                    ></Box>
+                  </Box>
+                  <MyText title="40%" as={'span'} />
+                </HStack>
+              </VStack>
+            </VStack>
+            {/* Right Section */}
+
+            <VStack gap={'20px'} display={{ base: 'initial', md: 'flex' }}>
               <Center
                 bg={'brand.white'}
                 borderRadius={'12px'}
@@ -112,6 +122,7 @@ export default function Profile() {
                 py={'10px'}
                 borderWidth={'1.5px'}
                 borderColor={'brand.lighgray'}
+                display={{ base: 'none', md: 'initial' }}
               >
                 <MyText
                   title="14 Pending Actions"
@@ -141,6 +152,7 @@ export default function Profile() {
               </Center>
             </VStack>
           </Center>
+
           {/* Quick section */}
           <Center
             borderRadius={'50px'}
@@ -151,6 +163,7 @@ export default function Profile() {
             py={'12px'}
             gap={'32px'}
             borderWidth={'1px'}
+            display={{ base: 'none', md: 'flex' }}
           >
             {[
               'Basic Details',
@@ -324,7 +337,7 @@ export default function Profile() {
                 </Link>
               </HStack>
               <HStack
-                w={'45%'}
+                w={{ base: '100%', md: '45%' }}
                 justifyContent={'space-between'}
                 borderWidth={'1.5px'}
                 borderColor={'brand.lightgray'}
@@ -425,7 +438,9 @@ export default function Profile() {
                 />
               </VStack>
             </VStack>
+
             {/* work */}
+
             <VStack
               w={'full'}
               spacing={0}
@@ -454,7 +469,9 @@ export default function Profile() {
                 />
               </VStack>
             </VStack>
+
             {/* social */}
+
             <VStack
               w={'full'}
               alignItems={'flex-start'}
@@ -467,7 +484,7 @@ export default function Profile() {
                   <MyIcon name="edit" />
                 </Link>
               </HStack>
-              <HStack gap={'10px'}>
+              <HStack gap={'10px'} flexWrap={'wrap'} spacing={0}>
                 <Center
                   gap={'5px'}
                   borderWidth={'1.4px'}
