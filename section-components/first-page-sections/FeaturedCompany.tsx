@@ -6,7 +6,7 @@ import {
   MyImage,
   MyText,
 } from '@/component';
-import { Box, Center, Grid, GridItem, HStack, VStack } from '@chakra-ui/react';
+import { Box, Center, Grid, GridItem, VStack } from '@chakra-ui/react';
 import Link from 'next/link';
 
 const FeaturedCompany = () => {
@@ -20,10 +20,10 @@ const FeaturedCompany = () => {
           }
         />
         <Grid
-          templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(3, 1fr)' }}
+          templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(4, 1fr)' }}
           gap={'12px'}
         >
-          {[1, 2, 3].map((items, key) => {
+          {[1, 2, 3, 4].map((items, key) => {
             return (
               <GridItem key={key}>
                 <VStack
@@ -94,12 +94,15 @@ const FeaturedCompany = () => {
 
                   <Center w={'full'}>
                     {/* <MyButton w={'50%'} title="Full Details" /> */}
-                      
-                        <MyButton
-                          w={{ base: '70%', sm: '50%', md: '60%' }}
-                          title="View Jobs"
-                        />
-                      
+                    <MyButton
+                      w={{ base: '70%', sm: '50%', md: '60%' }}
+                      title="View Jobs"
+                      variant="outline"
+                      borderWidth={'1.5px'}
+                      fontWeight={500}
+                      color={'brand.primary'}
+                      borderColor={'brand.primary'}
+                    />
                   </Center>
                 </VStack>
               </GridItem>

@@ -108,7 +108,7 @@ const Navbar = () => {
                 </>
               )}
             </DesktopNav>
-            <NavLink iconName="user" title="About Us" href="/about-us" />
+            <NavLink iconName="profile" title="About Us" href="/about-us" />
             <NavLink iconName="phone" title="Contact Us" href="/contact-us" />
           </Flex>
         </HStack>
@@ -146,7 +146,7 @@ const Navbar = () => {
                     bg={'brand.primary'}
                     gap={'4px'}
                   >
-                    <MyIcon color="brand.white" name="chartPie" width="20px" />
+                    <MyIcon color="brand.white" name="dashboard" width="20px" />
                     <MyText
                       as="link"
                       title="Dashboard"
@@ -285,7 +285,7 @@ const Navbar = () => {
                             _hover={{ color: 'brand.primary' }}
                           >
                             <MyIcon
-                              name="chartPie"
+                              name="dashboard"
                               width="20px"
                               color={'currentColor'}
                             />
@@ -301,7 +301,7 @@ const Navbar = () => {
                             _hover={{ color: 'brand.primary' }}
                           >
                             <MyIcon
-                              name="user"
+                              name="profile"
                               width="20px"
                               color={'currentColor'}
                             />
@@ -484,7 +484,7 @@ const Navbar = () => {
                             </VStack>
                           </Collapse>
                           <NavLink
-                            iconName="user"
+                            iconName="profile"
                             title="About Us"
                             href="/about-us"
                             onClick={onClose}
@@ -507,7 +507,7 @@ const Navbar = () => {
                             </>
                           )}
                           <NavLink
-                            iconName="chartPie"
+                            iconName="dashboard"
                             title="Dashboard"
                             href="/dashboard"
                             onClick={onClose}
