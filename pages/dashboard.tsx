@@ -2,6 +2,7 @@ import {
   Layout,
   MainHeading,
   MyButton,
+  MyDivider,
   MyIcon,
   MyImage,
   MyText,
@@ -9,12 +10,9 @@ import {
 import { jobCardFields } from '@/constant/constantFields';
 import { MyJobCard } from '@/section-components';
 import { Box, Center, HStack, Heading, VStack } from '@chakra-ui/react';
-import { useRef, useState } from 'react';
+import Link from 'next/link';
 
 export default function Dashboard() {
-  const companyBoxRef = useRef<HTMLDivElement>(null);
-  const [isSortClicked, setIsSortClicked] = useState(true);
-
   return (
     <Layout w={'full'}>
       <VStack alignItems={'flex-start'} gap={'32px'}>
@@ -37,36 +35,43 @@ export default function Dashboard() {
               h={'60px'}
               borderRadius={'6px'}
               bg={'brand.primary'}
+              gap={'4px'}
             >
+              <MyIcon name='profile' strokeWidth='1.8' color='brand.white'/>
               <MyText as="title" title="My Profile" color="brand.white" />
             </Center>
             <VStack w={'full'} gap={'8px'}>
               {[
-                { name: 'Dashboard', icon: 'chartPie' },
-                { name: 'Helpful Resources', icon: 'case' },
-                { name: 'Preferred Companies', icon: 'case' },
-                { name: 'Saved Jobs', icon: 'save' },
-                { name: 'Recommanded Jobs', icon: 'case' },
+                { name: 'Dashboard', icon: 'dashboard', href: '/' },
+                { name: 'Helpful Resources', icon: 'tools', href: '/' },
+                { name: 'Preferred Companies', icon: 'target', href: '/' },
+                { name: 'Saved Jobs', icon: 'bookmarks', href: '/' },
+                { name: 'Recommanded Jobs', icon: 'case', href: '/' },
               ].map((items, index) => {
                 return (
                   <>
-                    <Center
-                      w={'full'}
+                    <Link
+                      href={items.href}
+                      style={{ width: '100%' }}
                       key={index}
-                      justifyContent={'flex-start'}
-                      borderRadius={'8px'}
-                      bg={'brand.transprimary'}
-                      border={'1px solid'}
-                      borderColor={'brand.lightgray'}
-                      px={'12px'}
-                      py={'6px'}
-                      gap={'4px'}
-                      cursor={'pointer'}
-                      _hover={{ bg: 'brand.aliceblue' }}
                     >
-                      <MyIcon name={items.icon} width="22px" height="22px" />
-                      <MyText as="span" title={items.name} />
-                    </Center>
+                      <Center
+                        w={'full'}
+                        justifyContent={'flex-start'}
+                        borderRadius={'8px'}
+                        // bg={'brand.aliceblue'}
+                        // border={'1px solid'}
+                        // borderColor={'brand.lightgray'}
+                        pl={'16px'}
+                        py={'6px'}
+                        gap={'4px'}
+                        cursor={'pointer'}
+                        _hover={{ bg: 'brand.aliceblue' }}
+                      >
+                        <MyIcon name={items.icon} width="22px" height="22px" />
+                        <MyText as="span" title={items.name} />
+                      </Center>
+                    </Link>
                   </>
                 );
               })}
@@ -83,6 +88,7 @@ export default function Dashboard() {
           </VStack>
           <VStack width={'80%'}>
             <VStack w={'90%'} gap={'52px'}>
+              {/* Hello Section */}
               <HStack
                 w={'full'}
                 h={'160px'}
@@ -112,11 +118,12 @@ export default function Dashboard() {
               {/* Overview */}
               <VStack w={'full'} alignItems={'flex-start'} gap={'22px'}>
                 <MyText as="heading" title="Overview" />
-                <HStack gap={'12px'}>
+                <HStack gap={'12px'} flexWrap={'wrap'} spacing={0}>
                   {[
-                    { count: '34', tag: 'Visited Jobs' },
-                    { count: '04', tag: 'Saved Jobs' },
-                    { count: '14', tag: 'Applied Jobs' },
+                    { count: '34', tag: 'Visited Jobs', icon: 'user' },
+                    { count: '04', tag: 'Saved Jobs', icon: 'save' },
+                    { count: '14', tag: 'Applied Jobs', icon: 'file' },
+                    { count: '14', tag: 'Recommanded Jobs', icon: 'file' },
                   ].map((item, index) => {
                     return (
                       <>
@@ -127,9 +134,10 @@ export default function Dashboard() {
                           h={'80px'}
                           boxShadow={'0px 4px 6px rgba(0,0,0,0.1)'}
                           border={'1px solid'}
-                          borderColor={'brand.darkgray'}
-                          bg={'brand.aliceblue'}
-                          borderRight={'8px solid'}
+                          borderColor={'brand.lightgray'}
+                          cursor={'pointer'}
+                          // bg={'brand.aliceblue'}
+                          borderRight={'5px solid'}
                           borderRightColor={'brand.primary'}
                           px={'12px'}
                           gap={'12px'}
@@ -139,13 +147,13 @@ export default function Dashboard() {
                             w={'52px'}
                             h={'52px'}
                             borderRadius={'50%'}
-                            bg={'brand.primary'}
+                            bg={'brand.aliceblue'}
                           >
                             <MyIcon
-                              name="user"
+                              name={item.icon}
                               width="30px"
                               height="30px"
-                              color="brand.white"
+                              // color="brand.white"
                             />
                           </Center>
                           <VStack spacing={0} alignItems={'flex-start'}>
@@ -158,6 +166,8 @@ export default function Dashboard() {
                   })}
                 </HStack>
               </VStack>
+              <MyDivider />
+
               {/* Recommanded Jobs */}
               <VStack w={'full'} alignItems={'flex-start'} gap={'18px'}>
                 <HStack w={'full'} justifyContent={'space-between'}>
@@ -192,9 +202,116 @@ export default function Dashboard() {
                   })}
                 </HStack>
               </VStack>
+              <MyDivider />
+              {/* Top Company */}
+              <VStack w={'full'} alignItems={'flex-start'} gap={'18px'}>
+                <HStack w={'full'} justifyContent={'space-between'}>
+                  <MyText as="heading" title="Top Companies" />
+                  <MyButton title="View All" />
+                </HStack>
+
+                <HStack
+                  w={'full'}
+                  overflow={'scroll'}
+                  gap={'14px'}
+                  py={'18px'}
+                  __css={{
+                    '&::-webkit-scrollbar': {
+                      // display: 'none',
+                      height: '8px',
+                    },
+                  }}
+                >
+                  {[1, 2, 3, 4, 5, 6, 7, 8].map((index) => {
+                    return (
+                      <Center
+                      key={index}
+                        p={'18px'}
+                        gap={'16px'}
+                        flexDirection={'column'}
+                        minW={'200px'}
+                        maxW={'250px'}
+                        h={'200px'}
+                        _hover={{
+                          borderColor: 'brand.primary',
+                          boxShadow: '0px 0px 30px rgb(0,0,0,0.1)',
+                        }}
+                        borderRadius={'12px'}
+                        border={'1px solid'}
+                        borderColor={'brand.lightgray'}
+                      >
+                        <Center
+                          w={'60px'}
+                          h={'60px'}
+                          borderRadius={'50%'}
+                          p={'8px'}
+                          bg={'brand.aliceblue'}
+                        >
+                          <MyImage
+                            src={'/assets/images/company-logo/google.png'}
+                            alt="company"
+                            width={50}
+                            height={50}
+                          />
+                        </Center>
+                        <VStack spacing={0}>
+                          <MyText as="title" title="Microsoft" />
+                          <MyText
+                            as="small"
+                            title={`⭐ 43 Rating | 444 Review`}
+                          />
+                        </VStack>
+                        <MyButton title="View Jobs" />
+                      </Center>
+                    );
+                  })}
+                </HStack>
+              </VStack>
+              <MyDivider />
+
+              <VStack w={'full'} alignItems={'flex-start'} gap={'18px'}>
+                <HStack w={'full'} justifyContent={'space-between'}>
+                  <MyText as="heading" title="Saved Jobs" />
+                  <MyButton title="View All" />
+                </HStack>
+                <HStack
+                  w={'full'}
+                  overflow={'scroll'}
+                  gap={'14px'}
+                  py={'18px'}
+                  __css={{
+                    '&::-webkit-scrollbar': {
+                      height: '8px',
+                    },
+                  }}
+                >
+                  {jobCardFields.map((item, key) => {
+                    return (
+                      <MyJobCard
+                        key={key}
+                        companyIconLogo={item.companyIconLogo}
+                        role={item.role}
+                        companyName={item.companyName}
+                        location={item.location}
+                        jobType={item.jobType}
+                        companyDesc={item.companyDesc}
+                        flexShrink={0}
+                        w={'49%'}
+                      />
+                    );
+                  })}
+                </HStack>
+              </VStack>
+              <MyDivider />
+
 
               {/* Blog Suggestion */}
-              <VStack w={'full'} alignItems={'flex-start'} gap={'32px'}>
+              <VStack
+                w={'full'}
+                alignItems={'flex-start'}
+                gap={'32px'}
+                className="hello"
+              >
                 <HStack w={'full'} justifyContent={'space-between'}>
                   <MyText as="heading" title="Must Read Blog" />
                   <MyButton title="See More" />

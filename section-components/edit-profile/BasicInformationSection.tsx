@@ -98,7 +98,7 @@ const BasicInformationSection = () => {
               type="text"
               name="fullName"
               placeholder="Abhishek Kumar"
-              leftElement={<MyIcon name="user" />}
+              leftElement={<MyIcon name="profile" />}
               onChange={handleInputChange}
             />
 

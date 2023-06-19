@@ -1,10 +1,4 @@
-import {
-  Layout,
-  MyButton,
-  MyIcon,
-  MyInput,
-  MyText
-} from '@/component';
+import { Layout, MyButton, MyIcon, MyInput, MyText } from '@/component';
 import { PageHeader } from '@/section-components';
 import { Box, Center, HStack, Textarea, VStack } from '@chakra-ui/react';
 import Head from 'next/head';
@@ -74,7 +68,7 @@ export default function RequestPage() {
                   labelTitle="Full Name"
                   placeholder="Jon Doe"
                   leftElement={
-                    <MyIcon name="user" width="20px" height="20px" />
+                    <MyIcon name="profile" width="20px" height="20px" />
                   }
                 />
                 <MyInput

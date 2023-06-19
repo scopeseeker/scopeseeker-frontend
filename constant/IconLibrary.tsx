@@ -57,7 +57,7 @@ export type IconNameType =
   | 'userEdit'
   | 'settings'
   | 'questionMark'
-  | 'chartPie'
+  | 'dashboard'
   | 'logout'
   | 'bellOutline'
   | 'bellFilled'
@@ -79,6 +79,9 @@ export type IconNameType =
   | 'like'
   | 'leetcode'
   | 'building'
+  | 'profile'
+  | 'bookmarks'
+  | 'tools'
   | string;
 
 type IconData = {
@@ -86,6 +89,28 @@ type IconData = {
 };
 
 export const IconData: IconData = {
+  profile: (
+    <>
+      <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+      <path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+      <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855"></path>
+    </>
+  ),
+  tools: (
+    <>
+      <path d="M4 3h8l-1 9h-6z"></path>
+      <path d="M7 18h2v3h-2z"></path>
+      <path d="M20 3v12h-5c-.023 -3.681 .184 -7.406 5 -12z"></path>
+      <path d="M20 15v6h-1v-3"></path>
+      <path d="M8 12l0 6"></path>
+    </>
+  ),
+  bookmarks: (
+    <>
+      <path d="M13 7a2 2 0 0 1 2 2v12l-5 -3l-5 3v-12a2 2 0 0 1 2 -2h6z"></path>
+      <path d="M9.265 4a2 2 0 0 1 1.735 -1h6a2 2 0 0 1 2 2v12l-1 -.6"></path>
+    </>
+  ),
   file: (
     <>
       <path d="M14 3v4a1 1 0 0 0 1 1h4" />
@@ -591,10 +616,12 @@ export const IconData: IconData = {
       <path d="M12 13a2 2 0 0 0 .914 -3.782a1.98 1.98 0 0 0 -2.414 .483"></path>
     </>
   ),
-  chartPie: (
+  dashboard: (
     <>
-      <path d="M10 3.2a9 9 0 1 0 10.8 10.8a1 1 0 0 0 -1 -1h-6.8a2 2 0 0 1 -2 -2v-7a.9 .9 0 0 0 -1 -.8"></path>
-      <path d="M15 3.5a9 9 0 0 1 5.5 5.5h-4.5a1 1 0 0 1 -1 -1v-4.5"></path>
+      <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path>
+      <path d="M4 9h8"></path>
+      <path d="M12 15h8"></path>
+      <path d="M12 4v16"></path>
     </>
   ),
   logout: (

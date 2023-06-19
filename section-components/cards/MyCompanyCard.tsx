@@ -22,7 +22,7 @@ const MyCompanyCard = ({
       py={'16px'}
       bg={'brand.white'}
       border={'1px solid'}
-      borderColor={'brand.darkgray'}
+      borderColor={'brand.lightgray'}
       _hover={{
         borderColor: 'brand.primary',
         boxShadow: '0px 0px 30px rgb(0,0,0,0.1)',
