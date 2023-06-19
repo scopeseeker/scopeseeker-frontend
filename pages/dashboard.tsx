@@ -15,16 +15,18 @@ import Link from 'next/link';
 export default function Dashboard() {
   return (
     <Layout w={'full'}>
-      <VStack alignItems={'flex-start'} gap={'32px'}>
+      <VStack alignItems={'flex-start'} gap={'72px'}>
         <MainHeading
           title="Dashboard"
           subTitle="Stay organized by monitoring saved jobs, applied jobs, and favorite companies all in one place."
           align={'start'}
         />
         <HStack w={'full'} alignItems={'start'}>
+          {/* Left Part */}
           <VStack
             w={'20%'}
-            px={'12px'}
+            display={{ base: 'none', lg: 'flex' }}
+            px={{ xl: '12px' }}
             gap={'32px'}
             position={'sticky'}
             top={90}
@@ -37,7 +39,7 @@ export default function Dashboard() {
               bg={'brand.primary'}
               gap={'4px'}
             >
-              <MyIcon name='profile' strokeWidth='1.8' color='brand.white'/>
+              <MyIcon name="profile" strokeWidth="1.8" color="brand.white" />
               <MyText as="title" title="My Profile" color="brand.white" />
             </Center>
             <VStack w={'full'} gap={'8px'}>
@@ -59,10 +61,7 @@ export default function Dashboard() {
                         w={'full'}
                         justifyContent={'flex-start'}
                         borderRadius={'8px'}
-                        // bg={'brand.aliceblue'}
-                        // border={'1px solid'}
-                        // borderColor={'brand.lightgray'}
-                        pl={'16px'}
+                        pl={{ xl: '16px' }}
                         py={'6px'}
                         gap={'4px'}
                         cursor={'pointer'}
@@ -86,8 +85,10 @@ export default function Dashboard() {
               />
             </Center>
           </VStack>
-          <VStack width={'80%'}>
-            <VStack w={'90%'} gap={'52px'}>
+
+          {/* Right Part */}
+          <VStack width={{ base: '100%', lg: '80%' }}>
+            <VStack w={{ base: '100%', lg: '90%' }} gap={'52px'}>
               {/* Hello Section */}
               <HStack
                 w={'full'}
@@ -99,24 +100,30 @@ export default function Dashboard() {
                 px={'32px'}
                 position={'relative'}
               >
-                <Box w={'50%'}>
+                <Box maxW={{ base: '100%', md: '50%' }}>
                   <Heading color={'brand.primary'}>Hello, Lokesh</Heading>
                   <MyText
                     as="span"
                     title={`Choose a job you love, and you'll never work.`}
                   />
                 </Box>
-                <Center position={'absolute'} right={0} bottom={0}>
+                <Center
+                  position={'absolute'}
+                  right={0}
+                  bottom={0}
+                  display={'none'}
+                >
                   <MyImage
                     src={'/assets/images/d.png'}
                     alt="homepage"
                     width={300}
-                    height={200}
+                    height={300}
                   />
                 </Center>
               </HStack>
+
               {/* Overview */}
-              <VStack w={'full'} alignItems={'flex-start'} gap={'22px'}>
+              {/* <VStack w={'full'} alignItems={'flex-start'} gap={'22px'}>
                 <MyText as="heading" title="Overview" />
                 <HStack gap={'12px'} flexWrap={'wrap'} spacing={0}>
                   {[
@@ -166,10 +173,10 @@ export default function Dashboard() {
                   })}
                 </HStack>
               </VStack>
-              <MyDivider />
+              <MyDivider /> */}
 
               {/* Recommanded Jobs */}
-              <VStack w={'full'} alignItems={'flex-start'} gap={'18px'}>
+              {/* <VStack w={'full'} alignItems={'flex-start'} gap={'18px'}>
                 <HStack w={'full'} justifyContent={'space-between'}>
                   <MyText as="heading" title="Recommanded Jobs" />
                   <MyButton title="View All" />
@@ -202,9 +209,10 @@ export default function Dashboard() {
                   })}
                 </HStack>
               </VStack>
-              <MyDivider />
+              <MyDivider /> */}
+
               {/* Top Company */}
-              <VStack w={'full'} alignItems={'flex-start'} gap={'18px'}>
+              {/* <VStack w={'full'} alignItems={'flex-start'} gap={'18px'}>
                 <HStack w={'full'} justifyContent={'space-between'}>
                   <MyText as="heading" title="Top Companies" />
                   <MyButton title="View All" />
@@ -217,7 +225,6 @@ export default function Dashboard() {
                   py={'18px'}
                   __css={{
                     '&::-webkit-scrollbar': {
-                      // display: 'none',
                       height: '8px',
                     },
                   }}
@@ -225,7 +232,7 @@ export default function Dashboard() {
                   {[1, 2, 3, 4, 5, 6, 7, 8].map((index) => {
                     return (
                       <Center
-                      key={index}
+                        key={index}
                         p={'18px'}
                         gap={'16px'}
                         flexDirection={'column'}
@@ -267,9 +274,10 @@ export default function Dashboard() {
                   })}
                 </HStack>
               </VStack>
-              <MyDivider />
+              <MyDivider /> */}
 
-              <VStack w={'full'} alignItems={'flex-start'} gap={'18px'}>
+              {/* Saved Jobs */}
+              {/* <VStack w={'full'} alignItems={'flex-start'} gap={'18px'}>
                 <HStack w={'full'} justifyContent={'space-between'}>
                   <MyText as="heading" title="Saved Jobs" />
                   <MyButton title="View All" />
@@ -296,17 +304,16 @@ export default function Dashboard() {
                         jobType={item.jobType}
                         companyDesc={item.companyDesc}
                         flexShrink={0}
-                        w={'49%'}
+                        w={{ base: '100%', md: '48%', xl: '49%' }}
                       />
                     );
                   })}
                 </HStack>
               </VStack>
-              <MyDivider />
-
+              <MyDivider /> */}
 
               {/* Blog Suggestion */}
-              <VStack
+              {/* <VStack
                 w={'full'}
                 alignItems={'flex-start'}
                 gap={'32px'}
@@ -332,9 +339,9 @@ export default function Dashboard() {
                       <>
                         <Center
                           key={key}
-                          w={'48%'}
+                          w={{ base: '100%', sm: '48%', md: '48%' }}
                           borderRadius={'20px'}
-                          h={'100px'}
+                          minH={'100px'}
                           bg={'brand.white'}
                           border={'1px solid'}
                           borderColor={'brand.lightgray'}
@@ -379,7 +386,7 @@ export default function Dashboard() {
                     );
                   })}
                 </HStack>
-              </VStack>
+              </VStack> */}
             </VStack>
           </VStack>
         </HStack>
