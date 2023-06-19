@@ -145,6 +145,7 @@ const Navbar = () => {
                     py={'4px'}
                     bg={'brand.primary'}
                     gap={'4px'}
+                    cursor={'pointer'}
                   >
                     <MyIcon color="brand.white" name="dashboard" width="20px" />
                     <MyText
@@ -177,7 +178,7 @@ const Navbar = () => {
                           alignItems={'center'}
                           w={'full'}
                         >
-                          <MyText as="title" title="Notification (1)" />
+                          <MyText as="heading" title="Notification (1)" />
                           <MyText
                             as="span"
                             title="Mark all as read"
@@ -185,6 +186,54 @@ const Navbar = () => {
                             cursor={'pointer'}
                           />
                         </HStack>
+
+                        <VStack pt={'10px'} w={'full'} gap={'10px'}>
+                          <HStack
+                            w={'full'}
+                            justifyContent={'space-between'}
+                            cursor={'pointer'}
+                          >
+                            <VStack
+                              spacing={0}
+                              alignItems={'flex-start'}
+                            >
+                              <MyText as="title" title="Recommended jobs" />
+                              <MyText as="small" title="Frontend Developer" color='brand.darkgray'/>
+                            </VStack>
+                            <Center
+                              px={'10px'}
+                              py={'2px'}
+                              borderWidth={'1px'}
+                              borderColor={'brand.lightgray'}
+                              borderRadius={'20px'}
+                            >
+                              <MyText as="small" title="4 New" />
+                            </Center>
+                          </HStack>
+
+                          <HStack
+                            w={'full'}
+                            justifyContent={'space-between'}
+                            cursor={'pointer'}
+                          >
+                            <VStack
+                              spacing={0}
+                              alignItems={'flex-start'}
+                            >
+                              <MyText as="title" title="Pending Actions" />
+                              <MyText as="small" title="Specify Desired location" color='brand.darkgray'/>
+                            </VStack>
+                            <Center
+                              px={'10px'}
+                              py={'2px'}
+                              borderWidth={'1px'}
+                              borderColor={'brand.lightgray'}
+                              borderRadius={'20px'}
+                            >
+                              <MyText as="small" title="13 Actions" />
+                            </Center>
+                          </HStack>
+                        </VStack>
                       </VStack>
                     </MenuList>
                   </Menu>
@@ -290,7 +339,8 @@ const Navbar = () => {
                               color={'currentColor'}
                             />
                             <MyText
-                              as="span"
+                              as="link"
+                              href="/dashboard"
                               title="Dashboard"
                               color={'currentColor'}
                             />
@@ -306,7 +356,8 @@ const Navbar = () => {
                               color={'currentColor'}
                             />
                             <MyText
-                              as="span"
+                              as="link"
+                              href="/my-profile"
                               title="My Profile"
                               color={'currentColor'}
                             />
@@ -322,7 +373,8 @@ const Navbar = () => {
                               color={'currentColor'}
                             />
                             <MyText
-                              as="span"
+                              as="link"
+                              href="/settings"
                               title="Account Setting"
                               color={'currentColor'}
                             />
@@ -338,7 +390,7 @@ const Navbar = () => {
                               color={'currentColor'}
                             />
                             <MyText
-                              as="span"
+                              as="link"
                               title="FAQ"
                               color={'currentColor'}
                             />
@@ -393,8 +445,11 @@ const Navbar = () => {
                           <NavLink
                             iconName="case"
                             title="Jobs"
-                            onClick={handleJobClick}
-                            href="#"
+                            onClick={() => {
+                              handleJobClick();
+                              onClose();
+                            }}
+                            href="/jobs/details/[slug]=as"
                             rightIcon={true}
                           />
 
@@ -440,8 +495,11 @@ const Navbar = () => {
                           <NavLink
                             iconName="company"
                             title="Company"
-                            onClick={handleCompanyClick}
-                            href="#"
+                            onClick={() => {
+                              handleJobClick();
+                              onClose();
+                            }}
+                            href="/company/details/[slug]=ss"
                             rightIcon={true}
                           />
                           <Collapse in={isCompanyOpen}>
