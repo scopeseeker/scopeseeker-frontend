@@ -193,12 +193,13 @@ const Navbar = () => {
                             justifyContent={'space-between'}
                             cursor={'pointer'}
                           >
-                            <VStack
-                              spacing={0}
-                              alignItems={'flex-start'}
-                            >
+                            <VStack spacing={0} alignItems={'flex-start'}>
                               <MyText as="title" title="Recommended jobs" />
-                              <MyText as="small" title="Frontend Developer" color='brand.darkgray'/>
+                              <MyText
+                                as="small"
+                                title="Frontend Developer"
+                                color="brand.darkgray"
+                              />
                             </VStack>
                             <Center
                               px={'10px'}
@@ -216,12 +217,13 @@ const Navbar = () => {
                             justifyContent={'space-between'}
                             cursor={'pointer'}
                           >
-                            <VStack
-                              spacing={0}
-                              alignItems={'flex-start'}
-                            >
+                            <VStack spacing={0} alignItems={'flex-start'}>
                               <MyText as="title" title="Pending Actions" />
-                              <MyText as="small" title="Specify Desired location" color='brand.darkgray'/>
+                              <MyText
+                                as="small"
+                                title="Specify Desired location"
+                                color="brand.darkgray"
+                              />
                             </VStack>
                             <Center
                               px={'10px'}
@@ -445,11 +447,7 @@ const Navbar = () => {
                           <NavLink
                             iconName="case"
                             title="Jobs"
-                            onClick={() => {
-                              handleJobClick();
-                              onClose();
-                            }}
-                            href="/jobs/details/[slug]=as"
+                            onClick={handleJobClick}
                             rightIcon={true}
                           />
 
@@ -495,11 +493,7 @@ const Navbar = () => {
                           <NavLink
                             iconName="company"
                             title="Company"
-                            onClick={() => {
-                              handleJobClick();
-                              onClose();
-                            }}
-                            href="/company/details/[slug]=ss"
+                            onClick={handleCompanyClick}
                             rightIcon={true}
                           />
                           <Collapse in={isCompanyOpen}>
