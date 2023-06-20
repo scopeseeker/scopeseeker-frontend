@@ -123,7 +123,7 @@ export default function Dashboard() {
               </HStack>
 
               {/* Overview */}
-              {/* <VStack w={'full'} alignItems={'flex-start'} gap={'22px'}>
+              <VStack w={'full'} alignItems={'flex-start'} gap={'22px'}>
                 <MyText as="heading" title="Overview" />
                 <HStack gap={'12px'} flexWrap={'wrap'} spacing={0}>
                   {[
@@ -173,11 +173,18 @@ export default function Dashboard() {
                   })}
                 </HStack>
               </VStack>
-              <MyDivider /> */}
+              <MyDivider />
 
               {/* Recommanded Jobs */}
-              {/* <VStack w={'full'} alignItems={'flex-start'} gap={'18px'}>
-                <HStack w={'full'} justifyContent={'space-between'}>
+              <VStack w={'full'} alignItems={'flex-start'} gap={'18px'}>
+                <HStack
+                  w={'full'}
+                  justifyContent={'space-between'}
+                  flexDir={{ base: 'column', sm: 'row' }}
+                  alignItems={'flex-start'}
+                  spacing={0}
+                  gap={{ base: '10px', sm: '0px' }}
+                >
                   <MyText as="heading" title="Recommanded Jobs" />
                   <MyButton title="View All" />
                 </HStack>
@@ -209,11 +216,18 @@ export default function Dashboard() {
                   })}
                 </HStack>
               </VStack>
-              <MyDivider /> */}
+              <MyDivider />
 
               {/* Top Company */}
-              {/* <VStack w={'full'} alignItems={'flex-start'} gap={'18px'}>
-                <HStack w={'full'} justifyContent={'space-between'}>
+              <VStack w={'full'} alignItems={'flex-start'} gap={'18px'}>
+                <HStack
+                  w={'full'}
+                  justifyContent={'space-between'}
+                  flexDir={{ base: 'column', sm: 'row' }}
+                  alignItems={'flex-start'}
+                  spacing={0}
+                  gap={{ base: '10px', sm: '0px' }}
+                >
                   <MyText as="heading" title="Top Companies" />
                   <MyButton title="View All" />
                 </HStack>
@@ -266,6 +280,7 @@ export default function Dashboard() {
                           <MyText
                             as="small"
                             title={`⭐ 43 Rating | 444 Review`}
+                            textAlign={'center'}
                           />
                         </VStack>
                         <MyButton title="View Jobs" />
@@ -274,11 +289,18 @@ export default function Dashboard() {
                   })}
                 </HStack>
               </VStack>
-              <MyDivider /> */}
+              <MyDivider />
 
               {/* Saved Jobs */}
-              {/* <VStack w={'full'} alignItems={'flex-start'} gap={'18px'}>
-                <HStack w={'full'} justifyContent={'space-between'}>
+              <VStack w={'full'} alignItems={'flex-start'} gap={'18px'}>
+                <HStack
+                  w={'full'}
+                  justifyContent={'space-between'}
+                  flexDir={{ base: 'column', sm: 'row' }}
+                  alignItems={'flex-start'}
+                  spacing={0}
+                  gap={{ base: '10px', sm: '0px' }}
+                >
                   <MyText as="heading" title="Saved Jobs" />
                   <MyButton title="View All" />
                 </HStack>
@@ -310,16 +332,23 @@ export default function Dashboard() {
                   })}
                 </HStack>
               </VStack>
-              <MyDivider /> */}
+              <MyDivider />
 
               {/* Blog Suggestion */}
-              {/* <VStack
+              <VStack
                 w={'full'}
                 alignItems={'flex-start'}
                 gap={'32px'}
                 className="hello"
               >
-                <HStack w={'full'} justifyContent={'space-between'}>
+                <HStack
+                  w={'full'}
+                  justifyContent={'space-between'}
+                  flexDir={{ base: 'column', sm: 'row' }}
+                  alignItems={'flex-start'}
+                  spacing={0}
+                  gap={{ base: '10px', sm: '0px' }}
+                >
                   <MyText as="heading" title="Must Read Blog" />
                   <MyButton title="See More" />
                 </HStack>
@@ -352,9 +381,11 @@ export default function Dashboard() {
                           boxShadow={'0px 0px 10px rgba(0, 0, 0, 0.1)'}
                           cursor={'pointer'}
                           _hover={{ borderColor: 'brand.primary' }}
+                          flexDir={{ base: 'column', md: 'row' }}
+                          alignItems={{ base: 'flex-start', md: 'initial' }}
                         >
                           <Center
-                            w={'140px'}
+                            w={{ base: 'full', md: '140px' }}
                             height={'100%'}
                             bg={'green.200'}
                             borderRadius={'20px'}
@@ -386,7 +417,7 @@ export default function Dashboard() {
                     );
                   })}
                 </HStack>
-              </VStack> */}
+              </VStack>
             </VStack>
           </VStack>
         </HStack>
