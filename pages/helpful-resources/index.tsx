@@ -98,13 +98,8 @@ const HelpfulResources = () => {
               <Box>
                 <MainHeading
                   title="Explore All Helpful Resource For Tech Enthusiasts"
-                  subTitle=""
                   align={'stat'}
-                />
-                <MyText
-                  mt={'12px'}
-                  as="p"
-                  title={`Welcome to our treasure trove of resource categories designed to empower tech job seekers like you. We've curated a diverse range of resources to cover every aspect of your journey, from frontend development to interview preparation and coding questions. Let's dive into the wealth of knowledge that awaits you!`}
+                  subTitle={`Our treasure trove of resource categories designed to empower tech job seekers like you. We've curated a diverse range of resources to cover every aspect of your journey, from frontend development to interview preparation and coding questions. Let's dive into the wealth of knowledge that awaits you!`}
                 />
               </Box>
               <HStack
