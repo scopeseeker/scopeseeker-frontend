@@ -1,4 +1,4 @@
-import { Layout, MainHeading, MyButton, MyImage, MyText } from '@/component';
+import { Layout, MyButton, MyImage, MyText } from '@/component';
 import { Box, Center, HStack, Heading, VStack } from '@chakra-ui/react';
 
 const HelpfulResources = () => {
@@ -11,6 +11,7 @@ const HelpfulResources = () => {
         gap={'32px'}
         py={'32px'}
       >
+        {/* Hero Section */}
         <HStack w={'full'} h={'full'} justifyContent={'center'} pb={'58px'}>
           <VStack w={'full'} gap={'12px'}>
             <Center
@@ -56,41 +57,26 @@ const HelpfulResources = () => {
                 height={300}
               />
             </Center>
+            <Center
+              maxW={'70%'}
+              px={'12px'}
+              py={'6px'}
+              bg={'green.50'}
+              border={'1.4px solid'}
+              borderColor={'green.400'}
+              borderRadius={'50px'}
+            >
+              <MyText
+                as="span"
+                title=' Say goodbye to information overload and access the best resources handpicked to boost your success in the tech industry. Start exploring now and unlock your full potential."'
+                textAlign={'center'}
+                color="green.900"
+              />
+            </Center>
           </VStack>
         </HStack>
 
-        <VStack w={'full'}>
-          <VStack w={'full'} alignItems={'flex-start'} gap={'32px'}>
-            <Box maxW={'70%'}>
-              <MainHeading
-                title="Coding Questions and Problem-Solving"
-                subTitle="Explore a wide range of coding questions categorized by data structures, algorithms, and programming languages. Each question is carefully curated to test your abilities and provide valuable learning experiences."
-                align={'stat'}
-              />
-            </Box>
-
-            <HStack flexWrap={'wrap'} gap={'12px'} spacing={0}>
-              {[1, 2, 3, 4, 5].map((item, index) => {
-                return (
-                  <Center
-                    w={'350px'}
-                    h={'120px'}
-                    key={index}
-                    borderRadius={'6px'}
-                    boxShadow={'0px 0px 4px rgba(0,0,0,0.1)'}
-                    border={'1px solid'}
-                    borderColor={'brand.darkgray'}
-                    _hover={{
-                      borderColor: 'brand.primary',
-                      boxShadow: '0px 0px 10px rgba(0,0,0,0.1)',
-                    }}
-                    cursor={'pointer'}
-                  ></Center>
-                );
-              })}
-            </HStack>
-          </VStack>
-        </VStack>
+        {/* Introduction */}
       </VStack>
     </Layout>
   );
