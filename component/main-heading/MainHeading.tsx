@@ -1,5 +1,6 @@
 import { IMainHeadingProps } from '@/inteface/component-interface';
 import { Heading, Text, VStack } from '@chakra-ui/react';
+import MyText from '../text/MyText';
 
 const MainHeading = (props: IMainHeadingProps) => {
   const {
@@ -21,14 +22,14 @@ const MainHeading = (props: IMainHeadingProps) => {
       >
         {title}
       </Heading>
-      <Text
-        as={'span'}
-        textAlign={align}
-        color={paraColor}
-        fontSize={{ base: '14px', md: '14px' }}
-      >
-        {subTitle}
-      </Text>
+      {subTitle && (
+        <MyText
+          as="p"
+          title={subTitle}
+          textAlign={align}
+          color={paraColor}
+        />
+      )}
     </VStack>
   );
 };
