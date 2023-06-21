@@ -6,6 +6,7 @@ import {
   MyImage,
   MyText,
 } from '@/component';
+import { IconNameType } from '@/constant/IconLibrary';
 import { Box, Center, HStack, Heading, VStack } from '@chakra-ui/react';
 import Head from 'next/head';
 
@@ -109,8 +110,55 @@ const HelpfulResources = () => {
                 gap={'32px'}
                 justifyContent={'space-between'}
               >
-                {[1, 2, 3, 4, 5, 6, 8, 9, 10].map((index) => {
-                  return <CateegoryBox key={index} />;
+                {[
+                  {
+                    title: 'Placement Preparation',
+                    description: 'Ace tech placements with our resources.',
+                    iconName: 'target',
+                  },
+                  {
+                    title: 'DSA and Coding Questions',
+                    description: ' Sharpen your problem-solving abilities.',
+                    iconName: 'target',
+                  },
+                  {
+                    title: 'Web Development',
+                    description:
+                      'Explore web development with our extensive resources.',
+                    iconName: 'target',
+                  },
+                  {
+                    title: 'Artificial Intelligence and Machine Learning',
+                    description: 'Discover the world of AI and ML.',
+                    iconName: 'target',
+                  },
+                  {
+                    title: 'Blockchain',
+                    description:
+                      'Unlock the potential of blockchain technology.',
+                    iconName: 'target',
+                  },
+                  {
+                    title: 'Mobile App Development',
+                    description:
+                      'Create cutting-edge mobile apps with our resources.',
+                    iconName: 'target',
+                  },
+                  {
+                    title: 'Tools and Other Resources',
+                    description:
+                      'Discover helpful tools and resources for your tech journey.',
+                    iconName: 'target',
+                  },
+                ].map((item, index) => {
+                  return (
+                    <CategoryBox
+                      key={index}
+                      title={item.title}
+                      description={item.description}
+                      iconName={item.iconName}
+                    />
+                  );
                 })}
               </HStack>
             </VStack>
@@ -123,12 +171,17 @@ const HelpfulResources = () => {
 
 export default HelpfulResources;
 
-const CateegoryBox = () => {
+interface ICategoryBox {
+  title: string;
+  description: string;
+  iconName: IconNameType;
+}
+const CategoryBox = ({ title, description, iconName }: ICategoryBox) => {
   return (
     <>
       <Center
         w={'48%'}
-        height={'150px'}
+        minH={'150px'}
         border={'1px solid'}
         borderColor={'brand.lightgray'}
         _hover={{
@@ -151,14 +204,11 @@ const CateegoryBox = () => {
           borderColor={'brand.primary'}
           borderRadius={'50%'}
         >
-          <MyIcon name="target" width="40px" height="40px" />
+          <MyIcon name={iconName} width="40px" height="40px" />
         </Center>
         <Box>
-          <MyText as="heading" title="Interview Preparation" />
-          <MyText
-            as="span"
-            title="Master the art of interviews with our comprehensive resources."
-          />
+          <MyText as="heading" title={title} />
+          <MyText as="span" title={description} />
         </Box>
       </Center>
     </>
