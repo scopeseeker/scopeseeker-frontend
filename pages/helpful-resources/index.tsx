@@ -7,6 +7,7 @@ import {
   MyText,
 } from '@/component';
 import { IconNameType } from '@/constant/IconLibrary';
+import { helpfulResources } from '@/constant/helpfulResources';
 import { Box, Center, HStack, Heading, VStack } from '@chakra-ui/react';
 import Head from 'next/head';
 
@@ -110,47 +111,7 @@ const HelpfulResources = () => {
                 gap={'32px'}
                 justifyContent={'space-between'}
               >
-                {[
-                  {
-                    title: 'Placement Preparation',
-                    description: 'Ace tech placements with our resources.',
-                    iconName: 'target',
-                  },
-                  {
-                    title: 'DSA and Coding Questions',
-                    description: ' Sharpen your problem-solving abilities.',
-                    iconName: 'target',
-                  },
-                  {
-                    title: 'Web Development',
-                    description:
-                      'Explore web development with our extensive resources.',
-                    iconName: 'target',
-                  },
-                  {
-                    title: 'Artificial Intelligence and Machine Learning',
-                    description: 'Discover the world of AI and ML.',
-                    iconName: 'target',
-                  },
-                  {
-                    title: 'Blockchain',
-                    description:
-                      'Unlock the potential of blockchain technology.',
-                    iconName: 'target',
-                  },
-                  {
-                    title: 'Mobile App Development',
-                    description:
-                      'Create cutting-edge mobile apps with our resources.',
-                    iconName: 'target',
-                  },
-                  {
-                    title: 'Tools and Other Resources',
-                    description:
-                      'Discover helpful tools and resources for your tech journey.',
-                    iconName: 'target',
-                  },
-                ].map((item, index) => {
+                {helpfulResources.map((item, index) => {
                   return (
                     <CategoryBox
                       key={index}

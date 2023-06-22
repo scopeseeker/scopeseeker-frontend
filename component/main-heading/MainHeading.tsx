@@ -8,7 +8,7 @@ const MainHeading = (props: IMainHeadingProps) => {
     subTitle,
     align = 'center',
     headColor = 'brand.black',
-    paraColor = 'brand.darkgray',
+    paraColor = 'brand.semiblack',
     fontsize = { base: '26px', md: '28px' },
     ...rest
   } = props;

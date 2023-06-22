@@ -82,6 +82,8 @@ export type IconNameType =
   | 'profile'
   | 'bookmarks'
   | 'tools'
+  | 'youtube'
+  | 'www'
   | string;
 
 type IconData = {
@@ -89,11 +91,30 @@ type IconData = {
 };
 
 export const IconData: IconData = {
+  www: (
+    <>
+      <path d="M19.5 7a9 9 0 0 0 -7.5 -4a8.991 8.991 0 0 0 -7.484 4"></path>
+      <path d="M11.5 3a16.989 16.989 0 0 0 -1.826 4"></path>
+      <path d="M12.5 3a16.989 16.989 0 0 1 1.828 4"></path>
+      <path d="M19.5 17a9 9 0 0 1 -7.5 4a8.991 8.991 0 0 1 -7.484 -4"></path>
+      <path d="M11.5 21a16.989 16.989 0 0 1 -1.826 -4"></path>
+      <path d="M12.5 21a16.989 16.989 0 0 0 1.828 -4"></path>
+      <path d="M2 10l1 4l1.5 -4l1.5 4l1 -4"></path>
+      <path d="M17 10l1 4l1.5 -4l1.5 4l1 -4"></path>
+      <path d="M9.5 10l1 4l1.5 -4l1.5 4l1 -4"></path>
+    </>
+  ),
   profile: (
     <>
       <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
       <path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
       <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855"></path>
+    </>
+  ),
+  youtube: (
+    <>
+      <path d="M3 5m0 4a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v6a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z"></path>
+      <path d="M10 9l5 3l-5 3z"></path>
     </>
   ),
   tools: (
