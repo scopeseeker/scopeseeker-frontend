@@ -1,4 +1,8 @@
 import { Layout, MainHeading, MyIcon, MyText } from '@/component';
+import {
+  PlacementPreparationResources,
+  helpfulResources,
+} from '@/constant/helpfulResources';
 import PageHeroSection from '@/section-components/page-header/PageHeader';
 import {
   Accordion,
@@ -6,6 +10,7 @@ import {
   AccordionIcon,
   AccordionItem,
   AccordionPanel,
+  Box,
   Center,
   Flex,
   HStack,
@@ -22,35 +27,35 @@ import { useRouter } from 'next/router';
 function HelpfulResourcesCateegory() {
   const router = useRouter();
   const { slug } = router.query;
+  const pageTitle = slug ? `${slug} | Scope Seeker` : 'Scope Seeker';
   return (
     <>
       <Head>
-        <title>{slug} | Scope Seeker</title>
+        <title>{slug}</title>
       </Head>
       <VStack gap={'52px'}>
-
-
-      <PageHeroSection
-        title="Hello"
-        alt="resource"
-        src="/assets/images/blog.jpg"
-        subtitle="how"
-      />
-      <Layout>
-        <MainHeading title='Effective Resources for Placement Preparation' subTitle='' align={'flex-start'}/>
-
-        <HStack
-          w={'full'}
-          flexWrap={'wrap'}
-          spacing={0}
-          alignItems={'flex-start'}
-          justifyContent={'space-between'}
-          gap={'18px'}
-        >
-          {[1, 2, 3, 4, 5, 6, 7, 8].map((index) => {
-            return (
+        <PageHeroSection
+          title="Resources for Placement Preparation"
+          alt="resource"
+          src="/assets/images/dashboard.png"
+          subtitle="Discover a comprehensive collection of study and practice materials specifically tailored to the syllabus and requirements of job placements. "
+        />
+        <Layout>
+          <VStack gap={'52px'}>
+            <Box>
+              <MyText
+                as="p"
+                title={`Welcome to our comprehensive Placement Preparation section. Here, you'll find all the important resources you need to excel in job placements. From interview questions and sample tests to tutorials and expert guidance, we have curated a collection of essential materials to help you stand out from the competition. Prepare comprehensively, enhance your skills, and boost your confidence with our comprehensive placement preparation resources. Get ready to seize lucrative job opportunities and embark on a successful career journey.`}
+              />
+            </Box>
+            <VStack
+              w={'full'}
+              flexWrap={'wrap'}
+              spacing={0}
+              alignItems={'flex-start'}
+              gap={'18px'}
+            >
               <Accordion
-              key={index}
                 allowToggle
                 w={'100%'}
                 flexWrap={'wrap'}
@@ -58,282 +63,183 @@ function HelpfulResourcesCateegory() {
                 justifyContent={'space-between'}
                 display={'flex'}
               >
-                <AccordionItem
-                  w={'100%'}
-                  _hover={{ borderColor: 'brand.primary' }}
-                  borderRadius={'20px'}
-                  border={'1px solid'}
-                  borderColor={'brand.lightgray'}
-                  px={'32px'}
-                >
-                  <AccordionButton p={0} _hover={{ bg: 'transparent' }}>
-                    <Center
-                      h={'100px'}
+                {PlacementPreparationResources.map((item, index) => {
+                  return (
+                    <AccordionItem
                       w={'100%'}
-                      justifyContent={'flex-start'}
-                      py={'6px'}
-                      gap={'18px'}
+                      key={index}
+                      _hover={{ borderColor: 'brand.primary' }}
+                      borderRadius={'20px'}
+                      border={'1px solid'}
+                      borderColor={'brand.lightgray'}
+                      px={'32px'}
                     >
-                      <Center
-                        w={'70px'}
-                        h={'70px'}
-                        borderRadius={'50%'}
-                        bg={'brand.aliceblue'}
-                        flexShrink={0}
-                        border={'1px solid'}
-                        borderColor={'brand.primary'}
-                      >
-                        <MyIcon name="target" width="40px" height="40px" />
-                      </Center>
-                      <MyText as="title" title="General Aptitude" />
-                    </Center>
-                    <AccordionIcon w={'18px'} h={'18px'} />
-                  </AccordionButton>
-                  <AccordionPanel pb={'32px'}>
-                    <Tabs variant="unstyled" w={'full'}>
-                      <TabList
-                        gap={{ base: '12px', md: '32px' }}
-                        marginBottom={'32px'}
-                        w={'full'}
-                      >
-                        {['Topics', 'Resources'].map((item, index) => {
-                          return (
-                            <Tab
-                              key={index}
-                              _selected={{
-                                color: 'white',
-                                bg: 'brand.primary',
-                              }}
-                              border={'1px solid'}
-                              borderColor={'brand.lightgray'}
-                              minW={{ base: '50%', md: '220px' }}
-                              h={'60px'}
-                              borderRadius={'10px'}
-                            >
-                              {item}
-                            </Tab>
-                          );
-                        })}
-                      </TabList>
-                      <TabPanels alignItems={'flex-start'}>
-                        <TabPanel px={0}>
-                          <Abc />
-                        </TabPanel>
+                      <AccordionButton p={0} _hover={{ bg: 'transparent' }}>
+                        <Center
+                          h={'100px'}
+                          w={'100%'}
+                          justifyContent={'flex-start'}
+                          py={'6px'}
+                          gap={'18px'}
+                        >
+                          <Center
+                            w={'70px'}
+                            h={'70px'}
+                            borderRadius={'50%'}
+                            bg={'brand.aliceblue'}
+                            flexShrink={0}
+                            border={'1px solid'}
+                            borderColor={'brand.primary'}
+                          >
+                            <MyIcon name="target" width="40px" height="40px" />
+                          </Center>
+                          <MyText as="title" title={item.title} />
+                        </Center>
+                        <AccordionIcon w={'18px'} h={'18px'} />
+                      </AccordionButton>
+                      <AccordionPanel pb={'32px'}>
+                        <Tabs variant="unstyled" w={'full'}>
+                          <TabList
+                            gap={{ base: '12px', md: '32px' }}
+                            marginBottom={'32px'}
+                            w={'full'}
+                          >
+                            {['Topics', 'Resources'].map((item, index) => {
+                              return (
+                                <Tab
+                                  key={index}
+                                  _selected={{
+                                    color: 'white',
+                                    bg: 'brand.primary',
+                                  }}
+                                  border={'1px solid'}
+                                  borderColor={'brand.lightgray'}
+                                  minW={{ base: '50%', md: '220px' }}
+                                  h={'60px'}
+                                  borderRadius={'10px'}
+                                >
+                                  {item}
+                                </Tab>
+                              );
+                            })}
+                          </TabList>
+                          <TabPanels alignItems={'flex-start'}>
+                            <TabPanel px={0}>
+                              <InsideAccordion data={item.topics} />
+                            </TabPanel>
 
-                        <TabPanel px={0}>
-                          <Center w={'full'} h={'60vh'} bg={'red.100'}></Center>
-                        </TabPanel>
-                      </TabPanels>
-                    </Tabs>
-                  </AccordionPanel>
-                </AccordionItem>
+                            <TabPanel px={0}>
+                              <InsideAccordion
+                                data={item.resources}
+                                isResources={true}
+                              />
+                            </TabPanel>
+                          </TabPanels>
+                        </Tabs>
+                      </AccordionPanel>
+                    </AccordionItem>
+                  );
+                })}
               </Accordion>
-            );
-          })}
-        </HStack>
-      </Layout>
+            </VStack>
+          </VStack>
+        </Layout>
       </VStack>
-
     </>
   );
 }
 
 export default HelpfulResourcesCateegory;
 
-const Abc = () => {
+interface IInsideAccordion {
+  data: {
+    title: string;
+    subItem: string[];
+  }[];
+  isResources?: boolean;
+}
+const InsideAccordion = ({ data, isResources = false }: IInsideAccordion) => {
   return (
     <>
-      <Accordion
-        allowToggle
-        w={'100%'}
-        flexWrap={'wrap'}
-        gap={'12px'}
-        justifyContent={'space-between'}
-        display={'flex'}
-      >
-        <AccordionItem w={'100%'} _hover={{ borderColor: 'brand.primary' }}>
-          <AccordionButton p={0} px={'12px'} _hover={{ bg: 'transparent' }}>
-            <Center
-              h={'60px'}
-              w={'100%'}
-              justifyContent={'space-between'}
-              py={'6px'}
-              gap={'18px'}
-            >
-              <MyText as="title" title="Arithmetic Aptitude" />
-            </Center>
-            <AccordionIcon w={'18px'} h={'18px'} />
-          </AccordionButton>
-          <AccordionPanel pb={4}>
-            <Flex w={'full'} flexWrap={'wrap'} gap={'12px'}>
-              {[
-                'Numbers',
-                'LCM and HCF',
-                'Work and Wages',
-                'Pipes and Cisterns',
-                'Time Speed Distance',
-                'Trains, Boats and Streams',
-                'Percentages',
-                'Ratio Proportion and Partnership',
-                'Mixtures and Alligation',
-                'Algebra',
-                'Average',
-                'Age',
-                'Profit and Loss',
-                'Simple Interest',
-                'Compound Interest',
-                'Mensuration 2D',
-                'Mensuration 3D',
-                'Trigonometry & Height and Distances',
-                'Progressions',
-                'Logarithms',
-                'Permutation and Combination',
-                'Probability',
-                'Geometry',
-                'Clocks',
-                'Calendars',
-                'Coding-Decoding',
-                'Race',
-              ].map((item, index) => {
-                return (
-                  <Center
-                    px={'12px'}
-                    py={'2px'}
-                    bg={'brand.offwhite'}
-                    border={'1px solid'}
-                    borderColor={'brand.darkgray'}
-                    key={index}
-                    borderRadius={'50px'}
-                  >
-                    <MyText as="span" title={item} />
-                  </Center>
-                );
-              })}
-            </Flex>
-          </AccordionPanel>
-        </AccordionItem>
-        <AccordionItem w={'100%'} _hover={{ borderColor: 'brand.primary' }}>
-          <AccordionButton p={0} px={'12px'} _hover={{ bg: 'transparent' }}>
-            <Center
-              h={'60px'}
-              w={'100%'}
-              justifyContent={'space-between'}
-              py={'6px'}
-              gap={'18px'}
-            >
-              <MyText as="title" title="Arithmetic Aptitude" />
-            </Center>
-            <AccordionIcon w={'18px'} h={'18px'} />
-          </AccordionButton>
-          <AccordionPanel pb={4}>
-            <Flex w={'full'} flexWrap={'wrap'} gap={'12px'}>
-              {[
-                'Numbers',
-                'LCM and HCF',
-                'Work and Wages',
-                'Pipes and Cisterns',
-                'Time Speed Distance',
-                'Trains, Boats and Streams',
-                'Percentages',
-                'Ratio Proportion and Partnership',
-                'Mixtures and Alligation',
-                'Algebra',
-                'Average',
-                'Age',
-                'Profit and Loss',
-                'Simple Interest',
-                'Compound Interest',
-                'Mensuration 2D',
-                'Mensuration 3D',
-                'Trigonometry & Height and Distances',
-                'Progressions',
-                'Logarithms',
-                'Permutation and Combination',
-                'Probability',
-                'Geometry',
-                'Clocks',
-                'Calendars',
-                'Coding-Decoding',
-                'Race',
-              ].map((item, index) => {
-                return (
-                  <Center
-                    px={'12px'}
-                    py={'2px'}
-                    bg={'brand.offwhite'}
-                    border={'1px solid'}
-                    borderColor={'brand.darkgray'}
-                    key={index}
-                    borderRadius={'50px'}
-                  >
-                    <MyText as="span" title={item} />
-                  </Center>
-                );
-              })}
-            </Flex>
-          </AccordionPanel>
-        </AccordionItem>
-        <AccordionItem w={'100%'} _hover={{ borderColor: 'brand.primary' }}>
-          <AccordionButton p={0} px={'12px'} _hover={{ bg: 'transparent' }}>
-            <Center
-              h={'60px'}
-              w={'100%'}
-              justifyContent={'space-between'}
-              py={'6px'}
-              gap={'18px'}
-            >
-              <MyText as="title" title="Arithmetic Aptitude" />
-            </Center>
-            <AccordionIcon w={'18px'} h={'18px'} />
-          </AccordionButton>
-          <AccordionPanel pb={4}>
-            <Flex w={'full'} flexWrap={'wrap'} gap={'12px'}>
-              {[
-                'Numbers',
-                'LCM and HCF',
-                'Work and Wages',
-                'Pipes and Cisterns',
-                'Time Speed Distance',
-                'Trains, Boats and Streams',
-                'Percentages',
-                'Ratio Proportion and Partnership',
-                'Mixtures and Alligation',
-                'Algebra',
-                'Average',
-                'Age',
-                'Profit and Loss',
-                'Simple Interest',
-                'Compound Interest',
-                'Mensuration 2D',
-                'Mensuration 3D',
-                'Trigonometry & Height and Distances',
-                'Progressions',
-                'Logarithms',
-                'Permutation and Combination',
-                'Probability',
-                'Geometry',
-                'Clocks',
-                'Calendars',
-                'Coding-Decoding',
-                'Race',
-              ].map((item, index) => {
-                return (
-                  <Center
-                    px={'12px'}
-                    py={'2px'}
-                    bg={'brand.offwhite'}
-                    border={'1px solid'}
-                    borderColor={'brand.darkgray'}
-                    key={index}
-                    borderRadius={'50px'}
-                  >
-                    <MyText as="span" title={item} />
-                  </Center>
-                );
-              })}
-            </Flex>
-          </AccordionPanel>
-        </AccordionItem>
+      <Box></Box>
+      <Accordion allowToggle w={'100%'}>
+        {data.map((item, index) => {
+          return (
+            <AccordionItem w={'100%'} key={index}>
+              <AccordionButton
+                p={0}
+                px={'12px'}
+                _hover={{ bg: 'brand.aliceblue' }}
+              >
+                <Center
+                  h={'60px'}
+                  w={'100%'}
+                  justifyContent={'space-between'}
+                  gap={'18px'}
+                >
+                  <MyText as="title" title={item.title} />
+                </Center>
+                <AccordionIcon w={'22px'} h={'22px'} />
+              </AccordionButton>
+              <AccordionPanel pb={'52px'} pt={'32px'}>
+                <Flex w={'full'} flexWrap={'wrap'} gap={'12px'}>
+                  {item.subItem.map((subItem, subIndex) => {
+                    return (
+                      <>
+                        {!isResources && (
+                          <Center
+                            px={'16px'}
+                            py={'6px'}
+                            bg={'brand.offwhite'}
+                            border={'1px solid'}
+                            borderColor={'brand.lightgray'}
+                            key={subIndex}
+                            borderRadius={'50px'}
+                          >
+                            <MyText as="span" title={subItem} />
+                          </Center>
+                        )}
+
+                        {isResources && (
+                          <Center
+                            w={'400px'}
+                            h={'130px'}
+                            border={'1px solid'}
+                            borderColor={'brand.lightgray'}
+                            borderRadius={'12px'}
+                            cursor={'pointer'}
+                            justifyContent={'flex-start'}
+                            padding={'16px'}
+                            gap={'18px'}
+                            _hover={{
+                              borderColor: 'brand.primary',
+                              boxShadow: '0px 0px 10px rgba(0,0,0,0.1)',
+                            }}
+                          >
+                            <Center
+                              width={'100px'}
+                              h={'100px'}
+                              bg={'red.400'}
+                              borderRadius={'20px'}
+                            >
+                              <MyIcon
+                                name="youtube"
+                                width="72px"
+                                height="72px"
+                                color="brand.white"
+                              />
+                            </Center>
+                            <MyText as="title" title={subItem} />
+                          </Center>
+                        )}
+                      </>
+                    );
+                  })}
+                </Flex>
+              </AccordionPanel>
+            </AccordionItem>
+          );
+        })}
       </Accordion>
     </>
   );
