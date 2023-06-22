@@ -10,7 +10,7 @@ const MyBadge = ({ labelArray, key }: IMyBadge) => {
           borderColor={'brand.darkgray'}
           px={'10px'}
           py={'3px'}
-          borderRadius={'4px'}
+          borderRadius={'20px'}
           key={key}
         >
           <Text

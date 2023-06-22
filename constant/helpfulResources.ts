@@ -99,8 +99,52 @@ export const PlacementPreparationResources = [
       },
     ],
     resources: [
-      { title: 'Video Courses', subItem: ['d', 's', 'r', 'r'] },
-      { title: 'Websites', subItem: ['d', 's'] },
+      {
+        title: 'Video Courses',
+        source: [
+          {
+            courseName: 'Quantitive Aptitude',
+            description: 'This is the asdfkasdf aksjd asdjkf kasjf',
+            language: 'English',
+            icon: 'youtube',
+            link: '/new',
+          },
+          {
+            courseName: 'Quantitive Aptitude',
+            description: 'This is the asdfkasdf aksjd asdjkf kasjf',
+            language: 'English',
+            icon: 'youtube',
+            link: '/new',
+          },
+          {
+            courseName: 'Quantitive Aptitude',
+            description: 'This is the asdfkasdf aksjd asdjkf kasjf',
+            language: 'English',
+            icon: 'youtube',
+            link: '/new',
+          },
+        ],
+      },
+      {
+        title: 'Websites',
+        source: [
+          {
+            courseName: 'Quantitive Aptitude',
+            description: 'This is the asdfkasdf aksjd asdjkf kasjf',
+            language: 'English',
+            icon: 'www',
+            link: '/new',
+          },
+          {
+            courseName: 'Quantitive Aptitude Quantitive Aptitude',
+            description:
+              'This is the asdfkasdf aksjd asdjkf kasjf this is jus the testingf txrt we have to write ',
+            language: 'English',
+            icon: 'www',
+            link: '/new',
+          },
+        ],
+      },
     ],
   },
 ];

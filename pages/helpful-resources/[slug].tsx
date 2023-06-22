@@ -1,8 +1,6 @@
-import { Layout, MainHeading, MyIcon, MyText } from '@/component';
-import {
-  PlacementPreparationResources,
-  helpfulResources,
-} from '@/constant/helpfulResources';
+import { Layout, MyIcon, MyText } from '@/component';
+import { IconNameType } from '@/constant/IconLibrary';
+import { PlacementPreparationResources } from '@/constant/helpfulResources';
 import PageHeroSection from '@/section-components/page-header/PageHeader';
 import {
   Accordion,
@@ -13,7 +11,6 @@ import {
   Box,
   Center,
   Flex,
-  HStack,
   Tab,
   TabList,
   TabPanel,
@@ -125,14 +122,88 @@ function HelpfulResourcesCateegory() {
                           </TabList>
                           <TabPanels alignItems={'flex-start'}>
                             <TabPanel px={0}>
-                              <InsideAccordion data={item.topics} />
+                              <Accordion allowToggle w={'100%'}>
+                                {item.topics.map((topic, index) => {
+                                  return (
+                                    <>
+                                      <AccordionItem w={'100%'} key={index}>
+                                        <AccordionBtn
+                                          buttonTitle={topic.title}
+                                        />
+                                        <AccordionPanel pb={'52px'} pt={'32px'}>
+                                          <Flex
+                                            w={'full'}
+                                            flexWrap={'wrap'}
+                                            gap={'12px'}
+                                          >
+                                            {topic.subItem.map(
+                                              (list, index) => {
+                                                return (
+                                                  <Center
+                                                    key={index}
+                                                    px={'16px'}
+                                                    py={'6px'}
+                                                    bg={'brand.offwhite'}
+                                                    border={'1px solid'}
+                                                    borderColor={
+                                                      'brand.lightgray'
+                                                    }
+                                                    borderRadius={'50px'}
+                                                  >
+                                                    <MyText
+                                                      as="span"
+                                                      title={list}
+                                                    />
+                                                  </Center>
+                                                );
+                                              }
+                                            )}
+                                          </Flex>
+                                        </AccordionPanel>
+                                      </AccordionItem>
+                                    </>
+                                  );
+                                })}
+                              </Accordion>
                             </TabPanel>
 
                             <TabPanel px={0}>
-                              <InsideAccordion
-                                data={item.resources}
-                                isResources={true}
-                              />
+                              <Accordion allowToggle w={'100%'}>
+                                {item.resources.map((resource, index) => {
+                                  return (
+                                    <>
+                                      <AccordionItem w={'100%'} key={index}>
+                                        <AccordionBtn
+                                          buttonTitle={resource.title}
+                                        />
+                                        <AccordionPanel pb={'52px'} pt={'32px'}>
+                                          <Flex
+                                            w={'full'}
+                                            flexWrap={'wrap'}
+                                            gap={'12px'}
+                                          >
+                                            {resource.source.map(
+                                              (item, index) => {
+                                                return (
+                                                  <CourseCard
+                                                    key={index}
+                                                    courseName={item.courseName}
+                                                    description={
+                                                      item.description
+                                                    }
+                                                    language={item.language}
+                                                    icon={item.icon}
+                                                  />
+                                                );
+                                              }
+                                            )}
+                                          </Flex>
+                                        </AccordionPanel>
+                                      </AccordionItem>
+                                    </>
+                                  );
+                                })}
+                              </Accordion>
                             </TabPanel>
                           </TabPanels>
                         </Tabs>
@@ -151,96 +222,76 @@ function HelpfulResourcesCateegory() {
 
 export default HelpfulResourcesCateegory;
 
-interface IInsideAccordion {
-  data: {
-    title: string;
-    subItem: string[];
-  }[];
-  isResources?: boolean;
+interface ICourseCard {
+  key?: string | number;
+  courseName: string;
+  description: string;
+  language: string;
+  icon?: IconNameType;
 }
-const InsideAccordion = ({ data, isResources = false }: IInsideAccordion) => {
+const CourseCard = ({
+  key,
+  courseName,
+  description,
+  language,
+  icon = 'default',
+}: ICourseCard) => {
   return (
-    <>
-      <Box></Box>
-      <Accordion allowToggle w={'100%'}>
-        {data.map((item, index) => {
-          return (
-            <AccordionItem w={'100%'} key={index}>
-              <AccordionButton
-                p={0}
-                px={'12px'}
-                _hover={{ bg: 'brand.aliceblue' }}
-              >
-                <Center
-                  h={'60px'}
-                  w={'100%'}
-                  justifyContent={'space-between'}
-                  gap={'18px'}
-                >
-                  <MyText as="title" title={item.title} />
-                </Center>
-                <AccordionIcon w={'22px'} h={'22px'} />
-              </AccordionButton>
-              <AccordionPanel pb={'52px'} pt={'32px'}>
-                <Flex w={'full'} flexWrap={'wrap'} gap={'12px'}>
-                  {item.subItem.map((subItem, subIndex) => {
-                    return (
-                      <>
-                        {!isResources && (
-                          <Center
-                            px={'16px'}
-                            py={'6px'}
-                            bg={'brand.offwhite'}
-                            border={'1px solid'}
-                            borderColor={'brand.lightgray'}
-                            key={subIndex}
-                            borderRadius={'50px'}
-                          >
-                            <MyText as="span" title={subItem} />
-                          </Center>
-                        )}
+    <Center
+      key={key}
+      w={'450px'}
+      minH={'130px'}
+      border={'1px solid'}
+      borderColor={'brand.lightgray'}
+      borderRadius={'12px'}
+      cursor={'pointer'}
+      justifyContent={'flex-start'}
+      padding={'16px'}
+      gap={'18px'}
+      _hover={{
+        borderColor: 'brand.primary',
+        boxShadow: '0px 0px 10px rgba(0,0,0,0.1)',
+      }}
+    >
+      <Center
+        width={'80px'}
+        h={'80px'}
+        flexShrink={0}
+        bg={'brand.aliceblue'}
+        borderRadius={'20px'}
+        border={'1px solid'}
+        borderColor={'brand.darkgray'}
+      >
+        <MyIcon name={icon} width="42px" height="42px" color="brand.black" />
+      </Center>
 
-                        {isResources && (
-                          <Center
-                            w={'400px'}
-                            h={'130px'}
-                            border={'1px solid'}
-                            borderColor={'brand.lightgray'}
-                            borderRadius={'12px'}
-                            cursor={'pointer'}
-                            justifyContent={'flex-start'}
-                            padding={'16px'}
-                            gap={'18px'}
-                            _hover={{
-                              borderColor: 'brand.primary',
-                              boxShadow: '0px 0px 10px rgba(0,0,0,0.1)',
-                            }}
-                          >
-                            <Center
-                              width={'100px'}
-                              h={'100px'}
-                              bg={'red.400'}
-                              borderRadius={'20px'}
-                            >
-                              <MyIcon
-                                name="youtube"
-                                width="72px"
-                                height="72px"
-                                color="brand.white"
-                              />
-                            </Center>
-                            <MyText as="title" title={subItem} />
-                          </Center>
-                        )}
-                      </>
-                    );
-                  })}
-                </Flex>
-              </AccordionPanel>
-            </AccordionItem>
-          );
-        })}
-      </Accordion>
-    </>
+      <Box>
+        <MyText as="title" title={courseName} />
+        <MyText as="span" title={description} />
+        <Center my={'4px'} w={'fit-content'} gap={'4px'}>
+          <MyText as="small" title="Language:" />
+          <MyText as="small" title={language} />
+        </Center>
+      </Box>
+    </Center>
+  );
+};
+interface IAccordionBtn {
+  buttonTitle: string;
+}
+
+const AccordionBtn = ({ buttonTitle }: IAccordionBtn) => {
+  return (
+    <AccordionButton p={0} px={'12px'} _hover={{ bg: 'brand.aliceblue' }}>
+      <Center
+        h={'60px'}
+        w={'100%'}
+        justifyContent={'space-between'}
+        gap={'18px'}
+      >
+        <MyText as="title" title={buttonTitle} />
+      </Center>
+      <AccordionIcon w={'22px'} h={'22px'} />
+    </AccordionButton>
   );
 };
