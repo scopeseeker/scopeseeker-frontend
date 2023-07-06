@@ -51,6 +51,7 @@ function HelpfulResourcesCateegory() {
               spacing={0}
               alignItems={'flex-start'}
               gap={'18px'}
+              
             >
               <Accordion
                 allowToggle
@@ -59,6 +60,7 @@ function HelpfulResourcesCateegory() {
                 gap={'12px'}
                 justifyContent={'space-between'}
                 display={'flex'}
+                
               >
                 {PlacementPreparationResources.map((item, index) => {
                   return (
@@ -69,7 +71,7 @@ function HelpfulResourcesCateegory() {
                       borderRadius={'20px'}
                       border={'1px solid'}
                       borderColor={'brand.lightgray'}
-                      px={'32px'}
+                      px={{base:'12px',md:'32px'}}
                     >
                       <AccordionButton p={0} _hover={{ bg: 'transparent' }}>
                         <Center
@@ -77,7 +79,9 @@ function HelpfulResourcesCateegory() {
                           w={'100%'}
                           justifyContent={'flex-start'}
                           py={'6px'}
+                          px={'10px'}
                           gap={'18px'}
+                          
                         >
                           <Center
                             w={'70px'}
@@ -90,7 +94,10 @@ function HelpfulResourcesCateegory() {
                           >
                             <MyIcon name="target" width="40px" height="40px" />
                           </Center>
-                          <MyText as="title" title={item.title} />
+                          <VStack w={'full'} alignItems={'flex-start'} justifyContent={'flex-start'}>
+                          <MyText as="title" align={'start'} title={item.title}  />
+                          </VStack>
+                          
                         </Center>
                         <AccordionIcon w={'18px'} h={'18px'} />
                       </AccordionButton>

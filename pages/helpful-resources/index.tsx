@@ -73,8 +73,8 @@ const HelpfulResources = () => {
               </Center>
               <Center
                 maxW={'70%'}
-                px={'12px'}
-                py={'6px'}
+                px={'20px'}
+                py={{base:'16px' ,sm:'20px',md:'6px'}}
                 bg={'green.50'}
                 border={'1.4px solid'}
                 borderColor={'green.400'}
@@ -141,7 +141,7 @@ const CategoryBox = ({ title, description, iconName }: ICategoryBox) => {
   return (
     <>
       <Center
-        w={'48%'}
+        w={{base:'full',md:'48%'}}
         minH={'150px'}
         border={'1px solid'}
         borderColor={'brand.lightgray'}
@@ -155,6 +155,7 @@ const CategoryBox = ({ title, description, iconName }: ICategoryBox) => {
         py={'12px'}
         cursor={'pointer'}
         gap={'22px'}
+        
       >
         <Center
           w={'80px'}
@@ -164,6 +165,7 @@ const CategoryBox = ({ title, description, iconName }: ICategoryBox) => {
           border={'1px solid'}
           borderColor={'brand.primary'}
           borderRadius={'50%'}
+          
         >
           <MyIcon name={iconName} width="40px" height="40px" />
         </Center>
