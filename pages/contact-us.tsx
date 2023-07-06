@@ -39,13 +39,14 @@ export default function ContactUs() {
             title="Get In Touch!"
             subTitle="Get in touch with us for exceptional support and assistance."
           />
-          <Center w={'60%'}>
+          <Center w={{ base: '100%', sm: '80%', md: '60%' }}>
             <Tabs variant="unstyled">
               <TabList
                 gap={{ base: '12px', md: '32px' }}
                 marginBottom={'32px'}
                 w={'full'}
                 justifyContent={'center'}
+                
               >
                 <Tab
                   _selected={{ color: 'white', bg: 'brand.primary' }}
@@ -54,7 +55,7 @@ export default function ContactUs() {
                   w={{ base: '50%', md: '200px' }}
                   h={'60px'}
                   borderRadius={'10px'}
-                  gap={'16px'}
+                  gap={{ base: '8px', md: '16px' }}
                 >
                   <MyIcon
                     name="location"
@@ -72,7 +73,7 @@ export default function ContactUs() {
                   w={{ base: '50%', md: '200px' }}
                   h={'60px'}
                   borderRadius={'10px'}
-                  gap={'16px'}
+                  gap={{ base: '8px', md: '16px' }}
                 >
                   <MyIcon
                     name="phone"
@@ -90,7 +91,7 @@ export default function ContactUs() {
                   w={{ base: '50%', md: '200px' }}
                   h={'60px'}
                   borderRadius={'10px'}
-                  gap={'16px'}
+                  gap={{ base: '8px', md: '16px' }}
                 >
                   <MyIcon
                     name="gmail"
@@ -121,19 +122,20 @@ export default function ContactUs() {
                       w={'full'}
                       alignItems={'flex-start'}
                       justifyContent={'flex-start'}
+                      flexDir={{ base: 'column', md: 'row' }}
                     >
                       <Center
                         borderRadius={'8px'}
                         border={'1px solid'}
                         borderColor={'brand.lightgray'}
                         overflow={'hidden'}
-                        w={'50%'}
+                        w={{ base: 'full', md: '50%' }}
                       >
                         <MyImage
                           src={'/assets/images/location.png'}
                           alt={'secope seeker logo'}
-                          width={400}
-                          height={400}
+                          width={800}
+                          height={800}
                         />
                       </Center>
                       <VStack
@@ -141,7 +143,7 @@ export default function ContactUs() {
                         gap={'12px'}
                         py={'28px'}
                         flexDir={'column'}
-                        w={'40%'}
+                        w={{ base: 'full', md: '40%' }}
                       >
                         <Box flexWrap={'wrap'}>
                           <MyText
@@ -177,7 +179,11 @@ export default function ContactUs() {
                       />
                     </Box>
 
-                    <HStack w={'full'} gap={'2px'}>
+                    <HStack
+                      w={'full'}
+                      gap={{ base: '8px', md: '2px' }}
+                      flexDir={{ base: 'column', md: 'row' }}
+                    >
                       <Center
                         px={'20px'}
                         py={'10px'}
@@ -210,7 +216,6 @@ export default function ContactUs() {
                       <Center
                         borderRadius={'50px'}
                         bg={'brand.primary'}
-                        p={'6px'}
                         gap={'6px'}
                         py={'10px'}
                         px={'18px'}
@@ -252,12 +257,15 @@ export default function ContactUs() {
                         />
                       </Box>
                     </HStack>
-                    <HStack w={'full'} gap={'2px'}>
+                    <HStack
+                      w={'full'}
+                      gap={{ base: '8px' }}
+                      flexDir={{ base: 'column', md: 'row' }}
+                    >
                       <Center
                         px={'20px'}
                         py={'10px'}
                         border={'1px dashed'}
-
                         borderRadius={'50px'}
                         borderColor={'brand.primary'}
                       >
