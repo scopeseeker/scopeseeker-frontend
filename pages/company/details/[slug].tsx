@@ -155,12 +155,12 @@ export default function DynamicPage() {
             {/* Tabs */}
             <HStack paddingTop={'30px'} w={'full'}>
               <Tabs position="relative" variant="unstyled" w={'full'}>
-                <TabList gap={'18px'}>
+                <TabList gap={'18px'}  flexWrap={'wrap'} >
                   <Tab
                     _selected={{ color: 'white', bg: 'brand.primary' }}
                     border={'1px solid'}
                     borderColor={'brand.lightgray'}
-                    w={{ base: '50%', md: '150px' }}
+                    w={{ base: '100%',sm:'40%', md: '150px' }}
                     h={'50px'}
                     borderRadius={'10px'}
                   >
@@ -171,7 +171,7 @@ export default function DynamicPage() {
                     _selected={{ color: 'white', bg: 'brand.primary' }}
                     border={'1px solid'}
                     borderColor={'brand.lightgray'}
-                    minW={{ base: '50%', md: '150px' }}
+                    w={{ base: '100%',sm:'40%', md: '150px' }}
                     h={'50px'}
                     borderRadius={'10px'}
                   >
@@ -181,7 +181,7 @@ export default function DynamicPage() {
                     _selected={{ color: 'white', bg: 'brand.primary' }}
                     border={'1px solid'}
                     borderColor={'brand.lightgray'}
-                    w={{ base: '50%', md: '150px' }}
+                    w={{ base: '100%',sm:'40%', md: '150px' }}
                     h={'50px'}
                     borderRadius={'10px'}
                   >
@@ -191,22 +191,13 @@ export default function DynamicPage() {
                     _selected={{ color: 'white', bg: 'brand.primary' }}
                     border={'1px solid'}
                     borderColor={'brand.lightgray'}
-                    minW={{ base: '50%', md: '150px' }}
+                    w={{ base: '100%',sm:'40%', md: '150px' }}
                     h={'50px'}
                     borderRadius={'10px'}
                   >
                     Hiring Process
                   </Tab>
-                  <Tab
-                    _selected={{ color: 'white', bg: 'brand.primary' }}
-                    border={'1px solid'}
-                    borderColor={'brand.lightgray'}
-                    minW={{ base: '50%', md: '150px' }}
-                    h={'50px'}
-                    borderRadius={'10px'}
-                  >
-                    Helpfull Resouces
-                  </Tab>
+                 
                 </TabList>
                 <TabPanels>
                   <TabPanel>
@@ -220,9 +211,6 @@ export default function DynamicPage() {
                   </TabPanel>
                   <TabPanel>
                     <HiringProcess />
-                  </TabPanel>
-                  <TabPanel>
-                    <MyText as="span" title="Helpful Resourcess" />
                   </TabPanel>
                 </TabPanels>
               </Tabs>
