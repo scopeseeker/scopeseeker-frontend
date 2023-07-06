@@ -1,5 +1,10 @@
 import { Layout, MyIcon, MyImage, MyText } from '@/component';
-import { Benifits, JobTab, Overview } from '@/section-components';
+import {
+  Benifits,
+  HiringProcess,
+  JobTab,
+  Overview,
+} from '@/section-components';
 
 import {
   Center,
@@ -214,7 +219,7 @@ export default function DynamicPage() {
                     <JobTab />
                   </TabPanel>
                   <TabPanel>
-                    <MyText as="span" title="Hiring Process" />
+                    <HiringProcess />
                   </TabPanel>
                   <TabPanel>
                     <MyText as="span" title="Helpful Resourcess" />

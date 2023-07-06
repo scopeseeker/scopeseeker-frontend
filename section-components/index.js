@@ -8,6 +8,7 @@ import WorkExperienceSection from './edit-profile/WorkExperienceSection';
 import Benifits from './comapany-details/Benifits';
 import JobTab from './comapany-details/JobTab';
 import Overview from './comapany-details/Overview';
+import HiringProcess from './comapany-details/HiringProcess';
 
 import CompanyList from './first-page-sections/CompanyList';
 import FAQ from './first-page-sections/FAQ';
@@ -40,6 +41,7 @@ export {
   HeroSection,
   HowWorks,
   JobTab,
+  HiringProcess,
   LeftEditProfilePart,
   MoreIntroSection,
   MyArticleCard,
