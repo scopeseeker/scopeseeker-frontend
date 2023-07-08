@@ -2,7 +2,6 @@ import { Layout, MyButton, MyText } from '@/component';
 import { Center, HStack, Heading, VStack } from '@chakra-ui/react';
 import Link from 'next/link';
 
-
 const SignupSection = () => {
   return (
     <Center
@@ -37,17 +36,20 @@ const SignupSection = () => {
               gap={'15px'}
             >
               <Link href={'/signup'}>
-              <MyButton title="Register a New Account" px="50px" py={'20px'} />
+                <MyButton
+                  title="Register a New Account"
+                  px="50px"
+                  py={'20px'}
+                />
               </Link>
-             <Link href={'/login'}>
-             <MyButton
-                title="Sign In to Your Account"
-                variant="outline"
-                px="50px"
-                py={'20px'}
-              />
-             </Link>
-             
+              <Link href={'/login'}>
+                <MyButton
+                  title="Sign In to Your Account"
+                  variant="outline"
+                  px="50px"
+                  py={'20px'}
+                />
+              </Link>
             </HStack>
           </VStack>
         </Center>

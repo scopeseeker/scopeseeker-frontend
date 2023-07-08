@@ -72,7 +72,7 @@ const jobCardFields = [
     location: 'Bhopal, Madhaya Pradesh',
     jobType: ['Full Time', 'Part Time', 'Internship', 'Startup', 'Indian MNC'],
     companyDesc:
-      "UX designers measure and optimize applications to improve ease of use (usability), and create the best user experience by exploring many different approaches to solve end-users' problems",
+      'UX designers measure and optimize applications to improve ease of use (usability), and create the best user experience by exploring many different approaches to solve end-users problems',
     isNamedLogo: true,
   },
   {
@@ -112,7 +112,7 @@ const jobCardFields = [
     location: 'Bhopal, Madhaya Pradesh',
     jobType: ['Full Time', 'Part Time', 'Internship', 'Startup', 'Indian MNC'],
     companyDesc:
-      "UX designers measure and optimize applications to improve ease of use (usability), and create the best user experience by exploring many different approaches to solve end-users' problems",
+      'UX designers measure and optimize applications to improve ease of use (usability), and create the best user experience by exploring many different approaches to solve end-users problems',
     isNamedLogo: true,
   },
   {
@@ -626,16 +626,16 @@ const articleFields = [
 ];
 
 export {
-  faqFieldsObject,
-  popularCategoryObject,
-  jobsFilter,
-  companyFilter,
-  companyBenifits,
-  employeeBenifits,
-  jobCardFields,
-  companyDescTable,
-  companySubsidiaries,
-  companyLeaders,
-  companyCardFields,
   articleFields,
+  companyBenifits,
+  companyCardFields,
+  companyDescTable,
+  companyFilter,
+  companyLeaders,
+  companySubsidiaries,
+  employeeBenifits,
+  faqFieldsObject,
+  jobCardFields,
+  jobsFilter,
+  popularCategoryObject,
 };

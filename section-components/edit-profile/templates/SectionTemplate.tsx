@@ -1,4 +1,5 @@
 import { VStack } from '@chakra-ui/react';
+import React from 'react';
 
 interface ISectionTempalate {
   children?: React.ReactNode;

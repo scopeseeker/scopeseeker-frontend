@@ -28,7 +28,6 @@ export interface IMyJobCard {
   applyLink?: string;
   fullDetailedLink?: string;
   [key: string]: any;
-
 }
 export interface IMyCompanyCard {
   companyLogo: string;
@@ -50,7 +49,7 @@ export interface IMyInputProps {
   rightElement?: React.ReactNode;
   type: string;
   labelTitle?: string;
-  onChange?: any; 
+  onChange?: any;
   value?: string;
   name?: string;
   pr?: string;
@@ -115,10 +114,10 @@ export interface IMyText {
 }
 
 export interface IMyArticleCard {
-  image: string
-  category: string
-  heading: string
-  paragraph: string
-  readMore: string
-  date: string
+  image: string;
+  category: string;
+  heading: string;
+  paragraph: string;
+  readMore: string;
+  date: string;
 }

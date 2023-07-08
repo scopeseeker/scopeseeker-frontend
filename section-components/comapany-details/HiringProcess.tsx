@@ -62,9 +62,13 @@ export default function HiringProcess() {
                   >
                     <MyIcon name="target" width="40px" height="40px" />
                   </Center>
-                  <VStack  spacing={0}  alignItems={'flex-start'} gap={0}>
+                  <VStack spacing={0} alignItems={'flex-start'} gap={0}>
                     <MyText as="span" title={`Round ${item}`} />
-                    <MyText as="title" align={'start'} title={'Aptitute and Written Test'} />
+                    <MyText
+                      as="title"
+                      align={'start'}
+                      title={'Aptitute and Written Test'}
+                    />
                   </VStack>
                 </Center>
                 <AccordionIcon w={'18px'} h={'18px'} />

@@ -100,12 +100,11 @@ const HeroSection = () => {
             />
             <HStack>
               <Link href={'/jobs'}>
-              <MyButton title="Explore Now"/>
+                <MyButton title="Explore Now" />
               </Link>
               <Link href={'/signup'}>
-              <MyButton title="Signup Now" variant="outline" />
+                <MyButton title="Signup Now" variant="outline" />
               </Link>
-              
             </HStack>
 
             <HStack gap={{ sm: '30px', md: '60px', lg: '112px' }}>

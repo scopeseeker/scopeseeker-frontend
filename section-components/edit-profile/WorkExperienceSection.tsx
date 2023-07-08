@@ -199,4 +199,3 @@ const WorkExperienceSection = () => {
 };
 
 export default WorkExperienceSection;
-

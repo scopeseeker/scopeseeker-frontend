@@ -1,3 +1,5 @@
+import React from 'react';
+
 export type IconNameType =
   | 'job'
   | 'personCircle'
@@ -87,11 +89,11 @@ export type IconNameType =
   | 'default'
   | string;
 
-type IconData = {
-  [K in IconNameType]: JSX.Element;
+type TIconData = {
+  [K in IconNameType]: React.JSX.Element;
 };
 
-export const IconData: IconData = {
+export const IconData: TIconData = {
   www: (
     <>
       <path d="M19.5 7a9 9 0 0 0 -7.5 -4a8.991 8.991 0 0 0 -7.484 4"></path>

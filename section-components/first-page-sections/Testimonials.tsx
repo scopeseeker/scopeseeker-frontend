@@ -85,7 +85,7 @@ const Testimonials = () => {
                         `I’ve got your back. These sixty review request text templates
                     are designed to get you up and running fast. Of course, you
                     may want to come up doing so mch imaportant thhisngs.`,
-                        70
+                        70,
                       )}
                       color="brand.darkgray"
                     />
@@ -133,7 +133,7 @@ const Testimonials = () => {
                         `I’ve got your back. These sixty review request text templates
                     are designed to get you up and running fast. Of course, you
                     may want to come up doing so mch imaportant thhisngs.`,
-                        70
+                        70,
                       )}
                       color="brand.darkgray"
                     />
@@ -181,7 +181,7 @@ const Testimonials = () => {
                         `I’ve got your back. These sixty review request text templates
                     are designed to get you up and running fast. Of course, you
                     may want to come up doing so mch imaportant thhisngs.`,
-                        70
+                        70,
                       )}
                       color="brand.darkgray"
                     />

@@ -1,6 +1,7 @@
 import { Layout, MyIcon, MyImage, MyText } from '@/component';
 import { Center, Flex, HStack, IconButton, VStack } from '@chakra-ui/react';
 import Link from 'next/link';
+import React from 'react';
 
 const Footer = () => {
   return (
@@ -205,11 +206,11 @@ const FooterHeading: React.FC<IFooterHeading> = ({ title }: IFooterHeading) => {
   return <MyText as="heading" title={title} color="brand.white" />;
 };
 
-interface IFooterHeading {
+interface IFooterLink extends IFooterHeading {
   link?: string;
 }
 
-const FooterLink = ({ title, link = '#' }: IFooterHeading) => {
+const FooterLink = ({ title, link = '#' }: IFooterLink) => {
   return (
     <Link href={link}>
       <MyText title={title} as="span" color="brand.white" />

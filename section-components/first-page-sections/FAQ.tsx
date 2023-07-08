@@ -9,7 +9,6 @@ import {
   VStack,
 } from '@chakra-ui/react';
 
-
 const FAQ = () => {
   return (
     <VStack w={'full'} gap={10}>
@@ -28,7 +27,7 @@ const FAQ = () => {
                 borderRadius={'md'}
                 border={'1px solid'}
                 borderColor={'brand.lightgray'}
-                _hover={{borderColor: 'brand.primary'}}
+                _hover={{ borderColor: 'brand.primary' }}
                 key={key}
               >
                 <AccordionButton _hover={{ backgroundColor: 'none' }}>
