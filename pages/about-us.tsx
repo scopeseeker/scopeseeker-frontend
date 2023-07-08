@@ -18,6 +18,7 @@ export default function AboutUs() {
   return (
     <>
       <Head>
+        
         <title>About Us | Scope Seeker</title>
       </Head>
       <PageHeader
