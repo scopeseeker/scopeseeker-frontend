@@ -1,4 +1,3 @@
-
 import { MyButton } from '@/component';
 import { Center, Flex, Heading, HStack, Input, Text } from '@chakra-ui/react';
 

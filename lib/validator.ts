@@ -1,6 +1,6 @@
-function truncatedParagraph(paragraph:string, length = 15) {
+function truncatedParagraph(paragraph: string, length = 15) {
   const words = paragraph.split(' ');
-  
+
   if (words.length <= length) {
     return paragraph;
   } else {

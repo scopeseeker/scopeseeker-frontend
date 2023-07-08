@@ -1,16 +1,12 @@
-import Image, { ImageProps } from 'next/image'
+import Image, { ImageProps } from 'next/image';
+import React from 'react';
 
 interface Props extends ImageProps {
-    alt: string
+  alt: string;
 }
 
 const MyImage: React.FC<Props> = ({ alt, ...props }) => {
-    return (
-        <Image
-            {...props}
-            alt={alt}
-        />
-    )
-}
+  return <Image {...props} alt={alt} />;
+};
 
-export default MyImage
+export default MyImage;

@@ -1,7 +1,7 @@
 import { IMyBadge } from '@/inteface/component-interface';
 import { Center, Text } from '@chakra-ui/react';
 
-const MyBadge = ({ labelArray, key }: IMyBadge) => {
+const MyBadge = ({ labelArray }: IMyBadge) => {
   return (
     <>
       {labelArray.map((item, key) => (

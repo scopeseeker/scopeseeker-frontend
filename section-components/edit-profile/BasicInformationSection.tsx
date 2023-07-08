@@ -7,7 +7,7 @@ import {
   Textarea,
   VStack,
 } from '@chakra-ui/react';
-import { ChangeEvent, useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import SectionTempalate from './templates/SectionTemplate';
 
 interface FormData {
@@ -47,7 +47,7 @@ const BasicInformationSection = () => {
   const handleInputChange = (
     e:
       | ChangeEvent<HTMLInputElement | HTMLSelectElement>
-      | ChangeEvent<HTMLTextAreaElement>
+      | ChangeEvent<HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     if (e.target.type === 'radio') {
@@ -72,7 +72,7 @@ const BasicInformationSection = () => {
     const { phone, ...formDataWithoutPhone } = formData;
     // Check if any fields are empty
     const hasEmptyFields = Object.values(formDataWithoutPhone).some(
-      (value) => value.trim() === ''
+      (value) => value.trim() === '',
     );
 
     if (hasEmptyFields) {
@@ -246,7 +246,7 @@ const BasicInformationSection = () => {
                         {value}
                       </option>
                     );
-                  }
+                  },
                 )}
               </Select>
             </VStack>

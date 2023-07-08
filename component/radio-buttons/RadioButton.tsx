@@ -1,3 +1,4 @@
+'use client';
 import { Radio, RadioGroup, Stack } from '@chakra-ui/react';
 import { useState } from 'react';
 import MyText from '../text/MyText';

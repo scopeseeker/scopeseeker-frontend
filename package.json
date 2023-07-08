@@ -1,40 +1,44 @@
 {
-  "name": "scope-seeker",
+  "name": "scopeseeker_v3",
   "version": "0.1.0",
   "private": true,
-  "license": "MIT",
   "scripts": {
-    "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "prettier": "prettier --write .",
+    "check-types": "tsc --pretty --noEmit",
+    "check-format": "prettier --check .",
+    "check-lint": "eslint . --ext ts --ext tsx --ext js",
+    "format": "prettier --write .",
+    "test-all": "yarn prettier && yarn check-format && yarn check-lint && yarn check-types",
     "prepare": "husky install"
   },
   "dependencies": {
-    "@chakra-ui/react": "^2.5.5",
-    "@emotion/react": "^11.10.6",
-    "@emotion/styled": "^11.10.6",
-    "@types/node": "18.15.3",
-    "@types/react": "18.0.28",
-    "@types/react-dom": "18.0.11",
-    "eslint": "8.36.0",
-    "eslint-config-next": "13.2.4",
-    "framer-motion": "^10.10.0",
-    "next": "13.2.4",
+    "@chakra-ui/next-js": "^2.1.4",
+    "@chakra-ui/react": "^2.7.1",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@types/node": "20.4.0",
+    "@types/react": "18.2.14",
+    "@types/react-dom": "18.2.6",
+    "framer-motion": "^10.12.18",
+    "next": "13.4.8",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "sharp": "^0.32.0",
-    "typescript": "4.9.5"
+    "typescript": "5.1.6"
   },
   "description": "Scope Seeker is a cutting-edge web application designed to help job seekers find their dream job with ease. Whether you are a student looking for your first job or a work professional seeking new opportunities, Scope Seeker has got you covered. With Scope Seeker, you can access a vast database of job openings from big and authentic companies. You can search for job openings based on your target skills, location, and other preferences. Our algorithm ensures that you get a personalized job search experience, making it easier for you to find the right job.",
-  "repository": "https://github.com/scopeseeker/scopeseeker-frontend.git",
   "author": "lokeshdhakar97 <lokeshdhakar6633@gmail.com>",
+  "license": "MIT",
   "devDependencies": {
     "@commitlint/cli": "^17.4.4",
     "@commitlint/config-conventional": "^17.4.4",
-    "cross-env": "^7.0.3",
-    "husky": "^8.0.3",
-    "prettier": "^2.8.4"
+    "eslint": "^8.44.0",
+    "eslint-config-next": "^13.4.8",
+    "eslint-config-prettier": "^8.8.0",
+    "husky": "^8.0.0",
+    "prettier": "^3.0.0"
   }
 }

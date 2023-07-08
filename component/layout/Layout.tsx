@@ -13,7 +13,7 @@ const Layout = ({
       h={'100%'}
       px={{ base: '26px', md: '28px', lg: '92px', '2xl': '212px' }}
       py={py}
-      {...rest}     
+      {...rest}
     >
       {children}
     </Box>
