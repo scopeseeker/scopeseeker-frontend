@@ -417,11 +417,11 @@ export default function Blog() {
                     'Frontend',
                     'Backend',
                     'Tips & Tricks',
-                  ].map((item, key) => {
+                  ].map((item, index) => {
                     return (
                       <>
                         <HStack
-                          key={key}
+                          key={index}
                           w={{ base: '100%', sm: '45%', md: '100%' }}
                           p={'12px'}
                           border={'1px solid'}

@@ -564,6 +564,7 @@ const companyLeaders = [
 
 const articleFields = [
   {
+    id: 1,
     image: '/assets/images/blog.jpg',
     category: 'Blockchain',
     heading:
@@ -574,6 +575,7 @@ const articleFields = [
     date: '1 July 2023',
   },
   {
+    id: 2,
     image: '/assets/images/blog.jpg',
     category: 'Internet of Things (IoT)',
     heading:
@@ -584,6 +586,7 @@ const articleFields = [
     date: '6 July 2023',
   },
   {
+    id: 3,
     image: '/assets/images/blog.jpg',
     category: 'Cloud Computing',
     heading:
@@ -594,6 +597,7 @@ const articleFields = [
     date: '11 July 2023',
   },
   {
+    id: 4,
     image: '/assets/images/blog.jpg',
     category: 'Augmented Reality (AR)',
     heading:
@@ -604,6 +608,7 @@ const articleFields = [
     date: '16 July 2023',
   },
   {
+    id: 5,
     image: '/assets/images/blog.jpg',
     category: 'Cybersecurity',
     heading:
@@ -614,6 +619,7 @@ const articleFields = [
     date: '21 July 2023',
   },
   {
+    id: 6,
     image: '/assets/images/blog.jpg',
     category: 'Machine Learning',
     heading:

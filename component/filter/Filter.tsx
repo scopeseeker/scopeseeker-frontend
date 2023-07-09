@@ -26,9 +26,9 @@ const Filter = ({ FilterObject }: IFilter) => {
         <MyText title="Filter Jobs" as="heading" color="brand.primary" />
       </HStack>
       <Accordion w="full" defaultIndex={[0, 1]} allowMultiple>
-        {FilterObject.map((item, key) => (
+        {FilterObject.map((item, index) => (
           <>
-            <AccordionItem key={key}>
+            <AccordionItem key={index}>
               <AccordionButton
                 p={3}
                 py={3}

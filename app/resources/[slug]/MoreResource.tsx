@@ -232,7 +232,6 @@ interface ICourseCard {
   icon?: IconNameType;
 }
 const CourseCard = ({
-  key,
   courseName,
   description,
   language,
@@ -240,7 +239,6 @@ const CourseCard = ({
 }: ICourseCard) => {
   return (
     <Center
-      key={key}
       w={'450px'}
       minH={'130px'}
       border={'1px solid'}

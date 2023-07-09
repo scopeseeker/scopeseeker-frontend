@@ -121,10 +121,10 @@ export default function CompaniesPage() {
                   'Unicron',
                   'Healthcare',
                   'Information',
-                ].map((item, key) => {
+                ].map((item, index) => {
                   return (
                     <Center
-                      key={key}
+                      key={index}
                       w={'160px'}
                       flexShrink={0}
                       // boxShadow={'0px 0px 5px rgb(0, 0, 0, 0.1)'}
@@ -220,9 +220,9 @@ export default function CompaniesPage() {
                 width={'100%'}
               >
                 <>
-                  {companyCardFields.map((item, key) => {
+                  {companyCardFields.map((item, index) => {
                     return (
-                      <GridItem key={key}>
+                      <GridItem key={index}>
                         <MyCompanyCard
                           companyDesc={item.companyDescription}
                           companyName={item.companyName}
@@ -231,7 +231,6 @@ export default function CompaniesPage() {
                           companyLogo={item.companyLogo}
                           fullDetailLink={item.fullDetailsLink}
                           viewJobs={item.viewJobsLink}
-                          key={key}
                         />
                       </GridItem>
                     );

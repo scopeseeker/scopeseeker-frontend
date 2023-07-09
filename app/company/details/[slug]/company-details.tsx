@@ -124,10 +124,10 @@ export default function CompanyDetails() {
               pt={'10px'}
               maxW={{ base: '100%', md: '80%' }}
             >
-              {['small', 'B2B', 'MNC', 'Product'].map((item, key) => {
+              {['small', 'B2B', 'MNC', 'Product'].map((item, index) => {
                 return (
                   <Center
-                    key={key}
+                    key={index}
                     borderWidth={'1px'}
                     borderColor={'brand.darkgray'}
                     px={'10px'}
