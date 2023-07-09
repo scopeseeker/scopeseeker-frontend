@@ -7,7 +7,6 @@ import {
   MyInput,
   MyText,
 } from '@/component';
-import { OtpVerifyBox } from '@/section-components';
 import {
   AlertDialog,
   AlertDialogBody,
@@ -140,11 +139,12 @@ export default function Settings() {
                       <ModalOverlay backdropFilter="blur(1px)" />
                       <ModalContent py={'20px'}>
                         <ModalCloseButton />
-                        <OtpVerifyBox
+                        {/* <OtpVerifyBox
                           value="abhishek123@gmail.com"
                           onClose={onCloseModal}
                           align={'center'}
-                        />
+                          setCloseOtpBox={true}
+                        /> */}
                       </ModalContent>
                     </Modal>
 
@@ -188,12 +188,12 @@ export default function Settings() {
                           </HStack>
                         </VStack>
 
-                        <OtpVerifyBox
+                        {/* <OtpVerifyBox
                           value="abhishek123@gmail.com"
                           onClose={onCloseEmailBox}
                           align={'center'}
                           display={open ? 'flex' : 'none'}
-                        />
+                        /> */}
                       </ModalContent>
                     </Modal>
 
@@ -225,11 +225,11 @@ export default function Settings() {
                       <ModalOverlay backdropFilter="blur(1px)" />
                       <ModalContent py={'20px'}>
                         <ModalCloseButton />
-                        <OtpVerifyBox
+                        {/* <OtpVerifyBox
                           value="+91XXXXXXXX04"
                           onClose={onCloseVerifyNumberModel}
                           align={'center'}
-                        />
+                        /> */}
                       </ModalContent>
                     </Modal>
 
@@ -273,12 +273,12 @@ export default function Settings() {
                           </HStack>
                         </VStack>
 
-                        <OtpVerifyBox
+                        {/* <OtpVerifyBox
                           value="+91XXXXXXXX54"
                           onClose={onCloseChangeNumber}
                           align={'center'}
                           display={open ? 'flex' : 'none'}
-                        />
+                        /> */}
                       </ModalContent>
                     </Modal>
 
