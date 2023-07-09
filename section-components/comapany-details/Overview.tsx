@@ -134,7 +134,7 @@ const Overview = () => {
               {companySubsidiaries.map((item, index) => {
                 return (
                   <HStack
-                  key={index}
+                    key={index}
                     w={{ base: '300px', md: '200px' }}
                     h={{ base: '90px', md: '70px' }}
                     borderWidth={'1px'}
@@ -192,7 +192,7 @@ const Overview = () => {
                 {companyLeaders.map((item, index) => {
                   return (
                     <Center
-                    key={index}
+                      key={index}
                       flexShrink={0}
                       w={'200px'}
                       h={'270px'}

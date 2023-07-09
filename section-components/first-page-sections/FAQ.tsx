@@ -21,7 +21,7 @@ const FAQ = () => {
           {faqFieldsObject.map((items, index) => {
             return (
               <AccordionItem
-              key={index}
+                key={index}
                 p={'8px'}
                 w={{ base: '85vw', lg: '65vw', xl: '55vw' }}
                 bg={'brand.white'}
