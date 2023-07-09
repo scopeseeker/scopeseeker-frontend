@@ -6,20 +6,27 @@ import {
   PinInputField,
   VStack,
 } from '@chakra-ui/react';
+import { Dispatch, SetStateAction } from 'react';
 
 interface IOtpVerifyBox {
   value?: string;
-  onClose?: () => void;
+  setCloseOtpBox: Dispatch<SetStateAction<boolean>>;
   align?: string;
+  onClose: () => void;
   [key: string]: any;
 }
 
 const OtpVerifyBox = ({
   value,
+  setCloseOtpBox,
   onClose,
   align = 'flex-start',
   ...rest
 }: IOtpVerifyBox) => {
+  const handleClickOnBtn = () => {
+    setCloseOtpBox(false);
+    onClose();
+  };
   return (
     <Center
       w={'full'}
@@ -49,11 +56,11 @@ const OtpVerifyBox = ({
       </HStack>
       <HStack>
         <MyButton
-          title="Cancel"
+          title="Back"
           variant="outline"
           px={'28px'}
           py={'18px'}
-          onClick={onClose}
+          onClick={handleClickOnBtn}
         />
         <MyButton title="Verify" px={'28px'} py={'18px'} />
       </HStack>

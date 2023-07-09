@@ -21,7 +21,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
       <ChakraProvider theme={theme}>
         {showNavbar && <Navbar />}
         <Center>
-          <Flex flexDirection={'column'} w={'100%'}>
+          <Flex flexDirection={'column'} w={'100%'} minH={'65px'}>
             {children}
           </Flex>
         </Center>
