@@ -75,9 +75,9 @@ const Overview = () => {
                 'They assist clients in various industries and help them embrace digital technologies.',
                 'Capgemini has a strong global presence with offices and delivery centers worldwide.',
                 'They follow a collaborative approach, working closely with clients to develop tailored solutions.',
-              ].map((item, key) => {
+              ].map((item, index) => {
                 return (
-                  <UnorderedList key={key}>
+                  <UnorderedList key={index}>
                     <ListItem>
                       <MyText as="p" title={item} />
                     </ListItem>
@@ -131,9 +131,10 @@ const Overview = () => {
             gap={'22px'}
           >
             <>
-              {companySubsidiaries.map((item, key) => {
+              {companySubsidiaries.map((item, index) => {
                 return (
                   <HStack
+                  key={index}
                     w={{ base: '300px', md: '200px' }}
                     h={{ base: '90px', md: '70px' }}
                     borderWidth={'1px'}
@@ -141,7 +142,6 @@ const Overview = () => {
                     borderRadius={'5px'}
                     pl={'10px'}
                     gap={'10px'}
-                    key={key}
                   >
                     <Center w={'50px'} h={'50px'} borderRadius={'5px'}>
                       <MyImage
@@ -189,11 +189,11 @@ const Overview = () => {
               scrollBehavior={'smooth'}
             >
               <>
-                {companyLeaders.map((item, key) => {
+                {companyLeaders.map((item, index) => {
                   return (
                     <Center
+                    key={index}
                       flexShrink={0}
-                      key={key}
                       w={'200px'}
                       h={'270px'}
                       borderRadius={'5px'}

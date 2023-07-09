@@ -5,7 +5,7 @@ import Link from 'next/link';
 const Page = () => {
   return (
     <div>
-      {/* <HStack gap={'32px'} p={'30px'} flexWrap={'wrap'}>
+      <HStack gap={'32px'} p={'30px'} flexWrap={'wrap'}>
         <Link href={'/about-us'}>about-us</Link>
         <Link href={'/blogs'}>Blog</Link>
         <Link href={'/blogs/ids'}>Blog Details</Link>
@@ -26,7 +26,7 @@ const Page = () => {
         <Link href={'/resources/adsf'}>Resources Details</Link>
         <Link href={'/settings'}>Settings</Link>
         <Link href={'/home'}>Home</Link>
-      </HStack> */}
+      </HStack>
     </div>
   );
 };

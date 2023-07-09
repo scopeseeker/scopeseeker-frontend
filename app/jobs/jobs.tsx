@@ -131,9 +131,9 @@ export default function Jobs() {
                 width={'100%'}
               >
                 <>
-                  {jobCardFields.map((item, key) => {
+                  {jobCardFields.map((item, index) => {
                     return (
-                      <GridItem key={key}>
+                      <GridItem key={index}>
                         <MyJobCard
                           companyIconLogo={item.companyIconLogo}
                           role={item.role}

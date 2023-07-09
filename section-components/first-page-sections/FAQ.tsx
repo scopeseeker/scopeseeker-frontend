@@ -18,9 +18,10 @@ const FAQ = () => {
       />
       <Accordion allowMultiple>
         <VStack gap={2}>
-          {faqFieldsObject.map((items, key) => {
+          {faqFieldsObject.map((items, index) => {
             return (
               <AccordionItem
+              key={index}
                 p={'8px'}
                 w={{ base: '85vw', lg: '65vw', xl: '55vw' }}
                 bg={'brand.white'}
@@ -28,7 +29,6 @@ const FAQ = () => {
                 border={'1px solid'}
                 borderColor={'brand.lightgray'}
                 _hover={{ borderColor: 'brand.primary' }}
-                key={key}
               >
                 <AccordionButton _hover={{ backgroundColor: 'none' }}>
                   <MyText

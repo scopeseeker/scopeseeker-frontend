@@ -20,10 +20,10 @@ const PopularCategories = () => {
             justifyContent={'center'}
           >
             <>
-              {popularCategoryObject.map((item, key) => {
+              {popularCategoryObject.map((item, index) => {
                 return (
                   <Center
-                    key={key}
+                    key={index}
                     cursor={'pointer'}
                     w={'280px'}
                     h={'80px'}

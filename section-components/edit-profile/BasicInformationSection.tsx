@@ -240,9 +240,9 @@ const BasicInformationSection = () => {
                 onChange={handleInputChange}
               >
                 {['2017', '2018', '2019', '2020', '2021', '2022'].map(
-                  (value, key) => {
+                  (value, index) => {
                     return (
-                      <option value={value} key={key}>
+                      <option value={value} key={index}>
                         {value}
                       </option>
                     );

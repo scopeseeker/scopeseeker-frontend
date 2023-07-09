@@ -23,9 +23,9 @@ const FeaturedCompany = () => {
           templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(4, 1fr)' }}
           gap={'12px'}
         >
-          {[1, 2, 3, 4].map((items, key) => {
+          {[1, 2, 3, 4].map((items, index) => {
             return (
-              <GridItem key={key}>
+              <GridItem key={index}>
                 <VStack
                   bg={'brand.white'}
                   border={'1px solid'}

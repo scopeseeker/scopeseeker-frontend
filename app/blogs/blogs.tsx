@@ -53,11 +53,11 @@ export default function Blogs() {
                     'Development',
                     'Interview Preparation',
                     'Tips&Tricks',
-                  ].map((item, key) => {
+                  ].map((item, index) => {
                     return (
                       <>
                         <MyText
-                          key={key}
+                          key={index}
                           cursor={'pointer'}
                           as="span"
                           title={item}
@@ -140,9 +140,9 @@ export default function Blogs() {
               width={{ base: '100%', sm: '80%', xl: '80%', '2xl': '70%' }}
             >
               <>
-                {articleFields.map((item, key) => {
+                {articleFields.map((item) => {
                   return (
-                    <GridItem key={key}>
+                    <GridItem key={item.id}>
                       <MyArticleCard
                         image={item.image}
                         category={item.category}

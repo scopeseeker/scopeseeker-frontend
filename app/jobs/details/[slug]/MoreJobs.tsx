@@ -192,10 +192,10 @@ export default function MoreJobs() {
                     'Node.js',
                     'MongdoDB',
                     'Express.js',
-                  ].map((item, key) => {
+                  ].map((item, index) => {
                     return (
                       <Center
-                        key={key}
+                        key={index}
                         borderWidth={'1px'}
                         borderColor={'brand.darkgray'}
                         px={'10px'}
@@ -232,13 +232,13 @@ export default function MoreJobs() {
                     'We are seeking a talented Software Engineer to join our team. The ideal candidate will have experience in developing high-quality software solutions and a passion for cutting-edge technologies.',
                     'We are looking for a motivated Marketing Coordinator to join our marketing team. The ideal candidate will be responsible for implementing marketing strategies, coordinating campaigns, and analyzing market data.',
                     'We are hiring a Customer Service Representative to provide exceptional service to our clients. The successful candidate will handle inquiries, resolve complaints, and ensure customer satisfaction.',
-                  ].map((item, key) => {
+                  ].map((item, index) => {
                     return (
                       <HStack
                         gap={'6px'}
                         spacing={0}
                         alignItems={'flex-start'}
-                        key={key}
+                        key={index}
                       >
                         <Center mt={'5px'}>
                           <MyIcon
@@ -270,13 +270,13 @@ export default function MoreJobs() {
                     'Stay up-to-date with industry trends and technologies',
                     'Assist in troubleshooting and resolving software defects',
                     'Document software specifications and user manuals',
-                  ].map((item, key) => {
+                  ].map((item, index) => {
                     return (
                       <HStack
                         gap={'6px'}
                         spacing={0}
                         alignItems={'flex-start'}
-                        key={key}
+                        key={index}
                       >
                         <Center mt={'5px'}>
                           <MyIcon

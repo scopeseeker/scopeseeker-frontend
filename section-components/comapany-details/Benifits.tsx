@@ -17,10 +17,10 @@ const Benifits = () => {
         gap={'22px'}
       >
         <>
-          {companyBenifits.map((item, key) => {
+          {companyBenifits.map((item, index) => {
             return (
               <HStack
-                key={key}
+                key={index}
                 w={'100%'}
                 h={{ base: 'fit-content', md: '132px' }}
                 bg={'brand.white'}
@@ -78,10 +78,10 @@ const Benifits = () => {
           gap={'22px'}
         >
           <>
-            {employeeBenifits.map((item, key) => {
+            {employeeBenifits.map((item, index) => {
               return (
                 <Center
-                  key={key}
+                  key={index}
                   h={'100px'}
                   w={'120px'}
                   border={'1px'}
