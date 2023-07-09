@@ -1,7 +1,27 @@
 'use client';
-import { Layout, MainHeading, MyButton, MyIcon, MyImage, MyInput, MyText } from '@/component';
+import {
+  Layout,
+  MainHeading,
+  MyButton,
+  MyIcon,
+  MyImage,
+  MyInput,
+  MyText,
+} from '@/component';
 import { PageHeader } from '@/section-components';
-import { Box, Center, HStack, Heading, Tab, TabList, TabPanel, TabPanels, Tabs, Textarea, VStack } from '@chakra-ui/react';
+import {
+  Box,
+  Center,
+  HStack,
+  Heading,
+  Tab,
+  TabList,
+  TabPanel,
+  TabPanels,
+  Tabs,
+  Textarea,
+  VStack,
+} from '@chakra-ui/react';
 
 export default function ContactUs() {
   return (
@@ -12,7 +32,7 @@ export default function ContactUs() {
         alt="contac us img"
         src="/assets/images/contact-us.png"
       />
-       <Layout w={'full'}>
+      <Layout w={'full'}>
         <Center w={'full'} flexDir={'column'} gap={'32px'} mt={'52px'}>
           <MainHeading
             title="Get In Touch!"
@@ -25,7 +45,6 @@ export default function ContactUs() {
                 marginBottom={'32px'}
                 w={'full'}
                 justifyContent={'center'}
-                
               >
                 <Tab
                   _selected={{ color: 'white', bg: 'brand.primary' }}
