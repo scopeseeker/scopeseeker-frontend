@@ -1,4 +1,4 @@
-import { MainHeading, MyText } from '@/component';
+import { Layout, MainHeading, MyText } from '@/component';
 import { faqFieldsObject } from '@/constant/constantFields';
 import {
   Accordion,
@@ -11,7 +11,9 @@ import {
 
 const FAQ = () => {
   return (
-    <VStack w={'full'} gap={10}>
+    <Layout>
+
+    <VStack w={'full'} gap={'72px'}>
       <MainHeading
         title={'Frequently Asked Questions'}
         subTitle={'Have any question ?'}
@@ -49,6 +51,8 @@ const FAQ = () => {
         </VStack>
       </Accordion>
     </VStack>
+    </Layout>
+
   );
 };
 

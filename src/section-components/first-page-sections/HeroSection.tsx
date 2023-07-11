@@ -10,7 +10,7 @@ const HeroSection = () => {
         h={'full'}
         position={'relative'}
         gap={'32px'}
-        py={'32px'}
+        pt={'32px'}
       >
         <Center
           display={{ base: 'none', sm: 'flex' }}

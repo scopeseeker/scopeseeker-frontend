@@ -3,7 +3,7 @@ import { Box, Center, HStack, VStack } from '@chakra-ui/react';
 const HowWorks = () => {
   return (
     <Layout>
-      <VStack gap={'32px'}>
+      <VStack gap={'72px'}>
         <MainHeading
           title="Easy Way To Get Job"
           subTitle="The first step to getting a job on Scope Seekr is to create a profile"
@@ -13,7 +13,6 @@ const HowWorks = () => {
           flexDirection={{ base: 'column', md: 'row' }}
           gap={'30px'}
           w={'full'}
-          pt={'40px'}
           flexWrap={{sm: 'wrap', lg: 'nowrap'}}
         >
           <HowBox>

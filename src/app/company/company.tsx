@@ -8,7 +8,7 @@ import {
   MyText,
 } from '@/component';
 import { companyCardFields, companyFilter } from '@/constant/constantFields';
-import { MyCompanyCard } from '@/section-components';
+import { MyCompanyCard, PageHeader } from '@/section-components';
 import {
   Box,
   Center,
@@ -26,6 +26,12 @@ export default function CompaniesPage() {
 
   return (
     <>
+      <PageHeader
+        title="Companies"
+        subtitle="Here you can find all comapnies"
+        src="/assets/images/about-us.png"
+        alt="company"
+      />
       <Layout>
         <VStack
           gap={{ base: '30px', lg: '40px' }}
@@ -34,29 +40,6 @@ export default function CompaniesPage() {
           mx={'auto'}
           spacing={0}
         >
-          {/* Search Box for Job and Company */}
-          <HStack
-            w={'full'}
-            height={{ base: '40px', sm: '52px' }}
-            boxShadow={'0px 0px 120px rgb(0, 0, 0, 0.2)'}
-            borderRadius={'50px'}
-            overflow={'hidden'}
-            spacing={0}
-            justifyContent={'space-between'}
-          >
-            <Input
-              variant={'unstyled'}
-              mx={'20px'}
-              h={'full'}
-              placeholder="Search by role, companies, technologies..."
-              fontSize={'14px'}
-              width={'30%'}
-            />
-
-            <MyButton title="Find Jobs" h={'100%'} px={'20px'} />
-          </HStack>
-
-          <MyDivider />
 
           <HStack
             maxW={'90%'}
