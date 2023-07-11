@@ -71,6 +71,7 @@ export default function RequestPage() {
                   leftElement={
                     <MyIcon name="profile" width="20px" height="20px" />
                   }
+                  name='fullName'
                 />
                 <MyInput
                   type="email"
@@ -78,7 +79,9 @@ export default function RequestPage() {
                   placeholder="example@gmail.com"
                   leftElement={
                     <MyIcon name="email" width="20px" height="20px" />
+
                   }
+                  name='email'
                 />
 
                 <HStack
@@ -94,6 +97,7 @@ export default function RequestPage() {
                     leftElement={
                       <MyIcon name="phone" width="20px" height="20px" />
                     }
+                    name='number'
                   />
                   <MyInput
                     type="text"
@@ -102,6 +106,7 @@ export default function RequestPage() {
                     leftElement={
                       <MyIcon name="global" width="20px" height="20px" />
                     }
+                    name='country'
                   />
                 </HStack>
                 <HStack
@@ -116,6 +121,7 @@ export default function RequestPage() {
                     leftElement={
                       <MyIcon name="company" width="20px" height="20px" />
                     }
+                    name='companyName'
                   />
                   <MyInput
                     type="text"
@@ -124,6 +130,8 @@ export default function RequestPage() {
                     leftElement={
                       <MyIcon name="company" width="20px" height="20px" />
                     }
+                    name='companyField'
+
                   />
                 </HStack>
                 <VStack w={'full'} alignItems={'flex-start'}>

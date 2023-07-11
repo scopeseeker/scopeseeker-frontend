@@ -53,12 +53,14 @@ const EducationSection = () => {
           >
             <MyInput
               labelTitle="Qualification"
+              name="qualification"
               leftElement={<MyIcon name="job" />}
               type="text"
               placeholder="Enter your qualification"
             />
             <MyInput
-              labelTitle="Degree "
+              labelTitle="Degree"
+              name='degree'
               leftElement={<MyIcon name="fresher" />}
               type="text"
               placeholder="Enter your degree"
@@ -76,12 +78,14 @@ const EducationSection = () => {
               leftElement={<MyIcon name="time" />}
               type="text"
               placeholder="Enter year"
+              name='fromYear'
             />
             <MyInput
               labelTitle="To (Year)"
               leftElement={<MyIcon name="time" />}
               type="text"
               placeholder="Enter year"
+              name='toYear'
             />
           </HStack>
 
@@ -96,12 +100,14 @@ const EducationSection = () => {
               leftElement={<MyIcon name="college" />}
               type="text"
               placeholder="Enter your percentage"
+              name='percentage'
             />
             <MyInput
               labelTitle="CGPA"
               leftElement={<MyIcon name="company" />}
               type="text"
               placeholder="Enter your cgpa"
+              name='cgpa'
             />
           </HStack>
 
@@ -116,12 +122,14 @@ const EducationSection = () => {
               leftElement={<MyIcon name="company" />}
               type="text"
               placeholder="Enter your specialization"
+              name='specialization'
             />
             <MyInput
               labelTitle="University "
               leftElement={<MyIcon name="company" />}
               type="text"
               placeholder="Enter your university"
+              name='university'
             />
           </HStack>
 
@@ -130,6 +138,7 @@ const EducationSection = () => {
             leftElement={<MyIcon name="college" />}
             type="text"
             placeholder="Enter your Institute"
+            name='institute'
           />
 
           <HStack
@@ -142,18 +151,21 @@ const EducationSection = () => {
               leftElement={<MyIcon name="company" />}
               type="text"
               placeholder="Enter your country"
+              name='country'
             />
             <MyInput
               labelTitle="State"
               leftElement={<MyIcon name="company" />}
               type="text"
               placeholder="Enter your state"
+              name='state'
             />
             <MyInput
               labelTitle="City"
               leftElement={<MyIcon name="company" />}
               type="text"
               placeholder="Enter your city"
+              name='city'
             />
           </HStack>
           <HStack w={'full'} flexWrap={'wrap'} spacing={0} gap={'12px'}>

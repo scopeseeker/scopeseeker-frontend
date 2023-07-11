@@ -86,7 +86,7 @@ export default function AuthLayout({
           <VStack
             w={{ base: '100%', md: '90%', lg: '65%' }}
             alignItems={'flex-start'}
-            gap={'10px'}
+            gap={'22px'}
           >
             {children}
             <MyDivider />

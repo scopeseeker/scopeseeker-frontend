@@ -1,33 +1,38 @@
 'use client';
 import { MyButton, MyIcon, MyInput, MyText } from '@/component';
-import { Box, HStack } from '@chakra-ui/react';
-import AuthLayout from '../AuthLayout';
+import { Box, HStack, VStack } from '@chakra-ui/react';
+import AuthUperLayout from '../AuthLayout';
 
 export default function Login() {
   return (
-    <AuthLayout>
+    <AuthUperLayout>
       <Box>
-        <MyText as="heading" title="Log Into Scope Seeker" />
-        <MyText as="p" title="Do not have an account ?" />
+        <MyText as="heading" title={'Login to Scope Seeker'} />
+        <HStack>
+          <MyText as="span" title="Do not have an account ?" />
+          <MyText as="link" title="Signup" color="brand.primary" fontWeight={500}/>
+        </HStack>
       </Box>
-      <MyInput
-        type="email"
-        labelTitle="Email Address"
-        placeholder="example@gmail.com"
-        leftElement={<MyIcon name="email" />}
-      />
-      <HStack w={'full'}>
+      <VStack width={'100%'} alignItems={'flex-start'} gap={'18px'}>
+        <MyInput
+          type="email"
+          labelTitle="Email Address"
+          placeholder="example@gmail.com"
+          leftElement={<MyIcon name="email" />}
+          name='email'
+        />
         <MyInput
           type="password"
           labelTitle="Password"
           placeholder="✶✶✶✶✶✶✶✶"
           leftElement={<MyIcon name="password" />}
+          name='password'
         />
-      </HStack>
-      <HStack>
-        <MyButton title="Login" px={'42px'} />
-        <MyButton title="Forget Password" />
-      </HStack>
-    </AuthLayout>
+        <HStack>
+          <MyButton title="Login" px={'42px'} />
+          <MyButton title="Forget Password" variant="outline" />
+        </HStack>
+      </VStack>
+    </AuthUperLayout>
   );
 }

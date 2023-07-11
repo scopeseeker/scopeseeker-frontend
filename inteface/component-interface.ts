@@ -51,7 +51,7 @@ export interface IMyInputProps {
   labelTitle?: string;
   onChange?: any;
   value?: string;
-  name?: string;
+  name: string;
   pr?: string;
   [key: string]: any;
 }
