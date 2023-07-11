@@ -1,9 +1,10 @@
 import { Metadata } from 'next';
 import CompaniesPage from './company';
+import metaData from '@/constant/metaData';
 
 export const metadata: Metadata = {
-  title: 'Companies',
-  description: 'List of companies',
+  title: metaData.company.title,
+  description: metaData.company.description,
 };
 
 export default function Page() {
