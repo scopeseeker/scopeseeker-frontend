@@ -1,48 +1,34 @@
-import { MyImage } from '@/component';
+import { Layout, MyImage } from '@/component';
 import { Center } from '@chakra-ui/react';
 
 const CompanyList = () => {
   return (
-    <Center gap={10} w={'full'} flexWrap={'wrap'}>
-      <MyImage
-        src={'/assets/images/company-logo/amazon.png'}
-        alt={'company logo'}
-        width={70}
-        height={40}
-      />
-      <MyImage
-        src={'/assets/images/company-logo/bookmyshow.png'}
-        alt={'company logo'}
-        width={70}
-        height={40}
-      />
-
-      <MyImage
-        src={'/assets/images/company-logo/amazon.png'}
-        alt={'company logo'}
-        width={70}
-        height={40}
-      />
-      <MyImage
-        src={'/assets/images/company-logo/bookmyshow.png'}
-        alt={'company logo'}
-        width={70}
-        height={40}
-      />
-
-      <MyImage
-        src={'/assets/images/company-logo/amazon.png'}
-        alt={'company logo'}
-        width={70}
-        height={40}
-      />
-      <MyImage
-        src={'/assets/images/company-logo/bookmyshow.png'}
-        alt={'company logo'}
-        width={70}
-        height={40}
-      />
-    </Center>
+    <Layout py={{ base: '0px', md: '0' }}>
+      <Center gap={'52px'} w={'full'} flexWrap={'wrap'}>
+        {[
+          'bookmyshow.png',
+          'amazon.png',
+          'capgemini.png',
+          'bookmyshow.png',
+          'amazon.png',
+          'capgemini.png',
+          'amazon.png',
+          'capgemini.png',
+        ].map((item, index) => {
+          return (
+            <>
+              <MyImage
+                key={index}
+                src={`/assets/images/company-logo/${item}`}
+                alt={'company logo'}
+                width={80}
+                height={40}
+              />
+            </>
+          );
+        })}
+      </Center>
+    </Layout>
   );
 };
 
