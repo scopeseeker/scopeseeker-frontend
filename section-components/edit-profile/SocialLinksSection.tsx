@@ -19,12 +19,14 @@ const SocialLinksSection = () => {
             leftElement={<MyIcon name="linkedin" />}
             type="text"
             placeholder="Enter the link"
+            name='linkedin'
           />
           <MyInput
             labelTitle="Facebook"
             leftElement={<MyIcon name="facebook" />}
             type="text"
             placeholder="Enter the link"
+            name='facebook'
           />
         </HStack>
 
@@ -39,12 +41,14 @@ const SocialLinksSection = () => {
             leftElement={<MyIcon name="instagram" />}
             type="text"
             placeholder="Enter the link"
+            name='instagram'
           />
           <MyInput
             labelTitle="GitHub"
             leftElement={<MyIcon name="github" />}
             type="text"
             placeholder="Enter the link"
+            name='github'
           />
         </HStack>
       </VStack>

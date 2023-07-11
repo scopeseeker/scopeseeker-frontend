@@ -18,7 +18,7 @@ const MyInput = ({
   onChange,
   value,
   name,
-  pr = '50px',
+  pr = '12px',
   ...rest
 }: IMyInputProps) => {
   return (

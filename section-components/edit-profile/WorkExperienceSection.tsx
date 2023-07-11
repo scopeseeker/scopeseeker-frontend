@@ -1,8 +1,8 @@
+import { MyButton, MyIcon, MyInput, MyText } from '@/component';
+import { Collapse, HStack, VStack } from '@chakra-ui/react';
 import React, { useState } from 'react';
-import SectionTempalate from './templates/SectionTemplate';
-import { Box, Center, Collapse, HStack, VStack } from '@chakra-ui/react';
-import { MyButton, MyIcon, MyImage, MyInput, MyText } from '@/component';
 import AddBoxTemplete from './templates/AddBoxTemplate';
+import SectionTempalate from './templates/SectionTemplate';
 
 const WorkExperienceSection = () => {
   const [showExperience, setShowExperience] = React.useState(false);
@@ -100,6 +100,7 @@ const WorkExperienceSection = () => {
             w={'full'}
           >
             <MyInput
+              name="designation"
               labelTitle="Designation"
               leftElement={<MyIcon name="job" />}
               type="text"
@@ -108,6 +109,7 @@ const WorkExperienceSection = () => {
               onChange={handleWorkInputChange}
             />
             <MyInput
+              name="sector"
               labelTitle="Sector"
               leftElement={<MyIcon name="fresher" />}
               type="text"
@@ -124,6 +126,7 @@ const WorkExperienceSection = () => {
             w={'full'}
           >
             <MyInput
+              name="fromYear"
               labelTitle="From (Year)"
               leftElement={<MyIcon name="time" />}
               type="text"
@@ -132,6 +135,7 @@ const WorkExperienceSection = () => {
               onChange={handleWorkInputChange}
             />
             <MyInput
+              name="toYear"
               labelTitle="To (Year)"
               leftElement={<MyIcon name="time" />}
               type="text"
@@ -148,6 +152,7 @@ const WorkExperienceSection = () => {
             w={'full'}
           >
             <MyInput
+              name="organisation"
               labelTitle="Organisation"
               leftElement={<MyIcon name="college" />}
               type="text"
@@ -156,6 +161,7 @@ const WorkExperienceSection = () => {
               onChange={handleWorkInputChange}
             />
             <MyInput
+              name="country"
               labelTitle="Country"
               leftElement={<MyIcon name="company" />}
               type="text"
@@ -172,6 +178,7 @@ const WorkExperienceSection = () => {
             w={'full'}
           >
             <MyInput
+              name="state"
               labelTitle="State"
               leftElement={<MyIcon name="company" />}
               type="text"
@@ -180,6 +187,7 @@ const WorkExperienceSection = () => {
               onChange={handleWorkInputChange}
             />
             <MyInput
+              name="city"
               labelTitle="City"
               leftElement={<MyIcon name="company" />}
               type="text"

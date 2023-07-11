@@ -174,6 +174,7 @@ export default function Settings() {
                             type="text"
                             placeholder="Enter email"
                             leftElement={<MyIcon name="email" />}
+                            name='email'
                           />
                           <HStack>
                             <MyButton
@@ -259,6 +260,7 @@ export default function Settings() {
                             type="text"
                             placeholder="Enter Number"
                             leftElement={<MyIcon name="phone" />}
+                            name='number'
                           />
                           <HStack>
                             <MyButton

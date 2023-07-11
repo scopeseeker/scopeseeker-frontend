@@ -38,6 +38,7 @@ const SkillsSection = () => {
               value={inputText}
               onChange={handleInputChange}
               leftElement={<MyIcon name="college" />}
+              name='skills'
             />
             <Box w={{ base: '100%', md: '20%' }}>
               <MyButton title="Add item" onClick={handleAddItem} />
