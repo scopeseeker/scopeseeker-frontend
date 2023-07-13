@@ -1,5 +1,5 @@
 import { Layout, MainHeading, MyIcon, MyImage, MyText } from '@/component';
-import truncatedParagraph from '@/lib/validator';
+import truncatedParagraph from '@/helpers/validator';
 import { Center, Flex, Grid, Text, VStack } from '@chakra-ui/react';
 const Testimonials = () => {
   return (

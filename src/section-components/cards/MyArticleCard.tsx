@@ -1,6 +1,6 @@
 import { MyButton, MyIcon, MyImage, MyText } from '@/component';
+import truncatedParagraph from '@/helpers/validator';
 import { IMyArticleCard } from '@/inteface/component-interface';
-import truncatedParagraph from '@/lib/validator';
 import { Center, HStack, VStack } from '@chakra-ui/react';
 import Link from 'next/link';
 
