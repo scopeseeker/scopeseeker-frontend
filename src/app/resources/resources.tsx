@@ -136,8 +136,8 @@ const CategoryBox = ({ title, description, iconName }: ICategoryBox) => {
   return (
     <>
       <Center
-        w={{ base: 'full',sm:'full', md: '48%' }}
-        minH={'150px'}
+        w={{ base: 'full',sm:'full', md: '47%' }}
+        minH={{base: '100px', sm: '110px', md: '130px'}}
         border={'1px solid'}
         borderColor={'brand.lightgray'}
         _hover={{
@@ -147,23 +147,25 @@ const CategoryBox = ({ title, description, iconName }: ICategoryBox) => {
         borderRadius={'18px'}
         justifyContent={'flex-start'}
         px={'18px'}
-        py={'12px'}
+        py={'18px'}
         cursor={'pointer'}
         gap={'22px'}
+        flexDirection={{base: 'column', sm: 'row'}}
+        alignItems={{base: 'self-start', sm: 'center'}}
       >
         <Center
-          w={{base:'70px',md:'80px'}}
-          height={{base:'70px',md:'80px'}}
+          w={{base:'50px',md:'80px'}}
+          height={{base:'50px',md:'80px'}}
           flexShrink={0}
           bg={'brand.aliceblue'}
           border={'1px solid'}
           borderColor={'brand.primary'}
           borderRadius={'50%'}
         >
-          <MyIcon name={iconName} width="40px" height="40px" />
+          <MyIcon name={iconName} width="35px" height="35px" />
         </Center>
         <Box>
-          <MyText as="heading" title={title} />
+          <MyText as="title" title={title} />
           <MyText as="span" title={description} />
         </Box>
       </Center>
