@@ -52,6 +52,7 @@ export default function MoreResources() {
                 gap={'12px'}
                 justifyContent={'space-between'}
                 display={'flex'}
+                px={'3px'}
               >
                 {PlacementPreparationResources.map((item, index) => {
                   return (
@@ -62,7 +63,8 @@ export default function MoreResources() {
                       borderRadius={'20px'}
                       border={'1px solid'}
                       borderColor={'brand.lightgray'}
-                      px={{ base: '12px', md: '32px' }}
+                      px={{ base: '6px', md: '32px' }}
+                      overflow={'hidden'}
                     >
                       <AccordionButton p={0} _hover={{ bg: 'transparent' }}>
                         <Center
@@ -75,16 +77,15 @@ export default function MoreResources() {
                           gap={'18px'}
                         >
                           <Center
-                            w={{base: '60px', md: '70px'}}
-                            h={{base: '60px', md: '70px'}}
+                            w={{ base: '50px', md: '70px' }}
+                            h={{ base: '50px', md: '70px' }}
                             borderRadius={'50%'}
                             bg={'brand.aliceblue'}
                             flexShrink={0}
-                            
                             border={'1px solid'}
                             borderColor={'brand.primary'}
                           >
-                            <MyIcon name="target" width="40px" height="40px" />
+                            <MyIcon name="target" width="35px" height="35px" />
                           </Center>
                           <VStack
                             w={'full'}
@@ -100,12 +101,16 @@ export default function MoreResources() {
                         </Center>
                         <AccordionIcon w={'18px'} h={'18px'} />
                       </AccordionButton>
-                      <AccordionPanel pb={'32px'}>
+                      <AccordionPanel pb={'32px'} px={'4px'}>
                         <Tabs variant="unstyled" w={'full'}>
                           <TabList
-                            gap={{ base: '12px', md: '32px' }}
+                            gap={{ base: '6px', md: '32px' }}
                             marginBottom={'32px'}
                             w={'full'}
+                            justifyContent={{
+                              base: 'space-between',
+                              sm: 'initial',
+                            }}
                           >
                             {['Topics', 'Resources'].map((item, index) => {
                               return (
@@ -117,17 +122,16 @@ export default function MoreResources() {
                                   }}
                                   border={'1px solid'}
                                   borderColor={'brand.lightgray'}
-                                  minW={{ base: '50%', md: '220px' }}
-                                  h={'60px'}
+                                  minW={{ base: '48%', sm: '40%', md: '200px' }}
+                                  minH={'55px'}
                                   borderRadius={'10px'}
-
                                 >
                                   {item}
                                 </Tab>
                               );
                             })}
                           </TabList>
-                          <TabPanels alignItems={'flex-start'} w={'full'} >
+                          <TabPanels alignItems={'flex-start'} w={'full'}>
                             <TabPanel px={0}>
                               <Accordion allowToggle w={'100%'}>
                                 {item.topics.map((topic, index) => {
@@ -242,7 +246,7 @@ const CourseCard = ({
 }: ICourseCard) => {
   return (
     <Center
-      w={'450px'}
+      w={{ base: '100%', sm: '450px' }}
       minH={'130px'}
       border={'1px solid'}
       borderColor={'brand.lightgray'}
@@ -255,13 +259,15 @@ const CourseCard = ({
         borderColor: 'brand.primary',
         boxShadow: '0px 0px 10px rgba(0,0,0,0.1)',
       }}
+      flexDirection={{ base: 'column', sm: 'row' }}
+      alignItems={{ base: 'start', sm: 'center' }}
     >
       <Center
-        width={'80px'}
-        h={'80px'}
+        width={{ base: '50px', sm: '80px' }}
+        h={{ base: '50px', sm: '80px' }}
         flexShrink={0}
         bg={'brand.aliceblue'}
-        borderRadius={'20px'}
+        borderRadius={{ base: '10px', sm: '20px' }}
         border={'1px solid'}
         borderColor={'brand.darkgray'}
       >
@@ -269,7 +275,7 @@ const CourseCard = ({
       </Center>
 
       <Box>
-        <MyText as="title" title={courseName} />
+        <MyText as="p" fontWeight={500} title={courseName} />
         <MyText as="span" title={description} />
         <Center my={'4px'} w={'fit-content'} gap={'4px'}>
           <MyText as="small" title="Language:" />
@@ -285,7 +291,13 @@ interface IAccordionBtn {
 
 const AccordionBtn = ({ buttonTitle }: IAccordionBtn) => {
   return (
-    <AccordionButton p={0} px={'12px'} _hover={{ bg: 'brand.aliceblue' }}>
+    <AccordionButton
+      p={0}
+      px={'12px'}
+      _hover={{ bg: 'brand.aliceblue' }}
+      borderRadius={'10px'}
+      my={'10px'}
+    >
       <Center
         h={'60px'}
         w={'100%'}
