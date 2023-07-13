@@ -71,14 +71,16 @@ export default function MoreResources() {
                           justifyContent={'flex-start'}
                           py={'6px'}
                           px={'10px'}
+                          textAlign={'start'}
                           gap={'18px'}
                         >
                           <Center
-                            w={'70px'}
-                            h={'70px'}
+                            w={{base: '60px', md: '70px'}}
+                            h={{base: '60px', md: '70px'}}
                             borderRadius={'50%'}
                             bg={'brand.aliceblue'}
                             flexShrink={0}
+                            
                             border={'1px solid'}
                             borderColor={'brand.primary'}
                           >
@@ -118,13 +120,14 @@ export default function MoreResources() {
                                   minW={{ base: '50%', md: '220px' }}
                                   h={'60px'}
                                   borderRadius={'10px'}
+
                                 >
                                   {item}
                                 </Tab>
                               );
                             })}
                           </TabList>
-                          <TabPanels alignItems={'flex-start'}>
+                          <TabPanels alignItems={'flex-start'} w={'full'} >
                             <TabPanel px={0}>
                               <Accordion allowToggle w={'100%'}>
                                 {item.topics.map((topic, index) => {
@@ -289,7 +292,7 @@ const AccordionBtn = ({ buttonTitle }: IAccordionBtn) => {
         justifyContent={'space-between'}
         gap={'18px'}
       >
-        <MyText as="title" title={buttonTitle} />
+        <MyText as="title" title={buttonTitle} textAlign={'start'} />
       </Center>
       <AccordionIcon w={'22px'} h={'22px'} />
     </AccordionButton>
