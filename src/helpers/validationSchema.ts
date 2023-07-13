@@ -12,6 +12,14 @@ export const loginSchema = Yup.object({
 export const singupSchema = Yup.object({
   ...loginSchema.fields,
   confirmPassword: Yup.string()
-    .oneOf([Yup.ref('password')], 'Passwords must match')
-    .required('Confirm Password is required'),
+  .matches(/^[A-Za-z0-9]+$/, 'Password must contain only letters and numbers')
+  .required('Confirm Password is required')
+  .oneOf([Yup.ref('password')], 'Passwords must match'),
+    fullName: Yup.string()
+    .matches(/^[A-Za-z\s]+$/, 'Invalid fullname')
+    .required('Fullname is required'),
+    number: Yup.string()
+    .min(10, 'Phone number must be at least 10 characters')
+    .matches(/^[0-9]+$/, 'Invalid phone number')  
+    .required('Phone number is required'),
 });
