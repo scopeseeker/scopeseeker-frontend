@@ -1,8 +1,8 @@
 import { MyBadge, MyButton, MyIcon, MyImage, MyText } from '@/component';
+import truncatedParagraph from '@/helpers/validator';
 import { IMyCompanyCard } from '@/inteface/component-interface';
 import { Center, Flex, HStack, VStack } from '@chakra-ui/react';
 import Link from 'next/link';
-import truncatedParagraph from '../../lib/validator';
 
 const MyCompanyCard = ({
   companyLogo,

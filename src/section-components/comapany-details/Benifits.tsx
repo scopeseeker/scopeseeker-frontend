@@ -1,6 +1,6 @@
 import { MyIcon, MyImage, MyText } from '@/component';
 import { companyBenifits, employeeBenifits } from '@/constant/constantFields';
-import truncatedParagraph from '@/lib/validator';
+import truncatedParagraph from '@/helpers/validator';
 import { Center, Grid, HStack, VStack } from '@chakra-ui/react';
 
 const Benifits = () => {
