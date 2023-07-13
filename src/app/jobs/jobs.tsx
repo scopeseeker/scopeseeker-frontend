@@ -39,7 +39,7 @@ export default function Jobs() {
             minH={'100vh'}
             gap={'30px'}
           >
-            <Box display={{ base: 'none', md: 'initial' }}>
+            <Box display={{ base: 'none', md: 'initial' }} position={'sticky'} top={'80px'} zIndex={1}>
               <Filter FilterObject={jobsFilter} />
             </Box>
             <VStack minH="100vh" w="full">

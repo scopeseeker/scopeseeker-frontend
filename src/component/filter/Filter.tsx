@@ -21,11 +21,12 @@ const Filter = ({ FilterObject }: IFilter) => {
       w={{ base: '180px', lg: '200px' }}
       gap={2}
       alignItems={'flex-start'}
+      maxH={'100vh'}
     >
       <HStack w={'full'} spacing={0}>
         <MyText title="Filter Jobs" as="heading" color="brand.primary" />
       </HStack>
-      <Accordion w="full" defaultIndex={[0, 1]} allowMultiple>
+      <Accordion w="full" defaultIndex={[0, 1]} allowMultiple overflowY={'scroll'} pr={'10px'}>
         {FilterObject.map((item, index) => (
           <>
             <AccordionItem key={index}>
