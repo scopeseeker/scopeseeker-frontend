@@ -69,7 +69,7 @@ export default function Resources() {
                 />
               </Center>
               <Center
-                maxW={'70%'}
+                maxW={{base:'full',md:'70%'}}
                 px={'20px'}
                 py={{ base: '16px', sm: '20px', md: '6px' }}
                 bg={'green.50'}
@@ -97,7 +97,7 @@ export default function Resources() {
               <Box>
                 <MainHeading
                   title="Explore All Helpful Resource For Tech Enthusiasts"
-                  align={'stat'}
+                  align={'start'}
                   subTitle={`Our treasure trove of resource categories designed to empower tech job seekers like you. We've curated a diverse range of resources to cover every aspect of your journey, from frontend development to interview preparation and coding questions. Let's dive into the wealth of knowledge that awaits you!`}
                 />
               </Box>
@@ -136,7 +136,7 @@ const CategoryBox = ({ title, description, iconName }: ICategoryBox) => {
   return (
     <>
       <Center
-        w={{ base: 'full', md: '48%' }}
+        w={{ base: 'full',sm:'full', md: '48%' }}
         minH={'150px'}
         border={'1px solid'}
         borderColor={'brand.lightgray'}
@@ -152,8 +152,8 @@ const CategoryBox = ({ title, description, iconName }: ICategoryBox) => {
         gap={'22px'}
       >
         <Center
-          w={'80px'}
-          height={'80px'}
+          w={{base:'70px',md:'80px'}}
+          height={{base:'70px',md:'80px'}}
           flexShrink={0}
           bg={'brand.aliceblue'}
           border={'1px solid'}
