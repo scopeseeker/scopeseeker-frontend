@@ -70,7 +70,7 @@ const jobCardFields = [
     role: 'Frontend Developer',
     companyName: 'Tata Consultancy Service',
     location: 'Bhopal, Madhaya Pradesh',
-    jobType: ['Full Time', 'Part Time', 'Internship', 'Startup', 'Indian MNC'],
+    jobType: ['Full Time', 'Part Time', 'Internship', 'Startup', 'Indian MNC','Full Time', 'Part Time', 'Internship', 'Startup', 'Indian MNC'],
     companyDesc:
       'UX designers measure and optimize applications to improve ease of use (usability), and create the best user experience by exploring many different approaches to solve end-users problems',
     isNamedLogo: true,
@@ -80,7 +80,7 @@ const jobCardFields = [
     role: 'Software Engineer',
     companyName: 'Microsoft Corporation',
     location: 'Redmond, Washington',
-    jobType: ['Full Time', 'Remote', 'Contract', 'Temporary', 'Freelance'],
+    jobType: ['Full Time', 'Remote', 'Contract', 'Temporary', 'Freelance','Full Time', 'Remote', 'Contract', 'Temporary', 'Freelance'],
     companyDesc:
       'Microsoft is a multinational technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.',
     isNamedLogo: true,
@@ -90,7 +90,7 @@ const jobCardFields = [
     role: 'Data Scientist',
     companyName: 'Amazon',
     location: 'Seattle, Washington',
-    jobType: ['Full Time', 'Contract', 'Remote', 'Part Time', 'Freelance'],
+    jobType: ['Full Time', 'Contract', 'Remote', 'Part Time', 'Freelance','Full Time', 'Contract', 'Remote', 'Part Time', 'Freelance'],
     companyDesc:
       'Amazon is an American multinational technology company that focuses on e-commerce, cloud computing, digital streaming, and artificial intelligence.',
     isNamedLogo: true,
@@ -100,7 +100,7 @@ const jobCardFields = [
     role: 'Backend Developer',
     companyName: 'Facebook',
     location: 'Menlo Park, California',
-    jobType: ['Full Time', 'Internship', 'Part Time', 'Temporary', 'Remote'],
+    jobType: ['Full Time', 'Internship', 'Part Time', 'Temporary', 'Remote','Full Time', 'Internship', 'Part Time', 'Temporary', 'Remote'],
     companyDesc:
       'Facebook is a social networking service and technology company based in Menlo Park, California. It was founded by Mark Zuckerberg, along with fellow Harvard College students and roommates Eduardo Saverin, Andrew McCollum, Dustin Moskovitz, and Chris Hughes.',
     isNamedLogo: true,
@@ -110,7 +110,7 @@ const jobCardFields = [
     role: 'Frontend Developer',
     companyName: 'Tata Consultancy Service',
     location: 'Bhopal, Madhaya Pradesh',
-    jobType: ['Full Time', 'Part Time', 'Internship', 'Startup', 'Indian MNC'],
+    jobType: ['Full Time', 'Part Time', 'Internship', 'Startup', 'Indian MNC','Full Time', 'Part Time', 'Internship', 'Startup', 'Indian MNC'],
     companyDesc:
       'UX designers measure and optimize applications to improve ease of use (usability), and create the best user experience by exploring many different approaches to solve end-users problems',
     isNamedLogo: true,
@@ -120,7 +120,7 @@ const jobCardFields = [
     role: 'Software Engineer',
     companyName: 'Microsoft Corporation',
     location: 'Redmond, Washington',
-    jobType: ['Full Time', 'Remote', 'Contract', 'Temporary', 'Freelance'],
+    jobType: ['Full Time', 'Remote', 'Contract', 'Temporary', 'Freelance','Full Time', 'Remote', 'Contract', 'Temporary', 'Freelance'],
     companyDesc:
       'Microsoft is a multinational technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.',
     isNamedLogo: true,
@@ -130,7 +130,7 @@ const jobCardFields = [
     role: 'Data Scientist',
     companyName: 'Amazon',
     location: 'Seattle, Washington',
-    jobType: ['Full Time', 'Contract', 'Remote', 'Part Time', 'Freelance'],
+    jobType: ['Full Time', 'Contract', 'Remote', 'Part Time', 'Freelance','Full Time', 'Contract', 'Remote', 'Part Time', 'Freelance'],
     companyDesc:
       'Amazon is an American multinational technology company that focuses on e-commerce, cloud computing, digital streaming, and artificial intelligence.',
     isNamedLogo: true,
@@ -140,7 +140,90 @@ const jobCardFields = [
     role: 'Backend Developer',
     companyName: 'Facebook',
     location: 'Menlo Park, California',
-    jobType: ['Full Time', 'Internship', 'Part Time', 'Temporary', 'Remote'],
+    jobType: ['Full Time', 'Internship', 'Part Time', 'Temporary', 'Remote','Full Time', 'Internship', 'Part Time', 'Temporary', 'Remote'],
+    companyDesc:
+      'Facebook is a social networking service and technology company based in Menlo Park, California. It was founded by Mark Zuckerberg, along with fellow Harvard College students and roommates Eduardo Saverin, Andrew McCollum, Dustin Moskovitz, and Chris Hughes.',
+    isNamedLogo: true,
+  },
+
+  // Testing Data
+
+  {
+    companyIconLogo: '/assets/images/company-logo/google.png',
+    role: 'Frontend Developer',
+    companyName: 'Tata Consultancy Service',
+    location: 'Bhopal, Madhaya Pradesh',
+    jobType: ['Full Time', 'Part Time', 'Internship', 'Startup', 'Indian MNC','Full Time', 'Part Time', 'Internship', 'Startup', 'Indian MNC'],
+    companyDesc:
+      'UX designers measure and optimize applications to improve ease of use (usability), and create the best user experience by exploring many different approaches to solve end-users problems',
+    isNamedLogo: true,
+  },
+  {
+    companyIconLogo: '/assets/images/company-logo/github.png',
+    role: 'Software Engineer',
+    companyName: 'Microsoft Corporation',
+    location: 'Redmond, Washington',
+    jobType: ['Full Time', 'Remote', 'Contract', 'Temporary', 'Freelance','Full Time', 'Remote', 'Contract', 'Temporary', 'Freelance'],
+    companyDesc:
+      'Microsoft is a multinational technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.',
+    isNamedLogo: true,
+  },
+  {
+    companyIconLogo: '/assets/images/company-logo/amazon.png',
+    role: 'Data Scientist',
+    companyName: 'Amazon',
+    location: 'Seattle, Washington',
+    jobType: ['Full Time', 'Contract', 'Remote', 'Part Time', 'Freelance','Full Time', 'Contract', 'Remote', 'Part Time', 'Freelance'],
+    companyDesc:
+      'Amazon is an American multinational technology company that focuses on e-commerce, cloud computing, digital streaming, and artificial intelligence.',
+    isNamedLogo: true,
+  },
+  {
+    companyIconLogo: '/assets/images/company-logo/bookmyshow.png',
+    role: 'Backend Developer',
+    companyName: 'Facebook',
+    location: 'Menlo Park, California',
+    jobType: ['Full Time', 'Internship', 'Part Time', 'Temporary', 'Remote','Full Time', 'Internship', 'Part Time', 'Temporary', 'Remote'],
+    companyDesc:
+      'Facebook is a social networking service and technology company based in Menlo Park, California. It was founded by Mark Zuckerberg, along with fellow Harvard College students and roommates Eduardo Saverin, Andrew McCollum, Dustin Moskovitz, and Chris Hughes.',
+    isNamedLogo: true,
+  },
+  {
+    companyIconLogo: '/assets/images/company-logo/google.png',
+    role: 'Frontend Developer',
+    companyName: 'Tata Consultancy Service',
+    location: 'Bhopal, Madhaya Pradesh',
+    jobType: ['Full Time', 'Part Time', 'Internship', 'Startup', 'Indian MNC','Full Time', 'Part Time', 'Internship', 'Startup', 'Indian MNC'],
+    companyDesc:
+      'UX designers measure and optimize applications to improve ease of use (usability), and create the best user experience by exploring many different approaches to solve end-users problems',
+    isNamedLogo: true,
+  },
+  {
+    companyIconLogo: '/assets/images/company-logo/github.png',
+    role: 'Software Engineer',
+    companyName: 'Microsoft Corporation',
+    location: 'Redmond, Washington',
+    jobType: ['Full Time', 'Remote', 'Contract', 'Temporary', 'Freelance','Full Time', 'Remote', 'Contract', 'Temporary', 'Freelance'],
+    companyDesc:
+      'Microsoft is a multinational technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.',
+    isNamedLogo: true,
+  },
+  {
+    companyIconLogo: '/assets/images/company-logo/amazon.png',
+    role: 'Data Scientist',
+    companyName: 'Amazon',
+    location: 'Seattle, Washington',
+    jobType: ['Full Time', 'Contract', 'Remote', 'Part Time', 'Freelance','Full Time', 'Contract', 'Remote', 'Part Time', 'Freelance'],
+    companyDesc:
+      'Amazon is an American multinational technology company that focuses on e-commerce, cloud computing, digital streaming, and artificial intelligence.',
+    isNamedLogo: true,
+  },
+  {
+    companyIconLogo: '/assets/images/company-logo/bookmyshow.png',
+    role: 'Backend Developer',
+    companyName: 'Facebook',
+    location: 'Menlo Park, California',
+    jobType: ['Full Time', 'Internship', 'Part Time', 'Temporary', 'Remote','Full Time', 'Internship', 'Part Time', 'Temporary', 'Remote'],
     companyDesc:
       'Facebook is a social networking service and technology company based in Menlo Park, California. It was founded by Mark Zuckerberg, along with fellow Harvard College students and roommates Eduardo Saverin, Andrew McCollum, Dustin Moskovitz, and Chris Hughes.',
     isNamedLogo: true,
