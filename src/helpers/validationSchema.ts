@@ -23,3 +23,25 @@ export const singupSchema = Yup.object({
     .matches(/^[0-9]+$/, 'Invalid phone number')  
     .required('Phone number is required'),
 });
+
+export const requestSchema = Yup.object({
+  
+  
+    fullName: Yup.string()
+    .matches(/^[A-Za-z\s]+$/, 'Invalid fullname')
+    .required('Fullname is required'),
+    email: Yup.string()
+    .email('Invalid email address')
+    .required('Email is required'),
+    number: Yup.string()
+    .min(10, 'Phone number must be at least 10 characters')
+    .matches(/^[0-9]+$/, 'Invalid phone number') , 
+    country: Yup.string() 
+    .required('Country is required'),
+    companyName: Yup.string()
+    .required('Company name is required'),
+    companyField: Yup.string()
+    .required('Company field is required'),
+    message: Yup.string()
+    .required('Message is required'),
+});
