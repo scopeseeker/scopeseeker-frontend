@@ -41,7 +41,7 @@ const SocialLinksSection = () => {
                     labelTitle="Linkedin"
                     leftElement={<MyIcon name="linkedin" />}
                     type="text"
-                    placeholder="Enter the link"
+                    placeholder="Enter the url"
                     name="linkedin"
                   />
                   <FormErrorMessage>{errors.linkedin}</FormErrorMessage>
@@ -53,13 +53,11 @@ const SocialLinksSection = () => {
                     labelTitle="Facebook"
                     leftElement={<MyIcon name="facebook" />}
                     type="text"
-                    placeholder="Enter the link"
+                    placeholder="Enter the url"
                     name="facebook"
                   />
                   <FormErrorMessage>{errors.facebook}</FormErrorMessage>
                 </FormControl>
-
-                
               </HStack>
 
               <HStack
@@ -67,17 +65,18 @@ const SocialLinksSection = () => {
                 flexDir={{ base: 'column', md: 'row' }}
                 spacing={0}
                 gap={'22px'}
-                alignItems={'flex-start'} 
+                alignItems={'flex-start'}
               >
-                <FormControl isInvalid={!!errors.instagram && touched.instagram}>
+                <FormControl
+                  isInvalid={!!errors.instagram && touched.instagram}
+                >
                   <Field
                     as={MyInput}
                     labelTitle="Instagram"
                     leftElement={<MyIcon name="instagram" />}
                     type="text"
-                    placeholder="Enter the link"
+                    placeholder="Enter the url"
                     name="instagram"
-                   
                   />
                   <FormErrorMessage>{errors.instagram}</FormErrorMessage>
                 </FormControl>
@@ -88,16 +87,11 @@ const SocialLinksSection = () => {
                     labelTitle="GitHub"
                     leftElement={<MyIcon name="github" />}
                     type="text"
-                    placeholder="Enter the link"
+                    placeholder="Enter the url"
                     name="github"
-                    
-                   
                   />
                   <FormErrorMessage>{errors.github}</FormErrorMessage>
                 </FormControl>
-
-               
-               
               </HStack>
             </VStack>
           </form>

@@ -1,5 +1,4 @@
 'use client';
-
 import { Layout, MyButton } from '@/component';
 import {
   BasicInformationSection,
@@ -10,7 +9,7 @@ import {
   WorkExperienceSection,
 } from '@/section-components';
 import SocialLinksSection from '@/section-components/edit-profile/SocialLinksSection';
-import { HStack, VStack } from '@chakra-ui/react';
+import { Center, HStack, VStack } from '@chakra-ui/react';
 
 const EditProfile = () => {
   return (
@@ -24,7 +23,16 @@ const EditProfile = () => {
           justifyContent={'flex-start'}
           alignItems={'flex-start'}
         >
-          <LeftEditProfilePart />
+          {/* Left Part */}
+          <Center
+            position={'sticky'}
+            top={'86px'}
+            w={{ base: 'full', lg: '212px' }}
+            display={{ base: 'none', lg: 'initial' }}
+          >
+            <LeftEditProfilePart />
+          </Center>
+
           {/* Right Part */}
           <VStack w={{ base: 'full', lg: '80%' }} h={'full'} gap={'42px'}>
             <BasicInformationSection />
