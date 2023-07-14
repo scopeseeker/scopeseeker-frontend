@@ -1,6 +1,13 @@
 'use client';
-import { Layout, MyButton, MyIcon, MyInput, MyText } from '@/component';
-import { requestSchema } from '@/helpers/validationSchema';
+import {
+  Layout,
+  MainHeading,
+  MyButton,
+  MyIcon,
+  MyInput,
+  MyText,
+} from '@/component';
+import { requestCompanySchema } from '@/helpers/validationSchema';
 import { PageHeader } from '@/section-components';
 import {
   Box,
@@ -12,29 +19,24 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import { Field, Formik } from 'formik';
-import Head from 'next/head';
 
 export default function RequestPage() {
   return (
     <>
-      <Head>
-        <title>Request Company| Scope Seeker</title>
-      </Head>
       <PageHeader
         title="Request A Company"
         subtitle="Add a company to our job listing platform and help expand opportunities for job seekers. Submit your request now and connect job seekers with the right companies."
         src="/assets/images/request.png"
         alt="requets image"
       />
-
       <Layout>
         <VStack gap={'82px'} my={'52px'}>
           {/* Steps Box */}
           <VStack alignItems={'flex-start'} gap={'42px'} w={'full'}>
-            <MyText
-              as="heading"
-              w={'100%'}
-              title={`How we'll process the request`}
+            <MainHeading
+              title="How we will process the request"
+              subTitle="We will process the request in 3 simple steps"
+              align={'left'}
             />
             <HStack
               flexDirection={{ base: 'column', md: 'row' }}
@@ -63,10 +65,11 @@ export default function RequestPage() {
           </VStack>
           {/* Form Box */}
           <VStack w={'full'} alignItems={'flex-start'} gap={'32px'}>
-            <Box>
-              <MyText as="heading" title="Let Send A Request For Company" />
-              <MyText as="p" title="Effortless Hiring Starts Here." />
-            </Box>
+            <MainHeading
+              title="Fill this form to request a company"
+              subTitle="Fill this form to request a company to be added to our job listing platform."
+              align={'left'}
+            />
 
             <Center w={'100%'} h={'full'} justifyContent={'flex-start'}>
               <Formik
@@ -74,17 +77,15 @@ export default function RequestPage() {
                   fullName: '',
                   email: '',
                   number: '',
-                  country: '',
                   companyName: '',
-                  companyField: '',
                   message: '',
                 }}
-                validationSchema={requestSchema}
+                validationSchema={requestCompanySchema}
                 onSubmit={(values) => {
                   alert(JSON.stringify(values, null, 2));
                 }}
               >
-                {({ handleSubmit, errors, touched }) => (
+                {({ isSubmitting, handleSubmit, errors, touched }) => (
                   <form onSubmit={handleSubmit} style={{ width: '100%' }}>
                     <VStack
                       w={{ base: '100%', md: '90%', lg: '50%' }}
@@ -97,7 +98,7 @@ export default function RequestPage() {
                         <Field
                           as={MyInput}
                           name="fullName"
-                          type="name"
+                          type="text"
                           labelTitle="Full Name"
                           placeholder="Jon Doe"
                           leftElement={
@@ -110,7 +111,6 @@ export default function RequestPage() {
                         <FormErrorMessage>{errors.fullName}</FormErrorMessage>
                       </FormControl>
 
-                      {/* validation of email Id */}
                       <FormControl isInvalid={!!errors.email && touched.email}>
                         <Field
                           as={MyInput}
@@ -121,122 +121,71 @@ export default function RequestPage() {
                           leftElement={
                             <MyIcon name="email" width="20px" height="20px" />
                           }
-                          border={
-                            errors.fullName ? '1.5px solid red' : 'gray.200'
-                          }
+                          border={errors.email ? '1.5px solid red' : 'gray.200'}
                         />
                         <FormErrorMessage>{errors.email}</FormErrorMessage>
                       </FormControl>
 
-                      <HStack
-                        w={'full'}
-                        flexDir={{ base: 'column', md: 'row' }}
-                        gap={'20px'}
-                        spacing={0}
-                        alignItems={'flex-start'}
-                        
+                      <FormControl
+                        isInvalid={!!errors.number && touched.number}
                       >
-                        <FormControl
-                          isInvalid={!!errors.number && touched.number}
-                        >
-                          <Field
-                            as={MyInput}
-                            name="number"
-                            type="number"
-                            labelTitle="Phone(Optional) "
-                            placeholder="+91 XXXXXXXX20"
-                            leftElement={
-                              <MyIcon name="phone" width="20px" height="20px" />
-                            }
-                          />
-                        </FormControl>
-
-                        <FormControl
-                          isInvalid={!!errors.country && touched.country}
-                        >
-                          <Field
-                            as={MyInput}
-                            name="country"
-                            type="text"
-                            labelTitle="Country"
-                            placeholder="India"
-                            leftElement={
-                              <MyIcon
-                                name="global"
-                                width="20px"
-                                height="20px"
-                              />
-                            }
-                          />
-                          <FormErrorMessage>{errors.country}</FormErrorMessage>
-                        </FormControl>
-                      </HStack>
-                      <HStack
-                        flexDir={{ base: 'column', sm: 'row' }}
-                        gap={'20px'}
-                        spacing={0}
-                        alignItems={'flex-start'}
-                      >
-                        <FormControl
-                          isInvalid={
-                            !!errors.companyName && touched.companyName
+                        <Field
+                          as={MyInput}
+                          name="number"
+                          type="number"
+                          labelTitle="Phone(Optional) "
+                          placeholder="+91 XXXXXXXX20"
+                          leftElement={
+                            <MyIcon name="phone" width="20px" height="20px" />
                           }
-                        >
-                          <Field
-                            as={MyInput}
-                            type="text"
-                            labelTitle="Company Name"
-                            placeholder="ScopeSeeker"
-                            leftElement={
-                              <MyIcon
-                                name="company"
-                                width="20px"
-                                height="20px"
-                              />
-                            }
-                            name="companyName"
-                          />
-                          <FormErrorMessage>
-                            {errors.companyName}
-                          </FormErrorMessage>
-                        </FormControl>
-                        <FormControl
-                          isInvalid={
-                            !!errors.companyField && touched.companyField
+                          border={
+                            errors.number ? '1.5px solid red' : 'gray.200'
                           }
-                        >
-                          <Field
-                            as={MyInput}
-                            type="text"
-                            labelTitle="Company Field"
-                            placeholder="Tech/Non-Tech"
-                            leftElement={
-                              <MyIcon
-                                name="company"
-                                width="20px"
-                                height="20px"
-                              />
-                            }
-                            name="companyField"
-                          />
-                          <FormErrorMessage>
-                            {errors.companyField}
-                          </FormErrorMessage>
-                        </FormControl>
-                      </HStack>
-                      <VStack w={'full'} alignItems={'flex-start'}>
-                        <MyText as="span" title="Tell me about Yourself" />
-                        <Textarea
-                          w={'100%'}
-                          fontSize={'sm'}
-                          resize={'none'}
-                          placeholder="Your Bio"
                         />
-                      </VStack>
+                        <FormErrorMessage>{errors.number}</FormErrorMessage>
+                      </FormControl>
+
+                      <FormControl
+                        isInvalid={!!errors.companyName && touched.companyName}
+                      >
+                        <Field
+                          as={MyInput}
+                          type="text"
+                          labelTitle="Company Name"
+                          placeholder="ScopeSeeker"
+                          name="companyName"
+                          leftElement={
+                            <MyIcon name="company" width="20px" height="20px" />
+                          }
+                          border={
+                            errors.companyName ? '1.5px solid red' : 'gray.200'
+                          }
+                        />
+                        <FormErrorMessage>
+                          {errors.companyName}
+                        </FormErrorMessage>
+                      </FormControl>
+
+                      <FormControl>
+                        <VStack w={'full'} alignItems={'flex-start'}>
+                          <MyText as="span" title="Tell me about Yourself" />
+                          <Field
+                            w={'100%'}
+                            as={Textarea}
+                            name={'message'}
+                            fontSize={'sm'}
+                            resize={'none'}
+                            placeholder="Your Bio here..."
+                          />
+                        </VStack>
+                      </FormControl>
+
                       <MyButton
                         title="Submit"
                         w={{ base: '100%', md: 'initial' }}
                         px={'32px'}
+                        disabled={isSubmitting}
+                        type={'submit'}
                       />
                     </VStack>
                   </form>
@@ -262,9 +211,9 @@ const RequestBox = ({ iconName, headName, paraName }: IRequestBox) => {
       h={'180px'}
       border={'1px solid'}
       borderColor={'brand.lightgray'}
-      borderRadius={'4px'}
+      borderRadius={'14px'}
       overflow={'hidden'}
-      bg={'brand.aliceblue'}
+      bg={'brand.white'}
       px={'32px'}
       py={'32px'}
       flexDirection={'column'}
