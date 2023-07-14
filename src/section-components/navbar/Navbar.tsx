@@ -108,8 +108,8 @@ const Navbar = () => {
                 </>
               )}
             </DesktopNav>
-            <NavLink iconName="profile" title="About Us" href="/about-us" />
-            <NavLink iconName="phone" title="Contact Us" href="/contact-us" />
+            <NavLink iconName="file" title="Resources" href="/resources" />
+            <NavLink iconName="book" title="Blog" href="/blogs" />
           </Flex>
         </HStack>
 
@@ -167,11 +167,11 @@ const Navbar = () => {
                       mt={'16px'}
                     >
                       <VStack
-                        px={'30px'}
+                        px={'25px'}
                         py={'15px'}
                         alignItems={'flex-start'}
                         w={'380px'}
-                        h={'350px'}
+                        h={'300px'}
                       >
                         <HStack
                           justifyContent={'space-between'}
@@ -289,7 +289,7 @@ const Navbar = () => {
                       mr={{ base: '12px', sm: '0px' }}
                     >
                       <Box px={'30px'} py={'20px'} w={'350px'}>
-                        <HStack gap={'5px'} alignItems={'flex-start'}>
+                        <HStack gap={'15px'} alignItems={'flex-start'}>
                           <Center
                             w={'60px'}
                             h={'60px'}
@@ -306,7 +306,7 @@ const Navbar = () => {
                             />
                           </Center>
 
-                          <VStack alignItems={'flex-start'} gap={'5px'}>
+                          <VStack alignItems={'flex-start'} gap={'8px'}>
                             <VStack spacing={0} alignItems={'flex-start'}>
                               <MyText as="title" title="Abhishek Kumar" />
                               <MyText

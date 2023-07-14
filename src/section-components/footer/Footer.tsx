@@ -9,25 +9,24 @@ const Footer = () => {
       bg={'brand.primary'}
       w={'full'}
       pt={'22px'}
-      gap={'10px'}
       justifyContent={'space-between'}
       color={'brand.white'}
-      mt={20}
+      mt={'80px'}
     >
       <Layout>
         <Flex
           w={'full'}
-          gap={{ base: 5, md: '2', xl: 10 }}
+          gap={{ base: '20px', md: '0px', xl: '40px' }}
           flexDirection={{ base: 'column', md: 'row' }}
         >
           {/* Section1: Company */}
           <Flex
             flexDir={'column'}
-            gap={3}
-            w={{ base: '100%', md: 'calc(100%/4)' }}
+            gap={'12px'}
+            w={{ base: '100%', md: 'calc(100%/3)' }}
           >
             <HStack cursor={'pointer'}>
-              <Center w={12} h={12}>
+              <Center w={'48px'} h={'48px'}>
                 <MyImage
                   src={'/assets/images/scopeseeker-logo.png'}
                   alt={'secope seeker logo'}
@@ -36,7 +35,7 @@ const Footer = () => {
                 />
               </Center>
 
-              <Flex direction={'column'} gap={1}>
+              <Flex direction={'column'} gap={'4px'}>
                 <MyText
                   as={'heading'}
                   lineHeight={'shorter'}
@@ -59,7 +58,7 @@ const Footer = () => {
                 'Scope Seeker is a cutting-edge web application designed to help job seekers find their dream job with ease'
               }
             />
-            <Flex direction={'column'} gap={2}>
+            <Flex direction={'column'} gap={'8px'}>
               <FooterHeading title={'Stay Connected'} />
               <MyText
                 title="Email: scopeseekerhelp@gmail.com"
@@ -77,7 +76,6 @@ const Footer = () => {
             w={{ base: '100%', md: 'calc(100%/2)' }}
             // flexDirection={{ base: 'column', sm: 'row' }}
             alignItems={{ base: 'flex-start' }}
-            gap={5}
             justifyContent={'center'}
           >
             {/* Links Section */}
@@ -85,7 +83,7 @@ const Footer = () => {
               w={'50%'}
               justifyContent={{ base: 'flex-start', md: 'center' }}
             >
-              <Flex flexDir={'column'} gap={3} p={{ base: 0, md: 4 }}>
+              <Flex flexDir={'column'} gap={'12px'} p={{ base: '0px', md: '16px' }}>
                 <FooterHeading title={'Links'} />
                 <FooterLink link={'/jobs'} title={'Find Jobs'} />
                 <FooterLink link={'/company'} title={'Find Companies'} />
@@ -102,7 +100,7 @@ const Footer = () => {
               w={'50%'}
               justifyContent={{ base: 'flex-start', md: 'center' }}
             >
-              <Flex flexDir={'column'} gap={3} p={{ base: 0, md: 4 }}>
+              <Flex flexDir={'column'} gap={'12px'} p={{ base: '0px', md: '16px' }}>
                 <FooterHeading title={'Company'} />
                 <FooterLink link={'/about-us'} title={'About Us'} />
                 <FooterLink link={'/contact-us'} title={'Contact Us'} />
@@ -125,9 +123,9 @@ const Footer = () => {
           {/* Meet Us section */}
           <Flex
             flexDir={'column'}
-            gap={3}
+            gap={'12px'}
             w={{ base: '100%', md: 'calc(100%/4)' }}
-            p={{ base: 0, md: 4 }}
+            p={{ base: '0px', md: '16px' }}
           >
             <FooterHeading title={'Meet Us'} />
             <MyText
@@ -140,28 +138,28 @@ const Footer = () => {
               <MyText as="heading" title="💗" color="brand.white" />
               <MyText as="span" title="new friends" color="brand.white" />
             </HStack>
-            <HStack py={2}>
+            <HStack py={'8px'}>
               <IconButton
-                p={2}
+                p={'8px'}
                 aria-label="social-meida"
                 color={'brand.primary'}
                 icon={<MyIcon name={'instagram'} height="20" width="20" />}
               />
               <IconButton
-                p={2}
+                p={'8px'}
                 aria-label="social-meida"
                 color={'brand.primary'}
                 icon={<MyIcon name={'linkedin'} height="20" width="20" />}
               />
               <IconButton
-                p={2}
+                p={'8px'}
                 aria-label="social-meida"
                 color={'brand.primary'}
                 icon={<MyIcon name={'twitter'} height="20" width="20" />}
               />
 
               <IconButton
-                p={2}
+                p={'8px'}
                 aria-label="social-meida"
                 color={'brand.primary'}
                 icon={<MyIcon name={'whatsapp'} height="20" width="20" />}
@@ -172,7 +170,7 @@ const Footer = () => {
 
         {/* Bottom Copyright Sections */}
         <Flex
-          py={5}
+          py={'20px'}
           borderTop={'1px solid lightgray'}
           w={'full'}
           justifyContent={'space-between'}
