@@ -45,3 +45,41 @@ export const requestSchema = Yup.object({
     message: Yup.string()
     .required('Message is required'),
 });
+
+export const editProfileSchema = Yup.object({
+  
+  
+  fullName: Yup.string()
+  .matches(/^[A-Za-z\s]+$/, 'Invalid fullname')
+  .required('Fullname is required'),
+  email: Yup.string()
+  .email('Invalid email address')
+  .required('Email is required'),
+  phone: Yup.string()
+  .min(10, 'Phone number must be at least 10 characters')
+  .matches(/^[0-9]+$/, 'Invalid phone number') 
+  .required('Phone is required'),
+  country: Yup.string() 
+  .matches(/^[A-Za-z\s]+$/, 'Invalid fullname')
+  .required('Country is required'),
+  organisation: Yup.string() 
+  .matches(/^[A-Za-z\s]+$/, 'Invalid fullname')
+  .required('Organisation is required'),
+  city: Yup.string()
+  .matches(/^[A-Za-z\s]+$/, 'Invalid fullname')
+  .required('City is required'),
+  
+});
+export const socialLinksSchema = Yup.object({
+  
+  
+  facebook: Yup.string()
+  .required('Facebook is required'),
+  linkedin: Yup.string()
+  .required('Linkedin is required'),
+  instagram: Yup.string()
+  .required('Instagram is required'),
+  github: Yup.string()
+  .required('Github is required'),
+
+});
