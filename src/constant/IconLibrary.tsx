@@ -87,6 +87,7 @@ export type IconNameType =
   | 'youtube'
   | 'www'
   | 'default'
+  | 'book'
   | string;
 
 type TIconData = {
@@ -723,6 +724,15 @@ export const IconData: TIconData = {
       <path d="M9 17v4"></path>
       <path d="M8 13h2"></path>
       <path d="M8 9h2"></path>
+    </>
+  ),
+  book: (
+    <>
+      <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0"></path>
+      <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0"></path>
+      <path d="M3 6l0 13"></path>
+      <path d="M12 6l0 13"></path>
+      <path d="M21 6l0 13"></path>
     </>
   ),
 };
