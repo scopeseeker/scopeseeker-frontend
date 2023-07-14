@@ -17,7 +17,6 @@ const PageHeroSection = (props: IPageHeroSection) => {
   return (
     <HStack
       w={'full'}
-      minH={{ base: '30vh', md: '300px' }}
       maxH={'50vh'}
       bg={'brand.primary'}
       justifyContent={'space-between'}
@@ -37,7 +36,6 @@ const PageHeroSection = (props: IPageHeroSection) => {
           <Center
             display={{ base: 'none', md: 'flex' }}
             maxW={'50%'}
-            p={'10px'}
             h={'full'}
           >
             <MyImage src={src} alt={alt} width={w} height={h} />

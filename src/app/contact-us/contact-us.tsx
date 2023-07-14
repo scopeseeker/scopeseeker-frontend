@@ -50,7 +50,7 @@ export default function ContactUs() {
                   _selected={{ color: 'white', bg: 'brand.primary' }}
                   border={'1px solid'}
                   borderColor={'brand.lightgray'}
-                  w={{ base: '50%', md: '200px' }}
+                  w={{ base: '30%', md: '200px' }}
                   h={'60px'}
                   borderRadius={'10px'}
                   gap={{ base: '8px', md: '16px' }}
@@ -68,7 +68,7 @@ export default function ContactUs() {
                   _selected={{ color: 'white', bg: 'brand.primary' }}
                   border={'1px solid'}
                   borderColor={'brand.lightgray'}
-                  w={{ base: '50%', md: '200px' }}
+                  w={{ base: '30%', md: '200px' }}
                   h={'60px'}
                   borderRadius={'10px'}
                   gap={{ base: '8px', md: '16px' }}
@@ -86,7 +86,7 @@ export default function ContactUs() {
                   _selected={{ color: 'white', bg: 'brand.primary' }}
                   border={'1px solid'}
                   borderColor={'brand.lightgray'}
-                  w={{ base: '50%', md: '200px' }}
+                  w={{ base: '30%', md: '200px' }}
                   h={'60px'}
                   borderRadius={'10px'}
                   gap={{ base: '8px', md: '16px' }}

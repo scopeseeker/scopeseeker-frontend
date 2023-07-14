@@ -1,85 +1,67 @@
 import * as Yup from 'yup';
+const emailSchema = Yup.string()
+  .email('Invalid email address')
+  .required('Email is required')
+  .max(50, 'Email must not exceed 50 characters');
+
+const passwordSchema = Yup.string()
+  .required('Password is required')
+  .min(6, 'Password must be at least 6 characters')
+  .max(20, 'Password must not exceed 20 characters')
+  .matches(/^[A-Za-z0-9]+$/, 'Password must contain only letters and numbers');
+
+const confirmPasswordSchema = Yup.string()
+  .required('Confirm Password is required')
+  .oneOf([Yup.ref('password')], 'Passwords must match');
+
+const fullNameSchema = Yup.string()
+  .matches(/^[A-Za-z\s]+$/, 'Invalid fullname')
+  .required('Full Name is required')
+  .max(50, 'Full Name must not exceed 50 characters');
+
+const numberSchema = Yup.string()
+  .min(10, 'Phone number must be at least 10 characters')
+  .max(10, 'Phone number must not exceed 10 characters')
+  .matches(/^[0-9]+$/, 'Invalid phone number');
+
+const stringSchema = (fieldName: string, maxChars: number) =>
+  Yup.string()
+    .required(`${fieldName} is required`)
+    .max(maxChars, `${fieldName} must not exceed ${maxChars} characters`);
 
 export const loginSchema = Yup.object({
-  email: Yup.string()
-    .email('Invalid email address')
-    .required('Email is required'),
-  password: Yup.string()
-    .min(6, 'Password must be at least 6 characters')
-    .required('Password is required'),
+  email: emailSchema,
+  password: passwordSchema,
 });
 
 export const singupSchema = Yup.object({
-  ...loginSchema.fields,
-  confirmPassword: Yup.string()
-  .matches(/^[A-Za-z0-9]+$/, 'Password must contain only letters and numbers')
-  .required('Confirm Password is required')
-  .oneOf([Yup.ref('password')], 'Passwords must match'),
-    fullName: Yup.string()
-    .matches(/^[A-Za-z\s]+$/, 'Invalid fullname')
-    .required('Fullname is required'),
-    number: Yup.string()
-    .min(10, 'Phone number must be at least 10 characters')
-    .matches(/^[0-9]+$/, 'Invalid phone number')  
-    .required('Phone number is required'),
+  email: emailSchema,
+  password: passwordSchema,
+  confirmPassword: confirmPasswordSchema,
+  fullName: fullNameSchema,
+  number: numberSchema,
 });
 
-export const requestSchema = Yup.object({
-  
-  
-    fullName: Yup.string()
-    .matches(/^[A-Za-z\s]+$/, 'Invalid fullname')
-    .required('Fullname is required'),
-    email: Yup.string()
-    .email('Invalid email address')
-    .required('Email is required'),
-    number: Yup.string()
-    .min(10, 'Phone number must be at least 10 characters')
-    .matches(/^[0-9]+$/, 'Invalid phone number') , 
-    country: Yup.string() 
-    .required('Country is required'),
-    companyName: Yup.string()
-    .required('Company name is required'),
-    companyField: Yup.string()
-    .required('Company field is required'),
-    message: Yup.string()
-    .required('Message is required'),
+export const requestCompanySchema = Yup.object({
+  fullName: fullNameSchema,
+  email: emailSchema,
+  number: numberSchema,
+  companyName: stringSchema('Company name', 50),
+  message: stringSchema('Message', 500),
 });
 
 export const editProfileSchema = Yup.object({
-  
-  
-  fullName: Yup.string()
-  .matches(/^[A-Za-z\s]+$/, 'Invalid fullname')
-  .required('Fullname is required'),
-  email: Yup.string()
-  .email('Invalid email address')
-  .required('Email is required'),
-  phone: Yup.string()
-  .min(10, 'Phone number must be at least 10 characters')
-  .matches(/^[0-9]+$/, 'Invalid phone number') 
-  .required('Phone is required'),
-  country: Yup.string() 
-  .matches(/^[A-Za-z\s]+$/, 'Invalid fullname')
-  .required('Country is required'),
-  organisation: Yup.string() 
-  .matches(/^[A-Za-z\s]+$/, 'Invalid fullname')
-  .required('Organisation is required'),
-  city: Yup.string()
-  .matches(/^[A-Za-z\s]+$/, 'Invalid fullname')
-  .required('City is required'),
-  
+  fullName: fullNameSchema,
+  email: emailSchema,
+  phone: numberSchema,
+  country: fullNameSchema,
+  organisation: fullNameSchema,
+  city: fullNameSchema,
 });
-export const socialLinksSchema = Yup.object({
-  
-  
-  facebook: Yup.string()
-  .required('Facebook is required'),
-  linkedin: Yup.string()
-  .required('Linkedin is required'),
-  instagram: Yup.string()
-  .required('Instagram is required'),
-  github: Yup.string()
-  .required('Github is required'),
 
+export const socialLinksSchema = Yup.object({
+  facebookUrl: Yup.string().url('Invalid URL'),
+  linkedin: Yup.string().url('Invalid URL'),
+  instagram: Yup.string().url('Invalid URL'),
+  github: Yup.string().url('Invalid URL'),
 });
