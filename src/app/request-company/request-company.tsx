@@ -133,6 +133,7 @@ export default function RequestPage() {
                         flexDir={{ base: 'column', md: 'row' }}
                         gap={'20px'}
                         spacing={0}
+                        alignItems={'flex-start'}
                         
                       >
                         <FormControl
@@ -174,6 +175,7 @@ export default function RequestPage() {
                         flexDir={{ base: 'column', sm: 'row' }}
                         gap={'20px'}
                         spacing={0}
+                        alignItems={'flex-start'}
                       >
                         <FormControl
                           isInvalid={
