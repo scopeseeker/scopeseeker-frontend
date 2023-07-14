@@ -22,6 +22,7 @@ export default function Login() {
             as="link"
             title="Signup"
             color="brand.primary"
+            href='/signup'
             fontWeight={500}
           />
         </HStack>

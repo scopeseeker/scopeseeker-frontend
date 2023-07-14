@@ -39,7 +39,7 @@ export const singupSchema = Yup.object({
   password: passwordSchema,
   confirmPassword: confirmPasswordSchema,
   fullName: fullNameSchema,
-  number: numberSchema,
+  number: numberSchema.required('Phone number is required'),
 });
 
 export const requestCompanySchema = Yup.object({
@@ -53,10 +53,21 @@ export const requestCompanySchema = Yup.object({
 export const editProfileSchema = Yup.object({
   fullName: fullNameSchema,
   email: emailSchema,
-  phone: numberSchema,
-  country: fullNameSchema,
-  organisation: fullNameSchema,
-  city: fullNameSchema,
+  phone: numberSchema.required('Phone number is required'),
+  country: stringSchema('Country', 50),
+  organisation: stringSchema('Organization', 50),
+  city: stringSchema('City', 50),
+  gender: Yup.string().required('Please select a gender'),
+  userType: Yup.string().required('Please select a user type'),
+  domain: Yup.string().required('Please select a domain'),
+  course: Yup.string().required('Please select a course'),
+  courseSpecialization: Yup.string().required(
+    'Please select a course specialization',
+  ),
+  yearOfGraduation: Yup.string().required(
+    'Please enter the year of graduation',
+  ),
+  summary: Yup.string().max(500, 'Summary must not exceed 500 characters'),
 });
 
 export const socialLinksSchema = Yup.object({

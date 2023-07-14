@@ -6,7 +6,7 @@ import MyText from '../text/MyText';
 interface IRadioButton {
   name: string;
   options: string[];
-  onChange: any;
+  onChange?: any;
 }
 const RadioButton = ({ name, options, onChange }: IRadioButton) => {
   const [selectedValue, setSelectedValue] = useState('');

@@ -1,17 +1,17 @@
 import { MyButton, MyDivider, MyText } from '@/component';
 import { Center, VStack } from '@chakra-ui/react';
-
-import React from 'react';
+import Link from 'next/link';
 
 const LeftEditProfilePart = () => {
   return (
-    <VStack w={'212px'} gap={'18px'} display={{ base: 'none', lg: 'initial' }}>
+    <VStack w={'full'}>
       <VStack
         border={'1px solid'}
         borderColor={'brand.lightgray'}
         borderRadius={'8px'}
         bg={'brand.aliceblue'}
         p="12px"
+        w={'full'}
       >
         <LeftScrollDivText title={'Basic Information'} />
         <LeftScrollDivText title={'Resume'} />
@@ -20,7 +20,9 @@ const LeftEditProfilePart = () => {
         <LeftScrollDivText title={'Education'} />
         <LeftScrollDivText title={'Social Links'} />
       </VStack>
-      <MyButton title="Skip For Now" w={'full'} />
+      <Link href={'/'} style={{ width: '100%' }}>
+        <MyButton title="Skip For Now" w={'full'} mt={'20px'} />
+      </Link>
     </VStack>
   );
 };
