@@ -1,7 +1,17 @@
 'use client';
 import { Layout, MyButton, MyIcon, MyInput, MyText } from '@/component';
+import { requestSchema } from '@/helpers/validationSchema';
 import { PageHeader } from '@/section-components';
-import { Box, Center, HStack, Textarea, VStack } from '@chakra-ui/react';
+import {
+  Box,
+  Center,
+  FormControl,
+  FormErrorMessage,
+  HStack,
+  Textarea,
+  VStack,
+} from '@chakra-ui/react';
+import { Field, Formik } from 'formik';
 import Head from 'next/head';
 
 export default function RequestPage() {
@@ -59,96 +69,177 @@ export default function RequestPage() {
             </Box>
 
             <Center w={'100%'} h={'full'} justifyContent={'flex-start'}>
-              <VStack
-                w={{ base: '100%', md: '90%', lg: '50%' }}
-                alignItems={'flex-start'}
-                gap={'20px'}
+              <Formik
+                initialValues={{
+                  fullName: '',
+                  email: '',
+                  number: '',
+                  country: '',
+                  companyName: '',
+                  companyField: '',
+                  message: '',
+                }}
+                validationSchema={requestSchema}
+                onSubmit={(values) => {
+                  alert(JSON.stringify(values, null, 2));
+                }}
               >
-                <MyInput
-                  type="name"
-                  labelTitle="Full Name"
-                  placeholder="Jon Doe"
-                  leftElement={
-                    <MyIcon name="profile" width="20px" height="20px" />
-                  }
-                  name='fullName'
-                />
-                <MyInput
-                  type="email"
-                  labelTitle="Email Address"
-                  placeholder="example@gmail.com"
-                  leftElement={
-                    <MyIcon name="email" width="20px" height="20px" />
+                {({ handleSubmit, errors, touched }) => (
+                  <form onSubmit={handleSubmit} style={{ width: '100%' }}>
+                    <VStack
+                      w={{ base: '100%', md: '90%', lg: '50%' }}
+                      alignItems={'flex-start'}
+                      gap={'20px'}
+                    >
+                      <FormControl
+                        isInvalid={!!errors.fullName && touched.fullName}
+                      >
+                        <Field
+                          as={MyInput}
+                          name="fullName"
+                          type="name"
+                          labelTitle="Full Name"
+                          placeholder="Jon Doe"
+                          leftElement={
+                            <MyIcon name="profile" width="20px" height="20px" />
+                          }
+                          border={
+                            errors.fullName ? '1.5px solid red' : 'gray.200'
+                          }
+                        />
+                        <FormErrorMessage>{errors.fullName}</FormErrorMessage>
+                      </FormControl>
 
-                  }
-                  name='email'
-                />
+                      {/* validation of email Id */}
+                      <FormControl isInvalid={!!errors.email && touched.email}>
+                        <Field
+                          as={MyInput}
+                          name="email"
+                          type="email"
+                          labelTitle="Email Address"
+                          placeholder="abhi@example.gmail.com"
+                          leftElement={
+                            <MyIcon name="email" width="20px" height="20px" />
+                          }
+                          border={
+                            errors.fullName ? '1.5px solid red' : 'gray.200'
+                          }
+                        />
+                        <FormErrorMessage>{errors.email}</FormErrorMessage>
+                      </FormControl>
 
-                <HStack
-                  w={'full'}
-                  flexDir={{ base: 'column', md: 'row' }}
-                  gap={'20px'}
-                  spacing={0}
-                >
-                  <MyInput
-                    type="number"
-                    labelTitle="Phone(Optional) "
-                    placeholder="+91 XXXXXXXX20"
-                    leftElement={
-                      <MyIcon name="phone" width="20px" height="20px" />
-                    }
-                    name='number'
-                  />
-                  <MyInput
-                    type="text"
-                    labelTitle="Country"
-                    placeholder="India"
-                    leftElement={
-                      <MyIcon name="global" width="20px" height="20px" />
-                    }
-                    name='country'
-                  />
-                </HStack>
-                <HStack
-                  flexDir={{ base: 'column', sm: 'row' }}
-                  gap={'20px'}
-                  spacing={0}
-                >
-                  <MyInput
-                    type="text"
-                    labelTitle="Company Name"
-                    placeholder="ScopeSeeker"
-                    leftElement={
-                      <MyIcon name="company" width="20px" height="20px" />
-                    }
-                    name='companyName'
-                  />
-                  <MyInput
-                    type="text"
-                    labelTitle="Company Field"
-                    placeholder="Tech/Non-Tech"
-                    leftElement={
-                      <MyIcon name="company" width="20px" height="20px" />
-                    }
-                    name='companyField'
+                      <HStack
+                        w={'full'}
+                        flexDir={{ base: 'column', md: 'row' }}
+                        gap={'20px'}
+                        spacing={0}
+                        
+                      >
+                        <FormControl
+                          isInvalid={!!errors.number && touched.number}
+                        >
+                          <Field
+                            as={MyInput}
+                            name="number"
+                            type="number"
+                            labelTitle="Phone(Optional) "
+                            placeholder="+91 XXXXXXXX20"
+                            leftElement={
+                              <MyIcon name="phone" width="20px" height="20px" />
+                            }
+                          />
+                        </FormControl>
 
-                  />
-                </HStack>
-                <VStack w={'full'} alignItems={'flex-start'}>
-                  <MyText as="span" title="Tell me about Yourself" />
-                  <Textarea
-                    w={'100%'}
-                    fontSize={'sm'}
-                    resize={'none'}
-                    placeholder="Your Bio"
-                  />
-                </VStack>
-                <MyButton
-                  title="Submit"
-                  w={{ base: '100%', md: 'initial' }}
-                  px={'32px'}
-                />
-              </VStack>
+                        <FormControl
+                          isInvalid={!!errors.country && touched.country}
+                        >
+                          <Field
+                            as={MyInput}
+                            name="country"
+                            type="text"
+                            labelTitle="Country"
+                            placeholder="India"
+                            leftElement={
+                              <MyIcon
+                                name="global"
+                                width="20px"
+                                height="20px"
+                              />
+                            }
+                          />
+                          <FormErrorMessage>{errors.country}</FormErrorMessage>
+                        </FormControl>
+                      </HStack>
+                      <HStack
+                        flexDir={{ base: 'column', sm: 'row' }}
+                        gap={'20px'}
+                        spacing={0}
+                      >
+                        <FormControl
+                          isInvalid={
+                            !!errors.companyName && touched.companyName
+                          }
+                        >
+                          <Field
+                            as={MyInput}
+                            type="text"
+                            labelTitle="Company Name"
+                            placeholder="ScopeSeeker"
+                            leftElement={
+                              <MyIcon
+                                name="company"
+                                width="20px"
+                                height="20px"
+                              />
+                            }
+                            name="companyName"
+                          />
+                          <FormErrorMessage>
+                            {errors.companyName}
+                          </FormErrorMessage>
+                        </FormControl>
+                        <FormControl
+                          isInvalid={
+                            !!errors.companyField && touched.companyField
+                          }
+                        >
+                          <Field
+                            as={MyInput}
+                            type="text"
+                            labelTitle="Company Field"
+                            placeholder="Tech/Non-Tech"
+                            leftElement={
+                              <MyIcon
+                                name="company"
+                                width="20px"
+                                height="20px"
+                              />
+                            }
+                            name="companyField"
+                          />
+                          <FormErrorMessage>
+                            {errors.companyField}
+                          </FormErrorMessage>
+                        </FormControl>
+                      </HStack>
+                      <VStack w={'full'} alignItems={'flex-start'}>
+                        <MyText as="span" title="Tell me about Yourself" />
+                        <Textarea
+                          w={'100%'}
+                          fontSize={'sm'}
+                          resize={'none'}
+                          placeholder="Your Bio"
+                        />
+                      </VStack>
+                      <MyButton
+                        title="Submit"
+                        w={{ base: '100%', md: 'initial' }}
+                        px={'32px'}
+                      />
+                    </VStack>
+                  </form>
+                )}
+              </Formik>
             </Center>
           </VStack>
         </VStack>
