@@ -29,8 +29,7 @@ interface FormData {
 
 const BasicInformationSection = () => {
   return (
-    <FormControl>
-      <SectionTempalate>
+      <SectionTempalate id='basic-section'>
         <MyText as="title" title="Basic Information" />
 
         <Formik
@@ -307,7 +306,6 @@ const BasicInformationSection = () => {
           )}
         </Formik>
       </SectionTempalate>
-    </FormControl>
   );
 };
 

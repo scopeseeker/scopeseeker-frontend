@@ -48,7 +48,7 @@ const WorkExperienceSection = () => {
   const handleOpenWorkExperience = () => setShowExperience(!showExperience);
  
   return (
-    <SectionTempalate>
+    <SectionTempalate id='work-section'>
       <HStack justifyContent={'space-between'} w={'full'}>
         <MyText as="title" title="Work Experience" />
 

@@ -5,7 +5,7 @@ import { Box, Center, HStack, VStack } from '@chakra-ui/react';
 
 const ResumeSection = () => {
   return (
-    <SectionTempalate>
+    <SectionTempalate id='resume-section'>
       <MyText as="title" title="Resume" />
       <VStack alignSelf={'center'} w={{ base: 'full', md: '80%' }} gap={'20px'}>
         <HStack
