@@ -1,8 +1,18 @@
 import { MyButton, MyIcon, MyInput, MyText } from '@/component';
-import { Collapse, HStack, VStack } from '@chakra-ui/react';
+import { editProfileSchema, workexpericenceSchema } from '@/helpers/validationSchema';
+import {
+  Collapse,
+  FormControl,
+  FormErrorMessage,
+  HStack,
+  VStack,
+} from '@chakra-ui/react';
+import { Field, Formik } from 'formik';
 import React, { useState } from 'react';
 import AddBoxTemplete from './templates/AddBoxTemplate';
 import SectionTempalate from './templates/SectionTemplate';
+
+
 
 const WorkExperienceSection = () => {
   const [showExperience, setShowExperience] = React.useState(false);
@@ -30,34 +40,18 @@ const WorkExperienceSection = () => {
     city: string;
   }
 
-  const handleWorkInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
+  
 
-  const handleWorkExperience = () => {
-    const newWorkExperience = { ...formData };
-    setWorkExperience([...workExperience, newWorkExperience]);
-    setFormData({
-      designation: '',
-      sector: '',
-      fromYear: '',
-      toYear: '',
-      organisation: '',
-      country: '',
-      state: '',
-      city: '',
-    });
-  };
+  
+ 
 
   const handleOpenWorkExperience = () => setShowExperience(!showExperience);
-
+ 
   return (
     <SectionTempalate>
       <HStack justifyContent={'space-between'} w={'full'}>
         <MyText as="title" title="Work Experience" />
+
         <HStack onClick={handleOpenWorkExperience} cursor={'pointer'}>
           <MyIcon
             name="add"
@@ -92,118 +86,188 @@ const WorkExperienceSection = () => {
         </VStack>
       )}
       <Collapse in={showExperience} style={{ width: '100%' }}>
-        <VStack w={'full'} gap={'22px'}>
-          <HStack
-            flexDir={{ base: 'column', md: 'row' }}
-            spacing={0}
-            gap={'22px'}
-            w={'full'}
-          >
-            <MyInput
-              name="designation"
-              labelTitle="Designation"
-              leftElement={<MyIcon name="job" />}
-              type="text"
-              placeholder="Type your designation"
-              value={formData.designation}
-              onChange={handleWorkInputChange}
-            />
-            <MyInput
-              name="sector"
-              labelTitle="Sector"
-              leftElement={<MyIcon name="fresher" />}
-              type="text"
-              placeholder="Type your Sector"
-              value={formData.sector}
-              onChange={handleWorkInputChange}
-            />
-          </HStack>
+          
+            <Formik
+              initialValues={{
+                designation: '',
+                sector: '',
+                fromYear: '',
+                toYear: '',
+                organisation: '',
+                country: 'India',
+                state: '',
+                city: '',
+              }}
+              validationSchema={workexpericenceSchema}
+              onSubmit={(values) => {
+                alert(JSON.stringify(values, null, 2));
+              }}
+            >
+              {({ errors, touched, handleSubmit }) => (
+                <form onSubmit={handleSubmit} style={{ width: '100%' }}>
+                  <VStack w={'full'}  gap={'32px'}>
+                  <HStack
+                    flexDir={{ base: 'column', md: 'row' }}
+                    spacing={0}
+                    gap={'22px'}
+                    w={'full'}
+                    alignItems={'flex-start'}
+                  >
+                    <FormControl
+                      isInvalid={!!errors.designation && touched.designation}
+                    >
+                      <Field
+                        as={MyInput}
+                        name="designation"
+                        labelTitle="Designation"
+                        leftElement={<MyIcon name="job" />}
+                        type="text"
+                        placeholder="Type your designation"
+                        border={errors.designation && '1px solid red'}
+                      />
+                      <FormErrorMessage>{errors.designation}</FormErrorMessage>
+                    </FormControl>
 
-          <HStack
-            flexDir={{ base: 'column', md: 'row' }}
-            spacing={0}
-            gap={'22px'}
-            w={'full'}
-          >
-            <MyInput
-              name="fromYear"
-              labelTitle="From (Year)"
-              leftElement={<MyIcon name="time" />}
-              type="text"
-              placeholder="Enter Year"
-              value={formData.fromYear}
-              onChange={handleWorkInputChange}
-            />
-            <MyInput
-              name="toYear"
-              labelTitle="To (Year)"
-              leftElement={<MyIcon name="time" />}
-              type="text"
-              placeholder="Enter Year"
-              value={formData.toYear}
-              onChange={handleWorkInputChange}
-            />
-          </HStack>
+                    <FormControl isInvalid={!!errors.sector && touched.sector}>
+                      <Field
+                        as={MyInput}
+                        border={errors.sector && '1px solid red'}
+                        name="sector"
+                        labelTitle="Sector"
+                        leftElement={<MyIcon name="fresher" />}
+                        type="text"
+                        placeholder="Type your Sector"
+                      />
+                      <FormErrorMessage>{errors.sector}</FormErrorMessage>
+                    </FormControl>
+                  </HStack>
 
-          <HStack
-            flexDir={{ base: 'column', md: 'row' }}
-            spacing={0}
-            gap={'22px'}
-            w={'full'}
-          >
-            <MyInput
-              name="organisation"
-              labelTitle="Organisation"
-              leftElement={<MyIcon name="college" />}
-              type="text"
-              placeholder="Enter Organisation"
-              value={formData.organisation}
-              onChange={handleWorkInputChange}
-            />
-            <MyInput
-              name="country"
-              labelTitle="Country"
-              leftElement={<MyIcon name="company" />}
-              type="text"
-              placeholder="Enter Country"
-              value={formData.country}
-              onChange={handleWorkInputChange}
-            />
-          </HStack>
+                  <HStack
+                    flexDir={{ base: 'column', md: 'row' }}
+                    spacing={0}
+                    gap={'22px'}
+                    w={'full'}
+                    align={'flex-start'}
+                  >
+                    <FormControl
+                      isInvalid={!!errors.fromYear && touched.fromYear}
+                    >
+                      <Field
+                        as={MyInput}
+                        border={errors.fromYear && '1px solid red'}
+                        name="fromYear"
+                        labelTitle="From (Year)"
+                        leftElement={<MyIcon name="time" />}
+                        type="text"
+                        placeholder="Enter Year"
+                      />
+                      <FormErrorMessage>{errors.fromYear}</FormErrorMessage>
+                    </FormControl>
 
-          <HStack
-            flexDir={{ base: 'column', md: 'row' }}
-            spacing={0}
-            gap={'22px'}
-            w={'full'}
-          >
-            <MyInput
-              name="state"
-              labelTitle="State"
-              leftElement={<MyIcon name="company" />}
-              type="text"
-              placeholder="Enter Your State"
-              value={formData.state}
-              onChange={handleWorkInputChange}
-            />
-            <MyInput
-              name="city"
-              labelTitle="City"
-              leftElement={<MyIcon name="company" />}
-              type="text"
-              placeholder="Enter Your City"
-              value={formData.city}
-              onChange={handleWorkInputChange}
-            />
-          </HStack>
-          <HStack w={'full'} flexWrap={'wrap'} spacing={0} gap={'12px'}>
-            <MyButton title="Submit" px="50px" onClick={handleWorkExperience} />
-            <MyButton title="Cancel" px="50px" variant="outline" />
-          </HStack>
-        </VStack>
+                    <FormControl isInvalid={!!errors.toYear && touched.toYear}>
+                      <Field
+                        as={MyInput}
+                        border={errors.toYear && '1px solid red'}
+                        name="toYear"
+                        labelTitle="To (Year)"
+                        leftElement={<MyIcon name="time" />}
+                        type="text"
+                        placeholder="Enter Year"
+                      />
+                      <FormErrorMessage>{errors.toYear}</FormErrorMessage>
+                    </FormControl>
+                  </HStack>
+
+                  <HStack
+                    flexDir={{ base: 'column', md: 'row' }}
+                    spacing={0}
+                    gap={'22px'}
+                    w={'full'}
+                    alignItems={'flex-start'}
+                  >
+                    <FormControl
+                      isInvalid={!!errors.organisation && touched.organisation}
+                    >
+                      <Field
+                        as={MyInput}
+                        border={errors.organisation && '1px solid red'}
+                        name="organisation"
+                        labelTitle="Organisation"
+                        leftElement={<MyIcon name="college" />}
+                        type="text"
+                        placeholder="Enter Organisation"
+                      />
+                      <FormErrorMessage>{errors.organisation}</FormErrorMessage>
+                    </FormControl>
+
+                    <FormControl
+                      isInvalid={!!errors.country && touched.country}
+                    >
+                      <Field
+                        as={MyInput}
+                        border={errors.country && '1px solid red'}
+                        name="country"
+                        labelTitle="Country"
+                        leftElement={<MyIcon name="company" />}
+                        type="text"
+                        placeholder="Enter Country"
+                      />
+                      <FormErrorMessage>{errors.country}</FormErrorMessage>
+                    </FormControl>
+                  </HStack>
+
+                  <HStack
+                    flexDir={{ base: 'column', md: 'row' }}
+                    spacing={0}
+                    gap={'22px'}
+                    w={'full'}
+                    alignItems={'flex-start'}
+                  >
+                    <FormControl isInvalid={!!errors.state && touched.state}>
+                      <Field
+                        as={MyInput}
+                        border={errors.state && '1px solid red'}
+                        name="state"
+                        labelTitle="State"
+                        leftElement={<MyIcon name="company" />}
+                        type="text"
+                        placeholder="Enter Your State"
+                      />
+                      <FormErrorMessage>{errors.state}</FormErrorMessage>
+                    </FormControl>
+
+                    <FormControl isInvalid={!!errors.city && touched.city}>
+                      <Field
+                        as={MyInput}
+                        border={errors.city && '1px solid red'}
+                        name="city"
+                        labelTitle="City"
+                        leftElement={<MyIcon name="company" />}
+                        type="text"
+                        placeholder="Enter Your City"
+                      />
+                      <FormErrorMessage>{errors.city}</FormErrorMessage>
+                    </FormControl>
+
+                    
+                  </HStack>
+                  <HStack w={'full'} flexWrap={'wrap'} spacing={0} gap={'12px'}>
+                    <MyButton
+                      title="Submit"
+                      px="50px"
+                      type={'submit'}
+                    />
+                    <MyButton title="Cancel" px="50px" variant="outline" />
+                  </HStack>
+                  </VStack>
+                </form>
+              )}
+            </Formik>
+         
       </Collapse>
     </SectionTempalate>
   );
 };
+
 
 export default WorkExperienceSection;
