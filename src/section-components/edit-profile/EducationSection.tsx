@@ -61,7 +61,6 @@ const EducationSection = () => {
             percentage: '',
             cgpa: '',
             specialization: '',
-            college: '',
             university: '',
             country: 'India',
             state: '',
@@ -73,7 +72,7 @@ const EducationSection = () => {
             alert(JSON.stringify(values, null, 2));
           }}
         >
-          {({ errors, touched, handleSubmit }) => (
+          {({ errors, touched, handleSubmit, resetForm }) => (
             <form onSubmit={handleSubmit} style={{ width: '100%' }}>
               <VStack gap={'22px'} w={'full'}>
                 <HStack
@@ -288,7 +287,12 @@ const EducationSection = () => {
                 </HStack>
                 <HStack w={'full'} flexWrap={'wrap'} spacing={0} gap={'12px'}>
                   <MyButton title="Submit" px="50px" type={'submit'} />
-                  <MyButton title="Cancel" px="50px" variant="outline" />
+                  <MyButton
+                    title="Cancel"
+                    px="50px"
+                    variant="outline"
+                    onClick={resetForm}
+                  />
                 </HStack>
               </VStack>
             </form>

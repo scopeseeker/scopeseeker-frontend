@@ -15,6 +15,7 @@ export interface IMyButtonProps {
   h?: string;
   cursor?: string;
   w?: string | any;
+  type?: 'submit' | 'button' | 'reset';
   [key: string]: any;
 }
 
