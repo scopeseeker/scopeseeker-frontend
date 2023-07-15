@@ -1,9 +1,10 @@
+import metaData from '@/constant/metaData';
 import HomePage from './home-page';
+import { Metadata } from 'next';
 
-export const metadata = {
-  title: 'Home | Scope Seeker',
-  description:
-    'Scope Seeker is a platform for freelancers to find the best jobs and for employers to hire the best talent.',
+export const metadata:Metadata = {
+  title: metaData.home.title,
+  description: metaData.home.description,
 };
 export default function Page() {
   return <HomePage />;
