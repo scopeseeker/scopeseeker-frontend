@@ -77,8 +77,6 @@ export const socialLinksSchema = Yup.object({
   github: Yup.string().url('Invalid URL'),
 });
 
-
-
 export const workexpericenceSchema = Yup.object({
   designation: stringSchema('Designation', 50),
   sector: stringSchema('Sector', 50),
@@ -90,4 +88,37 @@ export const workexpericenceSchema = Yup.object({
   city: stringSchema('City', 50),
 });
 
- 
+export const educationSchema = Yup.object({
+  qualification: stringSchema('Qualification', 50),
+  institute: stringSchema('Institute', 50),
+  degree: stringSchema('Degree', 50),
+  fromYear: Yup.number()
+  .typeError('From (Year) must be a valid number')
+  .required('From (Year) is required'),
+toYear: Yup.number()
+  .typeError('To (Year) must be a valid number')
+  .required('To (Year) is required')
+  .min(Yup.ref('fromYear'), 'To (Year) must be greater than From (Year)'),
+  specialization: stringSchema('Specialization', 50),
+  college: stringSchema('College', 50),
+  university: stringSchema('University', 50),
+  country: stringSchema('Country', 50),
+  state: stringSchema('State', 50),
+  city: stringSchema('City', 50),
+  percentage: Yup.number()
+    .required('Percentage is required')
+    .min(0, 'Percentage must be greater than or equal to 0')
+    .max(100, 'Percentage must be less than or equal to 100'),
+  cgpa: Yup.number()
+    .required('CGPA is required')
+    .min(0, 'CGPA must be greater than or equal to 0')
+    .max(10, 'CGPA must be less than or equal to 10')
+    .test('is-decimal', 'CGPA must be a decimal value', (value) => {
+      if (value) {
+        return (
+          Number.isInteger(value) || value.toString().split('.')[1]?.length > 0
+        );
+      }
+      return true;
+    }),
+});

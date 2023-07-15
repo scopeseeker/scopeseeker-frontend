@@ -24,11 +24,11 @@ const AddBoxTemplete = ({
       py={'10px'}
       borderRadius={'20px'}
       flexDir={{ base: 'column', md: 'row' }}
-      gap={{ base: '10px', md: '0px' }}
+      gap={{ base: '10px', md: '10px' }}
     >
       <HStack
         flexDir={{ base: 'column', sm: 'row' }}
-        gap={{ base: '10px', sm: '0px' }}
+        gap={{ base: '10px', sm: '10px' }}
         alignItems={{ base: 'flex-start', sm: 'center' }}
         w={'full'}
       >
