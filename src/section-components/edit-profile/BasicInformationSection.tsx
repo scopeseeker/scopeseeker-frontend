@@ -286,6 +286,7 @@ const BasicInformationSection = () => {
                     <FormErrorMessage>{errors.summary}</FormErrorMessage>
                   </FormControl>
                 </VStack>
+                
                 <HStack>
                   <MyButton
                     type={'submit'}
