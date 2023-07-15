@@ -1,4 +1,5 @@
 import { MyButton, MyDivider, MyIcon, MyImage, MyText } from '@/component';
+import { avatarMenuLinks } from '@/constant/linksObject';
 import {
   Box,
   Center,
@@ -13,20 +14,19 @@ import {
   HStack,
   Menu,
   MenuButton,
+  MenuItem,
   MenuList,
   Popover,
   PopoverContent,
   PopoverTrigger,
   Stack,
   VStack,
-  useColorMode,
   useDisclosure,
 } from '@chakra-ui/react';
 import Link from 'next/link';
 import React, { useState } from 'react';
 
 const Navbar = () => {
-  const { colorMode, toggleColorMode } = useColorMode();
   const navHeight = { base: '60px', md: '53px' };
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [isLogin, setIsLogin] = useState(true);
@@ -85,6 +85,7 @@ const Navbar = () => {
             </Center>
           </Link>
 
+          {/* Desktop Nav Links */}
           <Flex display={{ base: 'none', lg: 'flex' }} gap={'22px'}>
             <DesktopNav iconName="case" title="Job">
               <DesktopSubNav href="#" label="Frontend Developer" />
@@ -287,43 +288,48 @@ const Navbar = () => {
                       boxShadow="0px 0px 30px rgb(0,0,0,0.12)"
                       mt={'12px'}
                       mr={{ base: '12px', sm: '0px' }}
+                      onClick={onClose}
                     >
                       <Box px={'30px'} py={'20px'} w={'350px'}>
-                        <HStack gap={'15px'} alignItems={'flex-start'}>
-                          <Center
-                            w={'60px'}
-                            h={'60px'}
-                            borderRadius={'100%'}
-                            border={'2px'}
-                            borderColor={'brand.primary'}
-                            overflow={'hidden'}
-                          >
-                            <MyImage
-                              src={'/assets/images/p12.jpg'}
-                              alt="profile"
-                              width={60}
-                              height={60}
-                            />
-                          </Center>
+                        <MenuItem bg={'transparent'}>
+                          <HStack gap={'15px'} alignItems={'flex-start'}>
+                            <Center
+                              w={'60px'}
+                              h={'60px'}
+                              borderRadius={'100%'}
+                              border={'2px'}
+                              borderColor={'brand.primary'}
+                              overflow={'hidden'}
+                            >
+                              <MyImage
+                                src={'/assets/images/p12.jpg'}
+                                alt="profile"
+                                width={60}
+                                height={60}
+                              />
+                            </Center>
 
-                          <VStack alignItems={'flex-start'} gap={'8px'}>
-                            <VStack spacing={0} alignItems={'flex-start'}>
-                              <MyText as="title" title="Abhishek Kumar" />
+                            <VStack alignItems={'flex-start'} gap={'8px'}>
+                              <VStack spacing={0} alignItems={'flex-start'}>
+                                <MyText as="title" title="Abhishek Kumar" />
+                                <MyText
+                                  as="span"
+                                  title="example123@gmail.com"
+                                  color="brand.darkgray"
+                                />
+                              </VStack>
+
                               <MyText
-                                as="span"
-                                title="example123@gmail.com"
-                                color="brand.darkgray"
+                                as="link"
+                                title="View & Update Profile"
+                                href="/my-profile"
+                                color={'brand.primary'}
+                                fontWeight={500}
                               />
                             </VStack>
+                          </HStack>
+                        </MenuItem>
 
-                            <MyText
-                              as="link"
-                              title="View & Update Profile"
-                              color={'brand.primary'}
-                              fontWeight={500}
-                            />
-                          </VStack>
-                        </HStack>
                         <MyDivider mt={'20px'} />
 
                         <VStack
@@ -331,92 +337,37 @@ const Navbar = () => {
                           marginTop={'20px'}
                           gap={'8px'}
                         >
-                          <HStack
-                            cursor={'pointer'}
-                            _hover={{ color: 'brand.primary' }}
-                          >
-                            <MyIcon
-                              name="dashboard"
-                              width="20px"
-                              color={'currentColor'}
-                            />
-                            <MyText
-                              as="link"
-                              href="/dashboard"
-                              title="Dashboard"
-                              color={'currentColor'}
-                            />
-                          </HStack>
-
-                          <HStack
-                            cursor={'pointer'}
-                            _hover={{ color: 'brand.primary' }}
-                          >
-                            <MyIcon
-                              name="profile"
-                              width="20px"
-                              color={'currentColor'}
-                            />
-                            <MyText
-                              as="link"
-                              href="/my-profile"
-                              title="My Profile"
-                              color={'currentColor'}
-                            />
-                          </HStack>
-
-                          <HStack
-                            cursor={'pointer'}
-                            _hover={{ color: 'brand.primary' }}
-                          >
-                            <MyIcon
-                              name="settings"
-                              width="20px"
-                              color={'currentColor'}
-                            />
-                            <MyText
-                              as="link"
-                              href="/settings"
-                              title="Account Setting"
-                              color={'currentColor'}
-                            />
-                          </HStack>
-
-                          <HStack
-                            cursor={'pointer'}
-                            _hover={{ color: 'brand.primary' }}
-                          >
-                            <MyIcon
-                              name="questionMark"
-                              width="20px"
-                              color={'currentColor'}
-                            />
-                            <MyText
-                              as="link"
-                              title="FAQ"
-                              color={'currentColor'}
-                            />
-                          </HStack>
-
-                          <HStack
-                            cursor={'pointer'}
-                            _hover={{ color: 'brand.primary' }}
-                          >
-                            <MyIcon
-                              name="logout"
-                              width="20px"
-                              color={'currentColor'}
-                            />
-                            <MyText
-                              as="span"
-                              title="Logout"
-                              color={'currentColor'}
-                            />
-                          </HStack>
+                          {avatarMenuLinks.map((item, index) => {
+                            return (
+                              <MenuItem
+                                key={index}
+                                _hover={{ bg: 'transparent' }}
+                                bg={'transparent'}
+                              >
+                                <HStack
+                                  cursor={'pointer'}
+                                  _hover={{ color: 'brand.primary' }}
+                                >
+                                  <MyIcon
+                                    name={item.icon}
+                                    width="20px"
+                                    color={'currentColor'}
+                                  />
+                                  <MyText
+                                    as="link"
+                                    href={item.link}
+                                    title={item.title}
+                                    color={'currentColor'}
+                                  />
+                                </HStack>
+                              </MenuItem>
+                            );
+                          })}
                         </VStack>
                       </Box>
                     </MenuList>
                   </Menu>
+
                   {/* Mobile Drawer */}
                   <Center
                     display={{ base: 'flex', lg: 'none' }}
