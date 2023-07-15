@@ -76,3 +76,18 @@ export const socialLinksSchema = Yup.object({
   instagram: Yup.string().url('Invalid URL'),
   github: Yup.string().url('Invalid URL'),
 });
+
+
+
+export const workexpericenceSchema = Yup.object({
+  designation: stringSchema('Designation', 50),
+  sector: stringSchema('Sector', 50),
+  fromYear: Yup.string().required('Please select a year'),
+  toYear: Yup.string().required('Please select a year'),
+  organisation: stringSchema('Organisation', 50),
+  country: stringSchema('Country', 50),
+  state: stringSchema('State', 50),
+  city: stringSchema('City', 50),
+});
+
+ 
