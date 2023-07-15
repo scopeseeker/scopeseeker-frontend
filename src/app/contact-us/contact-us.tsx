@@ -38,19 +38,21 @@ export default function ContactUs() {
             title="Get In Touch!"
             subTitle="Get in touch with us for exceptional support and assistance."
           />
-          <Center w={{ base: '100%', sm: '80%', md: '60%' }}>
+          <Center w={{ base: '100%', md: '60%' }} >
             <Tabs variant="unstyled">
               <TabList
                 gap={{ base: '12px', md: '32px' }}
                 marginBottom={'32px'}
                 w={'full'}
                 justifyContent={'center'}
+                flexDir={{base: 'column', md: 'row'}}
+                alignItems={'center'}
               >
                 <Tab
                   _selected={{ color: 'white', bg: 'brand.primary' }}
                   border={'1px solid'}
                   borderColor={'brand.lightgray'}
-                  w={{ base: '30%', md: '200px' }}
+                  w={{ base: 'full',sm: '70%', md: '200px' }}
                   h={'60px'}
                   borderRadius={'10px'}
                   gap={{ base: '8px', md: '16px' }}
@@ -68,7 +70,7 @@ export default function ContactUs() {
                   _selected={{ color: 'white', bg: 'brand.primary' }}
                   border={'1px solid'}
                   borderColor={'brand.lightgray'}
-                  w={{ base: '30%', md: '200px' }}
+                  w={{ base: 'full',sm: '70%', md: '200px' }}
                   h={'60px'}
                   borderRadius={'10px'}
                   gap={{ base: '8px', md: '16px' }}
@@ -86,7 +88,7 @@ export default function ContactUs() {
                   _selected={{ color: 'white', bg: 'brand.primary' }}
                   border={'1px solid'}
                   borderColor={'brand.lightgray'}
-                  w={{ base: '30%', md: '200px' }}
+                  w={{ base: 'full',sm: '70%', md: '200px' }}
                   h={'60px'}
                   borderRadius={'10px'}
                   gap={{ base: '8px', md: '16px' }}
@@ -118,9 +120,7 @@ export default function ContactUs() {
                     <Center
                       gap={'32px'}
                       w={'full'}
-                      alignItems={'flex-start'}
-                      justifyContent={'flex-start'}
-                      flexDir={{ base: 'column', md: 'row' }}
+                      flexDir={{ base: 'column', sm: 'row' }}
                     >
                       <Center
                         borderRadius={'8px'}
@@ -179,11 +179,11 @@ export default function ContactUs() {
 
                     <HStack
                       w={'full'}
-                      gap={{ base: '8px', md: '2px' }}
-                      flexDir={{ base: 'column', md: 'row' }}
+                      flexDir={{ base: 'column', sm: 'row' }}
+                      flexWrap={'wrap'}
                     >
                       <Center
-                        px={'20px'}
+                        px={{base: '40px', sm: '20px'}}
                         py={'10px'}
                         border={'1px dashed'}
                         borderRadius={'50px'}
@@ -195,7 +195,7 @@ export default function ContactUs() {
                         borderRadius={'50px'}
                         bg={'brand.primary'}
                         py={'10px'}
-                        px={'18px'}
+                        px={{base: '80px', sm: '20px'}}
                         cursor={'pointer'}
                         gap={'6px'}
                       >
@@ -216,7 +216,7 @@ export default function ContactUs() {
                         bg={'brand.primary'}
                         gap={'6px'}
                         py={'10px'}
-                        px={'18px'}
+                        px={{base: '80px', sm: '20px'}}
                         cursor={'pointer'}
                       >
                         <MyIcon
@@ -257,11 +257,11 @@ export default function ContactUs() {
                     </HStack>
                     <HStack
                       w={'full'}
-                      gap={{ base: '8px' }}
-                      flexDir={{ base: 'column', md: 'row' }}
+                      flexDir={{ base: 'column', sm: 'row' }}
+                      flexWrap={'wrap'}
                     >
                       <Center
-                        px={'20px'}
+                        px={{base: '20px', md: '20px'}}
                         py={'10px'}
                         border={'1px dashed'}
                         borderRadius={'50px'}
@@ -276,7 +276,7 @@ export default function ContactUs() {
                         borderRadius={'50px'}
                         bg={'brand.primary'}
                         py={'10px'}
-                        px={'18px'}
+                        px={{base: '60px', sm: '20px'}}
                         cursor={'pointer'}
                         gap={'6px'}
                       >
