@@ -13,12 +13,12 @@ const LeftEditProfilePart = () => {
         p="12px"
         w={'full'}
       >
-        <LeftScrollDivText title={'Basic Information'} />
-        <LeftScrollDivText title={'Resume'} />
-        <LeftScrollDivText title={'Skills'} />
-        <LeftScrollDivText title={'Work Experience'} />
-        <LeftScrollDivText title={'Education'} />
-        <LeftScrollDivText title={'Social Links'} />
+        <LeftScrollDivText href="#basic-section" title={'Basic Information'} />
+        <LeftScrollDivText href="#resume-section" title={'Resume'} />
+        <LeftScrollDivText href="#skills-section" title={'Skills'} />
+        <LeftScrollDivText href="#work-section" title={'Work Experience'} />
+        <LeftScrollDivText href="#education-section" title={'Education'} />
+        <LeftScrollDivText href="#social-section" title={'Social Links'} />
       </VStack>
       <Link href={'/'} style={{ width: '100%' }}>
         <MyButton title="Skip For Now" w={'full'} mt={'20px'} />
@@ -31,22 +31,26 @@ export default LeftEditProfilePart;
 
 interface ILeftScrollDivText {
   title: string;
+  href: string;
 }
-const LeftScrollDivText = ({ title }: ILeftScrollDivText) => {
+const LeftScrollDivText = ({ title, href }: ILeftScrollDivText) => {
   return (
     <>
-      <Center
-        cursor={'pointer'}
-        w={'full'}
-        py={'6px'}
-        borderRadius={'8px'}
-        flexDirection={'column'}
-        alignItems={'flex-start'}
-        px={'16px'}
-        transition={'all ease-in-out .2s'}
-      >
-        <MyText title={title} as="span" _hover={{ color: 'brand.primary' }} />
-      </Center>
+      <Link href={href} style={{ width: '100%' }}>
+        <Center
+          cursor={'pointer'}
+          w={'full'}
+          py={'6px'}
+          borderRadius={'8px'}
+          flexDirection={'column'}
+          alignItems={'flex-start'}
+          px={'16px'}
+          _hover={{ bg: 'brand.primary', color: 'white' }}
+        >
+          <MyText title={title} as="span" color="currentColor" />
+        </Center>
+      </Link>
+
       <MyDivider />
     </>
   );

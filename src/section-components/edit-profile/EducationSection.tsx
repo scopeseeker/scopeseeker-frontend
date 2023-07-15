@@ -16,7 +16,7 @@ const EducationSection = () => {
   const [showEducation, setShowEducation] = useState(false);
   const handleOpenEdcation = () => setShowEducation(!showEducation);
   return (
-    <SectionTempalate>
+    <SectionTempalate id='education-section'>
       <HStack justifyContent={'space-between'} w={'full'}>
         <MyText as="title" title="Education" />
         <HStack onClick={handleOpenEdcation} cursor={'pointer'}>
