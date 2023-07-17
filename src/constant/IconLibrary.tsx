@@ -88,6 +88,7 @@ export type IconNameType =
   | 'www'
   | 'default'
   | 'book'
+  | 'minus'
   | string;
 
 type TIconData = {
@@ -131,6 +132,11 @@ export const IconData: TIconData = {
     <>
       <path d="M3 5m0 4a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v6a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z"></path>
       <path d="M10 9l5 3l-5 3z"></path>
+    </>
+  ),
+  minus: (
+    <>
+   <path d="M5 12l14 0"></path>
     </>
   ),
   tools: (
