@@ -110,7 +110,7 @@ export interface IMyText {
   fontWeight?: number;
   fontSize?:
     | { base: string; md: string }
-    | { base: string; md: string; '2xl': string };
+    | { base: string; md: string; '2xl': string } | any;
   [key: string]: any;
 }
 

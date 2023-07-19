@@ -72,7 +72,7 @@ const MyText = ({
                 <Text
                   as={'span'}
                   color={color}
-                  fontSize={{ base: '13px', md: '13px' }}
+                  fontSize={{ base: '15px', md: '13px' }}
                   display={'block'}
                   fontWeight={fontWeight}
                   {...rest}
@@ -86,7 +86,7 @@ const MyText = ({
               <Text
                 as={'span'}
                 color={color}
-                fontSize={fontSize || { base: '13px', md: '13px' }}
+                fontSize={fontSize || { base: '15px', md: '13px' }}
                 display={'block'}
                 fontWeight={fontWeight}
                 {...rest}
