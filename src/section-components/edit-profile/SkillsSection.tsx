@@ -22,7 +22,7 @@ const SkillsSection = () => {
     setItems(updatedItems);
   };
   return (
-    <SectionTempalate>
+    <SectionTempalate id='skills-section'>
       <MyText as="title" title="Skills" />
       <VStack alignItems={'flex-start'} w={'full'}>
         <Box w={'full'}>

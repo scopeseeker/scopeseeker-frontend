@@ -219,7 +219,7 @@ export default function AboutUs() {
                   </Center>
                   <Box
                     w={{ base: '100%', md: '80%' }}
-                    p={'18px'}
+                    p={'25px'}
                     textAlign={{ base: 'center', md: 'left' }}
                   >
                     <MyText
@@ -354,12 +354,11 @@ export default function AboutUs() {
               flexDirection={{ base: 'column', md: 'row', lg: 'row' }}
               gap={{ base: '68px', md: 0 }}
             >
-              <VStack w={'full'} gap={1}>
+              <VStack w={'full'} gap={'4px'}>
                 <Center
                   h={{ base: 250, md: 200 }}
                   w={{ base: 250, md: 200 }}
                   borderRadius={'full'}
-                  bg={'blue.400'}
                   overflow={'hidden'}
                 >
                   <MyImage
@@ -378,22 +377,19 @@ export default function AboutUs() {
                 <HStack cursor={'pointer'}>
                   <IconButton
                     aria-label="social-meida"
-                    p={2}
-                    color={'green.600'}
+                    p={'8px'}
                     icon={<MyIcon name={'whatsapp'} height="20" width="20" />}
                     size={'sm'}
                   />
                   <IconButton
                     aria-label="social-meida"
-                    p={2}
-                    color={'blue.700'}
+                    p={'8px'}
                     icon={<MyIcon name={'linkedin'} height="20" width="20" />}
                     size={'sm'}
                   />
                   <IconButton
                     aria-label="social-meida"
-                    p={2}
-                    color={'pink.500'}
+                    p={'8px'}
                     icon={<MyIcon name={'instagram'} height="20" width="20" />}
                     size={'sm'}
                   />
@@ -424,22 +420,19 @@ export default function AboutUs() {
                 <HStack cursor={'pointer'}>
                   <IconButton
                     aria-label="social-meida"
-                    p={2}
-                    color={'green.600'}
+                    p={'8px'}
                     icon={<MyIcon name={'whatsapp'} height="20" width="20" />}
                     size={'sm'}
                   />
                   <IconButton
                     aria-label="social-meida"
-                    p={2}
-                    color={'blue.700'}
+                    p={'8px'}
                     icon={<MyIcon name={'linkedin'} height="20" width="20" />}
                     size={'sm'}
                   />
                   <IconButton
                     aria-label="social-meida"
-                    p={2}
-                    color={'pink.500'}
+                    p={'8px'}
                     icon={<MyIcon name={'instagram'} height="20" width="20" />}
                     size={'sm'}
                   />
@@ -451,7 +444,6 @@ export default function AboutUs() {
                   h={{ base: 250, md: 200 }}
                   w={{ base: 250, md: 200 }}
                   borderRadius={'full'}
-                  bg={'green.400'}
                   overflow={'hidden'}
                 >
                   <MyImage
@@ -470,22 +462,19 @@ export default function AboutUs() {
                 <HStack cursor={'pointer'}>
                   <IconButton
                     aria-label="social-meida"
-                    p={2}
-                    color={'green.600'}
+                    p={'8px'}
                     icon={<MyIcon name={'whatsapp'} height="20" width="20" />}
                     size={'sm'}
                   />
                   <IconButton
                     aria-label="social-meida"
-                    p={2}
-                    color={'blue.700'}
+                    p={'8px'}
                     icon={<MyIcon name={'linkedin'} height="20" width="20" />}
                     size={'sm'}
                   />
                   <IconButton
                     aria-label="social-meida"
-                    p={2}
-                    color={'pink.500'}
+                    p={'8px'}
                     icon={<MyIcon name={'instagram'} height="20" width="20" />}
                     size={'sm'}
                   />
@@ -514,9 +503,9 @@ const WhyBox = ({
     >
       <Flex
         w={'full'}
-        pt={4}
+        pt={'16px'}
         minH={{ base: '140px', md: '210px' }}
-        px={4}
+        px={'16px'}
         alignItems={'flex-start'}
         flexDir={'column'}
       >
@@ -540,7 +529,7 @@ const WhyBox = ({
           borderRadius={'full'}
           borderEndEndRadius={'0px'}
         >
-          <MyIcon color={color} name={iconName} width={'36px'} />
+          <MyIcon color={color} name={iconName} width={'80px'} height='50px' />
         </Center>
       </VStack>
     </VStack>

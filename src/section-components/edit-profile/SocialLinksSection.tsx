@@ -11,7 +11,7 @@ import SectionTempalate from './templates/SectionTemplate';
 
 const SocialLinksSection = () => {
   return (
-    <SectionTempalate>
+    <SectionTempalate id='social-section'>
       <MyText as="title" title="Social Media" />
       <Formik
         initialValues={{

@@ -3,9 +3,10 @@ import React from 'react';
 
 interface ISectionTempalate {
   children?: React.ReactNode;
+  id?: string;
 }
 
-const SectionTempalate = ({ children }: ISectionTempalate) => {
+const SectionTempalate = ({ children, id }: ISectionTempalate) => {
   return (
     <VStack
       alignItems={'start'}
@@ -16,6 +17,7 @@ const SectionTempalate = ({ children }: ISectionTempalate) => {
       w={'full'}
       borderRadius={'8px'}
       flexShrink={0}
+      id={id}
     >
       {children}
     </VStack>
