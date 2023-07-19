@@ -1,5 +1,7 @@
 'use client';
-import { Layout, MainHeading, MyDivider, MyImage, MyText } from '@/component';
+import { MainHeading, MyDivider, MyImage, MyText } from '@/component';
+import { authPageContent } from '@/constant/constantFields';
+import { ScopeSeekerLogo } from '@/section-components';
 import { Center, HStack, VStack } from '@chakra-ui/react';
 import Link from 'next/link';
 import React from 'react';
@@ -11,7 +13,7 @@ export default function AuthLayout({
 }) {
   return (
     <HStack
-      h={{ base: '100%', md: '100vh' }}
+      minH={{ base: '100%', md: '100vh' }}
       flexDirection={{ base: 'column', md: 'row' }}
       w={'full'}
       bg={'brand.white'}
@@ -30,41 +32,15 @@ export default function AuthLayout({
           borderRadius={'8px'}
           gap={'24px'}
           p={'24px'}
+          alignItems={'start'}
         >
-          {/*Scope Seeker Logo*/}
-
-          <HStack w={'full'} cursor={'pointer'}>
-            <Link href="/">
-              <Center gap={'8px'} mr={'10px'}>
-                <MyImage
-                  src={'/assets/images/scopeseeker-logo.png'}
-                  alt={'secope seeker logo'}
-                  width={30}
-                  height={30}
-                />
-                <VStack alignItems={'flex-start'} spacing={0}>
-                  <MyText
-                    lineHeight={'shorter'}
-                    title="Scope Seeker"
-                    as="title"
-                    color="brand.white"
-                  />
-                  <MyText
-                    lineHeight={'shorter'}
-                    title="Seek the scope of your potential"
-                    as="small"
-                    color="brand.white"
-                  />
-                </VStack>
-              </Center>
-            </Link>
-          </HStack>
+          <ScopeSeekerLogo color="brand.white" />
 
           <Center flexDirection={'column'} w={'full'} h={'100%'} gap={'32px'}>
             <MainHeading
-              title="Experience the Future of Job with Scope Seeker"
+              title={authPageContent.login.title}
               headColor="brand.white"
-              subTitle="Simplify, Streamline, and Succeed with Our Next-Generation Platform"
+              subTitle={authPageContent.login.description}
               paraColor="brand.lightgray"
               align={'start'}
             />
@@ -81,73 +57,73 @@ export default function AuthLayout({
       </VStack>
 
       {/* Right part */}
-      <Layout w={{ base: '100%', md: '60%', lg: '70%' }} h={'full'}>
-        <Center w={'100%'} h={'full'} pb={{ base: '24px', md: '0px' }}>
-          <VStack
-            w={{ base: '100%', md: '90%', lg: '65%' }}
-            alignItems={'flex-start'}
-            gap={'22px'}
-          >
-            {children}
-            <MyDivider />
-            <VStack w={'full'}>
-              <MyText as="heading" fontWeight={400} title="Or" />
-              <HStack
-                gap={{ base: '6px', sm: '8px', md: '6px' }}
-                flexDirection={{ base: 'column', sm: 'row', md: 'row' }}
-                spacing={0}
-                justifyContent={'center'}
-                w={'full'}
-              >
-                <Link href={'#'}>
-                  <Center
-                    px={{ base: '52px', sm: '24px' }}
-                    py={{ base: '12px', sm: '8px' }}
-                    borderRadius={'80px'}
-                    border={'1.5px solid'}
-                    borderColor={'brand.darkgray'}
-                    bg={'brand.aliceblue'}
-                    gap={'10px'}
-                    cursor={'pointer'}
-                  >
-                    <MyImage
-                      alt="google"
-                      src={'/assets/images/company-logo/google.png'}
-                      width={20}
-                      height={20}
-                    />
-                    <MyText
-                      as="span"
-                      title="Login with Google"
-                      whitespace="nowrap"
-                    />
-                  </Center>
-                </Link>
-                <Link href={'#'}>
-                  <Center
-                    px={{ base: '52px', sm: '24px' }}
-                    py={{ base: '12px', sm: '8px' }}
-                    borderRadius={'80px'}
-                    border={'1.5px solid'}
-                    borderColor={'brand.darkgray'}
-                    bg={'brand.aliceblue'}
-                    gap={'10px'}
-                    cursor={'pointer'}
-                  >
-                    <MyImage
-                      alt="github"
-                      src={'/assets/images/company-logo/github.png'}
-                      width={20}
-                      height={20}
-                    />
-                    <MyText as="span" title="Login with GitHub" />
-                  </Center>
-                </Link>
-              </HStack>
-            </VStack>
+      <Center w={{ base: '100%', md: '60%', lg: '70%' }} h={'full'}>
+        <VStack
+          gap={'22px'}
+          alignItems={'flex-start'}
+          w={{base: 'full', lg: '80%'}}
+          py="32px"
+          px={{ base: '26px', md: '28px', lg: '92px', '2xl': '212px' }}
+        >
+          {children}
+          <MyDivider />
+          <VStack w={'full'}>
+            <MyText as="heading" fontWeight={400} title="Or" />
+            <HStack
+              gap={{ base: '6px', sm: '8px', md: '6px' }}
+              flexDirection={{ base: 'column', sm: 'row', md: 'row' }}
+              spacing={0}
+              justifyContent={'center'}
+              w={'full'}
+            >
+              <Link href={'#'}>
+                <Center
+                  px={{ base: '52px', sm: '24px' }}
+                  py={{ base: '12px', sm: '8px' }}
+                  borderRadius={'80px'}
+                  border={'1.5px solid'}
+                  borderColor={'brand.darkgray'}
+                  bg={'brand.aliceblue'}
+                  gap={'10px'}
+                  cursor={'pointer'}
+                >
+                  <MyImage
+                    alt="google"
+                    src={'/assets/images/company-logo/google.png'}
+                    width={20}
+                    height={20}
+                  />
+                  <MyText
+                    as="span"
+                    title="Login with Google"
+                    whitespace="nowrap"
+                  />
+                </Center>
+              </Link>
+              <Link href={'#'}>
+                <Center
+                  px={{ base: '52px', sm: '24px' }}
+                  py={{ base: '12px', sm: '8px' }}
+                  borderRadius={'80px'}
+                  border={'1.5px solid'}
+                  borderColor={'brand.darkgray'}
+                  bg={'brand.aliceblue'}
+                  gap={'10px'}
+                  cursor={'pointer'}
+                >
+                  <MyImage
+                    alt="github"
+                    src={'/assets/images/company-logo/github.png'}
+                    width={20}
+                    height={20}
+                  />
+                  <MyText as="span" title="Login with GitHub" />
+                </Center>
+              </Link>
+            </HStack>
           </VStack>
-        </Center>
-      </Layout>
+        </VStack>
+      </Center>
     </HStack>
   );
 }

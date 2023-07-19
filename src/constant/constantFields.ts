@@ -714,10 +714,20 @@ const articleFields = [
   },
 ];
 
+
+const authPageContent = {
+
+  login: {
+    title: 'Your Gateway to New Opportunities',
+    description: 'Discover a world of exciting career possibilities as we connect you with the best opportunities tailored to your skills and aspirations.',
+  }
+};
+
 export {
   articleFields,
   companyBenifits,
   companyCardFields,
+  authPageContent,
   companyDescTable,
   companyFilter,
   companyLeaders,

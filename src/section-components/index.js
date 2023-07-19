@@ -29,6 +29,8 @@ import Navbar from './navbar/Navbar';
 import OtpVerifyBox from './otp-verify-box/OtpVerifyBox';
 import PageHeader from './page-header/PageHeader';
 
+import ScopeSeekerLogo from './logo/ScopeSeekerLogo';
+
 export {
   BasicInformationSection,
   Benifits,
@@ -51,6 +53,7 @@ export {
   PageHeader,
   PopularCategories,
   ResumeSection,
+  ScopeSeekerLogo,
   SignupSection,
   SkillsSection,
   Subscribe,

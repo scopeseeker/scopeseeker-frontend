@@ -1,7 +1,8 @@
 import { Layout, MyIcon, MyImage, MyText } from '@/component';
-import { Center, Flex, HStack, IconButton, VStack } from '@chakra-ui/react';
+import { Box, Center, Flex, HStack, IconButton, VStack } from '@chakra-ui/react';
 import Link from 'next/link';
 import React from 'react';
+import ScopeSeekerLogo from '../logo/ScopeSeekerLogo';
 
 const Footer = () => {
   return (
@@ -25,7 +26,8 @@ const Footer = () => {
             gap={'12px'}
             w={{ base: '100%', md: 'calc(100%/3)' }}
           >
-            <HStack cursor={'pointer'}>
+            {/* <HStack cursor={'pointer'}>
+
               <Center w={'48px'} h={'48px'}>
                 <MyImage
                   src={'/assets/images/scopeseeker-logo.png'}
@@ -49,8 +51,8 @@ const Footer = () => {
                   title="Seek the scope of your potential"
                 />
               </Flex>
-            </HStack>
-
+            </HStack> */}
+            <ScopeSeekerLogo color='brand.white'/>
             <MyText
               as={'span'}
               color={'brand.white'}
