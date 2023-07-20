@@ -118,7 +118,7 @@ export default function Dashboard() {
                 </Box>
                 <Center position={'absolute'} right={0} bottom={0}>
                   <MyImage
-                    src={'/assets/images/profile.png'}
+                    src={'/assets/images/d.png'}
                     alt="homepage"
                     width={300}
                     height={300}
