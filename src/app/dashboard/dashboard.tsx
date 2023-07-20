@@ -11,9 +11,11 @@ import {
 import { jobCardFields } from '@/constant/constantFields';
 import { MyJobCard } from '@/section-components';
 import { Box, Center, HStack, Heading, VStack } from '@chakra-ui/react';
+import { useSession } from 'next-auth/react';
 import Link from 'next/link';
 
 export default function Dashboard() {
+  const { data: session } = useSession();
   return (
     <Layout w={'full'}>
       <VStack alignItems={'flex-start'} gap={'72px'}>
@@ -91,6 +93,10 @@ export default function Dashboard() {
           <VStack width={{ base: '100%', lg: '80%' }} pl={'40px'}>
             <VStack w={{ base: '100%', lg: '100%' }} gap={'52px'}>
               {/* Hello Section */}
+              <Box as={'span'} w={'300px'} flexWrap={'wrap'}>
+                {session?.user?.email}
+                {session?.user?.image}
+              </Box>
               <HStack
                 w={'full'}
                 h={'160px'}
@@ -102,20 +108,17 @@ export default function Dashboard() {
                 position={'relative'}
               >
                 <Box maxW={{ base: '100%', md: '50%' }}>
-                  <Heading color={'brand.primary'}>Hello, Lokesh</Heading>
+                  <Heading color={'brand.primary'}>
+                    {session?.user?.name}
+                  </Heading>
                   <MyText
                     as="span"
                     title={`Choose a job you love, and you'll never work.`}
                   />
                 </Box>
-                <Center
-                  position={'absolute'}
-                  right={0}
-                  bottom={0}
-                  display={'none'}
-                >
+                <Center position={'absolute'} right={0} bottom={0}>
                   <MyImage
-                    src={'/assets/images/d.png'}
+                    src={'/assets/images/profile.png'}
                     alt="homepage"
                     width={300}
                     height={300}

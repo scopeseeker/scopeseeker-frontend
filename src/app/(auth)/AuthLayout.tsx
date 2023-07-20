@@ -1,16 +1,39 @@
 'use client';
 import { MainHeading, MyDivider, MyImage, MyText } from '@/component';
 import { authPageContent } from '@/constant/constantFields';
+import { useCustomToast } from '@/helpers/toast';
 import { ScopeSeekerLogo } from '@/section-components';
-import { Center, HStack, VStack } from '@chakra-ui/react';
-import Link from 'next/link';
-import React from 'react';
+import { Button, Center, HStack, VStack } from '@chakra-ui/react';
+import { signIn } from 'next-auth/react';
+import React, { useState } from 'react';
 
 export default function AuthLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  const toast = useCustomToast();
+
+  const handleGoogleLogin = async () => {
+    try {
+      setIsLoading(true);
+      await signIn('google', {
+        callbackUrl: 'http://localhost:3000/dashboard',
+      });
+    } catch (error: any) {
+      console.log(error);
+      toast({
+        title: 'Error',
+        description: error.message,
+        status: 'error',
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <HStack
       minH={{ base: '100%', md: '100vh' }}
@@ -61,7 +84,7 @@ export default function AuthLayout({
         <VStack
           gap={'22px'}
           alignItems={'flex-start'}
-          w={{base: 'full', lg: '80%'}}
+          w={{ base: 'full', lg: '80%' }}
           py="32px"
           px={{ base: '26px', md: '28px', lg: '92px', '2xl': '212px' }}
         >
@@ -76,50 +99,49 @@ export default function AuthLayout({
               justifyContent={'center'}
               w={'full'}
             >
-              <Link href={'#'}>
-                <Center
-                  px={{ base: '52px', sm: '24px' }}
-                  py={{ base: '12px', sm: '8px' }}
-                  borderRadius={'80px'}
-                  border={'1.5px solid'}
-                  borderColor={'brand.darkgray'}
-                  bg={'brand.aliceblue'}
-                  gap={'10px'}
-                  cursor={'pointer'}
-                >
-                  <MyImage
-                    alt="google"
-                    src={'/assets/images/company-logo/google.png'}
-                    width={20}
-                    height={20}
-                  />
-                  <MyText
-                    as="span"
-                    title="Login with Google"
-                    whitespace="nowrap"
-                  />
-                </Center>
-              </Link>
-              <Link href={'#'}>
-                <Center
-                  px={{ base: '52px', sm: '24px' }}
-                  py={{ base: '12px', sm: '8px' }}
-                  borderRadius={'80px'}
-                  border={'1.5px solid'}
-                  borderColor={'brand.darkgray'}
-                  bg={'brand.aliceblue'}
-                  gap={'10px'}
-                  cursor={'pointer'}
-                >
-                  <MyImage
-                    alt="github"
-                    src={'/assets/images/company-logo/github.png'}
-                    width={20}
-                    height={20}
-                  />
-                  <MyText as="span" title="Login with GitHub" />
-                </Center>
-              </Link>
+              <Center
+                px={{ base: '52px', sm: '24px' }}
+                py={{ base: '12px', sm: '8px' }}
+                borderRadius={'80px'}
+                border={'1.5px solid'}
+                borderColor={'brand.darkgray'}
+                bg={'brand.aliceblue'}
+                gap={'10px'}
+                cursor={'pointer'}
+                onClick={handleGoogleLogin}
+                as={Button}
+                isLoading={isLoading}
+              >
+                <MyImage
+                  alt="google"
+                  src={'/assets/images/company-logo/google.png'}
+                  width={20}
+                  height={20}
+                />
+                <MyText
+                  as="span"
+                  title="Login with Google"
+                  whitespace="nowrap"
+                />
+              </Center>
+              <Center
+                px={{ base: '52px', sm: '24px' }}
+                py={{ base: '12px', sm: '8px' }}
+                borderRadius={'80px'}
+                border={'1.5px solid'}
+                borderColor={'brand.darkgray'}
+                bg={'brand.aliceblue'}
+                gap={'10px'}
+                cursor={'pointer'}
+              >
+                <MyImage
+                  alt="github"
+                  src={'/assets/images/company-logo/github.png'}
+                  width={20}
+                  height={20}
+                />
+                <MyText as="span" title="Login with GitHub" />
+              </Center>
             </HStack>
           </VStack>
         </VStack>
