@@ -88,8 +88,8 @@ export default function Dashboard() {
           </VStack>
 
           {/* Right Part */}
-          <VStack width={{ base: '100%', lg: '80%' }}>
-            <VStack w={{ base: '100%', lg: '90%' }} gap={'52px'}>
+          <VStack width={{ base: '100%', lg: '80%' }} pl={'40px'}>
+            <VStack w={{ base: '100%', lg: '100%' }} gap={'52px'}>
               {/* Hello Section */}
               <HStack
                 w={'full'}
