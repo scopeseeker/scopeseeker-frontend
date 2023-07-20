@@ -24,13 +24,14 @@
     "@types/react-dom": "18.2.6",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.9",
+    "formik": "^2.4.2",
+    "framer-motion": "^10.12.18",
     "next": "13.4.9",
+    "next-auth": "^4.22.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "typescript": "5.1.6",
-    "formik": "^2.4.2",
-    "yup": "^1.2.0",
-    "framer-motion": "^10.12.18"
+    "yup": "^1.2.0"
   },
   "description": "Scope Seeker is a cutting-edge web application designed to help job seekers find their dream job with ease. Whether you are a student looking for your first job or a work professional seeking new opportunities, Scope Seeker has got you covered. With Scope Seeker, you can access a vast database of job openings from big and authentic companies. You can search for job openings based on your target skills, location, and other preferences. Our algorithm ensures that you get a personalized job search experience, making it easier for you to find the right job.",
   "author": "lokeshdhakar97 <lokeshdhakar6633@gmail.com>",

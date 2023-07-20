@@ -1,3 +1,4 @@
+'use client';
 import { MyButton, MyDivider, MyIcon, MyImage, MyText } from '@/component';
 import { avatarMenuLinks } from '@/constant/linksObject';
 import {
@@ -23,17 +24,26 @@ import {
   VStack,
   useDisclosure,
 } from '@chakra-ui/react';
+import { useSession } from 'next-auth/react';
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ScopeSeekerLogo from '../logo/ScopeSeekerLogo';
+import {signOut} from 'next-auth/react';
 
 const Navbar = () => {
+  const { data: session } = useSession();
   const navHeight = { base: '60px', md: '53px' };
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [isLogin, setIsLogin] = useState(false);
   const { isOpen, onOpen, onClose, onToggle } = useDisclosure();
   const [isJobOpen, setJobOpen] = useState(false);
   const [isCompanyOpen, setCompanyOpen] = useState(false);
+
+  useEffect(() => {
+    if (session?.user) {
+      setIsLogin(true);
+    }
+  }, [session]);
 
   const handleJobClick = () => {
     setJobOpen(!isJobOpen);
@@ -340,6 +350,28 @@ const Navbar = () => {
                               </MenuItem>
                             );
                           })}
+
+                          <MenuItem
+                            _hover={{ bg: 'transparent' }}
+                            bg={'transparent'}
+                            onClick={()=> signOut()}
+                          >
+                            <HStack
+                              cursor={'pointer'}
+                              _hover={{ color: 'brand.primary' }}
+                            >
+                              <MyIcon
+                                name={'logout'}
+                                width="20px"
+                                color={'currentColor'}
+                              />
+                              <MyText
+                                as="span"
+                                title={'Logout'}
+                                color={'currentColor'}
+                              />
+                            </HStack>
+                          </MenuItem>
                         </VStack>
                       </Box>
                     </MenuList>
