@@ -82,18 +82,24 @@ const qualification = [
   'High School (10th)',
 ];
 
-const degree = [
+const degree = ['Other'];
+
+const postGraduationDegree = [
   'M.Tech/ME',
   'Integrated/Dual Degree',
+  'M.Com',
+  'M.Sc',
+  'M.A',
+  'M.Des',
+  'M.Arch',
+  'LLM',
+];
+
+const graduationDegree = [
   'B.Tech/BE',
   '1-Year MBA',
   '2-Year MBA',
   'BBA (Graduation)',
-  'M.Com.',
-  'M.Sc.',
-  'M.A.',
-  'M.Des.',
-  'M.Arch.',
   'B.com',
   'B.Sc.',
   'B.A.',
@@ -101,16 +107,16 @@ const degree = [
   'B.Arch.',
   'B.F.Tech.',
   'LLB',
-  'LLM',
-  'Other',
 ];
 
 export {
-  courseSpecializationTech,
   courseSpecializationNonTech,
-  yearOfGraduation,
-  designation,
-  sector,
-  qualification,
+  courseSpecializationTech,
   degree,
+  designation,
+  graduationDegree,
+  postGraduationDegree,
+  qualification,
+  sector,
+  yearOfGraduation,
 };

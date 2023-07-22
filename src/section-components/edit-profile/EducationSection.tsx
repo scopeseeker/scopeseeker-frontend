@@ -1,5 +1,10 @@
 import { MyButton, MyIcon, MyInput, MyText } from '@/component';
-import { degree, qualification } from '@/constant/basic-information/data';
+import {
+  degree,
+  graduationDegree,
+  postGraduationDegree,
+  qualification,
+} from '@/constant/basic-information/data';
 import { educationSchema } from '@/helpers/validationSchema';
 import {
   Collapse,
@@ -118,13 +123,34 @@ const EducationSection = () => {
                           placeholder="Enter your degree"
                           fontSize={'14px'}
                         >
-                          {degree.map((value, index) => {
-                            return (
-                              <option value={value} key={index}>
-                                {value}
-                              </option>
-                            );
-                          })}
+                          <>
+                            {values.qualification === 'PhD' &&
+                              degree.map((value, index) => {
+                                return (
+                                  <option value={value} key={index}>
+                                    {value}
+                                  </option>
+                                );
+                              })}
+
+                            {values.qualification === 'Post Graduation' &&
+                              postGraduationDegree.map((value, index) => {
+                                return (
+                                  <option value={value} key={index}>
+                                    {value}
+                                  </option>
+                                );
+                              })}
+
+                            {values.qualification === 'Graduation' &&
+                              graduationDegree.map((value, index) => {
+                                return (
+                                  <option value={value} key={index}>
+                                    {value}
+                                  </option>
+                                );
+                              })}
+                          </>
                         </Field>
                         <FormErrorMessage>{errors.degree}</FormErrorMessage>
                       </FormControl>
