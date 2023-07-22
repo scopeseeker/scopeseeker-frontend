@@ -26,7 +26,6 @@ export const authOptions: NextAuthOptions = {
               fullName: user.name,
             }),
           });
-
           if (res.ok) {
             return user;
           } else {
