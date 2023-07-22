@@ -260,12 +260,13 @@ const Navbar = () => {
                         h={'32px'}
                         cursor={'pointer'}
                         overflow={'hidden'}
+                        position={'relative'}
                       >
                         <MyImage
-                          src={'/assets/images/p12.jpg'}
+                          src={session?.user?.image || '/assets/images/p12.jpg'}
                           alt="profile"
-                          width={32}
-                          height={32}
+                          fill
+                          style={{ width: '100%', height: '100%' }}
                         />
                       </Center>
                     </MenuButton>
@@ -286,12 +287,16 @@ const Navbar = () => {
                               border={'2px'}
                               borderColor={'brand.primary'}
                               overflow={'hidden'}
+                              position={'relative'}
                             >
                               <MyImage
-                                src={'/assets/images/p12.jpg'}
+                                src={
+                                  session?.user?.image ||
+                                  '/assets/images/p12.jpg'
+                                }
                                 alt="profile"
-                                width={60}
-                                height={60}
+                                fill
+                                style={{ width: '100%', height: '100%' }}
                               />
                             </Center>
 

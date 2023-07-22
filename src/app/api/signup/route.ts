@@ -5,7 +5,7 @@ import { NextRequest, NextResponse } from 'next/server';
 export async function POST(request: NextRequest) {
   try {
     await connectMongoDB();
-    const { email, fullName } = await request.json();
+    const { email, fullName, image, phoneNumber } = await request.json();
 
     // Basic request validation
     if (!email || !fullName) {
@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Create New User
-    const newUser = await User.create({ email, fullName });
+    const newUser = await User.create({ email, fullName, image, phoneNumber });
 
     if (!newUser) {
       return NextResponse.json({
