@@ -24,6 +24,10 @@ export default function Signup() {
     onToggle();
   };
 
+  const handleFormSubmit = (values: any) => {
+    console.log(values);
+  };
+  
   return (
     <>
       <AuthLayout>
@@ -50,7 +54,7 @@ export default function Signup() {
           }}
           validationSchema={singupSchema}
           onSubmit={(values) => {
-            alert(JSON.stringify(values, null, 2));
+            handleFormSubmit(values);
           }}
         >
           {({ handleSubmit, errors, touched }) => (

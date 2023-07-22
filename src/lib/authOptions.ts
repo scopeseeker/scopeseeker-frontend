@@ -24,6 +24,7 @@ export const authOptions: NextAuthOptions = {
             body: JSON.stringify({
               email: user.email,
               fullName: user.name,
+              image: user.image,
             }),
           });
           if (res.ok) {
