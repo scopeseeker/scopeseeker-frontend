@@ -1,10 +1,12 @@
 import { MyButton, MyIcon, MyInput, MyText } from '@/component';
+import { degree, qualification } from '@/constant/basic-information/data';
 import { educationSchema } from '@/helpers/validationSchema';
 import {
   Collapse,
   FormControl,
   FormErrorMessage,
   HStack,
+  Select,
   VStack,
 } from '@chakra-ui/react';
 import { Field, Formik } from 'formik';
@@ -20,9 +22,9 @@ const EducationSection = () => {
     setShowEducation(!showEducation);
     setButtonText(showEducation ? 'Add' : 'Cancel');
   };
-  
+
   return (
-    <SectionTempalate id='education-section'>
+    <SectionTempalate id="education-section">
       <HStack justifyContent={'space-between'} w={'full'}>
         <MyText as="title" title="Education" />
         <HStack onClick={handleOpenEducation} cursor={'pointer'}>
@@ -41,7 +43,7 @@ const EducationSection = () => {
         </HStack>
       </HStack>
 
-      <VStack py={'20px'} w={'full'}  gap={'20px'}>
+      <VStack py={'20px'} w={'full'} gap={'20px'}>
         <AddBoxTemplete
           role="Sagar Institute of Research & Technology (SIRT), Bhopal "
           companyImage="/assets/images/company-logo/amazon.png"
@@ -65,57 +67,83 @@ const EducationSection = () => {
             fromYear: '',
             toYear: '',
             percentage: '',
-            cgpa: '',
             specialization: '',
-            university: '',
             country: 'India',
             state: '',
             city: '',
             institute: '',
+            other: '',
           }}
           validationSchema={educationSchema}
           onSubmit={(values) => {
             alert(JSON.stringify(values, null, 2));
           }}
         >
-          {({ errors, touched, handleSubmit, resetForm }) => (
+          {({ errors, touched, handleSubmit, resetForm, values }) => (
             <form onSubmit={handleSubmit} style={{ width: '100%' }}>
               <VStack gap={'22px'} w={'full'}>
-                <HStack
-                  w={'full'}
-                  flexDir={{ base: 'column', md: 'row' }}
-                  spacing={0}
-                  gap={'22px'}
-                  alignItems={'flex-start'}
-                >
+                <VStack w={'full'} alignItems={'flex-start'}>
+                  <MyText as="span" title="Qualification" />
                   <FormControl
                     isInvalid={!!errors.qualification && touched.qualification}
                   >
                     <Field
-                      as={MyInput}
-                      labelTitle="Qualification"
+                      as={Select}
                       name="qualification"
-                      leftElement={<MyIcon name="job" />}
-                      type="text"
                       placeholder="Enter your qualification"
-                      border={errors.qualification && '1px solid red'}
-                    />
+                      fontSize={'14px'}
+                    >
+                      {qualification.map((value, index) => {
+                        return (
+                          <option value={value} key={index}>
+                            {value}
+                          </option>
+                        );
+                      })}
+                    </Field>
                     <FormErrorMessage>{errors.qualification}</FormErrorMessage>
                   </FormControl>
+                </VStack>
 
-                  <FormControl isInvalid={!!errors.degree && touched.degree}>
+                {values.qualification !== 'Intermediate (12th)' &&
+                  values.qualification !== 'High School (10th)' && (
+                    <VStack w={'full'} alignItems={'flex-start'}>
+                      <MyText as="span" title="Degree" />
+                      <FormControl
+                        isInvalid={!!errors.degree && touched.degree}
+                      >
+                        <Field
+                          as={Select}
+                          name="degree"
+                          placeholder="Enter your degree"
+                          fontSize={'14px'}
+                        >
+                          {degree.map((value, index) => {
+                            return (
+                              <option value={value} key={index}>
+                                {value}
+                              </option>
+                            );
+                          })}
+                        </Field>
+                        <FormErrorMessage>{errors.degree}</FormErrorMessage>
+                      </FormControl>
+                    </VStack>
+                  )}
+
+                {values.degree === 'Other' && (
+                  <FormControl isInvalid={!!errors.other && touched.other}>
                     <Field
                       as={MyInput}
-                      border={errors.degree && '1px solid red'}
-                      labelTitle="Degree"
-                      name="degree"
-                      leftElement={<MyIcon name="fresher" />}
+                      labelTitle="Other"
+                      leftElement={<MyIcon name="college" />}
                       type="text"
-                      placeholder="Enter your degree"
+                      placeholder="Enter your Degree"
+                      name="other"
                     />
-                    <FormErrorMessage>{errors.degree}</FormErrorMessage>
+                    <FormErrorMessage>{errors.other}</FormErrorMessage>
                   </FormControl>
-                </HStack>
+                )}
 
                 <HStack
                   w={'full'}
@@ -166,7 +194,7 @@ const EducationSection = () => {
                     <Field
                       as={MyInput}
                       border={errors.percentage && '1px solid red'}
-                      labelTitle="Percentage"
+                      labelTitle="Percentage/CGPA"
                       leftElement={<MyIcon name="college" />}
                       type="text"
                       placeholder="Enter your percentage"
@@ -174,27 +202,7 @@ const EducationSection = () => {
                     />
                     <FormErrorMessage>{errors.percentage}</FormErrorMessage>
                   </FormControl>
-                  <FormControl isInvalid={!!errors.cgpa && touched.cgpa}>
-                    <Field
-                      as={MyInput}
-                      border={errors.cgpa && '1px solid red'}
-                      labelTitle="CGPA"
-                      leftElement={<MyIcon name="company" />}
-                      type="text"
-                      placeholder="Enter your cgpa"
-                      name="cgpa"
-                    />
-                    <FormErrorMessage>{errors.cgpa}</FormErrorMessage>
-                  </FormControl>
-                </HStack>
 
-                <HStack
-                  w={'full'}
-                  flexDir={{ base: 'column', md: 'row' }}
-                  spacing={0}
-                  gap={'22px'}
-                  alignItems={'flex-start'}
-                >
                   <FormControl
                     isInvalid={
                       !!errors.specialization && touched.specialization
@@ -202,7 +210,7 @@ const EducationSection = () => {
                   >
                     <Field
                       as={MyInput}
-                      border={errors.cgpa && '1px solid red'}
+                      border={errors.specialization && '1px solid red'}
                       labelTitle="Specialization"
                       leftElement={<MyIcon name="company" />}
                       type="text"
@@ -210,21 +218,6 @@ const EducationSection = () => {
                       name="specialization"
                     />
                     <FormErrorMessage>{errors.specialization}</FormErrorMessage>
-                  </FormControl>
-
-                  <FormControl
-                    isInvalid={!!errors.university && touched.university}
-                  >
-                    <Field
-                      as={MyInput}
-                      border={errors.university && '1px solid red'}
-                      labelTitle="University "
-                      leftElement={<MyIcon name="company" />}
-                      type="text"
-                      placeholder="Enter your university"
-                      name="university"
-                    />
-                    <FormErrorMessage>{errors.university}</FormErrorMessage>
                   </FormControl>
                 </HStack>
 
@@ -242,8 +235,6 @@ const EducationSection = () => {
                   />
                   <FormErrorMessage>{errors.institute}</FormErrorMessage>
                 </FormControl>
-
-               
 
                 <HStack
                   flexDir={{ base: 'column', md: 'row' }}
@@ -293,7 +284,6 @@ const EducationSection = () => {
                 </HStack>
                 <HStack w={'full'} flexWrap={'wrap'} spacing={0} gap={'12px'}>
                   <MyButton title="Submit" px="50px" type={'submit'} />
-                 
                 </HStack>
               </VStack>
             </form>

@@ -1,4 +1,8 @@
 import { MyButton, MyIcon, MyInput, MyText, RadioButton } from '@/component';
+import {
+  courseSpecializationTech,
+  yearOfGraduation,
+} from '@/constant/basic-information/data';
 import { editProfileSchema } from '@/helpers/validationSchema';
 import {
   FormControl,
@@ -223,34 +227,12 @@ const BasicInformationSection = () => {
                     as={Select}
                   >
                     {selectedDomain === 'Tech'
-                      ? [
-                          'Aerospace',
-                          'Automotive',
-                          'Biotechnology',
-                          'Chemical',
-                          'Civil',
-                          'Electrical',
-                          'Electronics and Communication',
-                          'Information Technology',
-                          'Instrument',
-                          'Other',
-                          'Not Applicable',
-                        ].map((value, index) => (
+                      ? courseSpecializationTech.map((value, index) => (
                           <option value={value} key={index}>
                             {value}
                           </option>
                         ))
-                      : [
-                          'Arts',
-                          'Business Administration',
-                          'Economics',
-                          'Education',
-                          'Languages',
-                          'Law',
-                          'Social Sciences',
-                          'Other',
-                          'Not Applicable',
-                        ].map((value, index) => (
+                      : courseSpecializationTech.map((value, index) => (
                           <option value={value} key={index}>
                             {value}
                           </option>
@@ -276,15 +258,13 @@ const BasicInformationSection = () => {
                     name="yearOfGraduation"
                     as={Select}
                   >
-                    {['2017', '2018', '2019', '2020', '2021', '2022'].map(
-                      (value, index) => {
-                        return (
-                          <option value={value} key={index}>
-                            {value}
-                          </option>
-                        );
-                      },
-                    )}
+                    {yearOfGraduation.map((value, index) => {
+                      return (
+                        <option value={value} key={index}>
+                          {value}
+                        </option>
+                      );
+                    })}
                   </Field>
                   <FormErrorMessage>{errors.yearOfGraduation}</FormErrorMessage>
                 </FormControl>
