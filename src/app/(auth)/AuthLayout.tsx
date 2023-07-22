@@ -45,7 +45,7 @@ export default function AuthLayout({
       {/* Left Part */}
       <VStack
         w={{ base: '100%', md: '40%', lg: '30%' }}
-        h={{ base: 'fit-content', md: 'full' }}
+        h={{ base: 'fit-content', md: '100vh' }}
         p={'10px'}
       >
         <VStack
@@ -59,7 +59,7 @@ export default function AuthLayout({
         >
           <ScopeSeekerLogo color="brand.white" />
 
-          <Center flexDirection={'column'} w={'full'} h={'100%'} gap={'32px'}>
+          <Center flexDirection={'column'} w={'full'} pt={'52px'} h={'100%'} gap={'12px'} justifyContent={'space-between'}>
             <MainHeading
               title={authPageContent.login.title}
               headColor="brand.white"

@@ -24,11 +24,10 @@ import {
   VStack,
   useDisclosure,
 } from '@chakra-ui/react';
-import { useSession } from 'next-auth/react';
+import { signOut, useSession } from 'next-auth/react';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import ScopeSeekerLogo from '../logo/ScopeSeekerLogo';
-import {signOut} from 'next-auth/react';
 
 const Navbar = () => {
   const { data: session } = useSession();
@@ -354,7 +353,7 @@ const Navbar = () => {
                           <MenuItem
                             _hover={{ bg: 'transparent' }}
                             bg={'transparent'}
-                            onClick={()=> signOut()}
+                            onClick={() => signOut({ callbackUrl: '/login' })}
                           >
                             <HStack
                               cursor={'pointer'}
