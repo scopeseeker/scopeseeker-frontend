@@ -1,4 +1,5 @@
 import { MyButton, MyIcon, MyInput, MyText } from '@/component';
+import { designation, sector } from '@/constant/basic-information/data';
 import { workexpericenceSchema } from '@/helpers/validationSchema';
 import {
   Collapse,
@@ -132,27 +133,7 @@ const WorkExperienceSection = () => {
                         placeholder="Type your designation"
                         fontSize={'14px'}
                       >
-                        {[
-                          'Product Manager',
-                          'Operations Analyst',
-                          'UX/UI Designer',
-                          'Content Writer',
-                          'Research Analyst',
-                          'Systems Administrator',
-                          'Chief Executive Officer (CEO)',
-                          'Chief Financial Officer (CFO)',
-                          'Chief Financial Officer (CFO)',
-                          'Chief Technology Officer (CTO)',
-                          'Chief Information Officer (CIO)',
-                          'Director',
-                          'Manager',
-                          'Project Manager',
-                          'Software Engineer',
-                          'Data Scientist',
-                          'Marketing Specialist',
-                          'Sales Representative',
-                          'Financial Analyst',
-                        ].map((value, index) => {
+                        {designation.map((value, index) => {
                           return (
                             <option value={value} key={index}>
                               {value}
@@ -186,27 +167,7 @@ const WorkExperienceSection = () => {
                         placeholder="Type your Sector"
                         fontSize={'14px'}
                       >
-                        {[
-                          'Blockchain and Cryptocurrency',
-                          'Aviation and Airlines',
-                          'Web Development and Design',
-                          'Wildlife and Conservation',
-                          'Zoology and Animal Care',
-                          'Artificial Intelligence and Machine Learning',
-                          'Cybersecurity',
-                          'Digital Marketing',
-                          'E-learning and Online Education',
-                          'Financial Technology (Fintech)',
-                          'Government and Policy',
-                          'Health and Wellness',
-                          'Intellectual Property',
-                          'Investment and Asset Management',
-                          'Medical Devices',
-                          'Nanotechnology',
-                          'Occupational Therapy',
-                          'Public Relations',
-                          'Quality Control and Assurance',
-                        ].map((value, index) => {
+                        {sector.map((value, index) => {
                           return (
                             <option value={value} key={index}>
                               {value}

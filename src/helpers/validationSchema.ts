@@ -92,15 +92,14 @@ export const educationSchema = Yup.object({
   qualification: stringSchema('Qualification', 50),
   institute: stringSchema('Institute', 50),
   degree: stringSchema('Degree', 50),
-  percentage: Yup.number().required('Percentage is required'),
-  cgpa: Yup.number().required('CGPA is required'),
+  percentage: Yup.number().required('Percentage/CGPA is required'),
   fromYear: Yup.string().required('Please select a year'),
   toYear: Yup.string().required('Please select a year'),
   specialization: stringSchema('Specialization', 50),
-  university: stringSchema('University', 50),
   country: stringSchema('Country', 50),
   state: stringSchema('State', 50),
   city: stringSchema('City', 50),
+  other: stringSchema('Other', 50),
 
   // percentage: Yup.number()
   //   .required('Percentage is required')
