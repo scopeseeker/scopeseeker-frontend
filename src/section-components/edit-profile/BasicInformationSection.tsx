@@ -1,5 +1,6 @@
 import { MyButton, MyIcon, MyInput, MyText, RadioButton } from '@/component';
 import {
+  courseSpecializationNonTech,
   courseSpecializationTech,
   yearOfGraduation,
 } from '@/constant/basic-information/data';
@@ -13,7 +14,6 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import { Field, Formik } from 'formik';
-import { ChangeEvent, useState } from 'react';
 import SectionTempalate from './templates/SectionTemplate';
 
 interface FormData {
@@ -33,11 +33,6 @@ interface FormData {
 }
 
 const BasicInformationSection = () => {
-  const [selectedDomain, setSelectDomain] = useState('Tech');
-
-  const handleDomainChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setSelectDomain(event.target.value);
-  };
   return (
     <SectionTempalate id="basic-section">
       <MyText as="title" title="Basic Information" />
@@ -63,7 +58,7 @@ const BasicInformationSection = () => {
           alert(JSON.stringify(values, null, 2));
         }}
       >
-        {({ errors, touched, handleSubmit }) => (
+        {({ errors, touched, handleSubmit, values }) => (
           <form onSubmit={handleSubmit} style={{ width: '100%' }}>
             <VStack w={'full'} alignItems={'flex-start'} gap={'22px'}>
               <FormControl isInvalid={!!errors.fullName && touched.fullName}>
@@ -193,7 +188,6 @@ const BasicInformationSection = () => {
                     as={RadioButton}
                     name="domain"
                     options={['Tech', 'Non-Tech']}
-                    onChange={handleDomainChange}
                   />
                 </VStack>
                 <FormErrorMessage>{errors.domain}</FormErrorMessage>
@@ -226,13 +220,13 @@ const BasicInformationSection = () => {
                     name="courseSpecialization"
                     as={Select}
                   >
-                    {selectedDomain === 'Tech'
+                    {values.domain === 'Tech'
                       ? courseSpecializationTech.map((value, index) => (
                           <option value={value} key={index}>
                             {value}
                           </option>
                         ))
-                      : courseSpecializationTech.map((value, index) => (
+                      : courseSpecializationNonTech.map((value, index) => (
                           <option value={value} key={index}>
                             {value}
                           </option>
