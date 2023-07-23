@@ -1,5 +1,5 @@
 import { MyButton, MyIcon, MyInput, MyText } from '@/component';
-import { designation, sector } from '@/constant/basic-information/data';
+import { designation, sector } from '@/constant/editProfileData';
 import { workexpericenceSchema } from '@/helpers/validationSchema';
 import {
   Collapse,

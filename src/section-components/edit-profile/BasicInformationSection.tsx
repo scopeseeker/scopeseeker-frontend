@@ -3,7 +3,7 @@ import {
   courseSpecializationNonTech,
   courseSpecializationTech,
   yearOfGraduation,
-} from '@/constant/basic-information/data';
+} from '@/constant/editProfileData';
 import { editProfileSchema } from '@/helpers/validationSchema';
 import {
   FormControl,

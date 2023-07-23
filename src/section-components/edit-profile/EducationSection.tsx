@@ -4,7 +4,7 @@ import {
   graduationDegree,
   postGraduationDegree,
   qualification,
-} from '@/constant/basic-information/data';
+} from '@/constant/editProfileData';
 import { educationSchema } from '@/helpers/validationSchema';
 import {
   Collapse,
