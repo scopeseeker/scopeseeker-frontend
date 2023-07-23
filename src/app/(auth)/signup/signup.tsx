@@ -1,5 +1,6 @@
 'use client';
 import { MyButton, MyIcon, MyInput, MyText } from '@/component';
+import { useCustomToast } from '@/helpers/toast';
 import { singupSchema } from '@/helpers/validationSchema';
 import { OtpVerifyBox } from '@/section-components';
 import {
@@ -18,16 +19,48 @@ import AuthLayout from '../AuthLayout';
 export default function Signup() {
   const [isOtpBoxOpen, setIsOtpBoxOpen] = useState(false);
   const { isOpen, onToggle, onClose } = useDisclosure();
+  const [isLoading, setIsLoading] = useState(false);
+  const toast = useCustomToast();
 
   const handleClickOnBtn = () => {
     setIsOtpBoxOpen(!isOtpBoxOpen);
     onToggle();
   };
 
-  const handleFormSubmit = (values: any) => {
-    console.log(values);
+  const signupWithEmail = async (values: any) => {
+    values.phoneNumber = values.phoneNumber?.toString();
+    try {
+      setIsLoading(true);
+      const newUser = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/signup`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      });
+
+      if (!newUser.ok) {
+        throw new Error('Something went wrong.');
+      }
+
+      toast({
+        status: 'success',
+        title: 'Account Created.',
+        description: 'Please verify your email address.',
+      });
+    } catch (error: any) {
+      console.log(error);
+      toast({
+        status: 'error',
+        title: 'Something went wrong.',
+        description: error.message,
+      });
+    } finally {
+      setIsLoading(false);
+      handleClickOnBtn();
+    }
   };
-  
+
   return (
     <>
       <AuthLayout>
@@ -48,13 +81,13 @@ export default function Signup() {
           initialValues={{
             fullName: '',
             email: '',
-            number: '',
+            phoneNumber: '',
             password: '',
             confirmPassword: '',
           }}
           validationSchema={singupSchema}
           onSubmit={(values) => {
-            handleFormSubmit(values);
+            signupWithEmail(values);
           }}
         >
           {({ handleSubmit, errors, touched }) => (
@@ -96,17 +129,21 @@ export default function Signup() {
                     />
                     <FormErrorMessage>{errors.email}</FormErrorMessage>
                   </FormControl>
-                  <FormControl isInvalid={!!errors.number && touched.number}>
+                  <FormControl
+                    isInvalid={!!errors.phoneNumber && touched.phoneNumber}
+                  >
                     <Field
                       as={MyInput}
-                      name="number"
+                      name="phoneNumber"
                       type="number"
                       labelTitle="Phone Number"
                       leftElement={<MyIcon name={'phone'} />}
-                      border={errors.number ? '1.5px solid red' : 'gray.200'}
+                      border={
+                        errors.phoneNumber ? '1.5px solid red' : 'gray.200'
+                      }
                       placeholder={'XXXXXX8879'}
                     />
-                    <FormErrorMessage>{errors.number}</FormErrorMessage>
+                    <FormErrorMessage>{errors.phoneNumber}</FormErrorMessage>
                   </FormControl>
                 </HStack>
                 <HStack
@@ -130,7 +167,9 @@ export default function Signup() {
                     <FormErrorMessage>{errors.password}</FormErrorMessage>
                   </FormControl>
                   <FormControl
-                    isInvalid={!!errors.password && touched.password}
+                    isInvalid={
+                      !!errors.confirmPassword && touched.confirmPassword
+                    }
                   >
                     <Field
                       as={MyInput}
@@ -152,7 +191,8 @@ export default function Signup() {
                 <MyButton
                   title="Signup"
                   px={'42px'}
-                  onClick={handleClickOnBtn}
+                  // onClick={handleClickOnBtn}
+                  isLoading={isLoading}
                   type={'submit'}
                 />
               </VStack>

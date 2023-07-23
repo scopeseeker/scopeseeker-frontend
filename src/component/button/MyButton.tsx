@@ -1,5 +1,5 @@
 import { IMyButtonProps } from '@/inteface/component-interface';
-import { Center } from '@chakra-ui/react';
+import { Button, Center } from '@chakra-ui/react';
 import MyText from '../text/MyText';
 
 const MyButton = ({
@@ -14,7 +14,7 @@ const MyButton = ({
 }: IMyButtonProps) => {
   return (
     <Center
-      as={'button'}
+      as={Button}
       borderRadius={borderRadius || '50px'}
       h={h || '36px'}
       bg={variant === 'outline' ? 'transparent' : 'brand.primary'}

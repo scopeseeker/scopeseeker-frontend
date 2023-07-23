@@ -25,12 +25,18 @@ export const authOptions: NextAuthOptions = {
               email: user.email,
               fullName: user.name,
               image: user.image,
+              phoneNumber: '0000000000',
+              password: ' ',
             }),
           });
-          if (res.ok) {
+
+          const data = await res.json();
+
+          if (data.status === 409 || data.status === 201) {
             return user;
           } else {
-            return false;
+            const error = `/login?error=${data.message}`;
+            return error;
           }
         } catch (error) {
           console.log(error);

@@ -1,11 +1,13 @@
 import connectMongoDB from '@/lib/db';
 import User from '@/models/userSchema';
+import bcryptjs from 'bcryptjs';
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(request: NextRequest) {
   try {
     await connectMongoDB();
-    const { email, fullName, image, phoneNumber } = await request.json();
+    const { email, fullName, image, phoneNumber, password } =
+      await request.json();
 
     // Basic request validation
     if (!email || !fullName) {
@@ -24,9 +26,16 @@ export async function POST(request: NextRequest) {
         message: 'User already exists',
       });
     }
-
+    const hashedPassword = await bcryptjs.hash(password, 12);
+      
     // Create New User
-    const newUser = await User.create({ email, fullName, image, phoneNumber });
+    const newUser = await User.create({
+      email,
+      fullName,
+      image,
+      phoneNumber,
+      password: hashedPassword,
+    });
 
     if (!newUser) {
       return NextResponse.json({
