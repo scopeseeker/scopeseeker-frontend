@@ -1,23 +1,9 @@
 'use client';
-import {
-  Filter,
-  Layout,
-  MyButton,
-  MyDivider,
-  MyIcon,
-  MyText,
-} from '@/component';
-import { companyCardFields, companyFilter } from '@/constant/constantFields';
+import { Filter, Layout, MyIcon, MyText } from '@/component';
+import { companyCardFields } from '@/constant/constantFields';
+import { companyFilter } from '@/constant/filterConstant';
 import { MyCompanyCard, PageHeader } from '@/section-components';
-import {
-  Box,
-  Center,
-  Grid,
-  GridItem,
-  HStack,
-  Input,
-  VStack,
-} from '@chakra-ui/react';
+import { Box, Center, Grid, GridItem, HStack, VStack } from '@chakra-ui/react';
 import { useRef, useState } from 'react';
 
 export default function CompaniesPage() {
@@ -40,7 +26,6 @@ export default function CompaniesPage() {
           mx={'auto'}
           spacing={0}
         >
-
           <HStack
             maxW={'90%'}
             bg={'brand.aliceblue'}
@@ -89,21 +74,20 @@ export default function CompaniesPage() {
                 <MyText
                   as={'span'}
                   color="brand.white"
-                  title={'Space'}
+                  title={'Indian MNCs'}
                   fontWeight={500}
                 />
               </Center>
               <>
                 {[
-                  'Indian MNCs',
                   'Fortune 500',
                   'FinTech',
+                  'IT',
                   'Unicron',
-                  'Healthcare',
-                  'Information',
-                  'Unicron',
-                  'Healthcare',
-                  'Information',
+                  'Startups',
+                  'Product Based',
+                  'Service Based',
+                  'Consulting',
                 ].map((item, index) => {
                   return (
                     <Center
