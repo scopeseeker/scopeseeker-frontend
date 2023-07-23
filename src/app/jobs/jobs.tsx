@@ -1,6 +1,7 @@
 'use client';
 import { Filter, Layout, MyIcon, MyText } from '@/component';
-import { jobCardFields, jobsFilter } from '@/constant/constantFields';
+import { jobCardFields } from '@/constant/constantFields';
+import { jobsFilter } from '@/constant/filterConstant';
 import { MyJobCard, PageHeader } from '@/section-components';
 import {
   Box,
