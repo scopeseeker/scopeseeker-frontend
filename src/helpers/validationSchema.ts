@@ -39,7 +39,7 @@ export const singupSchema = Yup.object({
   password: passwordSchema,
   confirmPassword: confirmPasswordSchema,
   fullName: fullNameSchema,
-  number: numberSchema.required('Phone number is required'),
+  phoneNumber: numberSchema.required('Phone number is required'),
 });
 
 export const requestCompanySchema = Yup.object({

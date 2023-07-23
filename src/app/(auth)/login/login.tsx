@@ -10,8 +10,25 @@ import {
 } from '@chakra-ui/react';
 import { Field, Formik } from 'formik';
 import AuthUperLayout from '../AuthLayout';
+import { useCustomToast } from '@/helpers/toast';
+import { useSearchParams } from 'next/navigation';
+import { useEffect } from 'react';
 
 export default function Login() {
+  const toast = useCustomToast();
+  const searchParams = useSearchParams();
+  const error = searchParams.get('error');
+
+  useEffect(() => {
+    if (error) {
+      toast({
+        status: 'error',
+        title: 'Something went wrong.',
+        description: error,
+      });
+    }
+  }, []);
+
   return (
     <AuthUperLayout>
       <Box>
@@ -22,7 +39,7 @@ export default function Login() {
             as="link"
             title="Signup"
             color="brand.primary"
-            href='/signup'
+            href="/signup"
             fontWeight={500}
           />
         </HStack>

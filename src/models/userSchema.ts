@@ -4,7 +4,8 @@ interface IUserSchema extends mongoose.Document {
   email: string;
   fullName: string;
   image?: string;
-  phoneNumber: string;
+  phoneNumber?: string;
+  password?: string;
 }
 
 const userSchema = new Schema<IUserSchema>(
@@ -27,8 +28,7 @@ const userSchema = new Schema<IUserSchema>(
     image: {
       type: String,
       required: true,
-      default: ' '
-
+      default: ' ',
     },
     phoneNumber: {
       type: String,
@@ -44,9 +44,15 @@ const userSchema = new Schema<IUserSchema>(
         },
       },
     },
+    password: {
+      type: String,
+      required: true,
+      default: ' ',
+    },
   },
   { timestamps: true },
 );
 
-const User = models.User<IUserSchema> || mongoose.model<IUserSchema>('User', userSchema);
+const User =
+  models.User<IUserSchema> || mongoose.model<IUserSchema>('User', userSchema);
 export default User;
