@@ -6,6 +6,7 @@ interface IUserSchema extends mongoose.Document {
   image?: string;
   phoneNumber?: string;
   password?: string;
+  isVerified?: boolean;
 }
 
 const userSchema = new Schema<IUserSchema>(
@@ -48,6 +49,9 @@ const userSchema = new Schema<IUserSchema>(
       type: String,
       required: true,
       default: ' ',
+    },
+    isVerified: {
+      type: Boolean,
     },
   },
   { timestamps: true },
