@@ -190,10 +190,8 @@ export default function Signup() {
 
                 <MyButton
                   title="Signup"
-                  px={'42px'}
-                  // onClick={handleClickOnBtn}
-                  isLoading={isLoading}
                   type={'submit'}
+                  isLoading={isLoading}
                 />
               </VStack>
             </form>

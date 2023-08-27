@@ -1,10 +1,15 @@
 'use client';
+import { MyButton } from '@/component';
 import { HStack } from '@chakra-ui/react';
 import Link from 'next/link';
 
 const Page = () => {
   return (
     <div>
+      <HStack p={'30px'}>
+        <MyButton title="Submit" variant="outline" />
+      </HStack>
+
       <HStack gap={'32px'} p={'30px'} flexWrap={'wrap'}>
         <Link href={'/about-us'}>about-us</Link>
         <Link href={'/blogs'}>Blog</Link>

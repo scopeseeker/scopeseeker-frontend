@@ -180,13 +180,7 @@ export default function RequestPage() {
                         </VStack>
                       </FormControl>
 
-                      <MyButton
-                        title="Submit"
-                        w={{ base: '100%', md: 'initial' }}
-                        px={'32px'}
-                        disabled={isSubmitting}
-                        type={'submit'}
-                      />
+                      <MyButton title="Submit" type={'submit'} />
                     </VStack>
                   </form>
                 )}

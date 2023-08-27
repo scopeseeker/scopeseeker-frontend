@@ -36,19 +36,10 @@ const SignupSection = () => {
               gap={'15px'}
             >
               <Link href={'/signup'}>
-                <MyButton
-                  title="Register a New Account"
-                  px="50px"
-                  py={'20px'}
-                />
+                <MyButton title="Register a New Account" />
               </Link>
               <Link href={'/login'}>
-                <MyButton
-                  title="Sign In to Your Account"
-                  variant="outline"
-                  px="50px"
-                  py={'20px'}
-                />
+                <MyButton title="Sign In to Your Account" variant="outline" />
               </Link>
             </HStack>
           </VStack>

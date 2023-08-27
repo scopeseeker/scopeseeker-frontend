@@ -1,5 +1,6 @@
 'use client';
 import { MyButton, MyIcon, MyInput, MyText } from '@/component';
+import { useCustomToast } from '@/helpers/toast';
 import { loginSchema } from '@/helpers/validationSchema';
 import {
   Box,
@@ -9,10 +10,9 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import { Field, Formik } from 'formik';
-import AuthUperLayout from '../AuthLayout';
-import { useCustomToast } from '@/helpers/toast';
 import { useSearchParams } from 'next/navigation';
 import { useEffect } from 'react';
+import AuthUperLayout from '../AuthLayout';
 
 export default function Login() {
   const toast = useCustomToast();
@@ -82,7 +82,7 @@ export default function Login() {
                 <FormErrorMessage>{errors.password}</FormErrorMessage>
               </FormControl>
               <HStack>
-                <MyButton title="Login" px={'42px'} type={'submit'} />
+                <MyButton title="Login" />
                 <MyButton title="Forget Password" variant="outline" />
               </HStack>
             </VStack>

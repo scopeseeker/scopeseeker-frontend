@@ -13,7 +13,7 @@ const HowWorks = () => {
           flexDirection={{ base: 'column', md: 'row' }}
           gap={'30px'}
           w={'full'}
-          flexWrap={{sm: 'wrap', lg: 'nowrap'}}
+          flexWrap={{ sm: 'wrap', lg: 'nowrap' }}
         >
           <HowBox>
             <Box color={'brand.black'}>
@@ -65,7 +65,7 @@ export default HowWorks;
 const HowBox = ({ children }: any) => {
   return (
     <Center
-      w={{ base: '100%',sm: '70%', md: '320px' }}
+      w={{ base: '100%', sm: '70%', md: '320px' }}
       h={'150px'}
       border={'1px solid'}
       borderColor={'brand.lightgray'}

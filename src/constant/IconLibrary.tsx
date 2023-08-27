@@ -136,7 +136,7 @@ export const IconData: TIconData = {
   ),
   minus: (
     <>
-   <path d="M5 12l14 0"></path>
+      <path d="M5 12l14 0"></path>
     </>
   ),
   tools: (

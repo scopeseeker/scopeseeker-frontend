@@ -78,8 +78,8 @@ export default function MoreJobs() {
               </VStack>
 
               <HStack pb={'30px'} display={{ base: 'none', md: 'flex' }}>
-                <MyButton title="Apply" px={'36px'} />
-                <MyButton title="Save" variant="outline" px={'36px'} />
+                <MyButton title="Apply" />
+                <MyButton title="Save" variant="outline" />
               </HStack>
             </HStack>
           </VStack>
@@ -296,18 +296,8 @@ export default function MoreJobs() {
 
               {/* Buttons */}
               <HStack w={'full'}>
-                <MyButton
-                  title="Apply"
-                  py={{ base: '24px', md: '18px' }}
-                  w={'100%'}
-                />
-                <MyButton
-                  w={'100%'}
-                  display={{ base: 'flex', md: 'none' }}
-                  title="Save"
-                  variant="outline"
-                  py={'24px'}
-                />
+                <MyButton title="Apply" />
+                <MyButton display={{ base: 'flex', md: 'none' }} title="Save" />
               </HStack>
 
               {/* Share Job */}
@@ -351,13 +341,7 @@ export default function MoreJobs() {
                   as="span"
                   title="Stay ahead in your tech career with our exclusive WhatsApp group. Get instant job updates, curated tech news, career tips, and network with industry professionals."
                 />
-                <MyButton
-                  title="Join Now"
-                  bg={'brand.white'}
-                  color={'green.400'}
-                  px={'42px'}
-                  fontWeight={600}
-                />
+                <MyButton title="Join Now" />
               </Center>
             </VStack>
           </HStack>

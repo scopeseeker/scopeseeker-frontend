@@ -529,7 +529,7 @@ const WhyBox = ({
           borderRadius={'full'}
           borderEndEndRadius={'0px'}
         >
-          <MyIcon color={color} name={iconName} width={'80px'} height='50px' />
+          <MyIcon color={color} name={iconName} width={'80px'} height="50px" />
         </Center>
       </VStack>
     </VStack>

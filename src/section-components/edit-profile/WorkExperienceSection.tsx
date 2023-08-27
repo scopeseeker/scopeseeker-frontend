@@ -286,8 +286,8 @@ const WorkExperienceSection = () => {
                   </FormControl>
                 </HStack>
                 <HStack w={'full'} flexWrap={'wrap'} spacing={0} gap={'12px'}>
-                  <MyButton title="Submit" px="50px" type={'submit'} />
-                  <MyButton title="Cancel" px="50px" variant="outline" />
+                  <MyButton title="Submit" type={'submit'} />
+                  <MyButton title="Cancel" variant="outline" />
                 </HStack>
               </VStack>
             </form>

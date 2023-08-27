@@ -22,7 +22,7 @@ const SkillsSection = () => {
     setItems(updatedItems);
   };
   return (
-    <SectionTempalate id='skills-section'>
+    <SectionTempalate id="skills-section">
       <MyText as="title" title="Skills" />
       <VStack alignItems={'flex-start'} w={'full'}>
         <Box w={'full'}>
@@ -38,7 +38,7 @@ const SkillsSection = () => {
               value={inputText}
               onChange={handleInputChange}
               leftElement={<MyIcon name="college" />}
-              name='skills'
+              name="skills"
             />
             <Box w={{ base: '100%', md: '20%' }}>
               <MyButton title="Add item" onClick={handleAddItem} />

@@ -9,13 +9,9 @@ export interface IMyBadge {
 
 export interface IMyButtonProps {
   title: string;
-  borderRadius?: string;
   variant?: 'outline' | 'solid';
-  px?: string;
-  h?: string;
-  cursor?: string;
-  w?: string | any;
-  type?: 'submit' | 'button' | 'reset';
+  type?: 'button' | 'submit' | 'reset';
+  isLoading?: boolean;
   [key: string]: any;
 }
 
@@ -110,7 +106,8 @@ export interface IMyText {
   fontWeight?: number;
   fontSize?:
     | { base: string; md: string }
-    | { base: string; md: string; '2xl': string } | any;
+    | { base: string; md: string; '2xl': string }
+    | any;
   [key: string]: any;
 }
 

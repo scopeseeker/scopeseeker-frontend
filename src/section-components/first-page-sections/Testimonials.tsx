@@ -9,11 +9,7 @@ const Testimonials = () => {
           title={'Join Our Thriving Community'}
           subTitle={'See How Our Job Website Has Changed Lives'}
         />
-        <HStack
-          w={'full'}
-          mt={'100px'}
-          gap={{ base: '70px', sm: '20px' }}
-        >
+        <HStack w={'full'} mt={'100px'} gap={{ base: '70px', sm: '20px' }}>
           <Grid
             templateColumns={{
               base: 'repeat(1, 1fr)',

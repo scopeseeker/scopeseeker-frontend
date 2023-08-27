@@ -1,46 +1,57 @@
 import { IMyButtonProps } from '@/inteface/component-interface';
-import { Button, Center } from '@chakra-ui/react';
-import MyText from '../text/MyText';
+import { Button } from '@chakra-ui/react';
 
 const MyButton = ({
   title,
-  borderRadius,
   variant = 'solid',
-  px = '16px',
-  h,
   type = 'button',
-  cursor = 'pointer',
+  isLoading = false,
   ...rest
 }: IMyButtonProps) => {
   return (
-    <Center
-      as={Button}
-      borderRadius={borderRadius || '50px'}
-      h={h || '36px'}
-      bg={variant === 'outline' ? 'transparent' : 'brand.primary'}
-      borderColor={variant === 'outline' ? 'brand.darkgray' : 'transparent'}
-      borderWidth="1px"
-      borderStyle="solid"
-      _hover={
-        variant === 'outline'
-          ? {
-              bg: 'transparent',
-              borderColor: 'brand.primary',
-              color: 'brand.primary',
-            }
-          : { bg: 'brand.secondary' }
-      }
-      _active={
-        variant === 'outline' ? { bg: 'transparent' } : { bg: 'brand.ternary' }
-      }
-      px={px}
-      cursor={cursor}
+    <Button
+      fontSize={'14px'}
+      borderRadius={'50px'}
+      fontWeight={500}
+      variant={variant}
+      px={'28px'}
+      colorScheme="messenger"
       type={type}
-      color={variant === 'outline' ? 'brand.darkgray' : 'brand.white'}
+      isLoading={isLoading}
       {...rest}
     >
-      <MyText as="span" color={'currentColor'} title={title} />
-    </Center>
+      {title}
+    </Button>
+
+    // Old Button Type
+    // <Center
+    //   as={Button}
+    //   borderRadius={borderRadius || '50px'}
+    //   h={h || '36px'}
+    //   bg={variant === 'outline' ? 'transparent' : 'brand.primary'}
+    //   borderColor={variant === 'outline' ? 'brand.darkgray' : 'transparent'}
+    //   borderWidth="1px"
+    //   borderStyle="solid"
+    //   _hover={
+    //     variant === 'outline'
+    //       ? {
+    //           bg: 'transparent',
+    //           borderColor: 'brand.primary',
+    //           color: 'brand.primary',
+    //         }
+    //       : { bg: 'brand.secondary' }
+    //   }
+    //   _active={
+    //     variant === 'outline' ? { bg: 'transparent' } : { bg: 'brand.ternary' }
+    //   }
+    //   px={px}
+    //   cursor={cursor}
+    //   type={type}
+    //   color={variant === 'outline' ? 'brand.darkgray' : 'brand.white'}
+    //   {...rest}
+    // >
+    //   <MyText as="span" color={'currentColor'} title={title} />
+    // </Center>
   );
 };
 

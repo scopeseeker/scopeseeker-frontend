@@ -59,7 +59,14 @@ export default function AuthLayout({
         >
           <ScopeSeekerLogo color="brand.white" />
 
-          <Center flexDirection={'column'} w={'full'} pt={'52px'} h={'100%'} gap={'12px'} justifyContent={'space-between'}>
+          <Center
+            flexDirection={'column'}
+            w={'full'}
+            pt={'52px'}
+            h={'100%'}
+            gap={'12px'}
+            justifyContent={'space-between'}
+          >
             <MainHeading
               title={authPageContent.login.title}
               headColor="brand.white"

@@ -27,7 +27,7 @@ export async function POST(request: NextRequest) {
       });
     }
     const hashedPassword = await bcryptjs.hash(password, 12);
-      
+
     // Create New User
     const newUser = await User.create({
       email,
