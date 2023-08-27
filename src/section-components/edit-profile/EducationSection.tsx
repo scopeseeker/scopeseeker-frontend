@@ -309,7 +309,7 @@ const EducationSection = () => {
                   </FormControl>
                 </HStack>
                 <HStack w={'full'} flexWrap={'wrap'} spacing={0} gap={'12px'}>
-                  <MyButton title="Submit" px="50px" type={'submit'} />
+                  <MyButton title="Submit" type={'submit'} />
                 </HStack>
               </VStack>
             </form>

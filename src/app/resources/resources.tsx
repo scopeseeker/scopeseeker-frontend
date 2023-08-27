@@ -69,7 +69,7 @@ export default function Resources() {
                 />
               </Center>
               <Center
-                maxW={{base:'full',md:'70%'}}
+                maxW={{ base: 'full', md: '70%' }}
                 px={'20px'}
                 py={{ base: '16px', sm: '20px', md: '6px' }}
                 bg={'green.50'}
@@ -136,8 +136,8 @@ const CategoryBox = ({ title, description, iconName }: ICategoryBox) => {
   return (
     <>
       <Center
-        w={{ base: 'full',sm:'full', md: '47%' }}
-        minH={{base: '100px', sm: '110px', md: '130px'}}
+        w={{ base: 'full', sm: 'full', md: '47%' }}
+        minH={{ base: '100px', sm: '110px', md: '130px' }}
         border={'1px solid'}
         borderColor={'brand.lightgray'}
         _hover={{
@@ -150,12 +150,12 @@ const CategoryBox = ({ title, description, iconName }: ICategoryBox) => {
         py={'18px'}
         cursor={'pointer'}
         gap={'22px'}
-        flexDirection={{base: 'column', sm: 'row'}}
-        alignItems={{base: 'self-start', sm: 'center'}}
+        flexDirection={{ base: 'column', sm: 'row' }}
+        alignItems={{ base: 'self-start', sm: 'center' }}
       >
         <Center
-          w={{base:'50px',md:'80px'}}
-          height={{base:'50px',md:'80px'}}
+          w={{ base: '50px', md: '80px' }}
+          height={{ base: '50px', md: '80px' }}
           flexShrink={0}
           bg={'brand.aliceblue'}
           border={'1px solid'}

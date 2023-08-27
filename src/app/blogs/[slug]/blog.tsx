@@ -375,7 +375,7 @@ export default function Blog() {
                       placeholder="Enter your email"
                       leftElement={<MyIcon name="gmail" />}
                       pr="4px"
-                      name='email'
+                      name="email"
                     />
                     <Center
                       bg={'brand.primary'}

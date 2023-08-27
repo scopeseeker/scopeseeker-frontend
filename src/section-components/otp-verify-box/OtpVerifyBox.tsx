@@ -62,7 +62,7 @@ const OtpVerifyBox = ({
           py={'18px'}
           onClick={handleClickOnBtn}
         />
-        <MyButton title="Verify" px={'28px'} py={'18px'} />
+        <MyButton title="Verify" />
       </HStack>
     </Center>
   );

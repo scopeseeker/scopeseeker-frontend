@@ -18,7 +18,7 @@ const ResumeSection = () => {
   };
 
   return (
-    <SectionTempalate id='resume-section'>
+    <SectionTempalate id="resume-section">
       <MyText as="title" title="Resume" />
       <VStack alignSelf={'center'} w={{ base: 'full', md: '80%' }} gap={'20px'}>
         <HStack

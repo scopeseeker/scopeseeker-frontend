@@ -111,15 +111,10 @@ const Navbar = () => {
                   display={{ base: 'none', md: 'flex' }}
                 >
                   <Link href={'/login'}>
-                    <MyButton
-                      variant="outline"
-                      title="Log In"
-                      py={'6px'}
-                      h={'fit-content'}
-                    />
+                    <MyButton variant="outline" title="Log In"  h={'fit-content'} py={'8px'}  />
                   </Link>
                   <Link href={'/signup'}>
-                    <MyButton title="Sign Up" py={'6px'} h={'fit-content'} />
+                    <MyButton title="Sign Up" h={'fit-content'} py={'8px'} />
                   </Link>
                 </HStack>
               )}
@@ -510,12 +505,11 @@ const Navbar = () => {
                             <MyButton
                               title="Login"
                               variant="outline"
-                              h={'32px'}
                               w={'80%'}
                             />
                           </Link>
                           <Link href={'/signup'} style={{ width: '100%' }}>
-                            <MyButton title="Signup" w={'80%'} h={'32px'} />
+                            <MyButton title="Signup" w={'80%'} />
                           </Link>
                         </>
                       )}

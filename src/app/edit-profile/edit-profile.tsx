@@ -42,7 +42,7 @@ const EditProfile = () => {
             <EducationSection />
             <SocialLinksSection />
             <VStack w={'full'} alignItems={'flex-start'}>
-              <MyButton title="Submit" px="50px" py={'10px'} />
+              <MyButton title="Submit" />
             </VStack>
           </VStack>
         </HStack>

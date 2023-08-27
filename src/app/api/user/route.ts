@@ -13,7 +13,7 @@ export async function PUT(req: Request) {
     });
   }
 
-  const update = await User.findOneAndUpdate({email}, {abc});
+  const update = await User.findOneAndUpdate({ email }, { abc });
   return NextResponse.json({
     status: 200,
     body: {

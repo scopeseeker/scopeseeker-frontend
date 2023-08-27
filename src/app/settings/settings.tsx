@@ -174,7 +174,7 @@ export default function Settings() {
                             type="text"
                             placeholder="Enter email"
                             leftElement={<MyIcon name="email" />}
-                            name='email'
+                            name="email"
                           />
                           <HStack>
                             <MyButton
@@ -260,7 +260,7 @@ export default function Settings() {
                             type="text"
                             placeholder="Enter Number"
                             leftElement={<MyIcon name="phone" />}
-                            name='number'
+                            name="number"
                           />
                           <HStack>
                             <MyButton
@@ -297,7 +297,6 @@ export default function Settings() {
                       <MyButton
                         title={'Delete Account'}
                         variant="outline"
-                        h="30px"
                         borderColor={'red'}
                         borderWidth={'1.5px'}
                         color={'red'}
@@ -349,7 +348,6 @@ export default function Settings() {
 
                     <MyButton
                       title="SignOut"
-                      px="50px"
                       w={{ base: 'full', sm: 'initial' }}
                     />
                   </VStack>
@@ -461,11 +459,10 @@ const SettingElemsDivTemplate = ({
               <MyButton
                 title={'Verify'}
                 variant={'outline'}
-                h="30px"
                 onClick={onOpenModel}
               />
             )}
-            <MyButton title={button} h="30px" onClick={onOpenEmailBox} />
+            <MyButton title={button} onClick={onOpenEmailBox} />
           </HStack>
         </HStack>
       </HStack>

@@ -25,7 +25,7 @@ const PopularCategories = () => {
                   <Center
                     key={index}
                     cursor={'pointer'}
-                    w={{base: '100%',sm: '80%', md: '280px'}}
+                    w={{ base: '100%', sm: '80%', md: '280px' }}
                     h={'80px'}
                     bg={'brand.white'}
                     borderRadius={'6px'}

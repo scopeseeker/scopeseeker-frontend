@@ -280,16 +280,10 @@ const BasicInformationSection = () => {
               </VStack>
 
               <HStack>
-                <MyButton
-                  type={'submit'}
-                  title="Save"
-                  px={'30px'}
-                  onClick={handleSubmit}
-                />
+                <MyButton type={'submit'} title="Save" onClick={handleSubmit} />
                 <MyButton
                   type={'reset'}
                   title="Cancel"
-                  px={'30px'}
                   variant="outline"
                   onClick={handleSubmit}
                 />

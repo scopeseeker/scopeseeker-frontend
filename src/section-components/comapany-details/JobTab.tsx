@@ -46,7 +46,7 @@ const JobTab = () => {
           type="text"
           placeholder="Job title or keyword"
           leftElement={<MyIcon name="search" width="20" height="20" />}
-          name='jobTitle'
+          name="jobTitle"
         />
         <Box w={{ base: 'full', sm: 'initial', md: 'initial' }}>
           <MyButton title="Search" />

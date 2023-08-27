@@ -26,7 +26,13 @@ const Filter = ({ FilterObject }: IFilter) => {
       <HStack w={'full'} spacing={0}>
         <MyText title="Filter Jobs" as="heading" color="brand.primary" />
       </HStack>
-      <Accordion w="full" defaultIndex={[0, 1]} allowMultiple overflowY={'scroll'} pr={'10px'}>
+      <Accordion
+        w="full"
+        defaultIndex={[0, 1]}
+        allowMultiple
+        overflowY={'scroll'}
+        pr={'10px'}
+      >
         {FilterObject.map((item, index) => (
           <>
             <AccordionItem key={index}>

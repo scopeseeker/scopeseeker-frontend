@@ -1,5 +1,12 @@
 import { Layout, MyIcon, MyImage, MyText } from '@/component';
-import { Box, Center, Flex, HStack, IconButton, VStack } from '@chakra-ui/react';
+import {
+  Box,
+  Center,
+  Flex,
+  HStack,
+  IconButton,
+  VStack,
+} from '@chakra-ui/react';
 import Link from 'next/link';
 import React from 'react';
 import ScopeSeekerLogo from '../logo/ScopeSeekerLogo';
@@ -52,7 +59,7 @@ const Footer = () => {
                 />
               </Flex>
             </HStack> */}
-            <ScopeSeekerLogo color='brand.white'/>
+            <ScopeSeekerLogo color="brand.white" />
             <MyText
               as={'span'}
               color={'brand.white'}
@@ -85,7 +92,11 @@ const Footer = () => {
               w={'50%'}
               justifyContent={{ base: 'flex-start', md: 'center' }}
             >
-              <Flex flexDir={'column'} gap={'12px'} p={{ base: '0px', md: '16px' }}>
+              <Flex
+                flexDir={'column'}
+                gap={'12px'}
+                p={{ base: '0px', md: '16px' }}
+              >
                 <FooterHeading title={'Links'} />
                 <FooterLink link={'/jobs'} title={'Find Jobs'} />
                 <FooterLink link={'/company'} title={'Find Companies'} />
@@ -102,7 +113,11 @@ const Footer = () => {
               w={'50%'}
               justifyContent={{ base: 'flex-start', md: 'center' }}
             >
-              <Flex flexDir={'column'} gap={'12px'} p={{ base: '0px', md: '16px' }}>
+              <Flex
+                flexDir={'column'}
+                gap={'12px'}
+                p={{ base: '0px', md: '16px' }}
+              >
                 <FooterHeading title={'Company'} />
                 <FooterLink link={'/about-us'} title={'About Us'} />
                 <FooterLink link={'/contact-us'} title={'Contact Us'} />
