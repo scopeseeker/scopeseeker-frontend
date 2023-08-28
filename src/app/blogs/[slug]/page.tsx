@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import Blog from './blog';
+import ArticlePage from './ArticlePage';
 
 export const metadata: Metadata = {
   title: 'Blog',
@@ -7,5 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <Blog />;
+  return <ArticlePage />;
 }
