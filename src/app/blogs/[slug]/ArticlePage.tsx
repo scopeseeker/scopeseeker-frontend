@@ -10,7 +10,7 @@ import {
 import { Center, Flex, HStack, VStack } from '@chakra-ui/react';
 import Link from 'next/link';
 
-export default function Blog() {
+export default function ArticlePage() {
   return (
     <>
       <Layout>

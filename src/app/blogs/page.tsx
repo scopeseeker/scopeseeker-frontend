@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
-import Blogs from './blogs';
 import metaData from '@/constant/metaData';
+import Blogs from './blogs';
 
 export const metadata: Metadata = {
   title: metaData.blogs.title,

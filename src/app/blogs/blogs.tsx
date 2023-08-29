@@ -28,7 +28,7 @@ export default function Blogs() {
 
       <Layout>
         <Center gap={'72px'} w={'full'} flexDirection={'column'}>
-          <VStack gap={'52px'} mt={'32px'}>
+          <VStack gap={'52px'} mt={'32px'} w={'full'}>
             <MainHeading
               title="Scope Seeker All Blogs"
               subTitle="Here you will find all the articles that make your knowledge more efficient"
@@ -36,11 +36,12 @@ export default function Blogs() {
             {/* Qucik links */}
             <Center w={'full'}>
               <Center
-                borderRadius={{ base: '10px', md: '50px' }}
+                borderRadius={'10px'}
                 color={'brand.black'}
                 justifyContent={'space-between'}
-                px={'12px'}
-                py={'8px'}
+                px={'40px'}
+                py={'24px'}
+                w={"100%"}
                 gap={'12px'}
                 border={'1px solid'}
                 borderColor={'brand.lightgray'}
@@ -52,7 +53,7 @@ export default function Blogs() {
                     'All',
                     'Development',
                     'Interview Preparation',
-                    'Tips&Tricks',
+                    'Tips & Tricks',
                   ].map((item, index) => {
                     return (
                       <>
@@ -61,12 +62,11 @@ export default function Blogs() {
                           cursor={'pointer'}
                           as="span"
                           title={item}
-                          _hover={{ bg: 'brand.primary', color: 'brand.white' }}
+                          _hover={{ color: activeElement === item ? "brand.white" : 'brand.primary' }}
                           px={'18px'}
                           py={'4px'}
                           textAlign={'center'}
                           borderRadius={'50px'}
-                          transition={'all ease .2s'}
                           bg={
                             activeElement === item
                               ? 'brand.primary'
@@ -135,9 +135,10 @@ export default function Blogs() {
             gap={{ base: '32px', md: '72px' }}
           >
             <Grid
-              templateColumns={'repeat(1, 1fr)'}
-              gridGap={'42px'}
-              width={{ base: '100%', sm: '80%', xl: '80%', '2xl': '70%' }}
+              templateColumns={'repeat(3, 1fr)'}
+              gridGap={'32px'}
+              // width={{ base: '100%', sm: '80%', xl: '80%', '2xl': '70%' }}
+              width={'100%'}
             >
               <>
                 {articleFields.map((item) => {
@@ -146,7 +147,7 @@ export default function Blogs() {
                       <MyArticleCard
                         image={item.image}
                         category={item.category}
-                        heading={item.heading}
+                        articleHeading={item.heading}
                         paragraph={item.paragraph}
                         readMore={item.readMore}
                         date={item.date}
@@ -156,6 +157,9 @@ export default function Blogs() {
                 })}
               </>
             </Grid>
+
+
+
             <Center
               w={'100%'}
               p={{ base: '0px', sm: '12px' }}

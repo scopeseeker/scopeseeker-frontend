@@ -114,7 +114,7 @@ export interface IMyText {
 export interface IMyArticleCard {
   image: string;
   category: string;
-  heading: string;
+  articleHeading: string;
   paragraph: string;
   readMore: string;
   date: string;
