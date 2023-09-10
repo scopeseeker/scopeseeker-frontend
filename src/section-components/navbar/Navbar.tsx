@@ -111,7 +111,12 @@ const Navbar = () => {
                   display={{ base: 'none', md: 'flex' }}
                 >
                   <Link href={'/login'}>
-                    <MyButton variant="outline" title="Log In"  h={'fit-content'} py={'8px'}  />
+                    <MyButton
+                      variant="outline"
+                      title="Log In"
+                      h={'fit-content'}
+                      py={'8px'}
+                    />
                   </Link>
                   <Link href={'/signup'}>
                     <MyButton title="Sign Up" h={'fit-content'} py={'8px'} />
@@ -501,15 +506,11 @@ const Navbar = () => {
                       />
                       {!isLogin && (
                         <>
-                          <Link href={'/login'} style={{ width: '100%' }}>
-                            <MyButton
-                              title="Login"
-                              variant="outline"
-                              w={'80%'}
-                            />
+                          <Link href={'/login'}>
+                            <MyButton title="Login" variant="outline" />
                           </Link>
-                          <Link href={'/signup'} style={{ width: '100%' }}>
-                            <MyButton title="Signup" w={'80%'} />
+                          <Link href={'/signup'}>
+                            <MyButton title="Signup" />
                           </Link>
                         </>
                       )}

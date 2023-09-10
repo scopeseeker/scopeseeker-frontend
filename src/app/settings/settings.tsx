@@ -297,11 +297,8 @@ export default function Settings() {
                       <MyButton
                         title={'Delete Account'}
                         variant="outline"
-                        borderColor={'red'}
-                        borderWidth={'1.5px'}
-                        color={'red'}
                         onClick={onOpenSetting}
-                        w={{ base: 'full', sm: 'initial', md: 'initial' }}
+                        colorScheme="red"
                       />
                     </HStack>
 
@@ -329,27 +326,20 @@ export default function Settings() {
                               title="Cancel"
                               ref={cancelRef}
                               onClick={onCloseSetting}
-                              borderRadius="5px"
                               variant="outline"
                             />
                             <MyButton
                               title="Delete"
-                              colorScheme="red"
                               onClick={onCloseSetting}
-                              borderRadius="5px"
                               ml={'10px'}
-                              bg={'red'}
-                              _hover={{ bg: 'red.500' }}
+                              colorScheme="red"
                             />
                           </AlertDialogFooter>
                         </AlertDialogContent>
                       </AlertDialogOverlay>
                     </AlertDialog>
 
-                    <MyButton
-                      title="SignOut"
-                      w={{ base: 'full', sm: 'initial' }}
-                    />
+                    <MyButton title="SignOut" />
                   </VStack>
                 </VStack>
               </TabPanel>

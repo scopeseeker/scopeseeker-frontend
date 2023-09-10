@@ -94,15 +94,7 @@ const FeaturedCompany = () => {
 
                   <Center w={'full'}>
                     {/* <MyButton w={'50%'} title="Full Details" /> */}
-                    <MyButton
-                      w={{ base: '70%', sm: '50%', md: '60%' }}
-                      title="View Jobs"
-                      variant="outline"
-                      borderWidth={'1.5px'}
-                      fontWeight={500}
-                      color={'brand.primary'}
-                      borderColor={'brand.primary'}
-                    />
+                    <MyButton title="View Jobs" variant="outline" />
                   </Center>
                 </VStack>
               </GridItem>
@@ -111,7 +103,7 @@ const FeaturedCompany = () => {
         </Grid>
         <Center w={'full'}>
           <Link href={'/company'}>
-            <MyButton title="See All Company" px={'28px'} />
+            <MyButton title="See All Company" />
           </Link>
         </Center>
       </Center>

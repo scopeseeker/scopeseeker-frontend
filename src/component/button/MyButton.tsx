@@ -6,6 +6,7 @@ const MyButton = ({
   variant = 'solid',
   type = 'button',
   isLoading = false,
+  colorScheme = 'messenger',
   ...rest
 }: IMyButtonProps) => {
   return (
@@ -15,7 +16,7 @@ const MyButton = ({
       fontWeight={500}
       variant={variant}
       px={'28px'}
-      colorScheme="messenger"
+      colorScheme={colorScheme}
       type={type}
       isLoading={isLoading}
       {...rest}
