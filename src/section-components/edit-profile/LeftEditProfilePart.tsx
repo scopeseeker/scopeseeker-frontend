@@ -21,7 +21,7 @@ const LeftEditProfilePart = () => {
         <LeftScrollDivText href="#social-section" title={'Social Links'} />
       </VStack>
       <Link href={'/'} style={{ width: '100%' }}>
-        <MyButton title="Skip For Now" w={'full'} mt={'20px'} />
+        <MyButton title="Skip For Now" w={'full'} />
       </Link>
     </VStack>
   );

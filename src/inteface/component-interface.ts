@@ -11,6 +11,7 @@ export interface IMyButtonProps {
   title: string;
   variant?: 'outline' | 'solid';
   type?: 'button' | 'submit' | 'reset';
+  colorScheme?: 'red' | 'messenger' | 'green';
   isLoading?: boolean;
   [key: string]: any;
 }

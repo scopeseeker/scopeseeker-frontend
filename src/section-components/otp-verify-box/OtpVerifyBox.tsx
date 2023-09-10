@@ -55,13 +55,7 @@ const OtpVerifyBox = ({
         <MyText title="Click here to resend" as={'link'} />
       </HStack>
       <HStack>
-        <MyButton
-          title="Back"
-          variant="outline"
-          px={'28px'}
-          py={'18px'}
-          onClick={handleClickOnBtn}
-        />
+        <MyButton title="Back" variant="outline" onClick={handleClickOnBtn} />
         <MyButton title="Verify" />
       </HStack>
     </Center>
