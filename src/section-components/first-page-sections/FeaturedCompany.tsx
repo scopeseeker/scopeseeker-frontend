@@ -6,7 +6,7 @@ import {
   MyImage,
   MyText,
 } from '@/component';
-import { Box, Center, Grid, GridItem, VStack } from '@chakra-ui/react';
+import { Box, Center, Grid, GridItem, HStack, VStack } from '@chakra-ui/react';
 import Link from 'next/link';
 
 const FeaturedCompany = () => {
@@ -36,27 +36,31 @@ const FeaturedCompany = () => {
                   gap={'4px'}
                   flexShrink={0}
                   cursor={'pointer'}
+                  alignItems={'flex-start'}
                   _hover={{
                     borderColor: 'brand.primary',
                     boxShadow: '0px 0px 10px rgba(0,0,0,0.2)',
                   }}
                 >
-                  <Center
-                    w={'60px'}
-                    h={'60px'}
-                    borderRadius={'50%'}
-                    p={'8px'}
-                    bg={'brand.aliceblue'}
-                  >
-                    <MyImage
-                      src={'/assets/images/company-logo/google.png'}
-                      alt="company"
-                      width={50}
-                      height={50}
-                    />
-                  </Center>
-                  <MyText as="title" title="Microsoft Inc." />
-                  <Center
+                  <HStack>
+                    <Center
+                      w={'60px'}
+                      h={'60px'}
+                      borderRadius={'50%'}
+                      p={'8px'}
+                      bg={'brand.aliceblue'}
+                      flexShrink={0}
+                    >
+                      <MyImage
+                        src={'/assets/images/company-logo/google.png'}
+                        alt="company"
+                        width={50}
+                        height={50}
+                      />
+                    </Center>
+                    <MyText as="title" title="Tata Consoltency Service" />
+                  </HStack>
+                  <HStack
                     flexWrap={'wrap'}
                     gap={'8px'}
                     w={'full'}
@@ -74,7 +78,7 @@ const FeaturedCompany = () => {
                         'Fortune 500',
                       ]}
                     />
-                  </Center>
+                  </HStack>
                   <MyText
                     as="span"
                     fontSize={{ base: '10px', md: '10px' }}
@@ -88,14 +92,13 @@ const FeaturedCompany = () => {
                     <MyText
                       as="span"
                       title="THis is a product serivec cpmapy where tou can wind a best job."
-                      textAlign={'center'}
                     />
                   </Box>
 
-                  <Center w={'full'}>
+                  <HStack w={'full'}>
                     {/* <MyButton w={'50%'} title="Full Details" /> */}
                     <MyButton title="View Jobs" variant="outline" />
-                  </Center>
+                  </HStack>
                 </VStack>
               </GridItem>
             );
