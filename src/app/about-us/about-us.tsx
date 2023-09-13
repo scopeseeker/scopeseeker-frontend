@@ -362,7 +362,7 @@ export default function AboutUs() {
                   overflow={'hidden'}
                 >
                   <MyImage
-                    src={'/assets/images/p12.jpg'}
+                    src={'/assets/images/lokesh_founder.jpg'}
                     width={300}
                     height={300}
                     alt="picture"
@@ -405,7 +405,7 @@ export default function AboutUs() {
                   overflow={'hidden'}
                 >
                   <MyImage
-                    src={'/assets/images/p12.jpg'}
+                    src={'/assets/images/abhijeet-cofounder.jpg'}
                     width={300}
                     height={300}
                     alt="picture"
@@ -447,7 +447,7 @@ export default function AboutUs() {
                   overflow={'hidden'}
                 >
                   <MyImage
-                    src={'/assets/images/p12.jpg'}
+                    src={'/assets/images/abhishek_cofounder.jpg'}
                     width={300}
                     height={300}
                     alt="picture"
