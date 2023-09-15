@@ -1,5 +1,5 @@
 'use client';
-import { Layout, MyIcon, MyImage, MyText } from '@/component';
+import { Layout, MyButton, MyIcon, MyImage, MyText } from '@/component';
 import { Benifits, JobTab, Overview } from '@/section-components';
 import HiringProcess from '@/section-components/comapany-details/HiringProcess';
 
@@ -36,12 +36,8 @@ export default function CompanyDetails() {
             flexDirection={'column'}
             textAlign={'center'}
           >
-            <MyText
-              fontWeight={500}
-              as="heading"
-              title={`Full Stack Web Developer`}
-            />
-            <MyText as="span" title="Tata Consultancy Service" />
+            <MyText fontWeight={500} as="heading" title={`Campgemini`} />
+            <MyText as="span" title="Software Company" />
           </Layout>
         </Center>
         {/* After header Part */}
@@ -58,91 +54,85 @@ export default function CompanyDetails() {
               justifyContent={'space-between'}
               flexDir={{ base: 'column', sm: 'row', md: 'row' }}
               alignItems={{ base: 'flex-start', sm: 'center', md: 'center' }}
-              gap={'15px'}
               spacing={0}
             >
-              <HStack>
+              <HStack gap={'20px'}>
                 <Center
-                  w={{ base: '70px', md: '75px' }}
-                  h={{ base: '70px', md: '75px' }}
+                  w={{ base: '70px', md: '112px' }}
+                  h={{ base: '70px', md: '112px' }}
                   bg={'brand.white'}
-                  border={'1.3px solid'}
+                  border={'1.5px solid'}
                   borderColor={'brand.lightgray'}
                   borderRadius={'10px'}
+                  position={'relative'}
                 >
                   <MyImage
                     src={'/assets/images/company-logo/amazon.png'}
                     alt={'company logo'}
-                    width={50}
-                    height={50}
+                    fill
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'contain',
+                      borderRadius: '10px',
+                    }}
                   />
                 </Center>
 
-                <VStack spacing={0} alignItems={'flex-start'}>
+                <VStack spacing={0} alignItems={'flex-start'} minW={'50%'}>
                   <HStack justifyContent={'flex-start'}>
-                    <MyText as="title" title="Campgemini" />
+                    <MyText as="title" title="Amazon Private Limitted" />
                     <MyIcon
                       name="verifyFill"
                       width="15px"
                       color="brand.primary"
                     />
                   </HStack>
-                  <MyText as="small" title="4.2 Ratings/ 160 Reviews" />
+                  <MyText
+                    as="small"
+                    title="4.2 Ratings Out 160 Reviews on Naukri.com"
+                  />
+                  {/* Company Type  */}
+                  <HStack flexWrap={'wrap'} gap={'6px'} spacing={0} pt={'10px'}>
+                    {[
+                      'Small',
+                      'B2B',
+                      'MNC',
+                      'Product',
+                      'Software',
+                      'Development',
+                    ].map((item, index) => {
+                      return (
+                        <Center
+                          key={index}
+                          borderWidth={'1px'}
+                          borderColor={'brand.lightgray'}
+                          px={'15px'}
+                          py={'4px'}
+                          borderRadius={'40px'}
+                          // bg={'brand.offwhite'}
+                        >
+                          <MyText
+                            as="small"
+                            title={item}
+                            color={'brand.darkgray'}
+                          />
+                        </Center>
+                      );
+                    })}
+                  </HStack>
                 </VStack>
               </HStack>
 
-              <Center
-                px={'8px'}
-                py={'2px'}
-                cursor={'pointer'}
-                borderRadius={'5px'}
-                gap={'5px'}
-                borderWidth={'1.5px'}
-                borderColor={'brand.darkgray'}
-                color={'brand.primary'}
-              >
-                <MyText
-                  as="small"
-                  title="Add to favourite"
-                  color="currentColor"
-                  fontWeight={500}
-                />
-                <MyIcon
-                  name="heart"
-                  width="15px"
-                  color="currentColor"
-                  strokeWidth="2"
-                />
-              </Center>
-            </HStack>
-
-            {/* Company Type  */}
-            <HStack
-              flexWrap={'wrap'}
-              gap={'6px'}
-              spacing={0}
-              pt={'10px'}
-              maxW={{ base: '100%', md: '80%' }}
-            >
-              {['small', 'B2B', 'MNC', 'Product'].map((item, index) => {
-                return (
-                  <Center
-                    key={index}
-                    borderWidth={'1px'}
-                    borderColor={'brand.darkgray'}
-                    px={'10px'}
-                    py={'3px'}
-                    borderRadius={'4px'}
-                    bg={'brand.offwhite'}
-                  >
-                    <MyText as="small" title={item} color={'brand.darkgray'} />
-                  </Center>
-                );
-              })}
+              <MyButton
+                title="Add to Faviourate"
+                variant="outline"
+                leftIcon={<MyIcon name="save" color="brand.primary" />}
+              />
             </HStack>
 
             {/* Tabs */}
-            <HStack paddingTop={'30px'} w={'full'}>
+            <HStack paddingTop={'50px'} w={'full'}>
               <Tabs position="relative" variant="unstyled" w={'full'}>
                 <TabList gap={'18px'} flexWrap={'wrap'}>
                   <Tab
@@ -187,7 +177,7 @@ export default function CompanyDetails() {
                     Hiring Process
                   </Tab>
                 </TabList>
-                <TabPanels>
+                <TabPanels paddingTop={'50px'}>
                   <TabPanel>
                     <Overview />
                   </TabPanel>
