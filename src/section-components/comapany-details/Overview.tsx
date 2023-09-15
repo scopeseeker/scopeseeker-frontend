@@ -18,7 +18,6 @@ const Overview = () => {
     <VStack
       w={'full'}
       alignItems={'flex-start'}
-      marginTop={'20px'}
       gap={'10px'}
     >
       <MyText as="heading" title="About US" />
