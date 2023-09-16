@@ -1,5 +1,5 @@
 'use client';
-import { Layout, MainHeading, MyIcon, MyText } from '@/component';
+import { Layout, MainHeading, MyButton, MyIcon, MyText } from '@/component';
 import { articleFields } from '@/constant/constantFields';
 import { MyArticleCard, PageHeader } from '@/section-components';
 import {
@@ -41,7 +41,7 @@ export default function Blogs() {
                 justifyContent={'space-between'}
                 px={'40px'}
                 py={'24px'}
-                w={"100%"}
+                w={'100%'}
                 gap={'12px'}
                 border={'1px solid'}
                 borderColor={'brand.lightgray'}
@@ -62,7 +62,12 @@ export default function Blogs() {
                           cursor={'pointer'}
                           as="span"
                           title={item}
-                          _hover={{ color: activeElement === item ? "brand.white" : 'brand.primary' }}
+                          _hover={{
+                            color:
+                              activeElement === item
+                                ? 'brand.white'
+                                : 'brand.primary',
+                          }}
                           px={'18px'}
                           py={'4px'}
                           textAlign={'center'}
@@ -158,44 +163,17 @@ export default function Blogs() {
               </>
             </Grid>
 
-
-
             <Center
               w={'100%'}
               p={{ base: '0px', sm: '12px' }}
               gap={{ base: '12px', sm: '32px' }}
             >
-              <Center
-                cursor={'pointer'}
-                width={'30px'}
-                height={'30px'}
-                bg={'brand.primary'}
-                borderRadius={'50%'}
-              >
-                <MyIcon
-                  name="chevronLeft"
-                  strokeWidth="2"
-                  color="brand.white"
-                />
-              </Center>
-
+              <MyButton title="Prev" variant="outline" />
               <Center px={'12px'} h={'20px'}>
                 <MyText as="title" title="Page 1 of 20" />
               </Center>
 
-              <Center
-                cursor={'pointer'}
-                width={'30px'}
-                height={'30px'}
-                bg={'brand.primary'}
-                borderRadius={'50%'}
-              >
-                <MyIcon
-                  name="chevronRight"
-                  strokeWidth="2"
-                  color="brand.white"
-                />
-              </Center>
+              <MyButton title="Next" />
             </Center>
           </VStack>
         </Center>
