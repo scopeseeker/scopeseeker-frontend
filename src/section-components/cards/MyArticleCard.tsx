@@ -66,6 +66,9 @@ const MyArticleCard = ({
       overflow={'hidden'}
       borderRadius={'10px'}
       h={'520px'}
+      border={'1.5px solid'}
+      _hover={{borderColor: 'brand.primary'}}
+      borderColor={'transparent'}
     >
       <Center w={'full'} h={'200px'} position={'relative'}>
         <MyImage
