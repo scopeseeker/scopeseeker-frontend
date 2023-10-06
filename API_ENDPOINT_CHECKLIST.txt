@@ -1,0 +1,9 @@
+Scope Seeker Backend API EndPoints
+
+Endpoint               HTTP Verb       Description         Development      Testing    Production
+api/companies          POST            Create a company    Done             Pending    Pending
+api/companies          GET             Get all companies   Done             Pending    Pending
+api/
+api/
+api/
+api/
