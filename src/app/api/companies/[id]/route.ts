@@ -69,3 +69,45 @@ export async function DELETE(
     });
   }
 }
+
+// Update a specific company by id
+// Need to improve the route handler
+
+export async function PUT(
+  request: Request,
+  { params }: { params: { id: string } },
+) {
+  try {
+    const companyId = params.id;
+    const companyData = await request.json();
+
+    await connectMongoDB();
+    const updatedCompany = await Company.findByIdAndUpdate(
+      companyId,
+      companyData,
+      { new: true },
+    );  
+
+    if (updatedCompany) {
+      return NextResponse.json({
+        status: 200,
+        message: 'Company updated successfully',
+        company: updatedCompany,
+      });
+    }
+
+    return NextResponse.json({
+      status: 200,
+      message: 'Company not found',
+      id: companyId,
+      body: companyData,
+    });
+  } catch (error: any) {
+    console.log(error);
+    return NextResponse.json({
+      status: 500,
+      message: error.name || 'Something went wrong',
+      details: error,
+    });
+  }
+}
