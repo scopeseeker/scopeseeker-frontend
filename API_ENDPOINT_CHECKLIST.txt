@@ -7,4 +7,4 @@ api/companies          POST            Create a company                 Done    
 api/companies          GET             Get all companies                Done             Pending    Pending
 api/companies/:id      GET             Get a specific company           Done             Pending    Pending
 api/companies/:id      DELETE          Delete a specific company        Done             Pending    Pending
-api/companies/:id      PUT             Update a specific company        Working          Pending    Pending
+api/companies/:id      PUT             Update a specific company        Basic Done       Pending    Pending
