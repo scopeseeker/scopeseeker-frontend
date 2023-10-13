@@ -8,3 +8,10 @@ api/companies          GET             Get all companies                Done    
 api/companies/:id      GET             Get a specific company           Done             Pending    Pending
 api/companies/:id      DELETE          Delete a specific company        Done             Pending    Pending
 api/companies/:id      PUT             Update a specific company        Basic Done       Pending    Pending
+
+Jobs Endpoint:
+api/jobs               POST            Create a job                     Done             Pending    Pending
+api/jobs               GET             Get all jobs                     Done             Pending    Pending
+api/jobs/:id           GET             Get a specific job               Done             Pending    Pending
+api/jobs/:id           DELETE          Delete a specific job            Done             Pending    Pending
+api/jobs/:id           PUT             Update a specific job            Basic Done       Pending    Pending
