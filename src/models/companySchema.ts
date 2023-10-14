@@ -1,6 +1,5 @@
 import mongoose, { Document, Model, Schema } from 'mongoose';
 
-// Define an interface for the Company document
 interface ICompany extends Document {
   name: string; // Name of the company
   description: string; // Brief description of the company
@@ -44,7 +43,6 @@ interface ICompany extends Document {
   }[];
 }
 
-// Create a Mongoose schema for the Company model
 const companySchema = new Schema<ICompany>(
   {
     name: { type: String, required: true, unique: true },
@@ -99,7 +97,6 @@ const companySchema = new Schema<ICompany>(
   { timestamps: true },
 );
 
-// Create the Company model
 const Company: Model<ICompany> =
   mongoose.models.Company || mongoose.model<ICompany>('Company', companySchema);
 
