@@ -44,6 +44,6 @@ const jobSchema = new Schema<IJob>(
 );
 
 const Job: Model<IJob> =
-  mongoose.models.Job || mongoose.model<IJob>('Company', jobSchema);
+  mongoose.models.Job || mongoose.model<IJob>('Job', jobSchema);
 
 export default Job;
